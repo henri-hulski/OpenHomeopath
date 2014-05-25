@@ -1,0 +1,112 @@
+ul.dropdown a
+{
+ /*   background-color:#f0f0f0; */
+    color:#444;
+    padding:4px 10px 4px 10px;
+    text-decoration:none;
+    vertical-align:bottom;
+
+}
+
+ul.dropdown a:hover
+{
+    background-color:#f0f0f0;
+    color:#000;
+}
+
+ul.dropdown ul
+{
+    border:1px outset;
+
+}
+
+ul.dropdown ul a
+{
+    background-color:#ccc;
+    color:#000;
+    padding:4px;
+    text-decoration:none;
+}
+
+ul.dropdown ul a:hover
+{
+    background-color:#f0f0f0;
+    color:#000;
+}
+
+ul.dropdown ul li
+{
+    background-color:#ccc;
+}
+
+
+/* -------------------------- BEGIN do not change --------------------------- */
+
+ul.dropdown
+{
+    list-style: none;
+    margin:0;
+    padding:0;
+    width:922px;
+    z-index:99;
+	
+}
+
+ul.dropdown * ul
+{
+    list-style: none;
+    margin:0;
+    padding: 0;
+	display:none;
+	position:absolute;
+	z-index:99;
+	width:20em;
+}
+
+ul.dropdown li
+{
+    float:left;
+	text-align:center;
+	
+}
+
+ul.dropdown li * li
+{
+    border:1px solid #fff;
+    float:none;
+
+    position: relative;
+	text-align:left;
+}
+
+ul.dropdown ul * ul
+{
+    left:98%;
+    top:0;
+
+}
+
+ul.dropdown a
+{
+    display:block;
+
+}
+
+ul.dropdown ul * a
+{
+    height:100%;
+}
+
+ul.dropdown li:hover ul ul, ul.dropdown li:hover ul ul ul, ul.dropdown li:hover ul ul ul ul
+{
+    display:none;
+}
+
+ul.dropdown li:hover ul, ul.dropdown ul li:hover ul, ul.dropdown ul ul li:hover ul
+{
+    display:block;
+}
+
+
+/* -------------------------- END do not change --------------------------- */
+

@@ -1,0 +1,320 @@
+<style type="text/css" media="all"><!--
+			div.image {}
+			div.story {font-family:arial,sans-serif;font-size:10pt;}
+			.synth {
+			font-family:arial,sans-serif;
+			background-color: #fffbdb;
+			border: 10px solid #e0ccd6;
+			padding: 10px;
+			}
+			span.synth {
+			border: 1px solid #660033;
+			padding: 1px 6px 1px 6px;
+			color: #660033;
+			}
+			.ohp {
+			font-family:arial,sans-serif;
+			background-color: #fffdee;
+			border: 10px solid #cce6d4;
+			padding: 10px;
+			}
+			span.ohp {
+			border: 1px solid #008029;
+			padding: 1px 6px 1px 6px;
+			}
+			li {
+			border: 0px solid #808080;
+			/*padding: 1px 6px 1px 6px;*/
+			margin: 10px;
+			}
+			img.ohp {
+			font-family:arial,sans-serif;
+			background-color: #fffdee;
+			border: 10px solid #cce6d4;
+			padding: 0px;
+			}
+			h1{text-align:center;margin:2px;}
+
+			h2{text-align:left;font-family:times,serif;font-size:24px;}
+			h3{text-align:left;margin:2px;}
+			h4{text-align:left;font-size:11pt;}
+#mainSearchBox {
+  background-color: #D9E7BA;
+  border: 1px solid silver;
+  width: 800;
+  text-align:center;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#search_icon {
+left:314px;
+position:absolute;
+top:4px;
+z-index:20;
+}
+.grade1{
+    color:#333333;
+}
+.grade2{
+    color:#045199;
+}
+.grade3{
+    color:#990404;
+    
+}
+.grade4{    
+    color:#f40606;
+    color:#c50347;
+}
+.grade5{
+    color:#ad932b;
+    color:#f49206;
+    color:#f40606;
+    color:#f46506;
+    color:#a50c6d;
+}
+.rem-info-tab {
+vertical-align:top;
+}
+.rem-info-tab-head {
+color:#000000;
+font-weight:bold;
+letter-spacing:1px;
+text-decoration:none;
+text-transform:;
+vertical-align:top;
+}
+.mm-info-box{
+    margin-top: 10px;
+    background-color:#e3edcf;
+    font-size:12px;
+    padding:0px 0px 0px 0px;
+    border: 1px #bdc9a3 solid;    
+}
+.mm-info-box-head{
+background-color:#ffffff;
+font-size:12px;
+padding:0px 10px 10px 10px;
+}
+.mm-info-box-main-rubric {
+    text-align:left;
+    font-family:times,serif;
+    font-size:22px;
+    font-weight:bold;
+    margin:0; 
+    color:	#043C7F;
+}
+
+.mm-info-box-head h2{text-align:left;font-family:times,serif;font-size:24px;margin:0}
+.mm-info-box-part{
+    margin:10px;
+    padding:10px 10px 10px 10px;
+    background-color:#ffffff;
+}
+.mm-info-box-rubric{
+    margin:10px;
+    padding:0px 10px 10px 10px;
+    background-color:#ffffff;
+    font-size:14px;
+    font-weight:500;
+}
+.mm-info-box-title {
+    background-color:#D9E7BA;
+    font-size:13px;
+    padding-left:10px;
+    border-top: 0px #bdc9a3 solid;
+    border-bottom: 0px #bdc9a3 solid;
+    background-color:#e3edcf;
+    
+    background-color:#e9eee0;
+    background-color:#e3ebdb;
+}
+.mm-info-box-part-title {
+    font-size:13px;
+    padding-left:10px;
+    background-color:#e3edcf;
+    border-top: 0px #bdc9a3 solid;
+    border-bottom: 0px #bdc9a3 solid;
+}
+.mm-info-box-repertory{
+    margin: 0px 0px 0px 0px;
+    padding:10px;
+    background-color:#e3edcf;
+    border: 0px #bdc9a3 solid;
+    border-bottom: 1px #bdc9a3 solid;
+    border-top: 0px #bdc9a3 solid;
+    
+}
+
+/*.mm-info-box-sources{
+    margin-top: 0px;
+    padding:0px 10px 5px 10px;
+    background-color:#D9E7BA;
+    background-color:#e3edcf;
+    border: 0px #bdc9a3 solid;
+    border-bottom: 1px #bdc9a3 solid;
+    border-top: 0px #bdc9a3 solid;
+    
+}
+
+.mm-info-box-source hr{
+    color:#333333;
+    margin:2px 0px 2px 0px;
+    visibility:hidden;
+    
+}*/
+
+.mm-info-box-reference-title{
+    font-size:22px;
+    font-weight:bold;
+    font-weight:normal;
+    font-style:normal;
+    color:	#043C7F;
+    font-family:times,serif;
+}
+.mm-info-box-source-title{
+    font-size:22px;
+    font-weight:bold;
+    font-weight:normal;
+    font-style:normal;
+    color:	#043C7F;
+    font-family:times,serif;
+}
+.mm-info-box-reference{
+    margin: 10px 10px 10px 10px;
+    padding:10px;
+    background-color:#ffffff;
+}
+.mm-info-box-remedies{
+    margin: 10px 10px 10px 10px;
+    padding:10px;
+    background-color:#ffffff;
+    font-size:14px;
+    font-weight:bold;
+}
+.mm-sources{
+    font-size:12px;
+    font-weight:normal;
+}
+.mm-letters-menu{
+    padding-left:10px;
+    background-color:#D9E7BA;
+    border-top: 1px #bdc9a3 solid;
+    border-bottom: 1px #bdc9a3 solid;
+    font-size:13px;
+}
+.kingdom{
+    font-size:0.8em;
+}
+
+.subkingdom{
+    font-size:0.85em;
+}
+.division{
+    font-size:0.9em;
+}
+.phylum{
+    font-size:0.9em;
+}
+.subphylum{
+    font-size:0.92em;
+}
+.class{
+    font-size:0.95em;
+}
+.subclass{
+    font-size:1.0em;
+}
+.infraclass{
+    font-size:1.00em;
+}
+.order{
+    font-size:1.05em;
+}
+.suborder{
+    font-size:1.00em;
+}
+.infraorder{
+    font-size:1.00em;
+}
+.superfamily{
+    font-size:1.0em;
+}
+.family{
+    font-size:1.0em;
+    font-style:italic;
+    font-weight:bold;
+}
+.genus{
+    font-size:1.0em;
+}
+.tribe{
+    font-size:1.0em;
+}
+.subfamily{
+    font-size:1.0em;
+}
+.species{
+    font-size:1.2em;
+}
+
+
+.synonym{
+    font-size:0.8em;
+    font-style:italic;
+    text-transform:capitalize;
+}
+.synonym{
+    font-size:0.8em;
+    font-style:italic;
+    text-transform:capitalize;
+}
+.vernaculars{
+    text-transform:capitalize;
+}
+
+.results {
+	background-color: #FDF7B5; /* used to make the table bordered */
+}
+.tr_results_1 {
+	font-size: 8pt;
+	vertical-align: top;
+	/*white-space: nowrap;*/
+	background-color: #FDF7B5;
+}
+.tr_results_2 {
+	font-size: 8pt;
+	vertical-align: top;
+	/*white-space: nowrap;*/
+	background-color: #ffffff;
+}
+
+.tr_highlighted_onmouseover { /* a results table row when the mouse pointer is over it */
+	font-size: 8pt;
+	vertical-align: top;
+	/*white-space: nowrap;*/
+	background-color: #fff;
+}
+.tr_highlighted_onclick { /* a results table row when the click on it */
+	font-size: 8pt;
+	vertical-align: top;
+	/*white-space: nowrap;*/
+	background-color: #e3edcf;
+}
+.tr_results_current {
+	font-size: 8pt;
+	vertical-align: top;
+	/*white-space: nowrap;*/
+	background-color: #CAEE82;
+}
+.tr_results_delete {
+	font-size: 8pt;
+	vertical-align: top;
+	/*white-space: nowrap;*/
+	background-color: #FFDC7B;
+}
+
+
+		--></style>

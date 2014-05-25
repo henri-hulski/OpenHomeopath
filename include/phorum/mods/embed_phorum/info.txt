@@ -1,0 +1,13 @@
+hook: common_pre|phorum_mod_embed_phorum_common_pre
+hook: common|phorum_mod_embed_phorum_common
+hook: common_post_user|phorum_mod_embed_phorum_common_post_user
+hook: after_header|phorum_mod_embed_phorum_after_header
+hook: cc_save_user|phorum_mod_embed_phorum_cc_save_user
+hook: list|phorum_mod_embed_phorum_list
+hook: read|phorum_mod_embed_phorum_read
+title: Embed Phorum
+desc: This module implements functionality for creating an embedded version of Phorum. Embedded means that Phorum will be the slave of a master system. The master system is responsible for feeding the Phorum system with user data and for processing page elements that are produced by Phorum. Since Phorum is a slave application in this setup, things like signup, authentication and settings are no longer handled by Phorum.
+version: 0.0.21
+author: Maurice Makaay, Phorum Dev Team
+release_date: Oct. 11, 2006
+

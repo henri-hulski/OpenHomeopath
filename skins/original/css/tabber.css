@@ -1,0 +1,92 @@
+@charset "utf-8";
+/*--------------------------------------------------
+  REQUIRED to hide the non-active tab content.
+  But do not hide them in the print stylesheet!
+  --------------------------------------------------*/
+.tabberlive .tabhide {
+ display:none;
+}
+
+/*--------------------------------------------------
+  .tabber = before the tabber interface is set up
+  .tabberlive = after the tabber interface is set up
+  --------------------------------------------------*/
+.tabber {
+ display:none;
+}
+
+.tabberlive {
+ margin-top:1em;
+}
+
+/*--------------------------------------------------
+  ul.tabnav = the tab navigation list
+  li.tabactive = the active tab
+  --------------------------------------------------*/
+ul.tabnav
+{
+ margin:0;
+ padding: 3px 0;
+ border-bottom: 1px solid #444;
+ font: bold 12px Verdana, sans-serif;
+}
+
+ul.tabnav li
+{
+ list-style: none;
+ margin: 0;
+ display: inline;
+}
+
+ul.tabnav li a
+{
+ padding: 3px 0.5em;
+ margin-left: 3px;
+ border: 1px solid #444;
+ border-bottom: none;
+ background: #DDE;
+ text-decoration: none;
+}
+
+ul.tabnav li a:link { color: #448; }
+ul.tabnav li a:visited { color: #667; }
+
+ul.tabnav li a:hover
+{
+ color: #444;
+ background: #AAD;
+ border-color: #227;
+}
+
+ul.tabnav li.tabactive a
+{
+ background-color: #9CC;
+ border-bottom: 1px solid #9CC;
+}
+
+ul.tabnav li.tabactive a:hover
+{
+ color: #444;
+ background: #9CC;
+ border-bottom: 1px solid #9CC;
+}
+
+ul.tabnav li a.tabinactive
+{
+ display:none;
+}
+
+/*--------------------------------------------------
+  .tab = the tab content
+  Add style only after the tabber interface is set up (.tabberlive)
+  --------------------------------------------------*/
+.tabberlive .tab {
+ padding:5px;
+ border: 1px solid #444;
+ border-top:0;
+}
+
+/* If desired, hide the heading since a heading is provided by the tab */
+.tabberlive .tab h1 {
+ display:none;
+}

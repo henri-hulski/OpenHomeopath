@@ -1,0 +1,214 @@
+@charset "utf-8";
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+#container {
+	width: 100%;
+	background-color: #FFF;
+	color: #333;
+	line-height: 130%;
+}
+
+#ornateFrame {
+	display: none;
+}
+
+#top {
+	display: none;
+}
+
+#middle_tbl {
+	width: 100%;
+	margin: 0;
+	background-color: #F1F1F1;
+}
+
+#middle_cell01 {
+	display: none;
+}
+
+#middle_cell02 {
+	width: auto;
+	vertical-align: top;
+	background-color: #FFF;
+	}
+
+#pagecontent {
+	font-size: 10pt;
+	line-height: 1.6;
+	}
+
+/* hier sind stylesheets auf Basis von san-tribe */
+a:link {
+	color : #990000;
+	text-decoration : none;
+}
+
+a:visited {
+	color : #990000;
+	text-decoration : none;
+}
+
+/* hier sind stylesheets auf Basis von bieszkola-za */
+.boldtext {
+	font-size:110%;
+	font-weight:bold;
+}
+
+.center {
+	text-align: center;
+}
+
+.nobr {
+	white-space: nowrap;
+}
+
+.leftFlow {
+	display: none;
+}
+
+/*  Begin Control of included footer  */
+
+#pagetools {
+	display: none;
+}
+
+#footer {
+	padding: 10px;
+	font-size: 8pt;
+	line-height: 1.6;
+	text-align: center;
+}
+
+.rightFlow {
+	display: none;
+}
+
+/*  End Control of included footer  */
+
+
+/* Formulare */
+
+.legend {
+	font-weight : bold;
+	color: #043C7F;
+}
+
+.label {
+	font-size : 13px;
+	font-weight : 600;
+}
+
+.caption {
+	font-size : 13px;
+	font-weight : 500;
+}
+
+.selection {
+	border:1px solid #808080;
+	width: 480px;
+	font-size : 12px;
+}
+
+.selection2 {
+	border:1px solid #808080;
+	width: auto;
+	font-size : 12px;
+}
+
+.selection3 {
+	border:1px solid #808080;
+	width: 156px;
+	margin: 3px;
+	font-size : 12px;
+}
+
+.input {
+	border:1px solid #808080;
+}
+
+.drop-down {
+	border:1px solid #808080;
+	width: 144px;
+	font-size : 12px;
+}
+
+.drop-down2 {
+	border:1px solid #808080;
+	width: 246px;
+	font-size : 12px;
+}
+
+.submit {
+	display: none;
+}
+
+.patient {
+	position: relative;
+	top: 25px;
+	left: 20px;
+}
+
+.select {
+	position: relative;
+	left: 36px;
+	width: auto;
+}
+
+.button_area {
+	display: none;
+}
+
+.button_area_2 {
+	display: none;
+}
+
+.blue {
+	color: #043C7F;
+}
+
+.red {
+	color: #FF0000;
+}
+
+.gray {
+	color: #333;
+}
+
+.narrow {
+	line-height : 12px;
+}
+
+/* für Blockformular */
+
+.StdBlock {
+	font-size: 12px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	background-color: #F4F3BD;
+	border: 1px solid #808080;
+	padding: 3px;
+	text-align: left;
+	width: 600px;
+}
+
+.StdBlockHeader {
+	font-size: 12px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	background-color: #F7F1DF;
+	border-left: 1px solid #808080;
+	border-right: 1px solid #808080;
+	border-top: 1px solid #808080;
+	padding: 3px;
+	text-align: left;
+	font-weight: bold;
+	width: 600px;
+}
+
+.FloatingText {
+	padding: 10px;
+}
+

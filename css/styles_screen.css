@@ -1,0 +1,368 @@
+@charset "utf-8";
+
+p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+th {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+input {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+select {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+textarea {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	border-style: outset;
+}
+hr {
+	height: 1px;
+	border-style: none;
+	color: black; /* need this for IE */
+	background-color: black;  /* need this for Mozilla */
+}
+
+/* the main big table that contain all the page */
+.main_table {
+	width: 100%;
+	height: 100%;
+/*	background-color: #E0EE8F; */
+	padding: 10px; /* doesn't work with IE, cellpadding in header */
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	vertical-align: bottom;
+}
+
+/*******************************************************/
+/************************************************ RESULTS PAGE */
+
+/* "n records found" message */
+.n_results_found {
+	color:black;
+	font-weight: bold;
+}
+
+/* "page n of m" sentence */
+.page_n_of_m {
+	color:black;
+}
+
+/* links of the navigation bar ( << < 1 2 3......) */
+a.navig {
+	color:#043C7F;
+}
+
+/* previous next links */
+a.previous_next {
+	color:#043C7F;
+	text-decoration: none;
+}
+
+/* current page in the navigation bar ( << < 1 2 3......) */
+.navig {
+	color:black;
+}
+
+/* order by links */
+/* normal */
+a.order_link {
+	color:#043C7F;
+	font-size: 8pt;
+	text-decoration: none;
+}
+/* currently selected */
+a.order_link_selected {
+	color:black;
+	font-size: 8pt;
+	text-decoration: none;
+}
+
+/* the small arrow near the column head which represents currently the order by field */
+.arrow {
+	font-size: 8pt;
+}
+
+
+/* results table */
+
+table.results {
+	background-color: #999999; /* used to make the table bordered */
+}
+
+/* result rows */
+/* results_1 and results_2 differ only for the background-color, this create the alternate row colors effect */
+.tr_results_1 {
+	font-size: 8pt;
+	vertical-align: top;
+	white-space: nowrap;
+	background-color: #FDF7B5;
+}
+.tr_results_2 {
+	font-size: 8pt;
+	vertical-align: top;
+	white-space: nowrap;
+	background-color: #FDFFD8;
+}
+
+.tr_highlighted_onmouseover { /* a results table row when the mouse pointer is over it */
+	font-size: 8pt;
+	vertical-align: top;
+	white-space: nowrap;
+	background-color: #FFEB91;
+}
+.tr_highlighted_onclick { /* a results table row when the click on it */
+	font-size: 8pt;
+	vertical-align: top;
+	white-space: nowrap;
+	background-color: #FFEB91;
+}
+.tr_results_current {
+	font-size: 8pt;
+	vertical-align: top;
+	white-space: nowrap;
+	background-color: #CAEE82;
+}
+.tr_results_delete {
+	font-size: 8pt;
+	vertical-align: top;
+	white-space: nowrap;
+	background-color: #FFDC7B;
+}
+/* coloumn headings */
+th.results {
+	background-color: #E6E67F;
+	white-space: nowrap;
+}
+/* result cells */
+/* controls_1 and controls_2 differ only for the background-color, this create the alternate row colors effect */
+td.controls_1 {
+	font-size: 8pt;
+	background-color: #FDF7B5;
+}
+td.controls_2 {
+	font-size: 8pt;
+	background-color: #FDFFD8;
+}
+td.controls_current {
+	font-size: 8pt;
+	background-color: #CAEE82;
+}
+td.controls_delete {
+	font-size: 8pt;
+	background-color: #FFDC7B;
+}
+
+.export_to_csv {
+}
+
+/* "Total records: n" sentence */
+.total_records {
+}
+
+/* links of the bottom menu (insert, search, show all) */
+a.bottom_menu {
+	color: black;
+}
+
+/* home link */
+a.home {
+	color: black;
+}
+
+/* change table combo box  */
+.select_change_table {
+}
+
+/* change table button */
+.button_change_table {
+}
+
+/* change records per page combo box*/
+.select_records_per_page {
+}
+/*******************************************************/
+
+/*******************************************************/
+/************************************************ FORM (insert, search and update form) */
+
+/* insert, save and search buttons */
+.button_form {
+}
+
+/* rows containing insert, save and search buttons */
+.tr_button_form {
+	text-align: center;
+}
+
+/* rows containing the all/any in the search form */
+.tr_operator_form {
+	text-align: center;
+}
+
+/* the cell that contains the label in the form */
+.td_label_form {
+	text-align: right;
+	vertical-align: top;
+}
+
+/* the cell that contains the input (textbox, textarea, etc) in the form */
+.td_input_form {
+	vertical-align: top;
+}
+
+/* the cell that contains the hint in the form */
+.td_hint_form {
+	vertical-align: top;
+}
+
+/* NULL word */
+
+.null_word {
+
+	font-style: italic;
+
+}
+
+
+/* error messages (e.g. "You haven't filled out some required fields...." */
+.error_messages_form {
+	color: #990000;
+}
+
+.change_table {
+	margin-top: 0px;
+	margin-left: 0px;
+}
+
+
+/*******************************************************/
+/************************************************ DETAIL PAGE */
+/* the cell that contains the label */
+.td_label_details {
+	text-align: right;
+	vertical-align: top;
+}
+
+/* the cell that contains the value */
+.td_value_details {
+	vertical-align: top;
+}
+/*******************************************************/
+
+/*******************************************************/
+/************************************************ LOGIN FORM */
+.table_login_form {
+	text-align: center;
+	border-width:1px;
+	border-color: #000000;
+	border-style: solid;
+	background-color: #ffffff;
+}
+
+.tr_header_login_form {
+	background-color: #aaaaaa;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.input_login_form {
+	border-width: 1px;
+	border-color: #000000;
+	border-style: solid;
+}
+/*******************************************************/
+
+
+div.break {
+	page-break-before:always;
+}
+
+table.labels {
+	width: 21cm;
+}
+
+td.address {
+	height: 3.4cm;
+	width: 10cm;
+	text-align: left;
+	vertical-align: top;
+	margin-top: 10px;
+	margin-left: 10px;
+	font-size: 14px;
+}
+
+td.marginvert {
+	width: 0.5cm;
+}
+
+td.marginorizz {
+	height: 1.2cm;
+}
+
+
+/* styles für bigdump */
+
+p.centr {
+	text-align: center;
+}
+
+p.smlcentr {
+	font-size: 10px;
+	line-height: 14px;
+	text-align: center;
+}
+
+p.error {
+	color: #FF0000;
+	font-weight: bold;
+}
+
+p.successcentr {
+	color: #00DD00;
+	background-color: #DDDDFF;
+	font-weight: bold;
+	text-align: center;
+}
+
+div.skin1 {
+	border-color:#3333EE;
+	border-width:5px;
+	border-style:solid;
+	background-color:#AAAAEE;
+	text-align:center;
+	vertical-align:middle;
+	padding:3px;
+	margin:1px;
+}
+
+td.bg3 {
+	background-color:#EEEE99;
+	text-align:left;
+	vertical-align:top;
+	width:20%;
+}
+
+th.bg4 {
+	background-color:#EEAA55;
+	text-align:left;
+	vertical-align:top;
+	width:20%;
+}
+
+td.bgpctbar {
+	background-color:#EEEEAA;
+	text-align:left;
+	vertical-align:middle;
+	width:80%;
+}

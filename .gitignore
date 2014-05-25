@@ -1,0 +1,6 @@
+download
+*.sql
+*.gz
+*.bz2
+!OpenHomeopath_db_structure.sql
+include/classes/db/config_db_*.php
