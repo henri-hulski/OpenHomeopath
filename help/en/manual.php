@@ -58,21 +58,21 @@ include("help/layout/$skin/header.php");
 <br>
 <div class="content">
   <h2>
-    Inhalt
+    Contents
   </h2>
   <ul>
-    <li><a href="#repertorization">Repertorisierung</a></li>
-    <li><a href="#rep_result">Repertorisierungsergebnis</a></li>
+    <li><a href="#repertorization">Repertorization</a></li>
+    <li><a href="#rep_result">Repertorization result</a></li>
     <li><a href="#materia">Materia Medica</a></li>
-    <li><a href="#symptominfo">Symptom-Information</a></li>
-    <li><a href="#daten">Datenpflege</a></li>
-    <li><a href="#hilfe">Hilfe</a></li>
+    <li><a href="#symptominfo">Symptom information</a></li>
+    <li><a href="#daten">Data maintenance</a></li>
+    <li><a href="#hilfe">Help</a></li>
     <li><a href="#info">Info</a></li>
   </ul>
 </div>
 <a name="repertorization" id="repertorization"><br></a>
 <h3>
-  Repertorisierung
+  Repertorization
 </h3>
 <p>
   Dies ist der <strong>wichtigste Teil</strong> des Programms. Hier findet die eigentliche <strong>Repertorisierung</strong> statt.
@@ -108,7 +108,7 @@ include("help/layout/$skin/header.php");
 <br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="rep_result" id="rep_result"><br></a>
 <h3>
-  Repertorisierungsergebnis
+  Repertorization result
 </h3>
 <p>
   Nach dem Repertorisieren erscheint ein neues Tab mit dem <strong>Repertorisierungsergebnis</strong>.<br>
@@ -182,7 +182,7 @@ for ($i = 5; $i > 0; $i--) {
 <br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="symptominfo" id="symptominfo"><br></a>
 <h3>
-  Symptom-Information
+  Symptom information
 </h3>
 <p>
   Zur Symptom-Information gelangst du entweder über das <strong>Repertorisierungsfenster</strong> oder über die <strong>Materia Medica</strong>.
@@ -230,7 +230,7 @@ for ($i = 5; $i > 0; $i--) {
 <br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="daten" id="daten"><br></a>
 <h3>
-  Datenpflege
+  Data maintenance
 </h3>
 <p>
   Hier kann die <strong>Datenbank</strong> erweitert und verändert werden. Näheres im Kapitel <a href="datadmin.php"><strong>Datenpflege</strong></a>.
@@ -238,7 +238,7 @@ for ($i = 5; $i > 0; $i--) {
 <br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="hilfe" id="hilfe"><br></a>
 <h3>
-  Hilfe
+  Help
 </h3>
 <p>
   Hier kommst du zu dieser <strong>Hilfe</strong>.
