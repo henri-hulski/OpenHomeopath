@@ -241,7 +241,7 @@ for ($i = 5; $i > 0; $i--) {
   Help
 </h3>
 <p>
-  Hier kommst du zu dieser <strong>Hilfe</strong>.
+  Here you find this <strong>Help</strong>.
 </p>
 <br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="info" id="info"><br></a>
