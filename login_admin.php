@@ -89,7 +89,7 @@ function displayUsers($order_by = "last_activity", $order_type = "DESC") {
 			}
 		}
 			
-		$user_table .= "<a class='$link_class' href='login_admin.php?order_by=$row&amp;order_type=$new_order_type#benutzertabelle'>";
+		$user_table .= "<a class='$link_class' href='login_admin.php?order_by=$row&amp;order_type=$new_order_type#user_table'>";
 
 		if ($field_is_current_order_by === 1) {
 			if ($order_type === 'ASC') {
@@ -215,14 +215,14 @@ if (!$session->isAdmin()) {
     <?php echo _("Contents"); ?>
   </h2>
   <ul>
-    <li><a href="#benutzertabelle"><?php echo _("Users Table Contents"); ?></a></li>
-    <li><a href="#benutzerstatus"><?php echo _("Change the userlevel"); ?></a></li>
-    <li><a href="#benutzer_loeschen"><?php echo _("Delete User"); ?></a></li>
-    <li><a href="#inaktive_loeschen"><?php echo _("Delete Inactive Users"); ?></a></li>
-    <li><a href="#benutzer_bannen"><?php echo _("Ban User"); ?></a></li>
-    <li><a href="#gebannte_benutzer"><?php echo _("Banned Users Table"); ?></a></li>
-    <li><a href="#bann_aufheben"><?php echo _("Repeal the ban of a username"); ?></a></li>
-    <li><a href="#datenbankeintraege_loeschen"><?php echo _("Delete records of a user"); ?></a></li>
+    <li><a href="#user_table"><?php echo _("Users Table Contents"); ?></a></li>
+    <li><a href="#user_level"><?php echo _("Change the userlevel"); ?></a></li>
+    <li><a href="#delete_user"><?php echo _("Delete User"); ?></a></li>
+    <li><a href="#delete_inactive"><?php echo _("Delete Inactive Users"); ?></a></li>
+    <li><a href="#ban_user"><?php echo _("Ban User"); ?></a></li>
+    <li><a href="#baned_user"><?php echo _("Banned Users Table"); ?></a></li>
+    <li><a href="#repeal_ban"><?php echo _("Repeal the ban of a username"); ?></a></li>
+    <li><a href="#delete_records"><?php echo _("Delete records of a user"); ?></a></li>
   </ul>
 </div>
 <table align="left" border="0" cellspacing="5" cellpadding="5">
@@ -233,7 +233,7 @@ if (!$session->isAdmin()) {
  * Display Users Table
  */
 ?>
-      <a name="benutzertabelle" id="benutzertabelle"><br></a>
+      <a name="user_table" id="user_table"><br></a>
       <h3 style="text-align: center;"><?php echo _("Users Table Contents:"); ?></h3>
     </td>
   </tr>
@@ -260,7 +260,7 @@ if (!$session->isAdmin()) {
  * Update User Level
  */
 ?>
-      <a name="benutzerstatus" id="benutzerstatus"></a>
+      <a name="user_level" id="user_level"></a>
       <h3><?php echo _("Change the userlevel"); ?></h3>
       <?php echo $form->error("upduser"); ?>
       <form action="include/classes/login/adminprocess.php" method="POST">
@@ -304,7 +304,7 @@ if (!$session->isAdmin()) {
  * Delete User
  */
 ?>
-      <a name="benutzer_loeschen" id="benutzer_loeschen"></a>
+      <a name="delete_user" id="delete_user"></a>
       <h3><?php echo _("Delete User"); ?></h3>
       <?php echo $form->error("deluser"); ?>
       <form action="include/classes/login/adminprocess.php" method="POST">
@@ -338,7 +338,7 @@ if (!$session->isAdmin()) {
  * Delete Inactive Users
  */
 ?>
-      <a name="inaktive_loeschen" id="inaktive_loeschen"></a>
+      <a name="delete_inactive" id="delete_inactive"></a>
       <h3><?php echo _("Delete Inactive Users"); ?></h3>
       <p><?php echo _("This will delete all users (not administrators), who have not logged in to the site within a certain time period. You specify the days spent inactive."); ?></p>
       <form action="include/classes/login/adminprocess.php" method="POST">
@@ -387,7 +387,7 @@ if (!$session->isAdmin()) {
  * Ban User
  */
 ?>
-      <a name="benutzer_bannen" id="benutzer_bannen"></a>
+      <a name="ban_user" id="ban_user"></a>
       <h3><?php echo _("Ban User"); ?></h3>
       <?php echo $form->error("banuser"); ?>
       <form action="include/classes/login/adminprocess.php" method="POST">
@@ -419,7 +419,7 @@ if (!$session->isAdmin()) {
  * Display Banned Users Table
  */
 ?>
-      <a name="gebannte_benutzer" id="gebannte_benutzer"></a>
+      <a name="baned_user" id="baned_user"></a>
       <h3><?php echo _("Banned Users Table Contents:"); ?></h3>
     </td>
   </tr>
@@ -446,7 +446,7 @@ if (!$session->isAdmin()) {
  * Delete Banned User
  */
 ?>
-      <a name="bann_aufheben" id="bann_aufheben"></a>
+      <a name="repeal_ban" id="repeal_ban"></a>
       <h3><?php echo _("Repeal the ban of a username"); ?></h3>
       <?php echo $form->error("delbanuser"); ?>
       <form action="include/classes/login/adminprocess.php" method="POST">
@@ -473,7 +473,7 @@ if (!$session->isAdmin()) {
  * Delete User Data
  */
 ?>
-      <a name="datenbankeintraege_loeschen" id="datenbankeintraege_loeschen"></a>
+      <a name="delete_records" id="delete_records"></a>
       <h3><?php echo _("Delete records of a user"); ?></h3>
       <p><?php echo _("Here you can, for example with vandalism, delete the database entries for a user. In the tables <strong> Materia Medica </strong> and <strong> symptom-remedy-relations </strong> will delete all messages while the user in the tables <strong>symptoms</strong>, <strong>main rubrics</strong>, <strong>remedies</strong>, <strong>source</strong> and <strong>languages</strong> Only the entries to which no records of other users reference."); ?></p>
       <?php echo $form->error("deluserdata"); ?>

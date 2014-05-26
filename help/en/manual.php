@@ -65,8 +65,8 @@ include("help/layout/$skin/header.php");
     <li><a href="#rep_result">Repertorization result</a></li>
     <li><a href="#materia">Materia Medica</a></li>
     <li><a href="#symptominfo">Symptom information</a></li>
-    <li><a href="#daten">Data maintenance</a></li>
-    <li><a href="#hilfe">Help</a></li>
+    <li><a href="#data">Data maintenance</a></li>
+    <li><a href="#help">Help</a></li>
     <li><a href="#info">Info</a></li>
   </ul>
 </div>
@@ -228,7 +228,7 @@ for ($i = 5; $i > 0; $i--) {
   Ausserdem kannst die Mittel <strong>nach minimaler Wertigkeit filtern</strong> indem du die entsprechende Wertigkeit in der Dropdown-Liste auswählst.
 </p>
 <br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="daten" id="daten"><br></a>
+<a name="data" id="data"><br></a>
 <h3>
   Data maintenance
 </h3>
@@ -236,7 +236,7 @@ for ($i = 5; $i > 0; $i--) {
   Hier kann die <strong>Datenbank</strong> erweitert und verändert werden. Näheres im Kapitel <a href="datadmin.php"><strong>Datenpflege</strong></a>.
 </p>
 <br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="hilfe" id="hilfe"><br></a>
+<a name="help" id="help"><br></a>
 <h3>
   Help
 </h3>

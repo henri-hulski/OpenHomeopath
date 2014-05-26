@@ -50,8 +50,8 @@ include("help/layout/$skin/header.php");
         <li><a href="manual.php#rep_result">Repertorization result</a></li>
         <li><a href="manual.php#materia">Materia Medica</a></li>
         <li><a href="manual.php#symptominfo">Symptom information</a></li>
-        <li><a href="manual.php#daten">Data maintenance</a></li>
-        <li><a href="manual.php#hilfe">Help</a></li>
+        <li><a href="manual.php#data">Data maintenance</a></li>
+        <li><a href="manual.php#help">Help</a></li>
         <li><a href="manual.php#info">Info</a></li>
       </ul>
     </li>
