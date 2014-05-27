@@ -176,7 +176,7 @@ if(strcmp($session->username,$req_user) == 0) {
 	$host  = $_SERVER['HTTP_HOST'];
 	$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 ?>
-<br><span class="rightFlow"><a href="#oben" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
 <a name="reps" id="reps"><br></a>
 <h2><?php echo _("Saved repertorizations"); ?></h2>
 <p><?php echo _("Here saved repertorizations can be opened,  deleted or taken as a basis for further repertorization."); ?><br>
@@ -194,7 +194,7 @@ if(strcmp($session->username,$req_user) == 0) {
 ?>
   </div>
 </fieldset>
-<br><span class="rightFlow"><a href="#oben" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
 
 <a name="rep_custom" id="rep_custom"><br></a>
 <h2><?php echo _("Personalize the Repertory"); ?></h2>
@@ -318,7 +318,7 @@ if(strcmp($session->username,$req_user) == 0) {
     <br>
   </fieldset>
 </form>
-<br><span class="rightFlow"><a href="#oben" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
 
 <a name="materia_custom" id="materia_custom"><br></a>
 <h2><?php echo _("Personalize the Materia Medica"); ?></h2>

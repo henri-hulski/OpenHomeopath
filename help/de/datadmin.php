@@ -37,13 +37,13 @@ include("help/layout/$skin/header.php");
   Hier lässt sich die <strong>Datenbank erweitern</strong> bzw. <strong>verändern</strong>.<br>
   Um zur Datenpflege <strong>Zugang</strong> zu haben musst du <a href="user.php">angemeldet</a> sein.<br>
   Im Datenpflege-Fenster kannst du oben in einem Dropdown-Menü die <strong>Datenbank-Tabelle</strong> auswählen, die du bearbeiten willst.<br>
-  Es können <strong>folgende Tabellen</strong> eingesehen und bearbeitet werden:
+  Es können <strong>folgende Tabellen</strong> geprüft und bearbeitet werden:
   <ul>
-    <li><strong><em>Materia Medica</em></strong> &ndash; enthält die Angaben der <strong>Materia Medica</strong> mit <strong>Quellenangabe</strong> zu den einzelnen Arzneimitteln;</li>
-    <li><strong><em>Symptome</em></strong> &ndash; enthält die <strong>Symptome</strong> mit den ihnen zugeordneten <strong>Rubriken</strong>;</li>
+    <li><strong><em>Materia Medica</em></strong> &ndash; enthält die Mittelbeschreibungen der <strong>Materia Medica</strong> mit <strong>Quellenangabe</strong>.</li>
+    <li><strong><em>Symptome</em></strong> &ndash; enthält die <strong>Symptome</strong> und ihren Beziehungen untereinander.</li>
     <li><strong><em>Quellen</em></strong> &ndash; enthält die <strong>Quellen</strong> mit ausführlicher <strong>Beschreibung</strong>.</li>
     <li><strong><em>Mittel</em></strong> &ndash; enthält die <strong>Arzneimittel</strong> mit <strong>Kurzbezeichnung</strong> und <strong>Mittelname</strong>.</li>
-    <li><strong><em>Hauptrubriken</em></strong> &ndash; enthält die <strong>Hauptrubriken</strong> mit <strong>Position</strong> im Kopf-Fuß-Schema.</li>
+    <li><strong><em>Hauptrubriken</em></strong> &ndash; enthält die <strong>Hauptrubriken</strong>.</li>
   </ul>
 </div>
 <p>
@@ -80,7 +80,7 @@ include("help/layout/$skin/header.php");
   </ul>
   Das Feld <strong>Mittel</strong> muß angegeben werden. Die <strong>anderen Felder</strong> werden nur dann in der <strong>Materia Medica</strong> angezeigt, wenn sie <strong>nicht leer</strong> gelassen werden.
 </div>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="symptoms" id="symptoms"><br></a>
 <h3>
   Tabelle Symptome
@@ -93,7 +93,7 @@ include("help/layout/$skin/header.php");
   </ul>
   <strong>Beide</strong> Felder sind <strong>Pflichtfelder</strong>. Außerdem wird <strong>automatisch</strong> eine <strong>Symptom-Nummer</strong> vergeben.
 </div>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="sources" id="sources"><br></a>
 <h3>
   Tabelle Quellen
@@ -117,7 +117,7 @@ include("help/layout/$skin/header.php");
     <li><strong><em>Kontaktadresse</em></strong></li>
   </ul>
 </div>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="remedies" id="remedies"><br></a>
 <h3>
   Tabelle Mittel
@@ -130,24 +130,23 @@ include("help/layout/$skin/header.php");
   </ul>
   Beide Felder sind <strong>Pflichtfelder</strong>.
 </div>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="mainrubrics" id="mainrubrics"><br></a>
 <h3>
   Tabelle Hauptrubriken
 </h3>
 <div>
-  In der Tabelle <strong><em>Hauptrubriken</em></strong> gibt es <strong>2 Felder</strong>:
+  In der Tabelle <strong><em>Hauptrubriken</em></strong> gibt es <strong>folgende Felder</strong>:
   <ul>
-    <li><strong><em>Hauptrubrikname</em></strong>;</li>
-    <li><strong><em>Hauptrubrikposition</em></strong> &ndash; dies ist die Position der Hauptrubrik im Kopf-Fuß-Schema.</li>
+    <li><strong><em>Hauptrubrikname (deutsch)</em></strong>,</li>
+    <li><strong><em>Hauptrubrikname (englisch)</em></strong>,</li>
+    <li><strong><em>Synonyme Hauptrubrik</em></strong> &ndash; eine bereits existierende gleichbedeutende Hauptrubrik.</li>
   </ul>
-  Beide Felder sind <strong>Pflichtfelder</strong>.
 </div>
 <p>
-  <span class="boldtext red">Achtung!</span> &nbsp; <strong>Änderungen der Hauptrubriken</strong> sollten nur mit <strong>Rücksprache</strong> im Forum bzw. mit einem Administrator ausgeführt werden, da die Hauptrubriken die <strong>Grundstruktur der Datenbank</strong> darstellen.<br>
-  Um neue Hauptrubriken an die <strong>richtige Position</strong> im Kopf-Fuß-Schema zu bringen, muss, wenn dies die Position von Hauptrubriken betrifft, die nicht vom jeweiligen Benutzer erstellt wurden, ein Administrator eingreifen.
+  <span class="boldtext red">Achtung!</span> &nbsp; <strong>Änderungen der Hauptrubriken</strong> sollten nur mit <strong>Rücksprache</strong> im Forum bzw. mit einem Administrator ausgeführt werden, da die Hauptrubriken die <strong>Grundstruktur der Datenbank</strong> darstellen.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="overview" id="overview"><br></a>
 <h3>
   Aufbau de Datenpflege-Startseite
@@ -177,7 +176,7 @@ include("help/layout/$skin/header.php");
 <p>
   Über <strong><em>"Als CSV-Datei ausgeben"</em></strong> unterhalb der Tabelle kannst du dir die jeweils <strong>angezeigte Satzauswahl</strong> als sternchen(<strong>*</strong>)-getrennte <strong>CSV-Datei</strong> ausgeben lassen. Deswegen sollte das <strong>*</strong>-Zeichen in den Datensätzen <strong>nicht vorkommen</strong>.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="edit" id="edit"><br></a>
 <h3>
   Bearbeiten und Einfügen von Sätzen

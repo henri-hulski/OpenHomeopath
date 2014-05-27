@@ -105,7 +105,7 @@ include("help/layout/$skin/header.php");
   Während der Symptomauswahl kannst du jederzeit die angezeigten Symptome ändern, indem du eine neue Hauptrubrik und/oder neue Suchbegriffe eingibst und nochmals auf <strong><em>"Symptome anzeigen"</em></strong> drückst. Die bereits ausgewählten Symptome bleiben dabei erhalten.<br>
   Wenn die Symptomauswahl abgeschlossen ist, drückst du auf <strong><em>"Repertorisieren"</em></strong>.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="rep_result" id="rep_result"><br></a>
 <h3>
   Repertorisierungsergebnis
@@ -138,7 +138,7 @@ include("help/layout/$skin/header.php");
 <p>
   Wenn du ausgehend von den ausgewählten Symptomen weiter repertorisieren willst drückst du unten auf <strong><em>"Weiter repertorisieren"</em></strong>. Es erscheint das Repertorisierungstab mit den gewählten Symptomen.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="materia" id="materia"><br></a>
 <h3>
   Materia Medica
@@ -179,7 +179,7 @@ for ($i = 5; $i > 0; $i--) {
   Du kannst die Symptomauswahl <strong>nach Hauptrubrik sowie nach minimaler Wertigkeit filtern</strong>.<br>
   Nachdem du die gewünschte Hauptrubrik und Wertigkeit ausgewählt hast drücke auf <strong><em>"Zusammenstellen"</em></strong>.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="symptominfo" id="symptominfo"><br></a>
 <h3>
   Symptom-Information
@@ -227,7 +227,7 @@ for ($i = 5; $i > 0; $i--) {
 <p>
   Ausserdem kannst die Mittel <strong>nach minimaler Wertigkeit filtern</strong> indem du die entsprechende Wertigkeit in der Dropdown-Liste auswählst.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="data" id="data"><br></a>
 <h3>
   Datenpflege
@@ -235,7 +235,7 @@ for ($i = 5; $i > 0; $i--) {
 <p>
   Hier kann die <strong>Datenbank</strong> erweitert und verändert werden. Näheres im Kapitel <a href="datadmin.php"><strong>Datenpflege</strong></a>.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="help" id="help"><br></a>
 <h3>
   Hilfe
@@ -243,7 +243,7 @@ for ($i = 5; $i > 0; $i--) {
 <p>
   Hier kommst du zu dieser <strong>Hilfe</strong>.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="info" id="info"><br></a>
 <h3>
   Info

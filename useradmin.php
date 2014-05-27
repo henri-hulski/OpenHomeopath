@@ -246,7 +246,7 @@ if (!$session->isAdmin()) {
   </tr>
   <tr>
     <td>
-      <span class="rightFlow"><a href="#oben" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
     </td>
   </tr>
   <tr>
@@ -290,7 +290,7 @@ if (!$session->isAdmin()) {
   </tr>
   <tr>
     <td>
-      <span class="rightFlow"><a href="#oben" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
     </td>
   </tr>
   <tr>
@@ -324,7 +324,7 @@ if (!$session->isAdmin()) {
   </tr>
   <tr>
     <td>
-      <span class="rightFlow"><a href="#oben" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
     </td>
   </tr>
   <tr>
@@ -373,7 +373,7 @@ if (!$session->isAdmin()) {
   </tr>
   <tr>
     <td>
-      <span class="rightFlow"><a href="#oben" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
     </td>
   </tr>
   <tr>
@@ -405,7 +405,7 @@ if (!$session->isAdmin()) {
   </tr>
   <tr>
     <td>
-      <span class="rightFlow"><a href="#oben" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
     </td>
   </tr>
   <tr>
@@ -432,7 +432,7 @@ if (!$session->isAdmin()) {
   </tr>
   <tr>
     <td>
-      <span class="rightFlow"><a href="#oben" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
     </td>
   </tr>
   <tr>
@@ -459,7 +459,7 @@ if (!$session->isAdmin()) {
   </tr>
   <tr>
     <td>
-      <span class="rightFlow"><a href="#oben" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
     </td>
   </tr>
   <tr>
@@ -492,7 +492,7 @@ if (!$session->isAdmin()) {
   </tr>
   <tr>
     <td>
-      <span class="rightFlow"><a href="#oben" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
     </td>
   </tr>
 </table>

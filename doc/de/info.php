@@ -53,7 +53,7 @@ include("help/layout/$skin/header.php");
   Nach einer <strong>grundlegenden Überarbeitung des gesamten Codes und der Datenbankstruktur</strong> veröffentliche ich hiermit nach über 7 Jahren Arbeit die erste stabile Version von OpenHomeopath.<br>
   Wenn noch Bugs oder Programmfehler auftauchen und bei weiteren Fragen meldet euch <a title="Kontakt zum Autor" href="mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath">bei mir</a>.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="license" id="license"><br></a>
 <h2>
  Lizenz und Copyright
@@ -73,7 +73,7 @@ include("help/layout/$skin/header.php");
 <p>
   Die Hilfe und Dokumentation von OpenHomeopath wurden unter der <a href='../en/fdl_1.3.php'>GNU Free Documentation License Version 1.3 (FDLv1.3)</a> veröffentlicht.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="credits" id="credits"><br></a>
 <h2>
 Dank geht an
@@ -100,7 +100,7 @@ Dank geht an
   Veröffentlicht unter der <a href='http://www.opensource.org/licenses/mit-license.php'>MIT-Lizenz</a>, auch X11-Lizenz genannt.
   </li>
 </ul>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="client" id="client"><br></a>
 <h2>
   Client-Anforderung
@@ -112,7 +112,7 @@ Dank geht an
 <li><strong>Browser</strong> Chromium bzw. Chrome, Opera und Firefox</li>
 <li><strong>Betriebssystem</strong> getestet unter Linux, aber funktioniert auch auf anderen Systemen</li>
 </ul>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="server" id="server"><br></a>
 <h2>
   Server-Anforderung
@@ -122,7 +122,7 @@ Dank geht an
   <li><strong>PHP</strong> ab PHP 5.3</li>
   <li><strong>UTF-8</strong> Unterstützung.</li>
 </ul>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="install" id="install"><br></a>
 <h2>
   Installation und Konfiguration

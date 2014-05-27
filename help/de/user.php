@@ -91,7 +91,7 @@ Entsprechend benutzt die <strong>Symptom-Info</strong> beim Zusammenstellen der 
 <p>
 Unter <strong>Materia Medica personalisieren</strong> kannst du dir eine <strong>persönliche Materia Medica</strong> zusammenstellen, wobei du auswählst, <strong>welche Quellen</strong> verwendet werden. Dieses Profil wird bei den <strong>Mittelbeschreibungen</strong> in der Materia Medica verwendet, wenn du unter deinem Benutzernamen <strong>angemeldet</strong> bist.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="settings" id="settings"><br></a>
 <h3>
   Einstellungen
@@ -108,7 +108,7 @@ Unter <strong>Materia Medica personalisieren</strong> kannst du dir eine <strong
   <li><strong>Öffentliches Profil:</strong> Hier kannst du deinen <strong>echten Namen</strong> und <strong>weitere Angaben zu deiner Person</strong> hinterlegen. Diese können von anderen Besuchern eingesehen werden, wenn du aktiv bist.</li>
   <li><strong>Passwort ändern:</strong> Hier kannst du dein Passwort ändern.</li>
 </ul>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="logout" id="logout"><br></a>
 <h3>
   Abmelden

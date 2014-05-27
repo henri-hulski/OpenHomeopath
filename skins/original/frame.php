@@ -44,7 +44,7 @@ $lang = $session->lang;
         <img src="skins/<?php echo(SKIN_NAME);?>/img/hahnemann.jpg" width="90" height="120" alt="Samuel Hahnemann">
       </div>
       <div id="top">
-        <a name="oben" id="oben" title="<?php echo _("Top of the page"); ?>"></a>
+        <a name="up" id="up" title="<?php echo _("Top of the page"); ?>"></a>
         <div id="banner">
           <img src="./skins/<?php echo(SKIN_NAME);?>/img/openhomeopath.gif" width="480" height="76" border="0" alt="OpenHomeopath">
         </div>

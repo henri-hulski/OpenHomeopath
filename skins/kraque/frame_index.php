@@ -11,7 +11,7 @@ if (TABBED) {
 }
 $lang = $session->lang;
 ?>
-<a name="oben" id="oben" title="<?php echo _("Top of the page"); ?>"></a>
+<a name="up" id="up" title="<?php echo _("Top of the page"); ?>"></a>
 <?php
 if($session->logged_in){
 ?>

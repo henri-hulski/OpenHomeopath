@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenHomeopath 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-25 21:33+0100\n"
+"POT-Creation-Date: 2014-05-26 16:41+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Henri Schumacher <henri.hulski@gazeta.pl>\n"
 "Language-Team: Henri Schumacher <henri.hulski@gazeta.pl>\n"
@@ -1657,7 +1657,6 @@ msgid "Replaced by original version"
 msgstr "Ersetzt mit Originalversion"
 
 #: include/classes/revrep_class.php:87
-#: include/classes/symrem_class.php:150
 msgid "all"
 msgstr "alle"
 
@@ -1665,10 +1664,6 @@ msgstr "alle"
 #: include/classes/revrep_class.php:246
 #: include/classes/revrep_class.php:258
 #: include/classes/revrep_class.php:270
-#: include/classes/rep_class.php:411
-#: include/classes/symrem_class.php:195
-#: include/classes/symrem_class.php:199
-#: include/classes/symrem_class.php:204
 msgid "-gr."
 msgstr "-w."
 
@@ -1973,107 +1968,61 @@ msgstr[0] "und ein Gast diese Seite."
 msgstr[1] "und %d Gäste diese Seite."
 
 #: skins/kraque/frame.php:42
-#: skins/kraque/frame_index.php:14
-#: skins/original/frame.php:47
-#: help/layout/kraque/frame.php:42
 msgid "Top of the page"
 msgstr "Seitenanfang"
 
 #: skins/kraque/frame.php:60
 #: skins/kraque/frame.php:160
-#: skins/kraque/frame_index.php:32
-#: skins/kraque/frame_index.php:129
-#: help/layout/kraque/frame.php:60
-#: help/layout/kraque/frame.php:160
 msgid "New"
 msgstr "Neu"
 
 #: skins/kraque/frame.php:63
-#: skins/kraque/frame_index.php:35
-#: help/layout/kraque/frame.php:63
 msgid "Open"
 msgstr "Öffnen"
 
 #: skins/kraque/frame.php:81
 #: skins/kraque/frame.php:176
-#: skins/kraque/frame_index.php:53
-#: skins/kraque/frame_index.php:144
-#: help/layout/kraque/frame.php:81
-#: help/layout/kraque/frame.php:175
 msgid "Expresstool"
 msgstr "Expresstool"
 
 #: skins/kraque/frame.php:83
 #: skins/kraque/frame.php:178
-#: skins/kraque/frame_index.php:55
-#: skins/kraque/frame_index.php:146
-#: help/layout/kraque/frame.php:83
-#: help/layout/kraque/frame.php:177
 msgid "Remedy aliases"
 msgstr "Mittel Aliase"
 
 #: skins/kraque/frame.php:84
 #: skins/kraque/frame.php:179
-#: skins/kraque/frame_index.php:56
-#: skins/kraque/frame_index.php:147
-#: help/layout/kraque/frame.php:84
-#: help/layout/kraque/frame.php:178
 msgid "Sources"
 msgstr "Quellen"
 
 #: skins/kraque/frame.php:91
 #: skins/kraque/frame.php:186
-#: skins/kraque/frame_index.php:63
-#: skins/kraque/frame_index.php:154
-#: skins/original/frame.php:79
-#: help/layout/kraque/frame.php:91
-#: help/layout/kraque/frame.php:185
 msgid "Forum"
 msgstr "Forum"
 
 #: skins/kraque/frame.php:102
 #: skins/kraque/frame.php:197
-#: skins/kraque/frame_index.php:74
-#: skins/kraque/frame_index.php:165
-#: skins/original/frame.php:85
-#: help/layout/kraque/frame.php:102
-#: help/layout/kraque/frame.php:196
 msgid "Info"
 msgstr "Info"
 
 #: skins/kraque/frame.php:107
-#: skins/kraque/frame_index.php:79
-#: skins/original/frame.php:97
-#: help/layout/kraque/frame.php:107
 msgid "Settings"
 msgstr "Einstellungen"
 
 #: skins/kraque/frame.php:108
-#: skins/kraque/frame_index.php:80
-#: help/layout/kraque/frame.php:108
 msgid "Repertorizations"
 msgstr "Repertorisierungen"
 
 #: skins/kraque/frame.php:110
-#: skins/kraque/frame_index.php:82
-#: help/layout/kraque/frame.php:110
 msgid "Personal particulars"
 msgstr "Persönliche Daten"
 
 #: skins/kraque/frame.php:134
 #: skins/kraque/frame.php:217
-#: skins/kraque/frame_index.php:103
-#: skins/kraque/frame_index.php:182
-#: skins/original/frame.php:142
-#: help/layout/kraque/frame.php:134
-#: help/layout/kraque/frame.php:216
 msgid "Received donations"
 msgstr "Spendeneingang"
 
 #: skins/kraque/frame.php:199
-#: skins/kraque/frame_index.php:167
-#: skins/original/frame.php:125
-#: help/layout/kraque/frame.php:198
 msgid "Log in"
 msgstr "Anmelden"
 
@@ -2100,15 +2049,20 @@ msgstr "Kontakt zum Autor"
 
 #: skins/original/header.php:66
 #: skins/original/header.php:68
+#: help/layout/original/header.php:66
+#: help/layout/original/header.php:68
 msgid "Remedy, Homeopathy, Repertory, Online Repertory, Homeopathic online library"
 msgstr "Heilmittel, Homöopathie, Repertorium, Online Repertorium, Arzneimittellehre, Homöopathische Online Bibliothek"
 
 #: skins/original/frame.php:96
 #: skins/original/frame.php:125
+#: help/layout/original/frame.php:96
+#: help/layout/original/frame.php:120
 msgid "User"
 msgstr "Benutzer"
 
 #: skins/original/frame.php:100
+#: help/layout/original/frame.php:100
 msgid "Administration"
 msgstr "Administration"
 
@@ -2506,12 +2460,10 @@ msgid "This expression wasn't found."
 msgstr "Dieser Ausdruck wurde nicht gefunden."
 
 #: javascript/locale.php:8
-#: forms/symptom_select_form.php:156
 msgid "items for expressions:"
 msgstr "Suchbegriffe:"
 
 #: javascript/locale.php:9
-#: forms/symptom_select_form.php:158
 msgid "no item for searching"
 msgstr "kein Suchbegriff"
 
@@ -2760,10 +2712,12 @@ msgid "Send request"
 msgstr "Zusammenstellen"
 
 #: forms/reversed_rep.php:112
+#: forms/select_symptoms.php:50
 msgid "no corresponding symptom found"
 msgstr "kein entsprechendes Symptom gefunden"
 
 #: forms/reversed_rep.php:118
+#: forms/select_symptoms.php:133
 #, php-format
 msgid "%d symptom"
 msgid_plural "%d symptoms"
@@ -2771,6 +2725,7 @@ msgstr[0] "%d Symptom"
 msgstr[1] "%d Symptome"
 
 #: forms/reversed_rep.php:137
+#: forms/select_symptoms.php:145
 msgid "Symptom which contains sub-rubrics"
 msgstr "Symptom welches Unterrubriken enthält"
 

@@ -42,7 +42,7 @@
                     <td width="62%">
                     </td>
                     <td width="5%">
-                      <a href="#oben" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a>
+                      <a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a>
                     </td>
                   </tr>
                 </table>
