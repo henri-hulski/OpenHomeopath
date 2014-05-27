@@ -25,8 +25,13 @@ If you want to contact me by e-mail, this is my address: eugenio.tacchini@unicat
 $int_fields_ar[0][0] = "Name of the field:";
 $int_fields_ar[0][1] = "name_field";
 
-$int_fields_ar[1][0] = "Label:";
-$int_fields_ar[1][1] = "label_field";
+$int_fields_ar[1][0] = "Label in German:";
+$int_fields_ar[1][1] = "label_de_field";
+$int_fields_ar[1][2] = "text";
+$int_fields_ar[1][3] = "25";
+
+$int_fields_ar[1][0] = "Label in English:";
+$int_fields_ar[1][1] = "label_en_field";
 $int_fields_ar[1][2] = "text";
 $int_fields_ar[1][3] = "25";
 
@@ -129,8 +134,13 @@ $int_fields_ar[22][1] = "maxlength_field";
 $int_fields_ar[22][2] = "text";
 $int_fields_ar[22][3] = "4";
 
-$int_fields_ar[23][0] = "Hint:";
-$int_fields_ar[23][1] = "hint_insert_field";
+$int_fields_ar[23][0] = "Hint in German:";
+$int_fields_ar[23][1] = "hint_insert_de_field";
+$int_fields_ar[23][2] = "text";
+$int_fields_ar[23][3] = "25";
+
+$int_fields_ar[23][0] = "Hint in English:";
+$int_fields_ar[23][1] = "hint_insert_en_field";
 $int_fields_ar[23][2] = "text";
 $int_fields_ar[23][3] = "25";
 

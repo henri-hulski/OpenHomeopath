@@ -15,22 +15,22 @@ if (empty($_get["table_name"])) {
                   <p><?php echo _("Also is the <strong><a href='./express.php'><span class='nobr'>Express Tool</span></a></strong> are available to insert quickly and easily <br><strong>symptoms</strong> and <strong>symptom-remedy-relations</strong> into the database."); ?></p>
 <?php
 }
-$query = "SELECT name_table, alias_table FROM datadmin__tables";
+$query = "SELECT name_table, alias_table_$lang FROM datadmin__tables";
 $i=0;
 $db->send_query($query);
 while ($row = $db->db_fetch_row()) {
-	$tabellen_info_ar[$i]['tabelle_name'] = $row[0];
-	$tabellen_info_ar[$i]['tabelle_alias'] = $row[1];
+	$table_info_ar[$i]['table_name'] = $row[0];
+	$table_info_ar[$i]['table_alias'] = $row[1];
 	$i++;
 }
 $db->free_result();
-foreach ($tabellen_info_ar as $tabellen_info) {
-	if ($tabellen_info['tabelle_name'] == $table_name) {
-		$tabelle_alias = $tabellen_info['tabelle_alias'];
+foreach ($table_info_ar as $table_info) {
+	if ($table_info['table_name'] == $table_name) {
+		$table_alias = $table_info['table_alias'];
 		break;
 	}
 }
-echo "<h2 class='center'>" . _("Table:") . " " . $tabelle_alias . "</h2><br>\n";
+echo "<h2 class='center'>" . _("Table:") . " " . $table_alias . "</h2><br>\n";
 ?>
                   <table width="100%" class="onlyscreen">
                     <tr>

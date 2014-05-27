@@ -64,7 +64,7 @@ function build_results_table_archiv($fields_labels_ar, $table_name, $result, $ac
 // output: $results_table, the HTML results table
 // global: $submit_buttons_ar, the array containing the values of the submit buttons, $edit_target_window, the target window for edit/details (self, new......), $restore_icon, $details_icon (the image files to use as icons)
 {
-	global $submit_buttons_ar, $normal_messages_ar, $edit_target_window, $restore_icon, $details_icon, $word_wrap_col, $word_wrap_fix_width, $alias_prefix, $enable_row_highlighting, $prefix_internal_table, $db, $current_user_is_editor, $current_user, $url;
+	global $submit_buttons_ar, $normal_messages_ar, $edit_target_window, $restore_icon, $details_icon, $word_wrap_col, $word_wrap_fix_width, $alias_prefix, $enable_row_highlighting, $prefix_internal_table, $db, $current_user_is_editor, $current_user, $url, $lang;
 
 	$function = "search";
 
@@ -84,7 +84,7 @@ function build_results_table_archiv($fields_labels_ar, $table_name, $result, $ac
 	$count_temp = count($fields_labels_ar);
 	for ($i=0; $i<$count_temp; $i++){
 		if ($fields_labels_ar[$i]["present_results_search_field"] == "1" || $fields_labels_ar[$i]["name_field"] == "timestamp" || $fields_labels_ar[$i]["name_field"] == "archive_type" || ($details == "1" && $fields_labels_ar[$i]["present_details_form_field"] == "1")) { // the user want to display the field in the basic search results page
-			$label_to_display = $fields_labels_ar[$i]["label_field"];
+			$label_to_display = $fields_labels_ar[$i]["label_" . $lang . "_field"];
 			if ($word_wrap_fix_width === 1){
 				$spaces_to_add = $word_wrap_col-strlen($label_to_display);
 				if ( $spaces_to_add > 0) {

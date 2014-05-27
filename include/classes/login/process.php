@@ -254,9 +254,9 @@ class  Process {
 			if($mailer->sendNewPass($subuser,$email,$newpass)){
 				/* Email sent, update database */
 				$db->updateUserField($subuser, "password", md5($newpass));
-				if ($userlevel  == 9) {  // Benutzer ist Administrator
+				if ($userlevel  == 9) {  // User is administrator
 					/*
-					 * Aktualisiere Phorum-Benutzertabelle
+					 * Update the phorum user table
 					 */
 					$user_ar["user_id"] = $usrinf[2];
 					$user_ar["password"] = $newpass;
