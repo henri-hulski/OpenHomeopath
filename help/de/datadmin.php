@@ -71,14 +71,14 @@ include("help/layout/$skin/header.php");
 <div>
   In der Tabelle <strong><em>Materia Medica</em></strong> gibt es folgende <strong>Felder</strong>:
   <ul>
-    <li><strong><em>Mittel</em></strong> &ndash; hier wird das Mittel aus einer Drop-Down-Liste ausgesucht;</li>
+    <li><strong><em>Mittel</em></strong> &ndash; hier wird das Mittel aus einer Dropdown-Liste ausgesucht;</li>
+    <li><strong><em>Quelle</em></strong> &ndash; hier kann in einer Dropdown-Liste die Quelle der Mittelbeschreibung aus der <strong>Tabelle <em>Quellen</em></strong> ausgewählt werden;</li>
     <li><strong><em>Herstellung/Herkunft/Synonyme</em></strong> &ndash; nähere Angaben zu Herstellung, Herkunft und Synonymen des Mittels;</li>
     <li><strong><em>allgemeine Beschreibung des Mittels</em></strong> &ndash; hier kann eine ausführliche Beschreibung des Mittels hinterlegt werden;</li>
     <li><strong><em>verwandte Mittel</em></strong>, <strong><em>unverträgliche Mittel</em></strong> und <strong><em>Antidote</em></strong> &ndash; angegeben werden die jeweiligen Kurzformen der Mittel;</li>
-    <li><strong><em>Quelle der Mittelbeschreibung</em></strong> &ndash; hier kann in einer Dropdown-Liste eine Quelle aus der <strong>Tabelle <em>Quellen</em></strong> ausgewählt werden;</li>
     <li><strong><em>Leitsymptome</em></strong> unterteilt in die Kategorien <strong><em>Allgemein</em></strong>, <strong><em>Gemüt</em></strong> und <strong><em>Körper</em></strong> &ndash; hier können die einzelnen Leitsymptome des Mittels beschrieben werden.</li>
   </ul>
-  Das Feld <strong>Mittel</strong> muß angegeben werden. Die <strong>anderen Felder</strong> werden nur dann in der <strong>Materia Medica</strong> angezeigt, wenn sie <strong>nicht leer</strong> gelassen werden.
+  Die Felder <strong>Mittel</strong> und <strong>Quelle</strong> müssen angegeben werden. Die <strong>anderen Felder</strong> werden nur dann in der <strong>Materia Medica</strong> angezeigt, wenn sie <strong>ausgefüllt</strong> werden.
 </div>
 <br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="symptoms" id="symptoms"><br></a>
@@ -86,12 +86,12 @@ include("help/layout/$skin/header.php");
   Tabelle Symptome
 </h3>
 <div>
-  Die Tabelle <strong><em>Symptome</em></strong> enthält <strong>2 Felder</strong>:
+  Die Tabelle <strong><em>Symptome</em></strong> enthält <strong>3 Pflichtfelder</strong>:
   <ul>
-    <li><strong><em>Symptom</em></strong> &ndash; eine möglichst knappe und treffende Symptombeschreibung;</li>
-    <li><strong><em>Rubrik</em></strong> &ndash; aus einer Auswahlliste kann die Rubrik ausgewählt werden.</li>
+    <li><strong><em>Symptom</em></strong> &ndash; eine möglichst knappe und treffende Symptombeschreibung,</li>
+    <li><strong><em>Rubrik</em></strong> &ndash; aus einer Auswahlliste kann die Rubrik ausgewählt werden,</li>
+    <li><strong><em>Sprache</em></strong> &ndash; aus einer Auswahlliste kann die Sprache ausgewählt werden.</li>
   </ul>
-  <strong>Beide</strong> Felder sind <strong>Pflichtfelder</strong>. Außerdem wird <strong>automatisch</strong> eine <strong>Symptom-Nummer</strong> vergeben.
 </div>
 <br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="sources" id="sources"><br></a>
@@ -99,12 +99,16 @@ include("help/layout/$skin/header.php");
   Tabelle Quellen
 </h3>
 <div>
-  Die Tabelle <strong><em>Quellen</em></strong> enthält <strong>2 Pflichtfelder</strong>:
+  Die Tabelle <strong><em>Quellen</em></strong> enthält <strong>6 Pflichtfelder</strong>:
   <ul>
-    <li><strong><em>Identifikator</em></strong> &ndash; dies ist das <strong>Kürzel</strong>, welches in Klammern hinter Mitteln und Symptomen angezeigt wird, dabei sind bis zu 5 <strong>Großbuchstaben</strong> und <strong>Zahlen</strong> erlaubt;</li>
+    <li><strong><em>Identifikator</em></strong> &ndash; dies ist das <strong>Kürzel</strong>, welches in Klammern hinter Mitteln und Symptomen angezeigt wird, dabei sind bis zu 12 <strong>Buchstaben</strong> und <strong>Zahlen</strong> erlaubt;</li>
     <li><strong><em>Titel</em></strong> &ndash; hier den Titel der Quelle angeben.</li>
+    <li><strong><em>Sprache</em></strong> &ndash; aus einer Dropdown-Liste auswählen,</li>
+    <li><strong><em>Art der Quelle</em></strong> &ndash; aus einer Dropdown-Liste auswählen,</li>
+    <li><strong><em>Maximale Wertigkeit</em></strong> &ndash; wähle die maximale Wertigkeit aus, die in der Quelle benutzt wird,</li>
+    <li><strong><em>Hauptquelle</em></strong> &ndash; 1: Hauptquelle, aus der in die Datenbank übertragen wird, 0: Referenz-Quelle die in einer Hauptquelle angegeben wird.</li>
   </ul>
-  Die weiteren <strong>9 Felder</strong> sind <strong>selbsterklärend</strong> und werden nur angezeigt, wenn sie <strong>ausgefüllt</strong> sind:
+  Die weiteren <strong>10 Felder</strong> sind <strong>selbsterklärend</strong> und werden nur angezeigt, wenn sie <strong>ausgefüllt</strong> sind:
   <ul>
     <li><strong><em>Autor</em></strong></li>
     <li><strong><em>Jahr</em></strong></li>
@@ -115,6 +119,7 @@ include("help/layout/$skin/header.php");
     <li><strong><em>ISBN</em></strong></li>
     <li><strong><em>Bemerkung</em></strong></li>
     <li><strong><em>Kontaktadresse</em></strong></li>
+    <li><strong><em>Arzneimittelprüfung</em></strong> &ndash; bei Arzneimittelprüfungen hier Details angeben.</li>
   </ul>
 </div>
 <br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
@@ -123,12 +128,11 @@ include("help/layout/$skin/header.php");
   Tabelle Mittel
 </h3>
 <div>
-  In der Tabelle <strong><em>Mittel</em></strong> gibt es <strong>2 Felder</strong>:
+  In der Tabelle <strong><em>Mittel</em></strong> gibt es <strong>2 Pflichtfelder</strong>:
   <ul>
-    <li><strong><em>Kurzbezeichnung</em></strong> &ndash; die gebräuchliche Kurzform des Mittelnamens;</li>
+    <li><strong><em>Kurzbezeichnung</em></strong> &ndash; die gebräuchliche Kurzform des Mittel,</li>
     <li><strong><em>Mittelname</em></strong> &ndash; der offizielle Mittelname.</li>
   </ul>
-  Beide Felder sind <strong>Pflichtfelder</strong>.
 </div>
 <br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="mainrubrics" id="mainrubrics"><br></a>
@@ -152,7 +156,7 @@ include("help/layout/$skin/header.php");
   Aufbau de Datenpflege-Startseite
 </h3>
 <p>
-  Auf der <strong>Startseite</strong> der jeweiligen Tabelle wird eine <strong>Liste aller vorhandenen Tabellensätze</strong> angezeigt. Unterhalb der Tabellenauswahl kannst du auswählen <strong>wie viele Sätze pro Seite</strong> angezeigt werden. Der Standard ist <strong>20</strong>.
+  Auf der <strong>Hauptseite</strong> der jeweiligen Tabelle wird eine <strong>Liste der vorhandenen Tabellensätze</strong> angezeigt. Unterhalb der Tabellenauswahl kannst du auswählen <strong>wie viele Sätze pro Seite</strong> angezeigt werden. Der Standard ist <strong>20</strong>.
 </p>
 <div>
   Vor jedem Tabelleneintrag befinden sich <strong>3 anklickbare Symbole</strong>:
@@ -167,14 +171,17 @@ include("help/layout/$skin/header.php");
   <ul>
     <li><strong><em>"Startseite"</em></strong> &ndash; Von hier kommst du zurück zur Startseite der jeweiligen Tabelle mit der <strong>als letztes angezeigten Auswahl</strong> an Sätzen.</li>
     <li><strong><em>"Einfügen"</em></strong> &ndash; Hier kannst du einen neuen Satz in die Tabelle einfügen. Näheres siehe unter <a href="#edit">Bearbeiten und Einfügen von Sätzen</a>.</li>
-    <li><strong><em>"Suchen"</em></strong> &ndash; Hier kommst du in eine <strong>ausführliche Suchmaske</strong>, wobei sich jedes Feld mit <strong>verschiedenen Suchkriterien</strong> nach Suchbegriffen <strong>durchsuchen</strong> lässt. So kannst du die <strong>Auswahl</strong> der Sätze, die angezeigt werden, <strong>flexibel anpassen</strong>.</li>
+    <li><strong><em>"Suchen"</em></strong> &ndash; Hier kommst du in eine <strong>ausführliche Suchmaske</strong>, wobei sich jedes Feld mit <strong>verschiedenen Suchkriterien</strong> nach Suchbegriffen <strong>durchsuchen</strong> lässt.</li>
     <li><strong><em>"Letzte Suchergebnisse"</em></strong> &ndash; Hier wird das letzte Suchergebnis angezeigt.</li>
     <li><strong><em>"Alles zeigen"</em></strong> &ndash; Hier kannst du dir wieder alle Sätze anzeigen lassen.</li>
+    <li><strong><em>"Archiv"</em></strong> &ndash; Hier werden veränderte und gelöschte Datensätze archiviert und können gegebenenfalls wieder hergestellt werden.</li>
+    <li><strong><em>"Express-Tool"</em></strong> &ndash; Hier kommst du zum <a href="expresstool.php">Express-Tool</a>.</li>
   </ul>
-  Bei den Tabellen <strong><em>Materia Medica</em></strong> und <strong><em>Mittel</em></strong> gibt es außerdem unterhalb des Menüs die Möglichkeit die Sätze nach dem <strong>Anfangsbuchstaben der Mittel-Kurzbezeichnung</strong> auszuwählen. Entsprechend kannst du in der Tabelle <strong><em>Symptome</em></strong> die Sätze nach <strong>Hauptrubrik</strong> auswählen.
+  Bei der Tabelle <strong><em>Mittel</em></strong> kannst du außerdem die Sätze nach dem <strong>Anfangsbuchstaben der Mittel-Kurzbezeichnung</strong> auswählen.<br>
+  Entsprechend kannst du in der Tabelle <strong><em>Symptome</em></strong> die Sätze nach der <strong>Hauptrubrik</strong> filtern.
 </div>
 <p>
-  Über <strong><em>"Als CSV-Datei ausgeben"</em></strong> unterhalb der Tabelle kannst du dir die jeweils <strong>angezeigte Satzauswahl</strong> als sternchen(<strong>*</strong>)-getrennte <strong>CSV-Datei</strong> ausgeben lassen. Deswegen sollte das <strong>*</strong>-Zeichen in den Datensätzen <strong>nicht vorkommen</strong>.
+  Über <strong><em>"Als CSV-Datei ausgeben"</em></strong> unterhalb der Tabelle kannst du dir die jeweils <strong>angezeigte Satzauswahl</strong> als Strichpunkt-getrennte <strong>CSV-Datei</strong> ausgeben lassen.
 </p>
 <br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="edit" id="edit"><br></a>
@@ -186,8 +193,15 @@ include("help/layout/$skin/header.php");
   Der <strong>Unterschied</strong> zwischen den beiden Formularen besteht darin, dass im <strong>Bearbeitungsformular</strong> die Daten des entsprechenden Satzes <strong>voreingetragen</strong> sind und dass man über <strong><em>"<< Vorheriger"</em></strong> bzw. <strong><em>"Nächster >>"</em></strong> zum vorhergehenden bzw. nachfolgenden Satz <strong>springen</strong> kann.
 </p>
 <p>
-  Du kannst nun die <strong>einzelnen Tabellenfelder</strong> ausfüllen bzw. ändern. Die Felder, die ausgefüllt sein müssen (<strong>Pflichtfelder</strong>) sind mit einem <strong>Sternchen(*)</strong> vor dem Feldnamen <strong>gekennzeichnet</strong>. Die meisten Felder sind <strong>einzeilige Textfelder</strong>, wo die entsprechenden Angaben in einer Zeile gemacht werden. Die Felder wo längere Textangaben möglich sind, benutzen <strong>mehrzeilige Textareafelder</strong>. Hier werden bei manchen Feldern bei der Eingabe gemachte <strong>Zeilensprünge</strong> auf der entsprechenden Programmseite <strong>übernommen</strong>.
-  Bei manchen Feldern (z.B. Feld <em>Quellen</em> oder die Felder in der Tabelle <em>Symptome-Mittel-Beziehungen</em>) kann über eine <strong>Dropdown-Auswahl</strong> ein Eintrag aus einer <strong>anderen Tabelle</strong> (oder bei <em>Wertigkeit</em> aus einer <strong>vorgegebenen Liste</strong>) ausgewählt werden. Der Eintrag muss dann gegebenenfalls <strong>erst in der entsprechenden Tabelle</strong> gemacht werden. <strong>Hinweise zum Ausfüllen</strong> der einzelnen Felder findest du hinter den Feldern. <strong>Näheres zu den einzelnen Tabellen</strong> findest du oben in den jeweiligen Tabellen-Kapiteln.<br>
+  Die <strong>Pflichtfelder</strong> sind mit einem <strong>Sternchen(*)</strong> vor dem Feldnamen <strong>gekennzeichnet</strong>.<br>
+  Es gibt drei Arten von Feldern:
+  <ul>
+    <li><strong><em>einzeilige Textfelder</em></strong>,</li>
+    <li><strong><em>mehrzeilige Textareafelder</em></strong> &ndash; Zeilensprünge werden in der Regel übernommen,</li>
+    <li><strong><em>Dropdown-Listen</em></strong>.</li>
+  </ul>
+  <strong>Hinweise zum Ausfüllen</strong> der einzelnen Felder findest du hinter den Feldern.<br>
+  <strong>Näheres zu den einzelnen Tabellen</strong> findest du oben in den jeweiligen Tabellen-Kapiteln.<br>
   Wenn das Formular <strong>fertig ausgefüllt</strong> ist schickst du es über <strong><em>"Speichern"</em></strong> bzw. <strong><em>"Neuen Satz einfügen"</em></strong> ab. Der Satz wird dann <strong>in die Datenbank</strong> übernommen.
 </p>
 <?php
