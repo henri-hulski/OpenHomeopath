@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenHomeopath 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-28 11:54+0100\n"
+"POT-Creation-Date: 2014-05-28 22:33+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Henri Schumacher <henri.hulski@gazeta.pl>\n"
 "Language-Team: Henri Schumacher <henri.hulski@gazeta.pl>\n"
@@ -734,12 +734,12 @@ msgid "Edit symptom"
 msgstr "Symptom bearbeiten"
 
 #: symptompflege.php:64
-msgid "link as synonyms"
-msgstr "als Synonyme verbinden"
+msgid "Link as synonyms"
+msgstr "Als Synonyme verbinden"
 
 #: symptompflege.php:65
-msgid "link as crosslinks"
-msgstr "als Querverweise verbinden"
+msgid "Link as cross reference"
+msgstr "Als Querverweise verbinden"
 
 #: symptom-details.php:205
 msgid "More information"
@@ -1214,7 +1214,7 @@ msgid "More details:"
 msgstr "Weitere Details:"
 
 #: symptominfo.php:142
-msgid "Crosslinks"
+msgid "Cross references"
 msgstr "Querverweise"
 
 #: symptominfo.php:163
@@ -2591,7 +2591,7 @@ msgstr ""
 "OpenHomeopath wurde unter den Bedingungen der <a href='../../doc/en/agpl3."
 "php'>AGPL-Lizenz</a> veröffentlicht"
 
-#: help/de/manual.php:168 help/de/manual.php:213 help/en/manual.php:168
+#: help/de/manual.php:164 help/de/manual.php:214 help/en/manual.php:164
 #: help/en/manual.php:213 forms/sym_rems.php:89 forms/reversed_rep.php:124
 msgid "-grade"
 msgstr "-wertig"
@@ -3276,7 +3276,7 @@ msgid "Antidotes:"
 msgstr "Antidote:"
 
 #: forms/materia_medica.php:108
-msgid "manufacturing / origin / synonyms:"
+msgid "preparation / origin / synonyms:"
 msgstr "Herstellung / Herkunft / Synonyme:"
 
 #: forms/materia_medica.php:114
@@ -3421,6 +3421,9 @@ msgstr "Wähle die passenden Symptome durch anklicken aus"
 #: forms/select_symptoms.php:149
 msgid "Contains sub-rubrics, but doesn't count as a symptom"
 msgstr "Enthält Unterrubriken, zählt aber selbst nicht als Symptom"
+
+#~ msgid "Crosslinks"
+#~ msgstr "Querverweise"
 
 #, fuzzy
 #~ msgid "OpenHomeopath grüßt!"

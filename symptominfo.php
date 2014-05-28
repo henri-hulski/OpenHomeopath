@@ -139,7 +139,7 @@ if (!empty($xref_id)) {
 	$db->send_query($query);
 	$num_rows = $db->db_num_rows();
 	if ($num_rows > 0) {
-		echo ("    <h3>" . _("Crosslinks") . "</h3>\n");
+		echo ("    <h3>" . _("Cross references") . "</h3>\n");
 		echo ("    <div id='xref' class='selection'>\n");
 		echo ("      <ul>\n");
 		while (list($xref_sym_id, $xref_symptom_name, $xref_rubric_name) = $db->db_fetch_row()) {

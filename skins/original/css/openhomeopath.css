@@ -610,6 +610,10 @@ a.NavLink:hover {
 .StdBlock, .StdBlock table {
     font-size: 12px;
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  }
+
+
+.StdBlock {
     background-color: #FFE;
     border: 1px solid #888;
     padding: 3px;

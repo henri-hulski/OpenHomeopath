@@ -61,8 +61,8 @@ if ((isset($_REQUEST['main_rubrics']) && $num_rows != 0) || !empty($_REQUEST['sy
       <div class="button_area_3">
         <input type="button" class="submit" value=" <?php echo _("Deselect symptom"); ?> " onclick="symDeselect()">
         <input type="button" class="submit" value=" <?php echo _("Edit symptom"); ?> " onclick="symptomEdit(<?php echo($tab);?>, 'symSelect')">
-        <input type="button" class="submit" value=" <?php echo _("link as synonyms"); ?> " onclick="synonym()">
-        <input type="button" class="submit" value=" <?php echo _("link as crosslinks"); ?> " onclick="querverweis()">
+        <input type="button" class="submit" value=" <?php echo _("Link as synonyms"); ?> " onclick="synonym()">
+        <input type="button" class="submit" value=" <?php echo _("Link as cross reference"); ?> " onclick="xref()">
       </div>
     </div>
   </form>
