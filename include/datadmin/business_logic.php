@@ -1732,7 +1732,7 @@ function build_insert_update_notice_email_record_details($fields_labels_ar, $res
 
 			} // end if
 		} // end for
-		$notice_email .= "\n\n--------------------------------------------\n" . _("OpenHomeopath grüßt!");
+		$notice_email .= "\n\n--------------------------------------------\n" . _("The OpenHomeopath-Team") . " ;-)";
 	} // end while
 	return $notice_email;
 } // end function build_insert_update_notice_email_record_details()
