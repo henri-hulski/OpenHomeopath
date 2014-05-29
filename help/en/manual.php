@@ -34,28 +34,24 @@ include("help/layout/$skin/header.php");
   Manual
 </h2>
 <p>
-  Es wird empfohlen <strong>OpenHomeopath</strong> bei einer <strong>Bildschirmauflösung</strong> von mindestens <strong>1280x1024</strong> zu benutzen. <strong>Javascript</strong> und <strong>Cookies</strong> zumindest von der gleichen Site müssen im Browser aktiviert sein.
-  Bei den Auswahllisten kannst du mit <strong>Doppelklick auf einen Eintrag</strong> die jeweils wichtigste Aktion ausführen.
-  Mit der Skin-Auswahl kannst du das Aussehen von OpenHomeopath verändern. Im Moment gibt es 2 Skins: <strong><em>"original"</em></strong> von Henri Schumacher und <strong><em>"kraque"</em></strong> von Thomas Bochmann ohne Seitenleiste, so das sie besonders für kleinere Displays geeignet ist.
-  OpenHomeopath ist zur Zeit in deutsch und englisch übersetzt.
+  It is recommended to use <strong>OpenHomeopath</strong> with a <strong>screen resolution</strong> of at least <strong>1280x1024</strong>.<br>
+  <strong>Javascript and Cookies (at least from the same site)</strong> have to be enabled in the browser.
+  You can change the layout of OpenHomeopath by selecting a skin. At the moment we've 2 skins:  <strong><em>"original"</em></strong> from Henri Schumacher and <strong><em>"kraque"</em></strong> without sidebar from Thomas Bochmann.
+  At the moment OpenHomeopath is translated in English and German.
 </p>
 <a name="overview" id="overview"><br></a>
 <h3>
-  Übersicht
+  Overview
 </h3>
 <p>
-  Die wichtigsten Funktionen von OpenHomeopath sind <strong>übersichtlich in Tabs</strong> organisiert.<br>
-  Dabei kannst du innerhalb der einzelnen Tabs unabhängig voneinander arbeiten, ohne das der aktuelle Stand der anderen Tabs sich ändert.<br>
-  Wenn du OpenHomeopath aufrufst siehst du 2 Tabs, <strong><em>Repertorisierung</em></strong> und <span class='nobr'><strong><em>Materia Medica</em></strong></span>. Sobald du dich anmeldest kommt noch der Tab <span class='nobr'><strong><em>Mein Bereich</em></strong></span> hinzu. Außerdem gibt es je nach Anforderung noch die Tabs <strong><em>Repertorisierungsergebnis</em></strong> und <strong><em>Symptom-Info</em></strong>.<br>
-  In den Tabs <strong><em>Repertorisierungsergebnis</em></strong>, <span class='nobr'><strong><em>Materia Medica</em></strong></span> und <strong><em>Symptom-Info</em></strong> kannst du zu vorherigen Ansichten <strong>zurück und wieder vor springen</strong>.
+  <p>The most important parts of OpenHomeopath are <strong>well organized in Tabs</strong> on the homepage.</p>
+  You can work independently on each tab without changing the content of the other tabs.<br>
+  If you start OpenHomeopath you see 2 tabs, <strong><em>Repertorization</em></strong> and <span class='nobr'><strong><em>Materia Medica</em></strong></span>. After logging in the tab <span class='nobr'><strong><em>My Account</em></strong></span> appear. There are 2 more tabs that show up on request, the <strong><em>Repertorization result</em></strong> and the <strong><em>Symptom-Info</em></strong>.<br>
+  In the tabs <strong><em>Repertorization result</em></strong>, <span class='nobr'><strong><em>Materia Medica</em></strong></span> and <strong><em>Symptom-Info</em></strong> can go back and forward to previous views</strong>.
 </p>
 <p>
-  Auf der linken Seite findest du in allen Programmfenstern das <strong>Navigationsmenü</strong> (in der Original-Skin). Von dort hast du Zugang zu allen wichtigen Teilen des Programms.
+  In the Original skin you see on the left side the <strong>navigation menue</strong>, from where you can reach each part of the program.
 </p>
-<p>
-  <strong>Es folgt eine Beschreibung der einzelnen Programmfunktionen:</strong>
-</p>
-<br>
 <div class="content">
   <h2>
     Contents
@@ -75,93 +71,93 @@ include("help/layout/$skin/header.php");
   Repertorization
 </h3>
 <p>
-  Dies ist der <strong>wichtigste Teil</strong> des Programms. Hier findet die eigentliche <strong>Repertorisierung</strong> statt.
+  This is the most important part of the program, where we make the main <strong>repertorization work</strong>.
 </p>
 <p>
-  Wenn du eine neue Repertorisierung beginnst, siehst du links eine Auswahlmenü, wo die <strong>Hauptrubrik</strong> ausgewählt werden kann. Bei <strong><em>"Alle Rubriken"</em></strong> werden Symptome aus allen Rubriken angezeigt.<br>
-  In der Mitte befindet sich die <strong>Suchfunktion</strong>. Hier kannst du nach einem oder mehreren Begriffen suchen. Hierbei kann entweder nach <strong>Wortteilen</strong> oder <strong>ganzen Wörtern</strong> gesucht werden. Bei mehreren Begriffen ist sowohl eine <strong>UND-</strong> als auch eine <strong>ODER-Suche</strong> möglich. Eine genaue Beschreibung der Suchfunktion findest du in der <a href="search.php"><strong>Hilfe zur Formulierung von Symptom-Suchanfragen</strong></a>.<br>
-  Falls ein Symptom in <strong>verschiedenen Übersetzungen</strong> vorliegt wird die <strong><em>bevorzugte Symptom-Sprache</em></strong> berücksichtigt, die angemeldete Benutzer in den <a href='user.php#settings'><strong>Benutzereistellungen</strong></a> festlegen können.<br>
-  Nachdem du die Rubrik ausgewählt und eventuell Suchbegriffe eingegeben hast, drückst du rechts auf <strong><em>"Symptome anzeigen"</em></strong>.
+  If you start a new repertorization, on the left side you can choose a main rubric or all rubrics. In the middle you find the <a href='search.php'>symptom search form</a> where you can provide the search items and choose the search mode.<br>
+  If a symptom exists in different translations your <strong>preferred symptom-language</strong> will be considered, which can be set in your program settings.
 </p>
 <p>
-  Jetzt öffnen sich unterhalb zwei Auswahlfenster. Im oberen siehst du die Symptome als Baumansicht, die deinen Kriterien entsprechen. Das untere ist erstmal leer. Dort werden die Symptome eingetragen, die du auswählst.<br>
-  Ein Symptom wird durch anklicken ausgewählt. Rubriken mit Unterrubriken lassen sich ausklappen. Die ausgewählten Symptome erscheinen im unteren Auswahlfenster.<br>
-  Wenn du dir alle Mittel anzeigen lassen willst, die einem <strong>Symptom</strong> zugeordnet sind, klicke entweder im oberen oder im unteren Fenster auf <img src='../../skins/original/img/info.gif' width='12' height='12'> neben dem entsprechenden Symptom. Genaueres siehe <a href="#symptominfo">Symptom-Information</a>.<br>
-  Durch klicken auf <img src='../../skins/original/img/del.png' width='12' height='12'> im unteren Fenster wird das entsprechende <strong>Symptom</strong> abgewählt.<br>
+  After pressing the <strong><em>"Show symptoms"-button</em></strong> two selection forms will show up.<br>
+  In the upper one you see a tree view of the symptoms you requested. If you're selecting a symptom for repertorization by clicking on it, the symptom shows up in the second window.<br>
+  To switch to the <a href="#symptominfo">Symptom-Info</a> you can click the <img src='../../skins/original/img/info.gif' width='12' height='12'> icon beside the symptom.<br>
+  By clicking on the <img src='../../skins/original/img/del.png' width='12' height='12'> icon you unselect the symptom.
 </p>
 <p>
-  Du kannst jedes ausgewählte Symptom individuell gewichten.
-  Dabei kannst du den Symptomen folgende Gewichtungen zuordnen:
+  You can weight each symptom separately by choosing between the following degrees:
   <ul>
-    <li><strong>0:</strong> Das Symptom ist deaktiviert. Es wird im Repertorisierungergebnis zwar angezeigt, aber in der Gesamtbewertung nicht berücksichtigt.</li>
-    <li><strong>1:</strong> Standardeinstellung, das Symptom ist vorhanden.</li>
-    <li><strong>2:</strong> Das Symptom kommt häufig vor <strong>oder</strong> ist besonders intensiv.</li>
-    <li><strong>3:</strong> Das Symptom kommt häufig vor <strong>und</strong> ist besonders intensiv.</li>
-    <li><strong>4:</strong> Das Symptom ist <strong>besonders wichtig bzw. auffällig</strong>. Sollte selten benutzt werden.</li>
+    <li><strong>0:</strong> The symptom is deactivated but shows up in the repertory result.</li>
+    <li><strong>1:</strong> Default, the symptom exists.</li>
+    <li><strong>2:</strong> Shows some frequency <strong>or</strong> intensity of the symptom.</li>
+    <li><strong>3:</strong> Shows both a frequent <strong>and</strong> an intense symptom.</li>
+    <li><strong>4:</strong> Should be given rarely and only if the symptom is really impressive.</li>
   </ul>
-  Es ist sinnvoll den vollen Umfang an Gewichtungen bei einer Repertorisierung mit einzubeziehen.<br>
+  Try to include the full range of degrees in a repertorization.
+<br>
 </p>
 <p>
-  Während der Symptomauswahl kannst du jederzeit die angezeigten Symptome ändern, indem du eine neue Hauptrubrik und/oder neue Suchbegriffe eingibst und nochmals auf <strong><em>"Symptome anzeigen"</em></strong> drückst. Die bereits ausgewählten Symptome bleiben dabei erhalten.<br>
-  Wenn die Symptomauswahl abgeschlossen ist, drückst du auf <strong><em>"Repertorisieren"</em></strong>.
+  You can change the selection of symptoms in the upper window by changing the filters and search patterns and pressing again the <strong><em>"Show symptoms"-button</em></strong>. The symptom selection in the lower window will remain untouched.<br>
+  If you've finished the symptom selection press the <strong><em>"Repertorize"-button</em></strong>.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="rep_result" id="rep_result"><br></a>
 <h3>
   Repertorization result
 </h3>
 <p>
-  Nach dem Repertorisieren erscheint ein neues Tab mit dem <strong>Repertorisierungsergebnis</strong>.<br>
-  Das Repertorisierungsergebnis kannst du <strong>als PDF anzeigen oder herunterladen</strong>. Die PDF-Datei enthält die 20 wichtigsten Mittel und ist zum <strong>Ausdruck</strong> im A4-Querformat vorbereitet.<br>
-  Wenn du dich angemeldet hast, besteht die Möglichkeit, das Repertorisierungsergebnis zu <strong>speichern</strong>.
+  After repertorizing a new tab shows up with the <strong>Repertorization result</strong>.<br>
+  You can save - <img src='../../img/pdf_down.png' width='32' height='32'>&nbsp;  or view - <img src='../../img/pdf_print.png' width='32' height='32'>&nbsp; the repertorization result <strong>as PDF</strong>. The PDF-file contains the 20 most important remedies and is prepared for printing in A4-format.<br>
+  If you are logged in, you can <strong>save the repertory results</strong> to the database.
 </p>
 <div>
-  Im oberen Bereich siehst du 4 Felder:
+  In the upper part of the page you see 4 fields:
   <ul>
-    <li><strong>Patient</strong> - Hier gibst du einen Patientenkode ein. Dabei wird aus Datenschutzgründen empfohlen, einen Kode zu wählen, der keine Rückschlüsse auf die Identität des Patienten erlaubt.</li>
-    <li><strong>Rep.-Datum</strong> - Hier ist das aktuelle Datum voreingetragen. Es kann aber gegebenenfalls angepasst werden.</li>
-    <li><strong>Verordnung</strong> - Hier kannst du das/die verordnete(n) Mittel eintragen.</li>
-    <li><strong>Fallaufnahme</strong> - Hier kann die Anamnese hinterlegt werden.</li>
+    <li><strong>Patient</strong> - The patient ID. By choosing it take care of privacy issues.</li>
+    <li><strong>Rep.-Date</strong> - Here you see the current date. If you want you can change it.</li>
+    <li><strong>Prescription</strong> - The prescripted remedies.</li>
+    <li><strong>Case taking</strong> - The anamnesis of the case.</li>
   </ul>
-  Nachdem du alle Angaben gemacht hast kann das Ergebnis über <strong><em>"Ergebnis speichern"</em></strong> gespeichert werden.
-  Es erscheint eine Meldung, unter welcher <strong>Repertorisierungsnummer</strong> das Ergebnis gespeichert wurde. Gespeicherte Repertorisierungen lassen sich im <strong>Benutzerbereich</strong> wieder aufrufen.
+  After filling in the fields you can save the repertorization by pressing <img src='../../img/save.png' width='32' height='32'>.
+  You receive the <strong>Repertorization No.</strong> under which the result was saved.<br>
+  The saved repertorizations can be managed from your user account. You can review them, continue repertorizing, publish them to other users or delete them.
 </div>
 <p>
-  <strong>Das Repertorisierungsergebnis wird übersichtlich in der <em>interaktiven Ergebnistabelle</em> dargestellt:</strong>
+  <strong>The repertory result will be presented as a nicely formatted interactive result table:</strong>
   <ul>
-    <li>Rechts befinden sich die Symptomgewichtung und die <strong>Symptome nach Gewichtung sortiert</strong>. Wenn du auf ein Symptom klickst wird die entsprechende <a href="#symptominfo"><strong>Symptom-Info</strong></a> angezeigt.</li>
-    <li>Im Tabellenkopf findest du die <strong>Kurznamen der Mittel nach Relevanz sortiert</strong>. Beim überfahren mit der Maus erscheint der vollständige Mittelname. Bei Klick kommst du in die entsprechende <a href="#materia"><strong>Materia Medica</strong></a>.</li>
-    <li>In der darunterliegenden Tabellenzeile werden die <strong>Gesamtwertigkeiten und Treffer</strong> für das entsprechende Mittel angezeigt.</li>
-    <li>In der Tabelle findest du die <strong>Wertigkeit des Mittels für das entsprechende Symptom</strong>. Wenn du mit der Maus über die Wertigkeit fährst erscheinen <strong>Angaben zu den gefundenen Quellen</strong>. Bei Klick öffnet sich ein <strong>Popup-Fenster mit den Symptom-Mittel-Details</strong>.</li>
+    <li>On the right side you find the symptom degree and the symptoms sorted by degree. If you click on a symptom, you switch to the <a href="#symptominfo"><strong>Symptom-Info</strong></a>.</li>
+    <li>In the table header you find the <strong>remedy abbreviations</strong> sorted by relevance. When you move the mouse over it you get the full remedy name. By clicking you switch to the corresponding <a href="#materia"><strong>Materia Medica</strong></a>.</li>
+    <li>In the table row beneath you find <strong>the total grades and hits for each remedy</strong>.</li>
+    <li>In the table body you find the grade of a symptom-remedy relation. When you move the mouse over you get information about the <strong>sources</strong>. When clicking you get a popup window with the <strong><em>Symptom-remedy-details</em></strong>.</li>
   </ul>
 </p>
 <p>
-  Wenn du ausgehend von den ausgewählten Symptomen weiter repertorisieren willst drückst du unten auf <strong><em>"Weiter repertorisieren"</em></strong>. Es erscheint das Repertorisierungstab mit den gewählten Symptomen.
+  For continue repertorizing this case press <strong><em>"Add more symptoms"</em></strong>.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="materia" id="materia"><br></a>
 <h3>
   Materia Medica
 </h3>
 <div>
-  Hier kannst du dir zu einem <strong>Mittel</strong> die ihm <strong>zugeordneten Symptome</strong> zusammenstellen lassen. Außerdem werden weitere Informationen zu dem Mittel angezeigt, sofern sie in der Datenbank hinterlegt sind.
-  Um sich die <strong>Materia Medica</strong> zu einem Mittel zusammenzustellen, gebe den <strong>Wortanfang des Mittelnamens oder der Mittelabkürzung</strong> in das Suchfeld ein und <strong>wähle aus den vorgeschlagenen Mitteln das entsprechende aus</strong>.
+  In the Materia Medica you find details about a remedy and all symptoms related to this remedy.
+  For retrieving a <strong>Materia Medica</strong> type the beginning of the remedy name or abbreviation in the search form and select it from the suggested remedies.
 </div>
 <p>
-  Im oberen Bereich der Mittelbeschreibung werden <strong>spezifische Angaben</strong> zum Mittel angezeigt. Dies sind im einzelnen:
+  In the upper section you find some details about the remedy:
   <ul>
-    <li><strong>Mittelname</strong> - der offizielle Mittelname</li>
-    <li><strong>Abkürzung</strong> - die gebräuchliche Kurzform</li>
-    <li><strong>Verwandte Mittel, unverträgliche Mittel und Antidote</strong></li>
-    <li><strong>Herstellung, Herkunft und Synonyme des Mittels</strong></li>
-    <li><strong>Allgemeine Beschreibung</strong> des Mittels</li>
-    <li><strong>Leitsymptome</strong> in den Unterkategorien Allgemein, Gemüt und Körper</li>
-    <li><strong>Links</strong> zu verschiedenen weiterführenden Informationen zu diesem Mittel.</li>
+    <li><strong>Remedy name</strong> - the full remedy name</li>
+    <li><strong>Remedy-No.</strong> - the remedy-id in OpenHomeopath</li>
+    <li><strong>Abbreviation</strong> - the common abbreviation</li>
+    <li><strong>Related remedies, incompatible remedies and antidotes</strong></li>
+    <li><strong>Preparation, origin, synonyms</strong></li>
+    <li><strong>General description</strong>  of the remedy</li>
+    <li><strong>Leading symptoms</strong> in the categoties General, Mind and Body</li>
+    <li><strong>Links</strong> to further information about this remedy.</li>
   </ul>
 </p>
 <p>
-  Darunter befindet sich eine <strong>Baumansicht mit allen Symptomen, die diesem Mittel zugeordnet sind</strong>.<br>
-  Die <strong>Wertigkeit der Symptome bezüglich des angezeigten Mittels</strong> werden durch die Schriftart und Schriftfarbe ausgedrückt:
+  Below you find the treeview of the <strong>symptoms related to this remedy</strong>.<br>
+  The <strong>grade of symptom</strong> is visualized by color and font type:
   <ul>
 <?php
 for ($i = 5; $i > 0; $i--) {
@@ -169,44 +165,48 @@ for ($i = 5; $i > 0; $i--) {
 }
 ?>
   </ul>
-  Um sich die <strong>Mittel</strong> anzeigen zu lassen, die einem <strong>bestimmten Symptom</strong> zugeordnet sind, klicke auf <img src='../../skins/original/img/info.gif' width='12' height='12'> neben dem entsprechenden Symptom. Genaueres siehe <a href="#symptominfo">Symptom-Information</a>.
+  By clicking on <img src='../../skins/original/img/info.gif' width='12' height='12'> beside the symptom you switch to the <a href="#symptominfo">Symptom-Info</a>.
 </p>
 <p>
-  Wenn du mit der Maus über ein Symptom fährst erscheint die <strong>Wertigkeit und Angaben zu den Quellen</strong>.<br>
-  Wenn du darauf klickst werden dir alle <strong>Details zu dieser Rubrik</strong> angezeigt.
+  Move the mouse over a symptom to see <strong>the grade and the sources</strong>.<br>
+  When clicking you get a popup window with the <strong><em>Symptom-remedy-details</em></strong>.
 </p>
 <p>
-  Du kannst die Symptomauswahl <strong>nach Hauptrubrik sowie nach minimaler Wertigkeit filtern</strong>.<br>
-  Nachdem du die gewünschte Hauptrubrik und Wertigkeit ausgewählt hast drücke auf <strong><em>"Zusammenstellen"</em></strong>.
+  You can filter the symptom selection by <strong>main rubric and minimal grade</strong>.<br>
+  After selecting main rubric and grade press <strong><em>"Send request"</em></strong>.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="symptominfo" id="symptominfo"><br></a>
 <h3>
   Symptom information
 </h3>
 <p>
-  Zur Symptom-Information gelangst du entweder über das <strong>Repertorisierungsfenster</strong> oder über die <strong>Materia Medica</strong>.
+  To the Symptom-Info you get either from <strong>Repertorization</strong> or <strong>Materia Medica</strong>.
 </p>
 <p>
-  In der Legende des Rahmens findest du den <strong>Pfad zu dem Symptom</strong>.<br>
-  Hier kannst du zu der Symptom-Info der <strong>Elternrubriken</strong> springen.
+  In the frame-legend you find the <strong>rubric path</strong> of the symptom from where you can-m jump to the Symptom-Info of the parent rubrics.
 </p>
 <p>
-  Im oberen Bereich der Symptom-Info werden <strong>spezifische Angaben</strong> zum Symptom angezeigt. Dies sind im einzelnen:
+  In the upper part of the Symptom-Info you find details about the symptom:
   <ul>
-    <li><strong>Symptom</strong> - Beschreibung des Symptoms.</li>
-    <li><strong>Symptom-Nr.</strong> - die Nummer unter dem das Symptom in OpenHomeopath registriert ist.</li>
-    <li><strong>Hauptrubrik</strong> - die Hauptrubrik unter der das Symptom eingeordnet ist.</li>
-    <li><strong>Sprache</strong> - die Sprache des Symptoms mit einem Hinweis, ob es sich um die Originalsprache handelt.</li>
-    <li><strong>Übersetzungen</strong> - gegebenenfalls werden hier Übersetzungen aufgeführt.</li>
-    <li><strong>Weitere Details</strong> - Link zu mehr Details zu diesem Symptom in OpenHomeo.org.</li>
+    <li><strong>Symptom</strong> - Description of the symptom.</li>
+    <li><strong>Symptom-No.</strong> - the symptom-id in OpenHomeopath.</li>
+    <li><strong>Main rubric</strong> - the main rubric of the symptom.</li>
+    <li><strong>Native language</strong> - the native language of the symptom.</li>
+    <li><strong>Translations</strong> - here you find translations if any.</li>
+    <li><strong>More details</strong> - Link to more details in OpenHomeo.org.</li>
   </ul>
 </p>
-  Darunter findest du eine <strong>Baumansicht</strong> mit den Unterrubriken dieser Rubrik.<br>
-  Wenn du auf <img src='../../skins/original/img/info.gif' width='12' height='12'> klickst kommst du in die Symptom-Info der entsprechenden Unterrubrik.
 <p>
-  Unten werden <strong>alle Mittel, die dem Symptom zugeordnet sind</strong> angezeigt.<br>
-  Die <strong>Wertigkeit der Mittel bezüglich des angezeigten Symptoms</strong> werden durch die Schriftart und Schriftfarbe ausgedrückt:
+  Next you see a list with crossreferences if any. On click you jump to the requested Symptom-Info.
+</p>
+<p>
+  Beneath you find a <strong>treeview</strong> with the subrubrics of this rubric.
+  To switch to the <a href="#symptominfo">Symptom-Info</a> you can click the <img src='../../skins/original/img/info.gif' width='12' height='12'> icon beside the subrubric.
+</p>
+<p>
+  Below you find a list of <strong>remedies related to this symptom</strong>.<br>
+  The <strong>grade of the remedy</strong> is visualized by color and font type:
   <ul>
 <?php
 for ($i = 5; $i > 0; $i--) {
@@ -214,28 +214,28 @@ for ($i = 5; $i > 0; $i--) {
 }
 ?>
   </ul>
-  Wenn du dir zu einem Mittel die <strong>Materia Medica</strong> zusammen stellen willst klicke auf <img src='../../skins/original/img/materia.png' width='12' height='12'> vor dem jeweiligen Mittel. Näheres im Kapitel <a href="#materia">Materia Medica</a>.
+  By clicking on <img src='../../skins/original/img/materia.png' width='12' height='12'> beside the remedy you switch to the <a href="#materia">Materia Medica</a>.
 </p>
 <p>
-  Wenn du mit der Maus über ein Mittel fährst erscheint die <strong>Wertigkeit und Angaben zu den Quellen</strong>.<br>
-  Wenn du darauf klickst werden dir alle <strong>Details zu dieser Rubrik</strong> angezeigt.
+  Move the mouse over a remedy to see <strong>the grade and the sources</strong>.<br>
+  When clicking you get a popup window with the <strong><em>Symptom-remedy-details</em></strong>.
 </p>
 </p>
-  Die Mittel lassen sich <strong>nach Wertigkeit, Mittelname oder Mittel-Abkürzung sortieren</strong>, indem du die entsprechende Sortierung in der Dropdown-Liste auswählst.<br>
-  Bei der Sortierung nach Mittel-Abkürzung werden die Mittel <strong>wesentlich kompakter präsentiert</strong>, was vor allem bei großen Rubriken übersichtlicher wirkt.
+  You can sort the remedies with a drop-down list by <strong>grade, name or abbreviation</strong>.<br>
+  When sorting by abbreviation the remedy list is <strong>much more compact</strong>, which looks nice in big rubrics.
 <p>
 <p>
-  Ausserdem kannst die Mittel <strong>nach minimaler Wertigkeit filtern</strong> indem du die entsprechende Wertigkeit in der Dropdown-Liste auswählst.
+  You can also filter the remedy selection by <strong>minimal grade</strong> from a drop-down list.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="data" id="data"><br></a>
 <h3>
   Data maintenance
 </h3>
 <p>
-  Hier kann die <strong>Datenbank</strong> erweitert und verändert werden. Näheres im Kapitel <a href="datadmin.php"><strong>Datenpflege</strong></a>.
+  Here you can <strong>edit and extend the database</strong>. Details in the manual of <a href="datadmin.php"><strong>Data maintenance</strong></a>.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="help" id="help"><br></a>
 <h3>
   Help
@@ -243,14 +243,16 @@ for ($i = 5; $i > 0; $i--) {
 <p>
   Here you find this <strong>Help</strong>.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="info" id="info"><br></a>
 <h3>
   Info
 </h3>
 <p>
-  Hier findest du Informationen über die Programmversion, Lizenz und Copyright, Dank an die, die durch Inspiration und nützliche Skripte bzw. Programmkode zum Programm beigetragen haben, Client- und Server-Anforderungen und Installation und Konfiguration für MySQL.
+  Here you find information about program version, license, copyright and credits.<br>
+  You get also the requirements of the client and the server and introductions for installation and configuration of OpenHomeopath.
 </p>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

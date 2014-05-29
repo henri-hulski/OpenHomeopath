@@ -33,19 +33,19 @@ include("help/layout/$skin/header.php");
 <h2>
   Preambel
 </h2>
-  <p>Die wichtigsten Funktionen von OpenHomeopath sind <strong>übersichtlich in Tabs</strong> organisiert.</p>
-  <p><strong>OpenHomeopath</strong> dient in erster Linie dem Finden des passenden homöopathischen Mittels anhand einer Auswahl von Symptomen. Diesen Vorgang nennt man <a href="<?php echo($rep_url);?>"><strong>Repertorisierung</strong></a>.<br>
-  OpenHomeopath enthält zur Zeit das Repertorium von Kent und das Akutrepertorium von BZ-Homöopathie auf deutsch sowie die Repertorien von Kent, Bogner, Boenninghausen und das Repertorium publicum von Vladimir Polony auf englisch.<br>
-  <strong>Die Reportorisierungsergebnisse kannst du einer Patientenkennung zuordnen und zusammen mit Verordnung, Bemerkung und Datum abspeichern.</strong> Dazu musst du allerdings <a href="../../register.php">registriert</a> und <a href="../../login.php">angemeldet</a> sein. Die gespeicherten Ergebnisse können später im Benutzerbereich abgerufen und auf ihrer Grundlage weiterrepertorisiert werden. Einzelne Ergebnisse können anderen Benutzern zur Verfügung gestellt werden.<br>
-  <strong>Die Repertorisierungsergebnisse können als PDF herunterladen oder angezeigt werden.</strong> Die PDF-Datei enthält die 20 wichtigsten Mittel und ist zum <strong>Ausdruck</strong> im A4-Querformat vorbereitet.</p>
-  <p>Weiterhin lassen sich in der <a href="<?php echo($materia_url);?>"><strong>Materia Medica</strong></a> zu einem gegebenen Mittel alle ihm entsprechenden Symptome mit ihren Wertigkeiten anzeigen. Hier können auch genauere Angaben zum Mittel wie verwandte Mittel, unverträgliche Mittel, Antidote, Herstellung/Herkunft/Synonyme, allgemeine Beschreibung des Mittels und Leitsymptome vermerkt werden.</p>
-  <p>Das Repertorium und die Materia Medica kann der angemeldete Benutzer im <strong>Benutzerbereich</strong> seinen eigenen Bedürfnissen anpassen.</p>
-  <p>Die Datenbank die Mittel, Symptome und Symptom-Mittel-Beziehungen enthält, ist durch die Benutzer <a href="datadmin.php">jederzeit erweiterbar.</a><br>
-  Um Rubriken und ihre Mittel aus gedruckten Repertorien schnell in die Datenbank übertragen zu können, gibt es bei OpenHomeopath das <a href='expresstool.php'><strong>Expresstool</strong></a> mit einem einfachen Eingabeschema.</p>
-  <p><a href="../../doc/<?php echo $lang; ?>/info.php"><strong>OpenHomeopath ist Opensource</strong></a> und unter den Bedingungen der <a href="../../doc/en/agpl3.php">AGPLv3 </a>lizensiert.</p>
-  <p>Das <strong>Finanzierungskonzept von OpenHomeopath</strong> beruht darauf, ein <strong>monatliches Spendenziel von <?php echo(DONATION_GOAL_MONTHLY);?> €/$</strong> durch gemeinsame Anstrengung aller Nutzer zu erreichen. Solange das monatliche Spendenziel nicht erreicht ist, sind die Funktionen von OpenHomeopath für Nicht-Spender deutlich eingeschränkt. Sobald das monatliche Spendenziel erreicht wird, <strong>ist OpenHomeopath wieder für alle bis zum 10. bzw. sobald die Hälfte des Spendenziels erreicht wird bis zum 20. des nächsten Monats voll nutzbar</strong>.</p>
-  <p>Ich hoffe das Programm gefällt euch und hilft zu heilen.</p>
-  Für <a href="mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath">Anregungen und Verbesserungen</a> bin ich jederzeit offen.
+  <p>The most important parts of OpenHomeopath are <strong>well organized in Tabs</strong> on the homepage.</p>
+  <p>The main purpose of <strong>OpenHomeopath</strong> is to find the corresponding homeopathic remedies for a selection of symptoms. This process we call <a href="manual.php#repertorization"><strong>Repertorization</strong></a>.<br>
+  OpenHomeopath contains at the moment the repertories of Kent, Bogner, Boenninghausen and the Repertorium publicum of Vladimir Polony in English and the repertories of Kent and from BZ-Homöopathie in German.<br>
+  If you are logged in, you can <strong>save the repertory results</strong> together with patient-ID, prescription, case note and date.<br>
+  The saved repertorizations can be managed from your user account. You can review them, continue repertorizing, publish them to other users or delete them.<br>
+  <strong>You can also save or print the repertorization result as PDF.</strong> The PDF-file contains the 20 most important remedies and is prepared for printing in A4-format.</p>
+  <p>In the <a href="<?php echo($materia_url);?>"><strong>Materia Medica</strong></a> you can retrieve all corresponding symptoms and rubrics for the given remedy together with the grades. In the Materia Medica you can find also details about the remedy like related and incompatible remedies, antidotes, notes about preparation, origin and synonyms, a general description and the leading symptoms.</p>
+  <p>The Repertory and the Materia Medica can be customized in the user account by choosing the sources to be included.</p>
+  <p>OpenHomeopath provides an extendable database which contains the symptoms, remedies and symptom-remedy-relations. You can use <a href="datadmin.php">Datadmin</a> and the <a href='expresstool.php'>Express-Tool</a> for editing and extending the database. With the <a href='expresstool.php'>Express-Tool</a> you have a straight forward tool for copying repertories from books to OpenHomeopath.</p>
+  <p><a href="../../doc/<?php echo $lang; ?>/info.php"><strong>OpenHomeopath is opensource</strong></a> and distributed under the terms of the <a href="../../doc/en/agpl3.php">GNU Affero General Public License (AGPLv3)</a>.</p>
+  <p><strong>The financial concept of OpenHomeopath</strong> is based on reaching a monthly donation goal of <?php echo(DONATION_GOAL_MONTHLY);?> €/$</strong> by collective effort of all users. Until the monthly donation goal is reached, the functionality of OpenHomeopath is restricted for non-donators.") . " " . _("When the monthly donating goal will be reached, <strong>OpenHomeopath will be fully usable for everybody</strong> until the 10th or when reaching 50% of the donating goal until the 20th of the next month.</p>
+  <p>I hope OpenHomeopath helps you to heal.</p>
+  <a href="mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath">Proposals and improvements</a> are very welcome.
 <?php
 include("help/layout/$skin/footer.php");
 ?>

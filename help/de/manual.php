@@ -35,7 +35,6 @@ include("help/layout/$skin/header.php");
 </h2>
 <p>
   Es wird empfohlen <strong>OpenHomeopath</strong> bei einer <strong>Bildschirmauflösung</strong> von mindestens <strong>1280x1024</strong> zu benutzen. <strong>Javascript</strong> und <strong>Cookies</strong> zumindest von der gleichen Site müssen im Browser aktiviert sein.
-  Bei den Auswahllisten kannst du mit <strong>Doppelklick auf einen Eintrag</strong> die jeweils wichtigste Aktion ausführen.
   Mit der Skin-Auswahl kannst du das Aussehen von OpenHomeopath verändern. Im Moment gibt es 2 Skins: <strong><em>"original"</em></strong> von Henri Schumacher und <strong><em>"kraque"</em></strong> von Thomas Bochmann ohne Seitenleiste, so das sie besonders für kleinere Displays geeignet ist.
   OpenHomeopath ist zur Zeit in deutsch und englisch übersetzt.
 </p>
@@ -52,10 +51,6 @@ include("help/layout/$skin/header.php");
 <p>
   Auf der linken Seite findest du in allen Programmfenstern das <strong>Navigationsmenü</strong> (in der Original-Skin). Von dort hast du Zugang zu allen wichtigen Teilen des Programms.
 </p>
-<p>
-  <strong>Es folgt eine Beschreibung der einzelnen Programmfunktionen:</strong>
-</p>
-<br>
 <div class="content">
   <h2>
     Inhalt
@@ -87,7 +82,7 @@ include("help/layout/$skin/header.php");
   Jetzt öffnen sich unterhalb zwei Auswahlfenster. Im oberen siehst du die Symptome als Baumansicht, die deinen Kriterien entsprechen. Das untere ist erstmal leer. Dort werden die Symptome eingetragen, die du auswählst.<br>
   Ein Symptom wird durch anklicken ausgewählt. Rubriken mit Unterrubriken lassen sich ausklappen. Die ausgewählten Symptome erscheinen im unteren Auswahlfenster.<br>
   Wenn du dir alle Mittel anzeigen lassen willst, die einem <strong>Symptom</strong> zugeordnet sind, klicke entweder im oberen oder im unteren Fenster auf <img src='../../skins/original/img/info.gif' width='12' height='12'> neben dem entsprechenden Symptom. Genaueres siehe <a href="#symptominfo">Symptom-Information</a>.<br>
-  Durch klicken auf <img src='../../skins/original/img/del.png' width='12' height='12'> im unteren Fenster wird das entsprechende <strong>Symptom</strong> abgewählt.<br>
+  Durch klicken auf <img src='../../skins/original/img/del.png' width='12' height='12'> im unteren Fenster wird das entsprechende <strong>Symptom</strong> abgewählt.
 </p>
 <p>
   Du kannst jedes ausgewählte Symptom individuell gewichten.
@@ -105,14 +100,14 @@ include("help/layout/$skin/header.php");
   Während der Symptomauswahl kannst du jederzeit die angezeigten Symptome ändern, indem du eine neue Hauptrubrik und/oder neue Suchbegriffe eingibst und nochmals auf <strong><em>"Symptome anzeigen"</em></strong> drückst. Die bereits ausgewählten Symptome bleiben dabei erhalten.<br>
   Wenn die Symptomauswahl abgeschlossen ist, drückst du auf <strong><em>"Repertorisieren"</em></strong>.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="rep_result" id="rep_result"><br></a>
 <h3>
   Repertorisierungsergebnis
 </h3>
 <p>
   Nach dem Repertorisieren erscheint ein neues Tab mit dem <strong>Repertorisierungsergebnis</strong>.<br>
-  Das Repertorisierungsergebnis kannst du <strong>als PDF anzeigen oder herunterladen</strong>. Die PDF-Datei enthält die 20 wichtigsten Mittel und ist zum <strong>Ausdruck</strong> im A4-Querformat vorbereitet.<br>
+  Das Repertorisierungsergebnis kannst du als <strong>PDF</strong> anzeigen - <img src='../../img/pdf_print.png' width='32' height='32'>&nbsp; oder herunterladen - <img src='../../img/pdf_down.png' width='32' height='32'>&nbsp;. Die PDF-Datei enthält die 20 wichtigsten Mittel und ist zum <strong>Ausdruck</strong> im A4-Querformat vorbereitet.<br>
   Wenn du dich angemeldet hast, besteht die Möglichkeit, das Repertorisierungsergebnis zu <strong>speichern</strong>.
 </p>
 <div>
@@ -123,7 +118,7 @@ include("help/layout/$skin/header.php");
     <li><strong>Verordnung</strong> - Hier kannst du das/die verordnete(n) Mittel eintragen.</li>
     <li><strong>Fallaufnahme</strong> - Hier kann die Anamnese hinterlegt werden.</li>
   </ul>
-  Nachdem du alle Angaben gemacht hast kann das Ergebnis über <strong><em>"Ergebnis speichern"</em></strong> gespeichert werden.
+  Nachdem du alle Angaben gemacht hast kann das Ergebnis über <img src='../../img/save.png' width='32' height='32'> gespeichert werden.
   Es erscheint eine Meldung, unter welcher <strong>Repertorisierungsnummer</strong> das Ergebnis gespeichert wurde. Gespeicherte Repertorisierungen lassen sich im <strong>Benutzerbereich</strong> wieder aufrufen.
 </div>
 <p>
@@ -138,7 +133,7 @@ include("help/layout/$skin/header.php");
 <p>
   Wenn du ausgehend von den ausgewählten Symptomen weiter repertorisieren willst drückst du unten auf <strong><em>"Weiter repertorisieren"</em></strong>. Es erscheint das Repertorisierungstab mit den gewählten Symptomen.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="materia" id="materia"><br></a>
 <h3>
   Materia Medica
@@ -151,6 +146,7 @@ include("help/layout/$skin/header.php");
   Im oberen Bereich der Mittelbeschreibung werden <strong>spezifische Angaben</strong> zum Mittel angezeigt. Dies sind im einzelnen:
   <ul>
     <li><strong>Mittelname</strong> - der offizielle Mittelname</li>
+    <li><strong>Mittel-Nr.</strong> - die Nummer unter der das Mittel in OpenHomeopath registriert ist.</li>
     <li><strong>Abkürzung</strong> - die gebräuchliche Kurzform</li>
     <li><strong>Verwandte Mittel, unverträgliche Mittel und Antidote</strong></li>
     <li><strong>Herstellung, Herkunft und Synonyme des Mittels</strong></li>
@@ -169,7 +165,7 @@ for ($i = 5; $i > 0; $i--) {
 }
 ?>
   </ul>
-  Um sich die <strong>Mittel</strong> anzeigen zu lassen, die einem <strong>bestimmten Symptom</strong> zugeordnet sind, klicke auf <img src='../../skins/original/img/info.gif' width='12' height='12'> neben dem entsprechenden Symptom. Genaueres siehe <a href="#symptominfo">Symptom-Information</a>.
+  Zur <a href="#symptominfo">Symptom-Info</a> gelangst du über <img src='../../skins/original/img/info.gif' width='12' height='12'> neben dem entsprechenden Symptom.
 </p>
 <p>
   Wenn du mit der Maus über ein Symptom fährst erscheint die <strong>Wertigkeit und Angaben zu den Quellen</strong>.<br>
@@ -179,7 +175,7 @@ for ($i = 5; $i > 0; $i--) {
   Du kannst die Symptomauswahl <strong>nach Hauptrubrik sowie nach minimaler Wertigkeit filtern</strong>.<br>
   Nachdem du die gewünschte Hauptrubrik und Wertigkeit ausgewählt hast drücke auf <strong><em>"Zusammenstellen"</em></strong>.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="symptominfo" id="symptominfo"><br></a>
 <h3>
   Symptom-Information
@@ -195,15 +191,20 @@ for ($i = 5; $i > 0; $i--) {
   Im oberen Bereich der Symptom-Info werden <strong>spezifische Angaben</strong> zum Symptom angezeigt. Dies sind im einzelnen:
   <ul>
     <li><strong>Symptom</strong> - Beschreibung des Symptoms.</li>
-    <li><strong>Symptom-Nr.</strong> - die Nummer unter dem das Symptom in OpenHomeopath registriert ist.</li>
+    <li><strong>Symptom-Nr.</strong> - die Nummer unter der das Symptom in OpenHomeopath registriert ist.</li>
     <li><strong>Hauptrubrik</strong> - die Hauptrubrik unter der das Symptom eingeordnet ist.</li>
-    <li><strong>Sprache</strong> - die Sprache des Symptoms mit einem Hinweis, ob es sich um die Originalsprache handelt.</li>
+    <li><strong>Originalsprache</strong> - die Originalsprache des Symptoms.</li>
     <li><strong>Übersetzungen</strong> - gegebenenfalls werden hier Übersetzungen aufgeführt.</li>
     <li><strong>Weitere Details</strong> - Link zu mehr Details zu diesem Symptom in OpenHomeo.org.</li>
   </ul>
 </p>
+<p>
+  Als nächstens erscheint gegebenenfalls eine Liste mit Querverweisen. Bei Klick springst du zu der entsprechenden Symptom-Info.
+</p>
+<p>
   Darunter findest du eine <strong>Baumansicht</strong> mit den Unterrubriken dieser Rubrik.<br>
   Wenn du auf <img src='../../skins/original/img/info.gif' width='12' height='12'> klickst kommst du in die Symptom-Info der entsprechenden Unterrubrik.
+</p>
 <p>
   Unten werden <strong>alle Mittel, die dem Symptom zugeordnet sind</strong> angezeigt.<br>
   Die <strong>Wertigkeit der Mittel bezüglich des angezeigten Symptoms</strong> werden durch die Schriftart und Schriftfarbe ausgedrückt:
@@ -227,7 +228,7 @@ for ($i = 5; $i > 0; $i--) {
 <p>
   Ausserdem kannst die Mittel <strong>nach minimaler Wertigkeit filtern</strong> indem du die entsprechende Wertigkeit in der Dropdown-Liste auswählst.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="data" id="data"><br></a>
 <h3>
   Datenpflege
@@ -235,7 +236,7 @@ for ($i = 5; $i > 0; $i--) {
 <p>
   Hier kann die <strong>Datenbank</strong> erweitert und verändert werden. Näheres im Kapitel <a href="datadmin.php"><strong>Datenpflege</strong></a>.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="help" id="help"><br></a>
 <h3>
   Hilfe
@@ -243,7 +244,7 @@ for ($i = 5; $i > 0; $i--) {
 <p>
   Hier kommst du zu dieser <strong>Hilfe</strong>.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="info" id="info"><br></a>
 <h3>
   Info
@@ -251,6 +252,7 @@ for ($i = 5; $i > 0; $i--) {
 <p>
   Hier findest du Informationen über die Programmversion, Lizenz und Copyright, Dank an die, die durch Inspiration und nützliche Skripte bzw. Programmkode zum Programm beigetragen haben, Client- und Server-Anforderungen und Installation und Konfiguration für MySQL.
 </p>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

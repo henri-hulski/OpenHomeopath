@@ -34,16 +34,23 @@ include("help/layout/$skin/header.php");
   Einführung
 </h2>
 <p>
-  <strong>Homöopathie</strong> ist eine Heilmethode, die Anfang des 19. Jhd. von dem Arzt <strong>Dr. Samuel Hahnemann</strong> begründet wurde und auf dem Prinzip <strong><em>Similia similibus currentur</em></strong> (<strong>Ähnliches heilt Ähnliches</strong>) beruht.<br>
-  Das bedeutet, das ein kranker Mensch durch das Mittel geheilt wird, welches beim gesunden Menschen <strong>ähnliche Symptome</strong> wie die seinen erzeugt.<br>
-  Die <strong>Grundlage</strong> für die homöopathische Behandlung wurde geschaffen, indem von damals bis heute Tausende von Mitteln (pflanzlichen, tierischen und mineralischen Ursprungs) an gesunden Menschen <strong>getestet</strong> und die dabei auftretenden Symptome in sogenannten <strong><em>Materia Medicas</em></strong> zusammengefasst wurden.<br>
-  Um die Wahl des richtigen Mittels (<strong><em>Similimum</em></strong>) zu erleichtern, wurden aus den Arzneimittellehren die sogenannten <strong><em>Repertorien</em></strong> extrahiert. Dies sind <strong>Nachschlagewerke</strong>, bei denen die Symptome entweder nach dem <strong>Kopf-Fuß-Schema</strong> oder alphabetisch in verschiedene Kapitel und Rubriken eingeordnet und ihnen die jeweils <strong>passenden Mittel</strong> zugeordnet werden. Außerdem wird den Mitteln, je nachdem wie stark das entsprechende Symptom ausgeprägt ist, eine <strong>Wertigkeit</strong> von 1 - 4 beigelegt.<br>
-  Der Homöopath trägt jetzt durch eine <strong>ausführliche Befragung</strong> des Patienten (<strong><em>Anamnese</em></strong> - Fallaufnahme) dessen Symptome einschließlich der Modalitäten (<strong>Krankheitsbild</strong>) zusammen.<br>
-  Auf Grundlage des <strong>Krankheitsbildes</strong> lässt sich durch Repertorisierung die <strong>Wahl des Mittels</strong> auf wenige Mittel einschränken. Dabei muss besonderes Augenmerk auf für den Krankheitsverlauf <strong>untypische</strong> und für den Patienten <strong>prägnante</strong> Symptome gelegt werden, die entscheidend für die Wahl des Mittels sein können. Der erfahrene Homöopath wird auch solche Mittel ausschließen, die ein breites Symptomspektrum abdecken (z.B. <em>Sulfur</em>), also bei Repertorisierungen oft an oberer Stelle stehen, wenn beim Patienten die entscheidenden Symptome fehlen, die auf das Mittel hinweisen.
+  <strong>Homöopathie</strong> ist eine Heilmethode, die Anfang des 19. Jhd. von dem Arzt <strong>Dr. Samuel Hahnemann</strong> begründet wurde und auf dem Prinzip <strong><em>"Similia similibus curentur"</em> - Ähnliches heilt Ähnliches</strong> beruht.<br>
+  Das bedeutet, das ein kranker Mensch durch das Mittel geheilt wird, welches beim gesunden Menschen <strong>ähnliche Symptome</strong> wie die seinen erzeugt.
+</p>
+<p>
+  Die <strong>Grundlage</strong> für die homöopathische Behandlung wurde geschaffen, indem von damals bis heute Tausende von Mitteln (pflanzlichen, tierischen und mineralischen Ursprungs) <strong>an gesunden Menschen getestet</strong> und mit den dabei auftretenden Symptomen in <strong><em>"Materia Medicas" (Arzneimittellehren)</em></strong> zusammengefasst wurden.<br>
+  Um die Wahl des richtigen Mittels (<strong><em>"Similimum"</em></strong>) zu erleichtern, wurden aus den Arzneimittellehren die <strong><em>"Repertorien"</em></strong> extrahiert. Dies sind <strong>Nachschlagewerke</strong>, bei denen die Symptome mit den ihnen zugeordneten Mitteln zu Rubriken zusammengefasst werden und entweder nach dem <strong>Kopf-Fuß-Schema</strong> oder alphabetisch unter verschiedenen Kapiteln und Hauptrubriken eingeordnet sind.<br>
+  Den Mitteln werden, je nachdem wie stark das entsprechende Symptom ausgeprägt ist, eine <strong>Wertigkeit</strong> von 1-3, 1-4 oder 1-5 (abhängig vom Repertorium) beigelegt.
+</p>
+<p>
+  Der Homöopath trägt durch eine <strong>ausführliche Befragung</strong> des Patienten (<strong><em>Anamnese</em></strong> - Fallaufnahme) dessen Symptome einschließlich der Modalitäten zu einem <strong>Krankheitsbild</strong> zusammen.<br>
+  Auf Grundlage des <strong>Krankheitsbildes</strong> lässt sich durch Repertorisierung die <strong>Wahl des Mittels</strong> auf wenige Mittel einschränken.<br>
+  Dabei muss besonderes Augenmerk auf für den Krankheitsverlauf <strong>untypische</strong> und für den Patienten <strong>prägnante</strong> Symptome gelegt werden, die entscheidend für die Wahl des Mittels sein können.<br>
+  Der erfahrene Homöopath wird auch solche Mittel ausschließen, die ein breites Symptomspektrum abdecken (z.B. <em>Sulfur</em>), also bei Repertorisierungen oft an oberer Stelle stehen, wenn beim Patienten die entscheidenden Symptome fehlen, die auf das Mittel hinweisen.<br>
   Um aus den repertorisierten Mitteln das richtige auszuwählen sollte man zusätzlich <strong>ausführliche Mittelbescheibungen</strong> zu Rate ziehen und das Mittel wählen, welches <strong>in Konstitution und Symptomen</strong> am ehesten dem Patienten entspricht.
 </p>
 <p>
-  Die Mittel werden in der Regel als <strong>Potenzen</strong> gegeben. Da die Wahl der Potenz aber bei der Wahl des Mittels keine Rolle spielt, will ich das Thema hier aussparen und auf die einschlägige Literatur verweisen.
+  Die Mittel werden in der Regel in <strong>Potenzen</strong> gegeben. Da die Wahl der Potenz aber bei der Wahl des Mittels keine Rolle spielt, will ich das Thema hier aussparen und auf die einschlägige Literatur verweisen.
 </p>
 <?php
 include("help/layout/$skin/footer.php");

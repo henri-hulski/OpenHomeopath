@@ -34,24 +34,24 @@ include("help/layout/$skin/header.php");
   User account
 </h2>
 <p>
-  In der linken Navigationsleiste findest du unter dem Benutzersymbol <img src="../../<?php echo(USER_ICON);?>" width="16" height="16" alt="Benutzersymbol"> das <strong>Benutzermenü</strong>.
+  In the navigation bar of OpenHomeopath you find the <strong>user menue</strong> beneath <img src="../../<?php echo(USER_ICON);?>" width="16" height="16" alt="Usericon">.
 </p>
 <p>
-  Wenn du <strong>nicht angemeldet</strong> bist findest du hier nur den Eintrag <strong><em>"Anmelden"</em></strong>. Von dort kommst du zum <strong>Anmeldeformular</strong>. Dort meldest du dich mit <strong>Benutzernamen</strong> und <strong>Passwort</strong> an. Wenn du das <strong>Passwort vergisst</strong>, können wir dir bei Angabe des Benutzernamens im unteren Formular ein <strong>neues Passwort</strong> an die hinterlegten e-Mail schicken.<br>
-  Um dich zu <strong>registrieren</strong> gehe über <strong><em>"Nicht registriert? &ndash; Klicke hier, um dich zu registrieren."</em></strong> zum <strong>Registrierungs-Formular</strong>. Wenn du es ausfüllst und abschickst wirst du <strong>registriert</strong> und dir wird eine <strong>Bestätigungs-Mail mit deinem Passwort</strong> zugeschickt.
+  If you aren't logged in you see here only the item <strong><em>"Log in"</em></strong>. From here you get to the <strong>log in form</strong>. Here you can log in with username and password.<br>
+  If you forgot the password send the <strong><em>"Forgot Password?"</em></strong> form with your username and we'll send a new password to your registered email.<br>
+  For register click on <strong><em>"Not registered? – Sign-Up!"</em></strong> and you come to the registration form.<br>
+  After filling in and sending the form you will get an email with your password.
 </p>
 <div>
-  Wenn du angemeldet bist erscheinen folgende Einträge im Benutzermenü:
+  If you're logged in you've the following items in the user menue:
   <ul>
     <li><strong><em>"My account"</em></strong>,</li>
     <li><strong><em>"Settings"</em></strong>,</li>
     <li><strong><em>"Log out"</em></strong>.</li>
   </ul>
-  Darunter findest du, wenn diese Funktion in den Einstellungen aktiviert ist, eine List der momentan <strong>aktiven Benutzer</strong>. Wenn du einen Benutzer anklickst werden dir <strong>genauere Informationen</strong> zu diesem Benutzer angezeigt.
+  If you've it activated in the setting you see beneath a list with the <strong>currently active users</strong>.<br>
+  When clicking on a user you get more informations about him.
 </div>
-<p>
-  Nun zu den <strong>einzelnen Menüpunkten:</strong>
-</p>
 <br>
 <div class="content">
   <h2>
@@ -68,47 +68,44 @@ include("help/layout/$skin/header.php");
   My account
 </h3>
 <p>
-  Unter <strong>Allgemeine Angaben</strong> befinden sich <strong>genauere Angaben zum Benutzer</strong>, die du unter <strong><em>"Einstellungen"</em></strong> ändern kannst.
+  In the user account you find under <strong>General Info</strong> details about the user, which you can change in the <a href="#settings">Settings</a>.
 </p>
 <div>
-  Unter <strong>Gespeicherte Repertorisierungen</strong> findest du eine Tabelle der <strong>gespeicherten Repertorisierungen</strong>.<br>
-  Wenn du eine Repertorisierung <strong>auswählst</strong>, kannst du:
+  In the sortable <strong><em>Saved repertorizations</em></strong> table you can choose a repertorization for:
   <ul>
-    <li>über <strong><em>"Repertorisierung aufrufen"</em></strong> das entsprechende Repertorisierungsergebnis aufrufen,</li>
-    <li>über <strong><em>"Weiter repertorisieren"</em></strong> mit den ausgewählten Symptomen direkt ins Repertorisierungsfenster springen oder</li>
-    <li>mit <strong><em>"Repertorisierung löschen"</em></strong> die entsprechende Repertorisierung vollständig löschen.</li>
-    <li>mit <strong><em>"Öffentlich-Status ändern"</em></strong> kannst du wählen, ob eine Repertorisierung veröffentlicht werden soll, so dass sie sich andere Benutzer über Benutzer-Info (URL: <strong>"openhomeopath/userinfo.php?user=</strong><em>mein_benutzername</em><strong>"</strong> - <em>mein_benutzername</em> durch deinen Benutzernamen ersetzen) anschauen können.
+    <li><strong><em>"Show repertorization"</em></strong> - return to the repertorization result,</li>
+    <li><strong><em>"Add more symptoms"</em></strong> - continue with the selected repertorization,</li>
+    <li><strong><em>"Delete repertorization"</em></strong> - delete the selected repertorization,</li>
+    <li><strong><em>"Change public-state"</em></strong> - publish a repertorization, which allows other users to see it in <strong>your user-info</strong> under the URL: <strong>"openhomeopath/userinfo.php?user=</strong><em>your_username</em><strong>"</strong> (replace <em>your_username</em> with your username).
 </li>
   </ul>
 </div>
 <p>
-Unter <strong>Repertorium personalisieren</strong> kannst du dir ein <strong>persönliches Repertoriumsprofil</strong> zusammenstellen, wobei du auswählst, <strong>welche Quellen</strong> du verwenden willst. Dieses Profil wird bei der <strong>Repertorisierung</strong> verwendet, wenn du unter deinem Benutzernamen <strong>angemeldet</strong> bist.
-<br>
-In der <strong>Materia Medica</strong> wird bei der Zusammenstellung der einem Mittel zugeordneten Symptome ebenfalls das personalisierte Repertorium verwendet. Um die eigentliche <strong>Materia Medica</strong> zu personalisieren siehe <a href="#materia_custom">unten</a>.
-<br>
-Entsprechend benutzt die <strong>Symptom-Info</strong> beim Zusammenstellen der Mittel auch das personalisierte Repertorium.
+  Under <strong><em>Personalize the Repertory</em></strong> you can compose your <strong>personal Repertory profile</strong> by selecting <strong>which sources</strong> will be included. This profile is used by the <strong>Repertorization</strong>, if you're logged in.<br>
+  The reversed repertorization in the <strong>Materia Medica</strong> also uses the personalized repertory.<br>
+  Accordingly, the <strong>Symptom-Info</strong> uses the personalized repertory in the remedy list.
 </p>
 <p>
-Unter <strong>Materia Medica personalisieren</strong> kannst du dir eine <strong>persönliche Materia Medica</strong> zusammenstellen, wobei du auswählst, <strong>welche Quellen</strong> verwendet werden. Dieses Profil wird bei den <strong>Mittelbeschreibungen</strong> in der Materia Medica verwendet, wenn du unter deinem Benutzernamen <strong>angemeldet</strong> bist.
+  Under <strong><em>Personalize the Materia Medica</em></strong> you can compose your <strong>personal Materia Medica</strong> by selecting <strong>which sources</strong> will be included. This profile will be used by the <strong>Remedy Descriptions</strong> in the Materia Medica if you're logged in.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="settings" id="settings"><br></a>
 <h3>
   Settings
 </h3>
 <ul>
-  <li><strong>Programmeinstellungen:</strong>
+  <li><strong>Program settings:</strong>
   <ul>
-    <li><strong>Skin auswählen:</strong> Skins bestimmen das Aussehen von OpenHomeopath. Im Moment gibt es 2 Skins: <strong><em>"original"</em></strong> von Henri Schumacher und <strong><em>"kraque"</em></strong> von Thomas Bochmann ohne Seitenleiste, so das sie besonders für kleinere Displays geeignet ist. Du kannst hier die <strong>Standard-Skin für deinen Benutzer</strong> auswählen. Ansonsten kann die Skin auch jederzeit im Programm geändert werden.</li>
-    <li><strong>Sprache auswählen:</strong> Hier wählst du die <strong>Programmsprache für deinen Benutzer</strong> aus. Im Moment ist OpenHomeopath in deutsch und englisch übersetzt.</li>
-    <li><strong>Bevorzugte Symptom-Sprache auswählen:</strong> Die Bevorzugte Symptom-Sprache wird berücksichtigt, wenn ein Symptom in verschiedenen Übersetzungen vorliegt. Im Moment gibt es Symptomübersetzungen in deutsch und englisch.</li>
-    <li><strong>Aktive Benutzer anzeigen:</strong> Wenn dieses Feld markiert ist, werden die im Moment <strong>aktiven Benutzer</strong> unterhalb des Benutzermenüs angezeigt. Wenn du auf einen Benutzer klickst, werden <strong>weitere Informationen</strong> zu ihm angezeigt.</li>
+    <li><strong>Select skin:</strong> Here you can select <strong>your default skin</strong>. At the moment we've 2 skins:  <strong><em>"original"</em></strong> from Henri Schumacher and <strong><em>"kraque"</em></strong> without sidebar from Thomas Bochmann.<br>
+    <li><strong>Select language:</strong> Here you select the <strong>program language</strong>. At the moment OpenHomeopath is translated in English and German.</li>
+    <li><strong>Select your preferred symptom-language:</strong> Your <strong>preferred symptom-language</strong> will be considered, if a symptom exists in different translations. At the moment we have symptom translations in German and English.</li>
+    <li><strong>Show active users:</strong> If checked, you get a list with the <strong>currently active users</strong> beneath the user menue. By clicking on a user you get more informations about him.</li>
   </ul></li>
-  <li><strong>Email ändern:</strong> Du kannst deine e-Mail-Adresse ändern und festlegen ob sie für andere Benutzer sichtbar ist. Verwende nur eine gültige e-Mail-Adresse.</li>
-  <li><strong>Öffentliches Profil:</strong> Hier kannst du deinen <strong>echten Namen</strong> und <strong>weitere Angaben zu deiner Person</strong> hinterlegen. Diese können von anderen Besuchern eingesehen werden, wenn du aktiv bist.</li>
-  <li><strong>Passwort ändern:</strong> Hier kannst du dein Passwort ändern.</li>
+  <li><strong>Change e-mail:</strong> You can change your email and decide if it should be visible for other users. Use only a valid email address.</li>
+  <li><strong>Public profile:</strong> Here you can insert <strong>your real name and further personal information</strong>, that will be visible to other users.</li>
+  <li><strong>Change password:</strong> Here you can change your password.</li>
 </ul>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="logout" id="logout"><br></a>
 <h3>
   Log out
@@ -116,6 +113,7 @@ Unter <strong>Materia Medica personalisieren</strong> kannst du dir eine <strong
 <p>
   Here you can <strong>log out</strong>.
 </p>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

@@ -67,7 +67,7 @@ include("help/layout/$skin/header.php");
       <a href="datadmin.php">Data maintenance</a>
       <ul class="subcontent">
         <li><a href="expresstool.php">Expresstool Manual</a></li>
-        <li><a href="expresstool_tut.php">Expresstool Tutorial</a></li>
+        <!--<li><a href="expresstool_tut.php">Expresstool Tutorial</a></li>-->
         <li><a href="datadmin.php#medica">Materia Medica table</a></li>
         <li><a href="datadmin.php#symptoms">Symptoms table</a></li>
         <li><a href="datadmin.php#sources">Sources table</a></li>

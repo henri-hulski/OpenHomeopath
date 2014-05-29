@@ -700,11 +700,15 @@ a.NavLink:hover {
 
 /* für Blockformular */
 
-.StdBlock {
+.StdBlock, .StdBlock table {
     font-size: 12px;
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-	background-color: #FFFDEE;
-	border: 1px solid #808080;
+  }
+
+
+.StdBlock {
+    background-color: #FFFDEE;
+    border: 1px solid #808080;
     padding: 3px;
     text-align: left;
     width: 600px;

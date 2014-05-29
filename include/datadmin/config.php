@@ -67,6 +67,9 @@ $enable_delete_all_feature = 0;
 // enable export to csv for excel feature (0|1)
 $export_to_csv_feature = 1;
 
+// csv separator
+$csv_separator = ";";
+
 // the name of the main file of DaDaBIK, you can safety leave this option as is unless you need to rename index.php to something else
 $dadabik_main_file = 'datadmin.php';
 
@@ -203,7 +206,7 @@ $update_notice_email_bcc_recipients_ar[0] = 'henri.hulski@gazeta.pl';
 
 // the word used to display a NULL content (could also be a blank string '')
 
-$null_word = 'NULL';
+$null_word = '';
 
 
 
