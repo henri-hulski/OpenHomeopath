@@ -181,7 +181,8 @@ CREATE TABLE `custom_rep` (
 CREATE TABLE `datadmin__main_rubrics` (
   `id_field` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `name_field` varchar(50) DEFAULT NULL,
-  `label_field` varchar(255) NOT NULL DEFAULT '',
+  `label_de_field` varchar(255) NOT NULL DEFAULT '',
+  `label_en_field` varchar(255) NOT NULL DEFAULT '',
   `type_field` varchar(50) NOT NULL DEFAULT 'text',
   `content_field` varchar(50) NOT NULL DEFAULT 'alphanumeric',
   `present_search_form_field` varchar(1) NOT NULL DEFAULT '1',
@@ -205,7 +206,8 @@ CREATE TABLE `datadmin__main_rubrics` (
   `width_field` varchar(5) NOT NULL DEFAULT '',
   `height_field` varchar(5) NOT NULL DEFAULT '',
   `maxlength_field` varchar(5) NOT NULL DEFAULT '100',
-  `hint_insert_field` varchar(255) NOT NULL DEFAULT '',
+  `hint_insert_de_field` varchar(255) NOT NULL DEFAULT '',
+  `hint_insert_en_field` varchar(255) NOT NULL DEFAULT '',
   `order_form_field` tinyint(3) unsigned NOT NULL,
   `separator_field` char(2) NOT NULL DEFAULT '~',
   PRIMARY KEY (`id_field`)
@@ -214,9 +216,10 @@ CREATE TABLE `datadmin__main_rubrics` (
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `datadmin__materia` (
-  `id_field` int(11) NOT NULL AUTO_INCREMENT,
+  `id_field` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `name_field` varchar(50) DEFAULT NULL,
-  `label_field` varchar(255) NOT NULL DEFAULT '',
+  `label_de_field` varchar(255) NOT NULL DEFAULT '',
+  `label_en_field` varchar(255) NOT NULL DEFAULT '',
   `type_field` varchar(50) NOT NULL DEFAULT 'text',
   `content_field` varchar(50) NOT NULL DEFAULT 'alphanumeric',
   `present_search_form_field` varchar(1) NOT NULL DEFAULT '1',
@@ -240,7 +243,8 @@ CREATE TABLE `datadmin__materia` (
   `width_field` varchar(5) NOT NULL DEFAULT '',
   `height_field` varchar(5) NOT NULL DEFAULT '',
   `maxlength_field` varchar(5) NOT NULL DEFAULT '100',
-  `hint_insert_field` varchar(255) NOT NULL DEFAULT '',
+  `hint_insert_de_field` varchar(255) NOT NULL DEFAULT '',
+  `hint_insert_en_field` varchar(255) NOT NULL DEFAULT '',
   `order_form_field` int(11) NOT NULL,
   `separator_field` varchar(2) NOT NULL DEFAULT '~',
   PRIMARY KEY (`id_field`)
@@ -251,7 +255,8 @@ CREATE TABLE `datadmin__materia` (
 CREATE TABLE `datadmin__rem_alias` (
   `id_field` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `name_field` varchar(50) NOT NULL,
-  `label_field` varchar(255) NOT NULL DEFAULT '',
+  `label_de_field` varchar(255) NOT NULL DEFAULT '',
+  `label_en_field` varchar(255) NOT NULL DEFAULT '',
   `type_field` varchar(50) NOT NULL DEFAULT 'text',
   `content_field` varchar(50) NOT NULL DEFAULT 'alphanumeric',
   `present_search_form_field` varchar(1) NOT NULL DEFAULT '1',
@@ -275,7 +280,8 @@ CREATE TABLE `datadmin__rem_alias` (
   `width_field` varchar(5) NOT NULL DEFAULT '',
   `height_field` varchar(5) NOT NULL DEFAULT '',
   `maxlength_field` varchar(5) NOT NULL DEFAULT '100',
-  `hint_insert_field` varchar(255) NOT NULL DEFAULT '',
+  `hint_insert_de_field` varchar(255) NOT NULL DEFAULT '',
+  `hint_insert_en_field` varchar(255) NOT NULL DEFAULT '',
   `order_form_field` tinyint(3) unsigned NOT NULL,
   `separator_field` char(2) NOT NULL DEFAULT '~',
   PRIMARY KEY (`id_field`)
@@ -286,7 +292,8 @@ CREATE TABLE `datadmin__rem_alias` (
 CREATE TABLE `datadmin__remedies` (
   `id_field` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `name_field` varchar(50) DEFAULT NULL,
-  `label_field` varchar(255) NOT NULL DEFAULT '',
+  `label_de_field` varchar(255) NOT NULL DEFAULT '',
+  `label_en_field` varchar(255) NOT NULL DEFAULT '',
   `type_field` varchar(50) NOT NULL DEFAULT 'text',
   `content_field` varchar(50) NOT NULL DEFAULT 'alphanumeric',
   `present_search_form_field` varchar(1) NOT NULL DEFAULT '1',
@@ -310,7 +317,8 @@ CREATE TABLE `datadmin__remedies` (
   `width_field` varchar(5) NOT NULL DEFAULT '',
   `height_field` varchar(5) NOT NULL DEFAULT '',
   `maxlength_field` varchar(5) NOT NULL DEFAULT '100',
-  `hint_insert_field` varchar(255) NOT NULL DEFAULT '',
+  `hint_insert_de_field` varchar(255) NOT NULL DEFAULT '',
+  `hint_insert_en_field` varchar(255) NOT NULL DEFAULT '',
   `order_form_field` tinyint(3) unsigned NOT NULL,
   `separator_field` char(2) NOT NULL DEFAULT '~',
   PRIMARY KEY (`id_field`)
@@ -319,9 +327,10 @@ CREATE TABLE `datadmin__remedies` (
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `datadmin__sources` (
-  `id_field` int(11) NOT NULL AUTO_INCREMENT,
+  `id_field` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `name_field` varchar(50) DEFAULT NULL,
-  `label_field` varchar(255) NOT NULL DEFAULT '',
+  `label_de_field` varchar(255) NOT NULL DEFAULT '',
+  `label_en_field` varchar(255) NOT NULL DEFAULT '',
   `type_field` varchar(50) NOT NULL DEFAULT 'text',
   `content_field` varchar(50) NOT NULL DEFAULT 'alphanumeric',
   `present_search_form_field` varchar(1) NOT NULL DEFAULT '1',
@@ -345,18 +354,20 @@ CREATE TABLE `datadmin__sources` (
   `width_field` varchar(5) NOT NULL DEFAULT '',
   `height_field` varchar(5) NOT NULL DEFAULT '',
   `maxlength_field` varchar(5) NOT NULL DEFAULT '100',
-  `hint_insert_field` varchar(255) NOT NULL DEFAULT '',
+  `hint_insert_de_field` varchar(255) NOT NULL DEFAULT '',
+  `hint_insert_en_field` varchar(255) NOT NULL DEFAULT '',
   `order_form_field` int(11) NOT NULL,
   `separator_field` varchar(2) NOT NULL DEFAULT '~',
   PRIMARY KEY (`id_field`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 PACK_KEYS=0;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 PACK_KEYS=0;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `datadmin__symptoms` (
   `id_field` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `name_field` varchar(50) DEFAULT NULL,
-  `label_field` varchar(255) NOT NULL DEFAULT '',
+  `label_de_field` varchar(255) NOT NULL DEFAULT '',
+  `label_en_field` varchar(255) NOT NULL DEFAULT '',
   `type_field` varchar(50) NOT NULL DEFAULT 'text',
   `content_field` varchar(50) NOT NULL DEFAULT 'alphanumeric',
   `present_search_form_field` varchar(1) NOT NULL DEFAULT '1',
@@ -380,23 +391,25 @@ CREATE TABLE `datadmin__symptoms` (
   `width_field` varchar(5) NOT NULL DEFAULT '',
   `height_field` varchar(5) NOT NULL DEFAULT '',
   `maxlength_field` varchar(5) NOT NULL DEFAULT '100',
-  `hint_insert_field` varchar(255) NOT NULL DEFAULT '',
+  `hint_insert_de_field` varchar(255) NOT NULL DEFAULT '',
+  `hint_insert_en_field` varchar(255) NOT NULL DEFAULT '',
   `order_form_field` tinyint(3) unsigned NOT NULL,
   `separator_field` char(2) NOT NULL DEFAULT '~',
   PRIMARY KEY (`id_field`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `datadmin__tables` (
-  `name_table` varchar(255) NOT NULL,
-  `allowed_table` varchar(1) NOT NULL,
-  `enable_insert_table` varchar(1) NOT NULL,
-  `enable_edit_table` varchar(1) NOT NULL,
-  `enable_delete_table` varchar(1) NOT NULL,
-  `enable_details_table` varchar(1) NOT NULL,
-  `alias_table` varchar(255) NOT NULL,
-  `position` tinyint(3) unsigned NOT NULL,
+  `name_table` varchar(255) NOT NULL DEFAULT '',
+  `allowed_table` varchar(1) NOT NULL DEFAULT '',
+  `enable_insert_table` varchar(1) NOT NULL DEFAULT '',
+  `enable_edit_table` varchar(1) NOT NULL DEFAULT '',
+  `enable_delete_table` varchar(1) NOT NULL DEFAULT '',
+  `enable_details_table` varchar(1) NOT NULL DEFAULT '',
+  `alias_table_de` varchar(255) NOT NULL DEFAULT '',
+  `alias_table_en` varchar(255) NOT NULL DEFAULT '',
+  `position` tinyint(3) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`name_table`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -974,7 +987,7 @@ CREATE TABLE `magic_hat` (
   KEY `email` (`email`),
   KEY `txn_id` (`txn_id`),
   KEY `currency` (`currency`)
-) ENGINE=MyISAM AUTO_INCREMENT=75 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -1107,7 +1120,7 @@ CREATE TABLE `repertorizations` (
   PRIMARY KEY (`rep_id`),
   KEY `patient_id` (`patient_id`),
   KEY `username` (`username`)
-) ENGINE=MyISAM AUTO_INCREMENT=2014 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2036 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -2999,6 +3012,7 @@ CREATE TABLE `users` (
   `userid` char(32) DEFAULT NULL,
   `userlevel` tinyint(1) unsigned NOT NULL,
   `email` varchar(50) DEFAULT NULL,
+  `email_registered` varchar(50) DEFAULT NULL,
   `hide_email` tinyint(1) NOT NULL DEFAULT '0',
   `lang_id` varchar(6) NOT NULL,
   `sym_lang_id` varchar(6) NOT NULL,
@@ -3011,8 +3025,10 @@ CREATE TABLE `users` (
   `src_materia` varchar(8) NOT NULL DEFAULT 'all',
   `registration` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id_user`),
-  UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=1293 DEFAULT CHARSET=utf8;
+  UNIQUE KEY `username` (`username`),
+  KEY `email` (`email`),
+  KEY `email_registered` (`email_registered`)
+) ENGINE=InnoDB AUTO_INCREMENT=1342 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!50001 DROP TABLE IF EXISTS `sym__de_only`*/;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
