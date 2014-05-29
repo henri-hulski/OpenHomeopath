@@ -111,6 +111,7 @@ include("help/layout/$skin/header.php");
 <p>
   Hier kannst du dich <strong>abmelden</strong>.
 </p>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

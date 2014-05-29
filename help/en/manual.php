@@ -252,6 +252,7 @@ for ($i = 5; $i > 0; $i--) {
   Here you find information about program version, license, copyright and credits.<br>
   You get also the requirements of the client and the server and introductions for installation and configuration of OpenHomeopath.
 </p>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

@@ -203,6 +203,7 @@ include("help/layout/$skin/header.php");
   You find <strong>hints to fill out the fields</strong> behind the fields.<br>
   <strong>Details for each table</strong> you find in the corresponding table chapter.
 </p>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

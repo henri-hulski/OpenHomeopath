@@ -113,6 +113,7 @@ include("help/layout/$skin/header.php");
 <p>
   Here you can <strong>log out</strong>.
 </p>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

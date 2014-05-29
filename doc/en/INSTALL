@@ -1,0 +1,21 @@
+ Installation and configuration
+
+   1. Create a MySQL database and a user who has all rights for the database.
+   2. Edit the file "openhomeopath/include/classes/db/config_db.php" by providing the name of the MySQL database, the username and his password.
+      Also you can choose the database driver: "mysqli" or "mysql".
+      Protect the file "config_db.php" on the server against unauthorized read and write access (e.g. with chmod 600),
+      because the password is saved in plain text. Please note, that the server still needs read access.
+   3. Upload the folder "openhomeopath" to your webserver.
+   4. Call "http://your.webaddress.com/openhomeopath/install/install_db.php"
+      on your server with the browser and import the data to the database.
+   5. Now you can call "http://your.webaddress.com/openhomeopath/index.php" in your browser and here we are.
+   6. The default user with administration rights is "admin".
+      The default password: "admin". You should change the password after.
+
+
+
+Copyright © 2007-2014 by Henri Schumacher.
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.  This file is offered as-is,
+without any warranty.

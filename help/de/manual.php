@@ -252,6 +252,7 @@ for ($i = 5; $i > 0; $i--) {
 <p>
   Hier findest du Informationen über die Programmversion, Lizenz und Copyright, Dank an die, die durch Inspiration und nützliche Skripte bzw. Programmkode zum Programm beigetragen haben, Client- und Server-Anforderungen und Installation und Konfiguration für MySQL.
 </p>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

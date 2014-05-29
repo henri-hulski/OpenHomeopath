@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenHomeopath 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-28 22:33+0100\n"
+"POT-Creation-Date: 2014-05-30 01:08+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Henri Schumacher <henri.hulski@gazeta.pl>\n"
 "Language-Team: Henri Schumacher <henri.hulski@gazeta.pl>\n"
@@ -51,234 +51,6 @@ msgstr "Symptom abwählen"
 #: help/layout/kraque/frame.php:58 help/layout/kraque/frame.php:158
 msgid "Repertorize"
 msgstr "Repertorisieren"
-
-#: login_admin.php:48 login_admin.php:160 express.php:368
-msgid "Username"
-msgstr "Benutzername"
-
-#: login_admin.php:49
-msgid "Level"
-msgstr "Status"
-
-#: login_admin.php:50
-msgid "E-mail"
-msgstr "E-Mail"
-
-#: login_admin.php:51
-msgid "last active"
-msgstr "letzte Aktivität"
-
-#: login_admin.php:52
-msgid "registered since"
-msgstr "registriert seit"
-
-#: login_admin.php:60
-msgid "no users"
-msgstr "es gibt keine Benutzer"
-
-#: login_admin.php:113
-msgid "normal user"
-msgstr "normaler Benutzer"
-
-#: login_admin.php:115 login_admin.php:277
-msgid "Editor"
-msgstr "Editor"
-
-#: login_admin.php:117 login_admin.php:278
-msgid "Administrator"
-msgstr "Administrator"
-
-#: login_admin.php:156
-msgid "no banned users"
-msgstr "es gibt keine gebannten Benutzer"
-
-#: login_admin.php:160
-msgid "Time Banned"
-msgstr "gebannt seit"
-
-#: login_admin.php:196 login_admin.php:201 login.php:49
-#: skins/kraque/frame.php:97 skins/kraque/frame.php:192
-#: skins/kraque/frame_index.php:69 skins/kraque/frame_index.php:160
-#: help/layout/kraque/frame.php:97 help/layout/kraque/frame.php:191
-msgid "User administration"
-msgstr "Benutzerverwaltung"
-
-#: login_admin.php:206
-msgid "Error in the request, please correct"
-msgstr "Fehler bei der Anfrage, bitte korrigieren"
-
-#: login_admin.php:210
-#, php-format
-msgid "%d record was deleted!"
-msgid_plural "%d records were deleted!"
-msgstr[0] "Es wurden ein Datensatz gelöscht!"
-msgstr[1] "Es wurden %d Datensätze gelöscht!"
-
-#: login_admin.php:215 userinfo.php:70 doc/de/info.php:35 doc/en/info.php:35
-msgid "Contents"
-msgstr "Inhalt"
-
-#: login_admin.php:218
-msgid "Users Table Contents"
-msgstr "Benutzertabelle"
-
-#: login_admin.php:219 login_admin.php:264
-msgid "Change the userlevel"
-msgstr "Ändern des Benutzerstatus"
-
-#: login_admin.php:220 login_admin.php:308
-msgid "Delete User"
-msgstr "Benutzer löschen"
-
-#: login_admin.php:221 login_admin.php:342
-msgid "Delete Inactive Users"
-msgstr "Inaktive Benutzer löschen"
-
-#: login_admin.php:222 login_admin.php:391 login_admin.php:397
-msgid "Ban User"
-msgstr "Benutzer bannen"
-
-#: login_admin.php:223
-msgid "Banned Users Table"
-msgstr "Gebannte Benutzer"
-
-#: login_admin.php:224 login_admin.php:450
-msgid "Repeal the ban of a username"
-msgstr "Bann eines Benutzernamens aufheben"
-
-#: login_admin.php:225 login_admin.php:477
-msgid "Delete records of a user"
-msgstr "Datenbankeinträge eines Benutzers löschen"
-
-#: login_admin.php:237
-msgid "Users Table Contents:"
-msgstr "Benutzertabelle:"
-
-#: login_admin.php:249 login_admin.php:293 login_admin.php:327
-#: login_admin.php:376 login_admin.php:408 login_admin.php:435
-#: login_admin.php:462 login_admin.php:495 userinfo.php:179 userinfo.php:197
-#: userinfo.php:321 skins/kraque/footer.php:45 skins/original/footer.php:45
-#: help/layout/kraque/footer.php:45 help/layout/original/footer.php:45
-msgid "To the top of the page"
-msgstr "Zum Seitenanfang"
-
-#: login_admin.php:270 login_admin.php:311 login_admin.php:394 register.php:99
-#: login.php:75 login.php:145 userinfo.php:106
-#: include/classes/login/mailer.php:58 include/classes/login/mailer.php:108
-msgid "Username:"
-msgstr "Benutzername:"
-
-#: login_admin.php:274 details.php:101
-msgid "State:"
-msgstr "Status:"
-
-#: login_admin.php:276
-msgid "Normal User"
-msgstr "Normaler Benutzer"
-
-#: login_admin.php:284
-msgid "Change userlevel"
-msgstr "Status ändern"
-
-#: login_admin.php:320 login_admin.php:369 login_admin.php:403
-#: login_admin.php:490 admin_tools/import_openrep.php:22
-#: admin_tools/import_openrep.php:181
-msgid "Warning!"
-msgstr "Vorsicht!"
-
-#: login_admin.php:320
-msgid "It will also delete all repertorizations from the deleted user."
-msgstr ""
-"Es werden auch alle Repertorisierungen des gelöschten Benutzers gelöscht."
-
-#: login_admin.php:321
-msgid ""
-"If the user has made changes in the database, maintained them and the user "
-"will be banned, so that no one can register with the same username and "
-"change data."
-msgstr ""
-"Wenn der Benutzer Veränderungen in der Datenbank vorgenommen hat, bleiben "
-"diese erhalten und der Benutzernamen wird gebannt, so dass sich niemand mit "
-"dem selben Benutzernamen registrieren und die Daten verändern kann."
-
-#: login_admin.php:322 login_admin.php:371
-msgid "The ban may be lifted by administrators."
-msgstr "Der Bann kann durch Administratoren aufgehoben werden."
-
-#: login_admin.php:343
-msgid ""
-"This will delete all users (not administrators), who have not logged in to "
-"the site within a certain time period. You specify the days spent inactive."
-msgstr ""
-"Hier kannst du alle Benutzer (nicht Administratoren) löschen, die während "
-"einer bestimmten Zeitspanne nicht angemeldet waren. Gib die Tage der "
-"Inaktivität an."
-
-#: login_admin.php:348
-msgid "Days:"
-msgstr "Tage:"
-
-#: login_admin.php:361
-msgid "Delete all inactive"
-msgstr "Alle Inaktiven löschen"
-
-#: login_admin.php:369
-msgid "It will also delete all repertorizations of the deleted users."
-msgstr ""
-"Es werden auch alle Repertorisierungen der gelöschten Benutzer gelöscht."
-
-#: login_admin.php:370
-msgid ""
-"If the users hade made changes in the database, maintained them and the user "
-"will be banned, so that no one can register with the same username and "
-"change data."
-msgstr ""
-"Wenn Benutzer Veränderungen in der Datenbank vorgenommen hat, bleiben diese "
-"erhalten und die entsprechenden Benutzernamen werden gebannt, so dass sich "
-"niemand mit den selben Benutzernamen registrieren und die Daten verändern "
-"kann."
-
-#: login_admin.php:403
-msgid "It will also delete all repertorizations of the deleted user."
-msgstr ""
-"Es werden auch alle Repertorisierungen des gebannten Benutzers gelöscht."
-
-#: login_admin.php:423
-msgid "Banned Users Table Contents:"
-msgstr "Folgende Benutzernamen sind gebannt:"
-
-#: login_admin.php:456
-msgid "Repeal ban"
-msgstr "Bann aufheben"
-
-#: login_admin.php:478
-msgid ""
-"Here you can, for example with vandalism, delete the database entries for a "
-"user. In the tables <strong> Materia Medica </strong> and <strong> symptom-"
-"remedy-relations </strong> will delete all messages while the user in the "
-"tables <strong>symptoms</strong>, <strong>main rubrics</strong>, "
-"<strong>remedies</strong>, <strong>source</strong> and <strong>languages</"
-"strong> Only the entries to which no records of other users reference."
-msgstr ""
-"Hier kannst du, z.B. bei Vandalismus, die Datenbankeinträge eines Benutzers "
-"löschen. In den Tabellen <strong>Materia Medica</strong> und <strong>Symptom-"
-"Mittel-Beziehungen</strong> werden dabei alle Einträge des Benutzers "
-"gelöscht, in den Tabellen <strong>Symptome</strong>, <strong>Hauptrubriken</"
-"strong>, <strong>Mittel</strong>, <strong>Quellen</strong> und "
-"<strong>Sprachen</strong> nur die Einträge, auf die keine Datensätze anderer "
-"Benutzer Bezug nehmen."
-
-#: login_admin.php:481
-msgid "User, whose records should be deleted:"
-msgstr "Benutzer, dessen Daten gelöscht weden sollen:"
-
-#: login_admin.php:484
-msgid "Deleting Data"
-msgstr "Daten löschen"
-
-#: login_admin.php:490
-msgid "You cannot undo changes."
-msgstr "Änderungen können nicht rückgängig gemacht werden."
 
 #: archive.php:227 skins/kraque/footer_datadmin.php:36
 #: skins/kraque/header_datadmin.php:46 skins/original/footer_datadmin.php:37
@@ -441,6 +213,12 @@ msgid "error found"
 msgid_plural "errors found"
 msgstr[0] "Fehler gefunden"
 msgstr[1] "Fehler gefunden"
+
+#: register.php:99 login.php:75 login.php:145 userinfo.php:106
+#: useradmin.php:270 useradmin.php:311 useradmin.php:394
+#: include/classes/login/mailer.php:58 include/classes/login/mailer.php:108
+msgid "Username:"
+msgstr "Benutzername:"
 
 #: register.php:107 login.php:80 include/classes/login/mailer.php:59
 msgid "Password:"
@@ -767,6 +545,13 @@ msgstr "Mein Bereich"
 msgid "Edit Account"
 msgstr "Benutzereinstellungen"
 
+#: login.php:49 useradmin.php:196 useradmin.php:201 skins/kraque/frame.php:97
+#: skins/kraque/frame.php:192 skins/kraque/frame_index.php:69
+#: skins/kraque/frame_index.php:160 help/layout/kraque/frame.php:97
+#: help/layout/kraque/frame.php:191
+msgid "User administration"
+msgstr "Benutzerverwaltung"
+
 #: login.php:51 skins/kraque/frame.php:115 skins/kraque/frame_index.php:87
 #: skins/original/frame.php:102 help/layout/kraque/frame.php:115
 #: help/layout/original/frame.php:102
@@ -862,6 +647,10 @@ msgstr[1] "Quellen:"
 #: details.php:99
 msgid "Grade:"
 msgstr "Wertigkeit:"
+
+#: details.php:101 useradmin.php:274
+msgid "State:"
+msgstr "Status:"
 
 #: details.php:104
 msgid "References:"
@@ -1388,6 +1177,10 @@ msgstr "Symptom"
 msgid "Main rubric"
 msgstr "Hauptrubrik"
 
+#: express.php:368 useradmin.php:48 useradmin.php:160
+msgid "Username"
+msgstr "Benutzername"
+
 #: express.php:408
 #, php-format
 msgid "%d remedy-abbreviation was not found in the database:"
@@ -1784,6 +1577,11 @@ msgstr "Benutzerbereich"
 msgid "Username not registered"
 msgstr "Benutzername nicht registriert"
 
+#: userinfo.php:70 useradmin.php:215 help/layout/original/footer.php:42
+#: doc/de/info.php:35 doc/en/info.php:35
+msgid "Contents"
+msgstr "Inhalt"
+
 #: userinfo.php:73 userinfo.php:80
 msgid "General Info"
 msgstr "Allgemeine Angaben"
@@ -1885,6 +1683,14 @@ msgstr "Andere Benutzer können deine e-Mail sehen."
 msgid "Here you can edit your account."
 msgstr "Hier kannst du deine Benutzereinstellungen bearbeiten."
 
+#: userinfo.php:179 userinfo.php:197 userinfo.php:321 useradmin.php:249
+#: useradmin.php:293 useradmin.php:327 useradmin.php:376 useradmin.php:408
+#: useradmin.php:435 useradmin.php:462 useradmin.php:495
+#: skins/kraque/footer.php:45 skins/original/footer.php:45
+#: help/layout/kraque/footer.php:45
+msgid "To the top of the page"
+msgstr "Zum Seitenanfang"
+
 #: userinfo.php:182
 msgid ""
 "Here saved repertorizations can be opened,  deleted or taken as a basis for "
@@ -1924,22 +1730,28 @@ msgstr ""
 
 #: userinfo.php:203
 msgid ""
-"In <strong>Materia Medica</strong> in the compilation of a remedy associated "
-"symptoms also uses the personalized repertory. To personalize the actual "
-"<strong>Materia Medica</strong> see <a href='#materia_custom'>below</a>."
+"The <strong>reversed repertorization in the Materia Medica</strong> also "
+"uses the personalized repertory."
 msgstr ""
 "In der <strong>Materia Medica</strong> wird bei der Zusammenstellung der "
 "einem Mittel zugeordneten Symptome ebenfalls das personalisierte Repertorium "
-"verwendet. Um die eigentliche <strong>Materia Medica</strong> zu "
-"personalisieren siehe <a href='#materia_custom'>unten</a>."
+"verwendet."
+
+#: userinfo.php:203
+msgid ""
+"To personalize the actual <strong>Materia Medica</strong> see <a "
+"href='#materia_custom'>below</a>."
+msgstr ""
+"Um die eigentliche <strong>Materia Medica</strong> zu personalisieren siehe "
+"<a href='#materia_custom'>unten</a>."
 
 #: userinfo.php:205
 msgid ""
 " Accordingly, the <strong>Symptom-Info</strong> uses the personalized "
-"repertory during compilation of the remedies."
+"repertory in the remedy list."
 msgstr ""
 "Entsprechend benutzt die <strong>Symptom-Info</strong> beim Zusammenstellen "
-"der Mittel auch das personalisierte Repertorium."
+"der Mittel das personalisierte Repertorium."
 
 #: userinfo.php:208
 msgid ""
@@ -2049,6 +1861,200 @@ msgstr[1] "%d öffentliche Repertorisierungen"
 #: userinfo.php:453 forms/saved_reps.php:209
 msgid "Show repertorization"
 msgstr "Repertorisierung aufrufen"
+
+#: useradmin.php:49
+msgid "Level"
+msgstr "Status"
+
+#: useradmin.php:50
+msgid "Registered e-mail"
+msgstr "Registrierte e-Mail"
+
+#: useradmin.php:51
+msgid "Last active"
+msgstr "Letzte Aktivität"
+
+#: useradmin.php:52
+msgid "Registered since"
+msgstr "Registriert seit"
+
+#: useradmin.php:60
+msgid "no users"
+msgstr "es gibt keine Benutzer"
+
+#: useradmin.php:113
+msgid "normal user"
+msgstr "normaler Benutzer"
+
+#: useradmin.php:115 useradmin.php:277
+msgid "Editor"
+msgstr "Editor"
+
+#: useradmin.php:117 useradmin.php:278
+msgid "Administrator"
+msgstr "Administrator"
+
+#: useradmin.php:156
+msgid "no banned users"
+msgstr "es gibt keine gebannten Benutzer"
+
+#: useradmin.php:160
+msgid "Time Banned"
+msgstr "gebannt seit"
+
+#: useradmin.php:206
+msgid "Error in the request, please correct"
+msgstr "Fehler bei der Anfrage, bitte korrigieren"
+
+#: useradmin.php:210
+#, php-format
+msgid "%d record was deleted!"
+msgid_plural "%d records were deleted!"
+msgstr[0] "Es wurden ein Datensatz gelöscht!"
+msgstr[1] "Es wurden %d Datensätze gelöscht!"
+
+#: useradmin.php:218
+msgid "Users Table Contents"
+msgstr "Benutzertabelle"
+
+#: useradmin.php:219 useradmin.php:264
+msgid "Change the userlevel"
+msgstr "Ändern des Benutzerstatus"
+
+#: useradmin.php:220 useradmin.php:308
+msgid "Delete User"
+msgstr "Benutzer löschen"
+
+#: useradmin.php:221 useradmin.php:342
+msgid "Delete Inactive Users"
+msgstr "Inaktive Benutzer löschen"
+
+#: useradmin.php:222 useradmin.php:391 useradmin.php:397
+msgid "Ban User"
+msgstr "Benutzer bannen"
+
+#: useradmin.php:223
+msgid "Banned Users Table"
+msgstr "Gebannte Benutzer"
+
+#: useradmin.php:224 useradmin.php:450
+msgid "Repeal the ban of a username"
+msgstr "Bann eines Benutzernamens aufheben"
+
+#: useradmin.php:225 useradmin.php:477
+msgid "Delete records of a user"
+msgstr "Datenbankeinträge eines Benutzers löschen"
+
+#: useradmin.php:237
+msgid "Users Table Contents:"
+msgstr "Benutzertabelle:"
+
+#: useradmin.php:276
+msgid "Normal User"
+msgstr "Normaler Benutzer"
+
+#: useradmin.php:284
+msgid "Change userlevel"
+msgstr "Status ändern"
+
+#: useradmin.php:320 useradmin.php:369 useradmin.php:403 useradmin.php:490
+#: admin_tools/import_openrep.php:22 admin_tools/import_openrep.php:181
+msgid "Warning!"
+msgstr "Vorsicht!"
+
+#: useradmin.php:320
+msgid "It will also delete all repertorizations from the deleted user."
+msgstr ""
+"Es werden auch alle Repertorisierungen des gelöschten Benutzers gelöscht."
+
+#: useradmin.php:321
+msgid ""
+"If the user has made changes in the database, maintained them and the user "
+"will be banned, so that no one can register with the same username and "
+"change data."
+msgstr ""
+"Wenn der Benutzer Veränderungen in der Datenbank vorgenommen hat, bleiben "
+"diese erhalten und der Benutzernamen wird gebannt, so dass sich niemand mit "
+"dem selben Benutzernamen registrieren und die Daten verändern kann."
+
+#: useradmin.php:322 useradmin.php:371
+msgid "The ban may be lifted by administrators."
+msgstr "Der Bann kann durch Administratoren aufgehoben werden."
+
+#: useradmin.php:343
+msgid ""
+"This will delete all users (not administrators), who have not logged in to "
+"the site within a certain time period. You specify the days spent inactive."
+msgstr ""
+"Hier kannst du alle Benutzer (nicht Administratoren) löschen, die während "
+"einer bestimmten Zeitspanne nicht angemeldet waren. Gib die Tage der "
+"Inaktivität an."
+
+#: useradmin.php:348
+msgid "Days:"
+msgstr "Tage:"
+
+#: useradmin.php:361
+msgid "Delete all inactive"
+msgstr "Alle Inaktiven löschen"
+
+#: useradmin.php:369
+msgid "It will also delete all repertorizations of the deleted users."
+msgstr ""
+"Es werden auch alle Repertorisierungen der gelöschten Benutzer gelöscht."
+
+#: useradmin.php:370
+msgid ""
+"If the users hade made changes in the database, maintained them and the user "
+"will be banned, so that no one can register with the same username and "
+"change data."
+msgstr ""
+"Wenn Benutzer Veränderungen in der Datenbank vorgenommen hat, bleiben diese "
+"erhalten und die entsprechenden Benutzernamen werden gebannt, so dass sich "
+"niemand mit den selben Benutzernamen registrieren und die Daten verändern "
+"kann."
+
+#: useradmin.php:403
+msgid "It will also delete all repertorizations of the deleted user."
+msgstr ""
+"Es werden auch alle Repertorisierungen des gebannten Benutzers gelöscht."
+
+#: useradmin.php:423
+msgid "Banned Users Table Contents:"
+msgstr "Folgende Benutzernamen sind gebannt:"
+
+#: useradmin.php:456
+msgid "Repeal ban"
+msgstr "Bann aufheben"
+
+#: useradmin.php:478
+msgid ""
+"Here you can, for example with vandalism, delete the database entries for a "
+"user. In the tables <strong> Materia Medica </strong> and <strong> symptom-"
+"remedy-relations </strong> will delete all messages while the user in the "
+"tables <strong>symptoms</strong>, <strong>main rubrics</strong>, "
+"<strong>remedies</strong>, <strong>source</strong> and <strong>languages</"
+"strong> Only the entries to which no records of other users reference."
+msgstr ""
+"Hier kannst du, z.B. bei Vandalismus, die Datenbankeinträge eines Benutzers "
+"löschen. In den Tabellen <strong>Materia Medica</strong> und <strong>Symptom-"
+"Mittel-Beziehungen</strong> werden dabei alle Einträge des Benutzers "
+"gelöscht, in den Tabellen <strong>Symptome</strong>, <strong>Hauptrubriken</"
+"strong>, <strong>Mittel</strong>, <strong>Quellen</strong> und "
+"<strong>Sprachen</strong> nur die Einträge, auf die keine Datensätze anderer "
+"Benutzer Bezug nehmen."
+
+#: useradmin.php:481
+msgid "User, whose records should be deleted:"
+msgstr "Benutzer, dessen Daten gelöscht weden sollen:"
+
+#: useradmin.php:484
+msgid "Deleting Data"
+msgstr "Daten löschen"
+
+#: useradmin.php:490
+msgid "You cannot undo changes."
+msgstr "Änderungen können nicht rückgängig gemacht werden."
 
 #: include/datadmin/header_admin.php:33 include/datadmin/header_admin.php:53
 msgid "Data Maintenance Administration"
@@ -2412,13 +2418,13 @@ msgstr "Homeophorum"
 
 #: skins/kraque/footer_index.php:6 skins/kraque/footer.php:56
 #: skins/original/footer.php:56 help/layout/kraque/footer.php:56
-#: help/layout/original/footer.php:56
+#: help/layout/original/footer.php:60
 msgid "Members Total:"
 msgstr "Anzahl der Mitglieder:"
 
 #: skins/kraque/footer_index.php:7 skins/kraque/footer.php:57
 #: skins/original/footer.php:57 help/layout/kraque/footer.php:57
-#: help/layout/original/footer.php:57
+#: help/layout/original/footer.php:61
 #, php-format
 msgid "There are %d registered member"
 msgid_plural "There are %d registered members"
@@ -2427,7 +2433,7 @@ msgstr[1] "Es betrachten %d angemeldete Mitglieder"
 
 #: skins/kraque/footer_index.php:8 skins/kraque/footer.php:58
 #: skins/original/footer.php:58 help/layout/kraque/footer.php:58
-#: help/layout/original/footer.php:58
+#: help/layout/original/footer.php:62
 #, php-format
 msgid "and %d guest viewing the site."
 msgid_plural "and %d guests viewing the site."
@@ -2541,7 +2547,7 @@ msgstr ""
 "php'>AGPL-Lizenz</a> veröffentlicht"
 
 #: skins/kraque/footer.php:67 skins/original/footer.php:67
-#: help/layout/kraque/footer.php:67 help/layout/original/footer.php:67
+#: help/layout/kraque/footer.php:67 help/layout/original/footer.php:71
 #: install/install_db.php:942
 msgid "Contact to the author"
 msgstr "Kontakt zum Autor"
@@ -2579,11 +2585,11 @@ msgstr ""
 "unkompliziert <br><strong>Symptome</strong> und <strong>Symptom-Mittel-"
 "Beziehungen</strong> in die Datenbank einzufügen."
 
-#: skins/original/footer.php:39 help/layout/original/footer.php:39
+#: skins/original/footer.php:39
 msgid "back"
 msgstr "zurück"
 
-#: help/layout/kraque/footer.php:65 help/layout/original/footer.php:65
+#: help/layout/kraque/footer.php:65 help/layout/original/footer.php:69
 msgid ""
 "OpenHomeopath is distributed under the terms of the <a href='../../doc/en/"
 "agpl3.php'>AGPL-License</a>"
@@ -3421,6 +3427,9 @@ msgstr "Wähle die passenden Symptome durch anklicken aus"
 #: forms/select_symptoms.php:149
 msgid "Contains sub-rubrics, but doesn't count as a symptom"
 msgstr "Enthält Unterrubriken, zählt aber selbst nicht als Symptom"
+
+#~ msgid "E-mail"
+#~ msgstr "E-Mail"
 
 #~ msgid "Crosslinks"
 #~ msgstr "Querverweise"
