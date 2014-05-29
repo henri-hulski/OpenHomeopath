@@ -34,16 +34,18 @@ include("help/layout/$skin/header.php");
   Introduction
 </h2>
 <p>
-  <strong>Homöopathie</strong> ist eine Heilmethode, die Anfang des 19. Jhd. von dem Arzt <strong>Dr. Samuel Hahnemann</strong> begründet wurde und auf dem Prinzip <strong><em>Similia similibus currentur</em></strong> (<strong>Ähnliches heilt Ähnliches</strong>) beruht.<br>
-  Das bedeutet, das ein kranker Mensch durch das Mittel geheilt wird, welches beim gesunden Menschen <strong>ähnliche Symptome</strong> wie die seinen erzeugt.<br>
-  Die <strong>Grundlage</strong> für die homöopathische Behandlung wurde geschaffen, indem von damals bis heute Tausende von Mitteln (pflanzlichen, tierischen und mineralischen Ursprungs) an gesunden Menschen <strong>getestet</strong> und die dabei auftretenden Symptome in sogenannten <strong><em>Materia Medicas</em></strong> zusammengefasst wurden.<br>
-  Um die Wahl des richtigen Mittels (<strong><em>Similimum</em></strong>) zu erleichtern, wurden aus den Arzneimittellehren die sogenannten <strong><em>Repertorien</em></strong> extrahiert. Dies sind <strong>Nachschlagewerke</strong>, bei denen die Symptome entweder nach dem <strong>Kopf-Fuß-Schema</strong> oder alphabetisch in verschiedene Kapitel und Rubriken eingeordnet und ihnen die jeweils <strong>passenden Mittel</strong> zugeordnet werden. Außerdem wird den Mitteln, je nachdem wie stark das entsprechende Symptom ausgeprägt ist, eine <strong>Wertigkeit</strong> von 1 - 4 beigelegt.<br>
-  Der Homöopath trägt jetzt durch eine <strong>ausführliche Befragung</strong> des Patienten (<strong><em>Anamnese</em></strong> - Fallaufnahme) dessen Symptome einschließlich der Modalitäten (<strong>Krankheitsbild</strong>) zusammen.<br>
-  Auf Grundlage des <strong>Krankheitsbildes</strong> lässt sich durch Repertorisierung die <strong>Wahl des Mittels</strong> auf wenige Mittel einschränken. Dabei muss besonderes Augenmerk auf für den Krankheitsverlauf <strong>untypische</strong> und für den Patienten <strong>prägnante</strong> Symptome gelegt werden, die entscheidend für die Wahl des Mittels sein können. Der erfahrene Homöopath wird auch solche Mittel ausschließen, die ein breites Symptomspektrum abdecken (z.B. <em>Sulfur</em>), also bei Repertorisierungen oft an oberer Stelle stehen, wenn beim Patienten die entscheidenden Symptome fehlen, die auf das Mittel hinweisen.
-  Um aus den repertorisierten Mitteln das richtige auszuwählen sollte man zusätzlich <strong>ausführliche Mittelbescheibungen</strong> zu Rate ziehen und das Mittel wählen, welches <strong>in Konstitution und Symptomen</strong> am ehesten dem Patienten entspricht.
+  <strong>Homeopathy</strong> is a healing method, that was foundet at the beginning of the 19th century by the physician <strong>Dr. Samuel Hahnemann</strong> and that is based on the principle <strong><em>"Similia similibus curentur"</em> - let like be cured by like</strong>, according to which a substance that causes the symptoms of a disease in healthy people will <strong>cure similar symptoms</strong> in sick people.
 </p>
 <p>
-  Die Mittel werden in der Regel als <strong>Potenzen</strong> gegeben. Da die Wahl der Potenz aber bei der Wahl des Mittels keine Rolle spielt, will ich das Thema hier aussparen und auf die einschlägige Literatur verweisen.
+  The <strong>basis</strong> for the homeopathic treatment was created by proving thousands of remedies (from plant, animal and mineral origin) on healthy people and describing them in <strong><em>"Materia Medica's"</em></strong>.<br>
+  In order to make it more easy to find the right remedy (<strong><em>"Similimum"</em></strong>), the symptoms with the related remedies were <strong>combined to rubrics</strong> and published in a structurized form as <strong><em>"Repertories"</em></strong>.<br>
+  In a rubric each remedy got a <strong>grade</strong> from 1-3, 1-4 or 1-5 (according to the repertory), depending on how strongly the corresponding symptom is pronounced.
+</p>
+<p>
+  The homeopath is collecting the <strong>symptoms</strong> including the modalities by a detailed interview of the patient (<strong><em>"Anamnesis"</em></strong>).<br>
+  Based on the <strong>symptoms</strong> we can limit the choice of the remedies by <strong>repertorization</strong>.<br>
+  We should pay special attention to symptoms, that are <strong>atypical</strong> for the disease course and <strong>important</strong> for the patient, which may be <strong>significant</strong> for the choice of the remedy.<br>
+  To find the right remedy from the repertorized ones you should consult <strong>detailed descriptions of the remedies</strong> and select the one, which is the most relevant to the patient in <strong>constitution and symptoms</strong>.
 </p>
 <?php
 include("help/layout/$skin/footer.php");
