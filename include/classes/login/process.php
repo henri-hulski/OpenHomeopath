@@ -246,7 +246,7 @@ class  Process {
 			$newpass = $session->generateRandStr(8);
 
 			/* Get email of user */
-			$usrinf = $db->getUserInfo($subuser, 'email, userlevel, id_user');
+			$usrinf = $db->getUserInfo($subuser, 'email_registered, userlevel, id_user');
 			$email  = $usrinf[0];
 			$userlevel  = $usrinf[1];
 

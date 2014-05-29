@@ -97,7 +97,7 @@ if($session->logged_in){
                 <li><a href="../../useredit.php"><?php echo _("Settings"); ?></a></li>
 <?php
 	if($session->isAdmin()){
-		echo ("                <li><a href='../../login_admin.php'>" . _("Administration") . "</a></li>\n");
+		echo ("                <li><a href='../../useradmin.php'>" . _("Administration") . "</a></li>\n");
 	}
 	echo ("                <li><a href='../../include/classes/login/process.php'>" . _("Logout") . "</a></li>\n");
 ?>

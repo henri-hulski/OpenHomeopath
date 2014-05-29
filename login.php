@@ -46,7 +46,7 @@ if($session->logged_in){
 		."[<a href='userinfo.php?user=".$session->username."'>" . _("My account") . "</a>] &nbsp;&nbsp;"
 		."[<a href='useredit.php'>" . _("Edit Account") . "</a>] &nbsp;&nbsp;";
 	if($session->isAdmin()){
-		echo "[<a href='login_admin.php'>" . _("User administration") . "</a>] &nbsp;&nbsp;";
+		echo "[<a href='useradmin.php'>" . _("User administration") . "</a>] &nbsp;&nbsp;";
 	}
 	echo "[<a href='include/classes/login/process.php'>" . _("Logout") . "</a>]";
 } else {

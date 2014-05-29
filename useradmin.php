@@ -1,6 +1,6 @@
 <?php
 /**
- * login_admin.php
+ * useradmin.php
  *
  * This is the Admin Center page. Only administrators
  * are allowed to view this page. This page displays the
@@ -47,9 +47,9 @@ function displayUsers($order_by = "last_activity", $order_type = "DESC") {
 	$user_rows_ar = array(
 			"username" => _("Username"),
 			"userlevel" => _("Level"),
-			"email" => _("E-mail"),
-			"last_activity" => _("last active"),
-			"registration" => _("registered since")
+			"email_registered" => _("Registered e-mail"),
+			"last_activity" => _("Last active"),
+			"registration" => _("Registered since")
 	);
 	$order = ($order_by === "userlevel") ? "$order_by $order_type, username" : "$order_by $order_type";
 	$select = implode(", ", array_keys($user_rows_ar));
@@ -70,11 +70,12 @@ function displayUsers($order_by = "last_activity", $order_type = "DESC") {
 	$user_table .= "      <thead>\n";
 	$user_table .= "        <tr>\n";
 	foreach ($user_rows_ar as $row => $val) {
-		$user_table .= "          <th class='$row'><div>";
+		$row_class = ($row == "email_registered") ? "email" : $row;
+		$user_table .= "          <th class='$row_class'><div>";
 		$field_is_current_order_by = 0;
 		if ($order_by != $row) {  // the results are not ordered by this field at the moment
 			$link_class="order_link_2";
-			if ($row == "username" || $row == "email") {
+			if ($row == "username" || $row == "email_registered") {
 				$new_order_type = "ASC";
 			} else {
 				$new_order_type = "DESC";
@@ -88,8 +89,7 @@ function displayUsers($order_by = "last_activity", $order_type = "DESC") {
 				$new_order_type = "DESC";
 			}
 		}
-			
-		$user_table .= "<a class='$link_class' href='login_admin.php?order_by=$row&amp;order_type=$new_order_type#user_table'>";
+		$user_table .= "<a class='$link_class' href='useradmin.php?order_by=$row&amp;order_type=$new_order_type#user_table'>";
 
 		if ($field_is_current_order_by === 1) {
 			if ($order_type === 'ASC') {
@@ -108,7 +108,7 @@ function displayUsers($order_by = "last_activity", $order_type = "DESC") {
 	$tr_results_class = 'tr_results_1';
 	$td_controls_class = 'controls_1';
 	$user_table .= "      <tbody>\n";
-	while (list($username, $userlevel, $email, $last_activity, $registration) = $db->db_fetch_row()) {
+	while (list($username, $userlevel, $email_registered, $last_activity, $registration) = $db->db_fetch_row()) {
 		if ($userlevel < 6) {
 			$level = _("normal user");
 		} elseif ($userlevel == 6) {
@@ -126,7 +126,7 @@ function displayUsers($order_by = "last_activity", $order_type = "DESC") {
 		$user_table .= "  <tr class='$tr_results_class'>\n";
 		$user_table .= "    <td class='$td_controls_class username'><div><a href='userinfo.php?user=$username' target='_blank'>$username</a></div></td>\n";
 		$user_table .= "    <td class='$td_controls_class userlevel'><div>$level</div></td>\n";
-		$user_table .= "    <td class='$td_controls_class email'><div>$email</div></td>\n";
+		$user_table .= "    <td class='$td_controls_class email'><div>$email_registered</div></td>\n";
 		$user_table .= "    <td class='$td_controls_class last_activity'><div>$last_activity</div></td>\n";
 		$user_table .= "    <td class='$td_controls_class registration'><div>$registration</div></td>\n";
 		$user_table .= "  </tr>\n";
