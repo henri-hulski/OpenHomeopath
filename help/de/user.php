@@ -34,7 +34,7 @@ include("help/layout/$skin/header.php");
   Benutzerverwaltung
 </h2>
 <p>
-  In der linken Navigationsleiste findest du unter dem Benutzersymbol <img src="../../<?php echo(USER_ICON);?>" width="16" height="16" alt="Benutzersymbol"> das <strong>Benutzermenü</strong>.
+  In der Navigationsleiste von OpenHomeopath findest du unter <img src="../../<?php echo(USER_ICON);?>" width="16" height="16" alt="Benutzersymbol"> das <strong>Benutzermenü</strong>.
 </p>
 <p>
   Wenn du <strong>nicht angemeldet</strong> bist findest du hier nur den Eintrag <strong><em>"Anmelden"</em></strong>. Von dort kommst du zum <strong>Anmeldeformular</strong>. Dort meldest du dich mit <strong>Benutzernamen</strong> und <strong>Passwort</strong> an. Wenn du das <strong>Passwort vergisst</strong>, können wir dir bei Angabe des Benutzernamens im unteren Formular ein <strong>neues Passwort</strong> an die hinterlegten e-Mail schicken.<br>
@@ -49,9 +49,6 @@ include("help/layout/$skin/header.php");
   </ul>
   Darunter findest du, wenn diese Funktion in den Einstellungen aktiviert ist, eine List der momentan <strong>aktiven Benutzer</strong>. Wenn du einen Benutzer anklickst werden dir <strong>genauere Informationen</strong> zu diesem Benutzer angezeigt.
 </div>
-<p>
-  Nun zu den <strong>einzelnen Menüpunkten:</strong>
-</p>
 <br>
 <div class="content">
   <h2>
@@ -68,28 +65,26 @@ include("help/layout/$skin/header.php");
   Mein Bereich
 </h3>
 <p>
-  Unter <strong>Allgemeine Angaben</strong> befinden sich <strong>genauere Angaben zum Benutzer</strong>, die du unter <strong><em>"Einstellungen"</em></strong> ändern kannst.
+  Im Benutzerbereich befinden sich unter <strong>Allgemeine Angaben genauere Angaben zum Benutzer</strong>, die du unter <a href="#settings">Einstellungen</a> ändern kannst.
 </p>
 <div>
-  Unter <strong>Gespeicherte Repertorisierungen</strong> findest du eine Tabelle der <strong>gespeicherten Repertorisierungen</strong>.<br>
+  Unter <strong>Gespeicherte Repertorisierungen</strong> findest du eine sortierbare Tabelle der <strong>gespeicherten Repertorisierungen</strong>.<br>
   Wenn du eine Repertorisierung <strong>auswählst</strong>, kannst du:
   <ul>
     <li>über <strong><em>"Repertorisierung aufrufen"</em></strong> das entsprechende Repertorisierungsergebnis aufrufen,</li>
-    <li>über <strong><em>"Weiter repertorisieren"</em></strong> mit den ausgewählten Symptomen direkt ins Repertorisierungsfenster springen oder</li>
-    <li>mit <strong><em>"Repertorisierung löschen"</em></strong> die entsprechende Repertorisierung vollständig löschen.</li>
-    <li>mit <strong><em>"Öffentlich-Status ändern"</em></strong> kannst du wählen, ob eine Repertorisierung veröffentlicht werden soll, so dass sie sich andere Benutzer über Benutzer-Info (URL: <strong>"openhomeopath/userinfo.php?user=</strong><em>mein_benutzername</em><strong>"</strong> - <em>mein_benutzername</em> durch deinen Benutzernamen ersetzen) anschauen können.
+    <li>über <strong><em>"Weiter repertorisieren"</em></strong> mit den ausgewählten Symptomen direkt ins Repertorisierungsfenster springen,</li>
+    <li>mit <strong><em>"Repertorisierung löschen"</em></strong> die entsprechende Repertorisierung vollständig löschen,</li>
+    <li>mit <strong><em>"Öffentlich-Status ändern"</em></strong> wählen, ob eine Repertorisierung veröffentlicht werden soll, so dass sie sich andere Benutzer über Benutzer-Info (URL: <strong>"openhomeopath/userinfo.php?user=</strong><em>mein_benutzername</em><strong>"</strong> - <em>mein_benutzername</em> durch deinen Benutzernamen ersetzen) anschauen können.
 </li>
   </ul>
 </div>
 <p>
-Unter <strong>Repertorium personalisieren</strong> kannst du dir ein <strong>persönliches Repertoriumsprofil</strong> zusammenstellen, wobei du auswählst, <strong>welche Quellen</strong> du verwenden willst. Dieses Profil wird bei der <strong>Repertorisierung</strong> verwendet, wenn du unter deinem Benutzernamen <strong>angemeldet</strong> bist.
-<br>
-In der <strong>Materia Medica</strong> wird bei der Zusammenstellung der einem Mittel zugeordneten Symptome ebenfalls das personalisierte Repertorium verwendet. Um die eigentliche <strong>Materia Medica</strong> zu personalisieren siehe <a href="#materia_custom">unten</a>.
-<br>
-Entsprechend benutzt die <strong>Symptom-Info</strong> beim Zusammenstellen der Mittel auch das personalisierte Repertorium.
+  Unter <strong><em>Repertorium personalisieren</em></strong> kannst du dir ein <strong>persönliches Repertoriumsprofil</strong> zusammenstellen, wobei du auswählst, <strong>welche Quellen</strong> du verwenden willst. Dieses Profil wird bei der <strong>Repertorisierung</strong> verwendet, wenn du angemeldet bist.<br>
+  In der <strong>Materia Medica</strong> wird bei der Zusammenstellung der Symptome ebenfalls das personalisierte Repertorium verwendet.<br>
+  Entsprechend benutzt die <strong>Symptom-Info</strong> beim Zusammenstellen der Mittel auch das personalisierte Repertorium.
 </p>
 <p>
-Unter <strong>Materia Medica personalisieren</strong> kannst du dir eine <strong>persönliche Materia Medica</strong> zusammenstellen, wobei du auswählst, <strong>welche Quellen</strong> verwendet werden. Dieses Profil wird bei den <strong>Mittelbeschreibungen</strong> in der Materia Medica verwendet, wenn du unter deinem Benutzernamen <strong>angemeldet</strong> bist.
+  Unter <strong><em>Materia Medica personalisieren</em></strong> kannst du dir eine <strong>persönliche Materia Medica</strong> zusammenstellen, wobei du auswählst, <strong>welche Quellen</strong> verwendet werden. Dieses Profil wird bei den <strong>Mittelbeschreibungen</strong> in der Materia Medica verwendet, wenn du angemeldet bist.
 </p>
 <br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="settings" id="settings"><br></a>
@@ -99,7 +94,7 @@ Unter <strong>Materia Medica personalisieren</strong> kannst du dir eine <strong
 <ul>
   <li><strong>Programmeinstellungen:</strong>
   <ul>
-    <li><strong>Skin auswählen:</strong> Skins bestimmen das Aussehen von OpenHomeopath. Im Moment gibt es 2 Skins: <strong><em>"original"</em></strong> von Henri Schumacher und <strong><em>"kraque"</em></strong> von Thomas Bochmann ohne Seitenleiste, so das sie besonders für kleinere Displays geeignet ist. Du kannst hier die <strong>Standard-Skin für deinen Benutzer</strong> auswählen. Ansonsten kann die Skin auch jederzeit im Programm geändert werden.</li>
+    <li><strong>Skin auswählen:</strong> Du kannst hier die <strong>Standard-Skin für deinen Benutzer</strong> auswählen. Im Moment gibt es 2 Skins: <strong><em>"original"</em></strong> von Henri Schumacher und <strong><em>"kraque"</em></strong> von Thomas Bochmann ohne Seitenleiste, so das sie besonders für kleinere Displays geeignet ist.</li>
     <li><strong>Sprache auswählen:</strong> Hier wählst du die <strong>Programmsprache für deinen Benutzer</strong> aus. Im Moment ist OpenHomeopath in deutsch und englisch übersetzt.</li>
     <li><strong>Bevorzugte Symptom-Sprache auswählen:</strong> Die Bevorzugte Symptom-Sprache wird berücksichtigt, wenn ein Symptom in verschiedenen Übersetzungen vorliegt. Im Moment gibt es Symptomübersetzungen in deutsch und englisch.</li>
     <li><strong>Aktive Benutzer anzeigen:</strong> Wenn dieses Feld markiert ist, werden die im Moment <strong>aktiven Benutzer</strong> unterhalb des Benutzermenüs angezeigt. Wenn du auf einen Benutzer klickst, werden <strong>weitere Informationen</strong> zu ihm angezeigt.</li>

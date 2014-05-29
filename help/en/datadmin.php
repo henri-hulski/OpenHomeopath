@@ -36,7 +36,7 @@ include("help/layout/$skin/header.php");
 <div>
   With Datadmin, our data maintenance tool you can <strong>edit and extend the database of OpenHomeopath</strong>.<br>
   For using Datadmin you've first to <a href="user.php">log in</a>.<br>
-  You can choose <strong>the database table for editing</strong> in a drop-down menue.<br>
+  You can choose the <strong>database table for editing</strong> in a drop-down menue.<br>
   You can view and edit the <strong>following tables</strong>:
   <ul>
     <li><strong><em>Materia Medica</em></strong> &ndash; contains the remedy descriptions of the <strong>Materia Medica</strong> with <strong>source references</strong>.</li>
@@ -69,7 +69,7 @@ include("help/layout/$skin/header.php");
   Table Materia Medica
 </h3>
 <div>
-  In the table <strong><em>Materia Medica</em></strong> you find <strong>the following fields</strong>:
+  In the table <strong><em>Materia Medica</em></strong> you find the following fields:
   <ul>
     <li><strong><em>Remedy</em></strong> &ndash; you can choose the remedy from a drop-down list related to the Remedies table.</li>
     <li><strong><em>Source</em></strong> &ndash; you can choose the source of the materia medica from a drop-down list related to the Sources table.</li>
@@ -156,7 +156,7 @@ include("help/layout/$skin/header.php");
   Layout of Datadmin
 </h3>
 <p>
-  On the <strong>main page of each table</strong> you find a list of <strong>the existing records</strong>. You can choose how many records per page will be shown.
+  On the <strong>main page of each table</strong> you find a list of <strong>existing records</strong>. You can choose how many records per page will be shown.
 </p>
 <div>
   At the beginning of each table row you find <strong>3 clickable icons</strong>:
@@ -189,7 +189,7 @@ include("help/layout/$skin/header.php");
   Edit and insert of records
 </h3>
 <p>
-  You can reach <strong>the edition form</strong> from the <img alt=""  src="../../<?php echo(EDIT_ICON);?>" width="16" height="16"><strong>-Symbol</strong> in front of each table row and the insert form from <strong><em>"Insert"</em></strong> in the <strong>menue bar</strong>.<br>
+  You can reach the <strong>edition form</strong> from the <img alt=""  src="../../<?php echo(EDIT_ICON);?>" width="16" height="16"><strong>-Symbol</strong> in front of each table row and the insert form from <strong><em>"Insert"</em></strong> in the <strong>menue bar</strong>.<br>
   The difference between the two form is, that the insert form is a blank form and in the edit form you find the data of the current record with the possibility to jump with <strong><em>"<< Previous"</em></strong> to the previous and with <strong><em>"Next >>"</em></strong> to the next record.
 </p>
 <p>
