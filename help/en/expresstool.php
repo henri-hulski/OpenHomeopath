@@ -30,77 +30,84 @@ if (empty($_GET['popup'])) {
 }
 ?>
 <h1>
-  Expresstool Manual
+  Express-Tool Manual
 </h1>
 <ol>
-  <li>Wähle die <strong>Quelle</strong> aus. Wenn es die Quelle noch nicht gibt, musst du sie erst in die <a href="../../datadmin.php?function=show_insert_form&amp;table_name=sources">Datenbank einfügen</a>.</li>
-  <li>Wähle die <strong>Hautrubrik</strong> aus, zu der die Symptome gehören.
-  Wenn es die Hauptrubrik noch nicht gibt, kannst du sie gegebenenfalls in die <a href="../../datadmin.php?function=show_insert_form&amp;table_name=rubriken">Datenbank einzufügen</a>.</li>
-  <li>Gib im <strong>Textfeld</strong> die Symptom-Mittel-Datensätze folgendermaßen ein:
+  <li>Select the corresponding <strong>source</strong>. If the source doesn't exists you first have to <a href="../../datadmin.php?function=show_insert_form&amp;table_name=sources">add it to the source table</a>.</li>
+  <li>Select the corresponding <strong>main rubric</strong>. If the main rubric doesn't exists you may first <a href="../../datadmin.php?function=show_insert_form&amp;table_name=main_rubrics">add it to the main rubrics table</a>.</li>
+  <li>In the text area insert the <strong>symptom-remedy records</strong> according to the following rules:
   <ul>
-    <li>Jeder <strong>Symptom-Mittel-Datensatz</strong> kommt in eine eigene Zeile. Innerhalb eines Datensatzes darf es keinen Zeilenumbruch geben.</li>
-    <li>Erst wird das <strong>Symptom</strong> inklusiv Unterrubriken angegeben. Die einzelnen Unterrubriken bitte mit einem "<strong>></strong>" voneinander trennen.</li>
-    <li>Um nicht alle Unterrubriken immer neu eingeben zu müssen kannst du eine <strong>Kurzform</strong> verwenden:
-    " <strong>></strong> " am Anfang einer Symptoms hängt das Symptom an die vorhergehende Rubrik an. Mit " <strong>>></strong> " am Anfang springt es eine Rubrik zurück, mit " <strong>>>></strong> " 2 Rubriken usw..</li>
-    <li>Bei Büchern kannst du die <strong>Seitenzahl</strong> mit " <strong>s.</strong> " + Seitenzahl (z.B. "<strong>s.123</strong>") angeben.</li>
-    <li>Ein <strong>Künzli-Punkt</strong> für das Symptom wird mit <strong>@</strong> hinzugefügt.</li>
-    <li>Text in runden Klammern () wird getrennt vom Symptom als Zusatzinformation in der Symptome-Quellen-Tabelle abgespeichert.</li>
-    <li>Danach kommt ein Doppelpunkt ("<strong>:</strong>") und dann die <strong>Mittelliste</strong>.</li>
-    <li>Die einzelnen <strong>Mittel-Abkürzungen</strong> werden mit Kommas ("<strong>,</strong>") getrennt. Strichpunkte ("<strong>;</strong>") oder Leerzeichen (" ") sind auch als Trennzeichen möglich. Punkte ("<strong>.</strong>") am Ende der Abkürzung werden nicht berücksichtigt, können also weggelassen werden. Groß-/Kleinschreibung wird nicht berücksichtigt.</li>
-    <li>Nach jedem Mittel wird mit Bindestrich ("<strong>-</strong>") die <strong>Wertigkeit</strong> von <span class='nobr'><strong>1 - 5
-    </strong></span> angehängt. Also <span class='nobr'>"<strong>-1</strong>"</span>, <span class='nobr'>"<strong>-2</strong>"</span>, <span class='nobr'>"<strong>-3</strong>"</span>, <span class='nobr'>"<strong>-4</strong>"</span> oder <span class='nobr'>"<strong>-5</strong>"</span>. Wenn keine Wertigkeit angegeben wird, wird von einer <strong>einfachen Wertigkeit</strong> ausgegangen (entspricht  <span class='nobr'>"<strong>-1</strong>"</span>).</li>
-    <li>Du kannst hinter jedem Mittel den Status der Mittelprüfung mit Hilfe eines Symbols angeben.<br>
-	In der folgenden Liste findest du erst das Symbol und dahinter die Erklärung des Status:
+    <li>The symptom-remedy records are seperated by line breaks.</li>
+    <li>First insert the <strong>symptom</strong> including parent rubrics. The subrubrics are seperated by a '<strong>></strong>'.</li>
+    <li>For not rewriting the parent rubrics each time you can use a <strong>short form</strong>:<br>
+    '<strong>></strong>' at the beginning replaces the previous parent rubric.<br>
+    With '<strong>>></strong>' at the beginning you jump back one parent rubric, with '<strong>>>></strong>' 2 parent rubrics etc..</li>
+    <li>For books you can specify the <strong>page number</strong> by '<strong>s.</strong>' + page number (e.g. '<strong>s.123</strong>').</li>
+    <li>You can add a <strong>Künzli-dot</strong> for the symptom with <strong>@</strong>.</li>
+    <li>Text in parentheses ('<strong>()</strong>')  will be saved seperatly as <strong>extra information</strong>.</li>
+    <li>After this insert a colon ('<strong>:</strong>') and the <strong>remedy list</strong>.</li>
+    <li>The <strong>remedy abbreviations</strong> are separated by commas ('<strong>,</strong>'). Semicolons ('<strong>;</strong>') or spaces (' ') are also allowed. Dots ('<strong>.</strong>') at the end of the abbreviations can be leaved out. The abbreviations are not case-sensitive.</li>
+    <li>After each remedy the grade from <span class='nobr'><strong>1 - 5
+    </strong></span> is appended with a hyphen ('<strong>-</strong>'). The default grade is <strong>1</strong> and can be leaved out.</li>
+    <li>Behind each remedy you can add the status of proving by one of the following signs:
     <ul style='list-style-type:none'>
 <?php
-$query = "SELECT status_symbol, status_de FROM sym_status WHERE status_id != 0";  // Status ermitteln
+$query = "SELECT status_symbol, status_en FROM sym_status WHERE status_id != 0";  // show status symbols
 $db->send_query($query);
-while($status = $db->db_fetch_row()) {
-	$statussymbol = $status[0];
-	$statusname = $status[1];
-	echo "      <li>\" <strong>$statussymbol</strong> \" : &nbsp;$statusname</li>\n";
+while (list($statussymbol, $statusname) = $db->db_fetch_row()) {
+	echo "      <li>' <strong>$statussymbol</strong> ' : &nbsp;$statusname</li>\n";
 }
 $db->free_result();
 
 ?>
     </ul></li>
-    <li>Ein <strong>Künzli-Punkt</strong> für das Mittel wird mit <strong>@</strong> hinzugefügt.</li>
-    <li><strong>Referenzquellen</strong> können vom Mittel mit " <strong>#</strong> " getrennt angegeben werden. Mehrere Referenzquellen werden auch mit " <strong>#</strong> " voneinander getrennt.</li>
-    <li>Mittel die aus <strong>nicht klassischen Prüfungen</strong> (z.B. Traumprüfungen) werden in " <strong>{ }</strong> " eingeschlossen an die Mittelliste angehängt.</li>
-    <li><strong>Beispiel</strong> mit 2 Symptomen:<br>Manie > anfallsweise: carc,cic,diosm,kali-i,nat-m-2,nat-s,stram,tarent-2,tub<br>Farben > schwarz > Flecken > Kopfschmerz > während: glon-2,meli-3,psil</li>
+    <li>You can add a <strong>Künzli-dot</strong> to the remedy with the <strong>@</strong> sign.</li>
+    <li>You can add <strong>reference sources</strong> seperated from the remedy and from each other by a hash ('<strong>#</strong>').</li>
+    <li>Remedies from nonclassical provings (e.g. dream provings) must be enclosed in curly brackets ('<strong>{ }</strong>') and appended at the end of the remedy list.</li>
+    <li><strong>Example</strong> with 2 symptoms:<br>
+      conditions > bath > cold, amel.: alum-4,ang-2,apis-2,bell-2,caps-2<br>
+      phenomena > air > through him, seems to go: calc-2,coloc-2
+    </li>
   </ul></li>
-  <li>Wenn eine angegebene <strong>Mittel-Abkürzung</strong> in der Datenbank <strong>nicht gefunden</strong> wurde, wird ein Fehler ausgegeben und der entspechende Datensatz erscheint <strong>zur Korrektur</strong> im Textfeld. überprüfe, ob kein <strong>Rechtschreibfehler</strong> vorliegt, ansonsten überprüfe mit Hilfe der <a href='../../datadmin.php?function=show_search_form&amp;table_name=remedies'>Datenpflege-Suchfunktion</a>, ob in der Mittel-Tabelle eine <strong>andere Abkürzung</strong> verwendet wird. In diesem Fall kannst du die alternative Abkürzung in der <a href='../../datadmin.php?function=show_insert_form&amp;table_name=rem_alias'>Alias-Tabelle hinzufügen</a>. Es wird dann automatisch die richtige Abkürzung in die Datenbank eingetragen. Die Mittel-Datenbank enthält mit über <strong>3600 Einträgen</strong> so gut wie alle homöopathischen Mittel (Fehler in der Mittel-Tabelle bitte im <a href="../../homeophorum.php?list,7">Supportforum</a> melden!). Wenn du wirklich ein neues Mittel hast, kannst du das Mittel in die <a href='../../datadmin.php?function=show_insert_form&amp;table_name=remedies'>Mittel-Tabelle einfügen</a>. Bitte das Mittel gegebenenfalls im Textfeld <strong>korrigieren</strong> und Formular <strong>nochmal abschicken</strong>!</li>
-  <li>Wenn die angegebene <strong>Wertigkeit, Status oder Künzli-Punkt</strong> nicht mit der Angabe  der entsprechenden Symptom-Mittel-Beziehung <strong>in der Datenbank übereinstimmt</strong> und der Datenbankeintrag von dir stammt, wird er mit dem angegebenen Wert aktualisiert. Ansonsten bleibt die Original-Eintrag erhalten. Um eine Änderung rückgängig zu machen, kannst du entweder den Datensatz mit der korrekten Anabe nochmal eingeben oder du korrigierst den Datensatz in der <a href="../../datadmin.php?table_name=sym_rem">Datenpflege</a>.</li>
-  <li><strong>Mittelaliase</strong> können auch direkt über das Expresstool in die Datenbank eingefügt werden:
+  <li>If a <strong>remedy abbreviation could not be found</strong> in the database, an error is thrown and the record reappear in the text area <strong>for correction</strong>.<br>
+  Check if you have <strong>no spelling error</strong>, otherwise check with the <a href='../../datadmin.php?function=show_search_form&amp;table_name=remedies'>datadmin search function</a> if the remedy table uses <strong>another abbreviation</strong>.<br>
+  In this case you can add your alternative abbreviation <a href='../../datadmin.php?function=show_insert_form&amp;table_name=rem_alias'>to the alias table</a>.<br>
+  The remedy database contains with more then <strong>3600 entries</strong> nearly all possible homeopathic remedies. If you really have a new remedy you can <a href='../../datadmin.php?function=show_insert_form&amp;table_name=remedies'>add it to the remedy table</a>.<br>
+  After <strong>correcting the record</strong> in the text area resend the form.</li>
+  <li>If the specified <strong>grade, status or Künzli-dot</strong> are not consistent with the corresponding symptom-remedy-relation in the databasen and the record originates from you, it will be updated with the specified values. Otherwise the original record remains unchanged.<br>
+  To reverse a change you can either resend the record with the correct value or you <a href="../../datadmin.php?table_name=sym_rem">correct the record in Datadmin</a>.</li>
+
+  <li><strong>Remedy aliases</strong> can be inserted directly with the Expresstool:
   <ul>
-    <li>Der Alias ist eine Mittel-Abkürzung, die alternativ zur offiziellen Abkürzung verwendet werden kann.</li>
-    <li>Jede Aliaszuweisung kommt in eine eigene Zeile. Einem Mittel können bei einer Zuweisung auch mehrere kommagetrennte Aliase zugewiesen werden.</li>
-    <li>Der Syntax einer Aliaszuweisung lautet: <em>"alias: Mittel-Abkürzung = Alias-Abkürzung [,Alias-Abkürzung,...]"</em></li>
-    <li>Bei den Alias-Abkürzungen ist die Schreibweise wichtig, da sie so in die Datenbank übernommen werden. In den meisten Fällen sollten die Abkürzungen mit einem Punkt enden. Der erste Buchstabe wird automatisch in einen Großbuchstaben umgewandelt.</li>
-    <li>Beispiel: <em>"alias: Iod. = Jod."</em></li>
+    <li>The alias is a remedy abbreviation, which can be use alternatively to the common abbreviation.</li>
+    <li>The alias declarations are seperated by line break. You can assign several comma seperated aliases to one remedy.</li>
+    <li>The Syntax of a alias declaration: <em>"alias: remedy abbreviation = alias abbreviation [,alias abbreviation,...]"</em></li>
+    <li>Take care of the spelling of the alias abbreviation. Generally it should end with a dot.</li>
+    <li>Example: <em>"alias: Iod. = Jod."</em></li>
   </ul></li>
-  <li><strong>Quellen</strong> können auch direkt über das Expresstool in die Datenbank eingefügt werden:
+
+  <li><strong>Sources</strong> can also be inserted directly with the Expresstool:
   <ul>
-    <li>Jede Quellenangabe kommt in eine eigene Zeile.</li>
-    <li>Der Syntax einer Quelldefinition lautet: <em>"Schlüsselwort: Quelle-ID#Autor#Titel#Jahr#Sprache#Maximale Wertigkeit[#Art der Quelle]"</em></li>
-    <li>Das Schlüsselwort ist entweder '<strong>source</strong>' für Hauptquellen die in die Datenbank übertragen werden sollen oder '<strong>ref</strong>' für Referenzquellen, auf die in den Hauptquellen verwiesen wird.</li>
-    <li><strong>Quelle-ID</strong> ist der Identifikator. Er kann aus Buchstaben und Zahlen bestehen und maximal 12 Zeichen umfassen.</li>
-	<li><strong>Autor:</strong> Den Autor der Quelle angeben.</li>
-	<li><strong>Titel:</strong> Den Titel der Quelle angeben.</li>
-	<li><strong>Jahr:</strong> Das Erscheinungsjahr in der Form '<strong>1902</strong>', '<strong>1783-1785</strong>' oder '<strong>1988-</strong>' angeben</li>
-	<li><strong>Sprache:</strong> Das Kürzel der Sprache, das in der Sprachen-Tabelle in der Datenbank eingetragen ist (z.B. '<strong>de</strong>' für deutsch, '<strong>en</strong>' für englisch, etc.). Wenn es die Sprache in der Sprachen-Tabelle noch nicht gibt, muss sie erst in die <a href="../../datadmin.php?function=show_insert_form&amp;table_name=sprachen">Datenbank eingetragen werden</a>.</li>
-	<li><strong>Maximale Wertigkeit:</strong> Die maximale Wertigkeit, die in der Quelle benutzt wird. Eine Zahl von <strong>1-5</strong>.</li>
-	<li><strong>Art der Quelle:</strong> Folgende Angaben sind möglich:
+    <li>Each source is seperated by line break.</li>
+    <li>The syntax of a source specification: <em>"Keyword: Source-ID#Author#Title#Year#Language#Maximum grade[#Source type]"</em></li>
+    <li>The Keyword is either '<strong>source</strong>' for a main source or '<strong>ref</strong>' for a reference source.</li>
+    <li><strong>Source-ID</strong> is the source identificator, which is alphanumeric and contain maximum 12 characters.</li>
+    <li><strong>Author:</strong> The source author.</li>
+    <li><strong>Title:</strong> The source title.</li>
+    <li><strong>Year:</strong> Specify the publication year in the form '<strong>1902</strong>', '<strong>1783-1785</strong>' or '<strong>1988-</strong>'.</li>
+    <li><strong>Language:</strong> The language code from the languages table (e.g. '<strong>en</strong>' for English, '<strong>de</strong>' for German, etc.). If the language doesn't exists you first have to <a href="../../datadmin.php?function=show_insert_form&amp;table_name=languages">add it to the languages table</a></a>.</li>
+    <li><strong>Maximum grade:</strong> The maximum grade of the source. A number from <strong>1-5</strong>.</li>
+    <li><strong>Source type:</strong> Allowed values are (write both, German and English):
     <ul>
-	  <li><strong>Repertorium</strong></li>
-	  <li><strong>Materia Medica</strong></li>
-	  <li><strong>Publikation</strong></li>
-	  <li><strong>Arzneimittelprüfung</strong></li>
-	  <li><strong>Klinischer Fall</strong></li>
-	  <li><strong>Autor</strong></li>
-	  <li><strong>Sonstiges</strong></li>
-	</ul>
-	Wenn keine Angabe erfolgt wird '<strong>Repertorium</strong>' in die Datenbank eingetragen.</li>
+      <li><strong>"Repertorium / Repertory"</strong></li>
+      <li><strong>"Materia Medica"</strong></li>
+      <li><strong>"Publikation / Publication"</strong></li>
+      <li><strong>"Arzneimittelprüfung / Proving"</strong></li>
+      <li><strong>"Klinischer Fall / Clinical"</strong></li>
+      <li><strong>"Autor / Author"</strong></li>
+      <li><strong>"Sonstiges / Others"</strong></li>
+    </ul>
+    If you don't specify the type <strong>"Repertorium / Repertory"</strong> will be used.</li>
   </ul></li>
 </ol>
 <?php

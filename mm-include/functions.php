@@ -253,7 +253,7 @@ function get_rem_repertory_rubrics($remedies_ar, $where_query)
     global $lng;
     if(is_array($remedies_ar)){
         foreach($remedies_ar as $rem_id=>$remedy){
-            // rubriken finden
+            // find main rubrics
             $select = "SELECT $sym_rem.rel_id, main_rubrics.rubric_de, main_rubrics.rubric_en,symptoms.symptom, $sym_rem.grade, symptoms.sym_id, symptoms.lang_id,$sym_rem.src_id, main_rubrics.rubric_id FROM $sym_rem, symptoms, main_rubrics WHERE $sym_rem.rem_id = $rem_id AND $sym_rem.sym_id = symptoms.sym_id AND symptoms.rubric_id = main_rubrics.rubric_id ";
             $query_main_rubrics = $select.$where_query . " GROUP BY main_rubrics.rubric_$lng ORDER BY main_rubrics.rubric_$lng";
             $db->send_query($query_main_rubrics);
