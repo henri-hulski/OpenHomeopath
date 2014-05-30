@@ -45,13 +45,13 @@ if($session->logged_in){
 ?>
 <div id="menu">
 		<span style="float: left;">
-            <a style="color: #336633; font-size: 14px;" href="..">
+            <a style="color: #336633; font-size: 14px;" href="../../../index.php">
                 <img height="17" border="0" alt="OpenHomeo.org" src="../../skins/<?php echo(SKIN_NAME);?>/img/punkte_d9b7ea.gif"/>
             </a>
         </span>
 		<ul class="level1" id="root">
 		<li>
-		    <a href="../../.." style="color: #336633; font-size: 13px;"><b>OpenHomeo.org</b></a>
+		    <a href="../../../index.php" style="color: #336633; font-size: 13px;"><b>OpenHomeo.org</b></a>
 		  </li>
 		  <li class="sep">|</li>
 		  <li>
@@ -145,13 +145,13 @@ if($session->logged_in){
 ?>
 <div id="menu">
 		<span style="float: left;">
-            <a href="..">
+            <a href="../../../index.php">
                 <img height="17" border="0" alt="OpenHomeo.org" src="../../skins/<?php echo(SKIN_NAME);?>/img/punkte_d9b7ea.gif"/>
             </a>
         </span>
 		<ul class="level1" id="root">
 		<li>
-		    <a href="../../.." style="color: #336633; font-size: 13px;"><b>OpenHomeo.org</b></a>
+		    <a href="../../../index.php" style="color: #336633; font-size: 13px;"><b>OpenHomeo.org</b></a>
 		  </li>
 		  <li class="sep">|</li>
 		  <li>

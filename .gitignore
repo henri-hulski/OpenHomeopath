@@ -3,5 +3,5 @@ download
 *.bz2
 *.sql
 !OpenHomeopath_db_structure.sql
-include/classes/db/config_db*.php
-!include/classes/db/config_db_release.php
+include/classes/db/config_db*
+!include/classes/db/config_db_sample.php
