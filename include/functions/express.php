@@ -139,10 +139,10 @@ function extract_symptom ($symptom_string, $rubric_id, $lang_id) {
 	$backref = 0;  // shows how many parent rubrics should be taken over from the last symptom (0=none, 1=all, 2=all until the last, etc.)
 
 	$symptom_backup = $symptom_string;
-	if (stripos($symptom_string, "s.") !== false) {
-		preg_match('/s\.\s*(\d+)/iu', $symptom_string, $matches);
+	if (stripos($symptom_string, "s.") !== false || stripos($symptom_string, "p.") !== false) {
+		preg_match('/[sp]\.\s*(\d+)/iu', $symptom_string, $matches);
 		$page = $matches[1];  // page
-		$symptom_string = preg_replace("/\s*s\.\s*\d+\s*/iu", "", $symptom_string);  // delete page
+		$symptom_string = preg_replace("/\s*[sp]\.\s*\d+\s*/iu", "", $symptom_string);  // delete page
 	}
 	if (strpos($symptom_string, "@") !== false) {
 		$kuenzli = 1;
@@ -630,13 +630,13 @@ function build_possible_duplication_table($result)
 		// end build where clause for delete and update
 
 		if ($enable_row_highlighting === 1) {
-			$results_table .= "  <tr class='".$tr_results_class."' onmouseover=\"if (this.className!='tr_highlighted_onclick'){this.className='tr_highlighted_onmouseover'}\" onmouseout=\"if (this.className!='tr_highlighted_onclick'){this.className='".$tr_results_class."'}\" onclick=\"if (this.className == 'tr_highlighted_onclick'){ this.className='".$tr_results_class."';}else{ this.className='tr_highlighted_onclick';}\">";
+			$results_table .= "  <tr class='$tr_results_class' onmouseover=\"if (this.className!='tr_highlighted_onclick'){this.className='tr_highlighted_onmouseover'}\" onmouseout=\"if (this.className!='tr_highlighted_onclick'){this.className='$tr_results_class'}\" onclick=\"if (this.className == 'tr_highlighted_onclick'){ this.className='$tr_results_class';}else{ this.className='tr_highlighted_onclick';}\">";
 		} // end if
 		else {
-			$results_table .= "  <tr class='".$tr_results_class."'>";
+			$results_table .= "  <tr class='" . $tr_results_class . "'>";
 		} // end else
 
-		$results_table .= "    <td>".$symptom_row[0]."</td>\n    <td>".$symptom_row[1]."</td>\n    <td>".$symptom_row[2]."</td>\n    <td>".$symptom_row[3]."</td>\n";
+		$results_table .= "    <td>$symptom_row[0]</td>\n    <td>$symptom_row[1]</td>\n    <td>$symptom_row[2]</td>\n    <td>".$symptom_row[3]."</td>\n";
 		$results_table .= "  </tr>\n";
 	} // end while
 

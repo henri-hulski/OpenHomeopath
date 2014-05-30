@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenHomeopath 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-30 01:57+0100\n"
+"POT-Creation-Date: 2014-05-30 10:21+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Henri Schumacher <henri.hulski@gazeta.pl>\n"
 "Language-Team: Henri Schumacher <henri.hulski@gazeta.pl>\n"
@@ -1519,6 +1519,10 @@ msgstr[0] ""
 msgstr[1] ""
 "Bei <strong>%d Quelle-/Referenz-Datensätzen</strong> wurden Syntaxfehler "
 "gefunden."
+
+#: express.php:514
+msgid "p."
+msgstr "s."
 
 #: express.php:514 skins/kraque/frame.php:72 skins/kraque/frame.php:82
 #: skins/kraque/frame.php:167 skins/kraque/frame.php:177

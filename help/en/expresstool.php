@@ -42,7 +42,7 @@ if (empty($_GET['popup'])) {
     <li>For not rewriting the parent rubrics each time you can use a <strong>short form</strong>:<br>
     '<strong>></strong>' at the beginning replaces the previous parent rubric.<br>
     With '<strong>>></strong>' at the beginning you jump back one parent rubric, with '<strong>>>></strong>' 2 parent rubrics etc..</li>
-    <li>For books you can specify the <strong>page number</strong> by '<strong>s.</strong>' + page number (e.g. '<strong>s.123</strong>').</li>
+    <li>For books you can specify the <strong>page number</strong> by '<strong>p.</strong>' + page number (e.g. '<strong>p.123</strong>').</li>
     <li>You can add a <strong>Künzli-dot</strong> for the symptom with <strong>@</strong>.</li>
     <li>Text in parentheses ('<strong>()</strong>')  will be saved seperatly as <strong>extra information</strong>.</li>
     <li>After this insert a colon ('<strong>:</strong>') and the <strong>remedy list</strong>.</li>
