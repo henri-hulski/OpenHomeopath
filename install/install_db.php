@@ -258,7 +258,7 @@ function zweifel () {
 <img src="../skins/original/img/hahnemann.jpg" width="90" height="120" alt="Samuel Hahnemann">
 </div>
 <div id="top">
-<a name="oben" title="Seitenanfang"></a>
+<a name="up" title="<?php echo _("Top of the page"); ?>"></a>
 <div id="banner">
 <img src="../skins/original/img/openhomeopath.gif" width="480" height="76" border="0" alt="OpenHomeopath">
 </div>

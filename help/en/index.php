@@ -50,8 +50,8 @@ include("help/layout/$skin/header.php");
         <li><a href="manual.php#rep_result">Repertorization result</a></li>
         <li><a href="manual.php#materia">Materia Medica</a></li>
         <li><a href="manual.php#symptominfo">Symptom information</a></li>
-        <li><a href="manual.php#daten">Data maintenance</a></li>
-        <li><a href="manual.php#hilfe">Help</a></li>
+        <li><a href="manual.php#data">Data maintenance</a></li>
+        <li><a href="manual.php#help">Help</a></li>
         <li><a href="manual.php#info">Info</a></li>
       </ul>
     </li>
@@ -67,7 +67,7 @@ include("help/layout/$skin/header.php");
       <a href="datadmin.php">Data maintenance</a>
       <ul class="subcontent">
         <li><a href="expresstool.php">Expresstool Manual</a></li>
-        <li><a href="expresstool_tut.php">Expresstool Tutorial</a></li>
+        <!--<li><a href="expresstool_tut.php">Expresstool Tutorial</a></li>-->
         <li><a href="datadmin.php#medica">Materia Medica table</a></li>
         <li><a href="datadmin.php#symptoms">Symptoms table</a></li>
         <li><a href="datadmin.php#sources">Sources table</a></li>

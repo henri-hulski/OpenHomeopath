@@ -90,8 +90,8 @@ if ($install == "1"){
 		$db->send_query($sql);
 
 		// add the table to the table list table and set allowed to 1
-		//$sql = "insert into `".$table_list_name."` (`name_table`, `allowed_table`, `enable_insert_table`, `enable_edit_table`, `enable_delete_table`, `enable_details_table`) values ('".$table_name_temp."', '1', '1', '1', '1', '1')";
-		$sql = "INSERT INTO `$table_list_name` (`name_table`, `allowed_table`, `enable_insert_table`, `enable_edit_table`, `enable_delete_table`, `enable_details_table`, `alias_table`) VALUES ('$table_name_temp', '1', '1', '1', '1', '1', '$table_name_temp')";
+		//$sql = "insert into `" . $table_list_name."` (`name_table`, `allowed_table`, `enable_insert_table`, `enable_edit_table`, `enable_delete_table`, `enable_details_table`) values ('" . $table_name_temp."', '1', '1', '1', '1', '1')";
+		$sql = "INSERT INTO `$table_list_name` (`name_table`, `allowed_table`, `enable_insert_table`, `enable_edit_table`, `enable_delete_table`, `enable_details_table`, `alias_table_en`) VALUES ('$table_name_temp', '1', '1', '1', '1', '1', '$table_name_temp')";
 		$db->send_query($sql);
 
 		if ($table_name_temp === $users_table_name) {
@@ -110,13 +110,12 @@ if ($install == "1"){
 		else {
 			for ($j=0; $j<count($fields_names_ar); $j++){
 				// insert a new record in the internal table with the name of the field as name and label
-				$sql = "INSERT INTO `$table_internal_name_temp` (`name_field`, `label_field`, `order_form_field`) VALUES ('".$fields_names_ar[$j]."', '".$fields_names_ar[$j]."', '".($j+1)."')";
-				
+				$sql = "INSERT INTO `$table_internal_name_temp` (`name_field`, `label_de_field`, `label_en_field`, `order_form_field`) VALUES ('" . $fields_names_ar[$j] . "', '" . $fields_names_ar[$j] . "', '" . $fields_names_ar[$j] . "', '" . ($j+1) . "')";
 				$db->send_query($sql);
 			} // end for
 		} // end else
 		
-		if ($db->tabelle_existiert($table_internal_name_temp)){ // just a check if always is fine
+		if ($db->table_exists($table_internal_name_temp)){ // just a check if all is fine
 			echo "<p>Internal table <b>$table_internal_name_temp</b> correctly created......";
 		} // end if
 		else{
@@ -129,11 +128,11 @@ if ($install == "1"){
 		} // end if
 	} // end for
 	echo "<p>......DaDaBIK correctly installed!!";
-	echo "<p>You can now manage your database with DaDaBIK, starting from <a href='$dadabik_main_file'>".$dadabik_main_file."</a>";
+	echo "<p>You can now manage your database with DaDaBIK, starting from <a href='$dadabik_main_file'>" . $dadabik_main_file . "</a>";
 	echo "<p>In order to customize DaDaBIK go to the <a href='admin.php'>homepage</a> of the administration area.";
 } // end if ($install == "1")
 else{
-	echo "<p><form name='install_form' action='reinstall_table.php?table_name=".urlencode($table_name)."' method='post'>";
+	echo "<p><form name='install_form' action='reinstall_table.php?table_name=" . urlencode($table_name) . "' method='post'>";
 	echo "<input type='hidden' name='install' value='1'>";
 	if ( $table_name != "") {
 		echo "<input type='submit' value='Click this button to install $table_name table'>";

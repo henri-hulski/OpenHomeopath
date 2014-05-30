@@ -176,7 +176,7 @@ if(strcmp($session->username,$req_user) == 0) {
 	$host  = $_SERVER['HTTP_HOST'];
 	$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 ?>
-<br><span class="rightFlow"><a href="#oben" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
 <a name="reps" id="reps"><br></a>
 <h2><?php echo _("Saved repertorizations"); ?></h2>
 <p><?php echo _("Here saved repertorizations can be opened,  deleted or taken as a basis for further repertorization."); ?><br>
@@ -194,15 +194,15 @@ if(strcmp($session->username,$req_user) == 0) {
 ?>
   </div>
 </fieldset>
-<br><span class="rightFlow"><a href="#oben" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
 
 <a name="rep_custom" id="rep_custom"><br></a>
 <h2><?php echo _("Personalize the Repertory"); ?></h2>
 <p><?php echo _("Here you can compose your <strong>personal Repertory profile</strong> by selecting <strong>which sources</strong> will be included. This profile will be used by the <strong>Repertorization</strong>, if you're <strong>logged in</strong> with your username."); ?>
 <br>
-<?php echo _("In <strong>Materia Medica</strong> in the compilation of a remedy associated symptoms also uses the personalized repertory. To personalize the actual <strong>Materia Medica</strong> see <a href='#materia_custom'>below</a>."); ?>
+<?php echo _("The <strong>reversed repertorization in the Materia Medica</strong> also uses the personalized repertory.") . " " . _("To personalize the actual <strong>Materia Medica</strong> see <a href='#materia_custom'>below</a>."); ?>
 <br>
-<?php echo _(" Accordingly, the <strong>Symptom-Info</strong> uses the personalized repertory during compilation of the remedies."); ?>
+<?php echo _(" Accordingly, the <strong>Symptom-Info</strong> uses the personalized repertory in the remedy list."); ?>
 </p>
 <p>
 <?php echo _("You can select your preferred symptom-language in your <a href='useredit.php'>user-account</a>."); ?>
@@ -318,7 +318,7 @@ if(strcmp($session->username,$req_user) == 0) {
     <br>
   </fieldset>
 </form>
-<br><span class="rightFlow"><a href="#oben" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
 
 <a name="materia_custom" id="materia_custom"><br></a>
 <h2><?php echo _("Personalize the Materia Medica"); ?></h2>

@@ -36,7 +36,11 @@
 // Datenbankbenutzerpasswort
     define("DB_PASS",   "homeo");
 
-// Entweder true oder false.
+// true | false
+// true, if the user should receive a password per email
+// on registration for verifying the email-address.
+// false, if the user can choose the password by himself
+// on the registration form.
 // Wenn dem Benutzer bei der Registrierung
 // zur Verifizierung der email das Passwort
 // per email zugeschickt werden soll: true.

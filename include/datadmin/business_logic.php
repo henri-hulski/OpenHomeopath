@@ -148,7 +148,7 @@ function build_fields_labels_array($table_internal_name, $order_type)
 	$table_alias_suffixes_ar = array();
 
 	// put the labels and other information of the table's fields in an array
-	$sql = "SELECT `name_field`, `present_insert_form_field`, `present_ext_update_form_field`, `present_search_form_field`, `required_field`, `present_results_search_field`, `present_details_form_field`, `check_duplicated_insert_field`, `type_field`, `other_choices_field`, `content_field`, `label_field`, `select_options_field`, `separator_field`, `primary_key_field_field`, `primary_key_table_field`, `primary_key_db_field`, `linked_fields_field`, `linked_fields_order_by_field`, `linked_fields_order_type_field`, `select_type_field`, `prefix_field`, `default_value_field`, `width_field`, `height_field`, `maxlength_field`, `hint_insert_field`, `order_form_field` FROM `$table_internal_name`";
+	$sql = "SELECT `name_field`, `present_insert_form_field`, `present_ext_update_form_field`, `present_search_form_field`, `required_field`, `present_results_search_field`, `present_details_form_field`, `check_duplicated_insert_field`, `type_field`, `other_choices_field`, `content_field`, `label_de_field`, `label_en_field`, `select_options_field`, `separator_field`, `primary_key_field_field`, `primary_key_table_field`, `primary_key_db_field`, `linked_fields_field`, `linked_fields_order_by_field`, `linked_fields_order_type_field`, `select_type_field`, `prefix_field`, `default_value_field`, `width_field`, `height_field`, `maxlength_field`, `hint_insert_de_field`, `hint_insert_en_field`, `order_form_field` FROM `$table_internal_name`";
 	
 	if ($order_type == "1") {
 		$sql .= " ORDER BY `order_form_field`";
@@ -171,7 +171,8 @@ function build_fields_labels_array($table_internal_name, $order_type)
 			$fields_labels_ar[$i]["present_details_form_field"] = $field_row["present_details_form_field"]; // 1 if the user want to display it in the details page
 			$fields_labels_ar[$i]["check_duplicated_insert_field"] = $field_row["check_duplicated_insert_field"]; // 1 if the field needs to be checked for duplicated insert
 			
-			$fields_labels_ar[$i]["label_field"] = $field_row["label_field"]; // the label of the field
+			$fields_labels_ar[$i]["label_de_field"] = $field_row["label_de_field"]; // the German label of the field
+			$fields_labels_ar[$i]["label_en_field"] = $field_row["label_en_field"]; // the English label of the field
 			
 			$fields_labels_ar[$i]["type_field"] = $field_row["type_field"]; // the type of the field
 			$fields_labels_ar[$i]["other_choices_field"] = $field_row["other_choices_field"]; // 0/1 the possibility to add another choice with select single menu
@@ -190,7 +191,8 @@ function build_fields_labels_array($table_internal_name, $order_type)
 			$fields_labels_ar[$i]["width_field"] = $field_row["width_field"]; // the width size of the field in case of text, textarea or rich_editor
 			$fields_labels_ar[$i]["height_field"] = $field_row["height_field"]; // the height size of the field in case of textarea or rich_editor
 			$fields_labels_ar[$i]["maxlength_field"] = $field_row["maxlength_field"]; // the maxlength of the field in case of text
-			$fields_labels_ar[$i]["hint_insert_field"] = $field_row["hint_insert_field"]; // the hint to display after the field in the insert form (e.g. use only number here!!)
+			$fields_labels_ar[$i]["hint_insert_de_field"] = $field_row["hint_insert_de_field"]; // the hint to display after the field in the insert form in German
+			$fields_labels_ar[$i]["hint_insert_en_field"] = $field_row["hint_insert_en_field"]; // the hint to display after the field in the insert form (e.g. use only number here!!) in English
 			$fields_labels_ar[$i]["order_form_field"] = $field_row["order_form_field"]; // the position of the field in the form
 
 			if ($field_row["primary_key_field_field"] !== '' && $field_row["primary_key_field_field"] !== NULL) {
@@ -223,7 +225,7 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 // global: $submit_buttons_ar, the array containing the values of the submit buttons, $normal_messages_ar, the array containig the normal messages, $select_operator_feature, wheter activate or not displaying "and/or" in the search form, $default_operator, the default operator if $select_operator_feature is not activated, $size_multiple_select, the size (number of row) of the select_multiple_menu fields, $table_name
 // output: $form, the html tabled form
 {
-	global $db, $submit_buttons_ar, $normal_messages_ar, $select_operator_feature, $default_operator, $size_multiple_select, $show_top_buttons, $enable_authentication, $enable_browse_authorization, $current_user, $year_field_suffix, $month_field_suffix, $day_field_suffix, $start_year;
+	global $db, $submit_buttons_ar, $normal_messages_ar, $select_operator_feature, $default_operator, $size_multiple_select, $show_top_buttons, $enable_authentication, $enable_browse_authorization, $current_user, $year_field_suffix, $month_field_suffix, $day_field_suffix, $start_year, $lang;
 
 	switch ($form_type) {
 		case 'insert':
@@ -301,7 +303,7 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 			if ($fields_labels_ar[$i]["required_field"] == "1" and $form_type != "search") {
 				$form .= "*";
 			} // end if 
-			$form .= $fields_labels_ar[$i]["label_field"]." ";
+			$form .= $fields_labels_ar[$i]["label_" . $lang . "_field"]." ";
 			$form .= "</td></tr></table></td>";
 			//////////////////////////////////
 			// end build the first coloumn (label)
@@ -545,7 +547,7 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 			// end build the second coloumn (input field)
 
 			if ($form_type == "insert" or $form_type == "update" or $form_type == "ext_update") {
-				$form .= "<td class='td_hint_form'>".$fields_labels_ar[$i]["hint_insert_field"]."</td>"; // display the insert hint if it's the insert form
+				$form .= "<td class='td_hint_form'>".$fields_labels_ar[$i]["hint_insert_" . $lang . "_field"]."</td>"; // display the insert hint if it's the insert form
 			} // end if
 			$form .= "</tr></table></td></tr>";
 		} // end if ($fields_labels_ar[$i]["$field_to_ceck"] == "1")
@@ -1307,7 +1309,7 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 // output: $results_table, the HTML results table
 // global: $submit_buttons_ar, the array containing the values of the submit buttons, $edit_target_window, the target window for edit/details (self, new......), $delete_icon, $edit_icon, $details_icon (the image files to use as icons), $enable_edit, $enable_delete, $enable_details (whether to enable (1) or not (0) the edit, delete and details features 
 {
-	global $submit_buttons_ar, $normal_messages_ar, $edit_target_window, $delete_icon, $edit_icon, $details_icon, $enable_edit, $enable_delete, $enable_details, $db, $ask_confirmation_delete, $word_wrap_col, $word_wrap_fix_width, $alias_prefix, $dadabik_main_file, $enable_row_highlighting, $prefix_internal_table, $current_user_is_editor, $current_user;
+	global $submit_buttons_ar, $normal_messages_ar, $edit_target_window, $delete_icon, $edit_icon, $details_icon, $enable_edit, $enable_delete, $enable_details, $db, $ask_confirmation_delete, $word_wrap_col, $word_wrap_fix_width, $alias_prefix, $dadabik_main_file, $enable_row_highlighting, $prefix_internal_table, $current_user_is_editor, $current_user, $lang;
 
 	$function = "search";
 
@@ -1329,7 +1331,7 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 	for ($i=0; $i<$count_temp; $i++) {
 		if ($fields_labels_ar[$i]["present_results_search_field"] == "1") { // the user want to display the field in the basic search results page
 
-			$label_to_display = $fields_labels_ar[$i]["label_field"];
+			$label_to_display = $fields_labels_ar[$i]["label_" . $lang . "_field"];
 
 			if ($word_wrap_fix_width === 1) {
 			
@@ -1528,14 +1530,14 @@ function build_csv($res_records, $fields_labels_ar)
 // build a csv, starting from a recordset
 // input: $res_record, the recordset, $fields_labels_ar
 {
-	global $csv_separator, $alias_prefix, $db;
+	global $csv_separator, $alias_prefix, $db, $lang;
 	$csv = "";
 	$count_temp = count($fields_labels_ar);
 
 	// write heading
 	for ($i=0; $i<$count_temp; $i++) {
 		if ( $fields_labels_ar[$i]["present_results_search_field"] == "1") {
-			$csv .= "'".str_replace("'", "''", $fields_labels_ar[$i]["label_field"])."'".$csv_separator;
+			$csv .= "'".str_replace("'", "''", $fields_labels_ar[$i]["label_" . $lang . "_field"])."'".$csv_separator;
 		}
 	}
 	$csv = substr($csv, 0, -1); // delete the last ","
@@ -1594,7 +1596,7 @@ function build_details_table($fields_labels_ar, $res_details)
 // input: $fields_labels_ar $res_details (the result of the query)
 // ouptut: $details_table, the html table
 {
-	global $db, $alias_prefix, $prefix_internal_table;
+	global $db, $alias_prefix, $prefix_internal_table, $lang;
 
 	// build the table
 	$details_table = "";
@@ -1643,7 +1645,7 @@ function build_details_table($fields_labels_ar, $res_details)
 				}
 
 				$count_temp_2 = count($field_values_ar);
-				$details_table .= "<tr><td class='td_label_details'><b>".$fields_labels_ar[$i]["label_field"]."</b></td><td class='td_value_details'>";
+				$details_table .= "<tr><td class='td_label_details'><b>".$fields_labels_ar[$i]["label_" . $lang . "_field"]."</b></td><td class='td_value_details'>";
 				for ($j=0; $j<$count_temp_2; $j++) {
 
 					// if it's a linked field and the linked table is installed, get the correct $field_type $field_content $field_separator
@@ -1683,7 +1685,7 @@ function build_insert_update_notice_email_record_details($fields_labels_ar, $res
 // input: $fields_labels_ar $res_details (the recordset produced by the SELECT query on the record just inserted or just updated)
 // ouptut: $details_table, the html table
 {
-	global $db, $alias_prefix, $normal_messages_ar;
+	global $db, $alias_prefix, $normal_messages_ar, $lang;
 
 	$notice_email = '';
 
@@ -1718,7 +1720,7 @@ function build_insert_update_notice_email_record_details($fields_labels_ar, $res
 
 				$count_temp_2 = count($field_values_ar);
 
-				$notice_email .= $fields_labels_ar[$i]["label_field"].':'; // add the label
+				$notice_email .= $fields_labels_ar[$i]["label_" . $lang . "_field"].':'; // add the label
 
 				for ($j=0; $j<$count_temp_2; $j++) {
 					$field_to_display = get_field_correct_displaying($field_values_ar[$j], $fields_labels_ar[$i]['type_field'], $fields_labels_ar[$i]['content_field'], $fields_labels_ar[$i]['separator_field'], 'plain_text'); // get the correct display mode for the field
@@ -1730,7 +1732,7 @@ function build_insert_update_notice_email_record_details($fields_labels_ar, $res
 
 			} // end if
 		} // end for
-		$notice_email .= "\n\n--------------------------------------------\nOpenHomeopath grüßt!";
+		$notice_email .= "\n\n--------------------------------------------\n" . _("The OpenHomeopath-Team") . " ;-)";
 	} // end while
 	return $notice_email;
 } // end function build_insert_update_notice_email_record_details()
@@ -1832,36 +1834,39 @@ function create_internal_table($table_internal_name)
 	$db->send_query($sql);
 
 	$fields = "(
-		`id_field` TINYINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-		`name_field` VARCHAR(50) NOT NULL,
-		`label_field` VARCHAR(255) DEFAULT '' NOT NULL,
-		`type_field` VARCHAR(50) DEFAULT 'text' NOT NULL,
-		`content_field` VARCHAR(50) DEFAULT 'alphanumeric' NOT NULL,
-		`present_search_form_field` VARCHAR(1) DEFAULT '1' NOT NULL,
-		`present_results_search_field` VARCHAR(1) DEFAULT '1' NOT NULL,
-		`present_details_form_field` VARCHAR(1) DEFAULT '1' NOT NULL,
-		`present_insert_form_field` VARCHAR(1) DEFAULT '1' NOT NULL,
-		`present_ext_update_form_field` VARCHAR(1) DEFAULT '1' NOT NULL,
-		`required_field` VARCHAR(1) DEFAULT '0' NOT NULL,
-		`check_duplicated_insert_field` VARCHAR(1) DEFAULT '0' NOT NULL,
-		`other_choices_field` VARCHAR(1) DEFAULT '0' NOT NULL,
-		`select_options_field` TEXT DEFAULT '' NOT NULL,
-		`primary_key_field_field` VARCHAR(255) DEFAULT '' NOT NULL,
-		`primary_key_table_field` VARCHAR(255) DEFAULT '' NOT NULL,
-		`primary_key_db_field` VARCHAR(50) DEFAULT '' NOT NULL,
-		`linked_fields_field` TEXT DEFAULT '' NOT NULL,
-		`linked_fields_order_by_field` TEXT DEFAULT '' NOT NULL,
-		`linked_fields_order_type_field` TEXT DEFAULT '' NOT NULL,
-		`select_type_field` VARCHAR(100) DEFAULT 'is_equal/contains/starts_with/ends_with/greater_than/less_then/is_empty' NOT NULL,
-		`prefix_field` TEXT DEFAULT '' NOT NULL,
-		`default_value_field` TEXT DEFAULT '' NOT NULL,
-		`width_field` VARCHAR(5) DEFAULT '' NOT NULL,
-		`height_field` VARCHAR(5) DEFAULT '' NOT NULL,
-		`maxlength_field` VARCHAR(5) DEFAULT '100' NOT NULL,
-		`hint_insert_field` VARCHAR(255) DEFAULT '' NOT NULL,
-		`order_form_field` TINYINT UNSIGNED NOT NULL,
-		`separator_field` CHAR(2) DEFAULT '~' NOT NULL
-	) ENGINE=MYISAM CHARACTER SET utf8";
+		`id_field` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+		`name_field` varchar(50) DEFAULT NULL,
+		`label_de_field` varchar(255) NOT NULL DEFAULT '',
+		`label_en_field` varchar(255) NOT NULL DEFAULT '',
+		`type_field` varchar(50) NOT NULL DEFAULT 'text',
+		`content_field` varchar(50) NOT NULL DEFAULT 'alphanumeric',
+		`present_search_form_field` varchar(1) NOT NULL DEFAULT '1',
+		`present_results_search_field` varchar(1) NOT NULL DEFAULT '1',
+		`present_details_form_field` varchar(1) NOT NULL DEFAULT '1',
+		`present_insert_form_field` varchar(1) NOT NULL DEFAULT '1',
+		`present_ext_update_form_field` varchar(1) NOT NULL DEFAULT '1',
+		`required_field` varchar(1) NOT NULL DEFAULT '0',
+		`check_duplicated_insert_field` varchar(1) NOT NULL DEFAULT '0',
+		`other_choices_field` varchar(1) NOT NULL DEFAULT '0',
+		`select_options_field` text,
+		`primary_key_field_field` varchar(255) NOT NULL DEFAULT '',
+		`primary_key_table_field` varchar(255) NOT NULL DEFAULT '',
+		`primary_key_db_field` varchar(50) NOT NULL DEFAULT '',
+		`linked_fields_field` text,
+		`linked_fields_order_by_field` text,
+		`linked_fields_order_type_field` text,
+		`select_type_field` varchar(100) NOT NULL DEFAULT 'is_equal/contains/starts_with/ends_with/greater_than/less_then/is_null/is_empty',
+		`prefix_field` text,
+		`default_value_field` text,
+		`width_field` varchar(5) NOT NULL DEFAULT '',
+		`height_field` varchar(5) NOT NULL DEFAULT '',
+		`maxlength_field` varchar(5) NOT NULL DEFAULT '100',
+		`hint_insert_de_field` varchar(255) NOT NULL DEFAULT '',
+		`hint_insert_en_field` varchar(255) NOT NULL DEFAULT '',
+		`order_form_field` int(11) NOT NULL,
+		`separator_field` varchar(2) NOT NULL DEFAULT '~',
+		PRIMARY KEY (`id_field`)
+	) ENGINE=MyISAM  DEFAULT CHARSET=utf8;";
 
 	$sql = "CREATE TABLE  `$table_internal_name` $fields";
 	$db->send_query($sql);
@@ -1877,14 +1882,17 @@ function create_table_list_table()
 	$db->send_query($sql);
 
 	$fields = "(
-		`name_table` VARCHAR(255) NOT NULL default '' PRIMARY,
-		`allowed_table` VARCHAR(1) NOT NULL default '',
-		`enable_insert_table` VARCHAR(1) NOT NULL default '',
-		`enable_edit_table` VARCHAR(1) NOT NULL default '',
-		`enable_delete_table` VARCHAR(1) NOT NULL default '',
-		`enable_details_table` VARCHAR(1) NOT NULL default '',
-		`alias_table` VARCHAR(255) NOT NULL default ''
-	) ENGINE=MYISAM CHARACTER SET utf8
+		`name_table` varchar(255) NOT NULL DEFAULT '',
+		`allowed_table` varchar(1) NOT NULL DEFAULT '',
+		`enable_insert_table` varchar(1) NOT NULL DEFAULT '',
+		`enable_edit_table` varchar(1) NOT NULL DEFAULT '',
+		`enable_delete_table` varchar(1) NOT NULL DEFAULT '',
+		`enable_details_table` varchar(1) NOT NULL DEFAULT '',
+		`alias_table_de` varchar(255) NOT NULL DEFAULT '',
+		`alias_table_en` varchar(255) NOT NULL DEFAULT '',
+		`position` tinyint(3) unsigned NOT NULL DEFAULT '0',
+		PRIMARY KEY (`name_table`)
+	) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 	";
 
 	$sql = "CREATE TABLE  `$table_list_name` $fields";
@@ -2196,13 +2204,13 @@ function build_installed_table_infos_ar($only_include_allowed, $exclude_users_ta
 // input: $only_include_allowed (0|1) $exclude_users_tab_if_not_admin(0|1)
 // output: the array
 {
-	global $table_list_name, $users_table_name, $db, $current_user_is_editor;
+	global $table_list_name, $users_table_name, $db, $current_user_is_editor, $lang;
 
 	if ($only_include_allowed === 1) {
-		$sql = "SELECT name_table, alias_table FROM `$table_list_name` WHERE allowed_table = '1'";
+		$sql = "SELECT name_table, alias_table_$lang FROM `$table_list_name` WHERE allowed_table = '1'";
 	} // end if
 	else {
-		$sql = "SELECT name_table, alias_table FROM `$table_list_name`";
+		$sql = "SELECT name_table, alias_table_$lang FROM `$table_list_name`";
 	} // end else
 
 	$res = $db->send_query($sql);

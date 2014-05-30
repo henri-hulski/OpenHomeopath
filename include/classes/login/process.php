@@ -246,7 +246,7 @@ class  Process {
 			$newpass = $session->generateRandStr(8);
 
 			/* Get email of user */
-			$usrinf = $db->getUserInfo($subuser, 'email, userlevel, id_user');
+			$usrinf = $db->getUserInfo($subuser, 'email_registered, userlevel, id_user');
 			$email  = $usrinf[0];
 			$userlevel  = $usrinf[1];
 
@@ -254,9 +254,9 @@ class  Process {
 			if($mailer->sendNewPass($subuser,$email,$newpass)){
 				/* Email sent, update database */
 				$db->updateUserField($subuser, "password", md5($newpass));
-				if ($userlevel  == 9) {  // Benutzer ist Administrator
+				if ($userlevel  == 9) {  // User is administrator
 					/*
-					 * Aktualisiere Phorum-Benutzertabelle
+					 * Update the phorum user table
 					 */
 					$user_ar["user_id"] = $usrinf[2];
 					$user_ar["password"] = $newpass;

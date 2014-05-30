@@ -30,7 +30,7 @@
  */
 
 include ("include/datadmin/config.php");
-include ("include/datadmin/languages/".$language.".php");
+include ("include/datadmin/languages/" . $language . ".php");
 include_once ("include/classes/login/session.php");
 include ("include/datadmin/functions.php");
 $url = "archive.php";
@@ -41,7 +41,7 @@ include ("include/functions/archive.php");
 $action = $url;
 $details = "0";
 
-$sql = "SELECT name_table, alias_table FROM $table_list_name";
+$sql = "SELECT name_table, alias_table_$lang FROM $table_list_name";
 $i=0;
 $db->send_query($sql);
 while ($row = $db->db_fetch_row()) {

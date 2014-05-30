@@ -105,7 +105,7 @@ if ($num_rows > 0){
 			$rem_info[3] = str_replace("\r\n", "<br />", $rem_info[3]);
 			$rem_info[3] = str_replace("\r", "<br />", $rem_info[3]);
 			$rem_info[3] = str_replace("\n", "<br />", $rem_info[3]);
-			echo ("    <li><strong>" . _("manufacturing / origin / synonyms:") . " </strong><span class='gray'>$rem_info[3]</span></li>\n");
+			echo ("    <li><strong>" . _("preparation / origin / synonyms:") . " </strong><span class='gray'>$rem_info[3]</span></li>\n");
 		}
 		if (!empty($rem_info[4])) {
 			$rem_info[4] = str_replace("\r\n", "<br />", $rem_info[4]);

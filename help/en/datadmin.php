@@ -34,20 +34,20 @@ include("help/layout/$skin/header.php");
   Data maintenance
 </h2>
 <div>
-  Hier lässt sich die <strong>Datenbank erweitern</strong> bzw. <strong>verändern</strong>.<br>
-  Um zur Datenpflege <strong>Zugang</strong> zu haben musst du <a href="user.php">angemeldet</a> sein.<br>
-  Im Datenpflege-Fenster kannst du oben in einem Dropdown-Menü die <strong>Datenbank-Tabelle</strong> auswählen, die du bearbeiten willst.<br>
-  Es können <strong>folgende Tabellen</strong> eingesehen und bearbeitet werden:
+  With Datadmin, our data maintenance tool you can <strong>edit and extend the database of OpenHomeopath</strong>.<br>
+  For using Datadmin you've first to <a href="user.php">log in</a>.<br>
+  You can choose the <strong>database table for editing</strong> in a drop-down menue.<br>
+  You can view and edit the <strong>following tables</strong>:
   <ul>
-    <li><strong><em>Materia Medica</em></strong> &ndash; enthält die Angaben der <strong>Materia Medica</strong> mit <strong>Quellenangabe</strong> zu den einzelnen Arzneimitteln;</li>
-    <li><strong><em>Symptome</em></strong> &ndash; enthält die <strong>Symptome</strong> mit den ihnen zugeordneten <strong>Rubriken</strong>;</li>
-    <li><strong><em>Quellen</em></strong> &ndash; enthält die <strong>Quellen</strong> mit ausführlicher <strong>Beschreibung</strong>.</li>
-    <li><strong><em>Mittel</em></strong> &ndash; enthält die <strong>Arzneimittel</strong> mit <strong>Kurzbezeichnung</strong> und <strong>Mittelname</strong>.</li>
-    <li><strong><em>Hauptrubriken</em></strong> &ndash; enthält die <strong>Hauptrubriken</strong> mit <strong>Position</strong> im Kopf-Fuß-Schema.</li>
+    <li><strong><em>Materia Medica</em></strong> &ndash; contains the remedy descriptions of the <strong>Materia Medica</strong> with <strong>source references</strong>.</li>
+    <li><strong><em>Symptoms</em></strong> &ndash; contains the <strong>symptoms</strong> and their relations among each other.</li>
+    <li><strong><em>Sources</em></strong> &ndash; contains the  <strong>sources</strong> with a <strong>detailed description</strong>.</li>
+    <li><strong><em>Remedies</em></strong> &ndash; contains the <strong>remedies</strong>.</li>
+    <li><strong><em>Main rubrics</em></strong> &ndash; contains the <strong>main rubrics</strong>.</li>
   </ul>
 </div>
 <p>
-  Es folgt eine <strong>ausführliche Beschreibung</strong> der einzelnen <strong>Tabellen</strong>:
+  I will give you a <strong>detailed description</strong> of <strong>each table</strong>:
 </p>
 <br>
 <div class="content">
@@ -55,142 +55,155 @@ include("help/layout/$skin/header.php");
     Inhalt
   </h2>
   <ul>
-    <li><a href="#medica">Tabelle Materia Medica</a></li>
-    <li><a href="#symptoms">Tabelle Symptome</a></li>
-    <li><a href="#sources">Tabelle Quellen</a></li>
-    <li><a href="#remedies">Tabelle Mittel</a></li>
-    <li><a href="#mainrubrics">Tabelle Hauptrubriken</a></li>
-    <li><a href="#overview">Aufbau de Datenpflege-Startseite</a></li>
-    <li><a href="#edit">Bearbeiten und Einfügen von Sätzen</a></li>
+    <li><a href="#medica">Table Materia Medica</a></li>
+    <li><a href="#symptoms">Table Symptoms</a></li>
+    <li><a href="#sources">Table Sources</a></li>
+    <li><a href="#remedies">Table Remedies</a></li>
+    <li><a href="#mainrubrics">Table Main Rubrics</a></li>
+    <li><a href="#overview">Layout of Datadmin</a></li>
+    <li><a href="#edit">Edit and insert of records</a></li>
   </ul>
 </div>
 <a name="medica" id="medica"><br></a>
 <h3>
-  Tabelle Materia Medica
+  Table Materia Medica
 </h3>
 <div>
-  In der Tabelle <strong><em>Materia Medica</em></strong> gibt es folgende <strong>Felder</strong>:
+  In the table <strong><em>Materia Medica</em></strong> you find the following fields:
   <ul>
-    <li><strong><em>Mittel</em></strong> &ndash; hier wird das Mittel aus einer Drop-Down-Liste ausgesucht;</li>
-    <li><strong><em>Herstellung/Herkunft/Synonyme</em></strong> &ndash; nähere Angaben zu Herstellung, Herkunft und Synonymen des Mittels;</li>
-    <li><strong><em>allgemeine Beschreibung des Mittels</em></strong> &ndash; hier kann eine ausführliche Beschreibung des Mittels hinterlegt werden;</li>
-    <li><strong><em>verwandte Mittel</em></strong>, <strong><em>unverträgliche Mittel</em></strong> und <strong><em>Antidote</em></strong> &ndash; angegeben werden die jeweiligen Kurzformen der Mittel;</li>
-    <li><strong><em>Quelle der Mittelbeschreibung</em></strong> &ndash; hier kann in einer Dropdown-Liste eine Quelle aus der <strong>Tabelle <em>Quellen</em></strong> ausgewählt werden;</li>
-    <li><strong><em>Leitsymptome</em></strong> unterteilt in die Kategorien <strong><em>Allgemein</em></strong>, <strong><em>Gemüt</em></strong> und <strong><em>Körper</em></strong> &ndash; hier können die einzelnen Leitsymptome des Mittels beschrieben werden.</li>
+    <li><strong><em>Remedy</em></strong> &ndash; you can choose the remedy from a drop-down list related to the Remedies table.</li>
+    <li><strong><em>Source</em></strong> &ndash; you can choose the source of the materia medica from a drop-down list related to the Sources table.</li>
+    <li><strong><em>Details</em></strong> about preparation, origin and synonyms of the remedy.</li>
+    <li><strong><em>Description</em></strong> &ndash; for a detailed description of the remedy in general.</li>
+    <li><strong><em>Related remedies</em></strong>, <strong><em>Incompatible remedies</em></strong> and <strong><em>Antidotes</em></strong> &ndash; as abbreviations separated by semicolon (';').</li>
+    <li><strong><em>Leading symptoms</em></strong> in the categories <strong><em>Genarel</em></strong>, <strong><em>Mind</em></strong> and <strong><em>Body</em></strong> &ndash; for a detailed description of the leading symptoms.</li>
   </ul>
-  Das Feld <strong>Mittel</strong> muß angegeben werden. Die <strong>anderen Felder</strong> werden nur dann in der <strong>Materia Medica</strong> angezeigt, wenn sie <strong>nicht leer</strong> gelassen werden.
+  The fields <strong>Remedy</strong> and <strong>Source</strong> are mandatory. <strong>The other fields</strong> only show up in the <strong>Materia Medica</strong>, when they're filled in.
 </div>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="symptoms" id="symptoms"><br></a>
 <h3>
-  Tabelle Symptome
+  Table Symptoms
 </h3>
 <div>
-  Die Tabelle <strong><em>Symptome</em></strong> enthält <strong>2 Felder</strong>:
+  The table <strong><em>Symptoms</em></strong> contains 3 mandatory fields:
   <ul>
-    <li><strong><em>Symptom</em></strong> &ndash; eine möglichst knappe und treffende Symptombeschreibung;</li>
-    <li><strong><em>Rubrik</em></strong> &ndash; aus einer Auswahlliste kann die Rubrik ausgewählt werden.</li>
+    <li><strong><em>Symptom</em></strong> &ndash; the symptom description,</li>
+    <li><strong><em>Main rubric</em></strong> &ndash; here you can choose the main rubric from a drop-down list,</li>
+    <li><strong><em>Language</em></strong> &ndash; here you can choose the language from a drop-down list.</li>
   </ul>
-  <strong>Beide</strong> Felder sind <strong>Pflichtfelder</strong>. Außerdem wird <strong>automatisch</strong> eine <strong>Symptom-Nummer</strong> vergeben.
 </div>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="sources" id="sources"><br></a>
 <h3>
-  Tabelle Quellen
+  Table Sources
 </h3>
 <div>
-  Die Tabelle <strong><em>Quellen</em></strong> enthält <strong>2 Pflichtfelder</strong>:
+  The table <strong><em>Sources</em></strong> contains 6 mandatory fields:
   <ul>
-    <li><strong><em>Identifikator</em></strong> &ndash; dies ist das <strong>Kürzel</strong>, welches in Klammern hinter Mitteln und Symptomen angezeigt wird, dabei sind bis zu 5 <strong>Großbuchstaben</strong> und <strong>Zahlen</strong> erlaubt;</li>
-    <li><strong><em>Titel</em></strong> &ndash; hier den Titel der Quelle angeben.</li>
+    <li><strong><em>Source ID</em></strong> &ndash; a <strong>short name</strong> for the source. Up to 12 alphanumeric characters are allowed.</li>
+    <li><strong><em>Title</em></strong> &ndash; the title of the source.</li>
+    <li><strong><em>Language</em></strong> &ndash; choose from a drop-down list,</li>
+    <li><strong><em>Source type</em></strong> &ndash; choose from a drop-down list,</li>
+    <li><strong><em>Maximum grade</em></strong> &ndash; choose the maximum grade that is used in the source,</li>
+    <li><strong><em>Primary source</em></strong> &ndash; 1: Primary source, 0: Reference source.</li>
   </ul>
-  Die weiteren <strong>9 Felder</strong> sind <strong>selbsterklärend</strong> und werden nur angezeigt, wenn sie <strong>ausgefüllt</strong> sind:
+  The next <strong>10 fields</strong> are self explaining and will only show up if they're completed:
   <ul>
-    <li><strong><em>Autor</em></strong></li>
-    <li><strong><em>Jahr</em></strong></li>
-    <li><strong><em>Auflage/Version</em></strong></li>
+    <li><strong><em>Author</em></strong></li>
+    <li><strong><em>Year</em></strong></li>
+    <li><strong><em>Edition/Version</em></strong></li>
     <li><strong><em>Copyright</em></strong></li>
-    <li><strong><em>Lizenz</em></strong></li>
-    <li><strong><em>Webpräsenz</em></strong></li>
+    <li><strong><em>License</em></strong></li>
+    <li><strong><em>URL</em></strong></li>
     <li><strong><em>ISBN</em></strong></li>
-    <li><strong><em>Bemerkung</em></strong></li>
-    <li><strong><em>Kontaktadresse</em></strong></li>
+    <li><strong><em>Note</em></strong></li>
+    <li><strong><em>Contact address</em></strong></li>
+    <li><strong><em>Remedy proving</em></strong> &ndash; if the source is a remedy proving provide details.</li>
   </ul>
 </div>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="remedies" id="remedies"><br></a>
 <h3>
-  Tabelle Mittel
+  Table Remedies
 </h3>
 <div>
-  In der Tabelle <strong><em>Mittel</em></strong> gibt es <strong>2 Felder</strong>:
+  The table <strong><em>Remedies</em></strong> contains <strong>2 mandatory fields</strong>:
   <ul>
-    <li><strong><em>Kurzbezeichnung</em></strong> &ndash; die gebräuchliche Kurzform des Mittelnamens;</li>
-    <li><strong><em>Mittelname</em></strong> &ndash; der offizielle Mittelname.</li>
+    <li><strong><em>Abbreviation</em></strong> &ndash; the common remedy abbreviation,</li>
+    <li><strong><em>Remedy name</em></strong> &ndash; the full remedy name.</li>
   </ul>
-  Beide Felder sind <strong>Pflichtfelder</strong>.
 </div>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="mainrubrics" id="mainrubrics"><br></a>
 <h3>
-  Tabelle Hauptrubriken
+  Table Main Rubrics
 </h3>
 <div>
-  In der Tabelle <strong><em>Hauptrubriken</em></strong> gibt es <strong>2 Felder</strong>:
+  In the table <strong><em>Main Rubrics</em></strong> you find the <strong>following fields</strong>:
   <ul>
-    <li><strong><em>Hauptrubrikname</em></strong>;</li>
-    <li><strong><em>Hauptrubrikposition</em></strong> &ndash; dies ist die Position der Hauptrubrik im Kopf-Fuß-Schema.</li>
+    <li><strong><em>Main Rubrik (German)</em></strong>,</li>
+    <li><strong><em>Main Rubrik (English)</em></strong>,</li>
+    <li><strong><em>Synonym</em></strong> &ndash; an existing synonymous main rubric.</li>
   </ul>
-  Beide Felder sind <strong>Pflichtfelder</strong>.
 </div>
 <p>
-  <span class="boldtext red">Achtung!</span> &nbsp; <strong>Änderungen der Hauptrubriken</strong> sollten nur mit <strong>Rücksprache</strong> im Forum bzw. mit einem Administrator ausgeführt werden, da die Hauptrubriken die <strong>Grundstruktur der Datenbank</strong> darstellen.<br>
-  Um neue Hauptrubriken an die <strong>richtige Position</strong> im Kopf-Fuß-Schema zu bringen, muss, wenn dies die Position von Hauptrubriken betrifft, die nicht vom jeweiligen Benutzer erstellt wurden, ein Administrator eingreifen.
+  <span class="boldtext red">Warning!</span> &nbsp; You should <strong>change the main rubric</strong> only after consulting the forum or an administrator, because the main rubrics are creating the basic structure of the rubrics database.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="overview" id="overview"><br></a>
 <h3>
-  Aufbau de Datenpflege-Startseite
+  Layout of Datadmin
 </h3>
 <p>
-  Auf der <strong>Startseite</strong> der jeweiligen Tabelle wird eine <strong>Liste aller vorhandenen Tabellensätze</strong> angezeigt. Unterhalb der Tabellenauswahl kannst du auswählen <strong>wie viele Sätze pro Seite</strong> angezeigt werden. Der Standard ist <strong>20</strong>.
+  On the <strong>main page of each table</strong> you find a list of <strong>existing records</strong>. You can choose how many records per page will be shown.
 </p>
 <div>
-  Vor jedem Tabelleneintrag befinden sich <strong>3 anklickbare Symbole</strong>:
+  At the beginning of each table row you find <strong>3 clickable icons</strong>:
   <ul>
-      <li><img alt=""  src="../../<?php echo(EDIT_ICON);?>" width="16" height="16"> &ndash; Hier kannst du den nachstehenden Satz <strong>bearbeiten</strong>. Wenn du kein Administrator bist, kannst du nur die Sätze bearbeiten, die du <strong>selbst erstellt</strong> hast. Näheres siehe unter <a href="#edit">Bearbeiten und Einfügen von Sätzen<strong></strong></a>.</li>
-      <li><img alt=""  src="../../<?php echo(DELETE_ICON);?>" width="16" height="16"> &ndash; Hiermit <strong>löschst</strong> du den betreffenden Satz <strong>unwiderruflich</strong>, berechtigt dazu ist der, der den Satz erstellt hat und ein Administrator.</li>
-      <li><img alt=""  src="../../<?php echo(DETAILS_ICON);?>" width="16" height="16"> &ndash; Von hier erreichst du die <strong>Detailansicht</strong>, wo du <strong>ausführliche Informationen</strong> über diesen Eintrag bekommst.</li>
+      <li><img alt=""  src="../../<?php echo(EDIT_ICON);?>" width="16" height="16"> &ndash; for <strong>editing the record</strong>. If you aren't administrator you can only edit your own records. For details see  <a href="#edit">Edit and insert of records<strong></strong></a>.</li>
+      <li><img alt=""  src="../../<?php echo(DELETE_ICON);?>" width="16" height="16"> &ndash; for <strong>deleting the record</strong>. If you aren't administrator you can only delete your own records.</li>
+      <li><img alt=""  src="../../<?php echo(DETAILS_ICON);?>" width="16" height="16"> &ndash; for the <strong>details view</strong>.</li>
   </ul>
 </div>
 <div>
-  In den <strong>Menüs</strong> im oberen und unteren Bereich der Seite findest du <strong>folgende Einträge</strong>:
+  In the <strong>menue bars</strong> above and below the table you find the <strong>following items</strong>:
   <ul>
-    <li><strong><em>"Startseite"</em></strong> &ndash; Von hier kommst du zurück zur Startseite der jeweiligen Tabelle mit der <strong>als letztes angezeigten Auswahl</strong> an Sätzen.</li>
-    <li><strong><em>"Einfügen"</em></strong> &ndash; Hier kannst du einen neuen Satz in die Tabelle einfügen. Näheres siehe unter <a href="#edit">Bearbeiten und Einfügen von Sätzen</a>.</li>
-    <li><strong><em>"Suchen"</em></strong> &ndash; Hier kommst du in eine <strong>ausführliche Suchmaske</strong>, wobei sich jedes Feld mit <strong>verschiedenen Suchkriterien</strong> nach Suchbegriffen <strong>durchsuchen</strong> lässt. So kannst du die <strong>Auswahl</strong> der Sätze, die angezeigt werden, <strong>flexibel anpassen</strong>.</li>
-    <li><strong><em>"Letzte Suchergebnisse"</em></strong> &ndash; Hier wird das letzte Suchergebnis angezeigt.</li>
-    <li><strong><em>"Alles zeigen"</em></strong> &ndash; Hier kannst du dir wieder alle Sätze anzeigen lassen.</li>
+    <li><strong><em>"Home"</em></strong> &ndash; return to the last view of the table main page.</li>
+    <li><strong><em>"Insert"</em></strong> &ndash; insert new records in the table. For details see <a href="#edit">Edit and insert of records</a>.</li>
+    <li><strong><em>"Search"</em></strong> &ndash; searching the table with search filters for each field.</li>
+    <li><strong><em>"Last search results"</em></strong> &ndash; return to the last search results.</li>
+    <li><strong><em>"Show all"</em></strong> &ndash; show all records without filters.</li>
+    <li><strong><em>"Archive"</em></strong> &ndash; where changed and deleted records are archived and can be restored.</li>
+    <li><strong><em>"Express-Tool"</em></strong> &ndash; switch to the <a href="expresstool.php">Express-Tool</a>.</li>
   </ul>
-  Bei den Tabellen <strong><em>Materia Medica</em></strong> und <strong><em>Mittel</em></strong> gibt es außerdem unterhalb des Menüs die Möglichkeit die Sätze nach dem <strong>Anfangsbuchstaben der Mittel-Kurzbezeichnung</strong> auszuwählen. Entsprechend kannst du in der Tabelle <strong><em>Symptome</em></strong> die Sätze nach <strong>Hauptrubrik</strong> auswählen.
+  In the table <strong><em>Remedies</em></strong> you've also the possibility to select the records by the <strong>first letter of the remedy abbreviation</strong>.<br>
+  In the table <strong><em>Symptoms</em></strong> you can select records by <strong>main rubric</strong>.
 </div>
 <p>
-  Über <strong><em>"Als CSV-Datei ausgeben"</em></strong> unterhalb der Tabelle kannst du dir die jeweils <strong>angezeigte Satzauswahl</strong> als sternchen(<strong>*</strong>)-getrennte <strong>CSV-Datei</strong> ausgeben lassen. Deswegen sollte das <strong>*</strong>-Zeichen in den Datensätzen <strong>nicht vorkommen</strong>.
+  With <strong><em>"Export to CSV"</em></strong> you can export the current record selection to a semicolon seperated <strong>CSV-file</strong>.
 </p>
-<br><span class="rightFlow"><a href="#oben" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="edit" id="edit"><br></a>
 <h3>
-  Bearbeiten und Einfügen von Sätzen
+  Edit and insert of records
 </h3>
 <p>
-    Zum <strong>Bearbeitungsformular</strong> kommt man über das <img alt=""  src="../../<?php echo(EDIT_ICON);?>" width="16" height="16"><strong>-Symbol</strong> vor jedem Tabelleneintrag und zum <strong>Einfügeformular</strong> über <strong><em>"Einfügen"</em></strong> im <strong>Menü</strong> ober- und unterhalb der Tabelle.<br>
-  Der <strong>Unterschied</strong> zwischen den beiden Formularen besteht darin, dass im <strong>Bearbeitungsformular</strong> die Daten des entsprechenden Satzes <strong>voreingetragen</strong> sind und dass man über <strong><em>"<< Vorheriger"</em></strong> bzw. <strong><em>"Nächster >>"</em></strong> zum vorhergehenden bzw. nachfolgenden Satz <strong>springen</strong> kann.
+  You can reach the <strong>edition form</strong> from the <img alt=""  src="../../<?php echo(EDIT_ICON);?>" width="16" height="16"><strong>-Symbol</strong> in front of each table row and the insert form from <strong><em>"Insert"</em></strong> in the <strong>menue bar</strong>.<br>
+  The difference between the two form is, that the insert form is a blank form and in the edit form you find the data of the current record with the possibility to jump with <strong><em>"<< Previous"</em></strong> to the previous and with <strong><em>"Next >>"</em></strong> to the next record.
 </p>
 <p>
-  Du kannst nun die <strong>einzelnen Tabellenfelder</strong> ausfüllen bzw. ändern. Die Felder, die ausgefüllt sein müssen (<strong>Pflichtfelder</strong>) sind mit einem <strong>Sternchen(*)</strong> vor dem Feldnamen <strong>gekennzeichnet</strong>. Die meisten Felder sind <strong>einzeilige Textfelder</strong>, wo die entsprechenden Angaben in einer Zeile gemacht werden. Die Felder wo längere Textangaben möglich sind, benutzen <strong>mehrzeilige Textareafelder</strong>. Hier werden bei manchen Feldern bei der Eingabe gemachte <strong>Zeilensprünge</strong> auf der entsprechenden Programmseite <strong>übernommen</strong>.
-  Bei manchen Feldern (z.B. Feld <em>Quellen</em> oder die Felder in der Tabelle <em>Symptome-Mittel-Beziehungen</em>) kann über eine <strong>Dropdown-Auswahl</strong> ein Eintrag aus einer <strong>anderen Tabelle</strong> (oder bei <em>Wertigkeit</em> aus einer <strong>vorgegebenen Liste</strong>) ausgewählt werden. Der Eintrag muss dann gegebenenfalls <strong>erst in der entsprechenden Tabelle</strong> gemacht werden. <strong>Hinweise zum Ausfüllen</strong> der einzelnen Felder findest du hinter den Feldern. <strong>Näheres zu den einzelnen Tabellen</strong> findest du oben in den jeweiligen Tabellen-Kapiteln.<br>
-  Wenn das Formular <strong>fertig ausgefüllt</strong> ist schickst du es über <strong><em>"Speichern"</em></strong> bzw. <strong><em>"Neuen Satz einfügen"</em></strong> ab. Der Satz wird dann <strong>in die Datenbank</strong> übernommen.
+  <strong>Mandatory fields</strong> are signed by an <strong>asterisk (*)</strong> before the field name.<br>
+  There're 3 types of fields:
+  <ul>
+    <li><strong><em>single-line textfields</em></strong>,</li>
+    <li><strong><em>multi-line textareas</em></strong> &ndash; line feeds are generally preserved,</li>
+    <li><strong><em>drop-down lists</em></strong>.</li>
+  </ul>
+  You find <strong>hints to fill out the fields</strong> behind the fields.<br>
+  <strong>Details for each table</strong> you find in the corresponding table chapter.
 </p>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

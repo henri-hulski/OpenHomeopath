@@ -151,7 +151,7 @@ if (strcmp ($res, "VERIFIED") == 0) {
 			} else {
 				$type = 'paypal_abo';
 			}
-			$query = "SELECT username FROM users WHERE email = '$payer_email' ORDER BY last_activity DESC LIMIT 1";
+			$query = "SELECT username FROM users WHERE email = '$payer_email' || email_registered = '$payer_email' ORDER BY last_activity DESC LIMIT 1";
 			$db->send_query($query);
 			list ($username) = $db->db_fetch_row();
 			$db->free_result();

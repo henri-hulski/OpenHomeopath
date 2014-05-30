@@ -64,7 +64,7 @@ if (isset($_POST["field_to_change_name"])){
 	$field_to_change_name = $_POST["field_to_change_name"];
 } // end if
 if (isset($_POST["field_to_change_new_position"])){
-$field_to_change_new_position = $_POST["field_to_change_new_position"];
+	$field_to_change_new_position = $_POST["field_to_change_new_position"];
 } // end if
 if (isset($_POST["old_field_name"])){
 	$old_field_name = $_POST["old_field_name"];
@@ -75,13 +75,10 @@ if (isset($_POST["new_field_name"])){
 if (isset($_POST["new_field_name"])){
 	$new_field_name = $_POST["new_field_name"];
 } // end if
-if (isset($_POST["function"])){
-	$function = $_POST["function"];
+if (isset($_REQUEST["function"])){
+	$function = $_REQUEST["function"];
 } // end if
-elseif (isset($_GET["function"])){ // for uninstall function
-	$function = $_GET["function"];
-} // end if
-else{
+else {
 	$function = "";
 } // end else
 if (isset($_POST["enable_insert"])){
@@ -109,7 +106,7 @@ $installed_tables_ar = build_tables_names_array(0, 1, 1);
 if (isset($_GET["table_name"])){
 	$table_name = $_GET["table_name"];
 } // end if
-else{
+else {
 	if (count($installed_tables_ar)>0){
 		// get the first table
 		$table_name = $installed_tables_ar[0];
@@ -158,7 +155,7 @@ switch($function){
 					$sql = "UPDATE `$table_list_name` SET `allowed_table` = '1' WHERE `name_table` = '".$installed_tables_ar[$i]."'";
 				} // end if
 			} // en if
-			else{
+			else {
 				$sql = "UPDATE `$table_list_name` SET `allowed_table` = '0' WHERE `name_table` = '".$installed_tables_ar[$i]."'";
 			} // end else
 			
@@ -205,7 +202,7 @@ switch($function){
 	case "save_table_alias":
 
 		// save the configuration about table alias
-		$sql = "UPDATE `$table_list_name` SET `alias_table` = '$alias_table' WHERE `name_table` = '$table_name'";
+		$sql = "UPDATE `$table_list_name` SET `alias_table_en` = '$alias_table' WHERE `name_table` = '$table_name'";
 
 		// execute the update
 		$db->send_query($sql);
@@ -213,7 +210,7 @@ switch($function){
 		$confirmation_message .= "Changes correctly saved.";
 		break;
 	case "delete_records":
-		// get the array containg label and other information about the fields
+		// get the array containing labels and other information about the fields
 		$fields_labels_ar = build_fields_labels_array($table_internal_name, "1");
 		
 		if (isset($deleted_fields_ar)){
@@ -229,7 +226,7 @@ switch($function){
 					} // end if
 				} // end for
 
-				// re-get the array containg label and other information about the fields
+				// re-get the array containing labels and other information about the fields
 				$fields_labels_ar = build_fields_labels_array($table_internal_name, "1");
 
 				if (isset($order_form_field_temp)){ // otherwise I could have done a reload of a delete page
@@ -240,13 +237,13 @@ switch($function){
 					} // end for
 				} // end if
 
-				// re-get the array containg label and other information about the fields
+				// re-get the array containing labels and other information about the fields
 				$fields_labels_ar = build_fields_labels_array($table_internal_name, "1");
 			} // end for
 
 			$confirmation_message .= "$i fields correctly deleted from the internal table $table_internal_name.";
 		} // end if
-		else{
+		else {
 			$confirmation_message .= "Please select one or more fields to delete.";
 		} // end else
 		break;
@@ -266,10 +263,10 @@ switch($function){
 		$db->free_result();
 
 		// drop (if present) the old internal table and create the new one.
-//		create_internal_table($table_internal_name);
+		// create_internal_table($table_internal_name);
 
 		$j = 0;  // set to 0 the counter for the $fields_labels_ar
-		$new_fields_nr = 0; // set to 0 the counter for the number of new fields inserted
+		$new_fields_num = 0; // set to 0 the counter for the number of new fields inserted
 
 		for ($i=0; $i<count($fields_names_ar); $i++){
 			if (isset($fields_labels_ar[$j]["name_field"]) and $fields_names_ar[$i] == $fields_labels_ar[$j]["name_field"]){
@@ -291,11 +288,13 @@ switch($function){
 				$select_type_field_temp = $db->escape_string($fields_labels_ar[$j]["select_type_field"]);
 				$prefix_field = $db->escape_string($fields_labels_ar[$j]["prefix_field"]);
 				$default_value_field = $db->escape_string($fields_labels_ar[$j]["default_value_field"]);
-				$label_field_temp = $db->escape_string($fields_labels_ar[$j]["label_field"]);
+				$label_de_field_temp = $db->escape_string($fields_labels_ar[$j]["label_de_field"]);
+				$label_en_field_temp = $db->escape_string($fields_labels_ar[$j]["label_en_field"]);
 				$width_field_temp = $db->escape_string($fields_labels_ar[$j]["width_field"]);
 				$height_field_temp = $db->escape_string($fields_labels_ar[$j]["height_field"]);
 				$maxlength_field_temp = $db->escape_string($fields_labels_ar[$j]["maxlength_field"]);
-				$hint_insert_field_temp = $db->escape_string($fields_labels_ar[$j]["hint_insert_field"]);
+				$hint_insert_de_field_temp = $db->escape_string($fields_labels_ar[$j]["hint_insert_de_field"]);
+				$hint_insert_en_field_temp = $db->escape_string($fields_labels_ar[$j]["hint_insert_en_field"]);
 				$order_form_field_temp = $db->escape_string($fields_labels_ar[$j]["order_form_field"]);
 				
 				$other_choices_field_temp = $db->escape_string($fields_labels_ar[$j]["other_choices_field"]);
@@ -309,22 +308,22 @@ switch($function){
 				$linked_fields_order_type_field_temp = $db->escape_string($fields_labels_ar[$j]["linked_fields_order_type_field"]);
 			
 
-				$sql = "INSERT INTO `$table_internal_name` (`name_field`, `present_insert_form_field`, `present_search_form_field`, `required_field`, `present_results_search_field`, `present_details_form_field`, `present_ext_update_form_field`, `check_duplicated_insert_field`, `type_field`, `content_field`, `separator_field`, `select_options_field`, `select_type_field`, `prefix_field`, `default_value_field`, `label_field`, `width_field`, `height_field`, `maxlength_field`, `hint_insert_field`, `order_form_field`, `other_choices_field`, `primary_key_field_field`, `primary_key_table_field`, `primary_key_db_field`, `linked_fields_field`, `linked_fields_order_by_field`, `linked_fields_order_type_field`) VALUES ('$name_field_temp', '$present_insert_form_field_temp', '$present_search_form_field_temp', '$required_field_temp', '$present_results_search_field_temp', '$present_details_form_field_temp', '$present_ext_update_form_field_temp', '$check_duplicated_insert_field_temp', '$type_field_temp', '$content_field_temp', '$separator_field_temp', '$select_options_field_temp', '$select_type_field_temp', '$prefix_field', '$default_value_field', '$label_field_temp', '$width_field_temp', '$height_field_temp', '$maxlength_field_temp', '$hint_insert_field_temp', '$order_form_field_temp', '$other_choices_field_temp', '$primary_key_field_field_temp', '$primary_key_table_field_temp', '$primary_key_db_field_temp', '$linked_fields_field_temp', '$linked_fields_order_by_field_temp', '$linked_fields_order_type_field_temp')";
+				$sql = "INSERT INTO `$table_internal_name` (`name_field`, `present_insert_form_field`, `present_search_form_field`, `required_field`, `present_results_search_field`, `present_details_form_field`, `present_ext_update_form_field`, `check_duplicated_insert_field`, `type_field`, `content_field`, `separator_field`, `select_options_field`, `select_type_field`, `prefix_field`, `default_value_field`, `label_de_field`, `label_en_field`, `width_field`, `height_field`, `maxlength_field`, `hint_insert_de_field`, `hint_insert_en_field`, `order_form_field`, `other_choices_field`, `primary_key_field_field`, `primary_key_table_field`, `primary_key_db_field`, `linked_fields_field`, `linked_fields_order_by_field`, `linked_fields_order_type_field`) VALUES ('$name_field_temp', '$present_insert_form_field_temp', '$present_search_form_field_temp', '$required_field_temp', '$present_results_search_field_temp', '$present_details_form_field_temp', '$present_ext_update_form_field_temp', '$check_duplicated_insert_field_temp', '$type_field_temp', '$content_field_temp', '$separator_field_temp', '$select_options_field_temp', '$select_type_field_temp', '$prefix_field', '$default_value_field', '$label_de_field_temp', '$label_en_field_temp', '$width_field_temp', '$height_field_temp', '$maxlength_field_temp', '$hint_insert_de_field_temp', '$hint_insert_en_field_temp', '$order_form_field_temp', '$other_choices_field_temp', '$primary_key_field_field_temp', '$primary_key_table_field_temp', '$primary_key_db_field_temp', '$linked_fields_field_temp', '$linked_fields_order_by_field_temp', '$linked_fields_order_type_field_temp')";
 
 				$j++; // go to the next record in the internal table
 			} // end if
-			else{
+			else {
 				$max_order_form++;
 				// insert a new record in the internal table with the name of the field
-				$sql = "INSERT INTO `$table_internal_name` (`name_field`, `label_field`, `order_form_field`) VALUES ('$fields_names_ar[$i]', '$fields_names_ar[$i]', '$max_order_form')";
+				$sql = "INSERT INTO `$table_internal_name` (`name_field`, `label_en_field`, `label_de_field`, `order_form_field`) VALUES ('$fields_names_ar[$i]', '$fields_names_ar[$i]', '$fields_names_ar[$i]', '$max_order_form')";
 				
-				$new_fields_ar[$new_fields_nr] = $fields_names_ar[$i]; // insert the name of the new field in the array to display it in the confirmation message
-				$new_fields_nr++; // increment the counter of the $new_fields_ar array
+				$new_fields_ar[$new_fields_num] = $fields_names_ar[$i]; // insert the name of the new field in the array to display it in the confirmation message
+				$new_fields_num++; // increment the counter of the $new_fields_ar array
 			} // end else	
 			$db->send_query($sql);
 		} // end for
-		$confirmation_message .= "Internal table correctly refreshed.<br>$new_fields_nr field/s added";
-		if ($new_fields_nr > 0){
+		$confirmation_message .= "Internal table correctly refreshed.<br>$new_fields_num field/s added";
+		if ($new_fields_num > 0){
 			$confirmation_message .= " (";
 			for ($i=0; $i<count($new_fields_ar); $i++){
 				$confirmation_message .= $new_fields_ar[$i].", ";
@@ -352,7 +351,7 @@ switch($function){
 				$db->send_query($sql);
 			} // end for
 		} // end if
-		else{
+		else {
 			// decrease the order_form_field of all the previous record by one
 			for ($i=$field_to_change_old_position+1; $i<=$field_to_change_new_position; $i++){
 				$sql ="UPDATE `".$table_internal_name."` SET `order_form_field` = `order_form_field`-1 WHERE `order_form_field` = '".$i."'";
@@ -406,7 +405,7 @@ for ($i=0; $i<count($installed_tables_ar); $i++){
 <input type="submit" value="Save changes">
 
 <?php } // end if
-else{	
+else {	
 	echo "No tables installed.";
 } // end else
 ?>
@@ -454,7 +453,7 @@ if ( $autosumbit_change_table_control == 0) {
 <input type="submit" value="Change table">
 <?php
 }
-else{
+else {
 ?>
  Change table
 <?php
@@ -478,7 +477,7 @@ foreach ($installed_table_infos_ar as $installed_table_infos) {
 
 <p><form method="post" action="admin.php?table_name=<?php echo urlencode($table_name); ?>"><input type="hidden" name="function" value="enable_features">For this table enable: <?php echo $enable_features_checkboxes ?><input type="submit" value="Enable/disable"></form>
 
-<p><form method="post" action="admin.php?table_name=<?php echo urlencode($table_name); ?>"><input type="hidden" name="function" value="save_table_alias">Table alias (this is what DaDaBIK displays in the tables listbox) <input type="text" name="alias_table" value="<?php echo $table_alias; ?>"> <input type="submit" value="Save alias"></form>
+<p><form method="post" action="admin.php?table_name=<?php echo urlencode($table_name); ?>"><input type="hidden" name="function" value="save_table_alias">English table alias (this is what DaDaBIK displays in the tables listbox) <input type="text" name="alias_table" value="<?php echo $table_alias; ?>"> <input type="submit" value="Save alias"></form>
 
 <p>If you want to configure the interface of the table in detail (e.g. want to specify if a field should be included or not in the search/insert/update form, the content of the field......) you have to use the <a href="internal_table_manager.php?table_name=<?php echo urlencode($table_name); ?>">Interface configurator</a>.
 <p>Directly from this page you can, instead, update DaDaBIK when you have modified some fields of your table (i.e. when you have added one or more fields, deleted one or more fields, renamed one or more fields from <b><?php echo $table_name; ?></b>).</p>

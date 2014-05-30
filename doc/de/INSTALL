@@ -1,4 +1,4 @@
- Installation und Konfiguration für MySQL
+ Installation und Konfiguration
 
    1. Erstelle eine MySQL-Datenbank und einen Benutzer, der alle Rechte für diese Datenbank besitzt.
    2. Editiere die Datei "openhomeopath/include/classes/db/config_db.php" und trage den Namen der MySQL-Datenbank, den Benutzernamen und dessen Passwort ein.
@@ -9,6 +9,7 @@
    4. Rufe über einen Browser die Adresse auf deinem Server "http://deine.webadresse.de/openhomeopath/install/install_db.php" auf und importiere die Daten in die Datenbank.
    5. Nun noch "http://deine.webadresse.de/openhomeopath/index.php" im Browser aufrufen und los geht's.
    6. Es gibt einen vorgegebenen Benutzer mit Administratorrechten: "admin". Das vorgegebene Passwort ist auch "admin". Ich empfehle das Passwort zu ändern.
+
 
 
 Copyright © 2007-2014 by Henri Schumacher.

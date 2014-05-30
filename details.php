@@ -55,7 +55,7 @@ $db->send_query($query);
 list($symptom, $rem_name, $rem_short) = $db->db_fetch_row();
 $db->free_result();
 $max_grade = $rep->get_max_grade($sym_id, $rem_id, $sym_rem_tbl);
-$query = "SELECT $sym_rem_tbl.src_id, $sym_rem_tbl.grade, $sym_rem_tbl.rel_id, $sym_rem_tbl.kuenzli, sym_status.status_symbol, sym_status.status_de FROM $sym_rem_tbl, sym_status WHERE $sym_rem_tbl.sym_id = $sym_id AND $sym_rem_tbl.rem_id = $rem_id AND sym_status.status_id = $sym_rem_tbl.status_id ORDER BY sym_status.status_grade DESC, $sym_rem_tbl.grade DESC, $sym_rem_tbl.src_id ASC";
+$query = "SELECT $sym_rem_tbl.src_id, $sym_rem_tbl.grade, $sym_rem_tbl.rel_id, $sym_rem_tbl.kuenzli, sym_status.status_symbol, sym_status.status_$lang FROM $sym_rem_tbl, sym_status WHERE $sym_rem_tbl.sym_id = $sym_id AND $sym_rem_tbl.rem_id = $rem_id AND sym_status.status_id = $sym_rem_tbl.status_id ORDER BY sym_status.status_grade DESC, $sym_rem_tbl.grade DESC, $sym_rem_tbl.src_id ASC";
 $result = $db->send_query($query);
 $i = 0;
 while (list($src_id, $grade, $rel_id, $kuenzli_dot, $status_symbol, $status_name) = $db->db_fetch_row($result)) {

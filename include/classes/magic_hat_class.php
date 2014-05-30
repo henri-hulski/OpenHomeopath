@@ -86,11 +86,11 @@ class MagicHat {
 		global $db;
 		$query = "SELECT SUM(amount) FROM magic_hat WHERE (currency = 'EUR' OR currency = 'USD') AND YEAR(date) = YEAR(CURDATE()) AND MONTH(date) = MONTH(CURDATE())";
 		$db->send_query($query);
-		list ($this->donations_ar['sum_curmonth']) = $db->db_fetch_row();
+		list($this->donations_ar['sum_curmonth']) = $db->db_fetch_row();
 		$db->free_result();
 		$query = "SELECT SUM(amount) FROM magic_hat WHERE (currency = 'EUR' OR currency = 'USD') AND YEAR(date) = YEAR(CURDATE() - INTERVAL 1 MONTH) AND MONTH(date) = MONTH(CURDATE() - INTERVAL 1 MONTH)";
 		$db->send_query($query);
-		list ($this->donations_ar['sum_lastmonth']) = $db->db_fetch_row();
+		list($this->donations_ar['sum_lastmonth']) = $db->db_fetch_row();
 		$db->free_result();
 		foreach ($this->donations_ar as $key => $value) {
 			if (empty($value)) {
@@ -180,7 +180,19 @@ class MagicHat {
 			if ($num > 0) {
 				$this->is_donator = true;
 			} else {
-				$this->is_donator = false;
+				$query = "SELECT email_registered FROM users WHERE username = '" . $session->username . "'";
+				$db->send_query($query);
+				list($email_registered) = $db->db_fetch_row();
+				$db->free_result();
+				$query = "SELECT username FROM magic_hat WHERE email = '$email_registered' LIMIT 1";
+				$db->send_query($query);
+				$num = $db->db_num_rows();
+				$db->free_result();
+				if ($num > 0) {
+					$this->is_donator = true;
+				} else {
+					$this->is_donator = false;
+				}
 			}
 		}
 	}

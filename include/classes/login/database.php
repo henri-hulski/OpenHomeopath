@@ -235,7 +235,7 @@ class UserDB extends OpenHomeoDB {
 		} else {
 			$ulevel = USER_LEVEL;
 		}
-		$query = "INSERT INTO " . TBL_USERS . " (username, password, userid, userlevel, email, registration) VALUES ('$username', '$password', '0', $ulevel, '$email', NOW())";
+		$query = "INSERT INTO " . TBL_USERS . " (username, password, userid, userlevel, email, email_registered, registration) VALUES ('$username', '$password', '0', $ulevel, '$email', '$email', NOW())";
 		$result = $this->send_query($query);
 		return $result;
 	}

@@ -29,6 +29,9 @@
 
 ?>
               </div>
+<?php
+if (basename($_SERVER["PHP_SELF"], ".php") !== "index" && strpos(dirname($_SERVER["PHP_SELF"]), "help/") !== false) {
+?>
               <div id="pagetools">
                 <table summary="layout" class="boldtext" width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
                   <tr>
@@ -36,17 +39,18 @@
                     </td>
                     <td class="center" width="24%" valign="middle">
                       <p>
-                        <a href="javascript:history.back()" title="<?php echo _("back"); ?>"><img src="../../<?php echo(ARROW_BACK_ICON);?>" width="51" height="32" border="0" alt="<?php echo _("back"); ?>"></a>
+                        <a href="index.php" title="<?php echo _("Contents"); ?>"><img src='../../skins/original/img/arrow_up_big.gif' width='26' height='42' alt="<?php echo _("Contents"); ?>"></a>
                       </p>
                     </td>
-                    <td width="62%">
-                    </td>
-                    <td width="5%">
-                      <a href="#oben" title="<?php echo _("To the top of the page"); ?>"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a>
+                    <td width="67%">
                     </td>
                   </tr>
                 </table>
               </div>
+<?php
+}
+?>
+              <br>
             </td>
           </tr>
         </table>

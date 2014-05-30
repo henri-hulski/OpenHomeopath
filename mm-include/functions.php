@@ -1,4 +1,32 @@
 <?php
+
+/**
+ * mm-include/functions.php
+ *
+ * Functions that are be used by the scripts of Thomas Bochmann, specially materia-medica.php and symptom-details.php
+ *
+ * PHP version 5
+ *
+ * LICENSE: This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @category  Homeopathy
+ * @package   FunctionsMm
+ * @author    Thomas Bochmann <thomas.bochmann@gmail.com>
+ * @copyright 2009 Thomas Bochmann
+ * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
+ * @version   1.0
+ * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ */
+
 function view_lang_menu($page)
 {
     global $lng;
@@ -253,7 +281,7 @@ function get_rem_repertory_rubrics($remedies_ar, $where_query)
     global $lng;
     if(is_array($remedies_ar)){
         foreach($remedies_ar as $rem_id=>$remedy){
-            // rubriken finden
+            // find main rubrics
             $select = "SELECT $sym_rem.rel_id, main_rubrics.rubric_de, main_rubrics.rubric_en,symptoms.symptom, $sym_rem.grade, symptoms.sym_id, symptoms.lang_id,$sym_rem.src_id, main_rubrics.rubric_id FROM $sym_rem, symptoms, main_rubrics WHERE $sym_rem.rem_id = $rem_id AND $sym_rem.sym_id = symptoms.sym_id AND symptoms.rubric_id = main_rubrics.rubric_id ";
             $query_main_rubrics = $select.$where_query . " GROUP BY main_rubrics.rubric_$lng ORDER BY main_rubrics.rubric_$lng";
             $db->send_query($query_main_rubrics);

@@ -1,0 +1,39 @@
+Program Version
+
+    This is OpenHomeopath Version 1.0rc.
+    After a fundamental revision of the entire code and database structure I'm glad
+    to publish the first stable release of OpenHomeopath after more than 7 years work.
+    If you still find bugs or if you've a question please contact me.
+
+
+License und Copyright
+
+    Copyright © 2007-2014 by Henri Schumacher.
+
+    OpenHomeopath is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    OpenHomeopath is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You find a copy of the GNU Affero General Public License under "doc/en/agpl3.php".
+
+    The manuals and documentation of OpenHomeopath are distributed
+    under the GNU Free Documentation License Version 1.3 (FDLv1.3).
+
+
+Installation
+
+    Instructions for installation you find in INSTALL.
+
+
+
+Copyright © 2007-2014 by Henri Schumacher.
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.  This file is offered as-is,
+without any warranty.
