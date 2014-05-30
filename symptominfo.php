@@ -132,7 +132,7 @@ if ($db->is_translated($sym_id)) {
 if ($kuenzli == 1) {
 	echo ("      <li><strong>" . _("Künzli-dot:") . " </strong><span class='gray'>" . _("This section has been awarded a Künzli-dot. This means that it is therapeutically significant and often leads directly to the choice of remedy or such substantially narrow down.") . "</span></li>\n");
 }
-echo ("      <li><strong>" . _("More details:") . " </strong><span class='gray'> <a href='symptom-details.php?sym=$sym_id&lang=$lang' target='_blank'>OpenHomeo.org</a></span></li>\n");
+echo ("      <li><strong>" . _("More details:") . " </strong><span class='gray'> <a href='http://openhomeo.org/openhomeopath/symptom-details.php?sym=$sym_id&lang=$lang' target='_blank'>OpenHomeo.org</a></span></li>\n");
 echo ("    </ul>\n");
 if (!empty($xref_id)) {
 	$query = "SELECT DISTINCT symptoms.sym_id, symptoms.symptom, main_rubrics.rubric_$lang FROM symptoms, main_rubrics WHERE symptoms.xref_id = $xref_id AND symptoms.sym_id != $sym_id AND main_rubrics.rubric_id = symptoms.rubric_id";

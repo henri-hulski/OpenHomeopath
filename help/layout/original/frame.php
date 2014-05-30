@@ -61,7 +61,7 @@ $lang = $session->lang;
                    &nbsp; 
                 </li>
                 <li>
-                  <a href="../../../index.php" style="color:#336633">OpenHomeo.org</a>
+                  <a href="http://openhomeo.org" style="color:#336633">OpenHomeo.org</a>
                 </li>
                 <li>
                   <a href="<?php echo($rep_url);?>"><?php echo _("Repertorization"); ?></a>
@@ -74,9 +74,6 @@ $lang = $session->lang;
                 </li>
                 <li>
                   <a href="../../support.php"><?php echo _("Support"); ?></a>
-                </li>
-                <li>
-                  <a href="../../homeophorum.php"><?php echo _("Forum"); ?></a>
                 </li>
                 <li>
                   <a href="../../help/<?php echo $lang; ?>/index.php"><?php echo _("Help"); ?></a>

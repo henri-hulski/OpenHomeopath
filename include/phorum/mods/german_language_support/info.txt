@@ -1,6 +1,0 @@
-hook: common|mod_german_language_support_common
-hook: lang|
-hook: sanity_checks|mod_german_language_support_sanity_checks
-title: German Language Support Module 1.1.0
-desc: Provides homepage specific text replacing text from core and module language files, alternative terms for some key terms and an extended format for notifications emails. Only German language support!
-version: 1.1.0

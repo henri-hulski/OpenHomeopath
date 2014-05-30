@@ -38,7 +38,7 @@ include("./skins/$skin/header.php");
 </h1>
 <p><?php echo _("If you like OpenHomeopath and you want to help us you've the following options:"); ?></p>
 <ol>
-  <li><strong><?php echo _("Feedback"); ?>:</strong> <?php echo _("We depend on your feedback. If you find bugs or have an idea how to improve the program please post in the <a href='homeophorum.php?index,2'>forum</a> or write me an <a href='mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath'>e-mail</a>."); ?></li>
+  <li><strong><?php echo _("Feedback"); ?>:</strong> <?php echo _("We depend on your feedback. If you find bugs or have an idea how to improve the program please post in the <a href='http://openhomeo.org/openhomeopath/homeophorum.php?index,2'>forum</a> or write me an <a href='mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath'>e-mail</a>."); ?></li>
   <li><strong><?php echo _("Advertise"); ?>:</strong> <?php echo _("To popularize OpenHomeopath and help the community to grow you can link to OpenHomeopath from homeopathy related websites as well as post in related forums and social networks like <em>facebook</em> about us. Also writing an article for a homeopathic magazine could help."); ?></li>
    <li>
     <strong><?php echo _("Donations"); ?>: </strong><?php echo _("<strong>OpenHomeopath is open-source</strong> and this will remain so. But that doesn't mean that we've no costs of development. We need much time for programming and testing. It's really a large project."); ?><br>

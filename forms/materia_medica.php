@@ -82,7 +82,7 @@ $url_provings = $url_provings_main . str_replace(".", "", strtolower($rem_short)
 if(url_exists($url_provings) && !empty($url_provings_main)) {
 	echo ("    <li><strong>" . _("Systematics and provings:") . " </strong><span class='gray'><b>$rem_name</b> " . _("at") . " <a href='$url_provings' target='_blank'>provings.info</a>.</span></li>\n");
 }
-echo ("    <li><strong>" . _("More links and information:") . " </strong><span class='gray'><b>$rem_name</b> " . _("at") . " <a href='materia-medica.php?rem=$rem_short&lang=$lang' target='_blank'>OpenHomeo.org</a>.</span></li>\n");
+echo ("    <li><strong>" . _("More links and information:") . " </strong><span class='gray'><b>$rem_name</b> " . _("at") . " <a href='http://openhomeo.org/openhomeopath/materia-medica.php?rem=$rem_short&lang=$lang' target='_blank'>OpenHomeo.org</a>.</span></li>\n");
 echo ("  </ul>\n");
 
 $query = "SELECT  $materia_tbl.rem_related, $materia_tbl.rem_incomp, $materia_tbl.rem_antidot, $materia_tbl.rem_note, $materia_tbl.rem_description, $materia_tbl.src_id, sources.src_title FROM $materia_tbl, sources WHERE $materia_tbl.rem_id = $rem_id AND $materia_tbl.src_id = sources.src_id AND ($materia_tbl.rem_related != '' || $materia_tbl.rem_incomp != '' || $materia_tbl.rem_antidot != '' || $materia_tbl.rem_note != '' || $materia_tbl.rem_description != '') ORDER BY sources.src_title";
