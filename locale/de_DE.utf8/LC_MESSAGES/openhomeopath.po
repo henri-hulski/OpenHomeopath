@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenHomeopath 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-30 01:08+0100\n"
+"POT-Creation-Date: 2014-05-30 10:21+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Henri Schumacher <henri.hulski@gazeta.pl>\n"
 "Language-Team: Henri Schumacher <henri.hulski@gazeta.pl>\n"
@@ -775,14 +775,6 @@ msgstr ""
 "dich im <a href='homeophorum.php?index,2'>Forum</a> oder schreibe mir eine "
 "<a href='mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath'>Mail</a>."
 
-#: support.php:41
-msgid ""
-"At the Moment I'm preparing the first stable release 1.0 so I need "
-"particularly your feedback."
-msgstr ""
-"Im Moment bereite ich die erste stabile Version 1.0 vor und bin hier "
-"besonders auf eure Rückmeldungen angewiesen."
-
 #: support.php:42
 msgid "Advertise"
 msgstr "Bekannt machen"
@@ -851,19 +843,17 @@ msgstr "Übersetzungen"
 msgid ""
 "It would be nice to have OpenHomeopath translated in more languages. For the "
 "internationalization I'm using gettext. With the poeditor it's easy to make "
-"new translations and integrate them. We also need to translate the help "
-"files and parts of the database, specially the main rubrics. I also need "
-"someone for translating the German help into English. I you're interested "
-"please send me an <a href='mailto:henri.hulski@gazeta.pl?"
+"new translations and integrate them. In addition the help files and parts of "
+"the database, specially the main rubrics, must be translated. If you're "
+"interested please send me an <a href='mailto:henri.hulski@gazeta.pl?"
 "subject=OpenHomeopath'>e-mail</a>."
 msgstr ""
 "Es wäre schön wenn OpenHomeopath in noch mehr Sprachen übersetzt würde. Für "
 "die Internationalisierung habe ich Gettext benutzt. Mit dem Poeditor läßt "
 "sich problemlos eine neue Übersetzung erstellen und einbinden. Außerdem muss "
 "die Hilfe und Teile der Datenbank (vor allem Hauptrubriken) übersetzt "
-"werden. Wenn ich die deutsche Hilfe aktualisiert habe brauche ich auch einen "
-"Übersetzer ins Englische. Bei Interesse bitte <a href='mailto:henri."
-"hulski@gazeta.pl?subject=OpenHomeopath'>mailen</a>."
+"werden. Bei Interesse <a href='mailto:henri.hulski@gazeta.pl?"
+"subject=OpenHomeopath'>schicke mir eine e-Mail</a>."
 
 #: rep_result.php:38 rep_result.php:50 index.php:50
 #: include/classes/rep_class.php:500 include/classes/rep_class.php:551
@@ -1529,6 +1519,10 @@ msgstr[0] ""
 msgstr[1] ""
 "Bei <strong>%d Quelle-/Referenz-Datensätzen</strong> wurden Syntaxfehler "
 "gefunden."
+
+#: express.php:514
+msgid "p."
+msgstr "s."
 
 #: express.php:514 skins/kraque/frame.php:72 skins/kraque/frame.php:82
 #: skins/kraque/frame.php:167 skins/kraque/frame.php:177
@@ -3427,6 +3421,13 @@ msgstr "Wähle die passenden Symptome durch anklicken aus"
 #: forms/select_symptoms.php:149
 msgid "Contains sub-rubrics, but doesn't count as a symptom"
 msgstr "Enthält Unterrubriken, zählt aber selbst nicht als Symptom"
+
+#~ msgid ""
+#~ "At the Moment I'm preparing the first stable release 1.0 so I need "
+#~ "particularly your feedback."
+#~ msgstr ""
+#~ "Im Moment bereite ich die erste stabile Version 1.0 vor und bin hier "
+#~ "besonders auf eure Rückmeldungen angewiesen."
 
 #~ msgid "E-mail"
 #~ msgstr "E-Mail"

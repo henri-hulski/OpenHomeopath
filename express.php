@@ -511,7 +511,7 @@ if (!empty($text)) {
 	}    // Zeilensprung am Ende wird entfernt
 }
 ?>
-    <label for='sym_rem'><span class='label3'>s.123 <?php echo _("Symptom"); ?> @: <?php echo _("Remedy"); ?>1-<?php echo _("Grade"); ?>[<?php echo _("Statesymbol"); ?>]@#<?php echo _("Reference"); ?>#<?php echo _("Reference"); ?>,<?php echo _("Remedy"); ?>2-<?php echo _("Grade"); ?>,sulf-2^@#k1#kk1.de,...</span></label>
+    <label for='sym_rem'><span class='label3'><?php echo _("p."); ?>123 <?php echo _("Symptom"); ?> @: <?php echo _("Remedy"); ?>1-<?php echo _("Grade"); ?>[<?php echo _("Statesymbol"); ?>]@#<?php echo _("Reference"); ?>#<?php echo _("Reference"); ?>,<?php echo _("Remedy"); ?>2-<?php echo _("Grade"); ?>,sulf-2^@#k1#kk1.de,...</span></label>
     <br>
     <div class = 'center'>
       <textarea class="input_text" name="sym_rem" id="sym_rem"  cols="100" rows="16" wrap="off"><?php echo($text) ?></textarea>
