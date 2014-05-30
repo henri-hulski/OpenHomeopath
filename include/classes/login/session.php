@@ -31,8 +31,6 @@ include("include/functions/common.php");
 include_once("include/classes/login/database.php");
 include_once("include/classes/login/mailer.php");
 include_once("include/classes/login/form.php");
-include_once ("include/classes/magic_hat_class.php");
-include_once ("include/phorum/mods/embed_phorum/syncuser.php");
 
 $tabbed = false;
 
@@ -158,10 +156,8 @@ class Session {
 		ini_set("date.timezone", "Europe/Berlin");
 		$this->startSession();
 		$current_dir = getcwd();
-		if (strpos($current_dir, "phorum") === false) {
-			$skin = $this->skin;
-			require_once("skins/$skin/skin_config.php");
-		}
+		$skin = $this->skin;
+		require_once("skins/$skin/skin_config.php");
 	}
 
 	/**
@@ -177,9 +173,7 @@ class Session {
 	function startSession(){
 		global $db;  //The database connection
 		$current_dir = getcwd();
-		if (strpos($current_dir, "phorum") === false) {
-			session_start();   //Tell PHP to start the session
-		}
+		session_start();   //Tell PHP to start the session
 
 		$db = new UserDB;
 		$db->db_connect();
@@ -545,12 +539,6 @@ class Session {
 				} elseif (EMAIL_WELCOME) {
 					$mailer->sendWelcome($subuser,$subemail,$subpass);
 				}
-				
-				/* insert user into the Phorum user table */
-				$user_id = $db->getUserInfo($subuser, 'id_user');
-				$user_ar = array("user_id" => $user_id[0], "username" => $subuser, "email" => $subemail);
-				embed_phorum_syncuser($user_ar);
-				
 				return 0;  //New user added succesfully
 			} else {
 				return 2;  //Registration attempt failed
@@ -571,7 +559,6 @@ class Session {
 	 * @param string $subemail email
 	 * @param string $real_name user real name
 	 * @param string $extra extra public information about the user
-	 * @param string $signatur user signatur for forum
 	 * @param integer $show_active 0 | 1 - 1 if the user wants to see the active users
 	 * @param integer $hide_email 0 | 1 - 1 if the user wants to hide his email from other users
 	 * @param string $skin original | kraque - skin the user uses
@@ -580,7 +567,7 @@ class Session {
 	 * @return boolean true on success
 	 * @access public
 	 */
-	function editAccount($subcurpass, $subnewpass, $subnewpass2, $subemail, $real_name, $extra, $signatur, $show_active, $hide_email, $skin, $lang, $sym_lang) {
+	function editAccount($subcurpass, $subnewpass, $subnewpass2, $subemail, $real_name, $extra, $show_active, $hide_email, $skin, $lang, $sym_lang) {
 		global $db, $form;  //The database and form object
 		/* New password entered */
 		if($subnewpass){
@@ -643,23 +630,14 @@ class Session {
 			return false;  // Errors with form
 		}
 		
-		/* initialize the Phorum user table array */
-		$user_ar["user_id"] = $this->id_user;
-		$user_ar["username"] = $this->username;
-		if($this->userlevel == ADMIN_LEVEL){
-			$user_ar["admin"] = 1;
-		}
-		
 		/* Update password since there were no errors */
 		if($subcurpass && $subnewpass){
 			$db->updateUserField($this->username,"password",md5($subnewpass));
-			$user_ar["password"] = $subnewpass; // Phorum
 		}
 		
 		/* Change Email */
 		if(isset($subemail)){
 			$db->updateUserField($this->username,"email",$subemail);
-			$user_ar["email"] = $subemail; // Phorum
 		}
 		
 		/* Change realname */
@@ -667,7 +645,6 @@ class Session {
 			$real_name = trim($real_name);
 			$real_name = stripslashes($real_name);
 			$db->updateUserField($this->username,"user_real_name",$real_name);
-			$user_ar["real_name"] = $real_name; // Phorum
 		}
 		
 		/* Change skin */
@@ -688,13 +665,6 @@ class Session {
 			if (isset($_SESSION['lang'])) {
 				unset($_SESSION['lang']);
 			}
-			/* Phorum */
-			$query = "SELECT lang_phorum FROM languages WHERE lang_id = '$lang'";
-			$db->send_query($query);
-			list($lang_phorum) = $db->db_fetch_row();
-			$db->free_result();
-			$user_ar["user_language"] = $lang_phorum; // Phorum
-			
 		}
 		
 		/* Change symptom-language */
@@ -716,14 +686,6 @@ class Session {
 			$db->updateUserField($this->username,"user_extra",$extra);
 		}
 		
-		/* Change signature */
-		if(isset($signatur)){
-			$signatur = trim($signatur);
-			$signatur = stripslashes($signatur);
-			$db->updateUserField($this->username,"user_signatur",$signatur);
-			$user_ar["signature"] = $signatur; // Phorum
-		}
-		
 		/* show active users */
 		if($show_active && !$this->showActive()) {
 			$db->updateUserField($this->username,"userlevel",SHOW_LEVEL);
@@ -734,15 +696,10 @@ class Session {
 		/* hide email */
 		if($hide_email && $this->hide_email == "0") {
 			$db->updateUserField($this->username,"hide_email",1);
-			$user_ar["hide_email"] = 1;
 		} elseif (!$hide_email && $this->hide_email == "1") {
 			$db->updateUserField($this->username,"hide_email",0);
-			$user_ar["hide_email"] = 0; // Phorum
 		}
 		
-		/* update the Phorum user table */
-		embed_phorum_syncuser($user_ar);
-
 		/* Success! */
 		return true;
 	}
@@ -828,9 +785,6 @@ include_once("locale/localization.php");
 
 /* Initialize form object */
 $form = new Form;
-
-/* Initialize MagicHat object */
-$magic_hat = new MagicHat;
 
 /* tabbed has to be set false at startup */
 $tabbed = false;

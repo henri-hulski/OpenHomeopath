@@ -104,8 +104,8 @@ class OpenHomeoDB extends DB {
      * @access public
      */
 	function get_custom_table($table) {
-		global $session, $magic_hat;
-		if ($session->logged_in && ($table === "materia" || !$magic_hat->restricted_mode)) {  // user logged in
+		global $session;
+		if ($session->logged_in) {  // user logged in
 			if ($table === "materia") {
 				$src = "src_materia";
 			} else {

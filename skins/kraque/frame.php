@@ -126,15 +126,6 @@ if($session->logged_in){
 		    </div>
 		  </li>
 		  </li>
-		  <li class='sep'>|</li>
-		  <li>
-		    <a href="javascript:popup_url('donations.php',960,720)"><strong><?php echo _("Received donations"); ?></strong></a>
-		    <ul class='level2 donations'>
-<?php
-	echo $magic_hat->print_received_donations();
-?>
-		    </ul>
-		  </li>
 		</ul>
 		</div>
 <?php
@@ -199,15 +190,6 @@ if($session->logged_in){
 		    <div>
 		      <a href="javascript:popup_url('donations.php',960,720)"><img src='img/donate_<?php echo $lang; ?>_mini.png'  width='80' height='24' alt='<?php echo _("Donations"); ?>' title='<?php echo _("Every donation is very welcome and helps the development of OpenHomeopath."); ?>'></a>
 		    </div>
-		  </li>
-		  <li class='sep'>|</li>
-		  <li>
-		    <a href="javascript:popup_url('donations.php',960,720)"><strong><?php echo _("Received donations"); ?></strong></a>
-		    <ul class='level2 donations'>
-<?php
-	echo $magic_hat->print_received_donations();
-?>
-		    </ul>
 		  </li>
 		</ul>
 		</div>

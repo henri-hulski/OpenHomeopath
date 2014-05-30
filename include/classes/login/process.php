@@ -254,14 +254,6 @@ class  Process {
 			if($mailer->sendNewPass($subuser,$email,$newpass)){
 				/* Email sent, update database */
 				$db->updateUserField($subuser, "password", md5($newpass));
-				if ($userlevel  == 9) {  // User is administrator
-					/*
-					 * Update the phorum user table
-					 */
-					$user_ar["user_id"] = $usrinf[2];
-					$user_ar["password"] = $newpass;
-					embed_phorum_syncuser($user_ar);
-				}
 				$_SESSION['forgotpass'] = true;
 			}
 			/* Email failure, do not change password */
@@ -286,7 +278,7 @@ class  Process {
 	function procEditAccount(){
 		global $session, $form;
 		/* Account edit attempt */
-		$retval = $session->editAccount($_POST['curpass'], $_POST['newpass'], $_POST['newpass2'], $_POST['email'], $_POST['real_name'], $_POST['extra'], $_POST['signatur'], $_POST['show_active'], $_POST['hide_email'], $_POST['skin'], $_POST['lang'], $_POST['sym_lang']);
+		$retval = $session->editAccount($_POST['curpass'], $_POST['newpass'], $_POST['newpass2'], $_POST['email'], $_POST['real_name'], $_POST['extra'], $_POST['show_active'], $_POST['hide_email'], $_POST['skin'], $_POST['lang'], $_POST['sym_lang']);
 
 		/* Account edit successful */
 		if($retval){

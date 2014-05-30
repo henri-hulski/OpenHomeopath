@@ -73,7 +73,7 @@ if(isset($_SESSION['useredit'])) {
     </div>
     <div align="center" class="StdBlock">
 <?php
-	$userinfo_ar = $db->getUserInfo($_SESSION['username'], 'email, user_real_name, user_extra, user_signatur, hide_email, skin_name, lang_id, sym_lang_id');
+	List($email, $user_real_name, $user_extra, $hide_email, $user_skin, $lang_id, $sym_lang_id) = $db->getUserInfo($_SESSION['username'], 'email, user_real_name, user_extra, hide_email, skin_name, lang_id, sym_lang_id');
 	if($form->num_errors > 0){
 		echo "<p class='error_message'>&nbsp;&nbsp;&nbsp;*** ".$form->num_errors." " . ngettext("error found", "errors found", $form->num_errors) . " ***</p>\n";
 	}
@@ -84,16 +84,16 @@ if(isset($_SESSION['useredit'])) {
           <td><label for="skin"><?php echo _("Select skin:"); ?></label></td>
           <td><select name="skin" id="skin" size="1">
 <?php
-	if (!empty($userinfo_ar[5])) {
-		echo ("      <option selected='selected' value=''>$userinfo_ar[5]</option>\n");
+	if (!empty($user_skin)) {
+		echo ("      <option selected='selected' value=''>$user_skin</option>\n");
 	} else {
 		echo ("      <option value=''>&nbsp;</option>\n");
 	}
 	$query = "SELECT skin_name FROM skins ORDER BY skin_id";
 	$db->send_query($query);
-	while($skin_name = $db->db_fetch_row()) {
-		if ($skin_name[0] != $userinfo_ar[5]) {
-			echo ("      <option value='$skin_name[0]'>$skin_name[0]</option>\n");
+	while(list($skin_name) = $db->db_fetch_row()) {
+		if ($skin_name != $user_skin) {
+			echo ("      <option value='$skin_name'>$skin_name</option>\n");
 		}
 	}
 	$db->free_result();
@@ -111,7 +111,7 @@ if(isset($_SESSION['useredit'])) {
 		$languages_ar[$user_lang_id] = $user_lang_name;
 	}
 	$db->free_result();
-	$user_lang = $userinfo_ar[6];
+	$user_lang = $lang_id;
 	if (!empty($user_lang)) {
 		echo ("      <option selected='selected' value=''>$languages_ar[$user_lang]</option>\n");
 	} else {
@@ -139,7 +139,7 @@ if(isset($_SESSION['useredit'])) {
 			$sym_lang_ar[$sym_lang_id] = $sym_lang_name;
 		}
 		$db->free_result();
-		$user_sym_lang = $userinfo_ar[7];
+		$user_sym_lang = $sym_lang_id;
 		if (!empty($user_sym_lang)) {
 			echo ("      <option selected='selected' value=''>$sym_lang_ar[$user_sym_lang]</option>\n");
 			echo ("      <option value='wo'>" . _("as above") . "</option>\n");
@@ -186,14 +186,14 @@ if(isset($_SESSION['useredit'])) {
 	if ($form->value("email")) {
 		echo (" value='" . $form->value("email") . "'");
 	} else {
-		echo (" value='" . $userinfo_ar[0] . "'");
+		echo (" value='" . $email . "'");
 	}
 ?>
 ></td>
           <td><?php echo $form->error("email"); ?></td>
         </tr>
 <?php
-	if (!empty($userinfo_ar[4])) {
+	if (!empty($hide_email)) {
 ?>
         <tr>
           <td></td>
@@ -220,7 +220,7 @@ if(isset($_SESSION['useredit'])) {
 	if ($form->value("real_name")) {
 		echo (" value='" . $form->value("real_name") . "'");
 	} else {
-		echo (" value='" . $userinfo_ar[1] . "'");
+		echo (" value='" . $user_real_name . "'");
 	}
 ?>
 ></td>
@@ -232,19 +232,7 @@ if(isset($_SESSION['useredit'])) {
 	if ($form->value("extra")) {
 		echo $form->value("extra");
 	} else {
-		echo $userinfo_ar[2];
-	}
-?>
-</textarea></td>
-        </tr>
-        <tr>
-          <td><label for="signatur"><?php echo _("Signature for the forum:"); ?> </label></td>
-          <td><textarea name="signatur" id="signatur" cols="30" rows="3">
-<?php
-	if ($form->value("signatur")) {
-		echo $form->value("signatur");
-	} else {
-		echo $userinfo_ar[3];
+		echo $user_extra;
 	}
 ?>
 </textarea></td>

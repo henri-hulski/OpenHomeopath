@@ -127,7 +127,7 @@ function build_tables_names_array($exclude_not_allowed = 1, $exclude_not_install
 		while ($row = $db->db_fetch_row()) {
 			$table_name_temp = $row[0];
 			// if the table is not internal
-			if (substr($table_name_temp, 0, strlen($prefix_internal_table)) != $prefix_internal_table && $table_name_temp != $table_list_name && substr($table_name_temp, 0, 9) != 'archive__' && substr($table_name_temp, 0, 12) != 'homeophorum__' && substr($table_name_temp, 0, 7) != 'active_' && substr($table_name_temp, 0, 7) != 'banned_') {
+			if (substr($table_name_temp, 0, strlen($prefix_internal_table)) != $prefix_internal_table && $table_name_temp != $table_list_name && substr($table_name_temp, 0, 9) != 'archive__' && substr($table_name_temp, 0, 7) != 'active_' && substr($table_name_temp, 0, 7) != 'banned_') {
 				$tables_names_ar[$z] = $table_name_temp;
 				$z++;
 			} // end if

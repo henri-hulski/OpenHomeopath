@@ -99,8 +99,6 @@ include("help/layout/$skin/header.php");
   </li>
   <li><strong>Jpmaster77</strong>: the login system is based on his free script <a href="http://www.evolt.org/PHP-Login-System-with-Admin-Features">Login System v.2.0</a> from 26.08.2004.
   </li>
-  <li><strong>Phorum Development Team</strong>: The Homeophorum contains the software <a href="http://phorum.org/">Phorum</a> Version 5.1.25 from 14.03.2007 developed by the Phorum Development Team under the <a href='../../include/phorum/docs/license.txt'>Phorum License 2.0</a>.
-  </li>
   <li><strong>Patrick Fitzgerald</strong>: The tabs are based on the javascript <a href="http://www.barelyfitz.com/projects/tabber/">Tabber</a> from Patrick Fitzgerald.<br>
   Copyright &copy; 2006 by Patrick Fitzgerald.<br>
   Distributed under the <a href='http://www.opensource.org/licenses/mit-license.php'>MIT license</a>, also called X11 license.

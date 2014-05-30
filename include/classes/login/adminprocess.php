@@ -124,19 +124,6 @@ class  AdminProcess {
 		/* Update user level */
 		else {
 			$db->updateUserField($subuser, "userlevel", (int)$_POST['updlevel']);
-			/*
-			 * Update phorum-user-table
-			 */
-			$user = $db->getUserInfo($subuser, 'id_user, password');
-			$user_ar["user_id"] = $user[0];
-			$user_ar["username"] = $subuser;
-			$user_ar["password"] = '$MD5$' . $user[1];
-			if($_POST['updlevel'] != "9") {
-				$user_ar["admin"] = 0;
-			} else {
-				$user_ar["admin"] = 1;
-			}
-			embed_phorum_syncuser($user_ar);
 			header("Content-Type: text/html;charset=utf-8"); 
 			header("Location: " . $session->referrer);
 			die();
@@ -209,10 +196,6 @@ class  AdminProcess {
 				$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser', $session->time)";
 				$db->send_query($query);
 			}
-			/*
-			 * Delete user from phorum user-table.
-			 */
-			embed_phorum_deleteuser($user_ar);
 			header("Content-Type: text/html;charset=utf-8"); 
 			header("Location: " . $session->referrer);
 			die();
@@ -263,12 +246,6 @@ class  AdminProcess {
 					$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser', $session->time)";
 					$db->send_query($query);
 				}
-				/*
-				 * Delete user from phorum user-table.
-				 */
-				$user_id = $db->getUserInfo($subuser, 'id_user');
-				$user_ar = array("user_id" => $user_id[0]);
-				embed_phorum_deleteuser($user_ar);
 			}
 		}
 		$query = "DELETE FROM " . TBL_USERS . " WHERE timestamp < $inact_time AND userlevel != " . ADMIN_LEVEL;
@@ -325,10 +302,6 @@ class  AdminProcess {
 			$db->send_query($query);
 			$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser', $session->time)";
 			$db->send_query($query);
-			/*
-			 * Delete user from phorum user-table.
-			 */
-			embed_phorum_deleteuser($user_ar);
 			header("Content-Type: text/html;charset=utf-8"); 
 			header("Location: " . $session->referrer);
 			die();

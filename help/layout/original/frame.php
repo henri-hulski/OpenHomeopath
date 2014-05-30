@@ -129,15 +129,6 @@ if($session->logged_in){
 <?php
 }
 ?>
-              <ul class='donations center'>
-                <li>
-                  <span class='boldtext'><a href="../../donations.php"><?php echo _("Received donations"); ?></a></span>
-                </li>
-<?php
-echo $magic_hat->print_received_donations();
-?>
-                <br>
-              </ul>
             </td>
             <td id="middle_cell02">
               <div id="pagecontent">

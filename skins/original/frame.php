@@ -134,15 +134,6 @@ if($session->logged_in){
 <?php
 }
 ?>
-              <ul class='donations center'>
-                <li>
-                  <span class='boldtext'><a href="javascript:popup_url('donations.php',960,720)"><?php echo _("Received donations"); ?></a></span>
-                </li>
-<?php
-echo $magic_hat->print_received_donations();
-?>
-                <br>
-              </ul>
             </td>
 <?php
 popup();

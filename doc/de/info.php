@@ -93,8 +93,6 @@ Dank geht an
   </li>
   <li><strong>Jpmaster77</strong>: Das Loginsystem baut auf seinem freien Skript <a href="http://www.evolt.org/PHP-Login-System-with-Admin-Features">Login System v.2.0</a> vom 26. August 2004 auf.
   </li>
-  <li><strong>Phorum Development Team</strong>: Das Homeophorum enthält die Software <a href="http://phorum.org/">Phorum</a> Version 5.1.25 vom 14.03.2007 entwickelt vom Phorum Development Team unter der <a href='../../include/phorum/docs/license.txt'>Phorum License 2.0</a>.
-  </li>
   <li><strong>Patrick Fitzgerald</strong>: Die Tabs sind auf dem Javascript <a href="http://www.barelyfitz.com/projects/tabber/">Tabber</a> von Patrick Fitzgerald aufgebaut.<br>
   Copyright &copy; 2006 by Patrick Fitzgerald.<br>
   Veröffentlicht unter der <a href='http://www.opensource.org/licenses/mit-license.php'>MIT-Lizenz</a>, auch X11-Lizenz genannt.

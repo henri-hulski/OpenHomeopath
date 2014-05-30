@@ -58,7 +58,7 @@ if (!$tabbed && !isset($_GET['tab']) && empty($_GET['popup'])) {
 </h1>
 <?php
 $sym_rem_tbl = $db->get_custom_table("sym_rem");
-if ($session->logged_in && !$magic_hat->restricted_mode) {
+if ($session->logged_in) {
 	if (!$tabbed && !isset($_REQUEST['tab'])) {
 		$url = "userinfo.php?user=" . $session->username . "#rep_custom";
 	} else {
@@ -70,10 +70,8 @@ if ($session->logged_in && !$magic_hat->restricted_mode) {
 		$display_personal_rep = "block";
 	}
 	printf("<p class='center' id='personalized_rep_2' style='display:%s;'><span class='alert_box'>" . _("You are using a personalized Repertory. You can change the preferences in <a href='%s'>My account</a>.") . "</span></p>\n", $display_personal_rep, $url);
-} elseif (!$session->logged_in) {
+} else {
 	echo ("<p class='center''><span class='alert_box'><strong>" . _("Important!") . "</strong> " . _("Guests are limited to the Homeopathic Repertory from Kent (kent.en). For activating more repertories an customizing OpenHomeopath you've to <a href='http://openhomeo.org/openhomeopath/register.php'>register for free</a> and <a href='http://openhomeo.org/openhomeopath/login.php'>log in</a>.") . "</span></p>\n");
-} elseif ($magic_hat->restricted_mode) {
-	echo ("<p class='center''><span class='alert_box'><strong>" . _("Important!") . "</strong> " . _("At the moment only the Homeopathic Repertory from Kent (kent.en) is enabled.") . "<br>" . _("As long as the donation goal for this month is not reached some functions of OpenHomeopath are only available for users who have already donated.") . "<br><a href=\"javascript:popup_url('donations.php',960,720)\"><strong>" . _("Please donate now!") . "</strong></a></span></p>\n");
 }
 ?>
 <form action="" accept-charset="utf-8">
