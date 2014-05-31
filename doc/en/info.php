@@ -135,12 +135,14 @@ include("help/layout/$skin/header.php");
 </h2>
 <ol>
   <li>Create a MySQL database and a user who has all rights for the database.</li>
-  <li>Edit the file "openhomeopath/include/classes/db/config_db.php" by providing the name of the MySQL database, the username and his password. Also you can choose the database driver: "mysqli" or "mysql". Protect the file "config_db.php" on the server against unauthorized read and write access (e.g. with chmod 600), because the password is saved in plain text. Please note, that the server still needs read access.</li>
-  <li>Upload the folder "openhomeopath" to your webserver.</li>
-  <li>Call "<em>http://your.webaddress.com/</em>openhomeopath/install/<strong>install_db.php</strong>" on your server with the browser and import the data to the database.</li>
-  <li>Now you can call "<em>http://your.webaddress.com/</em>openhomeopath/<strong>index.php</strong>" in your browser and here we are.</li>
-  <li>The <strong>default user</strong> with administration rights is <strong><em>"admin"</em></strong>. The <strong>default password:
-  <em>"admin"</em></strong>. You should change the password after.</li>
+  <li>Rename the file "openhomeopath/include/classes/db/config_db_sample.php" to "config_db.php" and edit it, providing the name of the MySQL database, the username and his password. Also you must choose the database driver: "mysqli" or "mysql".<br>
+  Protect the file "config_db.php" on the server against unauthorized read and write access (e.g. with chmod 600), because the password is saved in plain text. Please note, that the server still needs read access. Not necessary with a local installation.</li>
+  <li>Upload the folder "openhomeopath" to your webserver. This can also be your local computer or laptop.</li>
+  <li>Open "<em>http://your.webaddress.com/</em>openhomeopath/install/<strong>install_db.php</strong>" in your browser and import the data to the database.<br>
+  If everything is fine you can delete the file "sql/OpenHomeopath.sql.gz" on your server.</li>
+  <li>The <strong>default user</strong> with administration rights is <strong><em>"admin"</em></strong> with the <strong>password</strong>: <strong><em>"admin"</em></strong>. Log in as <strong>"admin"</strong> under "<em>http://your.webaddress.com/</em>openhomeopath/<strong>login.php</strong>".<br>
+  This can take a while, because OpenHomeopath has to generate some more tables.</li>
+  <li>Here we go. I recommend to change the admin password.</li>
 </ol>
 <br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="download" id="download"><br></a>

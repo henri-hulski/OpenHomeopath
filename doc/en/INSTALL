@@ -1,17 +1,20 @@
  Installation and configuration
 
    1. Create a MySQL database and a user who has all rights for the database.
-   2. Edit the file "openhomeopath/include/classes/db/config_db.php" by providing the name of the MySQL database, the username and his password.
-      Also you can choose the database driver: "mysqli" or "mysql".
+   2. Rename the file "openhomeopath/include/classes/db/config_db_sample.php" to "config_db.php"
+      and edit it, providing the name of the MySQL database, the username and his password.
+      Also you must choose the database driver: "mysqli" or "mysql".
       Protect the file "config_db.php" on the server against unauthorized read and write access (e.g. with chmod 600),
       because the password is saved in plain text. Please note, that the server still needs read access.
-   3. Upload the folder "openhomeopath" to your webserver.
-   4. Call "http://your.webaddress.com/openhomeopath/install/install_db.php"
-      on your server with the browser and import the data to the database.
-   5. Now you can call "http://your.webaddress.com/openhomeopath/index.php" in your browser and here we are.
-   6. The default user with administration rights is "admin".
-      The default password: "admin". You should change the password after.
-
+      Not necessary with a local installation.
+   3. Upload the folder "openhomeopath" to your webserver. This can also be your local computer or laptop.
+   4. Open "http://your.webaddress.com/openhomeopath/install/install_db.php"
+      in your browser and import the data to the database.
+      If everything is fine you can delete the file "sql/OpenHomeopath.sql.gz" on your server.
+   5. The default user with administration rights is "admin" with the password: "admin".
+      Log in as 'admin' under "http://your.webaddress.com/openhomeopath/login.php".
+      This can take a while, because OpenHomeopath has to generate some more tables.
+   6. Here we go. I recommend to change the admin password.
 
 
 Copyright © 2007-2014 by Henri Schumacher.
