@@ -51,10 +51,11 @@ $db_password = DB_PASS;
 
 // Other settings (optional)
 
+include("locale/localization.php");
 include("include/functions/common.php");
 $allowed_langs = array ('de', 'en');
 $lang = get_browser_language($allowed_langs, 'de', null, false);
-$filename           = 'openhomeopath.sql.gz';     // Specify the dump filename to suppress the file selection dialog
+$filename           = 'sql/OpenHomeopath.sql.gz';     // Specify the dump filename to suppress the file selection dialog
 $ajax               = true;   // AJAX mode: import will be done without refreshing the website
 $linespersession    = 3000;   // Lines to be executed per one import session
 $delaypersession    = 0;      // You can specify a sleep time in milliseconds after each session
@@ -298,6 +299,7 @@ function zweifel () {
 <table class="main_table" cellpadding="10">
 <tr>
 <td valign="top">
+<br>
 <h1><?php echo _("OpenHomeopath - Install database"); ?></h1>
 <br>
 
@@ -494,7 +496,7 @@ if (!$error && !isset ($_REQUEST["fn"]) && $filename!="")
 <input type='submit' value='<?php echo _("Install database");?>'>
 </form>
 <br><p><strong><?php echo _("Be careful! An existing OpenHomeopath-database will be overwritten!");?></strong></p>
-<p><strong><?php echo _("The installation of the database needs a lot of time. Please be patient!");?></strong></p>
+<p><strong><?php echo _("The installation of the database needs some time. Please be patient!");?></strong></p>
 </div>
 <br><br>
 <?php
