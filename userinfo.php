@@ -51,7 +51,7 @@ $lang = $session->lang;
 /* Requested Username error checking */
 if (empty($req_user)) {
 	if (empty($_REQUEST['user'])) {
-		$req_user = $session->username;
+		$req_user = $username;
 	} else {
 		$req_user = trim($_REQUEST['user']);
 		if(!$req_user || strlen($req_user) == 0 || !$db->usernameTaken($req_user)){
@@ -62,7 +62,7 @@ if (empty($req_user)) {
 }
 
 /* Logged in user viewing own account */
-if(strcmp($session->username,$req_user) == 0) {
+if(strcmp($username,$req_user) == 0) {
 ?>
 <h1><?php echo _("My account"); ?></h1>
 <div class="content">
@@ -87,21 +87,21 @@ else {
 <?php
 }
 /* Logged in user viewing own account */
-if(strcmp($session->username,$req_user) == 0) {
+if(strcmp($username,$req_user) == 0) {
 	echo "<div class='center' style='width:50%'><p>";
 	echo "<a href='donations.php' onclick=\"popup_url('donations.php',960,720)\"><img src='img/donate_$lang.png' width='110' height='33' alt='" . _("Donations") . "' title='" . _("Every donation is very welcome and helps the development of OpenHomeopath.") . "'></a>";
 	echo "</p></div>";
 }
 
 /* Display requested user information */
-list($username, $email, $user_real_name, $user_extra, $userlevel, $hide_email, $skin_name, $lang_id, $sym_lang_id) = $db->getUserInfo($req_user, 'username, email, user_real_name, user_extra, userlevel, hide_email, skin_name, lang_id, sym_lang_id');
+list($user_email, $user_real_name, $user_extra, $userlevel, $hide_email, $user_skin, $user_lang_id, $user_sym_lang) = $db->getUserInfo($req_user, 'email, user_real_name, user_extra, userlevel, hide_email, skin_name, lang_id, sym_lang_id');
 
 /* Username */
-echo "<strong>" . _("Username:") . " ".$username."</strong><br>";
+echo "<strong>" . _("Username:") . " ".$req_user."</strong><br>";
 
 /* Email will be shown when user view his own account, the user didn't hide his email or administrator is viewing the page */
-if(strcmp($session->username,$req_user) == 0 || $hide_email == 0 || $session->isAdmin()){
-	echo "<strong>" . _("E-mail:") . "</strong> ".$email."<br>";
+if(strcmp($username,$req_user) == 0 || $hide_email == 0 || $session->isAdmin()){
+	echo "<strong>" . _("E-mail:") . "</strong> ".$user_email."<br>";
 }
 
 /* Real name */
@@ -114,16 +114,16 @@ if (!empty($user_extra)) {
 	echo "<strong>" .  _("More information:") . "</strong> ".$user_extra."<br>";
 }
 
-if(strcmp($session->username,$req_user) == 0 || $session->isAdmin()){  // Benutzer betrachtet sein eigenes Konto oder Admin
+if(strcmp($username,$req_user) == 0 || $session->isAdmin()){  // Benutzer betrachtet sein eigenes Konto oder Admin
 /* Skin */
-	if (!empty($skin_name)) {
-		echo "<strong>" . _("Skin:") . "</strong> ".$skin_name."<br>";
+	if (!empty($user_skin)) {
+		echo "<strong>" . _("Skin:") . "</strong> ".$user_skin."<br>";
 	} else {
 		echo "<strong>" . _("Skin:") . "</strong> " . _("not selected") . "<br>";
 	}
 /* Language */
-	if (!empty($lang_id)) {
-		$query = "SELECT lang_$lang FROM languages WHERE lang_id = '$lang_id'";
+	if (!empty($user_lang_id)) {
+		$query = "SELECT lang_$lang FROM languages WHERE lang_id = '$user_lang_id'";
 		$db->send_query($query);
 		list($user_lang) = $db->db_fetch_row();
 		$db->free_result();
@@ -132,8 +132,8 @@ if(strcmp($session->username,$req_user) == 0 || $session->isAdmin()){  // Benutz
 		echo "<strong>" . _("Language:") . "</strong> " . _("not selected") . "<br>";
 	}
 /* Symptom-language */
-	if (!empty($sym_lang_id)) {
-		$query = "SELECT lang_$lang FROM languages WHERE lang_id = '$sym_lang_id'";
+	if (!empty($user_sym_lang)) {
+		$query = "SELECT lang_$lang FROM languages WHERE lang_id = '$user_sym_lang'";
 		$db->send_query($query);
 		list($sym_lang) = $db->db_fetch_row();
 		$db->free_result();
@@ -160,7 +160,7 @@ if(strcmp($session->username,$req_user) == 0 || $session->isAdmin()){  // Benutz
 		echo _("Other users can see your e-mail.");
 	}
 }
-if(strcmp($session->username,$req_user) == 0) {
+if(strcmp($username,$req_user) == 0) {
 	echo "<br><a href='useredit.php' target='_blank'><strong>" . _("Here you can edit your account.") . "</strong></a><br>\n";
 	$host  = $_SERVER['HTTP_HOST'];
 	$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
@@ -169,11 +169,11 @@ if(strcmp($session->username,$req_user) == 0) {
 <a name="reps" id="reps"><br></a>
 <h2><?php echo _("Saved repertorizations"); ?></h2>
 <p><?php echo _("Here saved repertorizations can be opened,  deleted or taken as a basis for further repertorization."); ?><br>
-<?php printf(_('Repertorizations can be made public so that other users will find them in userinfo (URL: <span class="nobr">"http://%s%s/<strong>userinfo.php?user=%s</strong>"</span>).'), $host, $uri, $username); ?></p>
+<?php printf(_('Repertorizations can be made public so that other users will find them in userinfo (URL: <span class="nobr">"http://%s%s/<strong>userinfo.php?user=%s</strong>"</span>).'), $host, $uri, $req_user); ?></p>
 <fieldset>
   <legend class='legend'>
 <?php
-	echo ("    " . _("Repertorizations from") . " $username\n");
+	echo ("    " . _("Repertorizations from") . " $req_user\n");
 ?>
   </legend>
   <br>
@@ -419,7 +419,7 @@ if(strcmp($session->username,$req_user) == 0) {
 <fieldset>
   <legend class='legend'>
 <?php
-		echo ("    " . _("Repertorizations from") . " $username\n");
+		echo ("    " . _("Repertorizations from") . " $req_user\n");
 ?>
   </legend>
   <br>

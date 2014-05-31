@@ -73,7 +73,7 @@ if(isset($_SESSION['useredit'])) {
     </div>
     <div align="center" class="StdBlock">
 <?php
-	List($email, $user_real_name, $user_extra, $hide_email, $user_skin, $lang_id, $sym_lang_id) = $db->getUserInfo($_SESSION['username'], 'email, user_real_name, user_extra, hide_email, skin_name, lang_id, sym_lang_id');
+	List($user_email, $user_real_name, $user_extra, $hide_email, $user_skin, $user_lang, $user_sym_lang) = $db->getUserInfo($_SESSION['username'], 'email, user_real_name, user_extra, hide_email, skin_name, lang_id, sym_lang_id');
 	if($form->num_errors > 0){
 		echo "<p class='error_message'>&nbsp;&nbsp;&nbsp;*** ".$form->num_errors." " . ngettext("error found", "errors found", $form->num_errors) . " ***</p>\n";
 	}
@@ -111,7 +111,6 @@ if(isset($_SESSION['useredit'])) {
 		$languages_ar[$user_lang_id] = $user_lang_name;
 	}
 	$db->free_result();
-	$user_lang = $lang_id;
 	if (!empty($user_lang)) {
 		echo ("      <option selected='selected' value=''>$languages_ar[$user_lang]</option>\n");
 	} else {
@@ -139,7 +138,6 @@ if(isset($_SESSION['useredit'])) {
 			$sym_lang_ar[$sym_lang_id] = $sym_lang_name;
 		}
 		$db->free_result();
-		$user_sym_lang = $sym_lang_id;
 		if (!empty($user_sym_lang)) {
 			echo ("      <option selected='selected' value=''>$sym_lang_ar[$user_sym_lang]</option>\n");
 			echo ("      <option value='wo'>" . _("as above") . "</option>\n");
@@ -186,7 +184,7 @@ if(isset($_SESSION['useredit'])) {
 	if ($form->value("email")) {
 		echo (" value='" . $form->value("email") . "'");
 	} else {
-		echo (" value='" . $email . "'");
+		echo (" value='" . $user_email . "'");
 	}
 ?>
 ></td>
