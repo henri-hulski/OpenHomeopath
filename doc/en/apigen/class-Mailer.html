@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Mailer | OpenHomeopath PHP code documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?108902800"></script>
+	<script type="text/javascript" src="elementlist.js?2532662558"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li><a href="package-Admin.html">Admin</a>
+						</li>
+				<li><a href="package-AdminProcess.html">AdminProcess</a>
+						</li>
+				<li><a href="package-Archive.html">Archive</a>
+						</li>
+				<li><a href="package-Common.html">Common</a>
+						</li>
+				<li><a href="package-DB.html">DB</a>
+						</li>
+				<li><a href="package-Express.html">Express</a>
+						</li>
+				<li><a href="package-Form.html">Form</a>
+						</li>
+				<li><a href="package-Layout.html">Layout</a>
+						</li>
+				<li class="active"><a href="package-Mailer.html">Mailer</a>
+						</li>
+				<li><a href="package-None.html">None</a>
+						</li>
+				<li><a href="package-OpenHomeoDB.html">OpenHomeoDB</a>
+						</li>
+				<li><a href="package-PDF.html">PDF<span></span></a>
+						<ul>
+				<li><a href="package-PDF.MC.html">MC</a>
+						</li>
+							</ul></li>
+				<li><a href="package-Process.html">Process</a>
+						</li>
+				<li><a href="package-Rep.html">Rep</a>
+						</li>
+				<li><a href="package-RevRep.html">RevRep</a>
+						</li>
+				<li><a href="package-SaveReps.html">SaveReps</a>
+						</li>
+				<li><a href="package-Search.html">Search</a>
+						</li>
+				<li><a href="package-Session.html">Session</a>
+						</li>
+				<li><a href="package-SymRem.html">SymRem</a>
+						</li>
+				<li><a href="package-TreeView.html">TreeView</a>
+						</li>
+				<li><a href="package-UserDB.html">UserDB</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Mailer.html">Mailer</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-Mailer.html" title="Summary of Mailer"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Mailer</h1>
+
+
+	<div class="description">
+	
+<p>The Mailer class is meant to simplify the task of sending emails to users.
+Note: this email system will not work if your server is not setup to send
+mail.</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-Mailer.html">Mailer</a><br />
+
+				<b>Category:</b>
+				Login<br />
+				<b>Copyright:</b>
+				2007-2014 Henri Schumacher<br />
+				<b>License:</b>
+				<a href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License v3</a><br />
+				<b>Author:</b>
+				Jpmaster77 a.k.a. The Grandmaster of C++ (GMC)<br />
+				<b>Author:</b>
+				Henri Schumacher &lt;<a
+href="mailto:henri.hulski&#64;gazeta.pl">henri.hulski&#64;<!---->gazeta.pl</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-Mailer.html#30-154" title="Go to source code">include/classes/login/mailer.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="sendWelcome" id="_sendWelcome">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sendWelcome">#</a>
+		<code><a href="source-class-Mailer.html#43-65" title="Go to source code">sendWelcome</a>( <span>string <var>$user</var></span>, <span>string <var>$email</var></span>, <span>string <var>$pass</var></span> )</code>
+
+		<div class="description short">
+			
+<p>sendWelcome - Sends a welcome message to the newly registered user, also
+supplying the username and password.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>sendWelcome - Sends a welcome message to the newly registered user, also
+supplying the username and password.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user</var></dt>
+					<dd><code>string</code><br>$user username</dd>
+					<dt><var>$email</var></dt>
+					<dd><code>string</code><br>$email email</dd>
+					<dt><var>$pass</var></dt>
+					<dd><code>string</code><br>$pass password</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>true if the mail has been successful sent<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sendWelcomePass" id="_sendWelcomePass">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sendWelcomePass">#</a>
+		<code><a href="source-class-Mailer.html#67-90" title="Go to source code">sendWelcomePass</a>( <span>string <var>$user</var></span>, <span>string <var>$email</var></span>, <span>string <var>$pass</var></span> )</code>
+
+		<div class="description short">
+			
+<p>sendWelcomePass - Sends a welcome message to the newly registered user,
+sending a generated password and supplying the username.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>sendWelcomePass - Sends a welcome message to the newly registered user,
+sending a generated password and supplying the username.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user</var></dt>
+					<dd><code>string</code><br>$user username</dd>
+					<dt><var>$email</var></dt>
+					<dd><code>string</code><br>$email email</dd>
+					<dt><var>$pass</var></dt>
+					<dd><code>string</code><br>$pass password</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>true if the mail has been successful sent<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sendNewPass" id="_sendNewPass">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sendNewPass">#</a>
+		<code><a href="source-class-Mailer.html#92-114" title="Go to source code">sendNewPass</a>( <span>string <var>$user</var></span>, <span>string <var>$email</var></span>, <span>string <var>$pass</var></span> )</code>
+
+		<div class="description short">
+			
+<p>sendNewPass - Sends the newly generated password to the user's email address
+that was specified at sign-up.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>sendNewPass - Sends the newly generated password to the user's email address
+that was specified at sign-up.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user</var></dt>
+					<dd><code>string</code><br>$user username</dd>
+					<dt><var>$email</var></dt>
+					<dd><code>string</code><br>$email email</dd>
+					<dt><var>$pass</var></dt>
+					<dd><code>string</code><br>$pass password</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>true if the mail has been successful sent<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="mail_header_escape" id="_mail_header_escape">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_mail_header_escape">#</a>
+		<code><a href="source-class-Mailer.html#116-131" title="Go to source code">mail_header_escape</a>( <span>string <var>$header</var></span> )</code>
+
+		<div class="description short">
+			
+<p>mail_header_escape - encode the header with 'quoted-printable', so that also
+non US-ASCII letters can be transmitted.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>mail_header_escape - encode the header with 'quoted-printable', so that also
+non US-ASCII letters can be transmitted.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$header</var></dt>
+					<dd><code>string</code><br>$header email header</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>the encoded header<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="send_mail" id="_send_mail">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_send_mail">#</a>
+		<code><a href="source-class-Mailer.html#133-153" title="Go to source code">send_mail</a>( <span>string <var>$to</var></span>, <span>string <var>$body</var></span>, <span>string <var>$subject</var></span> )</code>
+
+		<div class="description short">
+			
+<p>send_mail - Send the email with mail().</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>send_mail - Send the email with mail().</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$to</var></dt>
+					<dd><code>string</code><br>$to receiver</dd>
+					<dt><var>$body</var></dt>
+					<dd><code>string</code><br>$body email body</dd>
+					<dt><var>$subject</var></dt>
+					<dd><code>string</code><br>$subject email subject</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>true if the mail has been successful sent<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		OpenHomeopath PHP code documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

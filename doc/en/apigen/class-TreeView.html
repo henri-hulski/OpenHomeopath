@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class TreeView | OpenHomeopath PHP code documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?108902800"></script>
+	<script type="text/javascript" src="elementlist.js?2532662558"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li><a href="package-Admin.html">Admin</a>
+						</li>
+				<li><a href="package-AdminProcess.html">AdminProcess</a>
+						</li>
+				<li><a href="package-Archive.html">Archive</a>
+						</li>
+				<li><a href="package-Common.html">Common</a>
+						</li>
+				<li><a href="package-DB.html">DB</a>
+						</li>
+				<li><a href="package-Express.html">Express</a>
+						</li>
+				<li><a href="package-Form.html">Form</a>
+						</li>
+				<li><a href="package-Layout.html">Layout</a>
+						</li>
+				<li><a href="package-Mailer.html">Mailer</a>
+						</li>
+				<li><a href="package-None.html">None</a>
+						</li>
+				<li><a href="package-OpenHomeoDB.html">OpenHomeoDB</a>
+						</li>
+				<li><a href="package-PDF.html">PDF<span></span></a>
+						<ul>
+				<li><a href="package-PDF.MC.html">MC</a>
+						</li>
+							</ul></li>
+				<li><a href="package-Process.html">Process</a>
+						</li>
+				<li><a href="package-Rep.html">Rep</a>
+						</li>
+				<li><a href="package-RevRep.html">RevRep</a>
+						</li>
+				<li><a href="package-SaveReps.html">SaveReps</a>
+						</li>
+				<li><a href="package-Search.html">Search</a>
+						</li>
+				<li><a href="package-Session.html">Session</a>
+						</li>
+				<li><a href="package-SymRem.html">SymRem</a>
+						</li>
+				<li class="active"><a href="package-TreeView.html">TreeView</a>
+						</li>
+				<li><a href="package-UserDB.html">UserDB</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-TreeView.html">TreeView</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-TreeView.html" title="Summary of TreeView"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class TreeView</h1>
+
+
+	<div class="description">
+	
+<p>The TreeView class is responsible for builing the html symptom tree for
+symptoms presentation and selection</p>
+
+	</div>
+
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-RevRep.html">RevRep</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-TreeView.html">TreeView</a><br />
+
+				<b>Category:</b>
+				Homeopathy<br />
+				<b>Copyright:</b>
+				2007-2014 Henri Schumacher<br />
+				<b>License:</b>
+				<a href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License v3</a><br />
+				<b>Author:</b>
+				Henri Schumacher &lt;<a
+href="mailto:henri.hulski&#64;gazeta.pl">henri.hulski&#64;<!---->gazeta.pl</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-TreeView.html#28-255" title="Go to source code">include/classes/treeview_class.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-TreeView.html#78-92" title="Go to source code">__construct</a>( <span>integer <var>$rubric_id</var></span>, <span>string <var>$tree_symptoms_tbl</var> = <span class="php-quote">&quot;&quot;</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Class constructor</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Class constructor</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$rubric_id</var></dt>
+					<dd><code>integer</code><br>$rubric_id Main rubric id for which we're building the treeview. If we build for
+all main rubrics it has the value -1.</dd>
+					<dt><var>$tree_symptoms_tbl</var></dt>
+					<dd><code>string</code><br>$tree_symptoms_tbl Symptoms table to build the tree from.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="build_symptomtree" id="_build_symptomtree">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_build_symptomtree">#</a>
+		<code><a href="source-class-TreeView.html#94-146" title="Go to source code">build_symptomtree</a>( <span>boolean <var>$static_tree</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>build_symptomtree returns the html formatted symptom tree</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>build_symptomtree returns the html formatted symptom tree</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$static_tree</var></dt>
+					<dd><code>boolean</code><br>$static_tree if false we're building a tree that will be dynamically expanded,
+if true we build a static tree</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_treeview" id="_get_treeview">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_treeview">#</a>
+		<code><a href="source-class-TreeView.html#148-205" title="Go to source code">get_treeview</a>( <span>integer <var>$pid</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			
+<p>get_treeview returns an array with the symptoms prepared for the
+treeview.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>get_treeview returns an array with the symptoms prepared for the
+treeview.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$pid</var></dt>
+					<dd><code>integer</code><br>$pid ID of the parents symptom, 0 if there is no parent</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="generate_child" id="_generate_child">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_generate_child">#</a>
+		<code><a href="source-class-TreeView.html#207-254" title="Go to source code">generate_child</a>( <span>string <var>$output_id</var></span>, <span>array <var>$symptoms_ar</var></span>, <span>boolean <var>$rep_select</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>generate_child returns the recursively generated child nodes for the html
+symptom tree</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>generate_child returns the recursively generated child nodes for the html
+symptom tree</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$output_id</var></dt>
+					<dd><code>string</code><br>$output_id id of the parent div, in which to put the child nodes</dd>
+					<dt><var>$symptoms_ar</var></dt>
+					<dd><code>array</code><br>$symptoms_ar array that contains the symptoms</dd>
+					<dt><var>$rep_select</var></dt>
+					<dd><code>boolean</code><br>$rep_select if true you can select the symptoms for repertorization, false
+otherwise</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="symptoms_tbl" id="$symptoms_tbl">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-TreeView.html#39-44" title="Go to source code"><var>$symptoms_tbl</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$symptoms_tbl" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Symptoms table</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Symptoms table</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="sym_rem_tbl" id="$sym_rem_tbl">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-TreeView.html#47-52" title="Go to source code"><var>$sym_rem_tbl</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$sym_rem_tbl" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Symptom-remedy-relations table</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Symptom-remedy-relations table</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="rubric_id" id="$rubric_id">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-TreeView.html#55-60" title="Go to source code"><var>$rubric_id</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$rubric_id" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Main rubric id for which we're building the treeview. If we build for all
+main rubrics it has the value -1.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Main rubric id for which we're building the treeview. If we build for all
+main rubrics it has the value -1.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="tree_symptoms_tbl" id="$tree_symptoms_tbl">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-TreeView.html#63-68" title="Go to source code"><var>$tree_symptoms_tbl</var></a>
+		</td>
+		<td class="value"><code><span class="php-quote">&quot;&quot;</span></code></td>
+		<td class="description"><div>
+			<a href="#$tree_symptoms_tbl" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Symptoms table to build the tree from</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Symptoms table to build the tree from</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="rem_id" id="$rem_id">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-TreeView.html#71-76" title="Go to source code"><var>$rem_id</var></a>
+		</td>
+		<td class="value"><code><span class="php-num">0</span></code></td>
+		<td class="description"><div>
+			<a href="#$rem_id" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Remedy ID to use for the reversed repertorization in other cases 0</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Remedy ID to use for the reversed repertorization in other cases 0</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		OpenHomeopath PHP code documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
