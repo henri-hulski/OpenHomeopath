@@ -249,7 +249,7 @@ if(strcmp($username,$req_user) == 0) {
         </tr>
         <tr>
           <td>
-            <select class='selection4' name='src_sel[]' id='src_rep' size='7' multiple='multiple' onclick='document.getElementById("custom_src_rep").checked=true' onchange='document.getElementById("custom_src_rep").checked=true'>
+            <select class='selection4' name='src_sel[]' id='src_rep' size='15' multiple='multiple' onclick='document.getElementById("custom_src_rep").checked=true' onchange='document.getElementById("custom_src_rep").checked=true'>
 <?php
 	$query = "SELECT sources.src_no, sources.src_id, sources.src_title, languages.lang_$lang FROM sources, languages WHERE languages.lang_id = sources.lang_id ORDER BY sources.src_no";
 	$result = $db->send_query($query);
