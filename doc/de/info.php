@@ -41,7 +41,6 @@ include("help/layout/$skin/header.php");
     <li><a href="#client">Client-Anforderung</a></li>
     <li><a href="#server">Server-Anforderung</a></li>
     <li><a href="#install">Installation und Konfiguration</a></li>
-    <li><a href="#download">Download</a></li>
   </ul>
 </div>
 <a name="version" id="version"><br></a>
@@ -136,17 +135,6 @@ Dank geht an
   Das kann etwas dauern, da OpenHomeopath noch weitere Tabellen generieren muss.</li>
   <li>Und schon kannst du loslegen. Ich empfehle, das admin-Passwort zu ändern.</li>
 </ol>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="download" id="download"><br></a>
-<h2>
-  Download
-</h2>
-<div>
-  Hier könnt ihr <strong>OpenHomeopath</strong> gepackt als tar.gz-Datei für die lokale Installation herunterladen:
-  <ul>
-    <li><a href="../../../openhomeopath_old/download/openhomeopath_0.9_beta.tar.gz">openhomeopath_0.9_beta.tar.gz</a> (Achtung! Dies ist immer noch die unvollständige Beta-Version. Die Stabile kommt bald.)</li>
-  </ul>
-</div>
 <br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");

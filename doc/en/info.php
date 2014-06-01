@@ -41,7 +41,6 @@ include("help/layout/$skin/header.php");
     <li><a href="#client">Client requirements</a></li>
     <li><a href="#server">Server requirements</a></li>
     <li><a href="#install">Installation and configuration</a></li>
-    <li><a href="#download">Download</a></li>
   </ul>
 </div>
 <a name="version" id="version"><br></a>
@@ -142,17 +141,6 @@ include("help/layout/$skin/header.php");
   This can take a while, because OpenHomeopath has to generate some more tables.</li>
   <li>Here we go. I recommend to change the admin password.</li>
 </ol>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="download" id="download"><br></a>
-<h2>
-  Download
-</h2>
-<div>
-  Here you can download <strong>OpenHomeopath</strong> as a compressed tarball for local installation:
-  <ul>
-    <li><a href="../../../openhomeopath_old/download/openhomeopath_0.9_beta.tar.gz">openhomeopath_0.9_beta.tar.gz</a> (Warning! This is still the unstable beta-version. Stable comes soon.)</li>
-  </ul>
-</div>
 <br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
