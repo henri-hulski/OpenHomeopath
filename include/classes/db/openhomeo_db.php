@@ -42,7 +42,7 @@ require_once("include/classes/db/db.php");
 class OpenHomeoDB extends DB {
 
 	/* archiving of edited or deleted table rows */
-	
+
     /**
      * Short description for function
      *
@@ -51,16 +51,16 @@ class OpenHomeoDB extends DB {
      * @param unknown $table        Parameter description (if any) ...
      * @param unknown $where        Parameter description (if any) ...
      * @param unknown $archive_type Parameter description (if any) ...
-     * @return void   
+     * @return void
      * @access public
      */
 	function archive_table_row($table, $where, $archive_type) {
 		$query = "INSERT INTO archive__$table SELECT *, '$archive_type' FROM $table WHERE $where";
 		$this->send_query($query);
 }
-	
+
 	/* restoring of archived table rows */
-		
+
     /**
      * Short description for function
      *
@@ -69,7 +69,7 @@ class OpenHomeoDB extends DB {
      * @param unknown $table     Parameter description (if any) ...
      * @param unknown $where     Parameter description (if any) ...
      * @param unknown $timestamp Parameter description (if any) ...
-     * @return void   
+     * @return void
      * @access public
      */
 	function restore_table_row($table, $where, $timestamp) {
@@ -93,7 +93,7 @@ class OpenHomeoDB extends DB {
 		$query = "UPDATE `$table` SET `timestamp`= NOW(), `username`= '$username' WHERE $where";
 		$this->send_query($query);
 	}
-	
+
     /**
      * Short description for function
      *
@@ -171,6 +171,13 @@ class OpenHomeoDB extends DB {
 					$custom_table = DEFAULT_SYMPTOM_REMEDY_TABLE_DE;
 				}
 			}
+			if ($this->table_exists($custom_table) === false) {
+				if ($table === "symptoms") {
+					$this->create_custom_symptom_table(0, $custom_table);
+				} else {
+					$this->create_custom_table($table, $custom_table);
+				}
+			}
 		} else {
 			$custom_table = $table;
 		}
@@ -199,7 +206,7 @@ class OpenHomeoDB extends DB {
 	}
 
 	/** function get_sym_base_table returns the sym-basetable to be used for symptoms. If there exists no symptom-translations the whole sym-table will be used. If there are translations the language-based sym-table according to the usersettings will be used. If given $custom_symptom_lang the given language will be used. **/
-	
+
 	function get_sym_base_table($custom_symptom_lang = false) {
 		global $session;
 		$sym_base_table = "symptoms";
@@ -216,7 +223,7 @@ class OpenHomeoDB extends DB {
 	}
 
 	/** function get_custom_symptom_lang returns the language to be used for symptoms. If there exists no symptom-translations the function returns false. If there are translations the language according to the usersettings will be used. If given an array of src_id's as $sources the sym-language will only be returned, when for one of the given sources exists an translation. Else the function returns false. **/
-	
+
 	function get_custom_symptom_lang($sources = 'all') {
 		global $session;
 		$custom_symptom_lang = false;
@@ -236,7 +243,7 @@ class OpenHomeoDB extends DB {
 		return $custom_symptom_lang;
 	}
 
-	
+
     /**
      * Short description for function
      *
@@ -266,7 +273,7 @@ class OpenHomeoDB extends DB {
 		}
 		return $sym_lang;
 	}
-	
+
     /**
      * Short description for function
      *
@@ -288,7 +295,18 @@ class OpenHomeoDB extends DB {
 		}
 		return $is_sym_lang;
 	}
-	
+
+
+	function get_sym_langs() {
+		$query = "SELECT lang_id FROM languages WHERE sym_lang = 1";
+		$this->send_query($query);
+		while (list ($lang_id) = $this->db_fetch_row()) {
+			$sym_lang_ar[] = $lang_id;
+		}
+		$this->free_result();
+		return $sym_lang_ar;
+	}
+
     /**
      * Short description for function
      *
@@ -321,8 +339,8 @@ class OpenHomeoDB extends DB {
 		return $is_custom_table;
 	}
 
-	/** function exist_symptom_translation checks if there exists a translation for symptoms from the symptoms table. If src_id's-array given as $sources only with symptoms related to the sources **/
-	
+	/* function exist_symptom_translation checks if there exists a translation for symptoms from the symptoms table. If src_id's-array given as $sources only with symptoms related to the sources **/
+
 	function exist_symptom_translation($sources = 'all') {
 		$exist_symptom_translation = false;
 		if ($sources == 'all') {
@@ -341,8 +359,8 @@ class OpenHomeoDB extends DB {
 		return $exist_symptom_translation;
 	}
 
-	/** function is_translated checks if the given symptom has a translation **/
-	
+	/* function is_translated checks if the given symptom has a translation **/
+
 	function is_translated($sym_id) {
 		$is_translated = false;
 		$query = "SELECT sym_id FROM sym_translations WHERE sym_id = $sym_id LIMIT 1";
@@ -356,89 +374,107 @@ class OpenHomeoDB extends DB {
 	}
 
     /**
-     * Short description for function
+     * Create custom table for sym_rem or materia based on the user preferences
      *
-     * Long description (if any) ...
-     *
-     * @param string $table Parameter description (if any) ...
-     * @return void  
+     * @param string $table base table: sym_rem | materia
+     * @param string $custom_table optional custom_table to create
+     * @return void
      * @access public
      */
-	function create_custom_table($table) {
-		global $session;
-		if ($table == "materia") {
-			$src = "src_materia";
-		} else {
-			$src = "src_rep";
-		}
-		$username = $session->username;
-		$query = "SELECT $src FROM users WHERE username='$username'";
-		$this->send_query($query);
-		list($src_row) = $this->db_fetch_row();
-		$this->free_result();
-		if ($src_row == 'custom') {
+	function create_custom_table($table, $custom_table = "") {
+		if (empty($custom_table)) {
+			global $session;
 			if ($table == "materia") {
-				$src_table = "custom_materia";
+				$src = "src_materia";
 			} else {
-				$src_table = "custom_rep";
+				$src = "src_rep";
 			}
-			$src_id_ar = $this->get_custom_src($username, $src_table);
-			$src_no_ar = $this->get_source_nr($src_id_ar);
-			$custom_src = implode("_", $src_no_ar);
-			$source_query = implode("' || src_id = '", $src_id_ar);
-			$where = "(src_id = '" . $source_query . "')";
-			$query = "CREATE OR REPLACE VIEW " . $table . "__" . $custom_src . " AS SELECT * FROM $table WHERE $where";
+			$username = $session->username;
+			$query = "SELECT $src FROM users WHERE username='$username'";
 			$this->send_query($query);
+			list($src_row) = $this->db_fetch_row();
+			$this->free_result();
+			if ($src_row == 'custom') {
+				if ($table == "materia") {
+					$src_table = "custom_materia";
+				} else {
+					$src_table = "custom_rep";
+				}
+				$src_id_ar = $this->get_custom_src($username, $src_table);
+				$src_no_ar = $this->get_source_nr($src_id_ar);
+				$custom_src = implode("_", $src_no_ar);
+				$source_query = implode("' || src_id = '", $src_id_ar);
+				$where = "(src_id = '" . $source_query . "')";
+				$custom_table = $table . "__" . $custom_src;
+			}
+		} else {
+				$src_no_ar = $this->extract_src_no($custom_table);
+				$src_id_ar = $this->get_source_id($src_no_ar);
+				$source_query = implode("' || src_id = '", $src_id_ar);
+				$where = "(src_id = '" . $source_query . "')";
 		}
+		$query = "CREATE OR REPLACE VIEW $custom_table AS SELECT * FROM $table WHERE $where";
+		$this->send_query($query);
 	}
 
     /**
-     * Short description for function
+     * Create custom table for symptoms based on the user preferences
      *
-     * Long description (if any) ...
-     *
-     * @param integer $update Parameter description (if any) ...
-     * @return void   
+     * @param integer $update 0 | 1: if 1 updates custom symptom table when exists, if 0 leaves it unchanged
+     * @param string $custom_table optional custom_table to create
+     * @return void
      * @access public
      */
-	function create_custom_symptom_table($update = 0) {
+	function create_custom_symptom_table($update = 0, $custom_table = "") {
 		global $session;
 		$username = $session->username;
-		$query = "SELECT src_rep FROM users WHERE username='$username'";
-		$this->send_query($query);
-		list($src_rep) = $this->db_fetch_row();
-		$this->free_result();
-		if ($src_rep == 'custom') {
-			$src_id_ar = $this->get_custom_src($username, 'custom_rep');
-			$symptom_lang = $this->get_custom_symptom_lang($src_id_ar);
-			$sym_table = $this->get_sym_base_table($symptom_lang);
-			$src_no_ar = $this->get_source_nr($src_id_ar);
-			$custom_src = implode("_", $src_no_ar);
-			if ($symptom_lang !== false) {
-				$custom_src .= "_$symptom_lang";    // for sources with different translations adds the language at the end of the symptoms tablename (e.g. _en)
+		if (empty($custom_table)) {
+			$query = "SELECT src_rep FROM users WHERE username='$username'";
+			$this->send_query($query);
+			list($src_rep) = $this->db_fetch_row();
+			$this->free_result();
+			if ($src_rep == 'custom') {
+				$src_id_ar = $this->get_custom_src($username, 'custom_rep');
+				$src_no_ar = $this->get_source_nr($src_id_ar);
+				$custom_src = implode("_", $src_no_ar);
+				$symptom_lang = $this->get_custom_symptom_lang($src_id_ar);
+				if ($symptom_lang !== false) {
+					$custom_src .= "_$symptom_lang";    // for sources with different translations adds the language at the end of the symptoms tablename (e.g. _en)
+				}
+				$source_query = implode("' || sym_rem.src_id = '", $src_id_ar);
+				$where = "(sym_rem.src_id = '" . $source_query . "')";
+				$custom_table = "sym__$custom_src";
 			}
+		} else {
+			$src_no_ar = $this->extract_src_no($custom_table);
+			$src_id_ar = $this->get_source_id($src_no_ar);
 			$source_query = implode("' || sym_rem.src_id = '", $src_id_ar);
 			$where = "(sym_rem.src_id = '" . $source_query . "')";
-			if ($this->table_exists("sym__$custom_src") === false || $update == 1) {
-				set_time_limit(0);
-				ignore_user_abort(true);
-				$query = "DROP TABLE IF EXISTS sym__$custom_src";
-				$this->send_query($query);
-				$query = "CREATE TABLE sym__$custom_src LIKE symptoms";
-				$this->send_query($query);
-				$query = "INSERT INTO sym__$custom_src SELECT DISTINCT $sym_table.* FROM $sym_table, sym_rem WHERE $sym_table.sym_id = sym_rem.sym_id AND $where ORDER BY $sym_table.sym_id";
-				$this->send_query($query);
-				$this->add_missing_parents("sym__$custom_src");
-				$this->update_symptom_tree("sym__$custom_src");
-				$query = "SELECT COUNT(*) FROM $sym_table";
-				$this->send_query($query);
-				list ($sym_num) = $this->db_fetch_row();
-				$this->free_result();
-				$query = "INSERT INTO sym_stats (sym_table, sym_base_table, sym_count, username) VALUES ('sym__$custom_src', '$sym_table', $sym_num, '$username') ON DUPLICATE KEY UPDATE sym_base_table = '$sym_table', sym_count = $sym_num, username = '$username'";
-				$this->send_query($query);
-			} else {
-				$this->update_custom_symptom_table();
+			$symptom_lang = $session->lang;
+		}
+		if ($this->table_exists($custom_table) === false || $update == 1) {
+			set_time_limit(0);
+			ignore_user_abort(true);
+			if ($this->is_sym_lang($symptom_lang) === false) {
+				$symptom_lang = "en";
 			}
+			$sym_table = $this->get_sym_base_table($symptom_lang);
+			$query = "DROP TABLE IF EXISTS $custom_table";
+			$this->send_query($query);
+			$query = "CREATE TABLE $custom_table LIKE symptoms";
+			$this->send_query($query);
+			$query = "INSERT INTO $custom_table SELECT DISTINCT $sym_table.* FROM $sym_table, sym_rem WHERE $sym_table.sym_id = sym_rem.sym_id AND $where ORDER BY $sym_table.sym_id";
+			$this->send_query($query);
+			$this->add_missing_parents($custom_table);
+			$this->update_symptom_tree($custom_table);
+			$query = "SELECT COUNT(*) FROM $sym_table";
+			$this->send_query($query);
+			list ($sym_num) = $this->db_fetch_row();
+			$this->free_result();
+			$query = "INSERT INTO sym_stats (sym_table, sym_base_table, sym_count, username) VALUES ('$custom_table', '$sym_table', $sym_num, '$username') ON DUPLICATE KEY UPDATE sym_base_table = '$sym_table', sym_count = $sym_num, username = '$username'";
+			$this->send_query($query);
+		} else {
+			$this->update_custom_symptom_table();
 		}
 	}
 
@@ -447,7 +483,7 @@ class OpenHomeoDB extends DB {
      *
      * Long description (if any) ...
      *
-     * @return void  
+     * @return void
      * @access public
      */
 	function update_custom_symptom_table() {
@@ -467,7 +503,7 @@ class OpenHomeoDB extends DB {
 			}
 		}
 	}
-	
+
     /**
      * Short description for function
      *
@@ -526,7 +562,7 @@ class OpenHomeoDB extends DB {
 		$log = sprintf("<p>" . _("<strong>%d parent-rubrics</strong> were added and <strong>%d symptoms</strong> without parents-rubric were renamed. Time: <strong>%d seconds</strong>.") . "</p>", $num_parents, $num_changed, $time);
 		return $log;
 	}
-	
+
     /**
      * Short description for function
      *
@@ -624,7 +660,7 @@ class OpenHomeoDB extends DB {
 		$log .= sprintf("<p>" . _("Totally <strong>%d symptoms</strong> were parsed in <strong>%d seconds</strong>.") . _("<strong>%d parent rubrics</strong> were updated.") . "</p>", $num_gesamt, $time, $num_changed);
 		return $log;
 	}
-	
+
     /**
      * Short description for function
      *
@@ -663,7 +699,7 @@ class OpenHomeoDB extends DB {
 		}
 		return $log;
 	}
-	
+
     /**
      * Short description for function
      *
@@ -709,10 +745,10 @@ class OpenHomeoDB extends DB {
 		}
 		return $log;
 	}
-	
-	/** function get_source_id returns a src_id for a given src_no.
-	If $source_nr is an array of source-numbers it returns an array of source-ids **/
-	
+
+	/* function get_source_id returns a src_id for a given src_no.
+	If $source_nr is an array of source-numbers it returns an array of source-ids */
+
 	function get_source_id($source_nr) {
 		if (is_array($source_nr)) {
 			foreach ($source_nr as $src_no) {
@@ -732,9 +768,9 @@ class OpenHomeoDB extends DB {
 		return $source_id;
 	}
 
-	/** function get_source_nr returns a src_no for a given src_id.
-	If $source_id is an array of source-ids it returns an array of source-numbers **/
-	
+	/* function get_source_nr returns a src_no for a given src_id.
+	If $source_id is an array of source-ids it returns an array of source-numbers */
+
 	function get_source_nr($source_id) {
 		if (is_array($source_id)) {
 			foreach ($source_id as $src_id) {
@@ -753,9 +789,28 @@ class OpenHomeoDB extends DB {
 		}
 		return $source_nr;
 	}
-	
-	/** function get_symptomname returns the symptom including the main rubric for a given sym_id. **/
-	
+
+	function extract_src_no($custom_table) {
+		$prefix_ar = array('sym__', 'sym_rem__', 'materia__');
+		foreach($prefix_ar as $prefix) {
+			if (strpos($custom_table, $prefix) === 0) {
+				$src_no = substr($custom_table, strlen($prefix));
+				break;
+			}
+		}
+		$sym_lang_ar = $this->get_sym_langs();
+		foreach($sym_lang_ar as $sym_lang) {
+			$sym_lang_pos = strpos($src_no, "_" . $sym_lang);
+			if ($sym_lang_pos !== false) {
+				$src_no = substr($src_no, 0, $sym_lang_pos);
+				break;
+			}
+		}
+		$src_no_ar = explode('_', $src_no);
+		return $src_no_ar;
+	}
+
+	/* function get_symptomname returns the symptom including the main rubric for a given sym_id. */
 	function get_symptomname($sym_id) {
 		global $lang;
 		$symptoms_tbl = $this->get_custom_table("symptoms");
