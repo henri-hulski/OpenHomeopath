@@ -639,7 +639,9 @@ class Rep {
 		$rem_txt = sprintf(ngettext("%d remedy", "%d remedies", $this->rem_count), $this->rem_count);
 		$rel_txt = sprintf(ngettext("%d symptom-remedy-relation", "%d symptom-remedy-relations", $this->rel_count), $this->rel_count);
 		$summary = sprintf(_("For %s there are %s and %s.") . "\n", $sym_txt, $rem_txt, $rel_txt);
-		$summary .= sprintf(_("The %d most important remedies were printed. ") . "\n", $limit);
+		if ($this->rem_count > $limit) {
+			$summary .= sprintf(_("The %d most important remedies were printed. ") . "\n", $limit);
+		}
 	}
 }
 ?>
