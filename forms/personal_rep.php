@@ -4,7 +4,8 @@ if (!empty($_REQUEST['ajax'])) {
 	include_once ("include/classes/login/session.php");
 	$username = $session->username;
 }
-if (isset($_REQUEST['custom_rep_submit'])) { // Die Form wird ausgewertet
+// Analyse the form
+if (isset($_REQUEST['custom_rep_submit'])) {
 	unset($src_rep);
 	unset($custom_rep);
 	$src_rep = $_REQUEST['src'];
