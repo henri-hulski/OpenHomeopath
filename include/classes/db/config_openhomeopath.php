@@ -14,17 +14,16 @@ Bitte editiere die Datei gemäß der untenstehenden Anweisungen.
 // Skin-Voreinstellung: original | kraque
 	define("DEFAULT_SKIN", "original");
 
-// Symptom-Tabelle und Symptome-Mittel-Tabelle, die benutzt wird, wenn Nutzer nicht eingeloggt bzw. kein Spender und Spendenziel nicht erreicht
+// Symptom table, wich will be used, if no user logged in or donation goal not reached and user is not donator
+// Symptom-Tabelle, die benutzt wird, wenn Nutzer nicht eingeloggt bzw. kein Spender und Spendenziel nicht erreicht
 
 	// German userinterface
 	// deutsche Benutzeroberfläche
 	define("DEFAULT_SYMPTOM_TABLE_DE",   'sym__1');
-	define("DEFAULT_SYMPTOM_REMEDY_TABLE_DE",   'sym_rem__1');
 
 	// English userinterface
 	// englische Benutzeroberfläche
 	define("DEFAULT_SYMPTOM_TABLE_EN",   'sym__2_en');
-	define("DEFAULT_SYMPTOM_REMEDY_TABLE_EN",   'sym_rem__2');
 
 // expected monthly donatation goal in €/$
 // angepeilte monatliche Spendenerwartung in Euro bzw. US-Dollar
