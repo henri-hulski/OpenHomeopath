@@ -14,8 +14,8 @@ Bitte editiere die Datei gemäß der untenstehenden Anweisungen.
 // Skin-Voreinstellung: original | kraque
 	define("DEFAULT_SKIN", "original");
 
-// Symptom table, wich will be used, if no user logged in or donation goal not reached and user is not donator
-// Symptom-Tabelle, die benutzt wird, wenn Nutzer nicht eingeloggt bzw. kein Spender und Spendenziel nicht erreicht
+// Symptom table, wich will be used, if no user logged in
+// Symptom-Tabelle, die benutzt wird, wenn Nutzer nicht eingeloggt
 
 	// German userinterface
 	// deutsche Benutzeroberfläche
