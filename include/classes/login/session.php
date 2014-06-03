@@ -825,6 +825,10 @@ class Session {
  */
 $session = new Session;
 include_once("locale/localization.php");
+if (!$session->logged_in) {
+	$db->update_custom_symptom_table();
+}
+
 
 /* Initialize form object */
 $form = new Form;
