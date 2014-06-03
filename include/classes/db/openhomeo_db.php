@@ -165,10 +165,18 @@ class OpenHomeoDB extends DB {
 					$custom_table = DEFAULT_SYMPTOM_TABLE_DE;
 				}
 			} elseif ($table === "sym_rem") {
-				if ($lang == 'en') {
-					$custom_table = DEFAULT_SYMPTOM_REMEDY_TABLE_EN;
-				} elseif ($lang == 'de') {
-					$custom_table = DEFAULT_SYMPTOM_REMEDY_TABLE_DE;
+				if ($lang === 'en') {
+					$custom_table = 'sym_rem' . substr(DEFAULT_SYMPTOM_TABLE_EN, 3);
+					// delete "_en" at the end if any
+					if (substr($custom_table, -3) === '_en') {
+						$custom_table = substr($custom_table, 0, -3);
+					}
+				} elseif ($lang === 'de') {
+					$custom_table = 'sym_rem' . substr(DEFAULT_SYMPTOM_TABLE_DE, 3);
+					// delete "_de" at the end if any
+					if (substr($custom_table, -3) === '_de') {
+						$custom_table = substr($custom_table, 0, -3);
+					}
 				}
 			}
 			if ($this->table_exists($custom_table) === false) {
