@@ -96,7 +96,6 @@ class  Process {
 	 * procLogin processes the user submitted login form, if errors
 	 * are found, the user is redirected to correct the information,
 	 * if not, the user is effectively logged in to the system.
-	 * Short description for function
 	 *
 	 * @return void
 	 * @access public

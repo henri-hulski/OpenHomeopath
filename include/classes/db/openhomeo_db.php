@@ -29,9 +29,7 @@ require_once ("include/classes/db/config_openhomeopath.php");
 require_once("include/classes/db/db.php");
 
 /**
- * Short description for class
- *
- * Long description (if any) ...
+ * OpenHomeoDB provides the database functionality for OpenHomeopath
  *
  * @category  Database
  * @package   OpenHomeoDB
@@ -41,19 +39,15 @@ require_once("include/classes/db/db.php");
  */
 class OpenHomeoDB extends DB {
 
-	/* archiving of edited or deleted table rows */
-
-    /**
-     * Short description for function
-     *
-     * Long description (if any) ...
-     *
-     * @param unknown $table        Parameter description (if any) ...
-     * @param unknown $where        Parameter description (if any) ...
-     * @param unknown $archive_type Parameter description (if any) ...
-     * @return void
-     * @access public
-     */
+	/**
+	 * archive_table_row archives edited or deleted table rows.
+	 *
+	 * @param string $table        the table to be archived
+	 * @param string $where        WHERE declaration for the rows to be archived
+	 * @param string $archive_type reason, why archiving
+	 * @return void
+	 * @access public
+	 */
 	function archive_table_row($table, $where, $archive_type) {
 		$query = "INSERT INTO archive__$table SELECT *, '$archive_type' FROM $table WHERE $where";
 		$this->send_query($query);
@@ -61,17 +55,15 @@ class OpenHomeoDB extends DB {
 
 	/* restoring of archived table rows */
 
-    /**
-     * Short description for function
-     *
-     * Long description (if any) ...
-     *
-     * @param unknown $table     Parameter description (if any) ...
-     * @param unknown $where     Parameter description (if any) ...
-     * @param unknown $timestamp Parameter description (if any) ...
-     * @return void
-     * @access public
-     */
+	/**
+	 * restore_table_row restores archived table rows.
+	 *
+	 * @param string $table     the table to restore
+	 * @param string $where     WHERE declaration for the rows to be restored
+	 * @param string $timestamp timestamp given in the table row
+	 * @return void
+	 * @access public
+	 */
 	function restore_table_row($table, $where, $timestamp) {
 		global $session;
 		$archive_type = "restore_$timestamp";
@@ -94,15 +86,13 @@ class OpenHomeoDB extends DB {
 		$this->send_query($query);
 	}
 
-    /**
-     * Short description for function
-     *
-     * Long description (if any) ...
-     *
-     * @param string $table Parameter description (if any) ...
-     * @return string Return description (if any) ...
-     * @access public
-     */
+	/**
+	 * get_custom_table determines which custom table for a given table will be used.
+	 *
+	 * @param string $table given table (symptoms | sym_rem | materia)
+	 * @return string custom table
+	 * @access public
+	 */
 	function get_custom_table($table) {
 		global $session, $magic_hat;
 		if ($session->logged_in && ($table === "materia" || !$magic_hat->restricted_mode)) {  // user logged in
@@ -192,16 +182,14 @@ class OpenHomeoDB extends DB {
 		return $custom_table;
 	}
 
-    /**
-     * Short description for function
-     *
-     * Long description (if any) ...
-     *
-     * @param unknown $username  Parameter description (if any) ...
-     * @param unknown $src_table Parameter description (if any) ...
-     * @return array   Return description (if any) ...
-     * @access public
-     */
+	/**
+	 * get_custom_src returns an array with the sources the user has set for his personal either repertory profile or materia medica.
+	 *
+	 * @param string $username  the user
+	 * @param string $src_table which custom sources table to use (custom_rep | custom_materia)
+	 * @return array
+	 * @access public
+	 */
 	function get_custom_src($username, $src_table) {
 		$custom_src_ar = array();
 		$query = "SELECT src_id FROM $src_table WHERE username='$username'";
@@ -213,8 +201,17 @@ class OpenHomeoDB extends DB {
 		return $custom_src_ar;
 	}
 
-	/** function get_sym_base_table returns the sym-basetable to be used for symptoms. If there exists no symptom-translations the whole sym-table will be used. If there are translations the language-based sym-table according to the usersettings will be used. If given $custom_symptom_lang the given language will be used. **/
-
+	/**
+	 * get_sym_base_table returns the sym-basetable to be used for symptoms.
+	 *
+	 * If there exists no symptom-translations the whole sym-table will be used.
+	 * If there are translations the language-based sym-table according to the usersettings will be used.
+	 * If given $custom_symptom_lang the given language will be used.
+	 *
+	 * @param boolean $custom_symptom_lang optional the symptom language to be used
+	 * @return string
+	 * @access public
+	 */
 	function get_sym_base_table($custom_symptom_lang = false) {
 		global $session;
 		$sym_base_table = "symptoms";
@@ -224,20 +221,33 @@ class OpenHomeoDB extends DB {
 		if ($custom_symptom_lang !== false) {
 			$sym_base_table = "sym__$custom_symptom_lang";
 			if ($this->table_exists($sym_base_table) === false) {
-				$this->update_lang_symptom_tables(1);
+				$create_tables = true;
+				$this->update_lang_symptom_tables($create_tables);
 			}
 		}
 		return $sym_base_table;
 	}
 
-	/** function get_custom_symptom_lang returns the language to be used for symptoms. If there exists no symptom-translations the function returns false. If there are translations the language according to the usersettings will be used. If given an array of src_id's as $sources the sym-language will only be returned, when for one of the given sources exists an translation. Else the function returns false. **/
-
+	/**
+	 * get_custom_symptom_lang returns the language to be used for symptoms
+	 *
+	 * If there exists no symptom-translations the function returns false.
+	 * If there are translations the language according to the usersettings will be used.
+	 * If given an array of src_id's as $sources the sym-language will only be returned,
+	 * when for one of the given sources exists an translation.
+	 * Else the function returns false.
+	 *
+	 * @param array|string $sources optional an array of src_id's to check
+	 * @return string|false
+	 * @access public
+	 */
 	function get_custom_symptom_lang($sources = 'all') {
 		global $session;
 		$custom_symptom_lang = false;
 		if ($this->exist_symptom_translation($sources) === true) {
 			$custom_symptom_lang = $session->lang;
-			if ($session->logged_in || isset($_REQUEST['patient'])) {  // user logged in oder gespeicherte Rep wird aufgerufen
+			// user logged in or saved repertorization is requested
+			if ($session->logged_in || isset($_REQUEST['patient'])) {
 				$username = $session->username;
 				list($user_sym_lang) = $this->getUserInfo($username, 'sym_lang_id');
 				if (!empty($user_sym_lang) && $this->is_sym_lang($user_sym_lang)) {
@@ -252,14 +262,16 @@ class OpenHomeoDB extends DB {
 	}
 
 
-    /**
-     * Short description for function
-     *
-     * Long description (if any) ...
-     *
-     * @return mixed  Return description (if any) ...
-     * @access public
-     */
+	/**
+	 * get_lang_only_symptom_table returns an array with information about the language symptom table to be used if any, else false.
+	 *
+	 * If the user wants to use all symptoms from one language the function returns
+	 * an array with the language code, the language name and the symptom table.
+	 * Else the function returns false.
+	 *
+	 * @return array|false  ['id']: language code, ['name']: language name in current language, ['table']: symptom table to use
+	 * @access public
+	 */
 	function get_lang_only_symptom_table() {
 		global $session;
 		$sym_lang = false;
@@ -282,15 +294,13 @@ class OpenHomeoDB extends DB {
 		return $sym_lang;
 	}
 
-    /**
-     * Short description for function
-     *
-     * Long description (if any) ...
-     *
-     * @param unknown $lang_id Parameter description (if any) ...
-     * @return mixed   Return description (if any) ...
-     * @access public
-     */
+	/**
+	 * is_sym_lang returns true if the given language is used as a symptom language, else false.
+	 *
+	 * @param string $lang_id language code
+	 * @return boolean
+	 * @access public
+	 */
 	function is_sym_lang($lang_id) {
 		$query = "SELECT sym_lang FROM languages WHERE lang_id = '$lang_id'";
 		$this->send_query($query);
@@ -305,6 +315,12 @@ class OpenHomeoDB extends DB {
 	}
 
 
+	/**
+	 * get_sym_langs returns an array with used symptom languages in the database
+	 *
+	 * @return array
+	 * @access public
+	 */
 	function get_sym_langs() {
 		$query = "SELECT lang_id FROM languages WHERE sym_lang = 1";
 		$this->send_query($query);
@@ -315,15 +331,18 @@ class OpenHomeoDB extends DB {
 		return $sym_lang_ar;
 	}
 
-    /**
-     * Short description for function
-     *
-     * Long description (if any) ...
-     *
-     * @param string  $table Parameter description (if any) ...
-     * @return boolean Return description (if any) ...
-     * @access public
-     */
+	/**
+	 * is_custom_table determines which kind of table for the given table will be used.
+	 *
+	 * If the user uses a custom table the function returns true.
+	 * If the given table is symptoms and the user uses all symptoms from one language
+	 * the function returns this language name in the current language.
+	 * Else or if no user is logged in the function returns false.
+	 *
+	 * @param string  $table  given table (symptoms | sym_rem | materia)
+	 * @return boolean|string
+	 * @access public
+	 */
 	function is_custom_table($table) {
 		global $session;
 		$is_custom_table = false;
@@ -347,8 +366,15 @@ class OpenHomeoDB extends DB {
 		return $is_custom_table;
 	}
 
-	/* function exist_symptom_translation checks if there exists a translation for symptoms from the symptoms table. If src_id's-array given as $sources only with symptoms related to the sources **/
-
+	/**
+	 * exist_symptom_translation returns true if exists any translations for symptoms in the database, else false.
+	 *
+	 * If src_id's-array given as $sources, the function checks only for symptoms related to the given sources.
+	 *
+	 * @param array|string  $sources optional an array of src_id's to check
+	 * @return boolean
+	 * @access public
+	 */
 	function exist_symptom_translation($sources = 'all') {
 		$exist_symptom_translation = false;
 		if ($sources == 'all') {
@@ -367,8 +393,13 @@ class OpenHomeoDB extends DB {
 		return $exist_symptom_translation;
 	}
 
-	/* function is_translated checks if the given symptom has a translation **/
-
+	/**
+	 * is_translated checks if the given symptom has a translation.
+	 *
+	 * @param unknown $sym_id sym_id from the symptom to check
+	 * @return boolean
+	 * @access public
+	 */
 	function is_translated($sym_id) {
 		$is_translated = false;
 		$query = "SELECT sym_id FROM sym_translations WHERE sym_id = $sym_id LIMIT 1";
@@ -381,14 +412,14 @@ class OpenHomeoDB extends DB {
 		return $is_translated;
 	}
 
-    /**
-     * Create custom table for sym_rem or materia based on the user preferences
-     *
-     * @param string $table base table: sym_rem | materia
-     * @param string $custom_table optional custom_table to create
-     * @return void
-     * @access public
-     */
+	/**
+	 * create_custom_table creates the custom table for sym_rem or materia based on the user preferences.
+	 *
+	 * @param string $table        base table: sym_rem | materia
+	 * @param string $custom_table optional custom_table to create
+	 * @return void
+	 * @access public
+	 */
 	function create_custom_table($table, $custom_table = "") {
 		if (empty($custom_table)) {
 			global $session;
@@ -425,15 +456,18 @@ class OpenHomeoDB extends DB {
 		$this->send_query($query);
 	}
 
-    /**
-     * Create custom table for symptoms based on the user preferences
-     *
-     * @param integer $update 0 | 1: if 1 updates custom symptom table when exists, if 0 leaves it unchanged
-     * @param string $custom_table optional custom_table to create
-     * @return void
-     * @access public
-     */
-	function create_custom_symptom_table($custom_table = "", $update = 0) {
+	/**
+	 * create_custom_table creates the custom table for symptoms based on the user preferences.
+	 *
+	 * It also loggs the current number of symptoms of the base table and the name of the base table into the sym_stats table.
+	 * So it's possible to check if symptoms will be added to the base table and update the custom table
+	 *
+	 * @param string  $custom_table optional custom_table to create
+	 * @param boolean $update       if true updates custom symptom table when exists, if false leaves it unchanged
+	 * @return void
+	 * @access public
+	 */
+	function create_custom_symptom_table($custom_table = "", $update = false) {
 		global $session;
 		$username = $session->username;
 		if (empty($custom_table)) {
@@ -460,7 +494,7 @@ class OpenHomeoDB extends DB {
 			$where = "(sym_rem.src_id = '" . $source_query . "')";
 			$symptom_lang = $session->lang;
 		}
-		if ($this->table_exists($custom_table) === false || $update == 1) {
+		if ($this->table_exists($custom_table) === false || $update) {
 			set_time_limit(0);
 			ignore_user_abort(true);
 			if ($this->is_sym_lang($symptom_lang) === false) {
@@ -486,14 +520,14 @@ class OpenHomeoDB extends DB {
 		}
 	}
 
-    /**
-     * Short description for function
-     *
-     * Long description (if any) ...
-     *
-     * @return void
-     * @access public
-     */
+	/**
+	 * update_custom_symptom_table updates the custom symptom table if the symptom base table has changed.
+	 *
+	 * This function is called during log in and also if no user is logged in for updating the default symptom table.
+	 *
+	 * @return void
+	 * @access public
+	 */
 	function update_custom_symptom_table() {
 		global $session;
 		if (!$session->logged_in || $this->is_custom_table('symptoms') === true) {
@@ -507,20 +541,23 @@ class OpenHomeoDB extends DB {
 			list ($sym_num_actual) = $this->db_fetch_row();
 			$this->free_result();
 			if ($sym_num_actual != $sym_num) {
-				$this->create_custom_symptom_table($symptoms_tbl, 1);
+				$update = true;
+				$this->create_custom_symptom_table($symptoms_tbl, $update);
 			}
 		}
 	}
 
-    /**
-     * Short description for function
-     *
-     * Long description (if any) ...
-     *
-     * @param string  $sym_table Parameter description (if any) ...
-     * @return unknown Return description (if any) ...
-     * @access public
-     */
+	/**
+	 * add_missing_parents completes parent-rubrics in the symptom table.
+	 *
+	 * If several rubrics exists, which starts with the same rubric before a '>',
+	 * but the parent-rubric doesn't exists, it will be generated.
+	 * If the rubric before '>' exists only once, the '>' will be converted in a comma (',').
+	 *
+	 * @param string  $sym_table optional the symptom table to update
+	 * @return string the log info as html
+	 * @access public
+	 */
 	function add_missing_parents($sym_table = "symptoms") {
 		global $session;
 		$num_parents = 0;
@@ -571,15 +608,18 @@ class OpenHomeoDB extends DB {
 		return $log;
 	}
 
-    /**
-     * Short description for function
-     *
-     * Long description (if any) ...
-     *
-     * @param string $sym_table Parameter description (if any) ...
-     * @return string Return description (if any) ...
-     * @access public
-     */
+	/**
+	 * update_symptom_tree updates the tree-structure of the symptom table.
+	 *
+	 * First all symptoms that have no ">" in the symptom name will be parsed.
+	 * Then we check if the symptom name occur again in the table followed by ">".
+	 * In this case these symptoms get the "parent_id" of the superior symptom.
+	 * Next all symptoms with one ">" will be parsed and so on.
+	 *
+	 * @param string $sym_table optional the symptom table to update
+	 * @return string the log info as html
+	 * @access public
+	 */
 	function update_symptom_tree($sym_table = "symptoms") {
 		$num_rows = 0;
 		$num_changed = 0;
@@ -669,16 +709,21 @@ class OpenHomeoDB extends DB {
 		return $log;
 	}
 
-    /**
-     * Short description for function
-     *
-     * Long description (if any) ...
-     *
-     * @param integer $update_tree Parameter description (if any) ...
-     * @return string  Return description (if any) ...
-     * @access public
-     */
-	function update_symptom_tables($update_tree = 0) {
+	/**
+	 * update_symptom_tables updates the main symptoms table and the language-symptom-tables.
+	 *
+	 * If symptoms were added, the function completes parent-rubrics in the main symptoms table and
+	 * updates its tree-structure. It also creates new language-symptom-tables and update the sym_stats table.
+	 *
+	 * If no symptoms were added but $update_tree is true the function only creates new language-symptom-tables.
+	 *
+	 * This function is called, when an administrator loggs in.
+	 *
+	 * @param boolean  $update_tree
+	 * @return string  the log info as html
+	 * @access public
+	 */
+	function update_symptom_tables($update_tree = false) {
 		global $session;
 		$log = "";
 		if ($session->logged_in) {
@@ -693,7 +738,8 @@ class OpenHomeoDB extends DB {
 			if ($sym_num_actual != $sym_num) {
 				$log_add_parents = $this->add_missing_parents();
 				$log_update_tree = $this->update_symptom_tree();
-				$log = $this->update_lang_symptom_tables(1);
+				$create_tables = true;
+				$log = $this->update_lang_symptom_tables($create_tables);
 				$log = $log_add_parents . "\n<br>\n" . $log_update_tree . "\n<br>\n" . $log;
 				$current_user = $session->username;
 				$query = "SELECT COUNT(*) FROM symptoms";
@@ -701,23 +747,28 @@ class OpenHomeoDB extends DB {
 				list ($sym_num_new) = $this->db_fetch_row();
 				$query = "INSERT INTO sym_stats (sym_table, sym_base_table, sym_count, username) VALUES ('symptoms', 'symptoms', $sym_num_new, '$current_user') ON DUPLICATE KEY UPDATE sym_count = $sym_num_new, username = '$current_user'";
 				$this->send_query($query);
-			} elseif ($update_tree != 0) {
-				$log = $this->update_lang_symptom_tables();
+			} elseif ($update_tree) {
+				$create_tables = false;
+				$log = $this->update_lang_symptom_tables($create_tables);
 			}
 		}
 		return $log;
 	}
 
-    /**
-     * Short description for function
-     *
-     * Long description (if any) ...
-     *
-     * @param integer $create_tables Parameter description (if any) ...
-     * @return string  Return description (if any) ...
-     * @access public
-     */
-	function update_lang_symptom_tables($create_tables = 0) {
+	/**
+	 * update_lang_symptom_tables updates the language-symptom-tables.
+	 *
+	 * The function completes parent-rubrics in the language-symptom-tables,
+	 * updates their tree-structure and creates/replaces the language-only views.
+	 *
+	 * If $create_tables is true the language-symptom-tables ("sym__de", "sym__en", etc.)
+	 * will be created/replaced on the base of the main symptom-table ("symptoms").
+	 *
+	 * @param boolean $create_tables
+	 * @return string the log info as html
+	 * @access public
+	 */
+	function update_lang_symptom_tables($create_tables = false) {
 		$log = "";
 		set_time_limit(0);
 		ignore_user_abort(true);
@@ -729,7 +780,7 @@ class OpenHomeoDB extends DB {
 		$this->free_result();
 		if ($this->exist_symptom_translation() === true) {
 			foreach ($sym_lang_ar as $sym_lang) {
-				if ($create_tables != 0) {
+				if ($create_tables) {
 					$query = "DROP TABLE IF EXISTS sym__$sym_lang";
 					$this->send_query($query);
 					$query = "CREATE TABLE IF NOT EXISTS sym__$sym_lang LIKE symptoms";
@@ -754,9 +805,15 @@ class OpenHomeoDB extends DB {
 		return $log;
 	}
 
-	/* function get_source_id returns a src_id for a given src_no.
-	If $source_nr is an array of source-numbers it returns an array of source-ids */
-
+	/**
+	 * get_source_id returns a src_id for a given src_no.
+	 *
+	 * If $source_nr is an array of source-numbers it returns an array of source-id's.
+	 *
+	 * @param array|integer  $source_nr Parameter description (if any) ...
+	 * @return array|string
+	 * @access public
+	 */
 	function get_source_id($source_nr) {
 		if (is_array($source_nr)) {
 			foreach ($source_nr as $src_no) {
@@ -776,9 +833,15 @@ class OpenHomeoDB extends DB {
 		return $source_id;
 	}
 
-	/* function get_source_nr returns a src_no for a given src_id.
-	If $source_id is an array of source-ids it returns an array of source-numbers */
-
+	/**
+	 * get_source_nr returns a src_no for a given src_id.
+	 *
+	 * If $source_id is an array of source-id's it returns an array of source-numbers.
+	 *
+	 * @param array|string  $source_id
+	 * @return array|integer
+	 * @access public
+	 */
 	function get_source_nr($source_id) {
 		if (is_array($source_id)) {
 			foreach ($source_id as $src_id) {
@@ -798,6 +861,13 @@ class OpenHomeoDB extends DB {
 		return $source_nr;
 	}
 
+	/**
+	 * extract_src_no returns an array of source-numbers extracted from the given custom table-name.
+	 *
+	 * @param string $custom_table the custom table name to extract from
+	 * @return array
+	 * @access public
+	 */
 	function extract_src_no($custom_table) {
 		$prefix_ar = array('sym__', 'sym_rem__', 'materia__');
 		foreach($prefix_ar as $prefix) {
@@ -818,7 +888,13 @@ class OpenHomeoDB extends DB {
 		return $src_no_ar;
 	}
 
-	/* function get_symptomname returns the symptom including the main rubric for a given sym_id. */
+	/**
+	 * get_symptomname returns the symptom including the main rubric for a given sym_id.
+	 *
+	 * @param integer $sym_id the ID of the symptom to check
+	 * @return string
+	 * @access public
+	 */
 	function get_symptomname($sym_id) {
 		global $lang;
 		$symptoms_tbl = $this->get_custom_table("symptoms");
