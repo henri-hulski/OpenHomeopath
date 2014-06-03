@@ -173,7 +173,7 @@ class OpenHomeoDB extends DB {
 			}
 			if ($this->table_exists($custom_table) === false) {
 				if ($table === "symptoms") {
-					$this->create_custom_symptom_table(0, $custom_table);
+					$this->create_custom_symptom_table($custom_table);
 				} else {
 					$this->create_custom_table($table, $custom_table);
 				}
@@ -425,7 +425,7 @@ class OpenHomeoDB extends DB {
      * @return void
      * @access public
      */
-	function create_custom_symptom_table($update = 0, $custom_table = "") {
+	function create_custom_symptom_table($custom_table = "", $update = 0) {
 		global $session;
 		$username = $session->username;
 		if (empty($custom_table)) {
@@ -488,7 +488,7 @@ class OpenHomeoDB extends DB {
      */
 	function update_custom_symptom_table() {
 		global $session;
-		if ($session->logged_in && $this->is_custom_table('symptoms') === true) {
+		if (!$session->logged_in || $this->is_custom_table('symptoms') === true) {
 			$symptoms_tbl = $this->get_custom_table('symptoms');
 			$query = "SELECT sym_count, sym_base_table FROM sym_stats WHERE sym_table = '$symptoms_tbl'";
 			$this->send_query($query);
@@ -499,7 +499,7 @@ class OpenHomeoDB extends DB {
 			list ($sym_num_actual) = $this->db_fetch_row();
 			$this->free_result();
 			if ($sym_num_actual != $sym_num) {
-				$this->create_custom_symptom_table(1);
+				$this->create_custom_symptom_table($symptoms_tbl, 1);
 			}
 		}
 	}
