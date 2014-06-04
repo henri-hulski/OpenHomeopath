@@ -123,9 +123,7 @@
 
 	<div class="description">
 	
-<p>Short description for class</p>
-
-<p>Long description (if any) ...</p>
+<p>OpenHomeoDB provides the database public functionality for OpenHomeopath</p>
 
 	</div>
 
@@ -177,7 +175,7 @@
 				<b>Author:</b>
 				Henri Schumacher &lt;<a
 href="mailto:henri.hulski&#64;gazeta.pl">henri.hulski&#64;<!---->gazeta.pl</a>&gt;<br />
-		<b>Located at</b> <a href="source-class-OpenHomeoDB.html#31-769" title="Go to source code">include/classes/db/openhomeo_db.php</a><br />
+		<b>Located at</b> <a href="source-class-OpenHomeoDB.html#31-908" title="Go to source code">include/classes/db/openhomeo_db.php</a><br />
 	</div>
 
 
@@ -195,30 +193,28 @@ href="mailto:henri.hulski&#64;gazeta.pl">henri.hulski&#64;<!---->gazeta.pl</a>&g
 
 		<td class="name"><div>
 		<a class="anchor" href="#_archive_table_row">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#46-60" title="Go to source code">archive_table_row</a>( <span>unknown <var>$table</var></span>, <span>unknown <var>$where</var></span>, <span>unknown <var>$archive_type</var></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#42-54" title="Go to source code">archive_table_row</a>( <span>string <var>$table</var></span>, <span>string <var>$where</var></span>, <span>string <var>$archive_type</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Short description for function</p>
+<p>archive_table_row archives edited or deleted table rows.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Short description for function</p>
-
-<p>Long description (if any) ...</p>
+<p>archive_table_row archives edited or deleted table rows.</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$table</var></dt>
-					<dd><code>unknown</code><br>$table Parameter description (if any) ...</dd>
+					<dd><code>string</code><br>$table the table to be archived</dd>
 					<dt><var>$where</var></dt>
-					<dd><code>unknown</code><br>$where Parameter description (if any) ...</dd>
+					<dd><code>string</code><br>$where WHERE declaration for the rows to be archived</dd>
 					<dt><var>$archive_type</var></dt>
-					<dd><code>unknown</code><br>$archive_type Parameter description (if any) ...</dd>
+					<dd><code>string</code><br>$archive_type reason, why archiving</dd>
 				</dl></div>
 
 
@@ -239,30 +235,28 @@ href="mailto:henri.hulski&#64;gazeta.pl">henri.hulski&#64;<!---->gazeta.pl</a>&g
 
 		<td class="name"><div>
 		<a class="anchor" href="#_restore_table_row">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#64-95" title="Go to source code">restore_table_row</a>( <span>unknown <var>$table</var></span>, <span>unknown <var>$where</var></span>, <span>unknown <var>$timestamp</var></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#58-87" title="Go to source code">restore_table_row</a>( <span>string <var>$table</var></span>, <span>string <var>$where</var></span>, <span>string <var>$timestamp</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Short description for function</p>
+<p>restore_table_row restores archived table rows.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Short description for function</p>
-
-<p>Long description (if any) ...</p>
+<p>restore_table_row restores archived table rows.</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$table</var></dt>
-					<dd><code>unknown</code><br>$table Parameter description (if any) ...</dd>
+					<dd><code>string</code><br>$table the table to restore</dd>
 					<dt><var>$where</var></dt>
-					<dd><code>unknown</code><br>$where Parameter description (if any) ...</dd>
+					<dd><code>string</code><br>$where WHERE declaration for the rows to be restored</dd>
 					<dt><var>$timestamp</var></dt>
-					<dd><code>unknown</code><br>$timestamp Parameter description (if any) ...</dd>
+					<dd><code>string</code><br>$timestamp timestamp given in the table row</dd>
 				</dl></div>
 
 
@@ -283,31 +277,31 @@ href="mailto:henri.hulski&#64;gazeta.pl">henri.hulski&#64;<!---->gazeta.pl</a>&g
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_custom_table">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#97-178" title="Go to source code">get_custom_table</a>( <span>string <var>$table</var></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#89-183" title="Go to source code">get_custom_table</a>( <span>string <var>$table</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Short description for function</p>
+<p>get_custom_table determines which custom table for a given table will be
+used.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Short description for function</p>
-
-<p>Long description (if any) ...</p>
+<p>get_custom_table determines which custom table for a given table will be
+used.</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$table</var></dt>
-					<dd><code>string</code><br>$table Parameter description (if any) ...</dd>
+					<dd><code>string</code><br>$table given table (symptoms | sym_rem | materia)</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string</code><br>Return description (if any) ...<br />
+					<code>string</code><br>custom table<br />
 				</div>
 
 
@@ -327,33 +321,33 @@ href="mailto:henri.hulski&#64;gazeta.pl">henri.hulski&#64;<!---->gazeta.pl</a>&g
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_custom_src">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#180-199" title="Go to source code">get_custom_src</a>( <span>unknown <var>$username</var></span>, <span>unknown <var>$src_table</var></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#185-202" title="Go to source code">get_custom_src</a>( <span>string <var>$username</var></span>, <span>string <var>$src_table</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Short description for function</p>
+<p>get_custom_src returns an array with the sources the user has set for his
+personal either repertory profile or materia medica.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Short description for function</p>
-
-<p>Long description (if any) ...</p>
+<p>get_custom_src returns an array with the sources the user has set for his
+personal either repertory profile or materia medica.</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$username</var></dt>
-					<dd><code>unknown</code><br>$username Parameter description (if any) ...</dd>
+					<dd><code>string</code><br>$username the user</dd>
 					<dt><var>$src_table</var></dt>
-					<dd><code>unknown</code><br>$src_table Parameter description (if any) ...</dd>
+					<dd><code>string</code><br>$src_table which custom sources table to use (custom_rep | custom_materia)</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>array</code><br>Return description (if any) ...<br />
+					<code>array</code><br />
 				</div>
 
 
@@ -366,36 +360,42 @@ href="mailto:henri.hulski&#64;gazeta.pl">henri.hulski&#64;<!---->gazeta.pl</a>&g
 
 		<td class="attributes"><code>
 			 public 
-			
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_sym_base_table">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#202-216" title="Go to source code">get_sym_base_table</a>( <span>mixed <var>$custom_symptom_lang</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#204-229" title="Go to source code">get_sym_base_table</a>( <span>string|false <var>$custom_symptom_lang</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
-<p>function get_sym_base_table returns the sym-basetable to be used for
-symptoms. If there exists no symptom-translations the whole sym-table will be
-used. If there are translations the language-based sym-table according to the
-usersettings will be used. If given $custom_symptom_lang the given language will
-be used. *</p>
+<p>get_sym_base_table returns the sym-basetable to be used for symptoms.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>function get_sym_base_table returns the sym-basetable to be used for
-symptoms. If there exists no symptom-translations the whole sym-table will be
-used. If there are translations the language-based sym-table according to the
-usersettings will be used. If given $custom_symptom_lang the given language will
-be used. *</p>
+<p>get_sym_base_table returns the sym-basetable to be used for symptoms.</p>
+
+<p>If there exists no symptom-translations the whole sym-table will be used. If
+there are translations the language-based sym-table according to the
+usersettings will be used. If $custom_symptom_lang is set, the given language
+will be used.</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$custom_symptom_lang</var></dt>
+					<dd><code>string|false</code><br>$custom_symptom_lang optional the symptom language to be used as language code</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
 
 
 
@@ -407,38 +407,43 @@ be used. *</p>
 
 		<td class="attributes"><code>
 			 public 
-			
+			string|false
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_custom_symptom_lang">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#219-237" title="Go to source code">get_custom_symptom_lang</a>( <span>mixed <var>$sources</var> = <span class="php-quote">'all'</span></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#231-262" title="Go to source code">get_custom_symptom_lang</a>( <span>array|string <var>$sources</var> = <span class="php-quote">'all'</span></span> )</code>
 
 		<div class="description short">
 			
-<p>function get_custom_symptom_lang returns the language to be used for
-symptoms. If there exists no symptom-translations the function returns false. If
-there are translations the language according to the usersettings will be used.
-If given an array of src_id's as $sources the sym-language will only be
-returned, when for one of the given sources exists an translation. Else the
-function returns false. *</p>
+<p>get_custom_symptom_lang returns the language to be used for symptoms</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>function get_custom_symptom_lang returns the language to be used for
-symptoms. If there exists no symptom-translations the function returns false. If
+<p>get_custom_symptom_lang returns the language to be used for symptoms</p>
+
+<p>If there exists no symptom-translations the public function returns false. If
 there are translations the language according to the usersettings will be used.
 If given an array of src_id's as $sources the sym-language will only be
 returned, when for one of the given sources exists an translation. Else the
-function returns false. *</p>
+public function returns false.</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sources</var></dt>
+					<dd><code>array|string</code><br>$sources optional an array of src_id's to check</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string|false</code><br />
+				</div>
 
 
 
@@ -450,33 +455,37 @@ function returns false. *</p>
 
 		<td class="attributes"><code>
 			 public 
-			mixed
+			array|false
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_lang_only_symptom_table">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#240-268" title="Go to source code">get_lang_only_symptom_table</a>( )</code>
+		<code><a href="source-class-OpenHomeoDB.html#265-295" title="Go to source code">get_lang_only_symptom_table</a>( )</code>
 
 		<div class="description short">
 			
-<p>Short description for function</p>
+<p>get_lang_only_symptom_table returns an array with information about the
+language symptom table to be used if any, else false.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Short description for function</p>
+<p>get_lang_only_symptom_table returns an array with information about the
+language symptom table to be used if any, else false.</p>
 
-<p>Long description (if any) ...</p>
+<p>If the user wants to use all symptoms from one language the public function
+returns an array with the language code, the language name and the symptom
+table. Else the public function returns false.</p>
 
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>mixed</code><br>Return description (if any) ...<br />
+					<code>array|false</code><br />
 				</div>
 
 
@@ -489,38 +498,77 @@ function returns false. *</p>
 
 		<td class="attributes"><code>
 			 public 
-			mixed
+			boolean
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_is_sym_lang">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#270-290" title="Go to source code">is_sym_lang</a>( <span>unknown <var>$lang_id</var></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#297-315" title="Go to source code">is_sym_lang</a>( <span>string <var>$lang_id</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Short description for function</p>
+<p>is_sym_lang returns true if the given language is used as a symptom language,
+else false.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Short description for function</p>
-
-<p>Long description (if any) ...</p>
+<p>is_sym_lang returns true if the given language is used as a symptom language,
+else false.</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$lang_id</var></dt>
-					<dd><code>unknown</code><br>$lang_id Parameter description (if any) ...</dd>
+					<dd><code>string</code><br>$lang_id language code</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>mixed</code><br>Return description (if any) ...<br />
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_sym_langs" id="_get_sym_langs">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_sym_langs">#</a>
+		<code><a href="source-class-OpenHomeoDB.html#318-332" title="Go to source code">get_sym_langs</a>( )</code>
+
+		<div class="description short">
+			
+<p>get_sym_langs returns an array with used symptom languages in the
+database</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>get_sym_langs returns an array with used symptom languages in the
+database</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
 				</div>
 
 
@@ -533,38 +581,43 @@ function returns false. *</p>
 
 		<td class="attributes"><code>
 			 public 
-			boolean
+			boolean|string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_is_custom_table">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#292-322" title="Go to source code">is_custom_table</a>( <span>string <var>$table</var></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#334-367" title="Go to source code">is_custom_table</a>( <span>string <var>$table</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Short description for function</p>
+<p>is_custom_table determines which kind of table for the given table will be
+used.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Short description for function</p>
+<p>is_custom_table determines which kind of table for the given table will be
+used.</p>
 
-<p>Long description (if any) ...</p>
+<p>If the user uses a custom table the public function returns true. If the
+given table is symptoms and the user uses all symptoms from one language the
+public function returns this language name in the current language. Else or if
+no user is logged in the public function returns false.</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$table</var></dt>
-					<dd><code>string</code><br>$table Parameter description (if any) ...</dd>
+					<dd><code>string</code><br>$table given table (symptoms | sym_rem | materia)</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>boolean</code><br>Return description (if any) ...<br />
+					<code>boolean|string</code><br />
 				</div>
 
 
@@ -577,32 +630,42 @@ function returns false. *</p>
 
 		<td class="attributes"><code>
 			 public 
-			
+			boolean
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_exist_symptom_translation">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#325-342" title="Go to source code">exist_symptom_translation</a>( <span>mixed <var>$sources</var> = <span class="php-quote">'all'</span></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#369-394" title="Go to source code">exist_symptom_translation</a>( <span>array|string <var>$sources</var> = <span class="php-quote">'all'</span></span> )</code>
 
 		<div class="description short">
 			
-<p>function exist_symptom_translation checks if there exists a translation for
-symptoms from the symptoms table. If src_id's-array given as $sources only with
-symptoms related to the sources *</p>
+<p>exist_symptom_translation returns true if exists any translations for
+symptoms in the database, else false.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>function exist_symptom_translation checks if there exists a translation for
-symptoms from the symptoms table. If src_id's-array given as $sources only with
-symptoms related to the sources *</p>
+<p>exist_symptom_translation returns true if exists any translations for
+symptoms in the database, else false.</p>
+
+<p>If src_id's-array given as $sources, the public function checks only for
+symptoms related to the given sources.</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sources</var></dt>
+					<dd><code>array|string</code><br>$sources optional an array of src_id's to check</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
 
 
 
@@ -614,28 +677,37 @@ symptoms related to the sources *</p>
 
 		<td class="attributes"><code>
 			 public 
-			
+			boolean
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_is_translated">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#345-356" title="Go to source code">is_translated</a>( <span>mixed <var>$sym_id</var></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#396-413" title="Go to source code">is_translated</a>( <span>unknown <var>$sym_id</var></span> )</code>
 
 		<div class="description short">
 			
-<p>function is_translated checks if the given symptom has a translation *</p>
+<p>is_translated checks if the given symptom has a translation.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>function is_translated checks if the given symptom has a translation *</p>
+<p>is_translated checks if the given symptom has a translation.</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sym_id</var></dt>
+					<dd><code>unknown</code><br>$sym_id sym_id from the symptom to check</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
 
 
 
@@ -654,26 +726,28 @@ symptoms related to the sources *</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create_custom_table">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#358-393" title="Go to source code">create_custom_table</a>( <span>string <var>$table</var></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#415-457" title="Go to source code">create_custom_table</a>( <span>string <var>$table</var></span>, <span>string <var>$custom_table</var> = <span class="php-quote">&quot;&quot;</span></span> )</code>
 
 		<div class="description short">
 			
-<p>Short description for function</p>
+<p>create_custom_table creates the custom table for sym_rem or materia based on
+the user preferences.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Short description for function</p>
-
-<p>Long description (if any) ...</p>
+<p>create_custom_table creates the custom table for sym_rem or materia based on
+the user preferences.</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$table</var></dt>
-					<dd><code>string</code><br>$table Parameter description (if any) ...</dd>
+					<dd><code>string</code><br>$table base table: sym_rem | materia</dd>
+					<dt><var>$custom_table</var></dt>
+					<dd><code>string</code><br>$custom_table optional custom_table to create</dd>
 				</dl></div>
 
 
@@ -694,26 +768,33 @@ symptoms related to the sources *</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create_custom_symptom_table">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#395-443" title="Go to source code">create_custom_symptom_table</a>( <span>integer <var>$update</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#459-521" title="Go to source code">create_custom_symptom_table</a>( <span>string <var>$custom_table</var> = <span class="php-quote">&quot;&quot;</span></span>, <span>boolean <var>$update</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
-<p>Short description for function</p>
+<p>create_custom_table creates the custom table for symptoms based on the user
+preferences.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Short description for function</p>
+<p>create_custom_table creates the custom table for symptoms based on the user
+preferences.</p>
 
-<p>Long description (if any) ...</p>
+<p>It also loggs the current number of symptoms of the base table and the name
+of the base table into the sym_stats table. So it's possible to check if
+symptoms will be added to the base table and update the custom table</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
+					<dt><var>$custom_table</var></dt>
+					<dd><code>string</code><br>$custom_table optional custom_table to create</dd>
 					<dt><var>$update</var></dt>
-					<dd><code>integer</code><br>$update Parameter description (if any) ...</dd>
+					<dd><code>boolean</code><br>$update if true updates custom symptom table when exists, if false leaves it
+unchanged</dd>
 				</dl></div>
 
 
@@ -734,19 +815,22 @@ symptoms related to the sources *</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update_custom_symptom_table">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#445-469" title="Go to source code">update_custom_symptom_table</a>( )</code>
+		<code><a href="source-class-OpenHomeoDB.html#523-548" title="Go to source code">update_custom_symptom_table</a>( )</code>
 
 		<div class="description short">
 			
-<p>Short description for function</p>
+<p>update_custom_symptom_table updates the custom symptom table if the symptom
+base table has changed.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Short description for function</p>
+<p>update_custom_symptom_table updates the custom symptom table if the symptom
+base table has changed.</p>
 
-<p>Long description (if any) ...</p>
+<p>This public function is called during log in and also if no user is logged in
+for updating the default symptom table.</p>
 
 
 
@@ -762,38 +846,40 @@ symptoms related to the sources *</p>
 
 		<td class="attributes"><code>
 			 public 
-			unknown
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add_missing_parents">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#471-528" title="Go to source code">add_missing_parents</a>( <span>string <var>$sym_table</var> = <span class="php-quote">&quot;symptoms&quot;</span></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#550-609" title="Go to source code">add_missing_parents</a>( <span>string <var>$sym_table</var> = <span class="php-quote">&quot;symptoms&quot;</span></span> )</code>
 
 		<div class="description short">
 			
-<p>Short description for function</p>
+<p>add_missing_parents completes parent-rubrics in the symptom table.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Short description for function</p>
+<p>add_missing_parents completes parent-rubrics in the symptom table.</p>
 
-<p>Long description (if any) ...</p>
+<p>If several rubrics exists, which starts with the same rubric before a '&gt;',
+but the parent-rubric doesn't exists, it will be generated. If the rubric before
+'&gt;' exists only once, the '&gt;' will be converted in a comma (',').</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$sym_table</var></dt>
-					<dd><code>string</code><br>$sym_table Parameter description (if any) ...</dd>
+					<dd><code>string</code><br>$sym_table optional the symptom table to update</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>unknown</code><br>Return description (if any) ...<br />
+					<code>string</code><br>the log info as html<br />
 				</div>
 
 
@@ -813,31 +899,34 @@ symptoms related to the sources *</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update_symptom_tree">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#530-626" title="Go to source code">update_symptom_tree</a>( <span>string <var>$sym_table</var> = <span class="php-quote">&quot;symptoms&quot;</span></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#611-710" title="Go to source code">update_symptom_tree</a>( <span>string <var>$sym_table</var> = <span class="php-quote">&quot;symptoms&quot;</span></span> )</code>
 
 		<div class="description short">
 			
-<p>Short description for function</p>
+<p>update_symptom_tree updates the tree-structure of the symptom table.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Short description for function</p>
+<p>update_symptom_tree updates the tree-structure of the symptom table.</p>
 
-<p>Long description (if any) ...</p>
+<p>First all symptoms that have no "&gt;" in the symptom name will be parsed.
+Then we check if the symptom name occur again in the table followed by "&gt;".
+In this case these symptoms get the "parent_id" of the superior symptom. Next
+all symptoms with one "&gt;" will be parsed and so on.</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$sym_table</var></dt>
-					<dd><code>string</code><br>$sym_table Parameter description (if any) ...</dd>
+					<dd><code>string</code><br>$sym_table optional the symptom table to update</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string</code><br>Return description (if any) ...<br />
+					<code>string</code><br>the log info as html<br />
 				</div>
 
 
@@ -857,31 +946,40 @@ symptoms related to the sources *</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update_symptom_tables">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#628-665" title="Go to source code">update_symptom_tables</a>( <span>integer <var>$update_tree</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#712-756" title="Go to source code">update_symptom_tables</a>( <span>boolean <var>$update_tree</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
-<p>Short description for function</p>
+<p>update_symptom_tables updates the main symptoms table and the
+language-symptom-tables.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Short description for function</p>
+<p>update_symptom_tables updates the main symptoms table and the
+language-symptom-tables.</p>
 
-<p>Long description (if any) ...</p>
+<p>If symptoms were added, the public function completes parent-rubrics in the
+main symptoms table and updates its tree-structure. It also creates new
+language-symptom-tables and update the sym_stats table.</p>
+
+<p>If no symptoms were added but $update_tree is true the public function only
+creates new language-symptom-tables.</p>
+
+<p>This public function is called, when an administrator loggs in.</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$update_tree</var></dt>
-					<dd><code>integer</code><br>$update_tree Parameter description (if any) ...</dd>
+					<dd><code>boolean</code><br>$update_tree</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string</code><br>Return description (if any) ...<br />
+					<code>string</code><br>the log info as html<br />
 				</div>
 
 
@@ -901,31 +999,36 @@ symptoms related to the sources *</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update_lang_symptom_tables">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#667-711" title="Go to source code">update_lang_symptom_tables</a>( <span>integer <var>$create_tables</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#758-806" title="Go to source code">update_lang_symptom_tables</a>( <span>boolean <var>$create_tables</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
-<p>Short description for function</p>
+<p>update_lang_symptom_tables updates the language-symptom-tables.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Short description for function</p>
+<p>update_lang_symptom_tables updates the language-symptom-tables.</p>
 
-<p>Long description (if any) ...</p>
+<p>The public function completes parent-rubrics in the language-symptom-tables,
+updates their tree-structure and creates/replaces the language-only views.</p>
+
+<p>If $create_tables is true the language-symptom-tables ("sym__de", "sym__en",
+etc.) will be created/replaced on the base of the main symptom-table
+("symptoms").</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$create_tables</var></dt>
-					<dd><code>integer</code><br>$create_tables Parameter description (if any) ...</dd>
+					<dd><code>boolean</code><br>$create_tables</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string</code><br>Return description (if any) ...<br />
+					<code>string</code><br>the log info as html<br />
 				</div>
 
 
@@ -938,30 +1041,40 @@ symptoms related to the sources *</p>
 
 		<td class="attributes"><code>
 			 public 
-			
+			array|string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_source_id">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#714-733" title="Go to source code">get_source_id</a>( <span>mixed <var>$source_nr</var></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#808-834" title="Go to source code">get_source_id</a>( <span>array|integer <var>$source_nr</var></span> )</code>
 
 		<div class="description short">
 			
-<p>function get_source_id returns a src_id for a given src_no. If $source_nr is
-an array of source-numbers it returns an array of source-ids *</p>
+<p>get_source_id returns a src_id for a given src_no.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>function get_source_id returns a src_id for a given src_no. If $source_nr is
-an array of source-numbers it returns an array of source-ids *</p>
+<p>get_source_id returns a src_id for a given src_no.</p>
+
+<p>If $source_nr is an array of source-numbers it returns an array of
+source-id's.</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$source_nr</var></dt>
+					<dd><code>array|integer</code><br>$source_nr Parameter description (if any) ...</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array|string</code><br />
+				</div>
 
 
 
@@ -973,30 +1086,84 @@ an array of source-numbers it returns an array of source-ids *</p>
 
 		<td class="attributes"><code>
 			 public 
-			
+			array|integer
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_source_nr">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#736-755" title="Go to source code">get_source_nr</a>( <span>mixed <var>$source_id</var></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#836-862" title="Go to source code">get_source_nr</a>( <span>array|string <var>$source_id</var></span> )</code>
 
 		<div class="description short">
 			
-<p>function get_source_nr returns a src_no for a given src_id. If $source_id is
-an array of source-ids it returns an array of source-numbers *</p>
+<p>get_source_nr returns a src_no for a given src_id.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>function get_source_nr returns a src_no for a given src_id. If $source_id is
-an array of source-ids it returns an array of source-numbers *</p>
+<p>get_source_nr returns a src_no for a given src_id.</p>
+
+<p>If $source_id is an array of source-id's it returns an array of
+source-numbers.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$source_id</var></dt>
+					<dd><code>array|string</code><br>$source_id</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array|integer</code><br />
+				</div>
 
 
 
 
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="extract_src_no" id="_extract_src_no">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_extract_src_no">#</a>
+		<code><a href="source-class-OpenHomeoDB.html#864-889" title="Go to source code">extract_src_no</a>( <span>string <var>$custom_table</var></span> )</code>
+
+		<div class="description short">
+			
+<p>extract_src_no returns an array of source-numbers extracted from the given
+custom table-name.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>extract_src_no returns an array of source-numbers extracted from the given
+custom table-name.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$custom_table</var></dt>
+					<dd><code>string</code><br>$custom_table the custom table name to extract from</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
 
 
 
@@ -1008,30 +1175,39 @@ an array of source-ids it returns an array of source-numbers *</p>
 
 		<td class="attributes"><code>
 			 public 
-			
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_symptomname">#</a>
-		<code><a href="source-class-OpenHomeoDB.html#758-768" title="Go to source code">get_symptomname</a>( <span>mixed <var>$sym_id</var></span> )</code>
+		<code><a href="source-class-OpenHomeoDB.html#891-907" title="Go to source code">get_symptomname</a>( <span>integer <var>$sym_id</var></span> )</code>
 
 		<div class="description short">
 			
-<p>function get_symptomname returns the symptom including the main rubric for a
-given sym_id. *</p>
+<p>get_symptomname returns the symptom including the main rubric for a given
+sym_id.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>function get_symptomname returns the symptom including the main rubric for a
-given sym_id. *</p>
+<p>get_symptomname returns the symptom including the main rubric for a given
+sym_id.</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sym_id</var></dt>
+					<dd><code>integer</code><br>$sym_id the ID of the symptom to check</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
 
 
 

@@ -289,9 +289,9 @@
 </span></span><span id="168" class="l"><a class="l" href="#168">168: </a><span class="php-comment">     * update the active visitors tables.
 </span></span><span id="169" class="l"><a class="l" href="#169">169: </a><span class="php-comment">     *
 </span></span><span id="170" class="l"><a class="l" href="#170">170: </a><span class="php-comment">     * @return void
-</span></span><span id="171" class="l"><a class="l" href="#171">171: </a><span class="php-comment">     * @access public
+</span></span><span id="171" class="l"><a class="l" href="#171">171: </a><span class="php-comment">     * @access private
 </span></span><span id="172" class="l"><a class="l" href="#172">172: </a><span class="php-comment">     */</span>
-</span><span id="173" class="l"><a class="l" href="#173">173: </a>    <span class="php-keyword1">function</span> <a id="_startSession" href="#_startSession">startSession</a>(){
+</span><span id="173" class="l"><a class="l" href="#173">173: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_startSession" href="#_startSession">startSession</a>(){
 </span><span id="174" class="l"><a class="l" href="#174">174: </a>        <span class="php-keyword1">global</span> <span class="php-var">$db</span>;  <span class="php-comment">//The database connection</span>
 </span><span id="175" class="l"><a class="l" href="#175">175: </a>        <span class="php-var">$current_dir</span> = <span class="php-keyword2">getcwd</span>();
 </span><span id="176" class="l"><a class="l" href="#176">176: </a>        <span class="php-keyword2">session_start</span>();   <span class="php-comment">//Tell PHP to start the session</span>
@@ -345,9 +345,9 @@
 </span></span><span id="224" class="l"><a class="l" href="#224">224: </a><span class="php-comment">     * authenticity. Returns true if the user has logged in.
 </span></span><span id="225" class="l"><a class="l" href="#225">225: </a><span class="php-comment">     *
 </span></span><span id="226" class="l"><a class="l" href="#226">226: </a><span class="php-comment">     * @return void
-</span></span><span id="227" class="l"><a class="l" href="#227">227: </a><span class="php-comment">     * @access public
+</span></span><span id="227" class="l"><a class="l" href="#227">227: </a><span class="php-comment">     * @access private
 </span></span><span id="228" class="l"><a class="l" href="#228">228: </a><span class="php-comment">     */</span>
-</span><span id="229" class="l"><a class="l" href="#229">229: </a>    <span class="php-keyword1">function</span> <a id="_checkLogin" href="#_checkLogin">checkLogin</a>(){
+</span><span id="229" class="l"><a class="l" href="#229">229: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_checkLogin" href="#_checkLogin">checkLogin</a>(){
 </span><span id="230" class="l"><a class="l" href="#230">230: </a>        <span class="php-keyword1">global</span> <span class="php-var">$db</span>;  <span class="php-comment">//The database connection</span>
 </span><span id="231" class="l"><a class="l" href="#231">231: </a>        <span class="php-comment">/* Check if user has been remembered */</span>
 </span><span id="232" class="l"><a class="l" href="#232">232: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$_COOKIE</span>[<span class="php-quote">'cookname'</span>]) &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$_COOKIE</span>[<span class="php-quote">'cookid'</span>])) {
@@ -384,9 +384,9 @@
 </span></span><span id="263" class="l"><a class="l" href="#263">263: </a><span class="php-comment">     * setSkin - Set the current skin.
 </span></span><span id="264" class="l"><a class="l" href="#264">264: </a><span class="php-comment">     *
 </span></span><span id="265" class="l"><a class="l" href="#265">265: </a><span class="php-comment">     * @return void
-</span></span><span id="266" class="l"><a class="l" href="#266">266: </a><span class="php-comment">     * @access public
+</span></span><span id="266" class="l"><a class="l" href="#266">266: </a><span class="php-comment">     * @access private
 </span></span><span id="267" class="l"><a class="l" href="#267">267: </a><span class="php-comment">     */</span>
-</span><span id="268" class="l"><a class="l" href="#268">268: </a>    <span class="php-keyword1">function</span> <a id="_setSkin" href="#_setSkin">setSkin</a>() {
+</span><span id="268" class="l"><a class="l" href="#268">268: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_setSkin" href="#_setSkin">setSkin</a>() {
 </span><span id="269" class="l"><a class="l" href="#269">269: </a>        <span class="php-keyword1">global</span> <span class="php-var">$db</span>;  <span class="php-comment">//The database connection</span>
 </span><span id="270" class="l"><a class="l" href="#270">270: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$_GET</span>[<span class="php-quote">'skin'</span>])) {
 </span><span id="271" class="l"><a class="l" href="#271">271: </a>            <span class="php-var">$this</span>-&gt;skin = <span class="php-var">$_GET</span>[<span class="php-quote">'skin'</span>];
@@ -405,9 +405,9 @@
 </span></span><span id="284" class="l"><a class="l" href="#284">284: </a><span class="php-comment">     * setLanguage - Set the current user-language.
 </span></span><span id="285" class="l"><a class="l" href="#285">285: </a><span class="php-comment">     *
 </span></span><span id="286" class="l"><a class="l" href="#286">286: </a><span class="php-comment">     * @return void
-</span></span><span id="287" class="l"><a class="l" href="#287">287: </a><span class="php-comment">     * @access public
+</span></span><span id="287" class="l"><a class="l" href="#287">287: </a><span class="php-comment">     * @access private
 </span></span><span id="288" class="l"><a class="l" href="#288">288: </a><span class="php-comment">     */</span>
-</span><span id="289" class="l"><a class="l" href="#289">289: </a>    <span class="php-keyword1">function</span> <a id="_setLanguage" href="#_setLanguage">setLanguage</a>() {
+</span><span id="289" class="l"><a class="l" href="#289">289: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_setLanguage" href="#_setLanguage">setLanguage</a>() {
 </span><span id="290" class="l"><a class="l" href="#290">290: </a>        <span class="php-keyword1">global</span> <span class="php-var">$db</span>;  <span class="php-comment">//The database connection</span>
 </span><span id="291" class="l"><a class="l" href="#291">291: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$_GET</span>[<span class="php-quote">'lang'</span>])) {
 </span><span id="292" class="l"><a class="l" href="#292">292: </a>            <span class="php-var">$this</span>-&gt;lang = <span class="php-var">$_GET</span>[<span class="php-quote">'lang'</span>];
@@ -903,15 +903,19 @@
 </span></span><span id="782" class="l"><a class="l" href="#782">782: </a><span class="php-comment"> */</span>
 </span><span id="783" class="l"><a class="l" href="#783">783: </a><span class="php-var">$session</span> = <span class="php-keyword1">new</span> Session;
 </span><span id="784" class="l"><a class="l" href="#784">784: </a><span class="php-keyword1">include_once</span>(<span class="php-quote">&quot;locale/localization.php&quot;</span>);
-</span><span id="785" class="l"><a class="l" href="#785">785: </a>
-</span><span id="786" class="l"><a class="l" href="#786">786: </a><span class="php-comment">/* Initialize form object */</span>
-</span><span id="787" class="l"><a class="l" href="#787">787: </a><span class="php-var">$form</span> = <span class="php-keyword1">new</span> Form;
+</span><span id="785" class="l"><a class="l" href="#785">785: </a><span class="php-keyword1">if</span> (!<span class="php-var">$session</span>-&gt;logged_in) {
+</span><span id="786" class="l"><a class="l" href="#786">786: </a>    <span class="php-var">$db</span>-&gt;update_custom_symptom_table();
+</span><span id="787" class="l"><a class="l" href="#787">787: </a>}
 </span><span id="788" class="l"><a class="l" href="#788">788: </a>
-</span><span id="789" class="l"><a class="l" href="#789">789: </a><span class="php-comment">/* tabbed has to be set false at startup */</span>
-</span><span id="790" class="l"><a class="l" href="#790">790: </a><span class="php-var">$tabbed</span> = <span class="php-keyword1">false</span>;
-</span><span id="791" class="l"><a class="l" href="#791">791: </a>
-</span><span id="792" class="l"><a class="l" href="#792">792: </a><span class="xlang">?&gt;</span>
-</span><span id="793" class="l"><a class="l" href="#793">793: </a></span></code></pre>
+</span><span id="789" class="l"><a class="l" href="#789">789: </a>
+</span><span id="790" class="l"><a class="l" href="#790">790: </a><span class="php-comment">/* Initialize form object */</span>
+</span><span id="791" class="l"><a class="l" href="#791">791: </a><span class="php-var">$form</span> = <span class="php-keyword1">new</span> Form;
+</span><span id="792" class="l"><a class="l" href="#792">792: </a>
+</span><span id="793" class="l"><a class="l" href="#793">793: </a><span class="php-comment">/* tabbed has to be set false at startup */</span>
+</span><span id="794" class="l"><a class="l" href="#794">794: </a><span class="php-var">$tabbed</span> = <span class="php-keyword1">false</span>;
+</span><span id="795" class="l"><a class="l" href="#795">795: </a>
+</span><span id="796" class="l"><a class="l" href="#796">796: </a><span class="xlang">?&gt;</span>
+</span><span id="797" class="l"><a class="l" href="#797">797: </a></span></code></pre>
 
 	<div id="footer">
 		OpenHomeopath PHP code documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>

@@ -170,17 +170,17 @@
 </span><span id="49" class="l"><a class="l" href="#49"> 49: </a>    <span class="php-comment">/**
 </span></span><span id="50" class="l"><a class="l" href="#50"> 50: </a><span class="php-comment">     * Ordered array of main rubrics realted to the queried remedy
 </span></span><span id="51" class="l"><a class="l" href="#51"> 51: </a><span class="php-comment">     * @var array
-</span></span><span id="52" class="l"><a class="l" href="#52"> 52: </a><span class="php-comment">     * @access public
+</span></span><span id="52" class="l"><a class="l" href="#52"> 52: </a><span class="php-comment">     * @access private
 </span></span><span id="53" class="l"><a class="l" href="#53"> 53: </a><span class="php-comment">     */</span>
-</span><span id="54" class="l"><a class="l" href="#54"> 54: </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$rubrics_ar" href="#$rubrics_ar">$rubrics_ar</a></span> = <span class="php-keyword1">array</span>();
+</span><span id="54" class="l"><a class="l" href="#54"> 54: </a>    <span class="php-keyword1">private</span> <span class="php-var"><a id="$rubrics_ar" href="#$rubrics_ar">$rubrics_ar</a></span> = <span class="php-keyword1">array</span>();
 </span><span id="55" class="l"><a class="l" href="#55"> 55: </a>    
 </span><span id="56" class="l"><a class="l" href="#56"> 56: </a>    
 </span><span id="57" class="l"><a class="l" href="#57"> 57: </a>    <span class="php-comment">/**
 </span></span><span id="58" class="l"><a class="l" href="#58"> 58: </a><span class="php-comment">     * Grade from which on symptoms will be shown (1|2|3)
 </span></span><span id="59" class="l"><a class="l" href="#59"> 59: </a><span class="php-comment">     * @var integer
-</span></span><span id="60" class="l"><a class="l" href="#60"> 60: </a><span class="php-comment">     * @access public
+</span></span><span id="60" class="l"><a class="l" href="#60"> 60: </a><span class="php-comment">     * @access private
 </span></span><span id="61" class="l"><a class="l" href="#61"> 61: </a><span class="php-comment">     */</span>
-</span><span id="62" class="l"><a class="l" href="#62"> 62: </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$grade" href="#$grade">$grade</a></span> = <span class="php-num">1</span>;
+</span><span id="62" class="l"><a class="l" href="#62"> 62: </a>    <span class="php-keyword1">private</span> <span class="php-var"><a id="$grade" href="#$grade">$grade</a></span> = <span class="php-num">1</span>;
 </span><span id="63" class="l"><a class="l" href="#63"> 63: </a>    
 </span><span id="64" class="l"><a class="l" href="#64"> 64: </a>    <span class="php-comment">/**
 </span></span><span id="65" class="l"><a class="l" href="#65"> 65: </a><span class="php-comment">     * Class constructor
@@ -228,7 +228,7 @@
 </span><span id="107" class="l"><a class="l" href="#107">107: </a>        <span class="php-keyword1">global</span> <span class="php-var">$db</span>;
 </span><span id="108" class="l"><a class="l" href="#108">108: </a>        <span class="php-var">$query</span> = <span class="php-quote">&quot;SELECT DISTINCT </span><span class="php-var">{$this-&gt;symptoms_tbl}</span><span class="php-quote">.sym_id, </span><span class="php-var">{$this-&gt;symptoms_tbl}</span><span class="php-quote">.symptom, </span><span class="php-var">{$this-&gt;symptoms_tbl}</span><span class="php-quote">.pid, </span><span class="php-var">{$this-&gt;symptoms_tbl}</span><span class="php-quote">.rubric_id FROM </span><span class="php-var">{$this-&gt;sym_rem_tbl}</span><span class="php-quote">, </span><span class="php-var">{$this-&gt;symptoms_tbl}</span><span class="php-quote"> WHERE </span><span class="php-var">{$this-&gt;sym_rem_tbl}</span><span class="php-quote">.rem_id = </span><span class="php-var">{$this-&gt;rem_id}</span><span class="php-quote"> &quot;</span>;
 </span><span id="109" class="l"><a class="l" href="#109">109: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;grade &gt; <span class="php-num">1</span>) {
-</span><span id="110" class="l"><a class="l" href="#110">110: </a>            <span class="php-var">$query</span> .= <span class="php-quote">&quot;AND  </span><span class="php-var">{$this-&gt;sym_rem_tbl}</span><span class="php-quote">.grade &gt;= </span><span class="php-var">$this</span><span class="php-quote">-&gt;grade &quot;</span>;
+</span><span id="110" class="l"><a class="l" href="#110">110: </a>            <span class="php-var">$query</span> .= <span class="php-quote">&quot;AND  </span><span class="php-var">{$this-&gt;sym_rem_tbl}</span><span class="php-quote">.grade &gt;= </span><span class="php-var">{$this-&gt;grade}</span><span class="php-quote"> &quot;</span>;
 </span><span id="111" class="l"><a class="l" href="#111">111: </a>        }
 </span><span id="112" class="l"><a class="l" href="#112">112: </a>        <span class="php-var">$query</span> .= <span class="php-quote">&quot;AND </span><span class="php-var">{$this-&gt;sym_rem_tbl}</span><span class="php-quote">.sym_id = </span><span class="php-var">{$this-&gt;symptoms_tbl}</span><span class="php-quote">.sym_id &quot;</span>;
 </span><span id="113" class="l"><a class="l" href="#113">113: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">count</span>(<span class="php-var">$rem_rubrics_ar</span>) == <span class="php-num">1</span>) {
