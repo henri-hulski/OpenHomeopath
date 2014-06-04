@@ -45,16 +45,16 @@ class  Form {
 	/**
 	 * Holds submitted form field values
 	 * @var array
-	 * @access protected
+	 * @access private
 	 */
-	protected $values = array();
+	private $values = array();
 
 	/**
 	 * Holds submitted form error messages
 	 * @var array
-	 * @access protected
+	 * @access private
 	 */
-	protected $errors = array();
+	private $errors = array();
 
 	/**
 	 * The number of errors in submitted form

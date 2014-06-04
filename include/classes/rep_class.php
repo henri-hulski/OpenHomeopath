@@ -97,7 +97,7 @@ class Rep {
 	 * @var array
 	 * @access private
 	 */
-	protected $rel_ar = array();
+	private $rel_ar = array();
 	
 	
 	/**
@@ -129,7 +129,7 @@ class Rep {
 	 * @var string
 	 * @access private
 	 */
-	protected $symptoms_tbl;
+	private $symptoms_tbl;
 	
 	
 	/**
@@ -137,7 +137,7 @@ class Rep {
 	 * @var string
 	 * @access private
 	 */
-	protected $sym_rem_tbl;
+	private $sym_rem_tbl;
 	
 	
 	
@@ -213,9 +213,9 @@ class Rep {
 	 * get_result_data takes the selected symptoms and retrieves from the database the correspodending remedies and grades and count them.
 	 *
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function get_result_data() {
+	private function get_result_data() {
 		global $db;
 		$query = "DROP TEMPORARY TABLE IF EXISTS result";
 		$db->send_query($query);
@@ -266,9 +266,9 @@ class Rep {
 	 * get_symptoms_ar builds a sorted symptoms array.
 	 *
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function get_symptoms_ar() {
+	private function get_symptoms_ar() {
 		global $db, $session;
 		$query = "DROP TEMPORARY TABLE IF EXISTS sym_sort";
 		$db->send_query($query);
@@ -388,9 +388,9 @@ class Rep {
 	 * @param integer &$max_grade     The max. grade of the symptom-remedy-relation
 	 * @param integer &$kuenzli_dot   0|1 if the symptom-remedy-relation has a Künzli-dot 1 otherwise 0.
 	 * @return string
-	 * @access protected
+	 * @access private
 	 */
-	protected function get_sym_rem_src($sym_id, $rem_id, &$max_grade, &$kuenzli_dot) {
+	private function get_sym_rem_src($sym_id, $rem_id, &$max_grade, &$kuenzli_dot) {
 		global $db;
 		$sources = "";
 		$kuenzli_dot = 0;
@@ -578,9 +578,9 @@ class Rep {
 	 * @param array  &$data_ar      holds the rows of the table body
 	 * @param string &$summary      contains a summary of the repertorization result
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function get_table_data(&$header_ar, &$first_row_ar, &$data_ar, &$summary) {
+	private function get_table_data(&$header_ar, &$first_row_ar, &$data_ar, &$summary) {
 		global $db;
 		$limit = 20;
 		if (!empty($this->sym_select)) {
