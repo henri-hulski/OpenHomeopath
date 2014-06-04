@@ -263,7 +263,7 @@ class Rep {
 	}
 	
 	/**
-	 * Build a sorted symptoms array 
+	 * get_symptoms_ar builds a sorted symptoms array.
 	 *
 	 * @return void
 	 * @access protected
@@ -286,7 +286,7 @@ class Rep {
 			$db->send_query($query);
 			list ($symptom, $main_rubric, $kuenzli) = $db->db_fetch_row();
 			$db->free_result();
-			$full_name = $main_rubric." >> ".$symptom;
+			$full_name = $db->escape_string($main_rubric . " >> " . $symptom);
 			$kuenzli = (empty($kuenzli)) ? 0 : $kuenzli;
 			$query = "INSERT INTO sym_sort VALUES ($sym_id, '$full_name', $degree, $kuenzli)";
 			$db->send_query($query);
