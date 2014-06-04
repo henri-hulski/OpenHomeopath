@@ -276,8 +276,10 @@ class  Process {
 	 */
 	private function procEditAccount(){
 		global $session, $form;
+		$show_active = (!empty($_POST['show_active'])) ? $_POST['show_active'] : "";
+		$hide_email = (!empty($_POST['hide_email'])) ? $_POST['hide_email'] : "";
 		/* Account edit attempt */
-		$retval = $session->editAccount($_POST['curpass'], $_POST['newpass'], $_POST['newpass2'], $_POST['email'], $_POST['real_name'], $_POST['extra'], $_POST['show_active'], $_POST['hide_email'], $_POST['skin'], $_POST['lang'], $_POST['sym_lang']);
+		$retval = $session->editAccount($_POST['curpass'], $_POST['newpass'], $_POST['newpass2'], $_POST['email'], $_POST['real_name'], $_POST['extra'], $show_active, $hide_email, $_POST['skin'], $_POST['lang'], $_POST['sym_lang']);
 
 		/* Account edit successful */
 		if($retval){
