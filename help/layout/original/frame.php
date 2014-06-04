@@ -35,7 +35,7 @@ if (TABBED) {
 } else {
 	$rep_url = "../../repertori.php";
 	$materia_url = "../../materia.php";
-	$user_url = "../../userinfo.php?user=$session->username";
+	$user_url = "../../userinfo.php?user={$session->username}";
 }
 $lang = $session->lang;
 ?>
