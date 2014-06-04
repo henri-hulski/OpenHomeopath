@@ -71,7 +71,7 @@ if ($session->logged_in) {  // user logged in
 		$display_all_materia = "none";
 	}
 	printf ("<p class='center' id='all_materia' style='display:%s;'><span class='alert_box'>" . _("In <a href='%s'>My account</a> you can customize the Materia Medica to your personal needs.") . "</span></p>\n", $display_all_materia, $url);
-	printf ("<p class='center' id='personalized_materia' style='display:$display_personal_materia;'><span class='alert_box'>" . _("Du verwendest eine personalisierte Materia Medica. Die Einstellungen kannst du im <a href='$url'>Benutzerbereich</a> ändern.") . "</span></p>\n", $display_personal_materia, $url);
+	printf ("<p class='center' id='personalized_materia' style='display:%s;'><span class='alert_box'>" . _("You're using a personalized Materia Medica.") . " " . _("You can change the preferences in <a href='%s'>My account</a>.") . "</span></p>\n", $display_personal_materia, $url);
 } else {
 	echo ("<p class='center''><span class='alert_box'>" . _("When <a href='http://openhomeo.org/openhomeopath/login.php'>logged in</a> you can customize the Materia Medica to your personal needs.") . "</span></p>\n");
 }

@@ -28,8 +28,8 @@ msgstr "Repertorisierung"
 msgid "Selected symptoms"
 msgstr "Ausgewählte Symptome"
 
-#: repertori.php:89 repertori.php:121 include/classes/rep_class.php:346
-#: include/classes/rep_class.php:381 javascript/locale.php:3
+#: repertori.php:89 repertori.php:121 include/classes/rep_class.php:338
+#: include/classes/rep_class.php:373 javascript/locale.php:3
 msgid "Rubric degree"
 msgstr "Gewichtung der Rubrik"
 
@@ -261,6 +261,18 @@ msgid ""
 msgstr ""
 "Im <a href='%s'>Benutzerbereich</a> kannst du die Materia Medica deinen "
 "persönlichen Bedürfnissen anpassen."
+
+#: materia.php:74
+#, php-format
+msgid "You're using a personalized Materia Medica."
+msgstr "Du verwendest eine personalisierte Materia Medica."
+
+#: materia.php:74 forms/symptom_select_form.php:51
+#: forms/symptom_select_form.php:52 forms/reversed_rep.php:48
+#, php-format
+msgid "You can change the preferences in <a href='%s'>My account</a>."
+msgstr ""
+"Die Einstellungen kannst du im <a href='%s'>Benutzerbereich</a> ändern."
 
 #: materia.php:76
 msgid ""
@@ -856,7 +868,7 @@ msgstr ""
 "subject=OpenHomeopath'>schicke mir eine e-Mail</a>."
 
 #: rep_result.php:38 rep_result.php:50 index.php:50
-#: include/classes/rep_class.php:500 include/classes/rep_class.php:551
+#: include/classes/rep_class.php:492 include/classes/rep_class.php:543
 #: include/classes/fpdf/pdf.php:55
 msgid "Repertorization result"
 msgstr "Repertorisierungsergebnis"
@@ -865,28 +877,28 @@ msgstr "Repertorisierungsergebnis"
 msgid "Result table"
 msgstr "Ergebnistabelle"
 
-#: rep_result.php:80 include/classes/rep_class.php:638
+#: rep_result.php:80 include/classes/rep_class.php:630
 #, php-format
 msgid "%d selected symptom"
 msgid_plural "%d selected symptoms"
 msgstr[0] "%d ausgewähltes Symptom"
 msgstr[1] "%d ausgewählte Symptome"
 
-#: rep_result.php:81 include/classes/rep_class.php:639
+#: rep_result.php:81 include/classes/rep_class.php:631
 #, php-format
 msgid "%d remedy"
 msgid_plural "%d remedies"
 msgstr[0] "%d Mittel"
 msgstr[1] "%d Mittel"
 
-#: rep_result.php:82 include/classes/rep_class.php:640
+#: rep_result.php:82 include/classes/rep_class.php:632
 #, php-format
 msgid "%d symptom-remedy-relation"
 msgid_plural "%d symptom-remedy-relations"
 msgstr[0] "%d Symptom-Mittelbeziehung"
 msgstr[1] "%d Symptom-Mittelbeziehungen"
 
-#: rep_result.php:83 include/classes/rep_class.php:641
+#: rep_result.php:83 include/classes/rep_class.php:633
 #, php-format
 msgid "For %s there are %s and %s."
 msgstr "Für %s wurden %s und %s gefunden."
@@ -2110,7 +2122,7 @@ msgstr "alle"
 
 # = -wertig
 #: include/classes/revrep_class.php:246 include/classes/revrep_class.php:258
-#: include/classes/revrep_class.php:270 include/classes/rep_class.php:411
+#: include/classes/revrep_class.php:270 include/classes/rep_class.php:403
 #: include/classes/symrem_class.php:195 include/classes/symrem_class.php:199
 #: include/classes/symrem_class.php:204 mm-include/functions.php:441
 msgid "-gr."
@@ -2136,29 +2148,29 @@ msgstr "Gew."
 msgid "Symptoms"
 msgstr "Symptome"
 
-#: include/classes/rep_class.php:360 include/classes/rep_class.php:621
+#: include/classes/rep_class.php:352 include/classes/rep_class.php:613
 msgid "Total (Grades/Hits)"
 msgstr "Gesamt (Wertigkeiten/Treffer)"
 
 # = keine Angabe
-#: include/classes/rep_class.php:469
+#: include/classes/rep_class.php:461
 msgid "n.a."
 msgstr "k.A."
 
-#: include/classes/rep_class.php:501
+#: include/classes/rep_class.php:493
 msgid "OpenHomeopath"
 msgstr "OpenHomeopath"
 
-#: include/classes/rep_class.php:502
+#: include/classes/rep_class.php:494
 msgid "openhomeo.org"
 msgstr "openhomeo.org"
 
-#: include/classes/rep_class.php:504 include/classes/rep_class.php:510
+#: include/classes/rep_class.php:496 include/classes/rep_class.php:502
 #: forms/save_rep.php:68
 msgid "Patient:"
 msgstr "Patient:"
 
-#: include/classes/rep_class.php:504 include/classes/rep_class.php:516
+#: include/classes/rep_class.php:496 include/classes/rep_class.php:508
 #: forms/save_rep.php:82
 msgid "Rep.-Date:"
 msgstr "Rep.-Datum:"
@@ -2173,11 +2185,11 @@ msgstr "Fallaufnahme:"
 msgid "Prescription:"
 msgstr "Verordnung:"
 
-#: include/classes/rep_class.php:506 include/classes/rep_class.php:527
+#: include/classes/rep_class.php:498 include/classes/rep_class.php:519
 msgid "Rep.-No.:"
 msgstr "Rep.-Nr.:"
 
-#: include/classes/rep_class.php:643
+#: include/classes/rep_class.php:635
 #, php-format
 msgid "The %d most important remedies were printed. "
 msgstr "Es werden die wichtigsten %d Mittel ausgegeben."
@@ -2343,7 +2355,7 @@ msgstr "Bitte Benutzernamen eingeben"
 msgid "User doesn't exist"
 msgstr "Benutzer gibt es nicht"
 
-#: include/classes/login/view_active.php:38
+#: include/classes/login/view_active.php:33
 msgid "Cannot access the user-table!"
 msgstr "Kann auf die Benutzertabelle nicht zugreifen!"
 
@@ -3110,16 +3122,10 @@ msgstr ""
 "Im <a href='%s'>Benutzerbereich</a> kannst du das Repertorium deinen "
 "persönlichen Bedürfnissen anpassen."
 
-#: forms/symptom_select_form.php:51
+#: forms/symptom_select_form.php:51 forms/reversed_rep.php:48
 #, php-format
 msgid "You are using a personalized Repertory."
 msgstr "Du verwendest ein personalisiertes Repertorium."
-
-#: forms/symptom_select_form.php:51 forms/symptom_select_form.php:52
-#, php-format
-msgid "You can change the preferences in <a href='%s'>My account</a>."
-msgstr ""
-"Die Einstellungen kannst du im <a href='%s'>Benutzerbereich</a> ändern."
 
 #: forms/symptom_select_form.php:52 forms/personal_rep.php:44
 #, php-format
