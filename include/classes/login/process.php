@@ -98,9 +98,9 @@ class  Process {
 	 * if not, the user is effectively logged in to the system.
 	 *
 	 * @return void
-	 * @access public
+	 * @access protected
 	 */
-	function procLogin(){
+	protected function procLogin(){
 		global $session, $form, $db;
 		/* Login attempt */
 		$retval = $session->login($_POST['user'], $_POST['pass'], isset($_POST['remember']));
@@ -156,9 +156,9 @@ class  Process {
 	 *  given that there is no logout form to process.
 	 *
 	 *  @return void
-	 *  @access public
+	 *  @access protected
 	 */
-	function procLogout(){
+	protected function procLogout(){
 		global $session;
 		$retval = $session->logout();
 		header("Location: ../../../login.php");
@@ -172,9 +172,9 @@ class  Process {
 	 *  created user.
 	 *
 	 *  @return void
-	 *  @access public
+	 *  @access protected
 	 */
-	function procRegister(){
+	protected function procRegister(){
 		global $session, $form;
 		/* Convert username to all lowercase (by option) */
 		if(ALL_LOWERCASE){
@@ -216,9 +216,9 @@ class  Process {
 	 *  emailed to the address the user gave on sign up.
 	 *
 	 *  @return void
-	 *  @access public
+	 *  @access protected
 	 */
-	function procForgotPass(){
+	protected function procForgotPass(){
 		global $db, $session, $mailer, $form;
 		/* Username error checking */
 		$subuser = $_POST['lostpass'];
@@ -272,9 +272,9 @@ class  Process {
 	 *  before a change is made.
 	 *
 	 *  @return void
-	 *  @access public
+	 *  @access protected
 	 */
-	function procEditAccount(){
+	protected function procEditAccount(){
 		global $session, $form;
 		/* Account edit attempt */
 		$retval = $session->editAccount($_POST['curpass'], $_POST['newpass'], $_POST['newpass2'], $_POST['email'], $_POST['real_name'], $_POST['extra'], $_POST['show_active'], $_POST['hide_email'], $_POST['skin'], $_POST['lang'], $_POST['sym_lang']);

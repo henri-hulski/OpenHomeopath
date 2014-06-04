@@ -3,7 +3,7 @@
 /**
  * view_active.php
  *
- * Show the active users
+ * Print the active users as html link
  *
  * PHP version 5
  *
@@ -29,11 +29,6 @@
  * @see       login.php
  */
 
-/**
- * The database connection
- * @global object
- */
-global $db;
 if(!defined('TBL_ACTIVE_USERS')) {
 	die(_("Cannot access the user-table!"));
 }

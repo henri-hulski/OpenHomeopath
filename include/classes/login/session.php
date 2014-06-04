@@ -168,9 +168,9 @@ class Session {
 	 * update the active visitors tables.
 	 *
 	 * @return void
-	 * @access public
+	 * @access protected
 	 */
-	function startSession(){
+	protected function startSession(){
 		global $db;  //The database connection
 		$current_dir = getcwd();
 		session_start();   //Tell PHP to start the session
@@ -224,9 +224,9 @@ class Session {
 	 * authenticity. Returns true if the user has logged in.
 	 *
 	 * @return void
-	 * @access public
+	 * @access protected
 	 */
-	function checkLogin(){
+	protected function checkLogin(){
 		global $db;  //The database connection
 		/* Check if user has been remembered */
 		if (isset($_COOKIE['cookname']) && isset($_COOKIE['cookid'])) {
@@ -263,9 +263,9 @@ class Session {
 	 * setSkin - Set the current skin.
 	 *
 	 * @return void
-	 * @access public
+	 * @access protected
 	 */
-	function setSkin() {
+	protected function setSkin() {
 		global $db;  //The database connection
 		if (!empty($_GET['skin'])) {
 			$this->skin = $_GET['skin'];
@@ -284,9 +284,9 @@ class Session {
 	 * setLanguage - Set the current user-language.
 	 *
 	 * @return void
-	 * @access public
+	 * @access protected
 	 */
-	function setLanguage() {
+	protected function setLanguage() {
 		global $db;  //The database connection
 		if (!empty($_GET['lang'])) {
 			$this->lang = $_GET['lang'];
