@@ -494,7 +494,7 @@ class OpenHomeoDB extends DB {
 			$where = "(sym_rem.src_id = '" . $source_query . "')";
 			$symptom_lang = $session->lang;
 		}
-		if ($this->table_exists($custom_table) === false || $update) {
+		if (!empty($custom_table) && ($this->table_exists($custom_table) === false || $update)) {
 			set_time_limit(0);
 			ignore_user_abort(true);
 			if ($this->is_sym_lang($symptom_lang) === false) {
