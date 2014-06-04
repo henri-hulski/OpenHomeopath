@@ -39,7 +39,7 @@ if(!$session->isAdmin()) {
 </h3>
 <p>
    <?php echo _("The symptom table will be restructured."); ?><br>
-   <?php echo _("First all symptoms that have no <strong>\">\"</strong> in the symptom name will be parsed. Then we check if the symptom name occur again in the table followed by <strong>\" > \"</strong>.  In this case these symptoms get the \"parent_id\" of the superior symptom. Next all symptoms with one <strong>\">\"</strong> will be parsed and so on."); ?>
+   <?php echo _("First all symptoms that have no '>' in the symptom name will be parsed. Then we check if the symptom name occur again in the table followed by '>'.  In this case these symptoms get the \"parent_id\" of the superior symptom. Next all symptoms with one '>' will be parsed and so on."); ?>
 </p>
 <p>
    <?php echo _("The restructuring needs some time. Please be patient."); ?>
