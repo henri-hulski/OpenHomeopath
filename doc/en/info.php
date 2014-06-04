@@ -48,7 +48,7 @@ include("help/layout/$skin/header.php");
   Program Version
 </h2>
 <p>
-  This is <strong>OpenHomeopath Version 1.0</strong>.<br>
+  This is <strong>OpenHomeopath Version 1.0</strong> released on 05.06.2014.<br>
   After a <strong>fundamental revision of the entire code and database structure</strong> I'm glad to publish the first stable release of OpenHomeopath after more than 7 years work.<br>
   If you still find bugs or if you've a question please <a title="Contact to the author" href="mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath">contact me</a>.
 </p>

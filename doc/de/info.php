@@ -48,7 +48,7 @@ include("help/layout/$skin/header.php");
   Programmversion
 </h2>
 <p>
-  Dies ist <strong>OpenHomeopath Version 1.0</strong>.<br>
+  Dies ist <strong>OpenHomeopath Version 1.0</strong> veröffentlicht am 05.06.2014.<br>
   Nach einer <strong>grundlegenden Überarbeitung des gesamten Codes und der Datenbankstruktur</strong> veröffentliche ich hiermit nach über 7 Jahren Arbeit die erste stabile Version von OpenHomeopath.<br>
   Wenn noch Bugs oder Programmfehler auftauchen und bei weiteren Fragen meldet euch <a title="Kontakt zum Autor" href="mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath">bei mir</a>.
 </p>
