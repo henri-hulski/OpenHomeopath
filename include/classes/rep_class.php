@@ -85,14 +85,6 @@ class Rep {
 	
 	
 	/**
-	 * Symptom array: The selected symptoms: key: sym_id, value: symptom-array - keys: [name] = symptom name incl. main rubric, [degree] = degree of the rubric, [kuenzli] = Symptom-Künzli-dot(0/1)
-	 * @var array
-	 * @access public
-	 */
-	public $symtoms_ar = array();
-	
-	
-	/**
 	 * Remedies array: The remedies we found during reperorization: [0] = grade, [1] = hits, [2] = rem_short, [3] = rem_name, [4] = rem_id
 	 * @var array
 	 * @access public
@@ -103,9 +95,9 @@ class Rep {
 	/**
 	 * Symptom-remedies-relation array - keys: [0] = rem_short, [1] = grade, [2] = sym_id
 	 * @var array
-	 * @access public
+	 * @access private
 	 */
-	public $rel_ar = array();
+	private $rel_ar = array();
 	
 	
 	/**
@@ -135,17 +127,17 @@ class Rep {
 	/**
 	 * Symptoms table
 	 * @var string
-	 * @access public
+	 * @access private
 	 */
-	public $symptoms_tbl;
+	private $symptoms_tbl;
 	
 	
 	/**
 	 * Symptom-remedy-relations table
 	 * @var string
-	 * @access public
+	 * @access private
 	 */
-	public $sym_rem_tbl;
+	private $sym_rem_tbl;
 	
 	
 	
@@ -221,9 +213,9 @@ class Rep {
 	 * get_result_data takes the selected symptoms and retrieves from the database the correspodending remedies and grades and count them.
 	 *
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function get_result_data() {
+	private function get_result_data() {
 		global $db;
 		$query = "DROP TEMPORARY TABLE IF EXISTS result";
 		$db->send_query($query);
@@ -271,12 +263,12 @@ class Rep {
 	}
 	
 	/**
-	 * Build a sorted symptoms array 
+	 * get_symptoms_ar builds a sorted symptoms array.
 	 *
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function get_symptoms_ar() {
+	private function get_symptoms_ar() {
 		global $db, $session;
 		$query = "DROP TEMPORARY TABLE IF EXISTS sym_sort";
 		$db->send_query($query);
@@ -294,7 +286,7 @@ class Rep {
 			$db->send_query($query);
 			list ($symptom, $main_rubric, $kuenzli) = $db->db_fetch_row();
 			$db->free_result();
-			$full_name = $main_rubric." >> ".$symptom;
+			$full_name = $db->escape_string($main_rubric . " >> " . $symptom);
 			$kuenzli = (empty($kuenzli)) ? 0 : $kuenzli;
 			$query = "INSERT INTO sym_sort VALUES ($sym_id, '$full_name', $degree, $kuenzli)";
 			$db->send_query($query);
@@ -395,10 +387,10 @@ class Rep {
 	 * @param integer $rem_id         Remedy ID
 	 * @param integer &$max_grade     The max. grade of the symptom-remedy-relation
 	 * @param integer &$kuenzli_dot   0|1 if the symptom-remedy-relation has a Künzli-dot 1 otherwise 0.
-	 * @return string  Return description (if any) ...
-	 * @access public
+	 * @return string
+	 * @access private
 	 */
-	function get_sym_rem_src($sym_id, $rem_id, &$max_grade, &$kuenzli_dot) {
+	private function get_sym_rem_src($sym_id, $rem_id, &$max_grade, &$kuenzli_dot) {
 		global $db;
 		$sources = "";
 		$kuenzli_dot = 0;
@@ -586,9 +578,9 @@ class Rep {
 	 * @param array  &$data_ar      holds the rows of the table body
 	 * @param string &$summary      contains a summary of the repertorization result
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function get_table_data(&$header_ar, &$first_row_ar, &$data_ar, &$summary) {
+	private function get_table_data(&$header_ar, &$first_row_ar, &$data_ar, &$summary) {
 		global $db;
 		$limit = 20;
 		if (!empty($this->sym_select)) {
@@ -639,7 +631,9 @@ class Rep {
 		$rem_txt = sprintf(ngettext("%d remedy", "%d remedies", $this->rem_count), $this->rem_count);
 		$rel_txt = sprintf(ngettext("%d symptom-remedy-relation", "%d symptom-remedy-relations", $this->rel_count), $this->rel_count);
 		$summary = sprintf(_("For %s there are %s and %s.") . "\n", $sym_txt, $rem_txt, $rel_txt);
-		$summary .= sprintf(_("The %d most important remedies were printed. ") . "\n", $limit);
+		if ($this->rem_count > $limit) {
+			$summary .= sprintf(_("The %d most important remedies were printed. ") . "\n", $limit);
+		}
 	}
 }
 ?>

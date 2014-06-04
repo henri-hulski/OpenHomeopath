@@ -39,9 +39,9 @@ class SymRem {
 	/**
 	 * Remedies array
 	 * @var array
-	 * @access public
+	 * @access private
 	 */
-	public $rems_ar = array();
+	private $rems_ar = array();
 	
 	
 	/**
@@ -63,25 +63,25 @@ class SymRem {
 	/**
 	 * From which grade on remedies should be retrieved (1|2|3)
 	 * @var integer
-	 * @access public
+	 * @access private
 	 */
-	public $grade;
+	private $grade;
 	
 	
 	/**
 	 * How the remedies should be sorted (grade|remname|shortname)
 	 * @var string
-	 * @access public
+	 * @access private
 	 */
-	public $sort;
+	private $sort;
 	
 	
 	/**
 	 * Symptom-remedy-relations table
 	 * @var unknown
-	 * @access public
+	 * @access private
 	 */
-	public $sym_rem_tbl;
+	private $sym_rem_tbl;
 	
 	
 	/**
@@ -103,17 +103,17 @@ class SymRem {
 	 * set_sym_rems retrieves the details of remedies related to the given symptom ($this->sym_id) and stores them in an array ($this->rems_ar)
 	 *
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function set_sym_rems() {
+	private function set_sym_rems() {
 		global $db;
-		$query = "SELECT remedies.rem_id, remedies.rem_short, remedies.rem_name, $this->sym_rem_tbl.grade, $this->sym_rem_tbl.src_id FROM remedies, $this->sym_rem_tbl WHERE $this->sym_rem_tbl.sym_id = $this->sym_id AND $this->sym_rem_tbl.rem_id = remedies.rem_id ";
+		$query = "SELECT remedies.rem_id, remedies.rem_short, remedies.rem_name, {$this->sym_rem_tbl}.grade, {$this->sym_rem_tbl}.src_id FROM remedies, {$this->sym_rem_tbl} WHERE {$this->sym_rem_tbl}.sym_id = {$this->sym_id} AND {$this->sym_rem_tbl}.rem_id = remedies.rem_id ";
 		if ($this->grade > 1) {
-			$query .= "AND  $this->sym_rem_tbl.grade >= $this->grade ";
+			$query .= "AND  {$this->sym_rem_tbl}.grade >= {$this->grade} ";
 		}
 		switch ($this->sort) {
 			case 'grade':
-				$query .= "ORDER BY $this->sym_rem_tbl.grade DESC, remedies.rem_name ASC";
+				$query .= "ORDER BY {$this->sym_rem_tbl}.grade DESC, remedies.rem_name ASC";
 				break;
 			case 'remname':
 				$query .= "ORDER BY remedies.rem_name";
@@ -215,7 +215,7 @@ class SymRem {
 			} else {
 				$materia_url = "materia.php?rem=$rem_id";
 			}
-			$rems_list .= "<$tag$class><a href='$materia_url' title='" . _("Materia Medica") . "'>&nbsp;<img src='skins/original/img/materia.png' width='12' height='12'>&nbsp;</a><a href=\"javascript:popup_url('details.php?sym=$this->sym_id&rem=$rem_id&sym_rem_tbl=$this->sym_rem_tbl',540,380)\" title='$title' class='grade_" . $rem_ar['max_grade'] . "'>$text</a></$tag>";
+			$rems_list .= "<$tag$class><a href='$materia_url' title='" . _("Materia Medica") . "'>&nbsp;<img src='skins/original/img/materia.png' width='12' height='12'>&nbsp;</a><a href=\"javascript:popup_url('details.php?sym={$this->sym_id}&rem=$rem_id&sym_rem_tbl={$this->sym_rem_tbl}',540,380)\" title='$title' class='grade_" . $rem_ar['max_grade'] . "'>$text</a></$tag>";
 		}
 		return $rems_list;
 	}

@@ -55,17 +55,17 @@ class TreeView {
 	/**
 	 * Main rubric id for which we're building the treeview. If we build for all main rubrics it has the value -1.
 	 * @var integer
-	 * @access public
+	 * @access protected
 	 */
-	public $rubric_id;
+	protected $rubric_id;
 	
 	
 	/**
 	 * Symptoms table to build the tree from
 	 * @var string
-	 * @access public
+	 * @access protected
 	 */
-	public $tree_symptoms_tbl = "";
+	protected $tree_symptoms_tbl = "";
 	
 	
 	/**

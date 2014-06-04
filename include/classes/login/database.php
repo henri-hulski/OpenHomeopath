@@ -307,9 +307,9 @@ class UserDB extends OpenHomeoDB {
 	 * are viewing site and sets class variable accordingly.
 	 *
 	 *  @return integer
-	 *  @access public
+	 *  @access private
 	 */
-	function calcNumActiveUsers() {
+	private function calcNumActiveUsers() {
 	/* Calculate number of users at site */
 		$query = "SELECT COUNT(*) FROM " . TBL_ACTIVE_USERS;
 		$this->send_query($query);
@@ -322,9 +322,9 @@ class UserDB extends OpenHomeoDB {
 	 * are viewing site and sets class variable accordingly.
 	 *
 	 *  @return integer
-	 *  @access public
+	 *  @access private
 	 */
-	function calcNumActiveGuests() {
+	private function calcNumActiveGuests() {
 	/* Calculate number of guests at site */
 		$query = "SELECT COUNT(*) FROM " . TBL_ACTIVE_GUESTS;
 		$this->send_query($query);

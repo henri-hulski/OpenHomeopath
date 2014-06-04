@@ -38,7 +38,7 @@
 class DbPlugin {
 
 	/**
-	 * SQL link
+	 * SQL link identifier
 	 * @var resource
 	 * @access public
 	 */
@@ -53,16 +53,18 @@ class DbPlugin {
 	public $result_ar = array();
 
 	/**
-	 * db_connect connects to the SQL database
+	 * db_connect open a new connection to the SQL server.
 	 *
 	 * @return resource Returns the SQL link.
 	 * @access public
 	 */
 	function db_connect() {
 		$pers = "";
-/*		if (version_compare(PHP_VERSION, '5.3.0') >= 0) {
+		/* uncomment if you want to use persistant connections
+		if (version_compare(PHP_VERSION, '5.3.0') >= 0) {
 			$pers = "p:";  // using persistant connections
-		}*/
+		}
+		*/
 		$this->connection = mysqli_connect($pers.DB_SERVER, DB_USER, DB_PASS, DB_NAME) OR die("No connection to the database " . DB_NAME . ". <br>File: " . __FILE__ . " on line: " . __LINE__."<br>Error message: (" . mysqli_connect_errno() . ") " . mysqli_connect_error());
 		/* change character set to utf8 */
 		mysqli_set_charset($this->connection, "utf8");
@@ -70,7 +72,7 @@ class DbPlugin {
 	}
 
 	/**
-	 * send_query sends a SQL query.
+	 * send_query performs a query on the database.
 	 *
 	 * @param string   $query SQL query
 	 * @param resource $connection optional SQL link
@@ -94,16 +96,23 @@ class DbPlugin {
 	}
 
 	/**
-	 * Fetch the SQL result as an array either as numeric or as associative array or both.
+	 * db_fetch_array fetch a result row as an associative, a numeric array, or both.
 	 *
-	 * @param MYSQL_NUM|MYSQL_ASSOC|MYSQL_BOTH $type type of the result array
-	 * @param resource $result optional SQL result
-	 * @return array  SQL result array
+	 * Returns an array of strings that corresponds to the fetched row
+	 * or NULL if there are no more rows in resultset.
+	 *
+	 * @param  MYSQL_NUM|MYSQL_ASSOC|MYSQL_BOTH $type optional type of the result array
+	 * @param  resource $result optional result set identifier
+	 * @return array
 	 * @access public
 	 */
 	function db_fetch_array() {
-		$type = func_get_arg(0);
 		$numargs = func_num_args();
+		if ($numargs >= 1) {
+			$type = func_get_arg(0);
+		} else {
+			$type = MYSQLI_BOTH;
+		}
 		if ($numargs >= 2) {
 			$result = func_get_arg(1);
 		} else {
@@ -120,11 +129,13 @@ class DbPlugin {
 	}
 
 	/**
-	 * Short description for function
+	 * db_fetch_object returns the current row of a result set as an object.
 	 *
-	 * Long description (if any) ...
+	 * The function returns an object with string properties that corresponds to the fetched row
+	 * or NULL if there are no more rows in resultset.
 	 *
-	 * @return unknown Return description (if any) ...
+	 * @param  resource $result optional result set identifier
+	 * @return object
 	 * @access public
 	 */
 	function db_fetch_object() {
@@ -138,11 +149,10 @@ class DbPlugin {
 	}
 
 	/**
-	 * Short description for function
+	 * db_num_rows gets the number of rows in a result.
 	 *
-	 * Long description (if any) ...
-	 *
-	 * @return unknown Return description (if any) ...
+	 * @param  resource $result optional result set identifier
+	 * @return integer  Returns number of rows in the result set.
 	 * @access public
 	 */
 	function db_num_rows() {
@@ -156,11 +166,16 @@ class DbPlugin {
 	}
 
 	/**
-	 * Short description for function
+	 * db_affected_rows gets the number of affected rows in a previous SQL operation.
 	 *
-	 * Long description (if any) ...
+	 * Return values:
+	 * An integer greater than zero indicates the number of rows affected or retrieved.
+	 * Zero indicates that no records were updated for an UPDATE statement, no rows
+	 * matched the WHERE clause in the query or that no query has yet been executed.
+	 * -1 indicates that the query returned an error.
 	 *
-	 * @return unknown Return description (if any) ...
+	 * @param  resource $connection optional a SQL link identifier
+	 * @return integer
 	 * @access public
 	 */
 	function db_affected_rows() {
@@ -174,28 +189,22 @@ class DbPlugin {
 	}
 
 	/**
-	 * Short description for function
+	 * db_num_fields returns the number of columns for the most recent query.
 	 *
-	 * Long description (if any) ...
-	 *
-	 * @return unknown Return description (if any) ...
+	 * @param  resource $connection optional a SQL link identifier
+	 * @return integer  Returns the number of fields in a result set.
 	 * @access public
 	 */
 	function db_num_fields() {
-		$numargs = func_num_args();
-		if ($numargs >= 1) {
-			$result = func_get_arg(0);
-		} else {
-			$result = end($this->result_ar);
-		}
-		return mysqli_num_fields($result);
+		$connection = $this->connection;
+		return mysqli_field_count($connection);
 	}
 
 	/**
-	 * Short description for function
+	 * db_data_seek adjusts the result pointer to an arbitrary row in the result.
 	 *
-	 * Long description (if any) ...
-	 *
+	 * @param  integer $row_number the row number - must be between zero and the total number of rows minus one
+	 * @param  resource $result optional result set identifier
 	 * @return boolean Returns TRUE on success or FALSE on failure.
 	 * @access public
 	 */
@@ -211,11 +220,10 @@ class DbPlugin {
 	}
 
 	/**
-	 * Short description for function
+	 * free_result frees the memory associated with a result.
 	 *
-	 * Long description (if any) ...
-	 *
-	 * @return void  
+	 * @param  resource $result optional result set identifier
+	 * @return void
 	 * @access public
 	 */
 	function free_result() {
@@ -231,15 +239,16 @@ class DbPlugin {
 	}
 
 	/**
-	 * Short description for function
+	 * close_db closes a previously opened database connection.
 	 *
-	 * Long description (if any) ...
-	 *
-	 * @return void  
+	 * @param  resource $connection optional a SQL link identifier
+	 * @return void
 	 * @access public
 	 */
 	function close_db() {
-//		if (version_compare(PHP_VERSION, '5.3.0') < 0) {  // when using persistant connections
+		/* uncomment if you want to use persistant connections
+		if (version_compare(PHP_VERSION, '5.3.0') < 0) {  // when using persistant connections
+		*/
 			$numargs = func_num_args();
 			if ($numargs >= 1) {
 				$connection = func_get_arg(0);
@@ -248,15 +257,24 @@ class DbPlugin {
 			}
 			/* close connection */
 			mysqli_close($connection);
-//		}
+		/* uncomment if you want to use persistant connections
+		}
+		*/
 	}
 
 	/**
-	 * Short description for function
+	 * db_insert_id returns the auto generated id used in the last query.
 	 *
-	 * Long description (if any) ...
+	 * The function returns the value of the AUTO_INCREMENT field that was updated by the previous query.
+	 * Returns zero if there was no previous query on the connection or if the query did not update an AUTO_INCREMENT value.
 	 *
-	 * @return unknown Return description (if any) ...
+	 * Note: If the number is greater than maximal int value, db_insert_id() will return a string.
+	 *
+	 * @param  resource $connection optional a SQL link identifier
+	 * @return integer|string The value of the AUTO_INCREMENT field that was updated by the previous query.
+	                          Returns zero if there was no previous query on the connection
+	                          or if the query did not update an AUTO_INCREMENT value.
+	                          If the number is greater than maximal int value, mysqli_insert_id() will return a string.
 	 * @access public
 	 */
 	function db_insert_id() {
@@ -271,11 +289,11 @@ class DbPlugin {
 	}
 
 	/**
-	 * Short description for function
+	 * escape_string escapes special characters in a string for use in an SQL statement, taking into account the current charset of the connection.
 	 *
-	 * Long description (if any) ...
-	 *
-	 * @return unknown Return description (if any) ...
+	 * @param  string   $unescaped_string the string to be escaped
+	 * @param  resource $connection optional a SQL link identifier
+	 * @return string   Returns an escaped string.
 	 * @access public
 	 */
 	function escape_string() {
@@ -287,7 +305,7 @@ class DbPlugin {
 			$connection = $this->connection;
 		}
 		if(get_magic_quotes_runtime()) {
-			$string = stripslashes($unescaped_string);
+			$unescaped_string = stripslashes($unescaped_string);
 		}
 		return mysqli_real_escape_string($connection, $unescaped_string);
 	}

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenHomeopath 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-31 01:12+0100\n"
+"POT-Creation-Date: 2014-06-04 22:39+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Henri Schumacher <henri.hulski@gazeta.pl>\n"
 "Language-Team: Henri Schumacher <henri.hulski@gazeta.pl>\n"
@@ -19,7 +19,7 @@ msgstr ""
 #: repertori.php:35 repertori.php:51 index.php:45 skins/kraque/frame.php:93
 #: skins/kraque/frame.php:170 skins/original/frame.php:67
 #: help/layout/kraque/frame.php:93 help/layout/kraque/frame.php:170
-#: help/layout/original/frame.php:67 install/install_db.php:278
+#: help/layout/original/frame.php:67 install/install_db.php:279
 msgid "Repertorization"
 msgstr "Repertorisierung"
 
@@ -27,8 +27,8 @@ msgstr "Repertorisierung"
 msgid "Selected symptoms"
 msgstr "Ausgewählte Symptome"
 
-#: repertori.php:89 repertori.php:121 include/classes/rep_class.php:346
-#: include/classes/rep_class.php:381 javascript/locale.php:3
+#: repertori.php:89 repertori.php:121 include/classes/rep_class.php:338
+#: include/classes/rep_class.php:373 javascript/locale.php:3
 msgid "Rubric degree"
 msgstr "Gewichtung der Rubrik"
 
@@ -83,7 +83,7 @@ msgstr "Tabelle:"
 #: skins/original/header_datadmin.php:10 help/layout/kraque/frame.php:78
 #: help/layout/kraque/frame.php:95 help/layout/kraque/frame.php:155
 #: help/layout/kraque/frame.php:172 help/layout/original/frame.php:73
-#: install/install_db.php:284
+#: install/install_db.php:285
 msgid "Data maintenance"
 msgstr "Datenpflege"
 
@@ -219,11 +219,11 @@ msgstr "Benutzername:"
 msgid "Password:"
 msgstr "Passwort:"
 
-#: register.php:112 useredit.php:255
+#: register.php:112 useredit.php:253
 msgid "Re-enter Password:"
 msgstr "Passwort wiederholen:"
 
-#: register.php:120 useredit.php:183 userinfo.php:104
+#: register.php:120 useredit.php:181 userinfo.php:104
 msgid "E-mail:"
 msgstr "E-Mail:"
 
@@ -242,7 +242,7 @@ msgstr "Senden!"
 #: include/classes/symrem_class.php:218 skins/kraque/frame.php:69
 #: skins/kraque/frame.php:152 skins/original/frame.php:70
 #: help/layout/kraque/frame.php:69 help/layout/kraque/frame.php:152
-#: help/layout/original/frame.php:70 install/install_db.php:281
+#: help/layout/original/frame.php:70 install/install_db.php:282
 #: forms/sym_rems.php:84
 msgid "Materia Medica"
 msgstr "Materia Medica"
@@ -255,6 +255,18 @@ msgid ""
 msgstr ""
 "Im <a href='%s'>Benutzerbereich</a> kannst du die Materia Medica deinen "
 "persönlichen Bedürfnissen anpassen."
+
+#: materia.php:74
+#, php-format
+msgid "You're using a personalized Materia Medica."
+msgstr "Du verwendest eine personalisierte Materia Medica."
+
+#: materia.php:74 forms/symptom_select_form.php:51
+#: forms/symptom_select_form.php:52 forms/reversed_rep.php:48
+#, php-format
+msgid "You can change the preferences in <a href='%s'>My account</a>."
+msgstr ""
+"Die Einstellungen kannst du im <a href='%s'>Benutzerbereich</a> ändern."
 
 #: materia.php:76
 msgid ""
@@ -566,51 +578,51 @@ msgstr "Skin auswählen:"
 msgid "Select language:"
 msgstr "Sprache auswählen:"
 
-#: useredit.php:133
+#: useredit.php:132
 msgid "Select your preferred symptom-language:"
 msgstr "Bevorzugte Symptom-Sprache auswählen:"
 
-#: useredit.php:145 useredit.php:147
+#: useredit.php:143 useredit.php:145
 msgid "as above"
 msgstr "wie oben"
 
-#: useredit.php:164 useredit.php:171
+#: useredit.php:162 useredit.php:169
 msgid "Show active users"
 msgstr "Aktive Benutzer anzeigen"
 
-#: useredit.php:180
+#: useredit.php:178
 msgid "Change e-mail"
 msgstr "E-Mail ändern"
 
-#: useredit.php:200 useredit.php:207
+#: useredit.php:198 useredit.php:205
 msgid "Hide e-mail from other users"
 msgstr "E-Mail vor anderen Benutzern verstecken"
 
-#: useredit.php:214
+#: useredit.php:212
 msgid "Public profile"
 msgstr "Öffentliches Profil"
 
-#: useredit.php:217 userinfo.php:109
+#: useredit.php:215 userinfo.php:109
 msgid "Real name:"
 msgstr "Richtiger Name:"
 
-#: useredit.php:229 userinfo.php:114
+#: useredit.php:227 userinfo.php:114
 msgid "More information:"
 msgstr "Weitere Angaben:"
 
-#: useredit.php:242
+#: useredit.php:240
 msgid "Change password"
 msgstr "Passwort ändern"
 
-#: useredit.php:245
+#: useredit.php:243
 msgid "current Password:"
 msgstr "bisheriges Passwort:"
 
-#: useredit.php:250
+#: useredit.php:248
 msgid "new Password:"
 msgstr "neues Passwort:"
 
-#: useredit.php:265
+#: useredit.php:263
 msgid "Save changes"
 msgstr "Änderungen speichern"
 
@@ -669,11 +681,11 @@ msgstr ""
 #, php-format
 msgid ""
 "When the monthly donating goal will be reached, <strong>OpenHomeopath will "
-"be fully usable for everybody</strong> until the 10th or when reaching "
-"50% of the donating goal until the 20th of the next month."
+"be fully usable for everybody</strong> until the 10th or when reaching 50%% "
+"of the donating goal until the 20th of the next month."
 msgstr ""
 "Sobald das monatliche Spendenziel erreicht wird, <strong>ist OpenHomeopath</"
-"strong> bis zum 10. bzw. wenn über 50% des Spendenziels erreicht sind bis "
+"strong> bis zum 10. bzw. wenn über 50%% des Spendenziels erreicht sind bis "
 "zum 20. des nächsten Monats <strong>wieder für alle voll nutzbar</strong>."
 
 #: support.php:78
@@ -730,7 +742,7 @@ msgstr ""
 "subject=OpenHomeopath'>schicke mir eine e-Mail</a>."
 
 #: rep_result.php:38 rep_result.php:50 index.php:50
-#: include/classes/rep_class.php:500 include/classes/rep_class.php:551
+#: include/classes/rep_class.php:492 include/classes/rep_class.php:543
 #: include/classes/fpdf/pdf.php:55
 msgid "Repertorization result"
 msgstr "Repertorisierungsergebnis"
@@ -739,28 +751,28 @@ msgstr "Repertorisierungsergebnis"
 msgid "Result table"
 msgstr "Ergebnistabelle"
 
-#: rep_result.php:80 include/classes/rep_class.php:638
+#: rep_result.php:80 include/classes/rep_class.php:630
 #, php-format
 msgid "%d selected symptom"
 msgid_plural "%d selected symptoms"
 msgstr[0] "%d ausgewähltes Symptom"
 msgstr[1] "%d ausgewählte Symptome"
 
-#: rep_result.php:81 include/classes/rep_class.php:639
+#: rep_result.php:81 include/classes/rep_class.php:631
 #, php-format
 msgid "%d remedy"
 msgid_plural "%d remedies"
 msgstr[0] "%d Mittel"
 msgstr[1] "%d Mittel"
 
-#: rep_result.php:82 include/classes/rep_class.php:640
+#: rep_result.php:82 include/classes/rep_class.php:632
 #, php-format
 msgid "%d symptom-remedy-relation"
 msgid_plural "%d symptom-remedy-relations"
 msgstr[0] "%d Symptom-Mittelbeziehung"
 msgstr[1] "%d Symptom-Mittelbeziehungen"
 
-#: rep_result.php:83 include/classes/rep_class.php:641
+#: rep_result.php:83 include/classes/rep_class.php:633
 #, php-format
 msgid "For %s there are %s and %s."
 msgstr "Für %s wurden %s und %s gefunden."
@@ -833,7 +845,7 @@ msgstr "Bemerkung:"
 msgid "Contact:"
 msgstr "Kontakt:"
 
-#: symptominfo.php:72 forms/reversed_rep.php:48
+#: symptominfo.php:72
 #, php-format
 msgid ""
 "You are using a personalized Repertory. You can change the preferences in <a "
@@ -933,7 +945,7 @@ msgstr "Bitte Rubrik auswählen!"
 msgid "Please select source!"
 msgstr "Bitte Quelle auswählen!"
 
-#: express.php:340 install/install_db.php:898
+#: express.php:340 install/install_db.php:900
 #, php-format
 msgid "Congratulations:"
 msgstr "Glückwunsch:"
@@ -1432,7 +1444,7 @@ msgstr "Referenz"
 #: express.php:523 skins/kraque/frame.php:91 skins/kraque/frame.php:168
 #: skins/original/frame.php:79 help/layout/kraque/frame.php:91
 #: help/layout/kraque/frame.php:168 help/layout/original/frame.php:79
-#: install/install_db.php:287 forms/symptom_select_form.php:152
+#: install/install_db.php:288 forms/symptom_select_form.php:152
 msgid "Help"
 msgstr "Hilfe"
 
@@ -1967,64 +1979,64 @@ msgstr "alle"
 
 # = -wertig
 #: include/classes/revrep_class.php:246 include/classes/revrep_class.php:258
-#: include/classes/revrep_class.php:270 include/classes/rep_class.php:411
+#: include/classes/revrep_class.php:270 include/classes/rep_class.php:403
 #: include/classes/symrem_class.php:195 include/classes/symrem_class.php:199
 #: include/classes/symrem_class.php:204
 msgid "-gr."
 msgstr "-w."
 
-#: include/classes/rep_class.php:346 include/classes/rep_class.php:615
+#: include/classes/rep_class.php:338 include/classes/rep_class.php:607
 msgid "Deg."
 msgstr "Gew."
 
-#: include/classes/rep_class.php:347 include/classes/rep_class.php:616
+#: include/classes/rep_class.php:339 include/classes/rep_class.php:608
 #: skins/kraque/frame.php:84 skins/kraque/frame.php:161
 #: help/layout/kraque/frame.php:84 help/layout/kraque/frame.php:161
 msgid "Symptoms"
 msgstr "Symptome"
 
-#: include/classes/rep_class.php:360 include/classes/rep_class.php:621
+#: include/classes/rep_class.php:352 include/classes/rep_class.php:613
 msgid "Total (Grades/Hits)"
 msgstr "Gesamt (Wertigkeiten/Treffer)"
 
 # = keine Angabe
-#: include/classes/rep_class.php:469
+#: include/classes/rep_class.php:461
 msgid "n.a."
 msgstr "k.A."
 
-#: include/classes/rep_class.php:501
+#: include/classes/rep_class.php:493
 msgid "OpenHomeopath"
 msgstr "OpenHomeopath"
 
-#: include/classes/rep_class.php:502
+#: include/classes/rep_class.php:494
 msgid "openhomeo.org"
 msgstr "openhomeo.org"
 
-#: include/classes/rep_class.php:504 include/classes/rep_class.php:510
+#: include/classes/rep_class.php:496 include/classes/rep_class.php:502
 #: forms/save_rep.php:68
 msgid "Patient:"
 msgstr "Patient:"
 
-#: include/classes/rep_class.php:504 include/classes/rep_class.php:516
+#: include/classes/rep_class.php:496 include/classes/rep_class.php:508
 #: forms/save_rep.php:82
 msgid "Rep.-Date:"
 msgstr "Rep.-Datum:"
 
-#: include/classes/rep_class.php:505 include/classes/rep_class.php:534
+#: include/classes/rep_class.php:497 include/classes/rep_class.php:526
 #: forms/save_rep.php:105
 msgid "Case taking:"
 msgstr "Fallaufnahme:"
 
-#: include/classes/rep_class.php:506 include/classes/rep_class.php:520
+#: include/classes/rep_class.php:498 include/classes/rep_class.php:512
 #: forms/save_rep.php:97
 msgid "Prescription:"
 msgstr "Verordnung:"
 
-#: include/classes/rep_class.php:506 include/classes/rep_class.php:527
+#: include/classes/rep_class.php:498 include/classes/rep_class.php:519
 msgid "Rep.-No.:"
 msgstr "Rep.-Nr.:"
 
-#: include/classes/rep_class.php:642
+#: include/classes/rep_class.php:635
 #, php-format
 msgid "The %d most important remedies were printed. "
 msgstr "Es werden die wichtigsten %d Mittel ausgegeben."
@@ -2041,12 +2053,12 @@ msgstr "Abkürzung"
 msgid "page"
 msgstr "Seite"
 
-#: include/classes/login/process.php:228 include/classes/login/session.php:325
+#: include/classes/login/process.php:227 include/classes/login/session.php:325
 #: include/classes/login/session.php:464
 msgid "* Username not entered"
 msgstr "* Benutzername nicht eingetragen"
 
-#: include/classes/login/process.php:234
+#: include/classes/login/process.php:233
 msgid "* Username does not exist"
 msgstr "* Benutzername gibt es nicht"
 
@@ -2190,7 +2202,7 @@ msgstr "Bitte Benutzernamen eingeben"
 msgid "User doesn't exist"
 msgstr "Benutzer gibt es nicht"
 
-#: include/classes/login/view_active.php:38
+#: include/classes/login/view_active.php:33
 msgid "Cannot access the user-table!"
 msgstr "Kann auf die Benutzertabelle nicht zugreifen!"
 
@@ -2202,7 +2214,7 @@ msgstr "Keine Verbindung zur Datenbank"
 msgid "Error message:"
 msgstr "Fehlermeldung:"
 
-#: include/classes/db/openhomeo_db.php:526
+#: include/classes/db/openhomeo_db.php:607
 #, php-format
 msgid ""
 "<strong>%d parent-rubrics</strong> were added and <strong>%d symptoms</"
@@ -2213,7 +2225,7 @@ msgstr ""
 "Symptome</strong> ohne Elternrubrik umbenannt. Bearbeitungszeit: <strong>%d "
 "Sekunden</strong>."
 
-#: include/classes/db/openhomeo_db.php:614
+#: include/classes/db/openhomeo_db.php:698
 #, php-format
 msgid ""
 "<strong>%d symptom</strong> with the schema <strong>%s</strong> was parsed."
@@ -2226,7 +2238,7 @@ msgstr[1] ""
 "Es wurden <strong>%d Symptome</strong> nach dem Schema <strong>%s</strong> "
 "bearbeitet."
 
-#: include/classes/db/openhomeo_db.php:624
+#: include/classes/db/openhomeo_db.php:708
 #, php-format
 msgid ""
 "Totally <strong>%d symptoms</strong> were parsed in <strong>%d seconds</"
@@ -2235,7 +2247,7 @@ msgstr ""
 "Insgesamt wurden <strong>%d Symptome</strong> in <strong>%d Sekunden</"
 "strong> bearbeitet."
 
-#: include/classes/db/openhomeo_db.php:624
+#: include/classes/db/openhomeo_db.php:708
 #, php-format
 msgid "<strong>%d parent rubrics</strong> were updated."
 msgstr "Dabei wurden <strong>%d Elternrubriken</strong> aktualisiert."
@@ -2254,7 +2266,7 @@ msgstr "Bin bei der Arbeit ...."
 
 #: skins/kraque/frame.php:42 skins/original/frame.php:47
 #: help/layout/kraque/frame.php:42 help/layout/original/frame.php:47
-#: install/install_db.php:261
+#: install/install_db.php:262
 msgid "Top of the page"
 msgstr "Seitenanfang"
 
@@ -2286,7 +2298,7 @@ msgstr "Quellen"
 #: skins/original/frame.php:82 help/layout/kraque/frame.php:99
 #: help/layout/kraque/frame.php:176 help/layout/original/frame.php:82
 #: doc/de/info.php:26 doc/de/info.php:31 doc/en/info.php:26 doc/en/info.php:31
-#: install/install_db.php:290
+#: install/install_db.php:291
 msgid "Info"
 msgstr "Info"
 
@@ -2356,7 +2368,7 @@ msgstr ""
 
 #: skins/kraque/footer.php:67 skins/original/footer.php:67
 #: help/layout/kraque/footer.php:67 help/layout/original/footer.php:71
-#: install/install_db.php:942
+#: install/install_db.php:944
 msgid "Contact to the author"
 msgstr "Kontakt zum Autor"
 
@@ -2410,46 +2422,45 @@ msgstr ""
 msgid "-grade"
 msgstr "-wertig"
 
-#: install/install_db.php:139
+#: install/install_db.php:140
 msgid "OpenHomeopath - Data Maintenance Administration"
 msgstr "OpenHomeopath - Datenpflege Administration"
 
-#: install/install_db.php:250
+#: install/install_db.php:251
 msgid "Are you sure ?"
 msgstr "Bist du sicher ?"
 
-#: install/install_db.php:301
+#: install/install_db.php:303
 msgid "OpenHomeopath - Install database"
 msgstr "OpenHomeopath - Datenbank installieren"
 
-#: install/install_db.php:464 install/install_db.php:494
+#: install/install_db.php:466 install/install_db.php:496
 msgid "Install database"
 msgstr "Datenbank installieren"
 
-#: install/install_db.php:496
+#: install/install_db.php:498
 msgid "Be careful! An existing OpenHomeopath-database will be overwritten!"
 msgstr ""
 "Achtung! Eine eventuell vorhandene OpenHomeopath-Datenbank wird vollständig "
 "überschrieben!"
 
-#: install/install_db.php:497
-msgid ""
-"The installation of the database needs a lot of time. Please be patient!"
+#: install/install_db.php:499
+msgid "The installation of the database needs some time. Please be patient!"
 msgstr ""
-"Die Installation der Datenbank kann sehr lange dauern. Bitte hab Geduld!"
+"Die Installation der Datenbank kann eine Weile dauern. Bitte hab Geduld!"
 
-#: install/install_db.php:898
+#: install/install_db.php:900
 msgid "the file was parsed and everything seems alright!"
 msgstr "das Ende der Datei ist erreicht, alles scheint OK!"
 
-#: install/install_db.php:899
+#: install/install_db.php:901
 msgid ""
 "You should delete now the file 'install/OpenHomeopath.sql.gz' on the server."
 msgstr ""
 "Die Datei 'install/openhomeopath.sql.gz' solltest Du jetzt auf dem Server "
 "löschen."
 
-#: install/install_db.php:900
+#: install/install_db.php:902
 msgid ""
 "First the file need some discspace and second when you run 'install_db.php' "
 "all new data will be deleted."
@@ -2457,25 +2468,25 @@ msgstr ""
 "Zum einen verbraucht sie recht viel Platz und außerdem würden bei erneuter "
 "Ausführung von 'install_db.php' alle neu hinzugekommenen Daten gelöscht."
 
-#: install/install_db.php:909
+#: install/install_db.php:911
 #, php-format
 msgid "Now I'm <b>waiting %d milliseconds</b> before starting next session..."
 msgstr ""
 "Ich <b>warte %d Millisekunden</b> bevor ich die nächste Session starte..."
 
-#: install/install_db.php:918
+#: install/install_db.php:920
 msgid "Press"
 msgstr "Drücke"
 
-#: install/install_db.php:918
+#: install/install_db.php:920
 msgid "STOP</a></b> to stop the import or be <b>passioned!</b><"
 msgstr "STOP</a></b> um den Import abzubrechen oder hab <b>GEDULD!</b><"
 
-#: install/install_db.php:922
+#: install/install_db.php:924
 msgid "Stopped because of an error"
 msgstr "Wegen Fehler angehalten"
 
-#: install/install_db.php:942
+#: install/install_db.php:944
 msgid ""
 "OpenHomeopath is distributed under the terms of the <a href='../doc/en/agpl3."
 "php'>AGPL-License</a>"
@@ -2515,18 +2526,18 @@ msgstr "Es muss mindestens eine Quelle ausgewählt werden!"
 msgid "You have to select at least one symptom!"
 msgstr "Es muss mindestens ein Symptom ausgewählt werden!"
 
-#: forms/personal_materia.php:40
+#: forms/personal_materia.php:41
 msgid "You're using at the moment the full <strong> Materia Medica </strong>."
 msgstr ""
 "Du verwendest im Moment die <strong>vollständige Materia Medica</strong>."
 
-#: forms/personal_materia.php:42
+#: forms/personal_materia.php:43
 msgid ""
 "You're using at the moment a <strong> personalized Materia Medica </strong>"
 msgstr ""
 "Du verwendest im Moment eine <strong>personalisierte Materia Medica</strong>"
 
-#: forms/personal_materia.php:42 forms/personal_rep.php:45
+#: forms/personal_materia.php:43 forms/personal_rep.php:46
 msgid "with the source"
 msgid_plural "with the sources"
 msgstr[0] "mit der Quelle"
@@ -2541,18 +2552,12 @@ msgstr ""
 "Im <a href='%s'>Benutzerbereich</a> kannst du das Repertorium deinen "
 "persönlichen Bedürfnissen anpassen."
 
-#: forms/symptom_select_form.php:51
+#: forms/symptom_select_form.php:51 forms/reversed_rep.php:48
 #, php-format
 msgid "You are using a personalized Repertory."
 msgstr "Du verwendest ein personalisiertes Repertorium."
 
-#: forms/symptom_select_form.php:51 forms/symptom_select_form.php:52
-#, php-format
-msgid "You can change the preferences in <a href='%s'>My account</a>."
-msgstr ""
-"Die Einstellungen kannst du im <a href='%s'>Benutzerbereich</a> ändern."
-
-#: forms/symptom_select_form.php:52 forms/personal_rep.php:43
+#: forms/symptom_select_form.php:52 forms/personal_rep.php:44
 #, php-format
 msgid "You're using at the moment all <strong>symptoms in %s</strong>."
 msgstr "Du verwendest im Moment alle <strong>Symptome in %s</strong>."
@@ -2816,11 +2821,11 @@ msgstr "PDF herunterladen"
 msgid "Print PDF"
 msgstr "PDF ausgeben"
 
-#: forms/personal_rep.php:41
+#: forms/personal_rep.php:42
 msgid "You're using at the moment, the <strong>full repertory</strong>."
 msgstr "Du verwendest im Moment das <strong>vollständige Repertorium</strong>."
 
-#: forms/personal_rep.php:45
+#: forms/personal_rep.php:46
 msgid " You're using at the moment a <strong>personalized repertory</strong>"
 msgstr ""
 "Du verwendest im Moment ein <strong>personalisiertes Repertorium</strong>"
