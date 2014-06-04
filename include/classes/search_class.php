@@ -53,51 +53,51 @@ class Search {
 	 * If true we're searching for whole words with boolean fulltext search.
 	 * If false we're searching for parts of words with regular expressions.
 	 * @var boolean
-	 * @access protected
+	 * @access private
 	 */
-	protected $whole_word;
+	private $whole_word;
 	
 	/**
 	 * 'AND'|'OR': If 'AND' the search result should contain all requested words/phrases, if 'OR' any requested words/phrases.
 	 * @var string
-	 * @access protected
+	 * @access private
 	 */
-	protected $and_or;
+	private $and_or;
 	
 	/**
 	 * Symptoms table
 	 * @var string
-	 * @access protected
+	 * @access private
 	 */
-	protected $symptoms_tbl;
+	private $symptoms_tbl;
 	
 	/**
 	 * The phrases from the search request first as array later as string prepared for the SQL-query
 	 * @var array|string
-	 * @access protected
+	 * @access private
 	 */
-	protected $search_phrase;
+	private $search_phrase;
 	
 	/**
 	 * The words which the search result must not contain first as array later as string prepared for the SQL-query
 	 * @var array|string
-	 * @access protected
+	 * @access private
 	 */
-	protected $search_not;
+	private $search_not;
 	
 	/**
 	 * 'boolean'|'regexp': 'boolean' if we're using the boolean fulltext search 'regexp' for a search with regular expressions
 	 * @var string
-	 * @access protected
+	 * @access private
 	 */
-	protected $mode;
+	private $mode;
 	
 	/**
 	 * Contains the dublicated requested words with ss or ß
 	 * @var array
-	 * @access protected
+	 * @access private
 	 */
-	protected $dublicated_ss = array();
+	private $dublicated_ss = array();
 
 	/**
 	 * Class constructor
@@ -177,9 +177,9 @@ class Search {
 	 * clean_whitespace removes whitespace at the beginning and end of the search string and double whitespace inside the search string
 	 *
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function clean_whitespace() {
+	private function clean_whitespace() {
 		$this->search = preg_replace('/\s\s+/u', ' ', $this->search);
 		$this->search = trim ($this->search);
 	}
@@ -188,9 +188,9 @@ class Search {
 	 * delete_punctuation replaces punctuation inside the search string with a space
 	 *
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function delete_punctuation() {
+	private function delete_punctuation() {
 		$punctuation = array('.', ',', ';', '!', ':', '@', '/', '*', '$', '^', '#');
 		$this->search = str_replace($punctuation, ' ', $this->search);
 	}
@@ -199,9 +199,9 @@ class Search {
 	 * encode_quotes repaces quotes and escaped quotes in the search string with the escape character constant esc_chr
 	 *
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function encode_quotes() {
+	private function encode_quotes() {
 		$quotes = array("\\'", '\\"', "\'", '\"', "'", '"');
 		$this->search = str_replace($quotes, self::esc_chr, $this->search);
 		// delete "\"
@@ -212,9 +212,9 @@ class Search {
 	 * decode_quotes replaces the escape character constant esc_chr in the search string with a double quote
 	 *
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function decode_quotes() {
+	private function decode_quotes() {
 		$quote = '"';
 		if ($this->mode === 'regexp') {
 			$quote = '';
@@ -226,9 +226,9 @@ class Search {
 	 * extract_phrases pulls quoted phrases from the search string and stores them in an array ($this->search_phrase)
 	 *
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function extract_phrases() {
+	private function extract_phrases() {
 		// copy phrases in quotes to an array
 		preg_match_all('/' . self::esc_chr . '[^' . self::esc_chr . ']+' . self::esc_chr . '/u', $this->search, $this->search_phrase);
 		// delete phrases in quotes from search
@@ -245,9 +245,9 @@ class Search {
 	 * extract_search_not pulls not desired words with a preceded '-' from the search string and stores them in an array ($this->search_not)
 	 *
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function extract_search_not() {
+	private function extract_search_not() {
 		// copy words beginning with "-" to an array
 		preg_match_all('/-([\wßäöüÄÖÜ]+)/u', $this->search, $this->search_not);
 		// delete words beginning with "-"
@@ -260,9 +260,9 @@ class Search {
 	 * extract_search_words extract the remaining search words from the search string and stores them in an array ($this->search)
 	 *
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function extract_search_words() {
+	private function extract_search_words() {
 		// words to array
 		$this->search = preg_split("/[\s\\,]+/", $this->search, -1,  PREG_SPLIT_NO_EMPTY);
 		$this->dublicate_ss('search');
@@ -272,9 +272,9 @@ class Search {
 	 * build_phrases_search_query builds the SQL search query for the phrases search in regexp-mode
 	 *
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function build_phrases_search_query() {
+	private function build_phrases_search_query() {
 		$this->build_search_query($this->search_phrase);
 	}
 	
@@ -282,9 +282,9 @@ class Search {
 	 * build_search_not_query builds the SQL search query for not desired words in regexp-mode
 	 *
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function build_search_not_query() {
+	private function build_search_not_query() {
 		// array to string
 		if (!empty($this->search_not)) {
 			$this->search_not = implode("' AND {$this->symptoms_tbl}.symptom NOT REGEXP '", $this->search_not);
@@ -308,9 +308,9 @@ class Search {
 	 *                               returning a string with the SQL-query
 	 *                               ($this->search|$this->search_phrases)
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function build_search_query(&$search) {
+	private function build_search_query(&$search) {
 		if (!empty($search)) {
 			$search = implode("' {$this->and_or} {$this->symptoms_tbl}.symptom REGEXP '", $search);
 			$search = "{$this->symptoms_tbl}.symptom REGEXP '$search'";
@@ -334,9 +334,9 @@ class Search {
 	 *                               returning a string with the SQL-query
 	 *                               ($this->search|$this->search_phrases|$this->search_not)
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function build_boolean_query($operator, &$search) {
+	private function build_boolean_query($operator, &$search) {
 		if (empty($search)) {
 			$search = '';
 		} else {
@@ -359,9 +359,9 @@ class Search {
 	 *
 	 * @param string $search_ar_name The variable name of the array containing the search strings ('search'|'search_phrase'|'search_not').
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function dublicate_ss($search_ar_name) {
+	private function dublicate_ss($search_ar_name) {
 		$search_ar = &$this->$search_ar_name;
 		if (!empty($search_ar)) {
 			$private_search_ar = $search_ar;
@@ -385,9 +385,9 @@ class Search {
 	 * @param string  $duplicate      The dublicated search string with the replaced 'ss'|'ß'.
 	 * @param integer $key            The array key of the dublicated search string in the search strings array.
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function merge_dublicate_ss($search_ar_name, $duplicate, $key) {
+	private function merge_dublicate_ss($search_ar_name, $duplicate, $key) {
 		$search_ar = &$this->$search_ar_name;
 		if ($this->mode === 'boolean') {
 			$search_ar[$key] = "(" . $search_ar[$key] . " " . $duplicate . ")";

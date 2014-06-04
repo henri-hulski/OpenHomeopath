@@ -39,9 +39,9 @@ class SymRem {
 	/**
 	 * Remedies array
 	 * @var array
-	 * @access protected
+	 * @access private
 	 */
-	protected $rems_ar = array();
+	private $rems_ar = array();
 	
 	
 	/**
@@ -63,25 +63,25 @@ class SymRem {
 	/**
 	 * From which grade on remedies should be retrieved (1|2|3)
 	 * @var integer
-	 * @access protected
+	 * @access private
 	 */
-	protected $grade;
+	private $grade;
 	
 	
 	/**
 	 * How the remedies should be sorted (grade|remname|shortname)
 	 * @var string
-	 * @access protected
+	 * @access private
 	 */
-	protected $sort;
+	private $sort;
 	
 	
 	/**
 	 * Symptom-remedy-relations table
 	 * @var unknown
-	 * @access protected
+	 * @access private
 	 */
-	protected $sym_rem_tbl;
+	private $sym_rem_tbl;
 	
 	
 	/**
@@ -103,9 +103,9 @@ class SymRem {
 	 * set_sym_rems retrieves the details of remedies related to the given symptom ($this->sym_id) and stores them in an array ($this->rems_ar)
 	 *
 	 * @return void
-	 * @access protected
+	 * @access private
 	 */
-	protected function set_sym_rems() {
+	private function set_sym_rems() {
 		global $db;
 		$query = "SELECT remedies.rem_id, remedies.rem_short, remedies.rem_name, {$this->sym_rem_tbl}.grade, {$this->sym_rem_tbl}.src_id FROM remedies, {$this->sym_rem_tbl} WHERE {$this->sym_rem_tbl}.sym_id = {$this->sym_id} AND {$this->sym_rem_tbl}.rem_id = remedies.rem_id ";
 		if ($this->grade > 1) {

@@ -51,7 +51,7 @@ class RevRep extends TreeView {
 	 * @var array
 	 * @access private
 	 */
-	protected $rubrics_ar = array();
+	private $rubrics_ar = array();
 	
 	
 	/**
@@ -59,7 +59,7 @@ class RevRep extends TreeView {
 	 * @var integer
 	 * @access private
 	 */
-	protected $grade = 1;
+	private $grade = 1;
 	
 	/**
 	 * Class constructor
