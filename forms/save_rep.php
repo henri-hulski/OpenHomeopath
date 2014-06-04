@@ -37,7 +37,7 @@ if (!empty($_REQUEST['ajax']) || $task == 'save_PDF' || $task == 'print_PDF') {
 	require_once ("include/classes/rep_class.php");
 	$rep = new Rep();
 }
-if (!empty($task) && !$magic_hat->restricted_mode) {  // speichert Rep.-Ergebnis oder gibt PDF aus
+if (!empty($task)) {  // speichert Rep.-Ergebnis oder gibt PDF aus
 	if ($task == 'save_rep' & $session->logged_in) {  // speichert Rep.-Ergebnis
 		$rep->save_rep();
 		if (!empty ($rep->rep_id)) {
@@ -81,28 +81,13 @@ if (!empty($rep->rep_id)) {
       <td class="rightAline">
         <label for="date" class="label"><?php echo _("Rep.-Date:"); ?>&nbsp; </label>
 <?php
-$alert_restricted = _("As long as the donation goal for this month is not reached some functions of OpenHomeopath are only available for users who have already donated.") . '\n' . _("Please donate now!");
-if ($session->logged_in && !$magic_hat->restricted_mode) {  // user logged in and not in restricted mode
+if ($session->logged_in) {  // user logged in
 	$save_rep = "saveRep('save_rep')";
 } elseif (!$session->logged_in) {
 	$save_rep = "alert('" . _("In order to save the repertorization result you need to be logged in.") . "')";
-} else {
-	$save_rep = "alert('" . _("Saving of repertorizations is deactivated.") . "\\n$alert_restricted')";
 }
-if (!$magic_hat->restricted_mode) {
-	$save_PDF = "saveRep('save_PDF')";
-	$print_PDF = "saveRep('print_PDF')";
-} else {
-	$save_PDF = "alert('" . _("Download PDF is deactivated.") . "\\n$alert_restricted";
-	$print_PDF = "alert('" . _("Print PDF is deactivated.") . "\\n$alert_restricted";
-	if (!$session->logged_in) {
-		$already_donated = _("If you have already donated please log in.");
-		$save_PDF .= "\\n$already_donated";
-		$print_PDF .= "\\n$already_donated";
-	}
-	$save_PDF .= "')";
-	$print_PDF .= "')";
-}
+$save_PDF = "saveRep('save_PDF')";
+$print_PDF = "saveRep('print_PDF')";
 ?>
         <input class='input' type='text' name='date' id='date' size='11' maxlength='10' value = '<?php echo $rep->date; ?>'>&nbsp;&nbsp;&nbsp;
       </td>

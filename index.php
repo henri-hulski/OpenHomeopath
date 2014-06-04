@@ -85,7 +85,7 @@ if ($session->logged_in) {
   <div class="tab<?php echo($class);?>" title="<?php echo _("My account"); ?>" id="tab_4">
 <?php
 	$req_user = $session->username;
-	include("./userinfo.php");
+	include("userinfo.php");
 ?>
   </div>
 <?php

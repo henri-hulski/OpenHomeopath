@@ -127,7 +127,7 @@ function build_tables_names_array($exclude_not_allowed = 1, $exclude_not_install
 		while ($row = $db->db_fetch_row()) {
 			$table_name_temp = $row[0];
 			// if the table is not internal
-			if (substr($table_name_temp, 0, strlen($prefix_internal_table)) != $prefix_internal_table && $table_name_temp != $table_list_name && substr($table_name_temp, 0, 9) != 'archive__' && substr($table_name_temp, 0, 12) != 'homeophorum__' && substr($table_name_temp, 0, 7) != 'active_' && substr($table_name_temp, 0, 7) != 'banned_') {
+			if (substr($table_name_temp, 0, strlen($prefix_internal_table)) != $prefix_internal_table && $table_name_temp != $table_list_name && substr($table_name_temp, 0, 9) != 'archive__' && substr($table_name_temp, 0, 7) != 'active_' && substr($table_name_temp, 0, 7) != 'banned_') {
 				$tables_names_ar[$z] = $table_name_temp;
 				$z++;
 			} // end if
@@ -353,6 +353,7 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 					$sql .= " ".$linked_fields_order_type_field;
 				} // end if
 				$res_primary_key = $db->send_query($sql);
+				$fields_number = $db->db_num_fields();
 			} // end if
 
 			if ($form_type == "search") {
@@ -466,7 +467,6 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 
 					if ($fields_labels_ar[$i]["primary_key_field_field"] != "") {
 						if ($db->db_num_rows($res_primary_key) > 0) {
-							$fields_number = $db->db_num_fields($res_primary_key);
 							while ($primary_key_row = $db->db_fetch_row($res_primary_key)) {
 								
 								$primary_key_value = $primary_key_row[0];

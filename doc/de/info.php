@@ -41,7 +41,6 @@ include("help/layout/$skin/header.php");
     <li><a href="#client">Client-Anforderung</a></li>
     <li><a href="#server">Server-Anforderung</a></li>
     <li><a href="#install">Installation und Konfiguration</a></li>
-    <li><a href="#download">Download</a></li>
   </ul>
 </div>
 <a name="version" id="version"><br></a>
@@ -49,7 +48,7 @@ include("help/layout/$skin/header.php");
   Programmversion
 </h2>
 <p>
-  Dies ist <strong>OpenHomeopath Version 1.0rc</strong>.<br>
+  Dies ist <strong>OpenHomeopath Version 1.0</strong> veröffentlicht am 05.06.2014.<br>
   Nach einer <strong>grundlegenden Überarbeitung des gesamten Codes und der Datenbankstruktur</strong> veröffentliche ich hiermit nach über 7 Jahren Arbeit die erste stabile Version von OpenHomeopath.<br>
   Wenn noch Bugs oder Programmfehler auftauchen und bei weiteren Fragen meldet euch <a title="Kontakt zum Autor" href="mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath">bei mir</a>.
 </p>
@@ -93,8 +92,6 @@ Dank geht an
   </li>
   <li><strong>Jpmaster77</strong>: Das Loginsystem baut auf seinem freien Skript <a href="http://www.evolt.org/PHP-Login-System-with-Admin-Features">Login System v.2.0</a> vom 26. August 2004 auf.
   </li>
-  <li><strong>Phorum Development Team</strong>: Das Homeophorum enthält die Software <a href="http://phorum.org/">Phorum</a> Version 5.1.25 vom 14.03.2007 entwickelt vom Phorum Development Team unter der <a href='../../include/phorum/docs/license.txt'>Phorum License 2.0</a>.
-  </li>
   <li><strong>Patrick Fitzgerald</strong>: Die Tabs sind auf dem Javascript <a href="http://www.barelyfitz.com/projects/tabber/">Tabber</a> von Patrick Fitzgerald aufgebaut.<br>
   Copyright &copy; 2006 by Patrick Fitzgerald.<br>
   Veröffentlicht unter der <a href='http://www.opensource.org/licenses/mit-license.php'>MIT-Lizenz</a>, auch X11-Lizenz genannt.
@@ -129,23 +126,15 @@ Dank geht an
 </h2>
 <ol>
   <li>Erstelle eine MySQL-Datenbank und einen Benutzer, der alle Rechte für diese Datenbank besitzt.</li>
-  <li>Editiere die Datei "openhomeopath/include/classes/db/config_db.php" und trage den Namen der MySQL-Datenbank, den Benutzernamen und dessen Passwort ein. Außerdem muss der Datenbanktyp angeben werden: "mysqli" oder "mysql". Schütze die Datei "config_db.php" später auf dem Server vor unbefugtem Lese-/Schreibzugriff (z.B. mit chmod 600), da das Passwort im Klartext gespeichert wird. Beachte, das der Webserver weiterhin Lese-Zugriff haben muß.</li>
-  <li>Lade den gesamten Order "openhomeopath" auf deinen Webserver.</li>
-  <li>Rufe über einen Browser die Adresse auf deinem Server "<em>http://deine.webadresse.de/</em>openhomeopath/install/<strong>install_db.php</strong>" auf und importiere die Daten in die Datenbank.</li>
-  <li>Nun noch "<em>http://deine.webadresse.de/</em>openhomeopath/<strong>index.php</strong>" im Browser aufrufen und los geht's.</li>
-  <li>Es gibt einen <strong>vorgegebenen Benutzer</strong> mit Administratorrechten: <strong><em>"admin"</em></strong>. Das vorgegebene <strong>Passwort</strong> ist auch <strong><em>"admin"</em></strong>. Ich empfehle das Passwort zu ändern.</li>
+  <li>Nenne die Datei "openhomeopath/include/classes/db/config_db_sample.php" in "config_db.php" um und trage den Namen der MySQL-Datenbank, den Benutzernamen und dessen Passwort ein. Außerdem muss der Datenbanktreiber angeben werden: "mysqli" oder "mysql".<br>
+  Schütze die Datei "config_db.php" später auf dem Server vor unbefugtem Lese-/Schreibzugriff (z.B. mit chmod 600), da das Passwort im Klartext gespeichert wird. Achte dabei darauf, das der Server weiterhin Lesezugriff auf "config_db.php" hat! Bei lokaler Installation nicht nötig.</li>
+  <li>Lade den gesamten Order "openhomeopath" auf deinen Webserver. Der kann auch lokal auf deinem Computer oder Laptop laufen.</li>
+  <li>Öffne in deinem Browser "<em>http://deine.webadresse.de/</em>openhomeopath/install/<strong>install_db.php</strong>" und importiere die Daten in die Datenbank.<br>
+  Wenn alles klappt kannst du die Datei "sql/OpenHomeopath.sql.gz" auf deinem Server löschen.</li>
+  <li>Es gibt einen <strong>vorgegebenen Benutzer</strong> mit Administratorrechten: <strong><em>"admin"</em></strong> mit dem <strong>Passwort</strong>: <strong><em>"admin"</em></strong>. Logge dich als <strong>"admin"</strong> unter "<em>http://deine.webadresse.de/</em>openhomeopath/<strong>login.php</strong>" ein.<br>
+  Das kann etwas dauern, da OpenHomeopath noch weitere Tabellen generieren muss.</li>
+  <li>Und schon kannst du loslegen. Ich empfehle, das admin-Passwort zu ändern.</li>
 </ol>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="download" id="download"><br></a>
-<h2>
-  Download
-</h2>
-<div>
-  Hier könnt ihr <strong>OpenHomeopath</strong> gepackt als tar.gz-Datei für die lokale Installation herunterladen:
-  <ul>
-    <li><a href="../../../openhomeopath_old/download/openhomeopath_0.9_beta.tar.gz">openhomeopath_0.9_beta.tar.gz</a> (Achtung! Dies ist immer noch die unvollständige Beta-Version. Die Stabile kommt bald.)</li>
-  </ul>
-</div>
 <br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");

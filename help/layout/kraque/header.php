@@ -43,7 +43,7 @@ header("Content-Type: text/html;charset=utf-8");
 if(!empty($head_title)) {
 	echo "      $head_title\n";
 } else {
-	echo "      OpenHomeo.org: OpenHomeopath\n";
+	echo "      OpenHomeopath\n";
 }
 ?>
     </title>

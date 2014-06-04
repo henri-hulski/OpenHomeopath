@@ -35,7 +35,7 @@ if (TABBED) {
 } else {
 	$rep_url = "../../repertori.php";
 	$materia_url = "../../materia.php";
-	$user_url = "../../userinfo.php?user=$session->username";
+	$user_url = "../../userinfo.php?user={$session->username}";
 }
 $lang = $session->lang;
 ?>
@@ -45,13 +45,13 @@ if($session->logged_in){
 ?>
 <div id="menu">
 		<span style="float: left;">
-            <a style="color: #336633; font-size: 14px;" href="..">
-                <img height="17" border="0" alt="OpenHomeo.org" src="../../skins/<?php echo(SKIN_NAME);?>/img/punkte_d9b7ea.gif"/>
+            <a style="color: #336633; font-size: 14px;" href="http://openhomeo.org">
+                <img height="17" border="0" alt="" src="../../skins/<?php echo(SKIN_NAME);?>/img/punkte_d9b7ea.gif"/>
             </a>
         </span>
 		<ul class="level1" id="root">
 		<li>
-		    <a href="../../.." style="color: #336633; font-size: 13px;"><b>OpenHomeo.org</b></a>
+		    <a href="http://openhomeo.org" style="color: #336633; font-size: 13px;"><b>OpenHomeo.org</b></a>
 		  </li>
 		  <li class="sep">|</li>
 		  <li>
@@ -69,7 +69,6 @@ if($session->logged_in){
 		  <li><a href="<?php echo($materia_url);?>"><?php echo _("Materia Medica"); ?></a>
 		  <ul class="level2">
 		  <?php
-		      echo ("<li><a href='../../materia-medica.php'>" . _("Remedy") . ": A-Z</a></li>");
 	           echo ("<li><a href='$user_url#materia_custom'>" . _("Select sources") . "</a></li>");
 		  ?>
 		  </ul>
@@ -87,8 +86,6 @@ if($session->logged_in){
 		  </li>
 		  <li class="sep">|</li>
 		  <li><a href="../../support.php"><?php echo _("Support"); ?></a></li>
-		  <li class="sep">|</li>
-		  <li><a href="../../homeophorum.php"><?php echo _("Forum"); ?></a></li>
 		  <li class="sep">|</li>
 		  <li>
 		    <a href="../../help/<?php echo $lang; ?>/index.php"><?php echo _("Help"); ?></a>
@@ -129,15 +126,6 @@ if($session->logged_in){
 		    </div>
 		  </li>
 		  </li>
-		  <li class='sep'>|</li>
-		  <li>
-		    <a href="../../donations.php"><strong><?php echo _("Received donations"); ?></strong></a>
-		    <ul class='level2 donations'>
-<?php
-	echo $magic_hat->print_received_donations();
-?>
-		    </ul>
-		  </li>
 		</ul>
 		</div>
 <?php
@@ -145,13 +133,13 @@ if($session->logged_in){
 ?>
 <div id="menu">
 		<span style="float: left;">
-            <a href="..">
+            <a href="http://openhomeo.org">
                 <img height="17" border="0" alt="OpenHomeo.org" src="../../skins/<?php echo(SKIN_NAME);?>/img/punkte_d9b7ea.gif"/>
             </a>
         </span>
 		<ul class="level1" id="root">
 		<li>
-		    <a href="../../.." style="color: #336633; font-size: 13px;"><b>OpenHomeo.org</b></a>
+		    <a href="http://openhomeo.org" style="color: #336633; font-size: 13px;"><b>OpenHomeo.org</b></a>
 		  </li>
 		  <li class="sep">|</li>
 		  <li>
@@ -161,13 +149,7 @@ if($session->logged_in){
 		  </ul>
 		  </li>
 		  <li class="sep">|</li>
-		  <li><a href="<?php echo($materia_url);?>"><?php echo _("Materia Medica"); ?></a>
-		  <ul class="level2">
-		  <?php
-		      echo ("<li><a href='../../materia-medica.php'>" . _("Remedy") . ": A-Z</a></li>");
-		  ?>
-		  </ul>
-		  </li>
+		  <li><a href="<?php echo($materia_url);?>"><?php echo _("Materia Medica"); ?></a></li>
 		  <li class="sep">|</li>
 		  <li>
 		    <a href="../../datadmin.php"><?php echo _("Data maintenance"); ?></a>
@@ -181,8 +163,6 @@ if($session->logged_in){
 		  </li>
 		  <li class="sep">|</li>
 		  <li><a href="../../support.php"><?php echo _("Support"); ?></a></li>
-		  <li class="sep">|</li>
-		  <li><a href="../../homeophorum.php"><?php echo _("Forum"); ?></a></li>
 		  <li class="sep">|</li>
 		  <li>
 		    <a href="../../help/<?php echo $lang; ?>/index.php"><?php echo _("Help"); ?></a>
@@ -210,15 +190,6 @@ if($session->logged_in){
 		    <div>
 		      <a href="../../donations.php"><img src='../../img/donate_<?php echo $lang; ?>_mini.png'  width='80' height='24' alt='<?php echo _("Donations"); ?>' title='<?php echo _("Every donation is very welcome and helps the development of OpenHomeopath."); ?>'></a>
 		    </div>
-		  </li>
-		  <li class='sep'>|</li>
-		  <li>
-		    <a href="../../donations.php"><strong><?php echo _("Received donations"); ?></strong></a>
-		    <ul class='level2 donations'>
-<?php
-	echo $magic_hat->print_received_donations();
-?>
-		    </ul>
 		  </li>
 		</ul>
 		</div>

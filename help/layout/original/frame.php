@@ -35,7 +35,7 @@ if (TABBED) {
 } else {
 	$rep_url = "../../repertori.php";
 	$materia_url = "../../materia.php";
-	$user_url = "../../userinfo.php?user=$session->username";
+	$user_url = "../../userinfo.php?user={$session->username}";
 }
 $lang = $session->lang;
 ?>
@@ -61,7 +61,7 @@ $lang = $session->lang;
                    &nbsp; 
                 </li>
                 <li>
-                  <a href="../../../index.php" style="color:#336633">OpenHomeo.org</a>
+                  <a href="http://openhomeo.org" style="color:#336633">OpenHomeo.org</a>
                 </li>
                 <li>
                   <a href="<?php echo($rep_url);?>"><?php echo _("Repertorization"); ?></a>
@@ -74,9 +74,6 @@ $lang = $session->lang;
                 </li>
                 <li>
                   <a href="../../support.php"><?php echo _("Support"); ?></a>
-                </li>
-                <li>
-                  <a href="../../homeophorum.php"><?php echo _("Forum"); ?></a>
                 </li>
                 <li>
                   <a href="../../help/<?php echo $lang; ?>/index.php"><?php echo _("Help"); ?></a>
@@ -132,15 +129,6 @@ if($session->logged_in){
 <?php
 }
 ?>
-              <ul class='donations center'>
-                <li>
-                  <span class='boldtext'><a href="../../donations.php"><?php echo _("Received donations"); ?></a></span>
-                </li>
-<?php
-echo $magic_hat->print_received_donations();
-?>
-                <br>
-              </ul>
             </td>
             <td id="middle_cell02">
               <div id="pagecontent">

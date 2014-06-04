@@ -101,9 +101,9 @@ class  AdminProcess {
 	 * request.
 	 *
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function procUpdateLevel() {
+	private function procUpdateLevel() {
 		global $session, $db, $form;
 		/*
 		 * Username error checking
@@ -124,19 +124,6 @@ class  AdminProcess {
 		/* Update user level */
 		else {
 			$db->updateUserField($subuser, "userlevel", (int)$_POST['updlevel']);
-			/*
-			 * Update phorum-user-table
-			 */
-			$user = $db->getUserInfo($subuser, 'id_user, password');
-			$user_ar["user_id"] = $user[0];
-			$user_ar["username"] = $subuser;
-			$user_ar["password"] = '$MD5$' . $user[1];
-			if($_POST['updlevel'] != "9") {
-				$user_ar["admin"] = 0;
-			} else {
-				$user_ar["admin"] = 1;
-			}
-			embed_phorum_syncuser($user_ar);
 			header("Content-Type: text/html;charset=utf-8"); 
 			header("Location: " . $session->referrer);
 			die();
@@ -148,9 +135,9 @@ class  AdminProcess {
 	 * the user is deleted from the database.
 	 *
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function procDeleteUser() {
+	private function procDeleteUser() {
 		global $session, $db, $form;
 		/*
 		 * Username error checking
@@ -209,10 +196,6 @@ class  AdminProcess {
 				$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser', $session->time)";
 				$db->send_query($query);
 			}
-			/*
-			 * Delete user from phorum user-table.
-			 */
-			embed_phorum_deleteuser($user_ar);
 			header("Content-Type: text/html;charset=utf-8"); 
 			header("Location: " . $session->referrer);
 			die();
@@ -226,9 +209,9 @@ class  AdminProcess {
 	 * gone by that the user has not logged in.
 	 *
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function procDeleteInactive() {
+	private function procDeleteInactive() {
 		global $session, $db;
 		$inact_time = $session->time - $_POST['inactdays']*24*60*60;
 		$query = "SELECT username FROM " . TBL_USERS . " WHERE TIMESTAMPDIFF(DAY, `timestamp`, NOW()) > " . $_POST['inactdays'] . " AND userlevel != " . ADMIN_LEVEL;
@@ -263,12 +246,6 @@ class  AdminProcess {
 					$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser', $session->time)";
 					$db->send_query($query);
 				}
-				/*
-				 * Delete user from phorum user-table.
-				 */
-				$user_id = $db->getUserInfo($subuser, 'id_user');
-				$user_ar = array("user_id" => $user_id[0]);
-				embed_phorum_deleteuser($user_ar);
 			}
 		}
 		$query = "DELETE FROM " . TBL_USERS . " WHERE timestamp < $inact_time AND userlevel != " . ADMIN_LEVEL;
@@ -285,9 +262,9 @@ class  AdminProcess {
 	 * it to the banned users table.
 	 *
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function procBanUser() {
+	private function procBanUser() {
 		global $session, $db, $form;
 		/*
 		 * Username error checking
@@ -325,10 +302,6 @@ class  AdminProcess {
 			$db->send_query($query);
 			$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser', $session->time)";
 			$db->send_query($query);
-			/*
-			 * Delete user from phorum user-table.
-			 */
-			embed_phorum_deleteuser($user_ar);
 			header("Content-Type: text/html;charset=utf-8"); 
 			header("Location: " . $session->referrer);
 			die();
@@ -341,9 +314,9 @@ class  AdminProcess {
 	 * enables someone to register with that username again.
 	 *
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function procDeleteBannedUser() {
+	private function procDeleteBannedUser() {
 		global $session, $db, $form;
 		/*
 		 * Username error checking
@@ -375,9 +348,9 @@ class  AdminProcess {
 	 * the data inserted by the user is deleted from the database.
 	 *
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function procDeleteUserData() {
+	private function procDeleteUserData() {
 		global $session, $db, $form;
 		/*
 		 * Username error checking
@@ -435,9 +408,9 @@ class  AdminProcess {
 	 * @param string $table database table
 	 * @param string $where SQL where clause
 	 * @return integer
-	 * @access public
+	 * @access private
 	 */
-	function delete_row($table, $where) {
+	private function delete_row($table, $where) {
 		global $db;
 		$query = "SELECT COUNT(*) FROM $table WHERE $where";
 		$db->send_query($query);
@@ -461,9 +434,9 @@ class  AdminProcess {
 	 * @param string  $user_post POST key which contains the username
 	 * @param boolean $ban true if the user is banned
 	 * @return string
-	 * @access public
+	 * @access private
 	 */
-	function checkUsername($user_post, $ban=false) {
+	private function checkUsername($user_post, $ban=false) {
 		global $db, $form;
 		/*
 		 * Username error checking

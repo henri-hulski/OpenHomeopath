@@ -38,7 +38,7 @@ include("./skins/$skin/header.php");
 </h1>
 <p><?php echo _("If you like OpenHomeopath and you want to help us you've the following options:"); ?></p>
 <ol>
-  <li><strong><?php echo _("Feedback"); ?>:</strong> <?php echo _("We depend on your feedback. If you find bugs or have an idea how to improve the program please post in the <a href='homeophorum.php?index,2'>forum</a> or write me an <a href='mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath'>e-mail</a>."); ?></li>
+  <li><strong><?php echo _("Feedback"); ?>:</strong> <?php echo _("We depend on your feedback. If you find bugs or have an idea how to improve the program please post in the <a href='http://openhomeo.org/openhomeopath/homeophorum.php?index,2'>forum</a> or write me an <a href='mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath'>e-mail</a>."); ?></li>
   <li><strong><?php echo _("Advertise"); ?>:</strong> <?php echo _("To popularize OpenHomeopath and help the community to grow you can link to OpenHomeopath from homeopathy related websites as well as post in related forums and social networks like <em>facebook</em> about us. Also writing an article for a homeopathic magazine could help."); ?></li>
    <li>
     <strong><?php echo _("Donations"); ?>: </strong><?php echo _("<strong>OpenHomeopath is open-source</strong> and this will remain so. But that doesn't mean that we've no costs of development. We need much time for programming and testing. It's really a large project."); ?><br>
@@ -73,7 +73,7 @@ if ($session->lang == "de") {
 }
 ?>
     </p>
-   <p><?php printf ("<strong>" . _("The financial concept of OpenHomeopath is based on reaching a monthly donation goal of %d €/$ by collective effort of all users.") . "</strong> " . _("Until the monthly donation goal is reached, the functionality of OpenHomeopath is restricted for non-donators.") . " " . _("When the monthly donating goal will be reached, <strong>OpenHomeopath will be fully usable for everybody</strong> until the 10th or when reaching 50% of the donating goal until the 20th of the next month."), DONATION_GOAL_MONTHLY); ?></p>
+   <p><?php printf("<strong>" . _("The financial concept of OpenHomeopath is based on reaching a monthly donation goal of %d €/$ by collective effort of all users.") . "</strong> " . _("Until the monthly donation goal is reached, the functionality of OpenHomeopath is restricted for non-donators.") . " " . _("When the monthly donating goal will be reached, <strong>OpenHomeopath will be fully usable for everybody</strong> until the 10th or when reaching 50%% of the donating goal until the 20th of the next month."), DONATION_GOAL_MONTHLY); ?></p>
   </li>
   <li><strong><?php echo _("Participation in the server costs"); ?>:</strong> <?php echo _("If you want to contribute to the server costs, you can <a href='http://openhomeo.org/spenden.html'>transfer donations</a> to the non-profit association \"Verein zur Förderung der naturheilkundlichen Medizin e.V.\"."); ?></li>
    <li><strong><?php echo _("Complete the database "); ?>:</strong> <?php echo _("You can actively add repertories with the <a href='express.php'>express-tool</a>. If someone has a English or German materia medica in digital format please contact. This can be a textfile, a table, a PDF with text or a database. I will try to import it to OpenHomeopath."); ?></li>
