@@ -45,16 +45,16 @@ class  Form {
 	/**
 	 * Holds submitted form field values
 	 * @var array
-	 * @access public
+	 * @access protected
 	 */
-	public $values = array();
+	protected $values = array();
 
 	/**
 	 * Holds submitted form error messages
 	 * @var array
-	 * @access public
+	 * @access protected
 	 */
-	public $errors = array();
+	protected $errors = array();
 
 	/**
 	 * The number of errors in submitted form
@@ -84,19 +84,6 @@ class  Form {
 		else{
 			$this->num_errors = 0;
 		}
-	}
-
-	/**
-	 * setValue - Records the value typed into the given
-	 * form field by the user.
-	 *
-	 * @param string $field form field
-	 * @param string $value field value
-	 * @return void
-	 * @access public
-	 */
-	function setValue($field, $value){
-		$this->values[$field] = $value;
 	}
 
 	/**

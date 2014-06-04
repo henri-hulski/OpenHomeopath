@@ -49,17 +49,17 @@ class RevRep extends TreeView {
 	/**
 	 * Ordered array of main rubrics realted to the queried remedy
 	 * @var array
-	 * @access public
+	 * @access private
 	 */
-	public $rubrics_ar = array();
+	protected $rubrics_ar = array();
 	
 	
 	/**
 	 * Grade from which on symptoms will be shown (1|2|3)
 	 * @var integer
-	 * @access public
+	 * @access private
 	 */
-	public $grade = 1;
+	protected $grade = 1;
 	
 	/**
 	 * Class constructor
@@ -107,7 +107,7 @@ class RevRep extends TreeView {
 		global $db;
 		$query = "SELECT DISTINCT {$this->symptoms_tbl}.sym_id, {$this->symptoms_tbl}.symptom, {$this->symptoms_tbl}.pid, {$this->symptoms_tbl}.rubric_id FROM {$this->sym_rem_tbl}, {$this->symptoms_tbl} WHERE {$this->sym_rem_tbl}.rem_id = {$this->rem_id} ";
 		if ($this->grade > 1) {
-			$query .= "AND  {$this->sym_rem_tbl}.grade >= $this->grade ";
+			$query .= "AND  {$this->sym_rem_tbl}.grade >= {$this->grade} ";
 		}
 		$query .= "AND {$this->sym_rem_tbl}.sym_id = {$this->symptoms_tbl}.sym_id ";
 		if (count($rem_rubrics_ar) == 1) {

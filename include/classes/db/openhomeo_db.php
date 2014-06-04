@@ -29,7 +29,7 @@ require_once ("include/classes/db/config_openhomeopath.php");
 require_once("include/classes/db/db.php");
 
 /**
- * OpenHomeoDB provides the database functionality for OpenHomeopath
+ * OpenHomeoDB provides the database public functionality for OpenHomeopath
  *
  * @category  Database
  * @package   OpenHomeoDB
@@ -206,9 +206,9 @@ class OpenHomeoDB extends DB {
 	 *
 	 * If there exists no symptom-translations the whole sym-table will be used.
 	 * If there are translations the language-based sym-table according to the usersettings will be used.
-	 * If given $custom_symptom_lang the given language will be used.
+	 * If $custom_symptom_lang is set, the given language will be used.
 	 *
-	 * @param boolean $custom_symptom_lang optional the symptom language to be used
+	 * @param string|false $custom_symptom_lang optional the symptom language to be used as language code
 	 * @return string
 	 * @access public
 	 */
@@ -231,11 +231,11 @@ class OpenHomeoDB extends DB {
 	/**
 	 * get_custom_symptom_lang returns the language to be used for symptoms
 	 *
-	 * If there exists no symptom-translations the function returns false.
+	 * If there exists no symptom-translations the public function returns false.
 	 * If there are translations the language according to the usersettings will be used.
 	 * If given an array of src_id's as $sources the sym-language will only be returned,
 	 * when for one of the given sources exists an translation.
-	 * Else the function returns false.
+	 * Else the public function returns false.
 	 *
 	 * @param array|string $sources optional an array of src_id's to check
 	 * @return string|false
@@ -265,9 +265,9 @@ class OpenHomeoDB extends DB {
 	/**
 	 * get_lang_only_symptom_table returns an array with information about the language symptom table to be used if any, else false.
 	 *
-	 * If the user wants to use all symptoms from one language the function returns
+	 * If the user wants to use all symptoms from one language the public function returns
 	 * an array with the language code, the language name and the symptom table.
-	 * Else the function returns false.
+	 * Else the public function returns false.
 	 *
 	 * @return array|false  ['id']: language code, ['name']: language name in current language, ['table']: symptom table to use
 	 * @access public
@@ -334,10 +334,10 @@ class OpenHomeoDB extends DB {
 	/**
 	 * is_custom_table determines which kind of table for the given table will be used.
 	 *
-	 * If the user uses a custom table the function returns true.
+	 * If the user uses a custom table the public function returns true.
 	 * If the given table is symptoms and the user uses all symptoms from one language
-	 * the function returns this language name in the current language.
-	 * Else or if no user is logged in the function returns false.
+	 * the public function returns this language name in the current language.
+	 * Else or if no user is logged in the public function returns false.
 	 *
 	 * @param string  $table  given table (symptoms | sym_rem | materia)
 	 * @return boolean|string
@@ -369,7 +369,7 @@ class OpenHomeoDB extends DB {
 	/**
 	 * exist_symptom_translation returns true if exists any translations for symptoms in the database, else false.
 	 *
-	 * If src_id's-array given as $sources, the function checks only for symptoms related to the given sources.
+	 * If src_id's-array given as $sources, the public function checks only for symptoms related to the given sources.
 	 *
 	 * @param array|string  $sources optional an array of src_id's to check
 	 * @return boolean
@@ -523,7 +523,7 @@ class OpenHomeoDB extends DB {
 	/**
 	 * update_custom_symptom_table updates the custom symptom table if the symptom base table has changed.
 	 *
-	 * This function is called during log in and also if no user is logged in for updating the default symptom table.
+	 * This public function is called during log in and also if no user is logged in for updating the default symptom table.
 	 *
 	 * @return void
 	 * @access public
@@ -712,12 +712,12 @@ class OpenHomeoDB extends DB {
 	/**
 	 * update_symptom_tables updates the main symptoms table and the language-symptom-tables.
 	 *
-	 * If symptoms were added, the function completes parent-rubrics in the main symptoms table and
+	 * If symptoms were added, the public function completes parent-rubrics in the main symptoms table and
 	 * updates its tree-structure. It also creates new language-symptom-tables and update the sym_stats table.
 	 *
-	 * If no symptoms were added but $update_tree is true the function only creates new language-symptom-tables.
+	 * If no symptoms were added but $update_tree is true the public function only creates new language-symptom-tables.
 	 *
-	 * This function is called, when an administrator loggs in.
+	 * This public function is called, when an administrator loggs in.
 	 *
 	 * @param boolean  $update_tree
 	 * @return string  the log info as html
@@ -758,7 +758,7 @@ class OpenHomeoDB extends DB {
 	/**
 	 * update_lang_symptom_tables updates the language-symptom-tables.
 	 *
-	 * The function completes parent-rubrics in the language-symptom-tables,
+	 * The public function completes parent-rubrics in the language-symptom-tables,
 	 * updates their tree-structure and creates/replaces the language-only views.
 	 *
 	 * If $create_tables is true the language-symptom-tables ("sym__de", "sym__en", etc.)
