@@ -1,6 +1,6 @@
 Program Version
 
-    This is OpenHomeopath Version 1.0.
+    This is OpenHomeopath Version 1.0 released on 05.06.2014.
     After a fundamental revision of the entire code and database structure I'm glad
     to publish the first stable release of OpenHomeopath after more than 7 years work.
     If you still find bugs or if you've a question please contact me.
@@ -20,7 +20,7 @@ License und Copyright
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU Affero General Public License for more details.
 
-    You find a copy of the GNU Affero General Public License under "doc/en/agpl3.php".
+    You find a copy of the GNU Affero General Public License under 'doc/en/agpl3.php'.
 
     The manuals and documentation of OpenHomeopath are distributed
     under the GNU Free Documentation License Version 1.3 (FDLv1.3).
@@ -28,7 +28,7 @@ License und Copyright
 
 Installation
 
-    Instructions for installation you find in INSTALL.
+    Instructions for installation you find in 'doc/en/INSTALL'.
 
 
 
