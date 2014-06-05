@@ -143,12 +143,21 @@ Dank geht an
 <h2>
   Download
 </h2>
+<div class="rightFlow">
+  <div class='center'>
+    <strong>Denk daran zu spenden!</strong><br><br>
+    <a href='../../donations.php' target='_blank'><img src='../../img/donate_de.png' width='110' height='33' alt='Spende' title='Wenn dir unsere Arbeit gefällt bedank dich mit einer großzügigen Spende.'></a>
+  </div>
+</div>
 <div>
-  Hier könnt ihr <strong>OpenHomeopath</strong> gepackt als tar.gz-Datei für die lokale Installation herunterladen:
+  Hier könnt ihr <strong>OpenHomeopath</strong> herunterladen:
   <ul>
-    <li><a href="../../../openhomeopath_old/download/openhomeopath_0.9_beta.tar.gz">openhomeopath_0.9_beta.tar.gz</a> (Achtung! Dies ist immer noch die unvollständige Beta-Version. Die Stabile kommt bald.)</li>
+    <li><a href="../../download/openhomeopath_1.0.tar.gz">openhomeopath_1.0.tar.gz</a> gepackt als tar.gz-Datei für die lokale Installation.</li>
+    <li>Du kannst auch das <a href='https://github.com/henri-hulski/OpenHomeopath' target='_blank'>OpenHomeopath Git-Repository</a> von GitHub klonen.</li>
+    <li>Oder den <a href='https://github.com/henri-hulski/OpenHomeopath/archive/master.zip'>OpenHomeopath Masterbranch</a> von GitHub als gepackte Zip-Datei herunterladen.</li>
   </ul>
 </div>
+<p>Ihr könnt euch auch gerne die <a href='../en/apigen' target='_blank'>OpenHomeopath PHP Quellcode Dokumentation</a> anschauen.</p>
 <br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");

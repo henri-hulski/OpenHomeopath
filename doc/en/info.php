@@ -149,12 +149,21 @@ include("help/layout/$skin/header.php");
 <h2>
   Download
 </h2>
+<div class="rightFlow">
+  <div class='center'>
+    <strong>Remember to donate!</strong><br><br>
+    <a href='../../donations.php' target='_blank'><img src='../../img/donate_en.png' width='110' height='33' alt='Donate' title='If you like our work remember to make a generous donation.'></a>
+  </div>
+</div>
 <div>
-  Here you can download <strong>OpenHomeopath</strong> as a compressed tarball for local installation:
+  Here you can download <strong>OpenHomeopath</strong>:
   <ul>
-    <li><a href="../../../openhomeopath_old/download/openhomeopath_0.9_beta.tar.gz">openhomeopath_0.9_beta.tar.gz</a> (Warning! This is still the unstable beta-version. Stable comes soon.)</li>
+    <li>Download <a href="../../download/openhomeopath_1.0.tar.gz">openhomeopath_1.0.tar.gz</a> as a compressed tarball for local installation.</li>
+    <li>You can also clone the <a href='https://github.com/henri-hulski/OpenHomeopath' target='_blank'>OpenHomeopath git repository</a> from GitHub.</li>
+    <li>Or download the <a href='https://github.com/henri-hulski/OpenHomeopath/archive/master.zip'>OpenHomeopath masterbranch</a> from GitHub as packed zip-file.</li>
   </ul>
 </div>
+<p>You can also have a look at the <a href='../en/apigen' target='_blank'>OpenHomeopath PHP code documentation</a>.</p>
 <br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
