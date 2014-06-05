@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Session | OpenHomeopath PHP code documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?108902800"></script>
+	<script type="text/javascript" src="elementlist.js?2532662558"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li><a href="package-Admin.html">Admin</a>
+						</li>
+				<li><a href="package-AdminProcess.html">AdminProcess</a>
+						</li>
+				<li><a href="package-Archive.html">Archive</a>
+						</li>
+				<li><a href="package-Common.html">Common</a>
+						</li>
+				<li><a href="package-DB.html">DB</a>
+						</li>
+				<li><a href="package-Express.html">Express</a>
+						</li>
+				<li><a href="package-Form.html">Form</a>
+						</li>
+				<li><a href="package-Layout.html">Layout</a>
+						</li>
+				<li><a href="package-Mailer.html">Mailer</a>
+						</li>
+				<li><a href="package-None.html">None</a>
+						</li>
+				<li><a href="package-OpenHomeoDB.html">OpenHomeoDB</a>
+						</li>
+				<li><a href="package-PDF.html">PDF<span></span></a>
+						<ul>
+				<li><a href="package-PDF.MC.html">MC</a>
+						</li>
+							</ul></li>
+				<li><a href="package-Process.html">Process</a>
+						</li>
+				<li><a href="package-Rep.html">Rep</a>
+						</li>
+				<li><a href="package-RevRep.html">RevRep</a>
+						</li>
+				<li><a href="package-SaveReps.html">SaveReps</a>
+						</li>
+				<li><a href="package-Search.html">Search</a>
+						</li>
+				<li class="active"><a href="package-Session.html">Session</a>
+						</li>
+				<li><a href="package-SymRem.html">SymRem</a>
+						</li>
+				<li><a href="package-TreeView.html">TreeView</a>
+						</li>
+				<li><a href="package-UserDB.html">UserDB</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Session.html">Session</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-Session.html" title="Summary of Session"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Session</h1>
+
+
+	<div class="description">
+	
+<p>The Session class is meant to simplify the task of keeping track of logged in
+users and also guests.</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-Session.html">Session</a><br />
+
+				<b>Category:</b>
+				Login<br />
+				<b>Copyright:</b>
+				2007-2014 Henri Schumacher<br />
+				<b>License:</b>
+				<a href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License v3</a><br />
+				<b>Author:</b>
+				Jpmaster77 a.k.a. The Grandmaster of C++ (GMC)<br />
+				<b>Author:</b>
+				Henri Schumacher &lt;<a
+href="mailto:henri.hulski&#64;gazeta.pl">henri.hulski&#64;<!---->gazeta.pl</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-Session.html#37-775" title="Go to source code">include/classes/login/session.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Session.html#149-161" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			
+<p>Class constructor</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Class constructor</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="login" id="_login">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_login">#</a>
+		<code><a href="source-class-Session.html#307-401" title="Go to source code">login</a>( <span>string <var>$subuser</var></span>, <span>string <var>$subpass</var></span>, <span>boolean <var>$subremember</var></span> )</code>
+
+		<div class="description short">
+			
+<p>login - The user has submitted his username and password through the login
+form, this function checks the authenticity of that information in the database
+and creates the session. Effectively logging in the user if all goes well.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>login - The user has submitted his username and password through the login
+form, this function checks the authenticity of that information in the database
+and creates the session. Effectively logging in the user if all goes well.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$subuser</var></dt>
+					<dd><code>string</code><br>$subuser username</dd>
+					<dt><var>$subpass</var></dt>
+					<dd><code>string</code><br>$subpass password</dd>
+					<dt><var>$subremember</var></dt>
+					<dd><code>boolean</code><br>$subremember is true if the user want to stay logged in</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>true if login completed successfully<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="logout" id="_logout">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_logout">#</a>
+		<code><a href="source-class-Session.html#403-442" title="Go to source code">logout</a>( )</code>
+
+		<div class="description short">
+			
+<p>logout - Gets called when the user wants to be logged out of the website. It
+deletes any cookies that were stored on the users computer as a result of him
+wanting to be remembered, and also unsets session variables and demotes his user
+level to guest.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>logout - Gets called when the user wants to be logged out of the website. It
+deletes any cookies that were stored on the users computer as a result of him
+wanting to be remembered, and also unsets session variables and demotes his user
+level to guest.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="register" id="_register">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_register">#</a>
+		<code><a href="source-class-Session.html#444-547" title="Go to source code">register</a>( <span>string <var>$subuser</var></span>, <span>string <var>$subpass</var></span>, <span>string <var>$subpass2</var></span>, <span>string <var>$subemail</var></span> )</code>
+
+		<div class="description short">
+			
+<p>register - Gets called when the user has just submitted the registration
+form. Determines if there were any errors with the entry fields, if so, it
+records the errors and returns</p>
+
+<p>1. If no errors were found, it registers the new user and returns 0. Returns
+2 if registration failed.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>register - Gets called when the user has just submitted the registration
+form. Determines if there were any errors with the entry fields, if so, it
+records the errors and returns</p>
+
+<p>1. If no errors were found, it registers the new user and returns 0. Returns
+2 if registration failed.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$subuser</var></dt>
+					<dd><code>string</code><br>$subuser username</dd>
+					<dt><var>$subpass</var></dt>
+					<dd><code>string</code><br>$subpass password</dd>
+					<dt><var>$subpass2</var></dt>
+					<dd><code>string</code><br>$subpass2 control password</dd>
+					<dt><var>$subemail</var></dt>
+					<dd><code>string</code><br>$subemail email</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>0 | 1 | 2<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="editAccount" id="_editAccount">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_editAccount">#</a>
+		<code><a href="source-class-Session.html#549-705" title="Go to source code">editAccount</a>( <span>string <var>$subcurpass</var></span>, <span>string <var>$subnewpass</var></span>, <span>string <var>$subnewpass2</var></span>, <span>string <var>$subemail</var></span>, <span>string <var>$real_name</var></span>, <span>string <var>$extra</var></span>, <span>integer <var>$show_active</var></span>, <span>integer <var>$hide_email</var></span>, <span>string <var>$skin</var></span>, <span>mixed <var>$lang</var></span>, <span>mixed <var>$sym_lang</var></span> )</code>
+
+		<div class="description short">
+			
+<p>editAccount - Attempts to edit the user's account information including the
+password, which it first makes sure is correct if entered, if so and the new
+password is in the right format, the change is made. All other fields are
+changed automatically.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>editAccount - Attempts to edit the user's account information including the
+password, which it first makes sure is correct if entered, if so and the new
+password is in the right format, the change is made. All other fields are
+changed automatically.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$subcurpass</var></dt>
+					<dd><code>string</code><br>$subcurpass current password</dd>
+					<dt><var>$subnewpass</var></dt>
+					<dd><code>string</code><br>$subnewpass new password</dd>
+					<dt><var>$subnewpass2</var></dt>
+					<dd><code>string</code><br>$subnewpass2 verification of the new password</dd>
+					<dt><var>$subemail</var></dt>
+					<dd><code>string</code><br>$subemail email</dd>
+					<dt><var>$real_name</var></dt>
+					<dd><code>string</code><br>$real_name user real name</dd>
+					<dt><var>$extra</var></dt>
+					<dd><code>string</code><br>$extra extra public information about the user</dd>
+					<dt><var>$show_active</var></dt>
+					<dd><code>integer</code><br>$show_active 0 | 1 - 1 if the user wants to see the active users</dd>
+					<dt><var>$hide_email</var></dt>
+					<dd><code>integer</code><br>$hide_email 0 | 1 - 1 if the user wants to hide his email from other users</dd>
+					<dt><var>$skin</var></dt>
+					<dd><code>string</code><br>$skin original | kraque - skin the user uses + @param string $lang de | en -
+users interface language + @param string $sym_lang de | en - language the user
+prefers for symptoms</dd>
+					<dt><var>$lang</var></dt>
+					<dd></dd>
+					<dt><var>$sym_lang</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>true on success<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isAdmin" id="_isAdmin">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isAdmin">#</a>
+		<code><a href="source-class-Session.html#707-716" title="Go to source code">isAdmin</a>( )</code>
+
+		<div class="description short">
+			
+<p>isAdmin - Returns true if currently logged in user is an administrator, false
+otherwise.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>isAdmin - Returns true if currently logged in user is an administrator, false
+otherwise.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isEditor" id="_isEditor">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isEditor">#</a>
+		<code><a href="source-class-Session.html#718-727" title="Go to source code">isEditor</a>( )</code>
+
+		<div class="description short">
+			
+<p>isEditor - Returns true if currently logged in user is an editor, false
+otherwise.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>isEditor - Returns true if currently logged in user is an editor, false
+otherwise.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="showActive" id="_showActive">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_showActive">#</a>
+		<code><a href="source-class-Session.html#729-738" title="Go to source code">showActive</a>( )</code>
+
+		<div class="description short">
+			
+<p>showActiveUsers - Returns true if currently logged in user is an
+administrator or if he wants to see active users</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>showActiveUsers - Returns true if currently logged in user is an
+administrator or if he wants to see active users</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="generateRandID" id="_generateRandID">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_generateRandID">#</a>
+		<code><a href="source-class-Session.html#740-750" title="Go to source code">generateRandID</a>( )</code>
+
+		<div class="description short">
+			
+<p>generateRandID - Generates a string made up of randomized letters (lower and
+upper case) and digits and returns the md5 hash of it to be used as a
+userid.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>generateRandID - Generates a string made up of randomized letters (lower and
+upper case) and digits and returns the md5 hash of it to be used as a
+userid.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="generateRandStr" id="_generateRandStr">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_generateRandStr">#</a>
+		<code><a href="source-class-Session.html#752-774" title="Go to source code">generateRandStr</a>( <span>mixed <var>$length</var></span> )</code>
+
+		<div class="description short">
+			
+<p>generateRandStr - Generates a string made up of randomized letters (lower and
+upper case) and digits, the length is a specified parameter.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>generateRandStr - Generates a string made up of randomized letters (lower and
+upper case) and digits, the length is a specified parameter.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="username" id="$username">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Session.html#50-55" title="Go to source code"><var>$username</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$username" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Username given on sign-up</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Username given on sign-up</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="email" id="$email">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Session.html#58-63" title="Go to source code"><var>$email</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$email" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>email with which the user is registered</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>email with which the user is registered</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="userid" id="$userid">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Session.html#66-71" title="Go to source code"><var>$userid</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$userid" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Random value generated on current login</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Random value generated on current login</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="id_user" id="$id_user">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Session.html#74-79" title="Go to source code"><var>$id_user</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$id_user" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>ID signed to user by auto_increment</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>ID signed to user by auto_increment</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="userlevel" id="$userlevel">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Session.html#82-87" title="Go to source code"><var>$userlevel</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$userlevel" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The level to which the user pertains</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The level to which the user pertains</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="hide_email" id="$hide_email">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Session.html#90-95" title="Go to source code"><var>$hide_email</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$hide_email" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Is 1, when the user want to hide his email, otherwise 0</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Is 1, when the user want to hide his email, otherwise 0</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="logged_in" id="$logged_in">
+		<td class="attributes"><code>
+			public  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Session.html#98-103" title="Go to source code"><var>$logged_in</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$logged_in" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>True if user is logged in, false otherwise</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>True if user is logged in, false otherwise</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="userinfo" id="$userinfo">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Session.html#106-111" title="Go to source code"><var>$userinfo</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$userinfo" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The array holding all user info</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The array holding all user info</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="url" id="$url">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Session.html#114-119" title="Go to source code"><var>$url</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$url" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The page url current being viewed</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The page url current being viewed</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="referrer" id="$referrer">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Session.html#122-132" title="Go to source code"><var>$referrer</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$referrer" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Last recorded site page viewed</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Last recorded site page viewed</p>
+
+<p>Note: referrer should really only be considered the actual page referrer in
+process.php, any other time it may be inaccurate.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="skin" id="$skin">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Session.html#134-139" title="Go to source code"><var>$skin</var></a>
+		</td>
+		<td class="value"><code>DEFAULT_SKIN</code></td>
+		<td class="description"><div>
+			<a href="#$skin" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>skin the user uses</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>skin the user uses</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="lang" id="$lang">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Session.html#142-147" title="Go to source code"><var>$lang</var></a>
+		</td>
+		<td class="value"><code>DEFAULT_LANGUAGE</code></td>
+		<td class="description"><div>
+			<a href="#$lang" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>language the user uses</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>language the user uses</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		OpenHomeopath PHP code documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

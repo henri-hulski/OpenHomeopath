@@ -22,7 +22,7 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  */
 
 /**
@@ -55,17 +55,17 @@ class TreeView {
 	/**
 	 * Main rubric id for which we're building the treeview. If we build for all main rubrics it has the value -1.
 	 * @var integer
-	 * @access public
+	 * @access protected
 	 */
-	public $rubric_id;
+	protected $rubric_id;
 	
 	
 	/**
 	 * Symptoms table to build the tree from
 	 * @var string
-	 * @access public
+	 * @access protected
 	 */
-	public $tree_symptoms_tbl = "";
+	protected $tree_symptoms_tbl = "";
 	
 	
 	/**

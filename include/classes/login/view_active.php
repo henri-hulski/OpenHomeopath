@@ -3,7 +3,7 @@
 /**
  * view_active.php
  *
- * Show the active users
+ * Print the active users as html link
  *
  * PHP version 5
  *
@@ -25,15 +25,10 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  * @see       login.php
  */
 
-/**
- * The database connection
- * @global object
- */
-global $db;
 if(!defined('TBL_ACTIVE_USERS')) {
 	die(_("Cannot access the user-table!"));
 }

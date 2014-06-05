@@ -23,7 +23,7 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  * @see       login.php
  */
 
@@ -307,9 +307,9 @@ class UserDB extends OpenHomeoDB {
 	 * are viewing site and sets class variable accordingly.
 	 *
 	 *  @return integer
-	 *  @access public
+	 *  @access private
 	 */
-	function calcNumActiveUsers() {
+	private function calcNumActiveUsers() {
 	/* Calculate number of users at site */
 		$query = "SELECT COUNT(*) FROM " . TBL_ACTIVE_USERS;
 		$this->send_query($query);
@@ -322,9 +322,9 @@ class UserDB extends OpenHomeoDB {
 	 * are viewing site and sets class variable accordingly.
 	 *
 	 *  @return integer
-	 *  @access public
+	 *  @access private
 	 */
-	function calcNumActiveGuests() {
+	private function calcNumActiveGuests() {
 	/* Calculate number of guests at site */
 		$query = "SELECT COUNT(*) FROM " . TBL_ACTIVE_GUESTS;
 		$this->send_query($query);

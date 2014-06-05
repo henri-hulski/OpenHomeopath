@@ -22,7 +22,7 @@ if(!$session->isAdmin()) {
    <?php echo _("Complete parent-rubrics"); ?>
 </h3>
 <p>
-   <?php echo _("If there exists several rubrics, that starts with the same rubric before a '>', but the parent-rubric doesn't exists, it will be generated. If the rubric before ' > ' exists only once, the '>' will be converted in a comma (', ')."); ?>
+   <?php echo _("If several rubrics exists, which starts with the same rubric before a '>' but the parent-rubric doesn't exists, it will be generated. If the rubric before '>' exists only once, the '>' will be converted in a comma (',')."); ?>
 </p>
 <p>
    <?php echo _("This needs some time. Please be patient."); ?>
@@ -39,7 +39,7 @@ if(!$session->isAdmin()) {
 </h3>
 <p>
    <?php echo _("The symptom table will be restructured."); ?><br>
-   <?php echo _("First all symptoms that have no <strong>\">\"</strong> in the symptom name will be selected. Then we check if the symptom name occur again in the table followed by <strong>\" > \"</strong>.  In this case these symptoms get the \"parent_id\" of the superior symptom. Next all symptoms with one <strong>\">\"</strong> will be parsed etc."); ?>
+   <?php echo _("First all symptoms that have no '>' in the symptom name will be parsed. Then we check if the symptom name occur again in the table followed by '>'.  In this case these symptoms get the \"parent_id\" of the superior symptom. Next all symptoms with one '>' will be parsed and so on."); ?>
 </p>
 <p>
    <?php echo _("The restructuring needs some time. Please be patient."); ?>
@@ -55,7 +55,7 @@ if(!$session->isAdmin()) {
    <?php echo _("Update of the language-symptom-tables"); ?>
 </h3>
 <p>
-   <?php echo _("The language-symptom-tables (\"symptome__de\", \"symptome__en\", etc.) will be updated on the base of the main symptom-table (\"symptome\") . This is necessary, when new symptoms were added."); ?>
+   <?php echo _("The language-symptom-tables (\"sym__de\", \"sym__en\", etc.) will be updated on the base of the main symptom-table (\"symptoms\") . This is necessary, when new symptoms were added."); ?>
 </p>
 <p>
    <?php echo _("The update needs some time. Please be patient."); ?>
@@ -75,7 +75,8 @@ if(!$session->isAdmin()) {
 		$log = $db->update_symptom_tree();
 		echo $log;
 	} elseif (!empty($_POST['update_lang_symptom_tables'])) {
-		$log = $db->update_symptom_tables(1);
+		$update_tree = true;
+		$log = $db->update_symptom_tables($update_tree);
 		$lang = $session->lang;
 		$query = "SELECT lang_$lang FROM languages WHERE sym_lang != 0";
 		$db->send_query($query);

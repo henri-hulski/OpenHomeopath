@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class UserDB | OpenHomeopath PHP code documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?108902800"></script>
+	<script type="text/javascript" src="elementlist.js?2532662558"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li><a href="package-Admin.html">Admin</a>
+						</li>
+				<li><a href="package-AdminProcess.html">AdminProcess</a>
+						</li>
+				<li><a href="package-Archive.html">Archive</a>
+						</li>
+				<li><a href="package-Common.html">Common</a>
+						</li>
+				<li><a href="package-DB.html">DB</a>
+						</li>
+				<li><a href="package-Express.html">Express</a>
+						</li>
+				<li><a href="package-Form.html">Form</a>
+						</li>
+				<li><a href="package-Layout.html">Layout</a>
+						</li>
+				<li><a href="package-Mailer.html">Mailer</a>
+						</li>
+				<li><a href="package-None.html">None</a>
+						</li>
+				<li><a href="package-OpenHomeoDB.html">OpenHomeoDB</a>
+						</li>
+				<li><a href="package-PDF.html">PDF<span></span></a>
+						<ul>
+				<li><a href="package-PDF.MC.html">MC</a>
+						</li>
+							</ul></li>
+				<li><a href="package-Process.html">Process</a>
+						</li>
+				<li><a href="package-Rep.html">Rep</a>
+						</li>
+				<li><a href="package-RevRep.html">RevRep</a>
+						</li>
+				<li><a href="package-SaveReps.html">SaveReps</a>
+						</li>
+				<li><a href="package-Search.html">Search</a>
+						</li>
+				<li><a href="package-Session.html">Session</a>
+						</li>
+				<li><a href="package-SymRem.html">SymRem</a>
+						</li>
+				<li><a href="package-TreeView.html">TreeView</a>
+						</li>
+				<li class="active"><a href="package-UserDB.html">UserDB</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-UserDB.html">UserDB</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-UserDB.html" title="Summary of UserDB"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class UserDB</h1>
+
+
+	<div class="description">
+	
+<p>The Database class is meant to simplify the task of accessing information
+from the website's database.</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-DbPlugin.html"><span class="invalid">DbPlugin</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+			<a href="class-DB.html"><span>DB</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by" />
+			<a href="class-OpenHomeoDB.html"><span>OpenHomeoDB</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:90px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>UserDB</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-UserDB.html">UserDB</a><br />
+
+				<b>Category:</b>
+				Login<br />
+				<b>Copyright:</b>
+				2007-2014 Henri Schumacher<br />
+				<b>License:</b>
+				<a href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License v3</a><br />
+				<b>Author:</b>
+				Jpmaster77 a.k.a. The Grandmaster of C++ (GMC)<br />
+				<b>Author:</b>
+				Henri Schumacher &lt;<a
+href="mailto:henri.hulski&#64;gazeta.pl">henri.hulski&#64;<!---->gazeta.pl</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-UserDB.html#33-439" title="Go to source code">include/classes/login/database.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="get_num_visitors" id="_get_num_visitors">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_num_visitors">#</a>
+		<code><a href="source-class-UserDB.html#70-88" title="Go to source code">get_num_visitors</a>( )</code>
+
+		<div class="description short">
+			
+<p>Only query database to find out number of members when getNumMembers() is
+called for the first time, until then, default value set.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Only query database to find out number of members when getNumMembers() is
+called for the first time, until then, default value set.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="confirmUserPass" id="_confirmUserPass">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_confirmUserPass">#</a>
+		<code><a href="source-class-UserDB.html#90-130" title="Go to source code">confirmUserPass</a>( <span>string <var>$username</var></span>, <span>string <var>$password</var></span> )</code>
+
+		<div class="description short">
+			
+<p>confirmUserPass - Checks whether or not the given username is in the
+database, if so it checks if the given password is the same password in the
+database for that user. If the user doesn't exist or if the passwords don't
+match up, it returns an error code (1 or 2). On success it returns 0.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>confirmUserPass - Checks whether or not the given username is in the
+database, if so it checks if the given password is the same password in the
+database for that user. If the user doesn't exist or if the passwords don't
+match up, it returns an error code (1 or 2). On success it returns 0.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd><code>string</code><br>$username username</dd>
+					<dt><var>$password</var></dt>
+					<dd><code>string</code><br>$password password</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>0 | 1 | 2<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="confirmUserID" id="_confirmUserID">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_confirmUserID">#</a>
+		<code><a href="source-class-UserDB.html#132-173" title="Go to source code">confirmUserID</a>( <span>string <var>$username</var></span>, <span>string <var>$userid</var></span> )</code>
+
+		<div class="description short">
+			
+<p>confirmUserID - Checks whether or not the given username is in the database,
+if so it checks if the given userid is the same userid in the database for that
+user. If the user doesn't exist or if the userids don't match up, it returns an
+error code (1 or 2). On success it returns 0.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>confirmUserID - Checks whether or not the given username is in the database,
+if so it checks if the given userid is the same userid in the database for that
+user. If the user doesn't exist or if the userids don't match up, it returns an
+error code (1 or 2). On success it returns 0.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd><code>string</code><br>$username username</dd>
+					<dt><var>$userid</var></dt>
+					<dd><code>string</code><br>$userid user-ID</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>0 | 1 | 2<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="usernameTaken" id="_usernameTaken">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_usernameTaken">#</a>
+		<code><a href="source-class-UserDB.html#175-196" title="Go to source code">usernameTaken</a>( <span>string <var>$username</var></span> )</code>
+
+		<div class="description short">
+			
+<p>usernameTaken - Returns true if the username has been taken by another user,
+false otherwise.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>usernameTaken - Returns true if the username has been taken by another user,
+false otherwise.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd><code>string</code><br>$username username</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="usernameBanned" id="_usernameBanned">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_usernameBanned">#</a>
+		<code><a href="source-class-UserDB.html#198-218" title="Go to source code">usernameBanned</a>( <span>string <var>$username</var></span> )</code>
+
+		<div class="description short">
+			
+<p>usernameBanned - Returns true if the username has been banned by the
+administrator.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>usernameBanned - Returns true if the username has been banned by the
+administrator.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd><code>string</code><br>$username username</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addNewUser" id="_addNewUser">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addNewUser">#</a>
+		<code><a href="source-class-UserDB.html#220-241" title="Go to source code">addNewUser</a>( <span>string <var>$username</var></span>, <span>string <var>$password</var></span>, <span>string <var>$email</var></span> )</code>
+
+		<div class="description short">
+			
+<p>addNewUser - Inserts the given (username, password, email) info into the
+database. Appropriate user level is set. Returns true on success, false
+otherwise.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>addNewUser - Inserts the given (username, password, email) info into the
+database. Appropriate user level is set. Returns true on success, false
+otherwise.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd><code>string</code><br>$username username</dd>
+					<dt><var>$password</var></dt>
+					<dd><code>string</code><br>$password password</dd>
+					<dt><var>$email</var></dt>
+					<dd><code>string</code><br>$email e-mail</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>true on success<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="updateUserField" id="_updateUserField">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_updateUserField">#</a>
+		<code><a href="source-class-UserDB.html#243-257" title="Go to source code">updateUserField</a>( <span>string <var>$username</var></span>, <span>string <var>$field</var></span>, <span>string <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+<p>updateUserField - Updates a field, specified by the field parameter, in the
+user's row of the database.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>updateUserField - Updates a field, specified by the field parameter, in the
+user's row of the database.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd><code>string</code><br>$username username</dd>
+					<dt><var>$field</var></dt>
+					<dd><code>string</code><br>$field form field</dd>
+					<dt><var>$value</var></dt>
+					<dd><code>string</code><br>$value field value</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>true on success<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getUserInfo" id="_getUserInfo">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getUserInfo">#</a>
+		<code><a href="source-class-UserDB.html#259-282" title="Go to source code">getUserInfo</a>( <span>string <var>$username</var></span>, <span>string <var>$column</var></span> )</code>
+
+		<div class="description short">
+			
+<p>getUserInfo - Returns the result array from a database query asking for all
+information stored regarding the given username. If query fails, NULL is
+returned.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getUserInfo - Returns the result array from a database query asking for all
+information stored regarding the given username. If query fails, NULL is
+returned.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd><code>string</code><br>$username username</dd>
+					<dt><var>$column</var></dt>
+					<dd><code>string</code><br>$column column(s) of user table to query - comma seperated</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>true on success<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getNumMembers" id="_getNumMembers">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getNumMembers">#</a>
+		<code><a href="source-class-UserDB.html#284-303" title="Go to source code">getNumMembers</a>( )</code>
+
+		<div class="description short">
+			
+<p>getNumMembers - Returns the number of signed-up users of the website, banned
+members not included. The first time the function is called on page load, the
+database is queried, on subsequent calls, the stored result is returned. This is
+to improve efficiency, effectively not querying the database when no call is
+made.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getNumMembers - Returns the number of signed-up users of the website, banned
+members not included. The first time the function is called on page load, the
+database is queried, on subsequent calls, the stored result is returned. This is
+to improve efficiency, effectively not querying the database when no call is
+made.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addActiveUser" id="_addActiveUser">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addActiveUser">#</a>
+		<code><a href="source-class-UserDB.html#335-353" title="Go to source code">addActiveUser</a>( <span>string <var>$username</var></span> )</code>
+
+		<div class="description short">
+			
+<p>addActiveUser - Updates username's last activity in the database, and also
+adds him to the table of active users, or updates timestamp if already
+there.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>addActiveUser - Updates username's last activity in the database, and also
+adds him to the table of active users, or updates timestamp if already
+there.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd><code>string</code><br>$username username</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addActiveGuest" id="_addActiveGuest">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addActiveGuest">#</a>
+		<code><a href="source-class-UserDB.html#355-369" title="Go to source code">addActiveGuest</a>( <span>string <var>$ip</var></span> )</code>
+
+		<div class="description short">
+			
+<p>addActiveGuest - Adds guest to active guests table</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>addActiveGuest - Adds guest to active guests table</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$ip</var></dt>
+					<dd><code>string</code><br>$ip IP-address</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="removeActiveUser" id="_removeActiveUser">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_removeActiveUser">#</a>
+		<code><a href="source-class-UserDB.html#371-386" title="Go to source code">removeActiveUser</a>( <span>string <var>$username</var></span> )</code>
+
+		<div class="description short">
+			
+<p>removeActiveUser - removes user with given username from active_users
+table</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>removeActiveUser - removes user with given username from active_users
+table</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd><code>string</code><br>$username username</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="removeActiveGuest" id="_removeActiveGuest">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_removeActiveGuest">#</a>
+		<code><a href="source-class-UserDB.html#388-403" title="Go to source code">removeActiveGuest</a>( <span>string <var>$ip</var></span> )</code>
+
+		<div class="description short">
+			
+<p>removeActiveGuest - removes guest with given IP from active_guests table</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>removeActiveGuest - removes guest with given IP from active_guests table</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$ip</var></dt>
+					<dd><code>string</code><br>$ip IP-address</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="removeInactiveUsers" id="_removeInactiveUsers">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_removeInactiveUsers">#</a>
+		<code><a href="source-class-UserDB.html#405-420" title="Go to source code">removeInactiveUsers</a>( )</code>
+
+		<div class="description short">
+			
+<p>removeInctiveUsers - removes users after inactivity of USER_TIMEOUT from
+active_users table</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>removeInctiveUsers - removes users after inactivity of USER_TIMEOUT from
+active_users table</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="removeInactiveGuests" id="_removeInactiveGuests">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_removeInactiveGuests">#</a>
+		<code><a href="source-class-UserDB.html#422-437" title="Go to source code">removeInactiveGuests</a>( )</code>
+
+		<div class="description short">
+			
+<p>removeInactiveGuest - removes guests after inactivity of GUEST_TIMEOUT from
+active_guests table</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>removeInactiveGuest - removes guests after inactivity of GUEST_TIMEOUT from
+active_guests table</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-OpenHomeoDB.html#methods">OpenHomeoDB</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-OpenHomeoDB.html#_add_missing_parents">add_missing_parents()</a>, 
+			<a href="class-OpenHomeoDB.html#_archive_table_row">archive_table_row()</a>, 
+			<a href="class-OpenHomeoDB.html#_create_custom_symptom_table">create_custom_symptom_table()</a>, 
+			<a href="class-OpenHomeoDB.html#_create_custom_table">create_custom_table()</a>, 
+			<a href="class-OpenHomeoDB.html#_exist_symptom_translation">exist_symptom_translation()</a>, 
+			<a href="class-OpenHomeoDB.html#_extract_src_no">extract_src_no()</a>, 
+			<a href="class-OpenHomeoDB.html#_get_custom_src">get_custom_src()</a>, 
+			<a href="class-OpenHomeoDB.html#_get_custom_symptom_lang">get_custom_symptom_lang()</a>, 
+			<a href="class-OpenHomeoDB.html#_get_custom_table">get_custom_table()</a>, 
+			<a href="class-OpenHomeoDB.html#_get_lang_only_symptom_table">get_lang_only_symptom_table()</a>, 
+			<a href="class-OpenHomeoDB.html#_get_source_id">get_source_id()</a>, 
+			<a href="class-OpenHomeoDB.html#_get_source_nr">get_source_nr()</a>, 
+			<a href="class-OpenHomeoDB.html#_get_sym_base_table">get_sym_base_table()</a>, 
+			<a href="class-OpenHomeoDB.html#_get_sym_langs">get_sym_langs()</a>, 
+			<a href="class-OpenHomeoDB.html#_get_symptomname">get_symptomname()</a>, 
+			<a href="class-OpenHomeoDB.html#_is_custom_table">is_custom_table()</a>, 
+			<a href="class-OpenHomeoDB.html#_is_sym_lang">is_sym_lang()</a>, 
+			<a href="class-OpenHomeoDB.html#_is_translated">is_translated()</a>, 
+			<a href="class-OpenHomeoDB.html#_restore_table_row">restore_table_row()</a>, 
+			<a href="class-OpenHomeoDB.html#_update_custom_symptom_table">update_custom_symptom_table()</a>, 
+			<a href="class-OpenHomeoDB.html#_update_lang_symptom_tables">update_lang_symptom_tables()</a>, 
+			<a href="class-OpenHomeoDB.html#_update_symptom_tables">update_symptom_tables()</a>, 
+			<a href="class-OpenHomeoDB.html#_update_symptom_tree">update_symptom_tree()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-DB.html#methods">DB</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-DB.html#_db_fetch_assoc">db_fetch_assoc()</a>, 
+			<a href="class-DB.html#_db_fetch_row">db_fetch_row()</a>, 
+			<a href="class-DB.html#_get_primary_key">get_primary_key()</a>, 
+			<a href="class-DB.html#_reset_result">reset_result()</a>, 
+			<a href="class-DB.html#_send_query_limit">send_query_limit()</a>, 
+			<a href="class-DB.html#_table_exists">table_exists()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="num_active_users" id="$num_active_users">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-UserDB.html#46-51" title="Go to source code"><var>$num_active_users</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$num_active_users" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Number of active users viewing site</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Number of active users viewing site</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="num_active_guests" id="$num_active_guests">
+		<td class="attributes"><code>
+			public  
+			unknown
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-UserDB.html#54-59" title="Go to source code"><var>$num_active_guests</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$num_active_guests" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Number of active guests viewing site</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Number of active guests viewing site</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="num_members" id="$num_members">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-UserDB.html#62-67" title="Go to source code"><var>$num_members</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$num_members" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Number of signed-up users</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Number of signed-up users</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		OpenHomeopath PHP code documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

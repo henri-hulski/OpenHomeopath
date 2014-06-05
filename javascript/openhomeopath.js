@@ -21,7 +21,7 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  */
 
 var baseUrl = 'http://openhomeo.org/openhomeopath/';
@@ -417,7 +417,12 @@ function saveRep(task) {
 	}
 	if (task == 'save_rep') {
 		url += "&ajax=1";
+		if (document.getElementById("tabber")) {
+			url += "&tab=1";
+		}
 		loadurl(url, "POST", "save_rep");
+		var savedRepsUrl = "forms/saved_reps.php?ajax=1";
+		loadurl(savedRepsUrl, "POST", "saved_reps");
 	} else if (task == 'print_PDF') {
 		window.open(url, '_blank');
 	} else {
@@ -493,7 +498,7 @@ function repPublic() {
 	if (repAr) {
 		var repId = repAr[0];
 		var repPublic = repAr[5];
-		var url = "forms/saved_reps.php?rep=" + repId + "&rep_public=" + repPublic + "&public=1&ajax=1#reps";
+		var url = "forms/saved_reps.php?rep=" + repId + "&rep_public=" + repPublic + "&public=1&ajax=1";
 		loadurl(url, "POST", "saved_reps");
 	} else {
 		alert (lang[7]);

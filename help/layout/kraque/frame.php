@@ -24,7 +24,7 @@
  * @copyright 2009 Thomas Bochmann
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  */
 
 include ("include/functions/layout.php");
@@ -35,7 +35,7 @@ if (TABBED) {
 } else {
 	$rep_url = "../../repertori.php";
 	$materia_url = "../../materia.php";
-	$user_url = "../../userinfo.php?user=$session->username";
+	$user_url = "../../userinfo.php?user={$session->username}";
 }
 $lang = $session->lang;
 ?>
@@ -45,13 +45,13 @@ if($session->logged_in){
 ?>
 <div id="menu">
 		<span style="float: left;">
-            <a style="color: #336633; font-size: 14px;" href="..">
+            <a style="color: #336633; font-size: 14px;" href="../../../index.php">
                 <img height="17" border="0" alt="OpenHomeo.org" src="../../skins/<?php echo(SKIN_NAME);?>/img/punkte_d9b7ea.gif"/>
             </a>
         </span>
 		<ul class="level1" id="root">
 		<li>
-		    <a href="../../.." style="color: #336633; font-size: 13px;"><b>OpenHomeo.org</b></a>
+		    <a href="../../../index.php" style="color: #336633; font-size: 13px;"><b>OpenHomeo.org</b></a>
 		  </li>
 		  <li class="sep">|</li>
 		  <li>
@@ -145,13 +145,13 @@ if($session->logged_in){
 ?>
 <div id="menu">
 		<span style="float: left;">
-            <a href="..">
+            <a href="../../../index.php">
                 <img height="17" border="0" alt="OpenHomeo.org" src="../../skins/<?php echo(SKIN_NAME);?>/img/punkte_d9b7ea.gif"/>
             </a>
         </span>
 		<ul class="level1" id="root">
 		<li>
-		    <a href="../../.." style="color: #336633; font-size: 13px;"><b>OpenHomeo.org</b></a>
+		    <a href="../../../index.php" style="color: #336633; font-size: 13px;"><b>OpenHomeo.org</b></a>
 		  </li>
 		  <li class="sep">|</li>
 		  <li>

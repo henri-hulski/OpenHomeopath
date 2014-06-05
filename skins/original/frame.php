@@ -24,7 +24,7 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  */
 
 include ("include/functions/layout.php");
@@ -35,7 +35,7 @@ if (TABBED) {
 } else {
 	$rep_url = "repertori.php";
 	$materia_url = "materia.php";
-	$user_url = "userinfo.php?user=$session->username";
+	$user_url = "userinfo.php?user={$session->username}";
 }
 $lang = $session->lang;
 ?>

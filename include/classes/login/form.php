@@ -23,7 +23,7 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  * @see       login.php
  */
 
@@ -45,16 +45,16 @@ class  Form {
 	/**
 	 * Holds submitted form field values
 	 * @var array
-	 * @access public
+	 * @access private
 	 */
-	public $values = array();
+	private $values = array();
 
 	/**
 	 * Holds submitted form error messages
 	 * @var array
-	 * @access public
+	 * @access private
 	 */
-	public $errors = array();
+	private $errors = array();
 
 	/**
 	 * The number of errors in submitted form
@@ -84,19 +84,6 @@ class  Form {
 		else{
 			$this->num_errors = 0;
 		}
-	}
-
-	/**
-	 * setValue - Records the value typed into the given
-	 * form field by the user.
-	 *
-	 * @param string $field form field
-	 * @param string $value field value
-	 * @return void
-	 * @access public
-	 */
-	function setValue($field, $value){
-		$this->values[$field] = $value;
 	}
 
 	/**

@@ -17,7 +17,7 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/fdl.html GNU Free Documentation License v1.3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  */
 
 chdir("../..");
@@ -49,7 +49,7 @@ include("help/layout/$skin/header.php");
   Program Version
 </h2>
 <p>
-  This is <strong>OpenHomeopath Version 1.0rc</strong>.<br>
+  This is <strong>OpenHomeopath Version 1.0_ext</strong> released on 05.06.2014.<br>
   After a <strong>fundamental revision of the entire code and database structure</strong> I'm glad to publish the first stable release of OpenHomeopath after more than 7 years work.<br>
   If you still find bugs or if you've a question please <a title="Contact to the author" href="mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath">contact me</a>.
 </p>
@@ -135,24 +135,35 @@ include("help/layout/$skin/header.php");
 </h2>
 <ol>
   <li>Create a MySQL database and a user who has all rights for the database.</li>
-  <li>Edit the file "openhomeopath/include/classes/db/config_db.php" by providing the name of the MySQL database, the username and his password. Also you can choose the database driver: "mysqli" or "mysql". Protect the file "config_db.php" on the server against unauthorized read and write access (e.g. with chmod 600), because the password is saved in plain text. Please note, that the server still needs read access.</li>
-  <li>Upload the folder "openhomeopath" to your webserver.</li>
-  <li>Call "<em>http://your.webaddress.com/</em>openhomeopath/install/<strong>install_db.php</strong>" on your server with the browser and import the data to the database.</li>
-  <li>Now you can call "<em>http://your.webaddress.com/</em>openhomeopath/<strong>index.php</strong>" in your browser and here we are.</li>
-  <li>The <strong>default user</strong> with administration rights is <strong><em>"admin"</em></strong>. The <strong>default password:
-  <em>"admin"</em></strong>. You should change the password after.</li>
+  <li>Rename the file "openhomeopath/include/classes/db/config_db_sample.php" to "config_db.php" and edit it, providing the name of the MySQL database, the username and his password. Also you must choose the database driver: "mysqli" or "mysql".<br>
+  Protect the file "config_db.php" on the server against unauthorized read and write access (e.g. with chmod 600), because the password is saved in plain text. Please note, that the server still needs read access. Not necessary with a local installation.</li>
+  <li>Upload the folder "openhomeopath" to your webserver. This can also be your local computer or laptop.</li>
+  <li>Open "<em>http://your.webaddress.com/</em>openhomeopath/install/<strong>install_db.php</strong>" in your browser and import the data to the database.<br>
+  If everything is fine you can delete the file "sql/OpenHomeopath.sql.gz" on your server.</li>
+  <li>The <strong>default user</strong> with administration rights is <strong><em>"admin"</em></strong> with the <strong>password</strong>: <strong><em>"admin"</em></strong>. Log in as <strong>"admin"</strong> under "<em>http://your.webaddress.com/</em>openhomeopath/<strong>login.php</strong>".<br>
+  This can take a while, because OpenHomeopath has to generate some more tables.</li>
+  <li>Here we go. I recommend to change the admin password.</li>
 </ol>
 <br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
 <a name="download" id="download"><br></a>
 <h2>
   Download
 </h2>
+<div class="rightFlow">
+  <div class='center'>
+    <strong>Remember to donate!</strong><br><br>
+    <a href='../../donations.php' target='_blank'><img src='../../img/donate_en.png' width='110' height='33' alt='Donate' title='If you like our work remember to make a generous donation.'></a>
+  </div>
+</div>
 <div>
-  Here you can download <strong>OpenHomeopath</strong> as a compressed tarball for local installation:
+  Here you can download <strong>OpenHomeopath</strong>:
   <ul>
-    <li><a href="../../../openhomeopath_old/download/openhomeopath_0.9_beta.tar.gz">openhomeopath_0.9_beta.tar.gz</a> (Warning! This is still the unstable beta-version. Stable comes soon.)</li>
+    <li>Download <a href="../../download/openhomeopath_1.0.tar.gz">openhomeopath_1.0.tar.gz</a> as a compressed tarball for local installation.</li>
+    <li>You can also clone the <a href='https://github.com/henri-hulski/OpenHomeopath' target='_blank'>OpenHomeopath git repository</a> from GitHub.</li>
+    <li>Or download the <a href='https://github.com/henri-hulski/OpenHomeopath/archive/master.zip'>OpenHomeopath masterbranch</a> from GitHub as packed zip-file.</li>
   </ul>
 </div>
+<p>You can also have a look at the <a href='../en/apigen' target='_blank'>OpenHomeopath PHP code documentation</a>.</p>
 <br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");

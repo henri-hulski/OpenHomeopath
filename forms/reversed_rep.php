@@ -24,7 +24,7 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  */
 
 if (!empty($_REQUEST['getRemSymptoms'])) {
@@ -45,7 +45,7 @@ if ($session->logged_in && !$magic_hat->restricted_mode) {
 	} else {
 		$display_personal_rep = "block";
 	}
-	printf ("<p class='center' id='personalized_rep_1' style='display:%s;'><span class='alert_box'>" . _("You are using a personalized Repertory. You can change the preferences in <a href='%s'>My account</a>.") . "</span></p>\n", $display_personal_rep, $url);
+	printf ("<p class='center' id='personalized_rep_1' style='display:%s;'><span class='alert_box'>" . _("You are using a personalized Repertory.") . " " . _("You can change the preferences in <a href='%s'>My account</a>.") . "</span></p>\n", $display_personal_rep, $url);
 } elseif (!$session->logged_in) {
 	echo ("<p class='center''><span class='alert_box'><strong>" . _("Important!") . "</strong> " . _("Guests are limited to the Homeopathic Repertory from Kent (kent.en). For activating more repertories an customizing OpenHomeopath you've to <a href='http://openhomeo.org/openhomeopath/register.php'>register for free</a> and <a href='http://openhomeo.org/openhomeopath/login.php'>log in</a>.") . "</span></p>\n");
 } elseif ($magic_hat->restricted_mode) {

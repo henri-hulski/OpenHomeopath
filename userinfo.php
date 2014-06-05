@@ -26,7 +26,7 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  */
 
 if (!isset($tabbed) || !$tabbed) {
@@ -51,7 +51,7 @@ $lang = $session->lang;
 /* Requested Username error checking */
 if (empty($req_user)) {
 	if (empty($_REQUEST['user'])) {
-		$req_user = $session->username;
+		$req_user = $username;
 	} else {
 		$req_user = trim($_REQUEST['user']);
 		if(!$req_user || strlen($req_user) == 0 || !$db->usernameTaken($req_user)){
@@ -62,7 +62,7 @@ if (empty($req_user)) {
 }
 
 /* Logged in user viewing own account */
-if(strcmp($session->username,$req_user) == 0) {
+if(strcmp($username,$req_user) == 0) {
 ?>
 <h1><?php echo _("My account"); ?></h1>
 <div class="content">
@@ -87,7 +87,7 @@ else {
 <?php
 }
 /* Logged in user viewing own account */
-if(strcmp($session->username,$req_user) == 0) {
+if(strcmp($username,$req_user) == 0) {
 	/* Donator */
 	if ($magic_hat->is_donator) {
 		echo "<strong>" . _("You've already donated for OpenHomeopath.") . "</strong><br>" . _("All functions of OpenHomeopath are available.") . "<br>" . _("Thanks a lot and keep it up!");
@@ -100,41 +100,41 @@ if(strcmp($session->username,$req_user) == 0) {
 }
 
 /* Display requested user information */
-$req_user_info = $db->getUserInfo($req_user, 'username, email, user_real_name, user_extra, user_signatur, userlevel, hide_email, skin_name, lang_id, sym_lang_id');
+list($user_email, $user_real_name, $user_extra, $user_signatur, $userlevel, $hide_email, $user_skin, $user_lang_id, $user_sym_lang) = $db->getUserInfo($req_user, 'email, user_real_name, user_extra, user_signatur, userlevel, hide_email, skin_name, lang_id, sym_lang_id');
 
 /* Username */
-echo "<strong>" . _("Username:") . " ".$req_user_info[0]."</strong><br>";
+echo "<strong>" . _("Username:") . " ".$req_user."</strong><br>";
 
 /* Email will be shown when user view his own account, the user didn't hide his email or administrator is viewing the page */
-if(strcmp($session->username,$req_user) == 0 || $req_user_info[6] == 0 || $session->isAdmin()){
-	echo "<strong>" . _("E-mail:") . "</strong> ".$req_user_info[1]."<br>";
+if(strcmp($username,$req_user) == 0 || $hide_email == 0 || $session->isAdmin()){
+	echo "<strong>" . _("E-mail:") . "</strong> ".$user_email."<br>";
 }
 
 /* Real name */
-if (!empty($req_user_info[2])) {
-	echo "<strong>" . _("Real name:") . "</strong> ".$req_user_info[2]."<br>";
+if (!empty($user_real_name)) {
+	echo "<strong>" . _("Real name:") . "</strong> ".$user_real_name."<br>";
 }
 
 /* More information */
-if (!empty($req_user_info[3])) {
-	echo "<strong>" .  _("More information:") . "</strong> ".$req_user_info[3]."<br>";
+if (!empty($user_extra)) {
+	echo "<strong>" .  _("More information:") . "</strong> ".$user_extra."<br>";
 }
 
 /* Signature */
-if (!empty($req_user_info[4])) {
-	echo "<strong>" . _("Signature for the forum:") . "</strong> ".$req_user_info[4]."<br>";
+if (!empty($user_signatur)) {
+	echo "<strong>" . _("Signature for the forum:") . "</strong> ".$user_signatur."<br>";
 }
 
-if(strcmp($session->username,$req_user) == 0 || $session->isAdmin()){  // Benutzer betrachtet sein eigenes Konto oder Admin
+if(strcmp($username,$req_user) == 0 || $session->isAdmin()){  // Benutzer betrachtet sein eigenes Konto oder Admin
 /* Skin */
-	if (!empty($req_user_info[7])) {
-		echo "<strong>" . _("Skin:") . "</strong> ".$req_user_info[7]."<br>";
+	if (!empty($user_skin)) {
+		echo "<strong>" . _("Skin:") . "</strong> ".$user_skin."<br>";
 	} else {
 		echo "<strong>" . _("Skin:") . "</strong> " . _("not selected") . "<br>";
 	}
 /* Language */
-	if (!empty($req_user_info[8])) {
-		$query = "SELECT lang_$lang FROM languages WHERE lang_id = '$req_user_info[8]'";
+	if (!empty($user_lang_id)) {
+		$query = "SELECT lang_$lang FROM languages WHERE lang_id = '$user_lang_id'";
 		$db->send_query($query);
 		list($user_lang) = $db->db_fetch_row();
 		$db->free_result();
@@ -143,8 +143,8 @@ if(strcmp($session->username,$req_user) == 0 || $session->isAdmin()){  // Benutz
 		echo "<strong>" . _("Language:") . "</strong> " . _("not selected") . "<br>";
 	}
 /* Symptom-language */
-	if (!empty($req_user_info[9])) {
-		$query = "SELECT lang_$lang FROM languages WHERE lang_id = '$req_user_info[9]'";
+	if (!empty($user_sym_lang)) {
+		$query = "SELECT lang_$lang FROM languages WHERE lang_id = '$user_sym_lang'";
 		$db->send_query($query);
 		list($sym_lang) = $db->db_fetch_row();
 		$db->free_result();
@@ -155,23 +155,23 @@ if(strcmp($session->username,$req_user) == 0 || $session->isAdmin()){  // Benutz
 	echo "<br>";
 
 /* userlevel */
-	if ($req_user_info[5] == ADMIN_LEVEL) {
+	if ($userlevel == ADMIN_LEVEL) {
 		echo _("You are administrator.");
-	} elseif ($req_user_info[5] == EDITOR_LEVEL) {
+	} elseif ($userlevel == EDITOR_LEVEL) {
 		echo _("You are editor.");
-	} elseif ($req_user_info[5] == SHOW_LEVEL) {
+	} elseif ($userlevel == SHOW_LEVEL) {
 		echo _("Active users are shown.");
 	} else {
 		echo _("Active users are not shown.");
 	}
 	echo "<br>\n";
-	if ($req_user_info[6] == 1) {
+	if ($hide_email == 1) {
 		echo _("Your e-mail is hidden from user users.");
 	} else {
 		echo _("Other users can see your e-mail.");
 	}
 }
-if(strcmp($session->username,$req_user) == 0) {
+if(strcmp($username,$req_user) == 0) {
 	echo "<br><a href='useredit.php' target='_blank'><strong>" . _("Here you can edit your account.") . "</strong></a><br>\n";
 	$host  = $_SERVER['HTTP_HOST'];
 	$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
@@ -180,11 +180,11 @@ if(strcmp($session->username,$req_user) == 0) {
 <a name="reps" id="reps"><br></a>
 <h2><?php echo _("Saved repertorizations"); ?></h2>
 <p><?php echo _("Here saved repertorizations can be opened,  deleted or taken as a basis for further repertorization."); ?><br>
-<?php printf(_('Repertorizations can be made public so that other users will find them in userinfo (URL: <span class="nobr">"http://%s%s/<strong>userinfo.php?user=%s</strong>"</span>).'), $host, $uri, $req_user_info[0]); ?></p>
+<?php printf(_('Repertorizations can be made public so that other users will find them in userinfo (URL: <span class="nobr">"http://%s%s/<strong>userinfo.php?user=%s</strong>"</span>).'), $host, $uri, $req_user); ?></p>
 <fieldset>
   <legend class='legend'>
 <?php
-	echo ("    " . _("Repertorizations from") . " $req_user_info[0]\n");
+	echo ("    " . _("Repertorizations from") . " $req_user\n");
 ?>
   </legend>
   <br>
@@ -368,7 +368,7 @@ if(strcmp($session->username,$req_user) == 0) {
         </tr>
         <tr>
           <td>
-            <select class='selection4' name='src_sel[]' id='src_materia' size='7' multiple="multiple" onclick='document.getElementById("custom_src_materia").checked=true' onchange='document.getElementById("custom_src_materia").checked=true'>
+            <select class='selection4' name='src_sel[]' id='src_materia' size='15' multiple="multiple" onclick='document.getElementById("custom_src_materia").checked=true' onchange='document.getElementById("custom_src_materia").checked=true'>
 <?php
 	$query = "SELECT sources.src_no, sources.src_id, sources.src_title, languages.lang_$lang FROM sources, languages WHERE languages.lang_id = sources.lang_id ORDER BY sources.src_no";
 	$result = $db->send_query($query);
@@ -430,7 +430,7 @@ if(strcmp($session->username,$req_user) == 0) {
 <fieldset>
   <legend class='legend'>
 <?php
-		echo ("    " . _("Repertorizations from") . " $req_user_info[0]\n");
+		echo ("    " . _("Repertorizations from") . " $req_user\n");
 ?>
   </legend>
   <br>

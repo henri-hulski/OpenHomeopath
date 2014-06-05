@@ -25,7 +25,7 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  * @see       login.php
  */
 
@@ -96,12 +96,11 @@ class  Process {
 	 * procLogin processes the user submitted login form, if errors
 	 * are found, the user is redirected to correct the information,
 	 * if not, the user is effectively logged in to the system.
-	 * Short description for function
 	 *
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function procLogin(){
+	private function procLogin(){
 		global $session, $form, $db;
 		/* Login attempt */
 		$retval = $session->login($_POST['user'], $_POST['pass'], isset($_POST['remember']));
@@ -157,9 +156,9 @@ class  Process {
 	 *  given that there is no logout form to process.
 	 *
 	 *  @return void
-	 *  @access public
+	 *  @access private
 	 */
-	function procLogout(){
+	private function procLogout(){
 		global $session;
 		$retval = $session->logout();
 		header("Location: ../../../login.php");
@@ -173,9 +172,9 @@ class  Process {
 	 *  created user.
 	 *
 	 *  @return void
-	 *  @access public
+	 *  @access private
 	 */
-	function procRegister(){
+	private function procRegister(){
 		global $session, $form;
 		/* Convert username to all lowercase (by option) */
 		if(ALL_LOWERCASE){
@@ -217,9 +216,9 @@ class  Process {
 	 *  emailed to the address the user gave on sign up.
 	 *
 	 *  @return void
-	 *  @access public
+	 *  @access private
 	 */
-	function procForgotPass(){
+	private function procForgotPass(){
 		global $db, $session, $mailer, $form;
 		/* Username error checking */
 		$subuser = $_POST['lostpass'];
@@ -281,12 +280,14 @@ class  Process {
 	 *  before a change is made.
 	 *
 	 *  @return void
-	 *  @access public
+	 *  @access private
 	 */
-	function procEditAccount(){
+	private function procEditAccount(){
 		global $session, $form;
+		$show_active = (!empty($_POST['show_active'])) ? $_POST['show_active'] : "";
+		$hide_email = (!empty($_POST['hide_email'])) ? $_POST['hide_email'] : "";
 		/* Account edit attempt */
-		$retval = $session->editAccount($_POST['curpass'], $_POST['newpass'], $_POST['newpass2'], $_POST['email'], $_POST['real_name'], $_POST['extra'], $_POST['signatur'], $_POST['show_active'], $_POST['hide_email'], $_POST['skin'], $_POST['lang'], $_POST['sym_lang']);
+		$retval = $session->editAccount($_POST['curpass'], $_POST['newpass'], $_POST['newpass2'], $_POST['email'], $_POST['real_name'], $_POST['extra'], $_POST['signatur'], $show_active, $hide_email, $_POST['skin'], $_POST['lang'], $_POST['sym_lang']);
 
 		/* Account edit successful */
 		if($retval){

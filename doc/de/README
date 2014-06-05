@@ -1,6 +1,6 @@
 Programmversion
 
-    Dies ist OpenHomeopath Version 1.0rc.
+    Dies ist OpenHomeopath Version 1.0_ext veröffentlicht am 05.06.2014.
     Nach einer grundlegenden Überarbeitung des gesamten Codes und der Datenbankstruktur
     veröffentliche ich hiermit nach über 7 Jahren Arbeit die erste stabile Version von OpenHomeopath.
     Wenn noch Bugs oder Programmfehler auftauchen und bei weiteren Fragen meldet euch bei mir.
@@ -14,14 +14,14 @@ Lizenz und Copyright
 
     Die Veröffentlichung von OpenHomeopath erfolgt in der Hoffnung, daß es dir von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK. Details finden Sie in der GNU Affero General Public License.
 
-    Ein vollständiges Exemplar der original GNU Affero General Public License Version 3 (AGPLv3) auf englisch findest du unter "doc/en/agpl3.php".
+    Ein vollständiges Exemplar der original GNU Affero General Public License Version 3 (AGPLv3) auf englisch findest du unter 'doc/en/agpl3.php'.
 
     Die Hilfe und Dokumentation von OpenHomeopath wurden unter der GNU Free Documentation License Version 1.3 (FDLv1.3) veröffentlicht.
 
 
 Installation
 
-    Eine Installationsanleitung für MySQL findest du unter INSTALL.
+    Eine Installationsanleitung findest du unter 'doc/de/INSTALL'.
 
 
 

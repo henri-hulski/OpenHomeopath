@@ -22,7 +22,7 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  * @see       login.php
  */
 
@@ -101,9 +101,9 @@ class  AdminProcess {
 	 * request.
 	 *
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function procUpdateLevel() {
+	private function procUpdateLevel() {
 		global $session, $db, $form;
 		/*
 		 * Username error checking
@@ -148,9 +148,9 @@ class  AdminProcess {
 	 * the user is deleted from the database.
 	 *
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function procDeleteUser() {
+	private function procDeleteUser() {
 		global $session, $db, $form;
 		/*
 		 * Username error checking
@@ -226,9 +226,9 @@ class  AdminProcess {
 	 * gone by that the user has not logged in.
 	 *
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function procDeleteInactive() {
+	private function procDeleteInactive() {
 		global $session, $db;
 		$inact_time = $session->time - $_POST['inactdays']*24*60*60;
 		$query = "SELECT username FROM " . TBL_USERS . " WHERE TIMESTAMPDIFF(DAY, `timestamp`, NOW()) > " . $_POST['inactdays'] . " AND userlevel != " . ADMIN_LEVEL;
@@ -285,9 +285,9 @@ class  AdminProcess {
 	 * it to the banned users table.
 	 *
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function procBanUser() {
+	private function procBanUser() {
 		global $session, $db, $form;
 		/*
 		 * Username error checking
@@ -341,9 +341,9 @@ class  AdminProcess {
 	 * enables someone to register with that username again.
 	 *
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function procDeleteBannedUser() {
+	private function procDeleteBannedUser() {
 		global $session, $db, $form;
 		/*
 		 * Username error checking
@@ -375,9 +375,9 @@ class  AdminProcess {
 	 * the data inserted by the user is deleted from the database.
 	 *
 	 * @return void
-	 * @access public
+	 * @access private
 	 */
-	function procDeleteUserData() {
+	private function procDeleteUserData() {
 		global $session, $db, $form;
 		/*
 		 * Username error checking
@@ -435,9 +435,9 @@ class  AdminProcess {
 	 * @param string $table database table
 	 * @param string $where SQL where clause
 	 * @return integer
-	 * @access public
+	 * @access private
 	 */
-	function delete_row($table, $where) {
+	private function delete_row($table, $where) {
 		global $db;
 		$query = "SELECT COUNT(*) FROM $table WHERE $where";
 		$db->send_query($query);
@@ -461,9 +461,9 @@ class  AdminProcess {
 	 * @param string  $user_post POST key which contains the username
 	 * @param boolean $ban true if the user is banned
 	 * @return string
-	 * @access public
+	 * @access private
 	 */
-	function checkUsername($user_post, $ban=false) {
+	private function checkUsername($user_post, $ban=false) {
 		global $db, $form;
 		/*
 		 * Username error checking

@@ -17,7 +17,7 @@
  * @copyright 2009 Thomas Bochmann
  * @license   http://www.gnu.org/licenses/fdl.html GNU Free Documentation License v1.3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  */
 
 chdir("../..");
