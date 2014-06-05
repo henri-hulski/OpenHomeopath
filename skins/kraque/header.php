@@ -24,7 +24,7 @@
  * @copyright 2009 Thomas Bochmann
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  */
 
 header("Expires: Mon, 1 Dec 2006 01:00:00 GMT");
