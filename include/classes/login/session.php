@@ -151,7 +151,7 @@ class Session {
 	/**
 	 * Class constructor
 	 *
-	 * @return void
+	 * @return Session
 	 * @access public
 	 */
 	function __construct() {
@@ -229,7 +229,7 @@ class Session {
 	 * If so, the database is queried to make sure of the user's
 	 * authenticity. Returns true if the user has logged in.
 	 *
-	 * @return void
+	 * @return boolean
 	 * @access private
 	 */
 	private function checkLogin(){
@@ -507,7 +507,7 @@ class Session {
 				 * kind of stupid to report "password too short".
 				 */
 			}
-			
+
 			/* Password2 error checking */
 			$field = "pass2";  // Use field name for second password
 			if (!$subpass) {
@@ -518,7 +518,7 @@ class Session {
 				}
 			}
 		}
-		
+
 		/* Email error checking */
 		$field = "email";  // Use field name for email
 		if (!$subemail || strlen($subemail = trim($subemail)) == 0) {
@@ -545,19 +545,19 @@ class Session {
 				} elseif (EMAIL_WELCOME) {
 					$mailer->sendWelcome($subuser,$subemail,$subpass);
 				}
-				
+
 				/* insert user into the Phorum user table */
 				$user_id = $db->getUserInfo($subuser, 'id_user');
 				$user_ar = array("user_id" => $user_id[0], "username" => $subuser, "email" => $subemail);
 				embed_phorum_syncuser($user_ar);
-				
+
 				return 0;  //New user added succesfully
 			} else {
 				return 2;  //Registration attempt failed
 			}
 		}
 	}
-	
+
 	/**
 	 * editAccount - Attempts to edit the user's account information
 	 * including the password, which it first makes sure is correct
@@ -575,8 +575,8 @@ class Session {
 	 * @param integer $show_active 0 | 1 - 1 if the user wants to see the active users
 	 * @param integer $hide_email 0 | 1 - 1 if the user wants to hide his email from other users
 	 * @param string $skin original | kraque - skin the user uses
-	 + @param string $lang de | en - users interface language
-	 + @param string $sym_lang de | en - language the user prefers for symptoms
+	 * @param string $lang de | en - users interface language
+	 * @param string $sym_lang de | en - language the user prefers for symptoms
 	 * @return boolean true on success
 	 * @access public
 	 */
@@ -637,31 +637,31 @@ class Session {
 			}
 			$subemail = stripslashes($subemail);
 		}
-		
+
 		/* Errors exist, have user correct them */
 		if($form->num_errors > 0){
 			return false;  // Errors with form
 		}
-		
+
 		/* initialize the Phorum user table array */
 		$user_ar["user_id"] = $this->id_user;
 		$user_ar["username"] = $this->username;
 		if($this->userlevel == ADMIN_LEVEL){
 			$user_ar["admin"] = 1;
 		}
-		
+
 		/* Update password since there were no errors */
 		if($subcurpass && $subnewpass){
 			$db->updateUserField($this->username,"password",md5($subnewpass));
 			$user_ar["password"] = $subnewpass; // Phorum
 		}
-		
+
 		/* Change Email */
 		if(isset($subemail)){
 			$db->updateUserField($this->username,"email",$subemail);
 			$user_ar["email"] = $subemail; // Phorum
 		}
-		
+
 		/* Change realname */
 		if(isset($real_name)){
 			$real_name = trim($real_name);
@@ -669,7 +669,7 @@ class Session {
 			$db->updateUserField($this->username,"user_real_name",$real_name);
 			$user_ar["real_name"] = $real_name; // Phorum
 		}
-		
+
 		/* Change skin */
 		if(!empty($skin)){
 			$skin = trim($skin);
@@ -679,7 +679,7 @@ class Session {
 				unset($_SESSION['skin']);
 			}
 		}
-		
+
 		/* Change language */
 		if(!empty($lang)){
 			$lang = trim($lang);
@@ -694,9 +694,9 @@ class Session {
 			list($lang_phorum) = $db->db_fetch_row();
 			$db->free_result();
 			$user_ar["user_language"] = $lang_phorum; // Phorum
-			
+
 		}
-		
+
 		/* Change symptom-language */
 		if(!empty($sym_lang)){
 			$sym_lang = trim($sym_lang);
@@ -707,7 +707,7 @@ class Session {
 			$db->updateUserField($this->username,"sym_lang_id",$sym_lang);
 			$db->create_custom_symptom_table();
 		}
-		
+
 		/* Change extra */
 		if(isset($extra)){
 			$extra = str_replace("\n\r", "<br>", $extra);
@@ -715,7 +715,7 @@ class Session {
 			$extra = trim($extra);
 			$db->updateUserField($this->username,"user_extra",$extra);
 		}
-		
+
 		/* Change signature */
 		if(isset($signatur)){
 			$signatur = trim($signatur);
@@ -723,14 +723,14 @@ class Session {
 			$db->updateUserField($this->username,"user_signatur",$signatur);
 			$user_ar["signature"] = $signatur; // Phorum
 		}
-		
+
 		/* show active users */
 		if($show_active && !$this->showActive()) {
 			$db->updateUserField($this->username,"userlevel",SHOW_LEVEL);
 		} elseif (!$show_active && $this->userlevel == SHOW_LEVEL) {
 			$db->updateUserField($this->username,"userlevel",USER_LEVEL);
 		}
-		
+
 		/* hide email */
 		if($hide_email && $this->hide_email == "0") {
 			$db->updateUserField($this->username,"hide_email",1);
@@ -739,14 +739,14 @@ class Session {
 			$db->updateUserField($this->username,"hide_email",0);
 			$user_ar["hide_email"] = 0; // Phorum
 		}
-		
+
 		/* update the Phorum user table */
 		embed_phorum_syncuser($user_ar);
 
 		/* Success! */
 		return true;
 	}
-	
+
 	/**
 	 * isAdmin - Returns true if currently logged in user is
 	 * an administrator, false otherwise.
@@ -757,7 +757,7 @@ class Session {
 	function isAdmin(){
 		return ($this->userlevel == ADMIN_LEVEL || $this->username  == ADMIN_NAME);
 	}
-	
+
 	/**
 	 * isEditor - Returns true if currently logged in user is
 	 * an editor, false otherwise.
@@ -768,7 +768,7 @@ class Session {
 	function isEditor(){
 		return ($this->userlevel >= EDITOR_LEVEL || $this->username  == ADMIN_NAME);
 	}
-	
+
 	/**
 	 * showActiveUsers - Returns true if currently logged in user is
 	 * an administrator or if he wants to see active users
@@ -791,12 +791,13 @@ class Session {
 	function generateRandID(){
 		return md5($this->generateRandStr(16));
 	}
-	
+
 	/**
 	 * generateRandStr - Generates a string made up of randomized
 	 * letters (lower and upper case) and digits, the length
 	 * is a specified parameter.
 	 *
+	 * @param integer $length string length
 	 * @return string
 	 * @access public
 	 */
@@ -838,5 +839,3 @@ $magic_hat = new MagicHat;
 
 /* tabbed has to be set false at startup */
 $tabbed = false;
-
-?>

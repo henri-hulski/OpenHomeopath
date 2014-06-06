@@ -45,4 +45,3 @@ if ($src_rep == 'all') {
 } else {
 	echo ("<span class='alert_box'>" . _(" You're using at the moment a <strong>personalized repertory</strong>") . " " . ngettext("with the source", "with the sources", count($rep_src_ar)) . " <strong><em>" . implode(", ", $rep_src_ar) . "</em></strong>.</span>\n");
 }
-?>

@@ -30,11 +30,11 @@ If you want to contact me by e-mail, this is my address: eugenio.tacchini@unicat
 <?php
 if ($enable_insert == "1"){
 ?>
-        &bull; <a class="NavLink" href="<?php $dadabik_main_file; ?>?function=show_insert_form&table_name=<?php echo urlencode($table_name); ?>"><?php echo $submit_buttons_ar["insert_short"]; ?></a>
+        &bull; <a class="NavLink" href="<?php echo $dadabik_main_file; ?>?function=show_insert_form&table_name=<?php echo urlencode($table_name); ?>"><?php echo $submit_buttons_ar["insert_short"]; ?></a>
 <?php
 }
 ?>
-        &bull; <a class="NavLink" href="<?php $dadabik_main_file; ?>?function=show_search_form&table_name=<?php echo urlencode($table_name); ?>"><?php echo $submit_buttons_ar["search_short"]; ?></a> &bull; <a class="NavLink" href="<?php $dadabik_main_file; ?>?function=search&table_name=<?php echo urlencode($table_name); ?>"><?php echo $normal_messages_ar["last_search_results"]; ?></a> &bull; <a class="NavLink" href="<?php $dadabik_main_file; ?>?function=search&empty_search_variables=1&table_name=<?php echo urlencode($table_name); ?>"><?php echo $normal_messages_ar["show_all"]; ?></a>  &bull; <a class="NavLink" href="./archive.php?table_name=<?php echo urlencode($table_name); ?>"><?php echo _("Archive"); ?></a> &bull; <a class="NavLink" href="./express.php"><span class="nobr"><?php echo _("Express-Tool"); ?></span></a></span>
+        &bull; <a class="NavLink" href="<?php echo $dadabik_main_file; ?>?function=show_search_form&table_name=<?php echo urlencode($table_name); ?>"><?php echo $submit_buttons_ar["search_short"]; ?></a> &bull; <a class="NavLink" href="<?php echo $dadabik_main_file; ?>?function=search&table_name=<?php echo urlencode($table_name); ?>"><?php echo $normal_messages_ar["last_search_results"]; ?></a> &bull; <a class="NavLink" href="<?php echo $dadabik_main_file; ?>?function=search&empty_search_variables=1&table_name=<?php echo urlencode($table_name); ?>"><?php echo $normal_messages_ar["show_all"]; ?></a>  &bull; <a class="NavLink" href="./archive.php?table_name=<?php echo urlencode($table_name); ?>"><?php echo _("Archive"); ?></a> &bull; <a class="NavLink" href="./express.php"><span class="nobr"><?php echo _("Express-Tool"); ?></span></a></span>
         </td>
       </tr>
     </table>

@@ -18,7 +18,7 @@ if (!$tabbed && !isset($_GET['tab']) && empty($_GET['popup'])) {
 } elseif (empty($_GET['popup'])) {
 ?>
   <div style='float: right; margin: 25px;'>
-      <a id='history_back_tab_3' style='padding: 7px;'><img alt=""  id='arrow_left_tab_3' height='24' width='28' src='./img/arrow_left_inactive.gif' border='0'></a><a id='history_forward_tab_3' style='padding: 7px;'><img alt=""  id='arrow_right_tab_3' height='24' width='28' src='./img/arrow_right_inactive.gif' border='0'></a>
+      <a id='history_back_tab_3' style='padding: 7px;'><img alt=""  id='arrow_left_tab_3' height='24' width='38' src='./img/arrow_left_inactive.gif' border='0'></a><a id='history_forward_tab_3' style='padding: 7px;'><img alt=""  id='arrow_right_tab_3' height='24' width='38' src='./img/arrow_right_inactive.gif' border='0'></a>
   </div>
 <?php
 }

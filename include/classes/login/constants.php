@@ -103,4 +103,3 @@ define("MAIL_ENCODING", "utf-8");
  * converted automatically.
  */
 define("ALL_LOWERCASE", false);
-?>

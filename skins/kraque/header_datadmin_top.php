@@ -40,7 +40,7 @@ function enable_disable_input_box_insert_edit_form(null_checkbox_prefix, year_fi
 	var null_checkbox_prefix_length = null_checkbox_prefix.length;
 
 	// for each element of the form
-	for (i=0;i<count;i++)
+	for (var i=0;i<count;i++)
 	{
 		// if the element is a null value checkbox element
 		if (document.getElementById('dadabik_main_form').elements[i].name.substr(0,null_checkbox_prefix_length) == null_checkbox_prefix){
@@ -52,6 +52,7 @@ function enable_disable_input_box_insert_edit_form(null_checkbox_prefix, year_fi
 			var a = new Array;
 			a = document.getElementsByName(year_field_name);
 
+			var field_type_is_date;
 			if (a[0]){ // if the relative year field exists
 				field_type_is_date = 1;
 			} // end if
@@ -96,12 +97,7 @@ function enable_disable_input_box_insert_edit_form(null_checkbox_prefix, year_fi
 				var a = new Array;
 				a = document.getElementsByName(field_name);
 
-				if (document.getElementById('dadabik_main_form').elements[i].checked == true){
-					a[0].disabled = true;
-				} // end if
-				else{
-					a[0].disabled = false;
-				} // end else
+				a[0].disabled = document.getElementById('dadabik_main_form').elements[i].checked == true;
 			} // end else
 		} // end if
 	} // end for
@@ -165,12 +161,7 @@ function enable_disable_input_box_search_form(field_name, select_type_select_suf
 		var b = new Array;
 		b = document.getElementsByName(field_name+select_type_select_suffix);
 
-		if (b[0].value == 'is_null' || b[0].value == 'is_empty'){
-			a[0].disabled = true;
-		} // end if
-		else{
-			a[0].disabled = false;
-		} // end else
+		a[0].disabled = (b[0].value == 'is_null' || b[0].value == 'is_empty');
 	} // end else
 
 } // end function
@@ -187,7 +178,7 @@ if (isset($_GET["type_mailing"])){
 } // end if
 if ($function === 'insert' || $function === 'edit' || $function === 'update') {
 ?>
-onload="javascript:enable_disable_input_box_insert_edit_form('<?php echo $null_checkbox_prefix.'\', \''.$year_field_suffix.'\', \''.$month_field_suffix.'\', \''.$day_field_suffix; ?>')"
+onload="enable_disable_input_box_insert_edit_form('<?php echo $null_checkbox_prefix.'\', \''.$year_field_suffix.'\', \''.$month_field_suffix.'\', \''.$day_field_suffix; ?>')"
 <?php
 } // end if
 ?>

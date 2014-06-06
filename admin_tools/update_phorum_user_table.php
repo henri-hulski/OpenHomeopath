@@ -10,4 +10,3 @@ while(list($id_user, $username, $email) = $db->db_fetch_row()) {
 	embed_phorum_syncuser($user_ar);
 }
 $db->free_result();
-?>

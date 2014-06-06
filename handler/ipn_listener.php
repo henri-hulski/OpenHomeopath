@@ -174,5 +174,3 @@ if (strcmp ($res, "VERIFIED") == 0) {
 		error_log(PHP_EOL . date('[Y-m-d H:i e] '). "Invalid IPN:" . PHP_EOL . $req . PHP_EOL, 3, LOG_FILE);
 	}
 }
-
-?>

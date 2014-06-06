@@ -200,8 +200,10 @@ if (isset($remedies_ar) AND (!isset($check_letter) || $check_letter == FALSE)) {
 	echo "<div class='mm-letters-menu'>".get_rem_groups_searchform($_REQUEST['group_id'])."</div>";
 	$rem_id = NULL;
 	$relation_arr = get_kraque_table2table("remedies", 3, "rem_groups", $rem_id, $_GET['group_id']);
-	foreach($relation_arr as $val){
-		$remedies_ar[$val['src_id']]['id'] = $val['src_id'];
+	if ($relation_arr)	{
+		foreach($relation_arr as $val){
+			$remedies_ar[$val['src_id']]['id'] = $val['src_id'];
+		}
 	}
 	$remedies_ar = get_rem_by_rem_id($remedies_ar);
 	$remedies_ar = get_rem_info($remedies_ar);
@@ -259,4 +261,3 @@ function get_family($longname) {
 	}
 	return $itis;
 }
-?>

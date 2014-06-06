@@ -30,8 +30,7 @@
 function get_select_all_rubric()
 {
 	global $translations, $lng, $db;
-	$rubric_name = "rubric_".$lng;
-	$rubric_select = '<select name="rubric" style="font-size:12px;font-weigt:normal;margin:2px;" onchange="javascript:document.repform.submit()" class="drop-down2">';
+	$rubric_select = '<select name="rubric" style="font-size:12px;font-weight:normal;margin:2px;" onchange="document.repform.submit()" class="drop-down2">';
 	$rubric_id = 0;
 	if (!empty($_REQUEST['rubric'])) {
 		$rubric_id = $_REQUEST['rubric'];
@@ -60,7 +59,7 @@ function get_select_all_rubric()
 
 function get_symptoms_by_letter_page_nav($letter,$s_count,$limit,$start)
 {
-global $grade, $rubric_id, $lng;
+global $rubric_id, $lng;
 $pages = round(($s_count+$limit), -2)/$limit;
     $nav = "<span>";
     for ($i=1;$i<=$pages;$i++)
@@ -102,15 +101,13 @@ function get_symptoms($letter, $where_query, $start, $limit)
 
 function view_repertory($symptom_arr, $letter,$limit,$start)
 {
-    global $grade, $lng;
-
         $html = "<div class='mm-info-box'>\n";
         $html .= view_repertory_head($letter, $symptom_arr);
         if(!empty($symptom_arr)){
             if($symptom_arr['s_count'] > $limit){
                 $html .= "<div class='mm-info-box-part-title'>".get_symptoms_by_letter_page_nav($letter,$symptom_arr['s_count'],$limit,$start)."</div>\n";
             }
-            $html .= view_repertory_symptoms_tree($symptom_arr,$limit,$start);
+            $html .= view_repertory_symptoms_tree($symptom_arr);
             if($symptom_arr['s_count'] > $limit){
                 $html .= "<div class='mm-info-box-part-title'>".get_symptoms_by_letter_page_nav($letter,$symptom_arr['s_count'],$limit,$start)."</div>\n";
             }
@@ -122,7 +119,7 @@ function view_repertory($symptom_arr, $letter,$limit,$start)
 
 function view_repertory_head($letter, $symptom_arr)
 {
-    global $grade, $translations, $lng;
+    global $grade, $translations;
     $html = "  <div class='mm-info-box-repertory'>\n";
     $html .= "    <form name='repform' action='symptom-details.php'>\n";
     $html .= "      <span class='mm-info-box-source-title'>$translations[General_repertory] <span style='font-size:0.7em'><b>".$letter."</b></span></span>\n";
@@ -133,13 +130,10 @@ function view_repertory_head($letter, $symptom_arr)
     return $html;
 }
 
-function view_repertory_symptoms_tree($symptoms_arr,$limit,$start)
+function view_repertory_symptoms_tree($symptoms_arr)
 {
-    global $lng, $translations;
-    $rubric_name = "rubric_".$lng;
+    global $lng;
     $html = "<div class='mm-info-box-rubric'>";
-    $i=0;
-    $ii = 0;
     $parts_count = 0;
     foreach($symptoms_arr['rubric'] as $rubric_id=>$symptoms){
     foreach($symptoms as $skey=>$symptom){
@@ -177,4 +171,3 @@ function view_repertory_symptoms_tree($symptoms_arr,$limit,$start)
     $html = $html."</div>";
     return $html;
 }
-?>

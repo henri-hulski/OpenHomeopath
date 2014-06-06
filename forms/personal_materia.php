@@ -42,4 +42,3 @@ if ($src_materia == 'all') {
 } else {
 	echo ("<span class='alert_box'>" . _("You're using at the moment a <strong> personalized Materia Medica </strong>") . " " . ngettext("with the source", "with the sources", count($materia_src_ar)) . " <strong><em>" . implode(", ", $materia_src_ar) . "</em></strong>.</span>\n");
 }
-?>

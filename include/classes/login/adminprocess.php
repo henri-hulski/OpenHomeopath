@@ -46,15 +46,13 @@ class  AdminProcess {
 	/**
 	 * Class constructor
 	 *
-	 * @return void
+	 * @return AdminProcess
 	 * @access public
 	 */
 	function __construct() {
 		global $session;
 		/* Make sure administrator is accessing page */
 		if(!$session->isAdmin()) {
-			$host  = $_SERVER['HTTP_HOST'];
-			$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 			$extra = "login.php";
 			header("Content-Type: text/html;charset=utf-8");
 			header("Location: ../../../$extra");
@@ -206,7 +204,7 @@ class  AdminProcess {
 				}
 			}
 			if ($user_changed_database) {
-				$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser', $session->time)";
+				$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser')";
 				$db->send_query($query);
 			}
 			/*
@@ -230,7 +228,6 @@ class  AdminProcess {
 	 */
 	private function procDeleteInactive() {
 		global $session, $db;
-		$inact_time = $session->time - $_POST['inactdays']*24*60*60;
 		$query = "SELECT username FROM " . TBL_USERS . " WHERE TIMESTAMPDIFF(DAY, `timestamp`, NOW()) > " . $_POST['inactdays'] . " AND userlevel != " . ADMIN_LEVEL;
 		$db->send_query($query);
 		while($username = $db->db_fetch_row()) {
@@ -260,7 +257,7 @@ class  AdminProcess {
 				$count = $db->db_num_rows();
 				$db->free_result();
 				if ($count > 0) {
-					$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser', $session->time)";
+					$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser')";
 					$db->send_query($query);
 				}
 				/*
@@ -269,11 +266,11 @@ class  AdminProcess {
 				$user_id = $db->getUserInfo($subuser, 'id_user');
 				$user_ar = array("user_id" => $user_id[0]);
 				embed_phorum_deleteuser($user_ar);
+				$query = "DELETE FROM " . TBL_USERS . " WHERE username = '$subuser;
+				$db->send_query($query);
 			}
 		}
-		$query = "DELETE FROM " . TBL_USERS . " WHERE timestamp < $inact_time AND userlevel != " . ADMIN_LEVEL;
-		$db->send_query($query);
-		header("Content-Type: text/html;charset=utf-8"); 
+		header("Content-Type: text/html;charset=utf-8");
 		header("Location: " . $session->referrer);
 		die();
 	}
@@ -323,7 +320,7 @@ class  AdminProcess {
 			$db->free_result();
 			$query = "DELETE FROM repertorizations WHERE username = '$subuser'";
 			$db->send_query($query);
-			$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser', $session->time)";
+			$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser')";
 			$db->send_query($query);
 			/*
 			 * Delete user from phorum user-table.

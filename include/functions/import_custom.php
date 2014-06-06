@@ -139,4 +139,3 @@ function insert_remsym() {
 	}
 	$db->free_result($result);
 }
-?>

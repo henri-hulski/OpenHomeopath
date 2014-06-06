@@ -42,4 +42,3 @@ setlocale(LC_ALL, $locale);
 bindtextdomain("openhomeopath", "locale");
 bind_textdomain_codeset("openhomeopath", "UTF-8");
 textdomain("openhomeopath");
-?>

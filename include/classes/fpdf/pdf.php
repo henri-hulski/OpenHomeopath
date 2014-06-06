@@ -173,4 +173,3 @@ class PDF extends PDF_MC_Table {
 	}
 	
 }
-?>

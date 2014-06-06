@@ -206,6 +206,9 @@ function resizemouse(e) {
 	}
 }
 
+
+var tx;
+var ty;
 function selectmouse(e) {
 	var fobj       = nn6 ? e.target : event.srcElement;
 	var topelement = nn6 ? "HTML" : "BODY";
@@ -465,12 +468,13 @@ function searchSymptoms() {
 
 function repDelete() {
 	var savedRepButtons = document.getElementById("saved_reps_form").saved_rep;
+	var repAr;
 	if(savedRepButtons.checked) {
-		var repAr = document.getElementById("radio_1").value.split("%", 6);
+		repAr = document.getElementById("radio_1").value.split("%", 6);
 	} else {
 		for (var i=0; i < savedRepButtons.length; i++) {
 			if (savedRepButtons[i].checked) {
-				var repAr = savedRepButtons[i].value.split("%", 2);
+				repAr = savedRepButtons[i].value.split("%", 2);
 			}
 		}
 	}
@@ -486,12 +490,13 @@ function repDelete() {
 
 function repPublic() {
 	var savedRepButtons = document.getElementById("saved_reps_form").saved_rep;
+	var repAr;
 	if(savedRepButtons.checked) {
-		var repAr = document.getElementById("radio_1").value.split("%", 6);
+		repAr = document.getElementById("radio_1").value.split("%", 6);
 	} else {
 		for (var i=0; i < savedRepButtons.length; i++) {
 			if (savedRepButtons[i].checked) {
-				var repAr = savedRepButtons[i].value.split("%", 6);
+				repAr = savedRepButtons[i].value.split("%", 6);
 			}
 		}
 	}
@@ -521,7 +526,7 @@ function customTable(table) {
 		}
 	}
 	if (source == "custom") {
-		if (document.getElementById("src_" + table).selectedIndex == -1) { // wenn keine Quelle ausgewählt ist Fehler ausgeben
+		if (document.getElementById("src_" + table).selectedIndex == -1) { // if no source is selected through an error
 			alert (lang[8]);
 			return false;
 		}
@@ -592,7 +597,7 @@ function symtomSelect(response) {
 	div.appendChild(divChild);
 }
 
-/* Symptome abwaehlen */
+/* deselect symptoms */
 function symDeselect(divId) {
 	var symDiv = document.getElementById(divId);
 	symDiv.parentNode.removeChild(symDiv);
@@ -609,26 +614,17 @@ function rep(tab) {
 		return false;
 	} else {
 		var symSelect = symSelectAr.join("_");
-		var url = "rep_result.php?symsel=" + symSelect;
-		if (document.getElementById("patient") && document.getElementById("patient").value != "") {
-			var patient = document.getElementById("patient").value;
-			url += "&patient=" + patient;
-		}
-		if (document.getElementById("prescription") && document.getElementById("prescription").value != "") {
-			var prescription = document.getElementById("prescription").value;
-			url += "&prescription=" + prescription;
-		}
-		if (document.getElementById("note") && document.getElementById("note").value != "") {
-			var note = document.getElementById("note").value;
-			url += "&note=" + note;
-		}
-		tabOpen(url, -1, "POST", tab);
+		loadRep(tab, symSelect, "rep_result")
 	}
 }
 
 function addSymptoms(tab) {
 	var symSelect = document.getElementById("sym_select").value;
-	var url = "repertori.php?symsel=" + symSelect;
+	loadRep(tab, symSelect, "repertori")
+}
+
+function loadRep(tab, symSelect, target) {
+	var url = target + ".php?symsel=" + symSelect;
 	if (document.getElementById("patient") && document.getElementById("patient").value != "") {
 		var patient = document.getElementById("patient").value;
 		url += "&patient=" + patient;
@@ -856,7 +852,7 @@ function autosuggest(formular) {
 
 function getForm(formular) {
 	keyPressed = 0;
-	q = document.getElementById("query").value;
+	var q = document.getElementById("query").value;
 	if (typeof _paq !== 'undefined') {
 		_paq.push(['trackSiteSearch', q, false, false]);
 	}
@@ -880,12 +876,6 @@ function setRem(remId, e) {
 function setRemShort(rem, e) {
 	document.getElementById("query").value = rem;
 	document.getElementById("rem").value = rem;
-	document.getElementById("results").style.display = "none";
-}
-
-function setPersonID(personID, fullname, e) {
-	document.getElementById("query").value = fullname;
-	document.getElementById("person_id").value = personID;
 	document.getElementById("results").style.display = "none";
 }
 // ende thb
@@ -1085,8 +1075,8 @@ function colorizeRadioRow(idCheckCommon, idRowCommon, idForm) {
 	var j = 1;
 	for (var i = 1; i <= radioCount; i++)
 	{
-		idRow = idRowCommon + "_" + i;
-		idCheck = idCheckCommon + "_" + i;
+		var idRow = idRowCommon + "_" + i;
+		var idCheck = idCheckCommon + "_" + i;
 		document.getElementById(idRow).className = (document.getElementById(idCheck).checked) ? "checked" : "unchecked_"+j;
 		j = (j==1) ? 2 : 1;
 	}

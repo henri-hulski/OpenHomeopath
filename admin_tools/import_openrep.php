@@ -44,7 +44,7 @@ if (!$session->isAdmin()) {
         </td>
         <td></td>
         <td align="center">
-          <select class="drop-down3" name="sources" id="sources" size="1" onchange='javascript:document.upload_files.submit()'>
+          <select class="drop-down3" name="sources" id="sources" size="1" onchange='document.upload_files.submit()'>
 <?php
 		if (!empty($_REQUEST['sources'])) {
 			$current_src_id = $_REQUEST['sources'];
@@ -165,7 +165,7 @@ if (!$session->isAdmin()) {
     <br>
     <input type='hidden' name='upload' id='upload' value='0'>
     <div style="text-align: center;">
-      <input type='submit' onclick='javascript:document.getElementById("upload").value=1' value=' <?php echo _("Upload files"); ?> '>
+      <input type='submit' onclick='document.getElementById("upload").value=1' value=' <?php echo _("Upload files"); ?> '>
     </div>
   </form>
 <?php

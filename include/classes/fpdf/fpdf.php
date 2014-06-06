@@ -1601,8 +1601,8 @@ class FPDF
 				// Descriptor
 				$this->_newobj();
 				$s = '<</Type /FontDescriptor /FontName /'.$name;
-				foreach($font['desc'] as $k=>$v)
-					$s .= ' /'.$k.' '.$v;
+				foreach($font['desc'] as $l=>$v)
+					$s .= ' /'.$l.' '.$v;
 				if(!empty($font['file']))
 					$s .= ' /FontFile'.($type=='Type1' ? '' : '2').' '.$this->FontFiles[$font['file']]['n'].' 0 R';
 				$this->_out($s.'>>');
@@ -1803,5 +1803,3 @@ if(isset($_SERVER['HTTP_USER_AGENT']) && $_SERVER['HTTP_USER_AGENT']=='contype')
 	header('Content-Type: application/pdf');
 	exit;
 }
-
-?>

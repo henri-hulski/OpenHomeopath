@@ -23,7 +23,7 @@
 			padding: 1px 6px 1px 6px;
 			}
 			li {
-			border: 0px solid #808080;
+			border: 0 solid #808080;
 			/*padding: 1px 6px 1px 6px;*/
 			margin: 10px;
 			}
@@ -31,7 +31,7 @@
 			font-family:arial,sans-serif;
 			background-color: #fffdee;
 			border: 10px solid #cce6d4;
-			padding: 0px;
+			padding: 0;
 			}
 			h1{text-align:center;margin:2px;}
 
@@ -41,7 +41,7 @@
 #mainSearchBox {
   background-color: #D9E7BA;
   border: 1px solid silver;
-  width: 800;
+  width: 800px;
   text-align:center;
   padding-top: 5px;
   padding-bottom: 10px;
@@ -65,14 +65,9 @@ z-index:20;
     
 }
 .grade4{    
-    color:#f40606;
     color:#c50347;
 }
 .grade5{
-    color:#ad932b;
-    color:#f49206;
-    color:#f40606;
-    color:#f46506;
     color:#a50c6d;
 }
 .rem-info-tab {
@@ -83,20 +78,20 @@ color:#000000;
 font-weight:bold;
 letter-spacing:1px;
 text-decoration:none;
-text-transform:;
+text-transform: none;
 vertical-align:top;
 }
 .mm-info-box{
     margin-top: 10px;
     background-color:#e3edcf;
     font-size:12px;
-    padding:0px 0px 0px 0px;
+    padding:0;
     border: 1px #bdc9a3 solid;    
 }
 .mm-info-box-head{
 background-color:#ffffff;
 font-size:12px;
-padding:0px 10px 10px 10px;
+padding:0 10px 10px 10px;
 }
 .mm-info-box-main-rubric {
     text-align:left;
@@ -115,36 +110,32 @@ padding:0px 10px 10px 10px;
 }
 .mm-info-box-rubric{
     margin:10px;
-    padding:0px 10px 10px 10px;
+    padding:0 10px 10px 10px;
     background-color:#ffffff;
     font-size:14px;
     font-weight:500;
 }
 .mm-info-box-title {
-    background-color:#D9E7BA;
     font-size:13px;
     padding-left:10px;
-    border-top: 0px #bdc9a3 solid;
-    border-bottom: 0px #bdc9a3 solid;
-    background-color:#e3edcf;
-    
-    background-color:#e9eee0;
+    border-top: 0 #bdc9a3 solid;
+    border-bottom: 0 #bdc9a3 solid;
     background-color:#e3ebdb;
 }
 .mm-info-box-part-title {
     font-size:13px;
     padding-left:10px;
     background-color:#e3edcf;
-    border-top: 0px #bdc9a3 solid;
-    border-bottom: 0px #bdc9a3 solid;
+    border-top: 0 #bdc9a3 solid;
+    border-bottom: 0 #bdc9a3 solid;
 }
 .mm-info-box-repertory{
-    margin: 0px 0px 0px 0px;
+    margin: 0;
     padding:10px;
     background-color:#e3edcf;
-    border: 0px #bdc9a3 solid;
+    border: 0 #bdc9a3 solid;
     border-bottom: 1px #bdc9a3 solid;
-    border-top: 0px #bdc9a3 solid;
+    border-top: 0 #bdc9a3 solid;
     
 }
 
@@ -168,7 +159,6 @@ padding:0px 10px 10px 10px;
 
 .mm-info-box-reference-title{
     font-size:22px;
-    font-weight:bold;
     font-weight:normal;
     font-style:normal;
     color:	#043C7F;
@@ -176,7 +166,6 @@ padding:0px 10px 10px 10px;
 }
 .mm-info-box-source-title{
     font-size:22px;
-    font-weight:bold;
     font-weight:normal;
     font-style:normal;
     color:	#043C7F;

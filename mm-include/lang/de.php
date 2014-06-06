@@ -1,4 +1,4 @@
-<?php 
+<?php
 $translations = array(
 'quelle_id'=>'ID',
 'quelle_titel'=>'Titel',
@@ -54,7 +54,6 @@ $translations = array(
 'list_of_remedies_in_homeopathy_letter'=>'Liste homöopatischer Heilmittel, Buchstabe',
 'groups_of_remedies_in_homeopathy'=>'Gruppen homöopatischer Heilmittel',
 'groups_of_remedies_in_homeopathy_letter'=>'Gruppen homöopatischer Heilmittel, Buchstabe',
-'Materia_comment'=>'Bemerkung',
 'Materia_description'=>'Beschreibung',
 'Repertory_sources'=>'Quellen',
 'Repertory_all_rubrics'=>'Alle Rubriken',

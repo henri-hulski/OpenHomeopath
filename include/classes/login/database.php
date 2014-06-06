@@ -53,7 +53,7 @@ class UserDB extends OpenHomeoDB {
 
 	/**
 	 * Number of active guests viewing site
-	 * @var unknown 
+	 * @var integer
 	 * @access public
 	 */
 	public $num_active_guests;
@@ -263,7 +263,6 @@ class UserDB extends OpenHomeoDB {
 	 *
 	 * @param string $username username
 	 * @param string $column column(s) of user table to query - comma seperated
-	 * @param string $value field value
 	 * @return boolean true on success
 	 * @access public
 	 */
@@ -406,7 +405,6 @@ class UserDB extends OpenHomeoDB {
 	 * removeInctiveUsers - removes users after inactivity of USER_TIMEOUT
 	 * from active_users table
 	 *
-	 * @param string $username username
 	 * @return void
 	 * @access public
 	 */
@@ -423,7 +421,6 @@ class UserDB extends OpenHomeoDB {
 	 * removeInactiveGuest - removes guests after inactivity of GUEST_TIMEOUT
 	 * from active_guests table
 	 *
-	 * @param string $ip IP-address
 	 * @return void
 	 * @access public
 	 */
@@ -438,5 +435,3 @@ class UserDB extends OpenHomeoDB {
 
 }
 // end of class UserDB
-
-?>

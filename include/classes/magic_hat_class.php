@@ -54,7 +54,7 @@ class MagicHat {
 	
 	/**
 	 * True, if OpenHomeopath is set to restricted mode, false otherwise.
-	 * @var unknown
+	 * @var boolean
 	 * @access public
 	 */
 	public $restricted_mode;
@@ -62,8 +62,8 @@ class MagicHat {
 	/**
 	 * Class constructor
 	 *
-	 * @return void
-	 * @access public
+	 * @return \MagicHat
+	@access public
 	 */
 	public function __construct() {
 		$this->get_received_donations();
@@ -210,4 +210,3 @@ class MagicHat {
 		$this->restricted_mode = !($this->is_donator || $this->goal_reached());
 	}
 }
-?>

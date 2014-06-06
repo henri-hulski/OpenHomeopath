@@ -16,4 +16,3 @@ define('DELETE_ICON',   './skins/' . SKIN_NAME . '/img/delete.png');
 define('EDIT_ICON',   './skins/' . SKIN_NAME . '/img/edit.png');
 define('DETAILS_ICON',   './skins/' . SKIN_NAME . '/img/browse.png');
 define('RESTORE_ICON',   './skins/' . SKIN_NAME . '/img/restore.png');
-?>
