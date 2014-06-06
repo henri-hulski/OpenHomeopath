@@ -186,7 +186,6 @@ class DbPlugin {
 	/**
 	 * db_num_fields returns the number of columns for the most recent query.
 	 *
-	 * @param  resource $connection optional a SQL link identifier
 	 * @return integer  Returns the number of fields in a result set.
 	 * @access public
 	 */

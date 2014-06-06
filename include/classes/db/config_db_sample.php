@@ -104,4 +104,3 @@ $side_uri = "http://$host$uri/";
   in der Datei "include/datadmin/config.php" entsprechend anpassen.
 
 */
-?>

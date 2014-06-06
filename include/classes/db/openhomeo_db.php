@@ -208,7 +208,7 @@ class OpenHomeoDB extends DB {
 	 * If there are translations the language-based sym-table according to the usersettings will be used.
 	 * If $custom_symptom_lang is set, the given language will be used.
 	 *
-	 * @param string|false $custom_symptom_lang optional the symptom language to be used as language code
+	 * @param false|string $custom_symptom_lang optional the symptom language to be used as language code
 	 * @return string
 	 * @access public
 	 */
@@ -396,7 +396,7 @@ class OpenHomeoDB extends DB {
 	/**
 	 * is_translated checks if the given symptom has a translation.
 	 *
-	 * @param unknown $sym_id sym_id from the symptom to check
+	 * @param integer $sym_id sym_id from the symptom to check
 	 * @return boolean
 	 * @access public
 	 */
@@ -907,5 +907,3 @@ class OpenHomeoDB extends DB {
 	}
 }
 // end of class OpenHomeoDB
-
-?>

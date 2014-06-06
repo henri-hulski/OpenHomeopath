@@ -149,7 +149,7 @@ class Session {
 	/**
 	 * Class constructor
 	 *
-	 * @return void
+	 * @return Session
 	 * @access public
 	 */
 	function __construct() {
@@ -223,7 +223,7 @@ class Session {
 	 * If so, the database is queried to make sure of the user's
 	 * authenticity. Returns true if the user has logged in.
 	 *
-	 * @return void
+	 * @return boolean
 	 * @access private
 	 */
 	private function checkLogin(){
@@ -501,7 +501,7 @@ class Session {
 				 * kind of stupid to report "password too short".
 				 */
 			}
-			
+
 			/* Password2 error checking */
 			$field = "pass2";  // Use field name for second password
 			if (!$subpass) {
@@ -512,7 +512,7 @@ class Session {
 				}
 			}
 		}
-		
+
 		/* Email error checking */
 		$field = "email";  // Use field name for email
 		if (!$subemail || strlen($subemail = trim($subemail)) == 0) {
@@ -545,7 +545,7 @@ class Session {
 			}
 		}
 	}
-	
+
 	/**
 	 * editAccount - Attempts to edit the user's account information
 	 * including the password, which it first makes sure is correct
@@ -562,8 +562,8 @@ class Session {
 	 * @param integer $show_active 0 | 1 - 1 if the user wants to see the active users
 	 * @param integer $hide_email 0 | 1 - 1 if the user wants to hide his email from other users
 	 * @param string $skin original | kraque - skin the user uses
-	 + @param string $lang de | en - users interface language
-	 + @param string $sym_lang de | en - language the user prefers for symptoms
+	 * @param string $lang de | en - users interface language
+	 * @param string $sym_lang de | en - language the user prefers for symptoms
 	 * @return boolean true on success
 	 * @access public
 	 */
@@ -624,7 +624,7 @@ class Session {
 			}
 			$subemail = stripslashes($subemail);
 		}
-		
+
 		/* Errors exist, have user correct them */
 		if($form->num_errors > 0){
 			return false;  // Errors with form
@@ -634,19 +634,19 @@ class Session {
 		if($subcurpass && $subnewpass){
 			$db->updateUserField($this->username,"password",md5($subnewpass));
 		}
-		
+
 		/* Change Email */
 		if(isset($subemail)){
 			$db->updateUserField($this->username,"email",$subemail);
 		}
-		
+
 		/* Change realname */
 		if(isset($real_name)){
 			$real_name = trim($real_name);
 			$real_name = stripslashes($real_name);
 			$db->updateUserField($this->username,"user_real_name",$real_name);
 		}
-		
+
 		/* Change skin */
 		if(!empty($skin)){
 			$skin = trim($skin);
@@ -656,7 +656,7 @@ class Session {
 				unset($_SESSION['skin']);
 			}
 		}
-		
+
 		/* Change language */
 		if(!empty($lang)){
 			$lang = trim($lang);
@@ -666,7 +666,7 @@ class Session {
 				unset($_SESSION['lang']);
 			}
 		}
-		
+
 		/* Change symptom-language */
 		if(!empty($sym_lang)){
 			$sym_lang = trim($sym_lang);
@@ -677,7 +677,7 @@ class Session {
 			$db->updateUserField($this->username,"sym_lang_id",$sym_lang);
 			$db->create_custom_symptom_table();
 		}
-		
+
 		/* Change extra */
 		if(isset($extra)){
 			$extra = str_replace("\n\r", "<br>", $extra);
@@ -692,7 +692,7 @@ class Session {
 		} elseif (!$show_active && $this->userlevel == SHOW_LEVEL) {
 			$db->updateUserField($this->username,"userlevel",USER_LEVEL);
 		}
-		
+
 		/* hide email */
 		if($hide_email && $this->hide_email == "0") {
 			$db->updateUserField($this->username,"hide_email",1);
@@ -703,7 +703,7 @@ class Session {
 		/* Success! */
 		return true;
 	}
-	
+
 	/**
 	 * isAdmin - Returns true if currently logged in user is
 	 * an administrator, false otherwise.
@@ -714,7 +714,7 @@ class Session {
 	function isAdmin(){
 		return ($this->userlevel == ADMIN_LEVEL || $this->username  == ADMIN_NAME);
 	}
-	
+
 	/**
 	 * isEditor - Returns true if currently logged in user is
 	 * an editor, false otherwise.
@@ -725,7 +725,7 @@ class Session {
 	function isEditor(){
 		return ($this->userlevel >= EDITOR_LEVEL || $this->username  == ADMIN_NAME);
 	}
-	
+
 	/**
 	 * showActiveUsers - Returns true if currently logged in user is
 	 * an administrator or if he wants to see active users
@@ -748,12 +748,13 @@ class Session {
 	function generateRandID(){
 		return md5($this->generateRandStr(16));
 	}
-	
+
 	/**
 	 * generateRandStr - Generates a string made up of randomized
 	 * letters (lower and upper case) and digits, the length
 	 * is a specified parameter.
 	 *
+	 * @param integer $length string length
 	 * @return string
 	 * @access public
 	 */
@@ -792,5 +793,3 @@ $form = new Form;
 
 /* tabbed has to be set false at startup */
 $tabbed = false;
-
-?>

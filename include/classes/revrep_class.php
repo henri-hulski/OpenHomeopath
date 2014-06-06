@@ -60,12 +60,12 @@ class RevRep extends TreeView {
 	 * @access private
 	 */
 	private $grade = 1;
-	
+
 	/**
 	 * Class constructor
 	 *
-	 * @return void
-	 * @access public
+	 * @return \RevRep
+	@access public
 	 */
 	function __construct() {
 		global $db;
@@ -275,4 +275,3 @@ class RevRep extends TreeView {
 		return $str;
 	}
 }
-?>

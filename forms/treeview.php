@@ -45,4 +45,3 @@ if (empty($_REQUEST['id'])) {
 }
 $json_string = json_encode($return_ar);
 echo $json_string;
-?>

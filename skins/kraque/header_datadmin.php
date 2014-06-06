@@ -1,8 +1,8 @@
 <?php
 include_once("include/classes/login/session.php");
 $skin = $session->skin;
-include("./skins/$skin/header_datadmin_top.php");
-include("./skins/$skin/frame.php");
+include("skins/$skin/header_datadmin_top.php");
+include("skins/$skin/frame.php");
 ?>
               <table class="main_table" cellpadding="10">
                 <tr>
@@ -38,12 +38,12 @@ echo "<h2 class='center'>" . _("Table:") . " " . $table_alias . "</h2><br>\n";
 <?php
 if ($enable_insert == "1"){
 ?>
-	                  &bull; <a class="NavLink" href="<?php $dadabik_main_file; ?>?function=show_insert_form&table_name=<?php echo urlencode($table_name); ?>"><?php echo $submit_buttons_ar["insert_short"]; ?></a>
+	                  &bull; <a class="NavLink" href="<?php echo $dadabik_main_file; ?>?function=show_insert_form&table_name=<?php echo urlencode($table_name); ?>"><?php echo $submit_buttons_ar["insert_short"]; ?></a>
 <?php
 }
 ?>
 
-                      &bull; <a class="NavLink" href="<?php $dadabik_main_file; ?>?function=show_search_form&table_name=<?php echo urlencode($table_name); ?>"><?php echo $submit_buttons_ar["search_short"]; ?></a> &bull; <a class="NavLink" href="<?php $dadabik_main_file; ?>?function=search&table_name=<?php echo urlencode($table_name); ?>"><?php echo $normal_messages_ar["last_search_results"]; ?></a> &bull; <a class="NavLink" href="<?php $dadabik_main_file; ?>?function=search&empty_search_variables=1&table_name=<?php echo urlencode($table_name); ?>"><?php echo $normal_messages_ar["show_all"]; ?></a> &bull; <a class="NavLink" href="./archive.php?table_name=<?php echo urlencode($table_name); ?>"><?php echo _("Archive"); ?></a> &bull; <a class="NavLink" href="./express.php"><span class="nobr"><?php echo _("Express-Tool"); ?></span></a></span>
+                      &bull; <a class="NavLink" href="<?php echo $dadabik_main_file; ?>?function=show_search_form&table_name=<?php echo urlencode($table_name); ?>"><?php echo $submit_buttons_ar["search_short"]; ?></a> &bull; <a class="NavLink" href="<?php echo $dadabik_main_file; ?>?function=search&table_name=<?php echo urlencode($table_name); ?>"><?php echo $normal_messages_ar["last_search_results"]; ?></a> &bull; <a class="NavLink" href="<?php echo $dadabik_main_file; ?>?function=search&empty_search_variables=1&table_name=<?php echo urlencode($table_name); ?>"><?php echo $normal_messages_ar["show_all"]; ?></a> &bull; <a class="NavLink" href="./archive.php?table_name=<?php echo urlencode($table_name); ?>"><?php echo _("Archive"); ?></a> &bull; <a class="NavLink" href="./express.php"><span class="nobr"><?php echo _("Express-Tool"); ?></span></a></span>
                       </td>
                     </tr>
                   </table>

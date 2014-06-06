@@ -83,7 +83,15 @@ class Rep {
 	 */
 	public $sym_select = array();
 	
-	
+
+	/**
+	 * Symptoms array: keys: [id]: symptom ID, [name]: symptom name, [degree]: symptom degree, [kuenzli]: symptom Künzli-dot
+	 * @var array
+	 * @access private
+	 */
+	private $symptoms_ar = array();
+
+
 	/**
 	 * Remedies array: The remedies we found during reperorization: [0] = grade, [1] = hits, [2] = rem_short, [3] = rem_name, [4] = rem_id
 	 * @var array
@@ -144,7 +152,7 @@ class Rep {
 	/**
 	 * Class constructor
 	 *
-	 * @return void
+	 * @return Rep
 	 * @access public
 	 */
 	function __construct() {
@@ -636,4 +644,3 @@ class Rep {
 		}
 	}
 }
-?>

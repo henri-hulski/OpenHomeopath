@@ -102,10 +102,10 @@ class Search {
 	/**
 	 * Class constructor
 	 *
-	 * @return void
+	 * @return Search
 	 * @access public
 	 */
-	public function __construct() {
+	function __construct() {
 		
 		global $db;
 		
@@ -122,7 +122,7 @@ class Search {
 	 * @return void
 	 * @access public
 	 */
-	public function build_search() {
+	function build_search() {
 		
 		// searching for parts of words with regular expressions
 		if ($this->whole_word === false) {
@@ -404,4 +404,3 @@ class Search {
 	}
 	
 }
-?>

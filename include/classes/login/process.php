@@ -49,7 +49,7 @@ class  Process {
 
 	/**
 	*
-	* @return void
+	* @return Process
 	* @access public
 	*/
 	function __construct(){
@@ -160,7 +160,7 @@ class  Process {
 	 */
 	private function procLogout(){
 		global $session;
-		$retval = $session->logout();
+		$session->logout();
 		header("Location: ../../../login.php");
 	}
 
@@ -301,5 +301,3 @@ class  Process {
 
 /* Initialize process */
 $process = new Process;
-
-?>
