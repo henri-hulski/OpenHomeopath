@@ -36,6 +36,7 @@ include("help/layout/$skin/header.php");
   </h2>
   <ul>
     <li><a href="#version">Programmversion</a></li>
+    <li><a href="#changelog">Changelog</a></li>
     <li><a href="#license">Lizenz und Copyright</a></li>
     <li><a href="#credits">Dank geht an</a></li>
     <li><a href="#client">Client-Anforderung</a></li>
@@ -53,6 +54,29 @@ include("help/layout/$skin/header.php");
   Nach einer <strong>grundlegenden Überarbeitung des gesamten Codes und der Datenbankstruktur</strong> veröffentliche ich hiermit nach über 7 Jahren Arbeit die erste stabile Version von OpenHomeopath.<br>
   Wenn noch Bugs oder Programmfehler auftauchen und bei weiteren Fragen meldet euch <a title="Kontakt zum Autor" href="mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath">bei mir</a>.
 </p>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
+<a name="changelog" id="changelog"><br></a>
+<h2>
+  Changelog
+</h2>
+  <ul>
+    <li><strong>Version 1.0:</strong> Erstes stabiles Release nach über 7 Jahren Entwicklung und einer grundlegenden Überarbeitung des gesamten Quellcodes und der Datenbankstruktur.<br>
+    <strong>Die wichtigsten aktuellen Änderungen:</strong><br>
+    <ul>
+      <li>Grundlegende Modernisierung des Layouts.</li>
+      <li>Möglichkeit, das Repertorisierungsergebnis als PDF anzuzeigen oder herunterzuladen.</li>
+      <li>Die Rubriken können jetzt bei der Repertorisierung gewichtet werden.</li>
+      <li>Die Symptome in der Materia Medica werden wie bei der Repertorisierung als Rubrikbaum dargestellt.</li>
+      <li>In der Materia Medica können die angezeigten Rubriken nach Hauptrubrik und minimaler Wertigkeit gefiltert werden.</li>
+      <li>In der Symptominfo lassen sich die zugeordeneten Mittel nach minimaler Wertigkeit filtern und nach Wertigkeit, Mittelname oder Kurzname sortieren. Bei der Sortierung nach Kurznamen wird eine kompaktere Darstellung gewählt.</li>
+      <li>Reimport der Repertorien aus OpenRep: Kent, Bönninghausen, Boger und das Repertorium Publicum. Weiterhin habe ich den deutschen Kent von der Bergischen Akademie nach grundlegender Durchsicht und Fehlerbereinigung reimportiert.</li>
+      <li>Beim Import wurden auch Querverweise zwischen den Rubriken berücksichtigt, die jetzt in der Symptominfo angezeigt werden.</li>
+      <li>Aktualisierung und Reorganisierung des OpenHomeopath-Handbuchs und die vollständige Übersetzung des Handbuchs ins Englische.</li>
+      <li>Weitgehende Verwendung der objektorientierten Programmierung (OOP) und Reorganisation des PHP-Quellcodes in Klassen.</li>
+      <li>Übersetzung aller Tabellen-, Spalten-, Klassen-, Funktions- und Variablennamen sowie aller Kommentare in englisch, so daß sich auch internationale Entwickler an dem Projekt beteiligen können.</li>
+      <li>Hinzufügen einer <a href='http://openhomeo.org/openhomeopath/doc/en/apigen' target='_blank'>ausführlichen englischen Quellcode-Dokumentation</a> nach dem PHPDoc-Schema</li>
+    </ul></li>
+  </ul>
 <br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="license" id="license"><br></a>
 <h2>
@@ -152,7 +176,7 @@ Dank geht an
 <div>
   Hier könnt ihr <strong>OpenHomeopath</strong> herunterladen:
   <ul>
-    <li><a href="../../download/openhomeopath_1.0.tar.gz">openhomeopath_1.0.tar.gz</a> gepackt als tar.gz-Datei für die lokale Installation.</li>
+    <li><a href="../../download/OpenHomeopath_1.0.tar.gz">OpenHomeopath_1.0.tar.gz</a> gepackt als tar.gz-Datei für die lokale Installation.</li>
     <li>Du kannst auch das <a href='https://github.com/henri-hulski/OpenHomeopath' target='_blank'>OpenHomeopath Git-Repository</a> von GitHub klonen.</li>
     <li>Oder den <a href='https://github.com/henri-hulski/OpenHomeopath/archive/master.zip'>OpenHomeopath Masterbranch</a> von GitHub als gepackte Zip-Datei herunterladen.</li>
   </ul>

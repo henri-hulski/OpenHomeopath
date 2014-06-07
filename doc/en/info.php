@@ -36,6 +36,7 @@ include("help/layout/$skin/header.php");
   </h2>
   <ul>
     <li><a href="#version">Program version</a></li>
+    <li><a href="#changelog">Changelog</a></li>
     <li><a href="#license">License and Copyright</a></li>
     <li><a href="#credits">Credits to</a></li>
     <li><a href="#client">Client requirements</a></li>
@@ -54,6 +55,29 @@ include("help/layout/$skin/header.php");
   If you still find bugs or if you've a question please <a title="Contact to the author" href="mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath">contact me</a>.
 </p>
 <br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
+<a name="changelog" id="changelog"><br></a>
+<h2>
+  Changelog
+</h2>
+  <ul>
+    <li><strong>Version 1.0:</strong> First stable release after more than 7 years work and a fundamental revision of the entire code and database structure.<br>
+    <strong>The most important recent changes:</strong><br>
+    <ul>
+      <li>Essential modernization of the layout.</li>
+      <li>Possibility to view or download the repertorization result as PDF.</li>
+      <li>You can weight the rubrics during repertorization.</li>
+      <li>The rubrics in the Materia Medica are now presented in treeview like in the repertorization.</li>
+      <li>In the Materia Medica the rubrics can be filtered by main rubric and minimal grade.</li>
+      <li>In the Symptominfo the remedies can be filtered by minimal grade and sorted by grade, name or short name. When sorting by short name the remedies will be presented in a more compact form.</li>
+      <li>Reimport of the repertories from OpenRep: Kent, Bönninghausen, Boger and the Repertorium Publicum. I also reimport the German Kent from the Bergische Akademie after an essential revision.</li>
+      <li>Cross-references were also imported and can be reviewed in the Symptominfo.</li>
+      <li>Update and reorganization of the OpenHomeopath manual and full translation of the manual in English.</li>
+      <li>Extensive use of object-oriented programming (OOP) and reorganization of the PHP source code in classes.</li>
+      <li>Translation of all table-, class-, function- and variable-names and also all comments in English, so that international developers can join the project.</li>
+    </ul></li>
+    <li><strong>Version 1.0.1:</strong> Bugfix-release, added this changelog.</li>
+  </ul>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="license" id="license"><br></a> 
 <h2>
  License and Copyright
@@ -158,7 +182,7 @@ include("help/layout/$skin/header.php");
 <div>
   Here you can download <strong>OpenHomeopath</strong>:
   <ul>
-    <li>Download <a href="../../download/openhomeopath_1.0.tar.gz">openhomeopath_1.0.tar.gz</a> as a compressed tarball for local installation.</li>
+    <li>Download <a href="../../download/OpenHomeopath_1.0.tar.gz">OpenHomeopath_1.0.tar.gz</a> as a compressed tarball for local installation.</li>
     <li>You can also clone the <a href='https://github.com/henri-hulski/OpenHomeopath' target='_blank'>OpenHomeopath git repository</a> from GitHub.</li>
     <li>Or download the <a href='https://github.com/henri-hulski/OpenHomeopath/archive/master.zip'>OpenHomeopath masterbranch</a> from GitHub as packed zip-file.</li>
   </ul>
