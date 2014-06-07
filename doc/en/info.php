@@ -50,7 +50,7 @@ include("help/layout/$skin/header.php");
   Program Version
 </h2>
 <p>
-  This is <strong>OpenHomeopath Version 1.0_ext</strong> released on 05.06.2014.<br>
+  This is <strong>OpenHomeopath Version 1.0.1_ext</strong> released on 07.06.2014.<br>
   After a <strong>fundamental revision of the entire code and database structure</strong> I'm glad to publish the first stable release of OpenHomeopath after more than 7 years work.<br>
   If you still find bugs or if you've a question please <a title="Contact to the author" href="mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath">contact me</a>.
 </p>
@@ -60,7 +60,7 @@ include("help/layout/$skin/header.php");
   Changelog
 </h2>
   <ul>
-    <li><strong>Version 1.0:</strong> First stable release after more than 7 years work and a fundamental revision of the entire code and database structure.<br>
+    <li><strong>Version 1.0 released on 05.06.2014:</strong> First stable release after more than 7 years work and a fundamental revision of the entire code and database structure.<br>
     <strong>The most important recent changes:</strong><br>
     <ul>
       <li>Essential modernization of the layout.</li>
@@ -74,8 +74,9 @@ include("help/layout/$skin/header.php");
       <li>Update and reorganization of the OpenHomeopath manual and full translation of the manual in English.</li>
       <li>Extensive use of object-oriented programming (OOP) and reorganization of the PHP source code in classes.</li>
       <li>Translation of all table-, class-, function- and variable-names and also all comments in English, so that international developers can join the project.</li>
+      <li>Added a detailed <a href='http://openhomeo.org/openhomeopath/doc/en/apigen' target='_blank'>PHPDoc source code documentation</a>.</li>
     </ul></li>
-    <li><strong>Version 1.0.1:</strong> Bugfix-release, added this changelog.</li>
+    <li><strong>Version 1.0.1 released on 07.06.2014:</strong> Bugfix-release, added this changelog.</li>
   </ul>
 <br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="license" id="license"><br></a> 
