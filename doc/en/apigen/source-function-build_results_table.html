@@ -279,7 +279,7 @@
 </span><span id="86" class="l"><a class="l" href="#86">  86: </a><span class="php-comment">// output: $fields_names_ar</span>
 </span><span id="87" class="l"><a class="l" href="#87">  87: </a>{
 </span><span id="88" class="l"><a class="l" href="#88">  88: </a>    <span class="php-keyword1">global</span> <span class="php-var">$db</span>;
-</span><span id="89" class="l"><a class="l" href="#89">  89: </a>    
+</span><span id="89" class="l"><a class="l" href="#89">  89: </a>
 </span><span id="90" class="l"><a class="l" href="#90">  90: </a>    <span class="php-var">$sql</span> = <span class="php-quote">&quot;DESCRIBE </span><span class="php-var">$table_name</span><span class="php-quote">&quot;</span>;
 </span><span id="91" class="l"><a class="l" href="#91">  91: </a>    <span class="php-var">$db</span>-&gt;send_query(<span class="php-var">$sql</span>);
 </span><span id="92" class="l"><a class="l" href="#92">  92: </a>    <span class="php-keyword1">while</span> (<span class="php-var">$row</span> = <span class="php-var">$db</span>-&gt;db_fetch_assoc()) {
@@ -299,14 +299,14 @@
 </span><span id="106" class="l"><a class="l" href="#106"> 106: </a>    <span class="php-var">$z</span> = <span class="php-num">0</span>;
 </span><span id="107" class="l"><a class="l" href="#107"> 107: </a>    <span class="php-var">$tables_names_ar</span> = <span class="php-keyword1">array</span>();
 </span><span id="108" class="l"><a class="l" href="#108"> 108: </a>
-</span><span id="109" class="l"><a class="l" href="#109"> 109: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$exclude_not_installed</span> == <span class="php-num">1</span> ) { <span class="php-comment">// get the list from $table_list_name tab </span>
+</span><span id="109" class="l"><a class="l" href="#109"> 109: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$exclude_not_installed</span> == <span class="php-num">1</span> ) { <span class="php-comment">// get the list from $table_list_name tab</span>
 </span><span id="110" class="l"><a class="l" href="#110"> 110: </a>        <span class="php-var">$sql</span> = <span class="php-quote">&quot;SELECT name_table FROM `</span><span class="php-var">$table_list_name</span><span class="php-quote">`&quot;</span>;
 </span><span id="111" class="l"><a class="l" href="#111"> 111: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$exclude_not_allowed</span> == <span class="php-num">1</span>) { <span class="php-comment">// excluding not allowed if necessary</span>
 </span><span id="112" class="l"><a class="l" href="#112"> 112: </a>            <span class="php-var">$sql</span> .= <span class="php-quote">&quot; WHERE allowed_table = '1'&quot;</span>;
 </span><span id="113" class="l"><a class="l" href="#113"> 113: </a>        } <span class="php-comment">// end if</span>
 </span><span id="114" class="l"><a class="l" href="#114"> 114: </a>        <span class="php-var">$db</span>-&gt;send_query(<span class="php-var">$sql</span>);
 </span><span id="115" class="l"><a class="l" href="#115"> 115: </a>        <span class="php-keyword1">while</span> (<span class="php-var">$row</span> = <span class="php-var">$db</span>-&gt;db_fetch_row()) {
-</span><span id="116" class="l"><a class="l" href="#116"> 116: </a>            
+</span><span id="116" class="l"><a class="l" href="#116"> 116: </a>
 </span><span id="117" class="l"><a class="l" href="#117"> 117: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$current_user_is_editor</span> === <span class="php-num">1</span> || <span class="php-var">$row</span>[<span class="php-num">0</span>] !== <span class="php-var">$users_table_name</span> || <span class="php-var">$include_users_table</span> === <span class="php-num">1</span>) {
 </span><span id="118" class="l"><a class="l" href="#118"> 118: </a>                <span class="php-var">$tables_names_ar</span>[<span class="php-var">$z</span>] = <span class="php-var">$row</span>[<span class="php-num">0</span>];
 </span><span id="119" class="l"><a class="l" href="#119"> 119: </a>                <span class="php-var">$z</span>++;
@@ -342,7 +342,7 @@
 </span><span id="149" class="l"><a class="l" href="#149"> 149: </a>
 </span><span id="150" class="l"><a class="l" href="#150"> 150: </a>    <span class="php-comment">// put the labels and other information of the table's fields in an array</span>
 </span><span id="151" class="l"><a class="l" href="#151"> 151: </a>    <span class="php-var">$sql</span> = <span class="php-quote">&quot;SELECT `name_field`, `present_insert_form_field`, `present_ext_update_form_field`, `present_search_form_field`, `required_field`, `present_results_search_field`, `present_details_form_field`, `check_duplicated_insert_field`, `type_field`, `other_choices_field`, `content_field`, `label_de_field`, `label_en_field`, `select_options_field`, `separator_field`, `primary_key_field_field`, `primary_key_table_field`, `primary_key_db_field`, `linked_fields_field`, `linked_fields_order_by_field`, `linked_fields_order_type_field`, `select_type_field`, `prefix_field`, `default_value_field`, `width_field`, `height_field`, `maxlength_field`, `hint_insert_de_field`, `hint_insert_en_field`, `order_form_field` FROM `</span><span class="php-var">$table_internal_name</span><span class="php-quote">`&quot;</span>;
-</span><span id="152" class="l"><a class="l" href="#152"> 152: </a>    
+</span><span id="152" class="l"><a class="l" href="#152"> 152: </a>
 </span><span id="153" class="l"><a class="l" href="#153"> 153: </a>    <span class="php-keyword1">if</span> (<span class="php-var">$order_type</span> == <span class="php-quote">&quot;1&quot;</span>) {
 </span><span id="154" class="l"><a class="l" href="#154"> 154: </a>        <span class="php-var">$sql</span> .= <span class="php-quote">&quot; ORDER BY `order_form_field`&quot;</span>;
 </span><span id="155" class="l"><a class="l" href="#155"> 155: </a>    } <span class="php-comment">// end if</span>
@@ -363,10 +363,10 @@
 </span><span id="170" class="l"><a class="l" href="#170"> 170: </a>            <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;present_results_search_field&quot;</span>] = <span class="php-var">$field_row</span>[<span class="php-quote">&quot;present_results_search_field&quot;</span>]; <span class="php-comment">// 1 if the user want to display it in the basic results page</span>
 </span><span id="171" class="l"><a class="l" href="#171"> 171: </a>            <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;present_details_form_field&quot;</span>] = <span class="php-var">$field_row</span>[<span class="php-quote">&quot;present_details_form_field&quot;</span>]; <span class="php-comment">// 1 if the user want to display it in the details page</span>
 </span><span id="172" class="l"><a class="l" href="#172"> 172: </a>            <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;check_duplicated_insert_field&quot;</span>] = <span class="php-var">$field_row</span>[<span class="php-quote">&quot;check_duplicated_insert_field&quot;</span>]; <span class="php-comment">// 1 if the field needs to be checked for duplicated insert</span>
-</span><span id="173" class="l"><a class="l" href="#173"> 173: </a>            
+</span><span id="173" class="l"><a class="l" href="#173"> 173: </a>
 </span><span id="174" class="l"><a class="l" href="#174"> 174: </a>            <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;label_de_field&quot;</span>] = <span class="php-var">$field_row</span>[<span class="php-quote">&quot;label_de_field&quot;</span>]; <span class="php-comment">// the German label of the field</span>
 </span><span id="175" class="l"><a class="l" href="#175"> 175: </a>            <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;label_en_field&quot;</span>] = <span class="php-var">$field_row</span>[<span class="php-quote">&quot;label_en_field&quot;</span>]; <span class="php-comment">// the English label of the field</span>
-</span><span id="176" class="l"><a class="l" href="#176"> 176: </a>            
+</span><span id="176" class="l"><a class="l" href="#176"> 176: </a>
 </span><span id="177" class="l"><a class="l" href="#177"> 177: </a>            <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;type_field&quot;</span>] = <span class="php-var">$field_row</span>[<span class="php-quote">&quot;type_field&quot;</span>]; <span class="php-comment">// the type of the field</span>
 </span><span id="178" class="l"><a class="l" href="#178"> 178: </a>            <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;other_choices_field&quot;</span>] = <span class="php-var">$field_row</span>[<span class="php-quote">&quot;other_choices_field&quot;</span>]; <span class="php-comment">// 0/1 the possibility to add another choice with select single menu</span>
 </span><span id="179" class="l"><a class="l" href="#179"> 179: </a>            <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;content_field&quot;</span>] = <span class="php-var">$field_row</span>[<span class="php-quote">&quot;content_field&quot;</span>]; <span class="php-comment">// the control type of the field (eg: numeric, alphabetic, alphanumeric)</span>
@@ -434,7 +434,7 @@
 </span><span id="241" class="l"><a class="l" href="#241"> 241: </a>            <span class="php-var">$function</span> = <span class="php-quote">'search'</span>;
 </span><span id="242" class="l"><a class="l" href="#242"> 242: </a>            <span class="php-keyword1">break</span>;
 </span><span id="243" class="l"><a class="l" href="#243"> 243: </a>    } <span class="php-comment">// end switch</span>
-</span><span id="244" class="l"><a class="l" href="#244"> 244: </a>    
+</span><span id="244" class="l"><a class="l" href="#244"> 244: </a>
 </span><span id="245" class="l"><a class="l" href="#245"> 245: </a>    <span class="php-var">$form</span> = <span class="php-quote">&quot;&quot;</span>;
 </span><span id="246" class="l"><a class="l" href="#246"> 246: </a>    <span class="php-var">$form</span> .= <span class="php-quote">&quot;&lt;form id='dadabik_main_form' name='contacts_form' method='post' action='</span><span class="php-var">$action</span><span class="php-quote">?table_name=&quot;</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$table_name</span>).<span class="php-quote">&quot;&amp;function=</span><span class="php-var">$function</span><span class="php-quote">&quot;</span>;
 </span><span id="247" class="l"><a class="l" href="#247"> 247: </a>
@@ -445,7 +445,7 @@
 </span><span id="252" class="l"><a class="l" href="#252"> 252: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$form_type</span> == <span class="php-quote">&quot;search&quot;</span>) {
 </span><span id="253" class="l"><a class="l" href="#253"> 253: </a>        <span class="php-var">$form</span> .= <span class="php-quote">&quot;&amp;execute_search=1&quot;</span>;
 </span><span id="254" class="l"><a class="l" href="#254"> 254: </a>    }
-</span><span id="255" class="l"><a class="l" href="#255"> 255: </a>    
+</span><span id="255" class="l"><a class="l" href="#255"> 255: </a>
 </span><span id="256" class="l"><a class="l" href="#256"> 256: </a>    <span class="php-var">$form</span> .= <span class="php-quote">&quot;' enctype='multipart/form-data'&gt;&lt;table&gt;&quot;</span>;
 </span><span id="257" class="l"><a class="l" href="#257"> 257: </a>
 </span><span id="258" class="l"><a class="l" href="#258"> 258: </a>    <span class="php-keyword1">switch</span>(<span class="php-var">$form_type</span>) {
@@ -495,7 +495,7 @@
 </span><span id="302" class="l"><a class="l" href="#302"> 302: </a>            <span class="php-var">$form</span> .= <span class="php-quote">&quot;&lt;tr&gt;&lt;td align='right' valign='top'&gt;&lt;table&gt;&lt;tr&gt;&lt;td class='td_label_form'&gt;&quot;</span>;
 </span><span id="303" class="l"><a class="l" href="#303"> 303: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;required_field&quot;</span>] == <span class="php-quote">&quot;1&quot;</span> <span class="php-keyword1">and</span> <span class="php-var">$form_type</span> != <span class="php-quote">&quot;search&quot;</span>) {
 </span><span id="304" class="l"><a class="l" href="#304"> 304: </a>                <span class="php-var">$form</span> .= <span class="php-quote">&quot;*&quot;</span>;
-</span><span id="305" class="l"><a class="l" href="#305"> 305: </a>            } <span class="php-comment">// end if </span>
+</span><span id="305" class="l"><a class="l" href="#305"> 305: </a>            } <span class="php-comment">// end if</span>
 </span><span id="306" class="l"><a class="l" href="#306"> 306: </a>            <span class="php-var">$form</span> .= <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;label_&quot;</span> . <span class="php-var">$lang</span> . <span class="php-quote">&quot;_field&quot;</span>].<span class="php-quote">&quot; &quot;</span>;
 </span><span id="307" class="l"><a class="l" href="#307"> 307: </a>            <span class="php-var">$form</span> .= <span class="php-quote">&quot;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&quot;</span>;
 </span><span id="308" class="l"><a class="l" href="#308"> 308: </a>            <span class="php-comment">//////////////////////////////////</span>
@@ -608,9 +608,9 @@
 </span><span id="415" class="l"><a class="l" href="#415"> 415: </a>                        <span class="php-keyword1">else</span> {
 </span><span id="416" class="l"><a class="l" href="#416"> 416: </a>                            <span class="php-var">$form</span> .= <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;prefix_field&quot;</span>].<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;default_value_field&quot;</span>];
 </span><span id="417" class="l"><a class="l" href="#417"> 417: </a>                        } <span class="php-comment">// end else</span>
-</span><span id="418" class="l"><a class="l" href="#418"> 418: </a>                        
+</span><span id="418" class="l"><a class="l" href="#418"> 418: </a>
 </span><span id="419" class="l"><a class="l" href="#419"> 419: </a>                    } <span class="php-comment">// end if</span>
-</span><span id="420" class="l"><a class="l" href="#420"> 420: </a>                    
+</span><span id="420" class="l"><a class="l" href="#420"> 420: </a>
 </span><span id="421" class="l"><a class="l" href="#421"> 421: </a>                    <span class="php-var">$form</span> .= <span class="php-quote">&quot;&lt;/textarea&gt;&lt;/td&gt;&quot;</span>; <span class="php-comment">// add the second coloumn to the form</span>
 </span><span id="422" class="l"><a class="l" href="#422"> 422: </a>                    <span class="php-keyword1">break</span>;
 </span><span id="423" class="l"><a class="l" href="#423"> 423: </a>                <span class="php-keyword1">case</span> <span class="php-quote">&quot;insert_timestamp&quot;</span>:
@@ -653,7 +653,7 @@
 </span><span id="460" class="l"><a class="l" href="#460"> 460: </a>                            <span class="php-keyword1">if</span> (<span class="php-var">$form_type</span> === <span class="php-quote">'insert'</span> &amp;&amp; <span class="php-var">$show_insert_form_after_error</span> === <span class="php-num">1</span> &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$_POST</span>[<span class="php-var">$field_name_temp</span>]) &amp;&amp; <span class="php-var">$select_values_ar</span>[<span class="php-var">$j</span>] == <span class="php-keyword2">stripslashes</span>(<span class="php-var">$_POST</span>[<span class="php-var">$field_name_temp</span>])) {
 </span><span id="461" class="l"><a class="l" href="#461"> 461: </a>                                <span class="php-var">$form</span> .= <span class="php-quote">&quot; selected&quot;</span>;
 </span><span id="462" class="l"><a class="l" href="#462"> 462: </a>                            } <span class="php-comment">// end if</span>
-</span><span id="463" class="l"><a class="l" href="#463"> 463: </a>                            
+</span><span id="463" class="l"><a class="l" href="#463"> 463: </a>
 </span><span id="464" class="l"><a class="l" href="#464"> 464: </a>                            <span class="php-var">$form</span> .= <span class="php-quote">&quot;&gt;&quot;</span>.<span class="php-var">$select_values_ar</span>[<span class="php-var">$j</span>].<span class="php-quote">&quot;&lt;/option&gt;&quot;</span>; <span class="php-comment">// second part of the form row</span>
 </span><span id="465" class="l"><a class="l" href="#465"> 465: </a>                        } <span class="php-comment">// end for</span>
 </span><span id="466" class="l"><a class="l" href="#466"> 466: </a>                    } <span class="php-comment">// end if</span>
@@ -661,15 +661,15 @@
 </span><span id="468" class="l"><a class="l" href="#468"> 468: </a>                    <span class="php-keyword1">if</span> (<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;primary_key_field_field&quot;</span>] != <span class="php-quote">&quot;&quot;</span>) {
 </span><span id="469" class="l"><a class="l" href="#469"> 469: </a>                        <span class="php-keyword1">if</span> (<span class="php-var">$db</span>-&gt;db_num_rows(<span class="php-var">$res_primary_key</span>) &gt; <span class="php-num">0</span>) {
 </span><span id="470" class="l"><a class="l" href="#470"> 470: </a>                            <span class="php-keyword1">while</span> (<span class="php-var">$primary_key_row</span> = <span class="php-var">$db</span>-&gt;db_fetch_row(<span class="php-var">$res_primary_key</span>)) {
-</span><span id="471" class="l"><a class="l" href="#471"> 471: </a>                                
+</span><span id="471" class="l"><a class="l" href="#471"> 471: </a>
 </span><span id="472" class="l"><a class="l" href="#472"> 472: </a>                                <span class="php-var">$primary_key_value</span> = <span class="php-var">$primary_key_row</span>[<span class="php-num">0</span>];
 </span><span id="473" class="l"><a class="l" href="#473"> 473: </a>                                <span class="php-var">$linked_fields_value</span> = <span class="php-quote">&quot;&quot;</span>;
 </span><span id="474" class="l"><a class="l" href="#474"> 474: </a>                                <span class="php-keyword1">for</span> (<span class="php-var">$z</span>=<span class="php-num">1</span>; <span class="php-var">$z</span>&lt;<span class="php-var">$fields_number</span>; <span class="php-var">$z</span>++) {
 </span><span id="475" class="l"><a class="l" href="#475"> 475: </a>                                    <span class="php-var">$linked_fields_value</span> .= <span class="php-var">$primary_key_row</span>[<span class="php-var">$z</span>];
 </span><span id="476" class="l"><a class="l" href="#476"> 476: </a>                                    <span class="php-var">$linked_fields_value</span> .= <span class="php-quote">&quot; - &quot;</span>;
 </span><span id="477" class="l"><a class="l" href="#477"> 477: </a>                                } <span class="php-comment">// end for</span>
-</span><span id="478" class="l"><a class="l" href="#478"> 478: </a>                                <span class="php-var">$linked_fields_value</span> = <span class="php-keyword2">substr</span>(<span class="php-var">$linked_fields_value</span>, <span class="php-num">0</span>, -<span class="php-num">3</span>); <span class="php-comment">// delete the last &quot; - </span>
-</span><span id="479" class="l"><a class="l" href="#479"> 479: </a>                                
+</span><span id="478" class="l"><a class="l" href="#478"> 478: </a>                                <span class="php-var">$linked_fields_value</span> = <span class="php-keyword2">substr</span>(<span class="php-var">$linked_fields_value</span>, <span class="php-num">0</span>, -<span class="php-num">3</span>); <span class="php-comment">// delete the last &quot; -</span>
+</span><span id="479" class="l"><a class="l" href="#479"> 479: </a>
 </span><span id="480" class="l"><a class="l" href="#480"> 480: </a>                                <span class="php-var">$form</span> .= <span class="php-quote">&quot;&lt;option value='&quot;</span>.<span class="php-keyword2">htmlspecialchars</span>(<span class="php-var">$primary_key_value</span>).<span class="php-quote">&quot;'&quot;</span>;
 </span><span id="481" class="l"><a class="l" href="#481"> 481: </a>
 </span><span id="482" class="l"><a class="l" href="#482"> 482: </a>                                <span class="php-keyword1">if</span> (<span class="php-var">$form_type</span> === <span class="php-quote">'update'</span> <span class="php-keyword1">or</span> <span class="php-var">$form_type</span> === <span class="php-quote">'ext_update'</span>) {
@@ -688,12 +688,12 @@
 </span><span id="495" class="l"><a class="l" href="#495"> 495: </a>                                <span class="php-keyword1">if</span> (<span class="php-var">$form_type</span> === <span class="php-quote">'insert'</span> &amp;&amp; <span class="php-var">$show_insert_form_after_error</span> === <span class="php-num">1</span> &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$_POST</span>[<span class="php-var">$field_name_temp</span>]) &amp;&amp; <span class="php-var">$primary_key_value</span> == <span class="php-keyword2">stripslashes</span>(<span class="php-var">$_POST</span>[<span class="php-var">$field_name_temp</span>])) {
 </span><span id="496" class="l"><a class="l" href="#496"> 496: </a>                                    <span class="php-var">$form</span> .= <span class="php-quote">&quot; selected&quot;</span>;
 </span><span id="497" class="l"><a class="l" href="#497"> 497: </a>                                } <span class="php-comment">// end if</span>
-</span><span id="498" class="l"><a class="l" href="#498"> 498: </a>                                
+</span><span id="498" class="l"><a class="l" href="#498"> 498: </a>
 </span><span id="499" class="l"><a class="l" href="#499"> 499: </a>                                <span class="php-var">$form</span> .= <span class="php-quote">&quot;&gt;</span><span class="php-var">$linked_fields_value</span><span class="php-quote">&lt;/option&gt;&quot;</span>; <span class="php-comment">// second part of the form row</span>
 </span><span id="500" class="l"><a class="l" href="#500"> 500: </a>                            } <span class="php-comment">// end while</span>
 </span><span id="501" class="l"><a class="l" href="#501"> 501: </a>                        } <span class="php-comment">// end if</span>
 </span><span id="502" class="l"><a class="l" href="#502"> 502: </a>                    } <span class="php-comment">// end if ($fields_labels_ar[$i][&quot;primary_key_field_field&quot;] != &quot;&quot;)</span>
-</span><span id="503" class="l"><a class="l" href="#503"> 503: </a>                    
+</span><span id="503" class="l"><a class="l" href="#503"> 503: </a>
 </span><span id="504" class="l"><a class="l" href="#504"> 504: </a>                    <span class="php-keyword1">if</span> (<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;other_choices_field&quot;</span>] == <span class="php-quote">&quot;1&quot;</span> <span class="php-keyword1">and</span> (<span class="php-var">$form_type</span> == <span class="php-quote">&quot;insert&quot;</span> <span class="php-keyword1">or</span> <span class="php-var">$form_type</span> == <span class="php-quote">&quot;update&quot;</span>)) {
 </span><span id="505" class="l"><a class="l" href="#505"> 505: </a>                        <span class="php-var">$form</span> .= <span class="php-quote">&quot;&lt;option value='......'&quot;</span>;
 </span><span id="506" class="l"><a class="l" href="#506"> 506: </a>                        <span class="php-keyword1">if</span> (<span class="php-var">$form_type</span> === <span class="php-quote">'insert'</span> &amp;&amp; <span class="php-var">$show_insert_form_after_error</span> === <span class="php-num">1</span> &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$_POST</span>[<span class="php-var">$field_name_temp</span>]) &amp;&amp; <span class="php-var">$_POST</span>[<span class="php-var">$field_name_temp</span>] === <span class="php-quote">'......'</span>) {
@@ -732,11 +732,11 @@
 </span><span id="539" class="l"><a class="l" href="#539"> 539: </a>
 </span><span id="540" class="l"><a class="l" href="#540"> 540: </a>                        <span class="php-var">$form</span> .= <span class="php-quote">&quot;&gt;&quot;</span>; <span class="php-comment">// text field for other....</span>
 </span><span id="541" class="l"><a class="l" href="#541"> 541: </a>                    } <span class="php-comment">// end if</span>
-</span><span id="542" class="l"><a class="l" href="#542"> 542: </a>                    
+</span><span id="542" class="l"><a class="l" href="#542"> 542: </a>
 </span><span id="543" class="l"><a class="l" href="#543"> 543: </a>                    <span class="php-var">$form</span> .= <span class="php-quote">&quot;&lt;/td&gt;&quot;</span>; <span class="php-comment">// last part of the second coloumn of the form</span>
 </span><span id="544" class="l"><a class="l" href="#544"> 544: </a>                    <span class="php-keyword1">break</span>;
 </span><span id="545" class="l"><a class="l" href="#545"> 545: </a>            } <span class="php-comment">// end switch</span>
-</span><span id="546" class="l"><a class="l" href="#546"> 546: </a>            <span class="php-comment">/////////////////////////////////////////   </span>
+</span><span id="546" class="l"><a class="l" href="#546"> 546: </a>            <span class="php-comment">/////////////////////////////////////////</span>
 </span><span id="547" class="l"><a class="l" href="#547"> 547: </a>            <span class="php-comment">// end build the second coloumn (input field)</span>
 </span><span id="548" class="l"><a class="l" href="#548"> 548: </a>
 </span><span id="549" class="l"><a class="l" href="#549"> 549: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$form_type</span> == <span class="php-quote">&quot;insert&quot;</span> <span class="php-keyword1">or</span> <span class="php-var">$form_type</span> == <span class="php-quote">&quot;update&quot;</span> <span class="php-keyword1">or</span> <span class="php-var">$form_type</span> == <span class="php-quote">&quot;ext_update&quot;</span>) {
@@ -745,7 +745,7 @@
 </span><span id="552" class="l"><a class="l" href="#552"> 552: </a>            <span class="php-var">$form</span> .= <span class="php-quote">&quot;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&quot;</span>;
 </span><span id="553" class="l"><a class="l" href="#553"> 553: </a>        } <span class="php-comment">// end if ($fields_labels_ar[$i][&quot;$field_to_ceck&quot;] == &quot;1&quot;)</span>
 </span><span id="554" class="l"><a class="l" href="#554"> 554: </a>    } <span class="php-comment">// enf for loop for each field in the label array</span>
-</span><span id="555" class="l"><a class="l" href="#555"> 555: </a>    
+</span><span id="555" class="l"><a class="l" href="#555"> 555: </a>
 </span><span id="556" class="l"><a class="l" href="#556"> 556: </a>    <span class="php-var">$form</span> .= <span class="php-quote">&quot;&lt;tr&gt;&lt;td class='tr_button_form' colspan='</span><span class="php-var">$number_cols</span><span class="php-quote">'&gt;&lt;input type='submit' class='button_form' value='&quot;</span>.<span class="php-var">$submit_buttons_ar</span>[<span class="php-var">$form_type</span>].<span class="php-quote">&quot;'&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/form&gt;&quot;</span>;
 </span><span id="557" class="l"><a class="l" href="#557"> 557: </a>    <span class="php-keyword1">return</span> <span class="php-var">$form</span>;
 </span><span id="558" class="l"><a class="l" href="#558"> 558: </a>} <span class="php-comment">// end build_form function</span>
@@ -780,9 +780,9 @@
 </span><span id="587" class="l"><a class="l" href="#587"> 587: </a>    <span class="php-keyword1">return</span> <span class="php-var">$select_type_select</span>;
 </span><span id="588" class="l"><a class="l" href="#588"> 588: </a>} <span class="php-comment">// end function build_select_type_select</span>
 </span><span id="589" class="l"><a class="l" href="#589"> 589: </a>
-</span><span id="590" class="l"><a class="l" href="#590"> 590: </a><span class="php-keyword1">function</span> <a id="_check_required_fields" href="#_check_required_fields">check_required_fields</a>(<span class="php-var">$fields_labels_ar</span>, <span class="php-var">$function</span>)
+</span><span id="590" class="l"><a class="l" href="#590"> 590: </a><span class="php-keyword1">function</span> <a id="_check_required_fields" href="#_check_required_fields">check_required_fields</a>(<span class="php-var">$fields_labels_ar</span>)
 </span><span id="591" class="l"><a class="l" href="#591"> 591: </a><span class="php-comment">// goal: check if the user has filled all the required fields</span>
-</span><span id="592" class="l"><a class="l" href="#592"> 592: </a><span class="php-comment">// input: all the fields values ($_POST), $_FILES (for uploaded files) and the array containing infos about fields ($fields_labels_ar), $function</span>
+</span><span id="592" class="l"><a class="l" href="#592"> 592: </a><span class="php-comment">// input: all the fields values ($_POST), $_FILES (for uploaded files) and the array containing infos about fields ($fields_labels_ar)</span>
 </span><span id="593" class="l"><a class="l" href="#593"> 593: </a><span class="php-comment">// output: $check, set to 1 if the check is ok, otherwise 0</span>
 </span><span id="594" class="l"><a class="l" href="#594"> 594: </a>{
 </span><span id="595" class="l"><a class="l" href="#595"> 595: </a>    <span class="php-keyword1">global</span> <span class="php-var">$null_checkbox_prefix</span>;
@@ -792,7 +792,7 @@
 </span><span id="599" class="l"><a class="l" href="#599"> 599: </a>    <span class="php-keyword1">while</span> (<span class="php-var">$i</span>&lt;<span class="php-var">$count_temp</span> <span class="php-keyword1">and</span> <span class="php-var">$check</span> == <span class="php-num">1</span>) {
 </span><span id="600" class="l"><a class="l" href="#600"> 600: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;required_field&quot;</span>] == <span class="php-quote">&quot;1&quot;</span> <span class="php-keyword1">and</span> <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;present_insert_form_field&quot;</span>] == <span class="php-quote">&quot;1&quot;</span>) {
 </span><span id="601" class="l"><a class="l" href="#601"> 601: </a>            <span class="php-var">$field_name_temp</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;name_field&quot;</span>];
-</span><span id="602" class="l"><a class="l" href="#602"> 602: </a>            
+</span><span id="602" class="l"><a class="l" href="#602"> 602: </a>
 </span><span id="603" class="l"><a class="l" href="#603"> 603: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$_POST</span>[<span class="php-var">$null_checkbox_prefix</span>.<span class="php-var">$field_name_temp</span>]) &amp;&amp; <span class="php-var">$_POST</span>[<span class="php-var">$null_checkbox_prefix</span>.<span class="php-var">$field_name_temp</span>] === <span class="php-quote">'1'</span>) { <span class="php-comment">// NULL checkbox selected</span>
 </span><span id="604" class="l"><a class="l" href="#604"> 604: </a>                <span class="php-var">$check</span> = <span class="php-num">0</span>;
 </span><span id="605" class="l"><a class="l" href="#605"> 605: </a>            } <span class="php-comment">// end if</span>
@@ -890,7 +890,7 @@
 </span><span id="697" class="l"><a class="l" href="#697"> 697: </a>                <span class="php-var">$field_name_temp</span> = <span class="php-var">$field_name_temp</span>.<span class="php-quote">&quot;_other____&quot;</span>;
 </span><span id="698" class="l"><a class="l" href="#698"> 698: </a>            } <span class="php-comment">// end if</span>
 </span><span id="699" class="l"><a class="l" href="#699"> 699: </a>            <span class="php-keyword1">if</span> ((<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;type_field&quot;</span>] == <span class="php-quote">&quot;text&quot;</span> || <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;type_field&quot;</span>] == <span class="php-quote">&quot;textarea&quot;</span> ||  <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;type_field&quot;</span>] == <span class="php-quote">&quot;select_single&quot;</span>) <span class="php-keyword1">and</span> <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;present_insert_form_field&quot;</span>] == <span class="php-quote">&quot;1&quot;</span> <span class="php-keyword1">and</span> <span class="php-var">$_POST</span>[<span class="php-var">$field_name_temp</span>] != <span class="php-quote">&quot;&quot;</span>) {
-</span><span id="700" class="l"><a class="l" href="#700"> 700: </a>                
+</span><span id="700" class="l"><a class="l" href="#700"> 700: </a>
 </span><span id="701" class="l"><a class="l" href="#701"> 701: </a>                <span class="php-keyword1">switch</span> (<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;content_field&quot;</span>]) {
 </span><span id="702" class="l"><a class="l" href="#702"> 702: </a>                    <span class="php-keyword1">case</span> <span class="php-quote">&quot;alphabetic&quot;</span>:
 </span><span id="703" class="l"><a class="l" href="#703"> 703: </a>                        <span class="php-keyword1">if</span> (contains_numerics(<span class="php-var">$_POST</span>[<span class="php-var">$field_name_temp</span>])) {
@@ -931,7 +931,7 @@
 </span><span id="738" class="l"><a class="l" href="#738"> 738: </a><span class="php-comment">// global $percentage_similarity, the percentage after that two strings are considered similar, $number_duplicated_records, the maximum number of records to be displayed as duplicated</span>
 </span><span id="739" class="l"><a class="l" href="#739"> 739: </a>{
 </span><span id="740" class="l"><a class="l" href="#740"> 740: </a>    <span class="php-keyword1">global</span> <span class="php-var">$percentage_similarity</span>, <span class="php-var">$number_duplicated_records</span>, <span class="php-var">$db</span>, <span class="php-var">$enable_authentication</span>, <span class="php-var">$enable_browse_authorization</span>, <span class="php-var">$current_user</span>, <span class="php-var">$null_checkbox_prefix</span>;
-</span><span id="741" class="l"><a class="l" href="#741"> 741: </a>    
+</span><span id="741" class="l"><a class="l" href="#741"> 741: </a>
 </span><span id="742" class="l"><a class="l" href="#742"> 742: </a>    <span class="php-comment">// get the unique key of the table</span>
 </span><span id="743" class="l"><a class="l" href="#743"> 743: </a>    <span class="php-var">$unique_field_name</span> = <span class="php-var">$db</span>-&gt;get_primary_key(<span class="php-var">$table_name</span>);
 </span><span id="744" class="l"><a class="l" href="#744"> 744: </a>
@@ -942,7 +942,7 @@
 </span><span id="749" class="l"><a class="l" href="#749"> 749: </a>        <span class="php-var">$sql_select_all</span> = <span class="php-quote">&quot;SELECT `</span><span class="php-var">$unique_field_name</span><span class="php-quote">`, &quot;</span>; <span class="php-comment">// this is used to select the records to check similiarity</span>
 </span><span id="750" class="l"><a class="l" href="#750"> 750: </a>        <span class="php-comment">//$select = &quot;SELECT * FROM `$table_name`&quot;;</span>
 </span><span id="751" class="l"><a class="l" href="#751"> 751: </a>        <span class="php-var">$select</span> = build_select_part(<span class="php-var">$fields_labels_ar</span>, <span class="php-var">$table_name</span>);
-</span><span id="752" class="l"><a class="l" href="#752"> 752: </a>        <span class="php-var">$where_clause</span> = <span class="php-quote">&quot;&quot;</span>; 
+</span><span id="752" class="l"><a class="l" href="#752"> 752: </a>        <span class="php-var">$where_clause</span> = <span class="php-quote">&quot;&quot;</span>;
 </span><span id="753" class="l"><a class="l" href="#753"> 753: </a>
 </span><span id="754" class="l"><a class="l" href="#754"> 754: </a>        <span class="php-comment">// build the sql_select_all clause</span>
 </span><span id="755" class="l"><a class="l" href="#755"> 755: </a>        <span class="php-var">$j</span> = <span class="php-num">0</span>;
@@ -960,7 +960,7 @@
 </span><span id="767" class="l"><a class="l" href="#767"> 767: </a>        } <span class="php-comment">// end for</span>
 </span><span id="768" class="l"><a class="l" href="#768"> 768: </a>        <span class="php-var">$sql_select_all</span> = <span class="php-keyword2">substr</span> (<span class="php-var">$sql_select_all</span>, <span class="php-num">0</span>, -<span class="php-num">2</span>); <span class="php-comment">// delete the last &quot;, &quot;</span>
 </span><span id="769" class="l"><a class="l" href="#769"> 769: </a>        <span class="php-var">$sql_select_all</span> .= <span class="php-quote">&quot; FROM `</span><span class="php-var">$table_name</span><span class="php-quote">`&quot;</span>;
-</span><span id="770" class="l"><a class="l" href="#770"> 770: </a>        
+</span><span id="770" class="l"><a class="l" href="#770"> 770: </a>
 </span><span id="771" class="l"><a class="l" href="#771"> 771: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$enable_authentication</span> === <span class="php-num">1</span> &amp;&amp; <span class="php-var">$enable_browse_authorization</span> === <span class="php-num">1</span>) { <span class="php-comment">// $ID_user_field_name = '$current_user' where clause part in order to select only the records the current user owns</span>
 </span><span id="772" class="l"><a class="l" href="#772"> 772: </a>            <span class="php-var">$ID_user_field_name</span> = get_ID_user_field_name(<span class="php-var">$fields_labels_ar</span>);
 </span><span id="773" class="l"><a class="l" href="#773"> 773: </a>
@@ -975,7 +975,7 @@
 </span><span id="782" class="l"><a class="l" href="#782"> 782: </a>        <span class="php-comment">// at the end of the above procedure I'll have, for example, &quot;select ID, name, email from table&quot; if ID is the unique key, name and email are field to check</span>
 </span><span id="783" class="l"><a class="l" href="#783"> 783: </a>
 </span><span id="784" class="l"><a class="l" href="#784"> 784: </a>        <span class="php-comment">// execute the select query</span>
-</span><span id="785" class="l"><a class="l" href="#785"> 785: </a>        <span class="php-var">$res_contacts</span> = <span class="php-var">$db</span>-&gt;send_query(<span class="php-var">$sql_select_all</span>);   
+</span><span id="785" class="l"><a class="l" href="#785"> 785: </a>        <span class="php-var">$res_contacts</span> = <span class="php-var">$db</span>-&gt;send_query(<span class="php-var">$sql_select_all</span>);
 </span><span id="786" class="l"><a class="l" href="#786"> 786: </a>
 </span><span id="787" class="l"><a class="l" href="#787"> 787: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$db</span>-&gt;db_num_rows(<span class="php-var">$res_contacts</span>) &gt; <span class="php-num">0</span>) {
 </span><span id="788" class="l"><a class="l" href="#788"> 788: </a>            <span class="php-keyword1">while</span> (<span class="php-var">$contacts_row</span> = <span class="php-var">$db</span>-&gt;db_fetch_row(<span class="php-var">$res_contacts</span>)) { <span class="php-comment">// *A* for each record in the table</span>
@@ -984,7 +984,7 @@
 </span><span id="791" class="l"><a class="l" href="#791"> 791: </a>                    <span class="php-keyword1">if</span> (!<span class="php-keyword1">isset</span>(<span class="php-var">$_POST</span>[<span class="php-var">$null_checkbox_prefix</span>.<span class="php-var">$fields_to_check_ar</span>[<span class="php-var">$i</span>]]) || <span class="php-var">$_POST</span>[<span class="php-var">$null_checkbox_prefix</span>.<span class="php-var">$fields_to_check_ar</span>[<span class="php-var">$i</span>]] !== <span class="php-quote">'1'</span>) { <span class="php-comment">// NULL checkbox  is not selected</span>
 </span><span id="792" class="l"><a class="l" href="#792"> 792: </a>                        <span class="php-var">$z</span>=<span class="php-num">0</span>;
 </span><span id="793" class="l"><a class="l" href="#793"> 793: </a>                        <span class="php-var">$found_similarity</span> =<span class="php-num">0</span>; <span class="php-comment">// set to 1 when a similarity is found, so that it's possible to exit the loop (if I found that a record is similar it doesn't make sense to procede with other fields of the same record)</span>
-</span><span id="794" class="l"><a class="l" href="#794"> 794: </a>                    
+</span><span id="794" class="l"><a class="l" href="#794"> 794: </a>
 </span><span id="795" class="l"><a class="l" href="#795"> 795: </a>                        <span class="php-comment">// *C* check if the field inserted are similiar to the other fields to be checked in this record (*A*)</span>
 </span><span id="796" class="l"><a class="l" href="#796"> 796: </a>                        <span class="php-var">$count_temp_2</span> = <span class="php-keyword2">count</span>(<span class="php-var">$fields_to_check_ar</span>);
 </span><span id="797" class="l"><a class="l" href="#797"> 797: </a>                        <span class="php-keyword1">while</span> (<span class="php-var">$z</span>&lt;<span class="php-var">$count_temp_2</span> <span class="php-keyword1">and</span> <span class="php-var">$found_similarity</span> == <span class="php-num">0</span>) {
@@ -1017,12 +1017,12 @@
 </span><span id="824" class="l"><a class="l" href="#824"> 824: </a>    <span class="php-keyword1">else</span> { <span class="php-comment">// no unique keys</span>
 </span><span id="825" class="l"><a class="l" href="#825"> 825: </a>        <span class="php-var">$sql</span> = <span class="php-quote">&quot;&quot;</span>;
 </span><span id="826" class="l"><a class="l" href="#826"> 826: </a>    } <span class="php-comment">// end else</span>
-</span><span id="827" class="l"><a class="l" href="#827"> 827: </a>    <span class="php-keyword1">return</span> <span class="php-var">$sql</span>;    
+</span><span id="827" class="l"><a class="l" href="#827"> 827: </a>    <span class="php-keyword1">return</span> <span class="php-var">$sql</span>;
 </span><span id="828" class="l"><a class="l" href="#828"> 828: </a>} <span class="php-comment">// end function build_select_duplicated_query</span>
 </span><span id="829" class="l"><a class="l" href="#829"> 829: </a>
-</span><span id="830" class="l"><a class="l" href="#830"> 830: </a><span class="php-keyword1">function</span> <a id="_build_insert_duplication_form" href="#_build_insert_duplication_form">build_insert_duplication_form</a>(<span class="php-var">$fields_labels_ar</span>, <span class="php-var">$table_name</span>, <span class="php-var">$table_internal_name</span>)
+</span><span id="830" class="l"><a class="l" href="#830"> 830: </a><span class="php-keyword1">function</span> <a id="_build_insert_duplication_form" href="#_build_insert_duplication_form">build_insert_duplication_form</a>(<span class="php-var">$fields_labels_ar</span>, <span class="php-var">$table_name</span>)
 </span><span id="831" class="l"><a class="l" href="#831"> 831: </a><span class="php-comment">// goal: build a tabled form composed by two buttons: &quot;Insert anyway&quot; and &quot;Go back&quot;</span>
-</span><span id="832" class="l"><a class="l" href="#832"> 832: </a><span class="php-comment">// input: all the field values ($_POST), $fields_labels_ar, $table_name, $table_internal_name</span>
+</span><span id="832" class="l"><a class="l" href="#832"> 832: </a><span class="php-comment">// input: all the field values ($_POST), $fields_labels_ar, $table_name</span>
 </span><span id="833" class="l"><a class="l" href="#833"> 833: </a><span class="php-comment">// output: $form, the form</span>
 </span><span id="834" class="l"><a class="l" href="#834"> 834: </a><span class="php-comment">// global $submit_buttons_ar, the array containing the caption on submit buttons</span>
 </span><span id="835" class="l"><a class="l" href="#835"> 835: </a>{
@@ -1064,7 +1064,7 @@
 </span><span id="871" class="l"><a class="l" href="#871"> 871: </a>                    <span class="php-keyword1">if</span> (<span class="php-var">$_POST</span>[<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;name_field&quot;</span>]] == <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;prefix_field&quot;</span>]) { <span class="php-comment">// the field contain just the prefix</span>
 </span><span id="872" class="l"><a class="l" href="#872"> 872: </a>                        <span class="php-var">$_POST</span>[<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;name_field&quot;</span>]] = <span class="php-quote">&quot;&quot;</span>;
 </span><span id="873" class="l"><a class="l" href="#873"> 873: </a>                    } <span class="php-comment">// end if</span>
-</span><span id="874" class="l"><a class="l" href="#874"> 874: </a>                    
+</span><span id="874" class="l"><a class="l" href="#874"> 874: </a>
 </span><span id="875" class="l"><a class="l" href="#875"> 875: </a>                    <span class="php-var">$form</span> .= <span class="php-quote">&quot;&lt;input type='hidden' name='</span><span class="php-var">$field_name_temp</span><span class="php-quote">' value='&quot;</span>.<span class="php-keyword2">htmlspecialchars</span>(<span class="php-keyword2">stripslashes</span>(<span class="php-var">$_POST</span>[<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;name_field&quot;</span>]])).<span class="php-quote">&quot;'&gt;&quot;</span>;
 </span><span id="876" class="l"><a class="l" href="#876"> 876: </a>                    <span class="php-keyword1">break</span>;
 </span><span id="877" class="l"><a class="l" href="#877"> 877: </a>            } <span class="php-comment">// end switch</span>
@@ -1081,7 +1081,7 @@
 </span><span id="888" class="l"><a class="l" href="#888"> 888: </a>
 </span><span id="889" class="l"><a class="l" href="#889"> 889: </a><span class="php-keyword1">function</span> <a id="_build_change_table_form" href="#_build_change_table_form">build_change_table_form</a>()
 </span><span id="890" class="l"><a class="l" href="#890"> 890: </a><span class="php-comment">// goal: build a form to choose the table</span>
-</span><span id="891" class="l"><a class="l" href="#891"> 891: </a><span class="php-comment">// input: </span>
+</span><span id="891" class="l"><a class="l" href="#891"> 891: </a><span class="php-comment">// input:</span>
 </span><span id="892" class="l"><a class="l" href="#892"> 892: </a><span class="php-comment">// output: the listbox</span>
 </span><span id="893" class="l"><a class="l" href="#893"> 893: </a>{
 </span><span id="894" class="l"><a class="l" href="#894"> 894: </a>    <span class="php-keyword1">global</span> <span class="php-var">$table_name</span>, <span class="php-var">$autosumbit_change_table_control</span>, <span class="php-var">$dadabik_main_file</span>;
@@ -1204,10 +1204,10 @@
 </span><span id="1011" class="l"><a class="l" href="#1011">1011: </a>                    <span class="php-keyword1">if</span> (<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;other_choices_field&quot;</span>] == <span class="php-quote">&quot;1&quot;</span> <span class="php-keyword1">and</span> <span class="php-var">$_POST</span>[<span class="php-var">$field_name_temp</span>] == <span class="php-quote">&quot;......&quot;</span> <span class="php-keyword1">and</span> <span class="php-var">$_POST</span>[<span class="php-var">$field_name_other_temp</span>] != <span class="php-quote">&quot;&quot;</span>) { <span class="php-comment">// insert the &quot;other....&quot; choice</span>
 </span><span id="1012" class="l"><a class="l" href="#1012">1012: </a>                        <span class="php-var">$primary_key_field_field</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;primary_key_field_field&quot;</span>];
 </span><span id="1013" class="l"><a class="l" href="#1013">1013: </a>                        <span class="php-keyword1">if</span> (<span class="php-var">$primary_key_field_field</span> != <span class="php-quote">&quot;&quot;</span>) {
-</span><span id="1014" class="l"><a class="l" href="#1014">1014: </a>                            
+</span><span id="1014" class="l"><a class="l" href="#1014">1014: </a>
 </span><span id="1015" class="l"><a class="l" href="#1015">1015: </a>                            <span class="php-var">$linked_fields_ar</span> = <span class="php-keyword2">explode</span>(<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;separator_field&quot;</span>], <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;linked_fields_field&quot;</span>]);
 </span><span id="1016" class="l"><a class="l" href="#1016">1016: </a>
-</span><span id="1017" class="l"><a class="l" href="#1017">1017: </a>                            <span class="php-var">$primary_key_field_field</span> = insert_other_field(<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;primary_key_db_field&quot;</span>], <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;primary_key_table_field&quot;</span>], <span class="php-var">$linked_fields_ar</span>[<span class="php-num">0</span>], <span class="php-var">$_POST</span>[<span class="php-var">$field_name_other_temp</span>]);
+</span><span id="1017" class="l"><a class="l" href="#1017">1017: </a>                            <span class="php-var">$primary_key_field_field</span> = insert_other_field(<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;primary_key_table_field&quot;</span>], <span class="php-var">$linked_fields_ar</span>[<span class="php-num">0</span>], <span class="php-var">$_POST</span>[<span class="php-var">$field_name_other_temp</span>]);
 </span><span id="1018" class="l"><a class="l" href="#1018">1018: </a>                            <span class="php-var">$sql</span> .= <span class="php-quote">&quot;'&quot;</span>.<span class="php-var">$primary_key_field_field</span>.<span class="php-quote">&quot;', &quot;</span>; <span class="php-comment">// add the last ID inserted to the sql statement</span>
 </span><span id="1019" class="l"><a class="l" href="#1019">1019: </a>                        } <span class="php-comment">// end if ($foreign_key_temp != &quot;&quot;)</span>
 </span><span id="1020" class="l"><a class="l" href="#1020">1020: </a>                        <span class="php-keyword1">else</span> { <span class="php-comment">// no foreign key field</span>
@@ -1248,9 +1248,9 @@
 </span><span id="1055" class="l"><a class="l" href="#1055">1055: </a>    <span class="php-var">$sql</span> .= <span class="php-quote">&quot;)&quot;</span>;
 </span><span id="1056" class="l"><a class="l" href="#1056">1056: </a>    <span class="php-comment">/////////////////////////////</span>
 </span><span id="1057" class="l"><a class="l" href="#1057">1057: </a>    <span class="php-comment">// end build the insert statement</span>
-</span><span id="1058" class="l"><a class="l" href="#1058">1058: </a>    
+</span><span id="1058" class="l"><a class="l" href="#1058">1058: </a>
 </span><span id="1059" class="l"><a class="l" href="#1059">1059: </a>    display_sql(<span class="php-var">$sql</span>);
-</span><span id="1060" class="l"><a class="l" href="#1060">1060: </a>    
+</span><span id="1060" class="l"><a class="l" href="#1060">1060: </a>
 </span><span id="1061" class="l"><a class="l" href="#1061">1061: </a>    <span class="php-comment">// insert the record</span>
 </span><span id="1062" class="l"><a class="l" href="#1062">1062: </a>    <span class="php-var">$db</span>-&gt;send_query(<span class="php-var">$sql</span>);
 </span><span id="1063" class="l"><a class="l" href="#1063">1063: </a>} <span class="php-comment">// end function insert_record</span>
@@ -1268,11 +1268,11 @@
 </span><span id="1075" class="l"><a class="l" href="#1075">1075: </a>    <span class="php-comment">// build the update statement</span>
 </span><span id="1076" class="l"><a class="l" href="#1076">1076: </a>    <span class="php-comment">/////////////////////////////</span>
 </span><span id="1077" class="l"><a class="l" href="#1077">1077: </a>    <span class="php-var">$where</span> = <span class="php-quote">&quot;</span><span class="php-var">$where_field</span><span class="php-quote"> = '</span><span class="php-var">$where_value</span><span class="php-quote">'&quot;</span>;
-</span><span id="1078" class="l"><a class="l" href="#1078">1078: </a>    <span class="php-var">$archive_type</span> = <span class="php-quote">&quot;datadmin_update&quot;</span>;  
+</span><span id="1078" class="l"><a class="l" href="#1078">1078: </a>    <span class="php-var">$archive_type</span> = <span class="php-quote">&quot;datadmin_update&quot;</span>;
 </span><span id="1079" class="l"><a class="l" href="#1079">1079: </a>    <span class="php-var">$db</span>-&gt;archive_table_row(<span class="php-var">$table_name</span>, <span class="php-var">$where</span>, <span class="php-var">$archive_type</span>);
 </span><span id="1080" class="l"><a class="l" href="#1080">1080: </a>    <span class="php-var">$sql</span> = <span class="php-quote">&quot;&quot;</span>;
 </span><span id="1081" class="l"><a class="l" href="#1081">1081: </a>    <span class="php-var">$sql</span> .= <span class="php-quote">&quot;UPDATE `</span><span class="php-var">$table_name</span><span class="php-quote">` SET &quot;</span>;
-</span><span id="1082" class="l"><a class="l" href="#1082">1082: </a>    
+</span><span id="1082" class="l"><a class="l" href="#1082">1082: </a>
 </span><span id="1083" class="l"><a class="l" href="#1083">1083: </a>    <span class="php-var">$count_temp</span> = <span class="php-keyword2">count</span>(<span class="php-var">$fields_labels_ar</span>);
 </span><span id="1084" class="l"><a class="l" href="#1084">1084: </a>    <span class="php-keyword1">for</span> (<span class="php-var">$i</span>=<span class="php-num">0</span>; <span class="php-var">$i</span>&lt;<span class="php-var">$count_temp</span>; <span class="php-var">$i</span>++) {
 </span><span id="1085" class="l"><a class="l" href="#1085">1085: </a>        <span class="php-var">$field_name_temp</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;name_field&quot;</span>];
@@ -1288,12 +1288,12 @@
 </span><span id="1095" class="l"><a class="l" href="#1095">1095: </a>                    <span class="php-var">$field_name_other_temp</span> = <span class="php-var">$field_name_temp</span>.<span class="php-quote">&quot;_other____&quot;</span>;
 </span><span id="1096" class="l"><a class="l" href="#1096">1096: </a>
 </span><span id="1097" class="l"><a class="l" href="#1097">1097: </a>                    <span class="php-keyword1">if</span> (<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;other_choices_field&quot;</span>] == <span class="php-quote">&quot;1&quot;</span> <span class="php-keyword1">and</span> <span class="php-var">$_POST</span>[<span class="php-var">$field_name_temp</span>] == <span class="php-quote">&quot;......&quot;</span> <span class="php-keyword1">and</span> <span class="php-var">$_POST</span>[<span class="php-var">$field_name_other_temp</span>] != <span class="php-quote">&quot;&quot;</span>) { <span class="php-comment">// insert the &quot;other....&quot; choice</span>
-</span><span id="1098" class="l"><a class="l" href="#1098">1098: </a>                        
+</span><span id="1098" class="l"><a class="l" href="#1098">1098: </a>
 </span><span id="1099" class="l"><a class="l" href="#1099">1099: </a>                        <span class="php-var">$primary_key_field_field</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;primary_key_field_field&quot;</span>];
 </span><span id="1100" class="l"><a class="l" href="#1100">1100: </a>                        <span class="php-keyword1">if</span> (<span class="php-var">$primary_key_field_field</span> != <span class="php-quote">&quot;&quot;</span>) {
 </span><span id="1101" class="l"><a class="l" href="#1101">1101: </a>                            <span class="php-var">$linked_fields_ar</span> = <span class="php-keyword2">explode</span>(<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;separator_field&quot;</span>], <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;linked_fields_field&quot;</span>]);
 </span><span id="1102" class="l"><a class="l" href="#1102">1102: </a>
-</span><span id="1103" class="l"><a class="l" href="#1103">1103: </a>                            <span class="php-var">$primary_key_field_field</span> = insert_other_field(<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;primary_key_db_field&quot;</span>], <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;primary_key_table_field&quot;</span>], <span class="php-var">$linked_fields_ar</span>[<span class="php-num">0</span>], <span class="php-var">$_POST</span>[<span class="php-var">$field_name_other_temp</span>]);
+</span><span id="1103" class="l"><a class="l" href="#1103">1103: </a>                            <span class="php-var">$primary_key_field_field</span> = insert_other_field(<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;primary_key_table_field&quot;</span>], <span class="php-var">$linked_fields_ar</span>[<span class="php-num">0</span>], <span class="php-var">$_POST</span>[<span class="php-var">$field_name_other_temp</span>]);
 </span><span id="1104" class="l"><a class="l" href="#1104">1104: </a>                            <span class="php-var">$sql</span> .= <span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field_name_temp</span>.<span class="php-quote">&quot;` = &quot;</span>; <span class="php-comment">// add the field name to the sql statement</span>
 </span><span id="1105" class="l"><a class="l" href="#1105">1105: </a>                            <span class="php-var">$sql</span> .= <span class="php-quote">&quot;'&quot;</span>.<span class="php-var">$primary_key_field_field</span>.<span class="php-quote">&quot;', &quot;</span>; <span class="php-comment">// add the field value to the sql statement</span>
 </span><span id="1106" class="l"><a class="l" href="#1106">1106: </a>                        } <span class="php-comment">// end if ($foreign_key_temp != &quot;&quot;)</span>
@@ -1313,7 +1313,7 @@
 </span><span id="1120" class="l"><a class="l" href="#1120">1120: </a>                        <span class="php-var">$sql</span> .= <span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field_name_temp</span>.<span class="php-quote">&quot;` = &quot;</span>; <span class="php-comment">// add the field name to the sql statement</span>
 </span><span id="1121" class="l"><a class="l" href="#1121">1121: </a>                        <span class="php-var">$sql</span> .= <span class="php-quote">&quot;'&quot;</span>.<span class="php-var">$_POST</span>[<span class="php-var">$field_name_temp</span>].<span class="php-quote">&quot;', &quot;</span>; <span class="php-comment">// add the field value to the sql statement</span>
 </span><span id="1122" class="l"><a class="l" href="#1122">1122: </a>                    } <span class="php-comment">// end else</span>
-</span><span id="1123" class="l"><a class="l" href="#1123">1123: </a>                    
+</span><span id="1123" class="l"><a class="l" href="#1123">1123: </a>
 </span><span id="1124" class="l"><a class="l" href="#1124">1124: </a>                    <span class="php-keyword1">break</span>;
 </span><span id="1125" class="l"><a class="l" href="#1125">1125: </a>                <span class="php-keyword1">default</span>: <span class="php-comment">// textual field</span>
 </span><span id="1126" class="l"><a class="l" href="#1126">1126: </a>                    <span class="php-var">$sql</span> .= <span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field_name_temp</span>.<span class="php-quote">&quot;` = &quot;</span>; <span class="php-comment">// add the field name to the sql statement</span>
@@ -1326,9 +1326,9 @@
 </span><span id="1133" class="l"><a class="l" href="#1133">1133: </a>    <span class="php-var">$sql</span> .= <span class="php-quote">&quot; WHERE `&quot;</span>.<span class="php-var">$where_field</span>.<span class="php-quote">&quot;` = '&quot;</span>.<span class="php-var">$where_value</span>.<span class="php-quote">&quot;'&quot;</span>;
 </span><span id="1134" class="l"><a class="l" href="#1134">1134: </a>    <span class="php-comment">/////////////////////////////</span>
 </span><span id="1135" class="l"><a class="l" href="#1135">1135: </a>    <span class="php-comment">// end build the update statement</span>
-</span><span id="1136" class="l"><a class="l" href="#1136">1136: </a>    
+</span><span id="1136" class="l"><a class="l" href="#1136">1136: </a>
 </span><span id="1137" class="l"><a class="l" href="#1137">1137: </a>    display_sql(<span class="php-var">$sql</span>);
-</span><span id="1138" class="l"><a class="l" href="#1138">1138: </a>    
+</span><span id="1138" class="l"><a class="l" href="#1138">1138: </a>
 </span><span id="1139" class="l"><a class="l" href="#1139">1139: </a>    <span class="php-comment">// update the record</span>
 </span><span id="1140" class="l"><a class="l" href="#1140">1140: </a>    <span class="php-var">$db</span>-&gt;send_query(<span class="php-var">$sql</span>);
 </span><span id="1141" class="l"><a class="l" href="#1141">1141: </a>} <span class="php-comment">// end function update_record</span>
@@ -1420,9 +1420,9 @@
 </span><span id="1227" class="l"><a class="l" href="#1227">1227: </a>    <span class="php-keyword1">return</span> <span class="php-var">$where_clause</span>;
 </span><span id="1228" class="l"><a class="l" href="#1228">1228: </a>} <span class="php-comment">// end function build_where_clause</span>
 </span><span id="1229" class="l"><a class="l" href="#1229">1229: </a>
-</span><span id="1230" class="l"><a class="l" href="#1230">1230: </a><span class="php-keyword1">function</span> <a id="_get_field_correct_displaying" href="#_get_field_correct_displaying">get_field_correct_displaying</a>(<span class="php-var">$field_value</span>, <span class="php-var">$field_type</span>, <span class="php-var">$field_content</span>, <span class="php-var">$field_separator</span>, <span class="php-var">$display_mode</span>)
+</span><span id="1230" class="l"><a class="l" href="#1230">1230: </a><span class="php-keyword1">function</span> <a id="_get_field_correct_displaying" href="#_get_field_correct_displaying">get_field_correct_displaying</a>(<span class="php-var">$field_value</span>, <span class="php-var">$field_type</span>, <span class="php-var">$field_content</span>, <span class="php-var">$display_mode</span>)
 </span><span id="1231" class="l"><a class="l" href="#1231">1231: </a><span class="php-comment">// get the correct mode to display a field, according to its content (e.g. format data, display select multiple in different rows without separator and so on</span>
-</span><span id="1232" class="l"><a class="l" href="#1232">1232: </a><span class="php-comment">// input: $field_value, $field_type, $field_content, $field_separator, $display_mode (results_table|details_page|plain_text)</span>
+</span><span id="1232" class="l"><a class="l" href="#1232">1232: </a><span class="php-comment">// input: $field_value, $field_type, $field_content, $display_mode (results_table|details_page|plain_text)</span>
 </span><span id="1233" class="l"><a class="l" href="#1233">1233: </a><span class="php-comment">// output: $field_to_display, the field value ready to be displayed</span>
 </span><span id="1234" class="l"><a class="l" href="#1234">1234: </a><span class="php-comment">// global: $word_wrap_col, the coloumn at which a string will be wrapped in the results</span>
 </span><span id="1235" class="l"><a class="l" href="#1235">1235: </a>{
@@ -1487,9 +1487,9 @@
 </span><span id="1294" class="l"><a class="l" href="#1294">1294: </a>    <span class="php-keyword1">return</span> <span class="php-var">$field_to_display</span>;
 </span><span id="1295" class="l"><a class="l" href="#1295">1295: </a>} <span class="php-comment">// function get_field_correct_displaying</span>
 </span><span id="1296" class="l"><a class="l" href="#1296">1296: </a>
-</span><span id="1297" class="l"><a class="l" href="#1297">1297: </a><span class="php-keyword1">function</span> <a id="_get_field_correct_csv_displaying" href="#_get_field_correct_csv_displaying">get_field_correct_csv_displaying</a>(<span class="php-var">$field_value</span>, <span class="php-var">$field_type</span>, <span class="php-var">$field_content</span>, <span class="php-var">$field_separator</span>)
+</span><span id="1297" class="l"><a class="l" href="#1297">1297: </a><span class="php-keyword1">function</span> <a id="_get_field_correct_csv_displaying" href="#_get_field_correct_csv_displaying">get_field_correct_csv_displaying</a>(<span class="php-var">$field_value</span>)
 </span><span id="1298" class="l"><a class="l" href="#1298">1298: </a><span class="php-comment">// get the correct mode to display a field in a csv, according to its content (e.g. format data, display select multiple in different rows without separator and so on</span>
-</span><span id="1299" class="l"><a class="l" href="#1299">1299: </a><span class="php-comment">// input: $field_value, $field_type, $field_content, $field_separator</span>
+</span><span id="1299" class="l"><a class="l" href="#1299">1299: </a><span class="php-comment">// input: $field_value, $field_type, $field_content</span>
 </span><span id="1300" class="l"><a class="l" href="#1300">1300: </a><span class="php-comment">// output: $field_to_display, the field value ready to be displayed</span>
 </span><span id="1301" class="l"><a class="l" href="#1301">1301: </a>{
 </span><span id="1302" class="l"><a class="l" href="#1302">1302: </a>    <span class="php-var">$field_to_display</span> = <span class="php-keyword2">str_replace</span>(<span class="php-quote">&quot;\r&quot;</span>, <span class="php-quote">''</span>, <span class="php-var">$field_value</span>);
@@ -1500,7 +1500,7 @@
 </span><span id="1307" class="l"><a class="l" href="#1307">1307: </a><span class="php-comment">// goal: build an HTML table for basicly displaying the results of a select query</span>
 </span><span id="1308" class="l"><a class="l" href="#1308">1308: </a><span class="php-comment">// input: $table_name, $res_records, the results of the query, $results_type (search, possible_duplication......), $action (e.g. index.php), $where_clause, $page (o......n), $order, $order_type</span>
 </span><span id="1309" class="l"><a class="l" href="#1309">1309: </a><span class="php-comment">// output: $results_table, the HTML results table</span>
-</span><span id="1310" class="l"><a class="l" href="#1310">1310: </a><span class="php-comment">// global: $submit_buttons_ar, the array containing the values of the submit buttons, $edit_target_window, the target window for edit/details (self, new......), $delete_icon, $edit_icon, $details_icon (the image files to use as icons), $enable_edit, $enable_delete, $enable_details (whether to enable (1) or not (0) the edit, delete and details features </span>
+</span><span id="1310" class="l"><a class="l" href="#1310">1310: </a><span class="php-comment">// global: $submit_buttons_ar, the array containing the values of the submit buttons, $edit_target_window, the target window for edit/details (self, new......), $delete_icon, $edit_icon, $details_icon (the image files to use as icons), $enable_edit, $enable_delete, $enable_details (whether to enable (1) or not (0) the edit, delete and details features</span>
 </span><span id="1311" class="l"><a class="l" href="#1311">1311: </a>{
 </span><span id="1312" class="l"><a class="l" href="#1312">1312: </a>    <span class="php-keyword1">global</span> <span class="php-var">$submit_buttons_ar</span>, <span class="php-var">$normal_messages_ar</span>, <span class="php-var">$edit_target_window</span>, <span class="php-var">$delete_icon</span>, <span class="php-var">$edit_icon</span>, <span class="php-var">$details_icon</span>, <span class="php-var">$enable_edit</span>, <span class="php-var">$enable_delete</span>, <span class="php-var">$enable_details</span>, <span class="php-var">$db</span>, <span class="php-var">$ask_confirmation_delete</span>, <span class="php-var">$word_wrap_col</span>, <span class="php-var">$word_wrap_fix_width</span>, <span class="php-var">$alias_prefix</span>, <span class="php-var">$dadabik_main_file</span>, <span class="php-var">$enable_row_highlighting</span>, <span class="php-var">$prefix_internal_table</span>, <span class="php-var">$current_user_is_editor</span>, <span class="php-var">$current_user</span>, <span class="php-var">$lang</span>;
 </span><span id="1313" class="l"><a class="l" href="#1313">1313: </a>
@@ -1517,7 +1517,7 @@
 </span><span id="1324" class="l"><a class="l" href="#1324">1324: </a>    <span class="php-comment">// build the table heading</span>
 </span><span id="1325" class="l"><a class="l" href="#1325">1325: </a>    <span class="php-var">$results_table</span> .= <span class="php-quote">&quot;&lt;tr&gt;&quot;</span>;
 </span><span id="1326" class="l"><a class="l" href="#1326">1326: </a>
-</span><span id="1327" class="l"><a class="l" href="#1327">1327: </a>    
+</span><span id="1327" class="l"><a class="l" href="#1327">1327: </a>
 </span><span id="1328" class="l"><a class="l" href="#1328">1328: </a>    <span class="php-var">$results_table</span> .= <span class="php-quote">&quot;&lt;th class='results'&gt;&amp;nbsp;&lt;/th&gt;&quot;</span>; <span class="php-comment">// skip the first column for edit, delete and details</span>
 </span><span id="1329" class="l"><a class="l" href="#1329">1329: </a>
 </span><span id="1330" class="l"><a class="l" href="#1330">1330: </a>    <span class="php-var">$count_temp</span> = <span class="php-keyword2">count</span>(<span class="php-var">$fields_labels_ar</span>);
@@ -1527,7 +1527,7 @@
 </span><span id="1334" class="l"><a class="l" href="#1334">1334: </a>            <span class="php-var">$label_to_display</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;label_&quot;</span> . <span class="php-var">$lang</span> . <span class="php-quote">&quot;_field&quot;</span>];
 </span><span id="1335" class="l"><a class="l" href="#1335">1335: </a>
 </span><span id="1336" class="l"><a class="l" href="#1336">1336: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$word_wrap_fix_width</span> === <span class="php-num">1</span>) {
-</span><span id="1337" class="l"><a class="l" href="#1337">1337: </a>            
+</span><span id="1337" class="l"><a class="l" href="#1337">1337: </a>
 </span><span id="1338" class="l"><a class="l" href="#1338">1338: </a>                <span class="php-var">$spaces_to_add</span> = <span class="php-var">$word_wrap_col</span>-<span class="php-keyword2">strlen</span>(<span class="php-var">$label_to_display</span>);
 </span><span id="1339" class="l"><a class="l" href="#1339">1339: </a>
 </span><span id="1340" class="l"><a class="l" href="#1340">1340: </a>                <span class="php-keyword1">if</span> ( <span class="php-var">$spaces_to_add</span> &gt; <span class="php-num">0</span>) {
@@ -1536,7 +1536,7 @@
 </span><span id="1343" class="l"><a class="l" href="#1343">1343: </a>                    }
 </span><span id="1344" class="l"><a class="l" href="#1344">1344: </a>                }
 </span><span id="1345" class="l"><a class="l" href="#1345">1345: </a>            } <span class="php-comment">// end if</span>
-</span><span id="1346" class="l"><a class="l" href="#1346">1346: </a>            
+</span><span id="1346" class="l"><a class="l" href="#1346">1346: </a>
 </span><span id="1347" class="l"><a class="l" href="#1347">1347: </a>            <span class="php-var">$results_table</span> .= <span class="php-quote">&quot;&lt;th class='results'&gt;&quot;</span>;
 </span><span id="1348" class="l"><a class="l" href="#1348">1348: </a>
 </span><span id="1349" class="l"><a class="l" href="#1349">1349: </a>            <span class="php-var">$field_is_current_order_by</span> = <span class="php-num">0</span>;
@@ -1556,7 +1556,7 @@
 </span><span id="1363" class="l"><a class="l" href="#1363">1363: </a>                        <span class="php-var">$new_order_type</span> = <span class="php-quote">&quot;DESC&quot;</span>;
 </span><span id="1364" class="l"><a class="l" href="#1364">1364: </a>                    }
 </span><span id="1365" class="l"><a class="l" href="#1365">1365: </a>                } <span class="php-comment">// end elseif ($order != $fields_labels_ar[$i][&quot;name_field&quot;])</span>
-</span><span id="1366" class="l"><a class="l" href="#1366">1366: </a>                
+</span><span id="1366" class="l"><a class="l" href="#1366">1366: </a>
 </span><span id="1367" class="l"><a class="l" href="#1367">1367: </a>                <span class="php-var">$results_table</span> .= <span class="php-quote">&quot;&lt;a class='</span><span class="php-var">$link_class</span><span class="php-quote">' href='</span><span class="php-var">$action</span><span class="php-quote">?table_name=&quot;</span>. <span class="php-keyword2">urlencode</span>(<span class="php-var">$table_name</span>).<span class="php-quote">&quot;&amp;function=</span><span class="php-var">$function</span><span class="php-quote">&amp;where_clause=&quot;</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$where_clause</span>).<span class="php-quote">&quot;&amp;page=</span><span class="php-var">$page</span><span class="php-quote">&amp;order=&quot;</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;name_field&quot;</span>]).<span class="php-quote">&quot;&amp;order_type=</span><span class="php-var">$new_order_type</span><span class="php-quote">'&gt;&quot;</span>;
 </span><span id="1368" class="l"><a class="l" href="#1368">1368: </a>
 </span><span id="1369" class="l"><a class="l" href="#1369">1369: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$field_is_current_order_by</span> === <span class="php-num">1</span>) {
@@ -1567,7 +1567,7 @@
 </span><span id="1374" class="l"><a class="l" href="#1374">1374: </a>                        <span class="php-var">$results_table</span> .= <span class="php-quote">'&lt;span class=&quot;arrow&quot;&gt;&amp;darr;&lt;/span&gt; '</span>;
 </span><span id="1375" class="l"><a class="l" href="#1375">1375: </a>                    } <span class="php-comment">// end if</span>
 </span><span id="1376" class="l"><a class="l" href="#1376">1376: </a>                } <span class="php-comment">// end if</span>
-</span><span id="1377" class="l"><a class="l" href="#1377">1377: </a>                
+</span><span id="1377" class="l"><a class="l" href="#1377">1377: </a>
 </span><span id="1378" class="l"><a class="l" href="#1378">1378: </a>                <span class="php-var">$results_table</span> .= <span class="php-var">$label_to_display</span>.<span class="php-quote">&quot;&lt;/a&gt;&lt;/th&gt;&quot;</span>; <span class="php-comment">// insert the linked name of the field in the &lt;th&gt;</span>
 </span><span id="1379" class="l"><a class="l" href="#1379">1379: </a>            }
 </span><span id="1380" class="l"><a class="l" href="#1380">1380: </a>            <span class="php-keyword1">else</span> {
@@ -1608,7 +1608,7 @@
 </span><span id="1415" class="l"><a class="l" href="#1415">1415: </a>        <span class="php-keyword1">else</span> {
 </span><span id="1416" class="l"><a class="l" href="#1416">1416: </a>            <span class="php-var">$results_table</span> .= <span class="php-quote">&quot;&lt;tr class='&quot;</span>.<span class="php-var">$tr_results_class</span>.<span class="php-quote">&quot;'&gt;&quot;</span>;
 </span><span id="1417" class="l"><a class="l" href="#1417">1417: </a>        } <span class="php-comment">// end else</span>
-</span><span id="1418" class="l"><a class="l" href="#1418">1418: </a>        
+</span><span id="1418" class="l"><a class="l" href="#1418">1418: </a>
 </span><span id="1419" class="l"><a class="l" href="#1419">1419: </a>        <span class="php-var">$results_table</span> .= <span class="php-quote">&quot;&lt;td class='&quot;</span>.<span class="php-var">$td_controls_class</span>.<span class="php-quote">&quot;'&gt;&quot;</span>;
 </span><span id="1420" class="l"><a class="l" href="#1420">1420: </a>
 </span><span id="1421" class="l"><a class="l" href="#1421">1421: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$unique_field_name</span>) <span class="php-keyword1">and</span> (<span class="php-var">$results_type</span> == <span class="php-quote">&quot;search&quot;</span> <span class="php-keyword1">or</span> <span class="php-var">$results_type</span> == <span class="php-quote">&quot;possible_duplication&quot;</span>)) { <span class="php-comment">// exists a unique number: edit, delete, details make sense</span>
@@ -1618,7 +1618,7 @@
 </span><span id="1425" class="l"><a class="l" href="#1425">1425: </a>                    <span class="php-var">$show_edit_delete</span> = <span class="php-quote">&quot;0&quot;</span>;
 </span><span id="1426" class="l"><a class="l" href="#1426">1426: </a>                }
 </span><span id="1427" class="l"><a class="l" href="#1427">1427: </a>            }
-</span><span id="1428" class="l"><a class="l" href="#1428">1428: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$enable_edit</span> == <span class="php-quote">&quot;1&quot;</span> &amp;&amp; <span class="php-var">$show_edit_delete</span> == <span class="php-quote">&quot;1&quot;</span>) { <span class="php-comment">// display the edit icon </span>
+</span><span id="1428" class="l"><a class="l" href="#1428">1428: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$enable_edit</span> == <span class="php-quote">&quot;1&quot;</span> &amp;&amp; <span class="php-var">$show_edit_delete</span> == <span class="php-quote">&quot;1&quot;</span>) { <span class="php-comment">// display the edit icon</span>
 </span><span id="1429" class="l"><a class="l" href="#1429">1429: </a>                <span class="php-var">$results_table</span> .= <span class="php-quote">&quot;&lt;a class='onlyscreen' target='_&quot;</span>.<span class="php-var">$edit_target_window</span>.<span class="php-quote">&quot;' href='&quot;</span>.<span class="php-var">$dadabik_main_file</span>.<span class="php-quote">&quot;?table_name=&quot;</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$table_name</span>).<span class="php-quote">&quot;&amp;function=edit&amp;where_field=&quot;</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$where_field</span>).<span class="php-quote">&quot;&amp;where_value=&quot;</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$where_value</span>).<span class="php-quote">&quot;'&gt;&lt;img border='0' src='&quot;</span>.<span class="php-var">$edit_icon</span>.<span class="php-quote">&quot;' alt='&quot;</span>.<span class="php-var">$submit_buttons_ar</span>[<span class="php-quote">&quot;edit&quot;</span>].<span class="php-quote">&quot;' title='&quot;</span>.<span class="php-var">$submit_buttons_ar</span>[<span class="php-quote">&quot;edit&quot;</span>].<span class="php-quote">&quot;'&gt;&lt;/a&gt;&quot;</span>;
 </span><span id="1430" class="l"><a class="l" href="#1430">1430: </a>            } <span class="php-comment">// end if</span>
 </span><span id="1431" class="l"><a class="l" href="#1431">1431: </a>
@@ -1631,7 +1631,7 @@
 </span><span id="1438" class="l"><a class="l" href="#1438">1438: </a>            } <span class="php-comment">// end if</span>
 </span><span id="1439" class="l"><a class="l" href="#1439">1439: </a>
 </span><span id="1440" class="l"><a class="l" href="#1440">1440: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$enable_details</span> == <span class="php-quote">&quot;1&quot;</span>) { <span class="php-comment">// display the details icon</span>
-</span><span id="1441" class="l"><a class="l" href="#1441">1441: </a>                <span class="php-var">$results_table</span> .= <span class="php-quote">&quot;&lt;a class='onlyscreen' target='_&quot;</span>.<span class="php-var">$edit_target_window</span>.<span class="php-quote">&quot;' href='&quot;</span>.<span class="php-var">$dadabik_main_file</span>.<span class="php-quote">&quot;?table_name=&quot;</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$table_name</span>).<span class="php-quote">&quot;&amp;function=details&amp;where_field=&quot;</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$where_field</span>).<span class="php-quote">&quot;&amp;where_value=&quot;</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$where_value</span>).<span class="php-quote">&quot;'&gt;&lt;img border='0' src='&quot;</span>.<span class="php-var">$details_icon</span>.<span class="php-quote">&quot;' alt='&quot;</span>.<span class="php-var">$submit_buttons_ar</span>[<span class="php-quote">&quot;details&quot;</span>].<span class="php-quote">&quot;' title='&quot;</span>.<span class="php-var">$submit_buttons_ar</span>[<span class="php-quote">&quot;details&quot;</span>].<span class="php-quote">&quot;'&gt;&lt;/a&gt;&quot;</span>; 
+</span><span id="1441" class="l"><a class="l" href="#1441">1441: </a>                <span class="php-var">$results_table</span> .= <span class="php-quote">&quot;&lt;a class='onlyscreen' target='_&quot;</span>.<span class="php-var">$edit_target_window</span>.<span class="php-quote">&quot;' href='&quot;</span>.<span class="php-var">$dadabik_main_file</span>.<span class="php-quote">&quot;?table_name=&quot;</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$table_name</span>).<span class="php-quote">&quot;&amp;function=details&amp;where_field=&quot;</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$where_field</span>).<span class="php-quote">&quot;&amp;where_value=&quot;</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$where_value</span>).<span class="php-quote">&quot;'&gt;&lt;img border='0' src='&quot;</span>.<span class="php-var">$details_icon</span>.<span class="php-quote">&quot;' alt='&quot;</span>.<span class="php-var">$submit_buttons_ar</span>[<span class="php-quote">&quot;details&quot;</span>].<span class="php-quote">&quot;' title='&quot;</span>.<span class="php-var">$submit_buttons_ar</span>[<span class="php-quote">&quot;details&quot;</span>].<span class="php-quote">&quot;'&gt;&lt;/a&gt;&quot;</span>;
 </span><span id="1442" class="l"><a class="l" href="#1442">1442: </a>            } <span class="php-comment">// end if</span>
 </span><span id="1443" class="l"><a class="l" href="#1443">1443: </a>
 </span><span id="1444" class="l"><a class="l" href="#1444">1444: </a>        } <span class="php-comment">// end if</span>
@@ -1639,7 +1639,7 @@
 </span><span id="1446" class="l"><a class="l" href="#1446">1446: </a>        <span class="php-keyword1">for</span> (<span class="php-var">$i</span>=<span class="php-num">0</span>; <span class="php-var">$i</span>&lt;<span class="php-var">$count_temp</span>; <span class="php-var">$i</span>++) {
 </span><span id="1447" class="l"><a class="l" href="#1447">1447: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;present_results_search_field&quot;</span>] == <span class="php-quote">&quot;1&quot;</span>) { <span class="php-comment">// the user want to display the field in the search results page</span>
 </span><span id="1448" class="l"><a class="l" href="#1448">1448: </a>                <span class="php-var">$results_table</span> .= <span class="php-quote">&quot;&lt;td&gt;&quot;</span>; <span class="php-comment">// start the cell</span>
-</span><span id="1449" class="l"><a class="l" href="#1449">1449: </a>                
+</span><span id="1449" class="l"><a class="l" href="#1449">1449: </a>
 </span><span id="1450" class="l"><a class="l" href="#1450">1450: </a>                <span class="php-var">$field_name_temp</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;name_field&quot;</span>];
 </span><span id="1451" class="l"><a class="l" href="#1451">1451: </a>                <span class="php-var">$field_type</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;type_field&quot;</span>];
 </span><span id="1452" class="l"><a class="l" href="#1452">1452: </a>                <span class="php-var">$field_content</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;content_field&quot;</span>];
@@ -1654,7 +1654,7 @@
 </span><span id="1461" class="l"><a class="l" href="#1461">1461: </a>                    <span class="php-var">$linked_fields_field</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;linked_fields_field&quot;</span>];
 </span><span id="1462" class="l"><a class="l" href="#1462">1462: </a>                    <span class="php-var">$alias_suffix_field</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;alias_suffix_field&quot;</span>];
 </span><span id="1463" class="l"><a class="l" href="#1463">1463: </a>                    <span class="php-var">$linked_fields_ar</span> = <span class="php-keyword2">explode</span>(<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;separator_field&quot;</span>], <span class="php-var">$linked_fields_field</span>);
-</span><span id="1464" class="l"><a class="l" href="#1464">1464: </a>                    
+</span><span id="1464" class="l"><a class="l" href="#1464">1464: </a>
 </span><span id="1465" class="l"><a class="l" href="#1465">1465: </a>                    <span class="php-comment">// get the list of all the installed tables</span>
 </span><span id="1466" class="l"><a class="l" href="#1466">1466: </a>                    <span class="php-var">$tables_names_ar</span> = build_tables_names_array(<span class="php-num">0</span>);
 </span><span id="1467" class="l"><a class="l" href="#1467">1467: </a>
@@ -1694,11 +1694,11 @@
 </span><span id="1501" class="l"><a class="l" href="#1501">1501: </a>                        } <span class="php-comment">// end foreach</span>
 </span><span id="1502" class="l"><a class="l" href="#1502">1502: </a>
 </span><span id="1503" class="l"><a class="l" href="#1503">1503: </a>                        <span class="php-keyword2">reset</span>(<span class="php-var">$fields_labels_linked_field_ar</span>);
-</span><span id="1504" class="l"><a class="l" href="#1504">1504: </a>                        
-</span><span id="1505" class="l"><a class="l" href="#1505">1505: </a>                        <span class="php-var">$field_to_display</span> = get_field_correct_displaying(<span class="php-var">$field_values_ar</span>[<span class="php-var">$j</span>], <span class="php-var">$linked_field_type</span>, <span class="php-var">$linked_field_content</span>, <span class="php-var">$linked_field_separator</span>, <span class="php-quote">&quot;results_table&quot;</span>); <span class="php-comment">// get the correct display mode for the field</span>
+</span><span id="1504" class="l"><a class="l" href="#1504">1504: </a>
+</span><span id="1505" class="l"><a class="l" href="#1505">1505: </a>                        <span class="php-var">$field_to_display</span> = get_field_correct_displaying(<span class="php-var">$field_values_ar</span>[<span class="php-var">$j</span>], <span class="php-var">$linked_field_type</span>, <span class="php-var">$linked_field_content</span>, <span class="php-quote">&quot;results_table&quot;</span>); <span class="php-comment">// get the correct display mode for the field</span>
 </span><span id="1506" class="l"><a class="l" href="#1506">1506: </a>                    } <span class="php-comment">// end if</span>
 </span><span id="1507" class="l"><a class="l" href="#1507">1507: </a>                    <span class="php-keyword1">else</span> {
-</span><span id="1508" class="l"><a class="l" href="#1508">1508: </a>                        <span class="php-var">$field_to_display</span> = get_field_correct_displaying(<span class="php-var">$field_values_ar</span>[<span class="php-var">$j</span>], <span class="php-var">$field_type</span>, <span class="php-var">$field_content</span>, <span class="php-var">$field_separator</span>, <span class="php-quote">&quot;results_table&quot;</span>); <span class="php-comment">// get the correct display mode for the field</span>
+</span><span id="1508" class="l"><a class="l" href="#1508">1508: </a>                        <span class="php-var">$field_to_display</span> = get_field_correct_displaying(<span class="php-var">$field_values_ar</span>[<span class="php-var">$j</span>], <span class="php-var">$field_type</span>, <span class="php-var">$field_content</span>, <span class="php-quote">&quot;results_table&quot;</span>); <span class="php-comment">// get the correct display mode for the field</span>
 </span><span id="1509" class="l"><a class="l" href="#1509">1509: </a>                    } <span class="php-comment">// end else</span>
 </span><span id="1510" class="l"><a class="l" href="#1510">1510: </a>
 </span><span id="1511" class="l"><a class="l" href="#1511">1511: </a>                    <span class="php-keyword1">if</span> (<span class="php-keyword1">empty</span>(<span class="php-var">$field_to_display</span>)) {
@@ -1710,11 +1710,11 @@
 </span><span id="1517" class="l"><a class="l" href="#1517">1517: </a>                <span class="php-var">$results_table</span> .= <span class="php-quote">&quot;&lt;/td&gt;&quot;</span>; <span class="php-comment">// end the cell</span>
 </span><span id="1518" class="l"><a class="l" href="#1518">1518: </a>            } <span class="php-comment">// end if</span>
 </span><span id="1519" class="l"><a class="l" href="#1519">1519: </a>        } <span class="php-comment">// end for</span>
-</span><span id="1520" class="l"><a class="l" href="#1520">1520: </a>        
+</span><span id="1520" class="l"><a class="l" href="#1520">1520: </a>
 </span><span id="1521" class="l"><a class="l" href="#1521">1521: </a>        <span class="php-var">$results_table</span> .= <span class="php-quote">&quot;&lt;/tr&gt;&quot;</span>;
 </span><span id="1522" class="l"><a class="l" href="#1522">1522: </a>    } <span class="php-comment">// end while</span>
 </span><span id="1523" class="l"><a class="l" href="#1523">1523: </a>    <span class="php-var">$results_table</span> .= <span class="php-quote">&quot;&lt;/table&gt;&quot;</span>;
-</span><span id="1524" class="l"><a class="l" href="#1524">1524: </a>    
+</span><span id="1524" class="l"><a class="l" href="#1524">1524: </a>
 </span><span id="1525" class="l"><a class="l" href="#1525">1525: </a>    <span class="php-keyword1">return</span> <span class="php-var">$results_table</span>;
 </span><span id="1526" class="l"><a class="l" href="#1526">1526: </a>
 </span><span id="1527" class="l"><a class="l" href="#1527">1527: </a>} <span class="php-comment">// end function build_results_table</span>
@@ -1744,12 +1744,12 @@
 </span><span id="1551" class="l"><a class="l" href="#1551">1551: </a>                <span class="php-var">$field_name_temp</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;name_field&quot;</span>];
 </span><span id="1552" class="l"><a class="l" href="#1552">1552: </a>                <span class="php-var">$field_type</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;type_field&quot;</span>];
 </span><span id="1553" class="l"><a class="l" href="#1553">1553: </a>                <span class="php-var">$field_content</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;content_field&quot;</span>];
-</span><span id="1554" class="l"><a class="l" href="#1554">1554: </a>                <span class="php-var">$field_separator</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;separator_field&quot;</span>];    
+</span><span id="1554" class="l"><a class="l" href="#1554">1554: </a>                <span class="php-var">$field_separator</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;separator_field&quot;</span>];
 </span><span id="1555" class="l"><a class="l" href="#1555">1555: </a>                <span class="php-var">$field_values_ar</span> = <span class="php-keyword1">array</span>(); <span class="php-comment">// reset the array containing values to display, otherwise for each loop I have the previous values</span>
 </span><span id="1556" class="l"><a class="l" href="#1556">1556: </a>
 </span><span id="1557" class="l"><a class="l" href="#1557">1557: </a>                <span class="php-var">$primary_key_field_field</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;primary_key_field_field&quot;</span>];
 </span><span id="1558" class="l"><a class="l" href="#1558">1558: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$primary_key_field_field</span> != <span class="php-quote">&quot;&quot;</span>) {
-</span><span id="1559" class="l"><a class="l" href="#1559">1559: </a>                    
+</span><span id="1559" class="l"><a class="l" href="#1559">1559: </a>
 </span><span id="1560" class="l"><a class="l" href="#1560">1560: </a>                    <span class="php-var">$primary_key_field_field</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;primary_key_field_field&quot;</span>];
 </span><span id="1561" class="l"><a class="l" href="#1561">1561: </a>                    <span class="php-var">$primary_key_table_field</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;primary_key_table_field&quot;</span>];
 </span><span id="1562" class="l"><a class="l" href="#1562">1562: </a>                    <span class="php-var">$primary_key_db_field</span> = <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;primary_key_db_field&quot;</span>];
@@ -1769,8 +1769,8 @@
 </span><span id="1576" class="l"><a class="l" href="#1576">1576: </a>
 </span><span id="1577" class="l"><a class="l" href="#1577">1577: </a>                <span class="php-var">$count_temp_2</span> = <span class="php-keyword2">count</span>(<span class="php-var">$field_values_ar</span>);
 </span><span id="1578" class="l"><a class="l" href="#1578">1578: </a>                <span class="php-keyword1">for</span> (<span class="php-var">$j</span>=<span class="php-num">0</span>; <span class="php-var">$j</span>&lt;<span class="php-var">$count_temp_2</span>; <span class="php-var">$j</span>++) {
-</span><span id="1579" class="l"><a class="l" href="#1579">1579: </a>                    
-</span><span id="1580" class="l"><a class="l" href="#1580">1580: </a>                    <span class="php-var">$field_to_display</span> = get_field_correct_csv_displaying(<span class="php-var">$field_values_ar</span>[<span class="php-var">$j</span>], <span class="php-var">$field_type</span>, <span class="php-var">$field_content</span>, <span class="php-var">$field_separator</span>);
+</span><span id="1579" class="l"><a class="l" href="#1579">1579: </a>
+</span><span id="1580" class="l"><a class="l" href="#1580">1580: </a>                    <span class="php-var">$field_to_display</span> = get_field_correct_csv_displaying(<span class="php-var">$field_values_ar</span>[<span class="php-var">$j</span>]);
 </span><span id="1581" class="l"><a class="l" href="#1581">1581: </a>
 </span><span id="1582" class="l"><a class="l" href="#1582">1582: </a>                    <span class="php-var">$csv</span> .= <span class="php-keyword2">str_replace</span>(<span class="php-quote">&quot;'&quot;</span>, <span class="php-quote">&quot;''&quot;</span>, <span class="php-var">$field_to_display</span>).<span class="php-quote">&quot; &quot;</span>;
 </span><span id="1583" class="l"><a class="l" href="#1583">1583: </a>                }
@@ -1853,11 +1853,11 @@
 </span><span id="1660" class="l"><a class="l" href="#1660">1660: </a>                        } <span class="php-comment">// end foreach</span>
 </span><span id="1661" class="l"><a class="l" href="#1661">1661: </a>
 </span><span id="1662" class="l"><a class="l" href="#1662">1662: </a>                        <span class="php-keyword2">reset</span>(<span class="php-var">$fields_labels_linked_field_ar</span>);
-</span><span id="1663" class="l"><a class="l" href="#1663">1663: </a>                        
-</span><span id="1664" class="l"><a class="l" href="#1664">1664: </a>                        <span class="php-var">$field_to_display</span> = get_field_correct_displaying(<span class="php-var">$field_values_ar</span>[<span class="php-var">$j</span>], <span class="php-var">$linked_field_type</span>, <span class="php-var">$linked_field_content</span>, <span class="php-var">$linked_field_separator</span>, <span class="php-quote">&quot;details_table&quot;</span>); <span class="php-comment">// get the correct display mode for the field</span>
+</span><span id="1663" class="l"><a class="l" href="#1663">1663: </a>
+</span><span id="1664" class="l"><a class="l" href="#1664">1664: </a>                        <span class="php-var">$field_to_display</span> = get_field_correct_displaying(<span class="php-var">$field_values_ar</span>[<span class="php-var">$j</span>], <span class="php-var">$linked_field_type</span>, <span class="php-var">$linked_field_content</span>, <span class="php-quote">&quot;details_table&quot;</span>); <span class="php-comment">// get the correct display mode for the field</span>
 </span><span id="1665" class="l"><a class="l" href="#1665">1665: </a>                    } <span class="php-comment">// end if</span>
 </span><span id="1666" class="l"><a class="l" href="#1666">1666: </a>                    <span class="php-keyword1">else</span> {
-</span><span id="1667" class="l"><a class="l" href="#1667">1667: </a>                        <span class="php-var">$field_to_display</span> = get_field_correct_displaying(<span class="php-var">$field_values_ar</span>[<span class="php-var">$j</span>], <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;type_field&quot;</span>], <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;content_field&quot;</span>], <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;separator_field&quot;</span>], <span class="php-quote">&quot;details_table&quot;</span>); <span class="php-comment">// get the correct display mode for the field</span>
+</span><span id="1667" class="l"><a class="l" href="#1667">1667: </a>                        <span class="php-var">$field_to_display</span> = get_field_correct_displaying(<span class="php-var">$field_values_ar</span>[<span class="php-var">$j</span>], <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;type_field&quot;</span>], <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;content_field&quot;</span>], <span class="php-quote">&quot;details_table&quot;</span>); <span class="php-comment">// get the correct display mode for the field</span>
 </span><span id="1668" class="l"><a class="l" href="#1668">1668: </a>                    } <span class="php-comment">// end else</span>
 </span><span id="1669" class="l"><a class="l" href="#1669">1669: </a>
 </span><span id="1670" class="l"><a class="l" href="#1670">1670: </a>                    <span class="php-var">$details_table</span> .= <span class="php-var">$field_to_display</span>.<span class="php-quote">&quot;&amp;nbsp;&quot;</span>; <span class="php-comment">// at the field value to the table</span>
@@ -1916,7 +1916,7 @@
 </span><span id="1723" class="l"><a class="l" href="#1723">1723: </a>                <span class="php-var">$notice_email</span> .= <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">&quot;label_&quot;</span> . <span class="php-var">$lang</span> . <span class="php-quote">&quot;_field&quot;</span>].<span class="php-quote">':'</span>; <span class="php-comment">// add the label</span>
 </span><span id="1724" class="l"><a class="l" href="#1724">1724: </a>
 </span><span id="1725" class="l"><a class="l" href="#1725">1725: </a>                <span class="php-keyword1">for</span> (<span class="php-var">$j</span>=<span class="php-num">0</span>; <span class="php-var">$j</span>&lt;<span class="php-var">$count_temp_2</span>; <span class="php-var">$j</span>++) {
-</span><span id="1726" class="l"><a class="l" href="#1726">1726: </a>                    <span class="php-var">$field_to_display</span> = get_field_correct_displaying(<span class="php-var">$field_values_ar</span>[<span class="php-var">$j</span>], <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">'type_field'</span>], <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">'content_field'</span>], <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">'separator_field'</span>], <span class="php-quote">'plain_text'</span>); <span class="php-comment">// get the correct display mode for the field</span>
+</span><span id="1726" class="l"><a class="l" href="#1726">1726: </a>                    <span class="php-var">$field_to_display</span> = get_field_correct_displaying(<span class="php-var">$field_values_ar</span>[<span class="php-var">$j</span>], <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">'type_field'</span>], <span class="php-var">$fields_labels_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">'content_field'</span>], <span class="php-quote">'plain_text'</span>); <span class="php-comment">// get the correct display mode for the field</span>
 </span><span id="1727" class="l"><a class="l" href="#1727">1727: </a>
 </span><span id="1728" class="l"><a class="l" href="#1728">1728: </a>                    <span class="php-var">$notice_email</span> .= <span class="php-quote">' '</span>.<span class="php-var">$field_to_display</span>; <span class="php-comment">// add the field value</span>
 </span><span id="1729" class="l"><a class="l" href="#1729">1729: </a>                } <span class="php-comment">// end for</span>
@@ -1936,10 +1936,10 @@
 </span><span id="1743" class="l"><a class="l" href="#1743">1743: </a><span class="php-comment">// output: $navigation_tool, the html navigation tool</span>
 </span><span id="1744" class="l"><a class="l" href="#1744">1744: </a>{
 </span><span id="1745" class="l"><a class="l" href="#1745">1745: </a>    <span class="php-var">$function</span> = <span class="php-quote">&quot;search&quot;</span>;
-</span><span id="1746" class="l"><a class="l" href="#1746">1746: </a>    
+</span><span id="1746" class="l"><a class="l" href="#1746">1746: </a>
 </span><span id="1747" class="l"><a class="l" href="#1747">1747: </a>    <span class="php-var">$navigation_tool</span> = <span class="php-quote">&quot;&quot;</span>;
 </span><span id="1748" class="l"><a class="l" href="#1748">1748: </a>
-</span><span id="1749" class="l"><a class="l" href="#1749">1749: </a>    <span class="php-var">$page_group</span> = (int)(<span class="php-var">$page</span>/<span class="php-num">10</span>); <span class="php-comment">// which group? (from 0......n) e.g. page 12 is in the page_group 1 </span>
+</span><span id="1749" class="l"><a class="l" href="#1749">1749: </a>    <span class="php-var">$page_group</span> = (int)(<span class="php-var">$page</span>/<span class="php-num">10</span>); <span class="php-comment">// which group? (from 0......n) e.g. page 12 is in the page_group 1</span>
 </span><span id="1750" class="l"><a class="l" href="#1750">1750: </a>    <span class="php-var">$total_groups</span> = ((int)((<span class="php-var">$pages_number</span>-<span class="php-num">1</span>)/<span class="php-num">10</span>))+<span class="php-num">1</span>; <span class="php-comment">// how many groups? e.g. with 32 pages 4 groups</span>
 </span><span id="1751" class="l"><a class="l" href="#1751">1751: </a>    <span class="php-var">$start_page</span> = <span class="php-var">$page_group</span>*<span class="php-num">10</span>; <span class="php-comment">// the navigation tool start with $start_page, end with $end_page</span>
 </span><span id="1752" class="l"><a class="l" href="#1752">1752: </a>    <span class="php-keyword1">if</span> (<span class="php-var">$start_page</span>+<span class="php-num">10</span> &gt; <span class="php-var">$pages_number</span>) {
@@ -1948,9 +1948,9 @@
 </span><span id="1755" class="l"><a class="l" href="#1755">1755: </a>    <span class="php-keyword1">else</span> {
 </span><span id="1756" class="l"><a class="l" href="#1756">1756: </a>        <span class="php-var">$end_page</span> = <span class="php-var">$start_page</span>+<span class="php-num">10</span>;
 </span><span id="1757" class="l"><a class="l" href="#1757">1757: </a>    } <span class="php-comment">// end else</span>
-</span><span id="1758" class="l"><a class="l" href="#1758">1758: </a>    
+</span><span id="1758" class="l"><a class="l" href="#1758">1758: </a>
 </span><span id="1759" class="l"><a class="l" href="#1759">1759: </a>    <span class="php-var">$variables_to_pass</span> = <span class="php-quote">'table_name='</span>. <span class="php-keyword2">urlencode</span>(<span class="php-var">$table_name</span>).<span class="php-quote">'&amp;function='</span>.<span class="php-var">$function</span>.<span class="php-quote">'&amp;where_clause='</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$where_clause</span>).<span class="php-quote">'&amp;order='</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$order</span>).<span class="php-quote">'&amp;order_type='</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$order_type</span>);
-</span><span id="1760" class="l"><a class="l" href="#1760">1760: </a>    
+</span><span id="1760" class="l"><a class="l" href="#1760">1760: </a>
 </span><span id="1761" class="l"><a class="l" href="#1761">1761: </a>    <span class="php-keyword1">if</span> (<span class="php-var">$page_group</span> &gt; <span class="php-num">1</span>) {
 </span><span id="1762" class="l"><a class="l" href="#1762">1762: </a>        <span class="php-var">$navigation_tool</span> .= <span class="php-quote">&quot;&lt;a class='navig' href='</span><span class="php-var">$action</span><span class="php-quote">?&quot;</span>.<span class="php-var">$variables_to_pass</span>.<span class="php-quote">&quot;&amp;page=0' title='1'&gt;&amp;lt;&amp;lt;&lt;/a&gt; &quot;</span>;
 </span><span id="1763" class="l"><a class="l" href="#1763">1763: </a>    } <span class="php-comment">// end if</span>
@@ -1981,7 +1981,7 @@
 </span><span id="1788" class="l"><a class="l" href="#1788">1788: </a>{
 </span><span id="1789" class="l"><a class="l" href="#1789">1789: </a>    <span class="php-keyword1">global</span> <span class="php-var">$db</span>;
 </span><span id="1790" class="l"><a class="l" href="#1790">1790: </a>    <span class="php-var">$where</span> = <span class="php-quote">&quot;</span><span class="php-var">$where_field</span><span class="php-quote"> = '</span><span class="php-var">$where_value</span><span class="php-quote">'&quot;</span>;
-</span><span id="1791" class="l"><a class="l" href="#1791">1791: </a>    <span class="php-var">$archive_type</span> = <span class="php-quote">&quot;datadmin_delete&quot;</span>;  
+</span><span id="1791" class="l"><a class="l" href="#1791">1791: </a>    <span class="php-var">$archive_type</span> = <span class="php-quote">&quot;datadmin_delete&quot;</span>;
 </span><span id="1792" class="l"><a class="l" href="#1792">1792: </a>    <span class="php-var">$db</span>-&gt;archive_table_row(<span class="php-var">$table_name</span>, <span class="php-var">$where</span>, <span class="php-var">$archive_type</span>);
 </span><span id="1793" class="l"><a class="l" href="#1793">1793: </a>    <span class="php-var">$sql</span> = <span class="php-quote">&quot;DELETE FROM `</span><span class="php-var">$table_name</span><span class="php-quote">` WHERE `</span><span class="php-var">$where_field</span><span class="php-quote">` = '</span><span class="php-var">$where_value</span><span class="php-quote">'&quot;</span>;
 </span><span id="1794" class="l"><a class="l" href="#1794">1794: </a>    display_sql(<span class="php-var">$sql</span>);
@@ -2070,7 +2070,7 @@
 </span><span id="1877" class="l"><a class="l" href="#1877">1877: </a><span class="php-comment">// goal: drop (if present) the old table list and create the new one.</span>
 </span><span id="1878" class="l"><a class="l" href="#1878">1878: </a>{
 </span><span id="1879" class="l"><a class="l" href="#1879">1879: </a>    <span class="php-keyword1">global</span> <span class="php-var">$db</span>, <span class="php-var">$table_list_name</span>;
-</span><span id="1880" class="l"><a class="l" href="#1880">1880: </a>    
+</span><span id="1880" class="l"><a class="l" href="#1880">1880: </a>
 </span><span id="1881" class="l"><a class="l" href="#1881">1881: </a>    <span class="php-var">$sql</span> = <span class="php-quote">&quot;DROP TABLE IF EXISTS </span><span class="php-var">$table_list_name</span><span class="php-quote">&quot;</span>;
 </span><span id="1882" class="l"><a class="l" href="#1882">1882: </a>    <span class="php-var">$db</span>-&gt;send_query(<span class="php-var">$sql</span>);
 </span><span id="1883" class="l"><a class="l" href="#1883">1883: </a>
@@ -2097,7 +2097,7 @@
 </span><span id="1904" class="l"><a class="l" href="#1904">1904: </a><span class="php-comment">// goal: drop (if present) the old users table and create the new one.</span>
 </span><span id="1905" class="l"><a class="l" href="#1905">1905: </a>{
 </span><span id="1906" class="l"><a class="l" href="#1906">1906: </a>    <span class="php-keyword1">global</span> <span class="php-var">$db</span>, <span class="php-var">$users_table_name</span>;
-</span><span id="1907" class="l"><a class="l" href="#1907">1907: </a>    
+</span><span id="1907" class="l"><a class="l" href="#1907">1907: </a>
 </span><span id="1908" class="l"><a class="l" href="#1908">1908: </a>    <span class="php-var">$fields</span> = <span class="php-quote">&quot;(
 </span></span><span id="1909" class="l"><a class="l" href="#1909">1909: </a><span class="php-quote">        `id_user` MEDIUMINT UNSIGNED NOT NULL PRIMARY AUTOINCREMENT,
 </span></span><span id="1910" class="l"><a class="l" href="#1910">1910: </a><span class="php-quote">        `user_type_user` VARCHAR(50) NOT NULL,
@@ -2251,12 +2251,12 @@
 </span><span id="2058" class="l"><a class="l" href="#2058">2058: </a>                    <span class="php-var">$int_table_form</span> .= <span class="php-quote">&quot;&lt;option value='1'&quot;</span>;
 </span><span id="2059" class="l"><a class="l" href="#2059">2059: </a>                    <span class="php-keyword1">if</span> (<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$field_position</span>][<span class="php-var">$int_field_name_temp</span>] == <span class="php-quote">&quot;1&quot;</span>) {
 </span><span id="2060" class="l"><a class="l" href="#2060">2060: </a>                        <span class="php-var">$int_table_form</span> .= <span class="php-quote">&quot; selected&quot;</span>;
-</span><span id="2061" class="l"><a class="l" href="#2061">2061: </a>                    } <span class="php-comment">// end if </span>
+</span><span id="2061" class="l"><a class="l" href="#2061">2061: </a>                    } <span class="php-comment">// end if</span>
 </span><span id="2062" class="l"><a class="l" href="#2062">2062: </a>                    <span class="php-var">$int_table_form</span> .= <span class="php-quote">&quot;&gt;Y&lt;/option&gt;&quot;</span>;
 </span><span id="2063" class="l"><a class="l" href="#2063">2063: </a>                    <span class="php-var">$int_table_form</span> .= <span class="php-quote">&quot;&lt;option value='0'&quot;</span>;
 </span><span id="2064" class="l"><a class="l" href="#2064">2064: </a>                    <span class="php-keyword1">if</span> (<span class="php-var">$fields_labels_ar</span>[<span class="php-var">$field_position</span>][<span class="php-var">$int_field_name_temp</span>] == <span class="php-quote">&quot;0&quot;</span>) {
 </span><span id="2065" class="l"><a class="l" href="#2065">2065: </a>                        <span class="php-var">$int_table_form</span> .= <span class="php-quote">&quot; selected&quot;</span>;
-</span><span id="2066" class="l"><a class="l" href="#2066">2066: </a>                    } <span class="php-comment">// end if </span>
+</span><span id="2066" class="l"><a class="l" href="#2066">2066: </a>                    } <span class="php-comment">// end if</span>
 </span><span id="2067" class="l"><a class="l" href="#2067">2067: </a>                    <span class="php-var">$int_table_form</span> .= <span class="php-quote">&quot;&gt;N&lt;/option&gt;&quot;</span>;
 </span><span id="2068" class="l"><a class="l" href="#2068">2068: </a>                    <span class="php-var">$int_table_form</span> .= <span class="php-quote">&quot;&lt;/select&gt;&quot;</span>;
 </span><span id="2069" class="l"><a class="l" href="#2069">2069: </a>                    <span class="php-keyword1">break</span>;
@@ -2283,7 +2283,7 @@
 </span><span id="2090" class="l"><a class="l" href="#2090">2090: </a>    <span class="php-keyword1">return</span> <span class="php-var">$int_table_form</span>;
 </span><span id="2091" class="l"><a class="l" href="#2091">2091: </a>} <span class="php-comment">// end function build_int_table_field_form($field_position, $int_fields_ar, $fields_labels_ar)</span>
 </span><span id="2092" class="l"><a class="l" href="#2092">2092: </a>
-</span><span id="2093" class="l"><a class="l" href="#2093">2093: </a><span class="php-keyword1">function</span> <a id="_insert_other_field" href="#_insert_other_field">insert_other_field</a>(<span class="php-var">$primary_key_db</span>, <span class="php-var">$primary_key_table</span>, <span class="php-var">$field_name</span>, <span class="php-var">$field_value_other</span>)
+</span><span id="2093" class="l"><a class="l" href="#2093">2093: </a><span class="php-keyword1">function</span> <a id="_insert_other_field" href="#_insert_other_field">insert_other_field</a>(<span class="php-var">$primary_key_table</span>, <span class="php-var">$field_name</span>, <span class="php-var">$field_value_other</span>)
 </span><span id="2094" class="l"><a class="l" href="#2094">2094: </a><span class="php-comment">// goal: insert in the primary key table the other.... field</span>
 </span><span id="2095" class="l"><a class="l" href="#2095">2095: </a><span class="php-comment">// input: $primary_key_table, $primary_key_db, $linked_fields, $field_value_other</span>
 </span><span id="2096" class="l"><a class="l" href="#2096">2096: </a><span class="php-comment">// outpu: the ID of the record inserted</span>
@@ -2300,130 +2300,132 @@
 </span><span id="2107" class="l"><a class="l" href="#2107">2107: </a>        <span class="php-var">$db</span>-&gt;send_query(<span class="php-var">$sql_insert_other</span>);
 </span><span id="2108" class="l"><a class="l" href="#2108">2108: </a>
 </span><span id="2109" class="l"><a class="l" href="#2109">2109: </a>        <span class="php-keyword1">return</span> <span class="php-var">$db</span>-&gt;db_insert_id();
-</span><span id="2110" class="l"><a class="l" href="#2110">2110: </a>    } <span class="php-comment">// end if</span>
-</span><span id="2111" class="l"><a class="l" href="#2111">2111: </a>} <span class="php-comment">// end function insert_other_field($foreign_key, $field_value_other)</span>
-</span><span id="2112" class="l"><a class="l" href="#2112">2112: </a>
-</span><span id="2113" class="l"><a class="l" href="#2113">2113: </a><span class="php-keyword1">function</span> <a id="_update_options" href="#_update_options">update_options</a>(<span class="php-var">$fields_labels_ar_i</span>, <span class="php-var">$field_name</span>, <span class="php-var">$field_value_other</span>)
-</span><span id="2114" class="l"><a class="l" href="#2114">2114: </a><span class="php-comment">// goal: upate the options of a field when a user select other....</span>
-</span><span id="2115" class="l"><a class="l" href="#2115">2115: </a><span class="php-comment">// input: $fields_labels_ar_i (fields_labels_ar specific for a field), $field_name, $field_value_other</span>
-</span><span id="2116" class="l"><a class="l" href="#2116">2116: </a>{
-</span><span id="2117" class="l"><a class="l" href="#2117">2117: </a>    <span class="php-keyword1">global</span> <span class="php-var">$db</span>, <span class="php-var">$table_internal_name</span>;
-</span><span id="2118" class="l"><a class="l" href="#2118">2118: </a>    <span class="php-var">$select_options_field_updated</span> = <span class="php-var">$db</span>-&gt;escape_string(<span class="php-var">$fields_labels_ar_i</span>[<span class="php-quote">&quot;select_options_field&quot;</span>].<span class="php-keyword2">stripslashes</span>(<span class="php-var">$field_value_other</span>).<span class="php-var">$fields_labels_ar_i</span>[<span class="php-quote">&quot;separator_field&quot;</span>]);
-</span><span id="2119" class="l"><a class="l" href="#2119">2119: </a>
-</span><span id="2120" class="l"><a class="l" href="#2120">2120: </a>    <span class="php-var">$sql_update_other</span> = <span class="php-quote">&quot;UPDATE `&quot;</span>.<span class="php-var">$table_internal_name</span>.<span class="php-quote">&quot;` SET `select_options_field` = '&quot;</span>.<span class="php-var">$select_options_field_updated</span>.<span class="php-quote">&quot;' WHERE `name_field` = '&quot;</span>.<span class="php-var">$field_name</span>.<span class="php-quote">&quot;'&quot;</span>;
-</span><span id="2121" class="l"><a class="l" href="#2121">2121: </a>    display_sql(<span class="php-var">$sql_update_other</span>);
-</span><span id="2122" class="l"><a class="l" href="#2122">2122: </a>
-</span><span id="2123" class="l"><a class="l" href="#2123">2123: </a>    <span class="php-comment">// update the internal table</span>
-</span><span id="2124" class="l"><a class="l" href="#2124">2124: </a>    <span class="php-var">$db</span>-&gt;send_query(<span class="php-var">$sql_update_other</span>);
-</span><span id="2125" class="l"><a class="l" href="#2125">2125: </a>} <span class="php-comment">// end function update_options($fields_labels_ar_i, $field_name, $field_value_other)</span>
-</span><span id="2126" class="l"><a class="l" href="#2126">2126: </a>
-</span><span id="2127" class="l"><a class="l" href="#2127">2127: </a><span class="php-keyword1">function</span> <a id="_build_select_part" href="#_build_select_part">build_select_part</a>(<span class="php-var">$fields_labels_ar</span>, <span class="php-var">$table_name</span>)
-</span><span id="2128" class="l"><a class="l" href="#2128">2128: </a><span class="php-comment">// goal: build the select part of a search query e.g.SELECT table_1.field_1, table_2.field2 from table_1 LEFT JOIN table_2 ON table_1.field_3 = table2.field_3</span>
-</span><span id="2129" class="l"><a class="l" href="#2129">2129: </a><span class="php-comment">// input: $fields_labels_ar, $table_name</span>
-</span><span id="2130" class="l"><a class="l" href="#2130">2130: </a><span class="php-comment">// output: the query</span>
-</span><span id="2131" class="l"><a class="l" href="#2131">2131: </a>{
-</span><span id="2132" class="l"><a class="l" href="#2132">2132: </a>    <span class="php-keyword1">global</span> <span class="php-var">$alias_prefix</span>, <span class="php-var">$db</span>;
-</span><span id="2133" class="l"><a class="l" href="#2133">2133: </a>
-</span><span id="2134" class="l"><a class="l" href="#2134">2134: </a>    <span class="php-comment">// get the primary key</span>
-</span><span id="2135" class="l"><a class="l" href="#2135">2135: </a>    <span class="php-var">$unique_field_name</span> = <span class="php-var">$db</span>-&gt;get_primary_key(<span class="php-var">$table_name</span>);
-</span><span id="2136" class="l"><a class="l" href="#2136">2136: </a>
-</span><span id="2137" class="l"><a class="l" href="#2137">2137: </a>    <span class="php-var">$sql_fields_part</span> = <span class="php-quote">''</span>;
-</span><span id="2138" class="l"><a class="l" href="#2138">2138: </a>    <span class="php-var">$sql_from_part</span> = <span class="php-quote">''</span>;
-</span><span id="2139" class="l"><a class="l" href="#2139">2139: </a>
-</span><span id="2140" class="l"><a class="l" href="#2140">2140: </a>    <span class="php-keyword1">foreach</span>(<span class="php-var">$fields_labels_ar</span> <span class="php-keyword1">as</span> <span class="php-var">$field</span>) {
-</span><span id="2141" class="l"><a class="l" href="#2141">2141: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$field</span>[<span class="php-quote">'present_results_search_field'</span>] === <span class="php-quote">'1'</span> || <span class="php-var">$field</span>[<span class="php-quote">'present_details_form_field'</span>] === <span class="php-quote">'1'</span> || <span class="php-var">$field</span>[<span class="php-quote">'name_field'</span>] === <span class="php-var">$unique_field_name</span> || (<span class="php-keyword2">substr</span>(<span class="php-var">$table_name</span>, <span class="php-num">0</span>, <span class="php-num">9</span>) == <span class="php-quote">&quot;archive__&quot;</span> &amp;&amp; (<span class="php-var">$field</span>[<span class="php-quote">'name_field'</span>] == <span class="php-quote">&quot;timestamp&quot;</span> || <span class="php-var">$field</span>[<span class="php-quote">'name_field'</span>] == <span class="php-quote">&quot;archive_type&quot;</span>))) { <span class="php-comment">// include in the select statements just the fields present in results or the primary key (useful to pass to the edit form) or timestamp/archive_type for archiv-tables</span>
-</span><span id="2142" class="l"><a class="l" href="#2142">2142: </a>
-</span><span id="2143" class="l"><a class="l" href="#2143">2143: </a>            <span class="php-comment">// if the field has linked fields, include each linked fields in the select statement and the corresponding table (wiht join) in the from part. Use alias for all in order to mantain name unicity, each field has is own alias_suffix_field so it is easy</span>
-</span><span id="2144" class="l"><a class="l" href="#2144">2144: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$field</span>[<span class="php-quote">'primary_key_field_field'</span>] !== <span class="php-quote">''</span> &amp;&amp; <span class="php-var">$field</span>[<span class="php-quote">'primary_key_field_field'</span>] !== <span class="php-keyword1">NULL</span>) {
-</span><span id="2145" class="l"><a class="l" href="#2145">2145: </a>                <span class="php-var">$linked_fields_ar</span> = <span class="php-keyword2">explode</span>(<span class="php-var">$field</span>[<span class="php-quote">'separator_field'</span>], <span class="php-var">$field</span>[<span class="php-quote">'linked_fields_field'</span>]);
-</span><span id="2146" class="l"><a class="l" href="#2146">2146: </a>                
-</span><span id="2147" class="l"><a class="l" href="#2147">2147: </a>                <span class="php-keyword1">foreach</span> (<span class="php-var">$linked_fields_ar</span> <span class="php-keyword1">as</span> <span class="php-var">$linked_field</span>) {
-</span><span id="2148" class="l"><a class="l" href="#2148">2148: </a>                    <span class="php-var">$sql_fields_part</span> .= <span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field</span>[<span class="php-quote">'primary_key_table_field'</span>].<span class="php-var">$alias_prefix</span>.<span class="php-var">$field</span>[<span class="php-quote">'alias_suffix_field'</span>].<span class="php-quote">&quot;`&quot;</span>.<span class="php-quote">'.'</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$linked_field</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-quote">' AS '</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field</span>[<span class="php-quote">'primary_key_table_field'</span>].<span class="php-var">$alias_prefix</span>.<span class="php-var">$linked_field</span>.<span class="php-var">$alias_prefix</span>.<span class="php-var">$field</span>[<span class="php-quote">'alias_suffix_field'</span>].<span class="php-quote">&quot;`&quot;</span>.<span class="php-quote">', '</span>;
-</span><span id="2149" class="l"><a class="l" href="#2149">2149: </a>                } <span class="php-comment">//end foreach</span>
-</span><span id="2150" class="l"><a class="l" href="#2150">2150: </a>
-</span><span id="2151" class="l"><a class="l" href="#2151">2151: </a>                <span class="php-var">$sql_from_part</span> .= <span class="php-quote">' LEFT JOIN '</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field</span>[<span class="php-quote">'primary_key_table_field'</span>].<span class="php-quote">&quot;`&quot;</span>.<span class="php-quote">' AS '</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field</span>[<span class="php-quote">'primary_key_table_field'</span>].<span class="php-var">$alias_prefix</span>.<span class="php-var">$field</span>[<span class="php-quote">'alias_suffix_field'</span>].<span class="php-quote">&quot;`&quot;</span>;
+</span><span id="2110" class="l"><a class="l" href="#2110">2110: </a>    } <span class="php-keyword1">else</span> {
+</span><span id="2111" class="l"><a class="l" href="#2111">2111: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
+</span><span id="2112" class="l"><a class="l" href="#2112">2112: </a>    }
+</span><span id="2113" class="l"><a class="l" href="#2113">2113: </a>} <span class="php-comment">// end function insert_other_field</span>
+</span><span id="2114" class="l"><a class="l" href="#2114">2114: </a>
+</span><span id="2115" class="l"><a class="l" href="#2115">2115: </a><span class="php-keyword1">function</span> <a id="_update_options" href="#_update_options">update_options</a>(<span class="php-var">$fields_labels_ar_i</span>, <span class="php-var">$field_name</span>, <span class="php-var">$field_value_other</span>)
+</span><span id="2116" class="l"><a class="l" href="#2116">2116: </a><span class="php-comment">// goal: upate the options of a field when a user select other....</span>
+</span><span id="2117" class="l"><a class="l" href="#2117">2117: </a><span class="php-comment">// input: $fields_labels_ar_i (fields_labels_ar specific for a field), $field_name, $field_value_other</span>
+</span><span id="2118" class="l"><a class="l" href="#2118">2118: </a>{
+</span><span id="2119" class="l"><a class="l" href="#2119">2119: </a>    <span class="php-keyword1">global</span> <span class="php-var">$db</span>, <span class="php-var">$table_internal_name</span>;
+</span><span id="2120" class="l"><a class="l" href="#2120">2120: </a>    <span class="php-var">$select_options_field_updated</span> = <span class="php-var">$db</span>-&gt;escape_string(<span class="php-var">$fields_labels_ar_i</span>[<span class="php-quote">&quot;select_options_field&quot;</span>].<span class="php-keyword2">stripslashes</span>(<span class="php-var">$field_value_other</span>).<span class="php-var">$fields_labels_ar_i</span>[<span class="php-quote">&quot;separator_field&quot;</span>]);
+</span><span id="2121" class="l"><a class="l" href="#2121">2121: </a>
+</span><span id="2122" class="l"><a class="l" href="#2122">2122: </a>    <span class="php-var">$sql_update_other</span> = <span class="php-quote">&quot;UPDATE `&quot;</span>.<span class="php-var">$table_internal_name</span>.<span class="php-quote">&quot;` SET `select_options_field` = '&quot;</span>.<span class="php-var">$select_options_field_updated</span>.<span class="php-quote">&quot;' WHERE `name_field` = '&quot;</span>.<span class="php-var">$field_name</span>.<span class="php-quote">&quot;'&quot;</span>;
+</span><span id="2123" class="l"><a class="l" href="#2123">2123: </a>    display_sql(<span class="php-var">$sql_update_other</span>);
+</span><span id="2124" class="l"><a class="l" href="#2124">2124: </a>
+</span><span id="2125" class="l"><a class="l" href="#2125">2125: </a>    <span class="php-comment">// update the internal table</span>
+</span><span id="2126" class="l"><a class="l" href="#2126">2126: </a>    <span class="php-var">$db</span>-&gt;send_query(<span class="php-var">$sql_update_other</span>);
+</span><span id="2127" class="l"><a class="l" href="#2127">2127: </a>} <span class="php-comment">// end function update_options($fields_labels_ar_i, $field_name, $field_value_other)</span>
+</span><span id="2128" class="l"><a class="l" href="#2128">2128: </a>
+</span><span id="2129" class="l"><a class="l" href="#2129">2129: </a><span class="php-keyword1">function</span> <a id="_build_select_part" href="#_build_select_part">build_select_part</a>(<span class="php-var">$fields_labels_ar</span>, <span class="php-var">$table_name</span>)
+</span><span id="2130" class="l"><a class="l" href="#2130">2130: </a><span class="php-comment">// goal: build the select part of a search query e.g.SELECT table_1.field_1, table_2.field2 from table_1 LEFT JOIN table_2 ON table_1.field_3 = table2.field_3</span>
+</span><span id="2131" class="l"><a class="l" href="#2131">2131: </a><span class="php-comment">// input: $fields_labels_ar, $table_name</span>
+</span><span id="2132" class="l"><a class="l" href="#2132">2132: </a><span class="php-comment">// output: the query</span>
+</span><span id="2133" class="l"><a class="l" href="#2133">2133: </a>{
+</span><span id="2134" class="l"><a class="l" href="#2134">2134: </a>    <span class="php-keyword1">global</span> <span class="php-var">$alias_prefix</span>, <span class="php-var">$db</span>;
+</span><span id="2135" class="l"><a class="l" href="#2135">2135: </a>
+</span><span id="2136" class="l"><a class="l" href="#2136">2136: </a>    <span class="php-comment">// get the primary key</span>
+</span><span id="2137" class="l"><a class="l" href="#2137">2137: </a>    <span class="php-var">$unique_field_name</span> = <span class="php-var">$db</span>-&gt;get_primary_key(<span class="php-var">$table_name</span>);
+</span><span id="2138" class="l"><a class="l" href="#2138">2138: </a>
+</span><span id="2139" class="l"><a class="l" href="#2139">2139: </a>    <span class="php-var">$sql_fields_part</span> = <span class="php-quote">''</span>;
+</span><span id="2140" class="l"><a class="l" href="#2140">2140: </a>    <span class="php-var">$sql_from_part</span> = <span class="php-quote">''</span>;
+</span><span id="2141" class="l"><a class="l" href="#2141">2141: </a>
+</span><span id="2142" class="l"><a class="l" href="#2142">2142: </a>    <span class="php-keyword1">foreach</span>(<span class="php-var">$fields_labels_ar</span> <span class="php-keyword1">as</span> <span class="php-var">$field</span>) {
+</span><span id="2143" class="l"><a class="l" href="#2143">2143: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$field</span>[<span class="php-quote">'present_results_search_field'</span>] === <span class="php-quote">'1'</span> || <span class="php-var">$field</span>[<span class="php-quote">'present_details_form_field'</span>] === <span class="php-quote">'1'</span> || <span class="php-var">$field</span>[<span class="php-quote">'name_field'</span>] === <span class="php-var">$unique_field_name</span> || (<span class="php-keyword2">substr</span>(<span class="php-var">$table_name</span>, <span class="php-num">0</span>, <span class="php-num">9</span>) == <span class="php-quote">&quot;archive__&quot;</span> &amp;&amp; (<span class="php-var">$field</span>[<span class="php-quote">'name_field'</span>] == <span class="php-quote">&quot;timestamp&quot;</span> || <span class="php-var">$field</span>[<span class="php-quote">'name_field'</span>] == <span class="php-quote">&quot;archive_type&quot;</span>))) { <span class="php-comment">// include in the select statements just the fields present in results or the primary key (useful to pass to the edit form) or timestamp/archive_type for archiv-tables</span>
+</span><span id="2144" class="l"><a class="l" href="#2144">2144: </a>
+</span><span id="2145" class="l"><a class="l" href="#2145">2145: </a>            <span class="php-comment">// if the field has linked fields, include each linked fields in the select statement and the corresponding table (wiht join) in the from part. Use alias for all in order to mantain name unicity, each field has is own alias_suffix_field so it is easy</span>
+</span><span id="2146" class="l"><a class="l" href="#2146">2146: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$field</span>[<span class="php-quote">'primary_key_field_field'</span>] !== <span class="php-quote">''</span> &amp;&amp; <span class="php-var">$field</span>[<span class="php-quote">'primary_key_field_field'</span>] !== <span class="php-keyword1">NULL</span>) {
+</span><span id="2147" class="l"><a class="l" href="#2147">2147: </a>                <span class="php-var">$linked_fields_ar</span> = <span class="php-keyword2">explode</span>(<span class="php-var">$field</span>[<span class="php-quote">'separator_field'</span>], <span class="php-var">$field</span>[<span class="php-quote">'linked_fields_field'</span>]);
+</span><span id="2148" class="l"><a class="l" href="#2148">2148: </a>
+</span><span id="2149" class="l"><a class="l" href="#2149">2149: </a>                <span class="php-keyword1">foreach</span> (<span class="php-var">$linked_fields_ar</span> <span class="php-keyword1">as</span> <span class="php-var">$linked_field</span>) {
+</span><span id="2150" class="l"><a class="l" href="#2150">2150: </a>                    <span class="php-var">$sql_fields_part</span> .= <span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field</span>[<span class="php-quote">'primary_key_table_field'</span>].<span class="php-var">$alias_prefix</span>.<span class="php-var">$field</span>[<span class="php-quote">'alias_suffix_field'</span>].<span class="php-quote">&quot;`&quot;</span>.<span class="php-quote">'.'</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$linked_field</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-quote">' AS '</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field</span>[<span class="php-quote">'primary_key_table_field'</span>].<span class="php-var">$alias_prefix</span>.<span class="php-var">$linked_field</span>.<span class="php-var">$alias_prefix</span>.<span class="php-var">$field</span>[<span class="php-quote">'alias_suffix_field'</span>].<span class="php-quote">&quot;`&quot;</span>.<span class="php-quote">', '</span>;
+</span><span id="2151" class="l"><a class="l" href="#2151">2151: </a>                } <span class="php-comment">//end foreach</span>
 </span><span id="2152" class="l"><a class="l" href="#2152">2152: </a>
-</span><span id="2153" class="l"><a class="l" href="#2153">2153: </a>                <span class="php-var">$sql_from_part</span> .= <span class="php-quote">' ON '</span>;
-</span><span id="2154" class="l"><a class="l" href="#2154">2154: </a>                <span class="php-var">$sql_from_part</span> .= <span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$table_name</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-quote">'.'</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field</span>[<span class="php-quote">'name_field'</span>].<span class="php-quote">&quot;`&quot;</span>.<span class="php-quote">' = '</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field</span>[<span class="php-quote">'primary_key_table_field'</span>].<span class="php-var">$alias_prefix</span>.<span class="php-var">$field</span>[<span class="php-quote">'alias_suffix_field'</span>].<span class="php-quote">&quot;`&quot;</span>.<span class="php-quote">'.'</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field</span>[<span class="php-quote">'primary_key_field_field'</span>].<span class="php-quote">&quot;`&quot;</span>;
-</span><span id="2155" class="l"><a class="l" href="#2155">2155: </a>            } <span class="php-comment">// end if</span>
-</span><span id="2156" class="l"><a class="l" href="#2156">2156: </a>            <span class="php-comment">// if the field has not linked field, include just the field in the select statement</span>
-</span><span id="2157" class="l"><a class="l" href="#2157">2157: </a>            <span class="php-keyword1">else</span> {
-</span><span id="2158" class="l"><a class="l" href="#2158">2158: </a>                <span class="php-var">$sql_fields_part</span> .= <span class="php-quote">&quot;`</span><span class="php-var">$table_name</span><span class="php-quote">`.`&quot;</span>.<span class="php-var">$field</span>[<span class="php-quote">'name_field'</span>].<span class="php-quote">&quot;`, &quot;</span>;
-</span><span id="2159" class="l"><a class="l" href="#2159">2159: </a>            } <span class="php-comment">// end else</span>
-</span><span id="2160" class="l"><a class="l" href="#2160">2160: </a>        } <span class="php-comment">// end if</span>
-</span><span id="2161" class="l"><a class="l" href="#2161">2161: </a>    } <span class="php-comment">// end foreach</span>
-</span><span id="2162" class="l"><a class="l" href="#2162">2162: </a>
-</span><span id="2163" class="l"><a class="l" href="#2163">2163: </a>    <span class="php-var">$sql_fields_part</span> = <span class="php-keyword2">substr</span>(<span class="php-var">$sql_fields_part</span>, <span class="php-num">0</span>, -<span class="php-num">2</span>); <span class="php-comment">// delete the last ', '</span>
+</span><span id="2153" class="l"><a class="l" href="#2153">2153: </a>                <span class="php-var">$sql_from_part</span> .= <span class="php-quote">' LEFT JOIN '</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field</span>[<span class="php-quote">'primary_key_table_field'</span>].<span class="php-quote">&quot;`&quot;</span>.<span class="php-quote">' AS '</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field</span>[<span class="php-quote">'primary_key_table_field'</span>].<span class="php-var">$alias_prefix</span>.<span class="php-var">$field</span>[<span class="php-quote">'alias_suffix_field'</span>].<span class="php-quote">&quot;`&quot;</span>;
+</span><span id="2154" class="l"><a class="l" href="#2154">2154: </a>
+</span><span id="2155" class="l"><a class="l" href="#2155">2155: </a>                <span class="php-var">$sql_from_part</span> .= <span class="php-quote">' ON '</span>;
+</span><span id="2156" class="l"><a class="l" href="#2156">2156: </a>                <span class="php-var">$sql_from_part</span> .= <span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$table_name</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-quote">'.'</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field</span>[<span class="php-quote">'name_field'</span>].<span class="php-quote">&quot;`&quot;</span>.<span class="php-quote">' = '</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field</span>[<span class="php-quote">'primary_key_table_field'</span>].<span class="php-var">$alias_prefix</span>.<span class="php-var">$field</span>[<span class="php-quote">'alias_suffix_field'</span>].<span class="php-quote">&quot;`&quot;</span>.<span class="php-quote">'.'</span>.<span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$field</span>[<span class="php-quote">'primary_key_field_field'</span>].<span class="php-quote">&quot;`&quot;</span>;
+</span><span id="2157" class="l"><a class="l" href="#2157">2157: </a>            } <span class="php-comment">// end if</span>
+</span><span id="2158" class="l"><a class="l" href="#2158">2158: </a>            <span class="php-comment">// if the field has not linked field, include just the field in the select statement</span>
+</span><span id="2159" class="l"><a class="l" href="#2159">2159: </a>            <span class="php-keyword1">else</span> {
+</span><span id="2160" class="l"><a class="l" href="#2160">2160: </a>                <span class="php-var">$sql_fields_part</span> .= <span class="php-quote">&quot;`</span><span class="php-var">$table_name</span><span class="php-quote">`.`&quot;</span>.<span class="php-var">$field</span>[<span class="php-quote">'name_field'</span>].<span class="php-quote">&quot;`, &quot;</span>;
+</span><span id="2161" class="l"><a class="l" href="#2161">2161: </a>            } <span class="php-comment">// end else</span>
+</span><span id="2162" class="l"><a class="l" href="#2162">2162: </a>        } <span class="php-comment">// end if</span>
+</span><span id="2163" class="l"><a class="l" href="#2163">2163: </a>    } <span class="php-comment">// end foreach</span>
 </span><span id="2164" class="l"><a class="l" href="#2164">2164: </a>
-</span><span id="2165" class="l"><a class="l" href="#2165">2165: </a>    <span class="php-comment">// compose the final statement</span>
-</span><span id="2166" class="l"><a class="l" href="#2166">2166: </a>    <span class="php-var">$sql</span> = <span class="php-quote">&quot;SELECT </span><span class="php-var">$sql_fields_part</span><span class="php-quote"> FROM `</span><span class="php-var">$table_name</span><span class="php-quote">`</span><span class="php-var">$sql_from_part</span><span class="php-quote">&quot;</span> ;
-</span><span id="2167" class="l"><a class="l" href="#2167">2167: </a>    
-</span><span id="2168" class="l"><a class="l" href="#2168">2168: </a>    <span class="php-keyword1">return</span> <span class="php-var">$sql</span>;
-</span><span id="2169" class="l"><a class="l" href="#2169">2169: </a>} <span class="php-comment">// end function build_select_part()</span>
-</span><span id="2170" class="l"><a class="l" href="#2170">2170: </a>
-</span><span id="2171" class="l"><a class="l" href="#2171">2171: </a><span class="php-keyword1">function</span> <a id="_build_records_per_page_form" href="#_build_records_per_page_form">build_records_per_page_form</a>(<span class="php-var">$action</span>, <span class="php-var">$records_per_page</span>, <span class="php-var">$table_name</span>)
-</span><span id="2172" class="l"><a class="l" href="#2172">2172: </a><span class="php-comment">// goal: build the listbox that allows the user to choose the number of result record per page on the fly</span>
-</span><span id="2173" class="l"><a class="l" href="#2173">2173: </a><span class="php-comment">// input: $records_per_page, the current number of record per page, $table_name, the current table</span>
-</span><span id="2174" class="l"><a class="l" href="#2174">2174: </a><span class="php-comment">// output: the form</span>
-</span><span id="2175" class="l"><a class="l" href="#2175">2175: </a>{
-</span><span id="2176" class="l"><a class="l" href="#2176">2176: </a>    <span class="php-keyword1">global</span> <span class="php-var">$records_per_page_ar</span>, <span class="php-var">$normal_messages_ar</span>;
-</span><span id="2177" class="l"><a class="l" href="#2177">2177: </a>
-</span><span id="2178" class="l"><a class="l" href="#2178">2178: </a>    <span class="php-var">$records_per_page_form</span> = <span class="php-quote">&quot;&quot;</span>;
+</span><span id="2165" class="l"><a class="l" href="#2165">2165: </a>    <span class="php-var">$sql_fields_part</span> = <span class="php-keyword2">substr</span>(<span class="php-var">$sql_fields_part</span>, <span class="php-num">0</span>, -<span class="php-num">2</span>); <span class="php-comment">// delete the last ', '</span>
+</span><span id="2166" class="l"><a class="l" href="#2166">2166: </a>
+</span><span id="2167" class="l"><a class="l" href="#2167">2167: </a>    <span class="php-comment">// compose the final statement</span>
+</span><span id="2168" class="l"><a class="l" href="#2168">2168: </a>    <span class="php-var">$sql</span> = <span class="php-quote">&quot;SELECT </span><span class="php-var">$sql_fields_part</span><span class="php-quote"> FROM `</span><span class="php-var">$table_name</span><span class="php-quote">`</span><span class="php-var">$sql_from_part</span><span class="php-quote">&quot;</span> ;
+</span><span id="2169" class="l"><a class="l" href="#2169">2169: </a>
+</span><span id="2170" class="l"><a class="l" href="#2170">2170: </a>    <span class="php-keyword1">return</span> <span class="php-var">$sql</span>;
+</span><span id="2171" class="l"><a class="l" href="#2171">2171: </a>} <span class="php-comment">// end function build_select_part()</span>
+</span><span id="2172" class="l"><a class="l" href="#2172">2172: </a>
+</span><span id="2173" class="l"><a class="l" href="#2173">2173: </a><span class="php-keyword1">function</span> <a id="_build_records_per_page_form" href="#_build_records_per_page_form">build_records_per_page_form</a>(<span class="php-var">$action</span>, <span class="php-var">$records_per_page</span>, <span class="php-var">$table_name</span>)
+</span><span id="2174" class="l"><a class="l" href="#2174">2174: </a><span class="php-comment">// goal: build the listbox that allows the user to choose the number of result record per page on the fly</span>
+</span><span id="2175" class="l"><a class="l" href="#2175">2175: </a><span class="php-comment">// input: $records_per_page, the current number of record per page, $table_name, the current table</span>
+</span><span id="2176" class="l"><a class="l" href="#2176">2176: </a><span class="php-comment">// output: the form</span>
+</span><span id="2177" class="l"><a class="l" href="#2177">2177: </a>{
+</span><span id="2178" class="l"><a class="l" href="#2178">2178: </a>    <span class="php-keyword1">global</span> <span class="php-var">$records_per_page_ar</span>, <span class="php-var">$normal_messages_ar</span>;
 </span><span id="2179" class="l"><a class="l" href="#2179">2179: </a>
-</span><span id="2180" class="l"><a class="l" href="#2180">2180: </a>    <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot;&lt;form name='records_per_page_form' action='</span><span class="php-var">$action</span><span class="php-quote">' method='GET'&gt;&quot;</span>;
+</span><span id="2180" class="l"><a class="l" href="#2180">2180: </a>    <span class="php-var">$records_per_page_form</span> = <span class="php-quote">&quot;&quot;</span>;
 </span><span id="2181" class="l"><a class="l" href="#2181">2181: </a>
-</span><span id="2182" class="l"><a class="l" href="#2182">2182: </a>    <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot;&lt;input type='hidden' name='table_name' value='</span><span class="php-var">$table_name</span><span class="php-quote">'&gt;&quot;</span>;
-</span><span id="2183" class="l"><a class="l" href="#2183">2183: </a>    <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot;&lt;input type='hidden' name='function' value='search'&gt;&quot;</span>;
-</span><span id="2184" class="l"><a class="l" href="#2184">2184: </a>
-</span><span id="2185" class="l"><a class="l" href="#2185">2185: </a>    <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot;&lt;select class='select_records_per_page' name='records_per_page' onchange=\&quot;javascript:document.records_per_page_form.submit()\&quot;&gt;&quot;</span>;
+</span><span id="2182" class="l"><a class="l" href="#2182">2182: </a>    <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot;&lt;form name='records_per_page_form' action='</span><span class="php-var">$action</span><span class="php-quote">' method='GET'&gt;&quot;</span>;
+</span><span id="2183" class="l"><a class="l" href="#2183">2183: </a>
+</span><span id="2184" class="l"><a class="l" href="#2184">2184: </a>    <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot;&lt;input type='hidden' name='table_name' value='</span><span class="php-var">$table_name</span><span class="php-quote">'&gt;&quot;</span>;
+</span><span id="2185" class="l"><a class="l" href="#2185">2185: </a>    <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot;&lt;input type='hidden' name='function' value='search'&gt;&quot;</span>;
 </span><span id="2186" class="l"><a class="l" href="#2186">2186: </a>
-</span><span id="2187" class="l"><a class="l" href="#2187">2187: </a>    <span class="php-keyword1">foreach</span> (<span class="php-var">$records_per_page_ar</span> <span class="php-keyword1">as</span> <span class="php-var">$records_per_page_item</span>) {
-</span><span id="2188" class="l"><a class="l" href="#2188">2188: </a>        <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot;&lt;option value='</span><span class="php-var">$records_per_page_item</span><span class="php-quote">'&quot;</span>;
-</span><span id="2189" class="l"><a class="l" href="#2189">2189: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$records_per_page_item</span> === <span class="php-var">$records_per_page</span>) {
-</span><span id="2190" class="l"><a class="l" href="#2190">2190: </a>            <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot; selected&quot;</span>;
-</span><span id="2191" class="l"><a class="l" href="#2191">2191: </a>        } <span class="php-comment">// end if</span>
-</span><span id="2192" class="l"><a class="l" href="#2192">2192: </a>        <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot;&gt;</span><span class="php-var">$records_per_page_item</span><span class="php-quote">&lt;/option&gt;&quot;</span>;
-</span><span id="2193" class="l"><a class="l" href="#2193">2193: </a>    } <span class="php-comment">// foreach</span>
-</span><span id="2194" class="l"><a class="l" href="#2194">2194: </a>
-</span><span id="2195" class="l"><a class="l" href="#2195">2195: </a>    <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot;&lt;/select&gt;&quot;</span>;
-</span><span id="2196" class="l"><a class="l" href="#2196">2196: </a>    <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot; &quot;</span>.<span class="php-var">$normal_messages_ar</span>[<span class="php-quote">'records_per_page'</span>];
-</span><span id="2197" class="l"><a class="l" href="#2197">2197: </a>    <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot;&lt;/form&gt;&quot;</span>;
-</span><span id="2198" class="l"><a class="l" href="#2198">2198: </a>
-</span><span id="2199" class="l"><a class="l" href="#2199">2199: </a>    <span class="php-keyword1">return</span> <span class="php-var">$records_per_page_form</span>;
-</span><span id="2200" class="l"><a class="l" href="#2200">2200: </a>} <span class="php-comment">// end function build_records_per_page_form()</span>
-</span><span id="2201" class="l"><a class="l" href="#2201">2201: </a>
-</span><span id="2202" class="l"><a class="l" href="#2202">2202: </a><span class="php-keyword1">function</span> <a id="_build_installed_table_infos_ar" href="#_build_installed_table_infos_ar">build_installed_table_infos_ar</a>(<span class="php-var">$only_include_allowed</span>, <span class="php-var">$exclude_users_tab_if_not_admin</span>)
-</span><span id="2203" class="l"><a class="l" href="#2203">2203: </a><span class="php-comment">// goal: build an an array containing infos about dadabik installed tables</span>
-</span><span id="2204" class="l"><a class="l" href="#2204">2204: </a><span class="php-comment">// input: $only_include_allowed (0|1) $exclude_users_tab_if_not_admin(0|1)</span>
-</span><span id="2205" class="l"><a class="l" href="#2205">2205: </a><span class="php-comment">// output: the array</span>
-</span><span id="2206" class="l"><a class="l" href="#2206">2206: </a>{
-</span><span id="2207" class="l"><a class="l" href="#2207">2207: </a>    <span class="php-keyword1">global</span> <span class="php-var">$table_list_name</span>, <span class="php-var">$users_table_name</span>, <span class="php-var">$db</span>, <span class="php-var">$current_user_is_editor</span>, <span class="php-var">$lang</span>;
-</span><span id="2208" class="l"><a class="l" href="#2208">2208: </a>
-</span><span id="2209" class="l"><a class="l" href="#2209">2209: </a>    <span class="php-keyword1">if</span> (<span class="php-var">$only_include_allowed</span> === <span class="php-num">1</span>) {
-</span><span id="2210" class="l"><a class="l" href="#2210">2210: </a>        <span class="php-var">$sql</span> = <span class="php-quote">&quot;SELECT name_table, alias_table_</span><span class="php-var">$lang</span><span class="php-quote"> FROM `</span><span class="php-var">$table_list_name</span><span class="php-quote">` WHERE allowed_table = '1'&quot;</span>;
-</span><span id="2211" class="l"><a class="l" href="#2211">2211: </a>    } <span class="php-comment">// end if</span>
-</span><span id="2212" class="l"><a class="l" href="#2212">2212: </a>    <span class="php-keyword1">else</span> {
-</span><span id="2213" class="l"><a class="l" href="#2213">2213: </a>        <span class="php-var">$sql</span> = <span class="php-quote">&quot;SELECT name_table, alias_table_</span><span class="php-var">$lang</span><span class="php-quote"> FROM `</span><span class="php-var">$table_list_name</span><span class="php-quote">`&quot;</span>;
-</span><span id="2214" class="l"><a class="l" href="#2214">2214: </a>    } <span class="php-comment">// end else</span>
-</span><span id="2215" class="l"><a class="l" href="#2215">2215: </a>
-</span><span id="2216" class="l"><a class="l" href="#2216">2216: </a>    <span class="php-var">$res</span> = <span class="php-var">$db</span>-&gt;send_query(<span class="php-var">$sql</span>);
+</span><span id="2187" class="l"><a class="l" href="#2187">2187: </a>    <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot;&lt;select class='select_records_per_page' name='records_per_page' onchange=\&quot;document.records_per_page_form.submit()\&quot;&gt;&quot;</span>;
+</span><span id="2188" class="l"><a class="l" href="#2188">2188: </a>
+</span><span id="2189" class="l"><a class="l" href="#2189">2189: </a>    <span class="php-keyword1">foreach</span> (<span class="php-var">$records_per_page_ar</span> <span class="php-keyword1">as</span> <span class="php-var">$records_per_page_item</span>) {
+</span><span id="2190" class="l"><a class="l" href="#2190">2190: </a>        <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot;&lt;option value='</span><span class="php-var">$records_per_page_item</span><span class="php-quote">'&quot;</span>;
+</span><span id="2191" class="l"><a class="l" href="#2191">2191: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$records_per_page_item</span> === <span class="php-var">$records_per_page</span>) {
+</span><span id="2192" class="l"><a class="l" href="#2192">2192: </a>            <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot; selected&quot;</span>;
+</span><span id="2193" class="l"><a class="l" href="#2193">2193: </a>        } <span class="php-comment">// end if</span>
+</span><span id="2194" class="l"><a class="l" href="#2194">2194: </a>        <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot;&gt;</span><span class="php-var">$records_per_page_item</span><span class="php-quote">&lt;/option&gt;&quot;</span>;
+</span><span id="2195" class="l"><a class="l" href="#2195">2195: </a>    } <span class="php-comment">// foreach</span>
+</span><span id="2196" class="l"><a class="l" href="#2196">2196: </a>
+</span><span id="2197" class="l"><a class="l" href="#2197">2197: </a>    <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot;&lt;/select&gt;&quot;</span>;
+</span><span id="2198" class="l"><a class="l" href="#2198">2198: </a>    <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot; &quot;</span>.<span class="php-var">$normal_messages_ar</span>[<span class="php-quote">'records_per_page'</span>];
+</span><span id="2199" class="l"><a class="l" href="#2199">2199: </a>    <span class="php-var">$records_per_page_form</span> .= <span class="php-quote">&quot;&lt;/form&gt;&quot;</span>;
+</span><span id="2200" class="l"><a class="l" href="#2200">2200: </a>
+</span><span id="2201" class="l"><a class="l" href="#2201">2201: </a>    <span class="php-keyword1">return</span> <span class="php-var">$records_per_page_form</span>;
+</span><span id="2202" class="l"><a class="l" href="#2202">2202: </a>} <span class="php-comment">// end function build_records_per_page_form()</span>
+</span><span id="2203" class="l"><a class="l" href="#2203">2203: </a>
+</span><span id="2204" class="l"><a class="l" href="#2204">2204: </a><span class="php-keyword1">function</span> <a id="_build_installed_table_infos_ar" href="#_build_installed_table_infos_ar">build_installed_table_infos_ar</a>(<span class="php-var">$only_include_allowed</span>, <span class="php-var">$exclude_users_tab_if_not_admin</span>)
+</span><span id="2205" class="l"><a class="l" href="#2205">2205: </a><span class="php-comment">// goal: build an an array containing infos about dadabik installed tables</span>
+</span><span id="2206" class="l"><a class="l" href="#2206">2206: </a><span class="php-comment">// input: $only_include_allowed (0|1) $exclude_users_tab_if_not_admin(0|1)</span>
+</span><span id="2207" class="l"><a class="l" href="#2207">2207: </a><span class="php-comment">// output: the array</span>
+</span><span id="2208" class="l"><a class="l" href="#2208">2208: </a>{
+</span><span id="2209" class="l"><a class="l" href="#2209">2209: </a>    <span class="php-keyword1">global</span> <span class="php-var">$table_list_name</span>, <span class="php-var">$users_table_name</span>, <span class="php-var">$db</span>, <span class="php-var">$current_user_is_editor</span>, <span class="php-var">$lang</span>;
+</span><span id="2210" class="l"><a class="l" href="#2210">2210: </a>
+</span><span id="2211" class="l"><a class="l" href="#2211">2211: </a>    <span class="php-keyword1">if</span> (<span class="php-var">$only_include_allowed</span> === <span class="php-num">1</span>) {
+</span><span id="2212" class="l"><a class="l" href="#2212">2212: </a>        <span class="php-var">$sql</span> = <span class="php-quote">&quot;SELECT name_table, alias_table_</span><span class="php-var">$lang</span><span class="php-quote"> FROM `</span><span class="php-var">$table_list_name</span><span class="php-quote">` WHERE allowed_table = '1'&quot;</span>;
+</span><span id="2213" class="l"><a class="l" href="#2213">2213: </a>    } <span class="php-comment">// end if</span>
+</span><span id="2214" class="l"><a class="l" href="#2214">2214: </a>    <span class="php-keyword1">else</span> {
+</span><span id="2215" class="l"><a class="l" href="#2215">2215: </a>        <span class="php-var">$sql</span> = <span class="php-quote">&quot;SELECT name_table, alias_table_</span><span class="php-var">$lang</span><span class="php-quote"> FROM `</span><span class="php-var">$table_list_name</span><span class="php-quote">`&quot;</span>;
+</span><span id="2216" class="l"><a class="l" href="#2216">2216: </a>    } <span class="php-comment">// end else</span>
 </span><span id="2217" class="l"><a class="l" href="#2217">2217: </a>
-</span><span id="2218" class="l"><a class="l" href="#2218">2218: </a>    <span class="php-var">$i</span>=<span class="php-num">0</span>;
+</span><span id="2218" class="l"><a class="l" href="#2218">2218: </a>    <span class="php-var">$res</span> = <span class="php-var">$db</span>-&gt;send_query(<span class="php-var">$sql</span>);
 </span><span id="2219" class="l"><a class="l" href="#2219">2219: </a>
-</span><span id="2220" class="l"><a class="l" href="#2220">2220: </a>    <span class="php-keyword1">while</span> (<span class="php-var">$row</span> = <span class="php-var">$db</span>-&gt;db_fetch_row(<span class="php-var">$res</span>)) {
-</span><span id="2221" class="l"><a class="l" href="#2221">2221: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$current_user_is_editor</span> === <span class="php-num">1</span> || <span class="php-var">$row</span>[<span class="php-num">0</span>] !== <span class="php-var">$users_table_name</span> || <span class="php-var">$exclude_users_tab_if_not_admin</span> === <span class="php-num">0</span>) {
-</span><span id="2222" class="l"><a class="l" href="#2222">2222: </a>            <span class="php-var">$installed_table_infos_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">'name_table'</span>] = <span class="php-var">$row</span>[<span class="php-num">0</span>];
-</span><span id="2223" class="l"><a class="l" href="#2223">2223: </a>            <span class="php-var">$installed_table_infos_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">'alias_table'</span>] = <span class="php-var">$row</span>[<span class="php-num">1</span>];
-</span><span id="2224" class="l"><a class="l" href="#2224">2224: </a>            <span class="php-var">$i</span>++;
-</span><span id="2225" class="l"><a class="l" href="#2225">2225: </a>        } <span class="php-comment">// end if</span>
-</span><span id="2226" class="l"><a class="l" href="#2226">2226: </a>    } <span class="php-comment">// end while</span>
-</span><span id="2227" class="l"><a class="l" href="#2227">2227: </a>    <span class="php-var">$db</span>-&gt;free_result(<span class="php-var">$res</span>);
-</span><span id="2228" class="l"><a class="l" href="#2228">2228: </a>
-</span><span id="2229" class="l"><a class="l" href="#2229">2229: </a>    <span class="php-keyword1">return</span> <span class="php-var">$installed_table_infos_ar</span>;
+</span><span id="2220" class="l"><a class="l" href="#2220">2220: </a>    <span class="php-var">$i</span>=<span class="php-num">0</span>;
+</span><span id="2221" class="l"><a class="l" href="#2221">2221: </a>
+</span><span id="2222" class="l"><a class="l" href="#2222">2222: </a>    <span class="php-keyword1">while</span> (<span class="php-var">$row</span> = <span class="php-var">$db</span>-&gt;db_fetch_row(<span class="php-var">$res</span>)) {
+</span><span id="2223" class="l"><a class="l" href="#2223">2223: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$current_user_is_editor</span> === <span class="php-num">1</span> || <span class="php-var">$row</span>[<span class="php-num">0</span>] !== <span class="php-var">$users_table_name</span> || <span class="php-var">$exclude_users_tab_if_not_admin</span> === <span class="php-num">0</span>) {
+</span><span id="2224" class="l"><a class="l" href="#2224">2224: </a>            <span class="php-var">$installed_table_infos_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">'name_table'</span>] = <span class="php-var">$row</span>[<span class="php-num">0</span>];
+</span><span id="2225" class="l"><a class="l" href="#2225">2225: </a>            <span class="php-var">$installed_table_infos_ar</span>[<span class="php-var">$i</span>][<span class="php-quote">'alias_table'</span>] = <span class="php-var">$row</span>[<span class="php-num">1</span>];
+</span><span id="2226" class="l"><a class="l" href="#2226">2226: </a>            <span class="php-var">$i</span>++;
+</span><span id="2227" class="l"><a class="l" href="#2227">2227: </a>        } <span class="php-comment">// end if</span>
+</span><span id="2228" class="l"><a class="l" href="#2228">2228: </a>    } <span class="php-comment">// end while</span>
+</span><span id="2229" class="l"><a class="l" href="#2229">2229: </a>    <span class="php-var">$db</span>-&gt;free_result(<span class="php-var">$res</span>);
 </span><span id="2230" class="l"><a class="l" href="#2230">2230: </a>
-</span><span id="2231" class="l"><a class="l" href="#2231">2231: </a>} <span class="php-comment">// end function build_installed_table_infos_ar()</span>
-</span><span id="2232" class="l"><a class="l" href="#2232">2232: </a><span class="xlang">?&gt;</span>
-</span><span id="2233" class="l"><a class="l" href="#2233">2233: </a></span></code></pre>
+</span><span id="2231" class="l"><a class="l" href="#2231">2231: </a>    <span class="php-keyword1">return</span> <span class="php-var">$installed_table_infos_ar</span>;
+</span><span id="2232" class="l"><a class="l" href="#2232">2232: </a>
+</span><span id="2233" class="l"><a class="l" href="#2233">2233: </a>} <span class="php-comment">// end function build_installed_table_infos_ar()</span>
+</span><span id="2234" class="l"><a class="l" href="#2234">2234: </a><span class="xlang">?&gt;</span>
+</span><span id="2235" class="l"><a class="l" href="#2235">2235: </a></span></code></pre>
 
 	<div id="footer">
 		OpenHomeopath PHP code documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>

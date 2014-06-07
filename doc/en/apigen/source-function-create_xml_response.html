@@ -309,7 +309,7 @@
 </span><span id="116" class="l"><a class="l" href="#116"> 116: </a><span class="php-keyword2">header</span>(<span class="php-quote">&quot;Cache-Control: no-store, no-cache, must-revalidate&quot;</span>);
 </span><span id="117" class="l"><a class="l" href="#117"> 117: </a><span class="php-keyword2">header</span>(<span class="php-quote">&quot;Cache-Control: post-check=0, pre-check=0&quot;</span>, <span class="php-keyword1">false</span>);
 </span><span id="118" class="l"><a class="l" href="#118"> 118: </a><span class="php-keyword2">header</span>(<span class="php-quote">&quot;Pragma: no-cache&quot;</span>);
-</span><span id="119" class="l"><a class="l" href="#119"> 119: </a><span class="php-keyword2">header</span>(<span class="php-quote">&quot;Content-Type: text/html;charset=utf-8&quot;</span>); 
+</span><span id="119" class="l"><a class="l" href="#119"> 119: </a><span class="php-keyword2">header</span>(<span class="php-quote">&quot;Content-Type: text/html;charset=utf-8&quot;</span>);
 </span><span id="120" class="l"><a class="l" href="#120"> 120: </a>
 </span><span id="121" class="l"><a class="l" href="#121"> 121: </a>@<span class="php-keyword2">ini_set</span>(<span class="php-quote">'auto_detect_line_endings'</span>, <span class="php-keyword1">true</span>);
 </span><span id="122" class="l"><a class="l" href="#122"> 122: </a>@<span class="php-keyword2">set_time_limit</span>(<span class="php-num">0</span>);
@@ -320,7 +320,7 @@
 </span><span id="127" class="l"><a class="l" href="#127"> 127: </a>
 </span><span id="128" class="l"><a class="l" href="#128"> 128: </a><span class="php-comment">// Clean and strip anything we don't want from user's input [0.27b]</span>
 </span><span id="129" class="l"><a class="l" href="#129"> 129: </a>
-</span><span id="130" class="l"><a class="l" href="#130"> 130: </a><span class="php-keyword1">foreach</span> (<span class="php-var">$_REQUEST</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$val</span>) 
+</span><span id="130" class="l"><a class="l" href="#130"> 130: </a><span class="php-keyword1">foreach</span> (<span class="php-var">$_REQUEST</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$val</span>)
 </span><span id="131" class="l"><a class="l" href="#131"> 131: </a>{
 </span><span id="132" class="l"><a class="l" href="#132"> 132: </a>  <span class="php-var">$val</span> = <span class="php-keyword2">preg_replace</span>(<span class="php-quote">&quot;/[^_A-Za-z0-9-\.&amp;= ;\</span><span class="php-var">$</span><span class="php-quote">]/i&quot;</span>,<span class="php-quote">''</span>, <span class="php-var">$val</span>);
 </span><span id="133" class="l"><a class="l" href="#133"> 133: </a>  <span class="php-var">$_REQUEST</span>[<span class="php-var">$key</span>] = <span class="php-var">$val</span>;
@@ -352,7 +352,7 @@
 </span><span id="159" class="l"><a class="l" href="#159"> 159: </a>}
 </span><span id="160" class="l"><a class="l" href="#160"> 160: </a>
 </span><span id="161" class="l"><a class="l" href="#161"> 161: </a>p.centr
-</span><span id="162" class="l"><a class="l" href="#162"> 162: </a>{ 
+</span><span id="162" class="l"><a class="l" href="#162"> 162: </a>{
 </span><span id="163" class="l"><a class="l" href="#163"> 163: </a>  text-align:center;
 </span><span id="164" class="l"><a class="l" href="#164"> 164: </a>}
 </span><span id="165" class="l"><a class="l" href="#165"> 165: </a>
@@ -463,10 +463,10 @@
 </span><span id="270" class="l"><a class="l" href="#270"> 270: </a>            &lt;td id=<span class="php-quote">&quot;middle_cell01&quot;</span>&gt;
 </span><span id="271" class="l"><a class="l" href="#271"> 271: </a>              &lt;ul <span class="php-keyword1">class</span>=<span class="php-quote">&quot;Navigation&quot;</span>&gt;
 </span><span id="272" class="l"><a class="l" href="#272"> 272: </a>                &lt;li&gt;
-</span><span id="273" class="l"><a class="l" href="#273"> 273: </a>                   &amp;nbsp; 
+</span><span id="273" class="l"><a class="l" href="#273"> 273: </a>                   &amp;nbsp;
 </span><span id="274" class="l"><a class="l" href="#274"> 274: </a>                &lt;/li&gt;
 </span><span id="275" class="l"><a class="l" href="#275"> 275: </a>                &lt;li&gt;
-</span><span id="276" class="l"><a class="l" href="#276"> 276: </a>                   &amp;nbsp; 
+</span><span id="276" class="l"><a class="l" href="#276"> 276: </a>                   &amp;nbsp;
 </span><span id="277" class="l"><a class="l" href="#277"> 277: </a>                &lt;/li&gt;
 </span><span id="278" class="l"><a class="l" href="#278"> 278: </a>                &lt;li&gt;
 </span><span id="279" class="l"><a class="l" href="#279"> 279: </a>                  &lt;a href=<span class="php-quote">&quot;../index.php&quot;</span>&gt;<span class="xlang">&lt;?php</span> <span class="php-keyword1">echo</span> _(<span class="php-quote">&quot;Repertorization&quot;</span>); <span class="xlang">?&gt;</span>&lt;/a&gt;
@@ -547,7 +547,7 @@
 </span><span id="354" class="l"><a class="l" href="#354"> 354: </a>  <span class="php-var">$upload_dir</span>=<span class="php-keyword2">dirname</span>(<span class="php-var">$_SERVER</span>[<span class="php-quote">&quot;ORIG_SCRIPT_FILENAME&quot;</span>]);
 </span><span id="355" class="l"><a class="l" href="#355"> 355: </a><span class="php-keyword1">elseif</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$_SERVER</span>[<span class="php-quote">&quot;PATH_TRANSLATED&quot;</span>]))
 </span><span id="356" class="l"><a class="l" href="#356"> 356: </a>  <span class="php-var">$upload_dir</span>=<span class="php-keyword2">dirname</span>(<span class="php-var">$_SERVER</span>[<span class="php-quote">&quot;PATH_TRANSLATED&quot;</span>]);
-</span><span id="357" class="l"><a class="l" href="#357"> 357: </a><span class="php-keyword1">else</span> 
+</span><span id="357" class="l"><a class="l" href="#357"> 357: </a><span class="php-keyword1">else</span>
 </span><span id="358" class="l"><a class="l" href="#358"> 358: </a>  <span class="php-var">$upload_dir</span>=<span class="php-keyword2">dirname</span>(<span class="php-var">$_SERVER</span>[<span class="php-quote">&quot;SCRIPT_FILENAME&quot;</span>]);
 </span><span id="359" class="l"><a class="l" href="#359"> 359: </a>
 </span><span id="360" class="l"><a class="l" href="#360"> 360: </a><span class="php-comment">// Handle file upload</span>
@@ -592,9 +592,9 @@
 </span><span id="399" class="l"><a class="l" href="#399"> 399: </a>
 </span><span id="400" class="l"><a class="l" href="#400"> 400: </a><span class="php-keyword1">if</span> (!<span class="php-var">$error</span> &amp;&amp; !TESTMODE)
 </span><span id="401" class="l"><a class="l" href="#401"> 401: </a>{ <span class="php-var">$dbconnection</span> = @<span class="php-keyword2">mysql_connect</span>(<span class="php-var">$db_server</span>,<span class="php-var">$db_username</span>,<span class="php-var">$db_password</span>);
-</span><span id="402" class="l"><a class="l" href="#402"> 402: </a>  <span class="php-keyword1">if</span> (<span class="php-var">$dbconnection</span>) 
+</span><span id="402" class="l"><a class="l" href="#402"> 402: </a>  <span class="php-keyword1">if</span> (<span class="php-var">$dbconnection</span>)
 </span><span id="403" class="l"><a class="l" href="#403"> 403: </a>    <span class="php-var">$db</span> = <span class="php-keyword2">mysql_select_db</span>(<span class="php-var">$db_name</span>);
-</span><span id="404" class="l"><a class="l" href="#404"> 404: </a>  <span class="php-keyword1">if</span> (!<span class="php-var">$dbconnection</span> || !<span class="php-var">$db</span>) 
+</span><span id="404" class="l"><a class="l" href="#404"> 404: </a>  <span class="php-keyword1">if</span> (!<span class="php-var">$dbconnection</span> || !<span class="php-var">$db</span>)
 </span><span id="405" class="l"><a class="l" href="#405"> 405: </a>  { <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;p class=\&quot;error\&quot;&gt;Database connection failed due to &quot;</span>.<span class="php-keyword2">mysql_error</span>().<span class="php-quote">&quot;&lt;/p&gt;\n&quot;</span>);
 </span><span id="406" class="l"><a class="l" href="#406"> 406: </a>    <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;p&gt;Edit the database settings in &quot;</span>.<span class="php-var">$_SERVER</span>[<span class="php-quote">&quot;SCRIPT_FILENAME&quot;</span>].<span class="php-quote">&quot; or contact your database provider.&lt;/p&gt;\n&quot;</span>);
 </span><span id="407" class="l"><a class="l" href="#407"> 407: </a>    <span class="php-var">$error</span>=<span class="php-keyword1">true</span>;
@@ -626,18 +626,18 @@
 </span><span id="433" class="l"><a class="l" href="#433"> 433: </a><span class="php-comment">// List uploaded files in multifile mode</span>
 </span><span id="434" class="l"><a class="l" href="#434"> 434: </a>
 </span><span id="435" class="l"><a class="l" href="#435"> 435: </a><span class="php-keyword1">if</span> (!<span class="php-var">$error</span> &amp;&amp; !<span class="php-keyword1">isset</span>(<span class="php-var">$_REQUEST</span>[<span class="php-quote">&quot;fn&quot;</span>]) &amp;&amp; <span class="php-var">$filename</span>==<span class="php-quote">&quot;&quot;</span>)
-</span><span id="436" class="l"><a class="l" href="#436"> 436: </a>{ <span class="php-keyword1">if</span> (<span class="php-var">$dirhandle</span> = <span class="php-keyword2">opendir</span>(<span class="php-var">$upload_dir</span>)) 
-</span><span id="437" class="l"><a class="l" href="#437"> 437: </a>  { 
+</span><span id="436" class="l"><a class="l" href="#436"> 436: </a>{ <span class="php-keyword1">if</span> (<span class="php-var">$dirhandle</span> = <span class="php-keyword2">opendir</span>(<span class="php-var">$upload_dir</span>))
+</span><span id="437" class="l"><a class="l" href="#437"> 437: </a>  {
 </span><span id="438" class="l"><a class="l" href="#438"> 438: </a>    <span class="php-var">$files</span>=<span class="php-keyword1">array</span>();
 </span><span id="439" class="l"><a class="l" href="#439"> 439: </a>    <span class="php-keyword1">while</span> (<span class="php-keyword1">false</span> !== (<span class="php-var">$files</span>[] = <span class="php-keyword2">readdir</span>(<span class="php-var">$dirhandle</span>)));
 </span><span id="440" class="l"><a class="l" href="#440"> 440: </a>    <span class="php-keyword2">closedir</span>(<span class="php-var">$dirhandle</span>);
 </span><span id="441" class="l"><a class="l" href="#441"> 441: </a>    <span class="php-var">$dirhead</span>=<span class="php-keyword1">false</span>;
 </span><span id="442" class="l"><a class="l" href="#442"> 442: </a>
 </span><span id="443" class="l"><a class="l" href="#443"> 443: </a>    <span class="php-keyword1">if</span> (<span class="php-keyword2">sizeof</span>(<span class="php-var">$files</span>)&gt;<span class="php-num">0</span>)
-</span><span id="444" class="l"><a class="l" href="#444"> 444: </a>    { 
+</span><span id="444" class="l"><a class="l" href="#444"> 444: </a>    {
 </span><span id="445" class="l"><a class="l" href="#445"> 445: </a>      <span class="php-keyword2">sort</span>(<span class="php-var">$files</span>);
 </span><span id="446" class="l"><a class="l" href="#446"> 446: </a>      <span class="php-keyword1">foreach</span> (<span class="php-var">$files</span> <span class="php-keyword1">as</span> <span class="php-var">$dirfile</span>)
-</span><span id="447" class="l"><a class="l" href="#447"> 447: </a>      { 
+</span><span id="447" class="l"><a class="l" href="#447"> 447: </a>      {
 </span><span id="448" class="l"><a class="l" href="#448"> 448: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$dirfile</span> != <span class="php-quote">&quot;.&quot;</span> &amp;&amp; <span class="php-var">$dirfile</span> != <span class="php-quote">&quot;..&quot;</span> &amp;&amp; <span class="php-var">$dirfile</span>!=<span class="php-keyword2">basename</span>(<span class="php-var">$_SERVER</span>[<span class="php-quote">&quot;SCRIPT_FILENAME&quot;</span>]) &amp;&amp; <span class="php-keyword2">preg_match</span>(<span class="php-quote">&quot;/\.(sql|gz|csv)</span><span class="php-var">$</span><span class="php-quote">/i&quot;</span>,<span class="php-var">$dirfile</span>))
 </span><span id="449" class="l"><a class="l" href="#449"> 449: </a>        { <span class="php-keyword1">if</span> (!<span class="php-var">$dirhead</span>)
 </span><span id="450" class="l"><a class="l" href="#450"> 450: </a>          { <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;table width=\&quot;100%\&quot; cellspacing=\&quot;2\&quot; cellpadding=\&quot;2\&quot;&gt;\n&quot;</span>);
@@ -663,9 +663,9 @@
 </span><span id="470" class="l"><a class="l" href="#470"> 470: </a>      }
 </span><span id="471" class="l"><a class="l" href="#471"> 471: </a>    }
 </span><span id="472" class="l"><a class="l" href="#472"> 472: </a>
-</span><span id="473" class="l"><a class="l" href="#473"> 473: </a>    <span class="php-keyword1">if</span> (<span class="php-var">$dirhead</span>) 
+</span><span id="473" class="l"><a class="l" href="#473"> 473: </a>    <span class="php-keyword1">if</span> (<span class="php-var">$dirhead</span>)
 </span><span id="474" class="l"><a class="l" href="#474"> 474: </a>      <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;/table&gt;\n&quot;</span>);
-</span><span id="475" class="l"><a class="l" href="#475"> 475: </a>    <span class="php-keyword1">else</span> 
+</span><span id="475" class="l"><a class="l" href="#475"> 475: </a>    <span class="php-keyword1">else</span>
 </span><span id="476" class="l"><a class="l" href="#476"> 476: </a>      <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;p&gt;No uploaded SQL, GZ or CSV files found in the working directory&lt;/p&gt;\n&quot;</span>);
 </span><span id="477" class="l"><a class="l" href="#477"> 477: </a>  }
 </span><span id="478" class="l"><a class="l" href="#478"> 478: </a>  <span class="php-keyword1">else</span>
@@ -699,7 +699,7 @@
 </span><span id="506" class="l"><a class="l" href="#506"> 506: </a><span class="php-comment">// File Upload Form</span>
 </span><span id="507" class="l"><a class="l" href="#507"> 507: </a>
 </span><span id="508" class="l"><a class="l" href="#508"> 508: </a><span class="php-keyword1">if</span> (!<span class="php-var">$error</span> &amp;&amp; !<span class="php-keyword1">isset</span>(<span class="php-var">$_REQUEST</span>[<span class="php-quote">&quot;fn&quot;</span>]) &amp;&amp; <span class="php-var">$filename</span>==<span class="php-quote">&quot;&quot;</span>)
-</span><span id="509" class="l"><a class="l" href="#509"> 509: </a>{ 
+</span><span id="509" class="l"><a class="l" href="#509"> 509: </a>{
 </span><span id="510" class="l"><a class="l" href="#510"> 510: </a>
 </span><span id="511" class="l"><a class="l" href="#511"> 511: </a><span class="php-comment">// Test permissions on working directory</span>
 </span><span id="512" class="l"><a class="l" href="#512"> 512: </a>
@@ -711,7 +711,7 @@
 </span><span id="518" class="l"><a class="l" href="#518"> 518: </a>  <span class="php-keyword1">else</span>
 </span><span id="519" class="l"><a class="l" href="#519"> 519: </a>  { <span class="php-keyword2">fclose</span>(<span class="php-var">$tempfile</span>);
 </span><span id="520" class="l"><a class="l" href="#520"> 520: </a>    <span class="php-keyword2">unlink</span> (<span class="php-var">$tempfilename</span>);
-</span><span id="521" class="l"><a class="l" href="#521"> 521: </a> 
+</span><span id="521" class="l"><a class="l" href="#521"> 521: </a>
 </span><span id="522" class="l"><a class="l" href="#522"> 522: </a>    <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;p&gt;You can now upload your dump file up to </span><span class="php-var">$upload_max_filesize</span><span class="php-quote"> bytes (&quot;</span>.<span class="php-keyword2">round</span> (<span class="php-var">$upload_max_filesize</span>/<span class="php-num">1024</span>/<span class="php-num">1024</span>).<span class="php-quote">&quot; Mbytes)  &quot;</span>);
 </span><span id="523" class="l"><a class="l" href="#523"> 523: </a>    <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;directly from your browser to the server. Alternatively you can upload your dump files of any size via FTP.&lt;/p&gt;\n&quot;</span>);
 </span><span id="524" class="l"><a class="l" href="#524"> 524: </a><span class="xlang">?&gt;</span>
@@ -727,10 +727,10 @@
 </span></span><span id="534" class="l"><a class="l" href="#534"> 534: </a><span class="php-quote">// Print the current mySQL connection charset
 </span></span><span id="535" class="l"><a class="l" href="#535"> 535: </a><span class="php-quote">
 </span></span><span id="536" class="l"><a class="l" href="#536"> 536: </a><span class="php-quote">// if (!</span><span class="php-var">$error</span><span class="php-quote"> &amp;&amp; !TESTMODE &amp;&amp; !isset(</span><span class="php-var">$_REQUEST</span><span class="php-quote">[&quot;</span>fn<span class="php-quote">&quot;]))
-</span></span><span id="537" class="l"><a class="l" href="#537"> 537: </a><span class="php-quote">// { 
+</span></span><span id="537" class="l"><a class="l" href="#537"> 537: </a><span class="php-quote">// {
 </span></span><span id="538" class="l"><a class="l" href="#538"> 538: </a><span class="php-quote">//   </span><span class="php-var">$result</span><span class="php-quote"> = mysql_query(&quot;</span>SHOW VARIABLES LIKE <span class="php-quote">'character_set_connection'</span>;<span class="php-quote">&quot;);
 </span></span><span id="539" class="l"><a class="l" href="#539"> 539: </a><span class="php-quote">//   </span><span class="php-var">$row</span><span class="php-quote"> = mysql_fetch_assoc(</span><span class="php-var">$result</span><span class="php-quote">);
-</span></span><span id="540" class="l"><a class="l" href="#540"> 540: </a><span class="php-quote">//   if (</span><span class="php-var">$row</span><span class="php-quote">) 
+</span></span><span id="540" class="l"><a class="l" href="#540"> 540: </a><span class="php-quote">//   if (</span><span class="php-var">$row</span><span class="php-quote">)
 </span></span><span id="541" class="l"><a class="l" href="#541"> 541: </a><span class="php-quote">//   { </span><span class="php-var">$charset</span><span class="php-quote"> = </span><span class="php-var">$row</span><span class="php-quote">['Value'];
 </span></span><span id="542" class="l"><a class="l" href="#542"> 542: </a><span class="php-quote">//     echo (&quot;</span>&lt;p&gt;Note: The <span class="php-keyword2">current</span> <span class="php-keyword2">mySQL</span> connection charset is &lt;i&gt;<span class="php-var">$charset</span>&lt;/i&gt;. Your dump <span class="php-keyword2">file</span> must be encoded in &lt;i&gt;<span class="php-var">$charset</span>&lt;/i&gt; in order to avoid problems with non-latin characters. You can change the connection charset using the \<span class="php-var">$db_connection_charset</span> variable in install_db.php&lt;/p&gt;\n<span class="php-quote">&quot;);
 </span></span><span id="543" class="l"><a class="l" href="#543"> 543: </a><span class="php-quote">//   }
@@ -739,7 +739,7 @@
 </span></span><span id="546" class="l"><a class="l" href="#546"> 546: </a><span class="php-quote">// Open the file
 </span></span><span id="547" class="l"><a class="l" href="#547"> 547: </a><span class="php-quote">
 </span></span><span id="548" class="l"><a class="l" href="#548"> 548: </a><span class="php-quote">if (!</span><span class="php-var">$error</span><span class="php-quote"> &amp;&amp; isset(</span><span class="php-var">$_REQUEST</span><span class="php-quote">[&quot;</span>start<span class="php-quote">&quot;]))
-</span></span><span id="549" class="l"><a class="l" href="#549"> 549: </a><span class="php-quote">{ 
+</span></span><span id="549" class="l"><a class="l" href="#549"> 549: </a><span class="php-quote">{
 </span></span><span id="550" class="l"><a class="l" href="#550"> 550: </a><span class="php-quote">
 </span></span><span id="551" class="l"><a class="l" href="#551"> 551: </a><span class="php-quote">// Set current filename (</span><span class="php-var">$filename</span><span class="php-quote"> overrides </span><span class="php-var">$_REQUEST</span><span class="php-quote">[&quot;</span>fn<span class="php-quote">&quot;] if set)
 </span></span><span id="552" class="l"><a class="l" href="#552"> 552: </a><span class="php-quote">
@@ -752,7 +752,7 @@
 </span></span><span id="559" class="l"><a class="l" href="#559"> 559: </a><span class="php-quote">
 </span></span><span id="560" class="l"><a class="l" href="#560"> 560: </a><span class="php-quote">// Recognize GZip filename
 </span></span><span id="561" class="l"><a class="l" href="#561"> 561: </a><span class="php-quote">
-</span></span><span id="562" class="l"><a class="l" href="#562"> 562: </a><span class="php-quote">  if (preg_match(&quot;</span>/\.gz<span class="php-var">$</span>/i<span class="php-quote">&quot;,</span><span class="php-var">$curfilename</span><span class="php-quote">)) 
+</span></span><span id="562" class="l"><a class="l" href="#562"> 562: </a><span class="php-quote">  if (preg_match(&quot;</span>/\.gz<span class="php-var">$</span>/i<span class="php-quote">&quot;,</span><span class="php-var">$curfilename</span><span class="php-quote">))
 </span></span><span id="563" class="l"><a class="l" href="#563"> 563: </a><span class="php-quote">    </span><span class="php-var">$gzipmode</span><span class="php-quote">=true;
 </span></span><span id="564" class="l"><a class="l" href="#564"> 564: </a><span class="php-quote">  else
 </span></span><span id="565" class="l"><a class="l" href="#565"> 565: </a><span class="php-quote">    </span><span class="php-var">$gzipmode</span><span class="php-quote">=false;
@@ -811,7 +811,7 @@
 </span><span id="618" class="l"><a class="l" href="#618"> 618: </a><span class="php-comment">// Empty CSV table if requested</span>
 </span><span id="619" class="l"><a class="l" href="#619"> 619: </a>
 </span><span id="620" class="l"><a class="l" href="#620"> 620: </a>  <span class="php-keyword1">if</span> (!<span class="php-var">$error</span> &amp;&amp; <span class="php-var">$_REQUEST</span>[<span class="php-quote">&quot;start&quot;</span>]==<span class="php-num">1</span> &amp;&amp; <span class="php-var">$csv_insert_table</span> != <span class="php-quote">&quot;&quot;</span> &amp;&amp; <span class="php-var">$csv_preempty_table</span>)
-</span><span id="621" class="l"><a class="l" href="#621"> 621: </a>  { 
+</span><span id="621" class="l"><a class="l" href="#621"> 621: </a>  {
 </span><span id="622" class="l"><a class="l" href="#622"> 622: </a>    <span class="php-var">$query</span> = <span class="php-quote">&quot;DELETE FROM </span><span class="php-var">$csv_insert_table</span><span class="php-quote">&quot;</span>;
 </span><span id="623" class="l"><a class="l" href="#623"> 623: </a>    <span class="php-keyword1">if</span> (!TESTMODE &amp;&amp; !<span class="php-keyword2">mysql_query</span>(<span class="php-keyword2">trim</span>(<span class="php-var">$query</span>), <span class="php-var">$dbconnection</span>))
 </span><span id="624" class="l"><a class="l" href="#624"> 624: </a>    { <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;p class=\&quot;error\&quot;&gt;Error when deleting entries from </span><span class="php-var">$csv_insert_table</span><span class="php-quote">.&lt;/p&gt;\n&quot;</span>);
@@ -820,15 +820,15 @@
 </span><span id="627" class="l"><a class="l" href="#627"> 627: </a>      <span class="php-var">$error</span>=<span class="php-keyword1">true</span>;
 </span><span id="628" class="l"><a class="l" href="#628"> 628: </a>    }
 </span><span id="629" class="l"><a class="l" href="#629"> 629: </a>  }
-</span><span id="630" class="l"><a class="l" href="#630"> 630: </a>  
+</span><span id="630" class="l"><a class="l" href="#630"> 630: </a>
 </span><span id="631" class="l"><a class="l" href="#631"> 631: </a><span class="php-comment">// Print start message</span>
 </span><span id="632" class="l"><a class="l" href="#632"> 632: </a>
 </span><span id="633" class="l"><a class="l" href="#633"> 633: </a>  <span class="php-keyword1">if</span> (!<span class="php-var">$error</span>)
 </span><span id="634" class="l"><a class="l" href="#634"> 634: </a>  { skin_open();
-</span><span id="635" class="l"><a class="l" href="#635"> 635: </a>    <span class="php-keyword1">if</span> (TESTMODE) 
+</span><span id="635" class="l"><a class="l" href="#635"> 635: </a>    <span class="php-keyword1">if</span> (TESTMODE)
 </span><span id="636" class="l"><a class="l" href="#636"> 636: </a>      <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;p class=\&quot;centr\&quot;&gt;TEST MODE ENABLED&lt;/p&gt;\n&quot;</span>);
 </span><span id="637" class="l"><a class="l" href="#637"> 637: </a>    <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;p class=\&quot;centr\&quot;&gt;Processing file: &lt;b&gt;&quot;</span>.<span class="php-var">$curfilename</span>.<span class="php-quote">&quot;&lt;/b&gt;&lt;/p&gt;\n&quot;</span>);
-</span><span id="638" class="l"><a class="l" href="#638"> 638: </a>    <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;p class=\&quot;smlcentr\&quot;&gt;Starting from line: &quot;</span>.<span class="php-var">$_REQUEST</span>[<span class="php-quote">&quot;start&quot;</span>].<span class="php-quote">&quot;&lt;/p&gt;\n&quot;</span>);    
+</span><span id="638" class="l"><a class="l" href="#638"> 638: </a>    <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;p class=\&quot;smlcentr\&quot;&gt;Starting from line: &quot;</span>.<span class="php-var">$_REQUEST</span>[<span class="php-quote">&quot;start&quot;</span>].<span class="php-quote">&quot;&lt;/p&gt;\n&quot;</span>);
 </span><span id="639" class="l"><a class="l" href="#639"> 639: </a>    skin_close();
 </span><span id="640" class="l"><a class="l" href="#640"> 640: </a>  }
 </span><span id="641" class="l"><a class="l" href="#641"> 641: </a>
@@ -895,7 +895,7 @@
 </span><span id="702" class="l"><a class="l" href="#702"> 702: </a>
 </span><span id="703" class="l"><a class="l" href="#703"> 703: </a>      <span class="php-var">$dumpline</span>=<span class="php-keyword2">str_replace</span>(<span class="php-quote">&quot;\r\n&quot;</span>, <span class="php-quote">&quot;\n&quot;</span>, <span class="php-var">$dumpline</span>);
 </span><span id="704" class="l"><a class="l" href="#704"> 704: </a>      <span class="php-var">$dumpline</span>=<span class="php-keyword2">str_replace</span>(<span class="php-quote">&quot;\r&quot;</span>, <span class="php-quote">&quot;\n&quot;</span>, <span class="php-var">$dumpline</span>);
-</span><span id="705" class="l"><a class="l" href="#705"> 705: </a>            
+</span><span id="705" class="l"><a class="l" href="#705"> 705: </a>
 </span><span id="706" class="l"><a class="l" href="#706"> 706: </a><span class="php-comment">// DIAGNOSTIC</span>
 </span><span id="707" class="l"><a class="l" href="#707"> 707: </a><span class="php-comment">// echo (&quot;&lt;p&gt;Line $linenumber: $dumpline&lt;/p&gt;\n&quot;);</span>
 </span><span id="708" class="l"><a class="l" href="#708"> 708: </a>
@@ -910,7 +910,7 @@
 </span><span id="717" class="l"><a class="l" href="#717"> 717: </a>      { <span class="php-var">$skipline</span>=<span class="php-keyword1">false</span>;
 </span><span id="718" class="l"><a class="l" href="#718"> 718: </a>        <span class="php-keyword2">reset</span>(<span class="php-var">$comment</span>);
 </span><span id="719" class="l"><a class="l" href="#719"> 719: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$comment</span> <span class="php-keyword1">as</span> <span class="php-var">$comment_value</span>)
-</span><span id="720" class="l"><a class="l" href="#720"> 720: </a>        { 
+</span><span id="720" class="l"><a class="l" href="#720"> 720: </a>        {
 </span><span id="721" class="l"><a class="l" href="#721"> 721: </a>
 </span><span id="722" class="l"><a class="l" href="#722"> 722: </a><span class="php-comment">// DIAGNOSTIC</span>
 </span><span id="723" class="l"><a class="l" href="#723"> 723: </a><span class="php-comment">//          echo ($comment_value);</span>
@@ -930,7 +930,7 @@
 </span><span id="737" class="l"><a class="l" href="#737"> 737: </a>      }
 </span><span id="738" class="l"><a class="l" href="#738"> 738: </a>
 </span><span id="739" class="l"><a class="l" href="#739"> 739: </a><span class="php-comment">// Remove double back-slashes from the dumpline prior to count the quotes ('\\' can only be within strings)</span>
-</span><span id="740" class="l"><a class="l" href="#740"> 740: </a>      
+</span><span id="740" class="l"><a class="l" href="#740"> 740: </a>
 </span><span id="741" class="l"><a class="l" href="#741"> 741: </a>      <span class="php-var">$dumpline_deslashed</span> = <span class="php-keyword2">str_replace</span> (<span class="php-quote">&quot;\\\\&quot;</span>,<span class="php-quote">&quot;&quot;</span>,<span class="php-var">$dumpline</span>);
 </span><span id="742" class="l"><a class="l" href="#742"> 742: </a>
 </span><span id="743" class="l"><a class="l" href="#743"> 743: </a><span class="php-comment">// Count ' and \' (or &quot; and \&quot;) in the dumpline to avoid query break within a text field ending by $delimiter</span>
@@ -944,10 +944,10 @@
 </span><span id="751" class="l"><a class="l" href="#751"> 751: </a>      <span class="php-var">$query</span> .= <span class="php-var">$dumpline</span>;
 </span><span id="752" class="l"><a class="l" href="#752"> 752: </a>
 </span><span id="753" class="l"><a class="l" href="#753"> 753: </a><span class="php-comment">// Don't count the line if in parents (text fields may include unlimited linebreaks)</span>
-</span><span id="754" class="l"><a class="l" href="#754"> 754: </a>      
+</span><span id="754" class="l"><a class="l" href="#754"> 754: </a>
 </span><span id="755" class="l"><a class="l" href="#755"> 755: </a>      <span class="php-keyword1">if</span> (!<span class="php-var">$inparents</span>)
 </span><span id="756" class="l"><a class="l" href="#756"> 756: </a>        <span class="php-var">$querylines</span>++;
-</span><span id="757" class="l"><a class="l" href="#757"> 757: </a>      
+</span><span id="757" class="l"><a class="l" href="#757"> 757: </a>
 </span><span id="758" class="l"><a class="l" href="#758"> 758: </a><span class="php-comment">// Stop if query contains more lines as defined by MAX_QUERY_LINES</span>
 </span><span id="759" class="l"><a class="l" href="#759"> 759: </a>
 </span><span id="760" class="l"><a class="l" href="#760"> 760: </a>      <span class="php-keyword1">if</span> (<span class="php-var">$querylines</span>&gt;MAX_QUERY_LINES)
@@ -970,7 +970,7 @@
 </span><span id="777" class="l"><a class="l" href="#777"> 777: </a><span class="php-comment">// echo (&quot;&lt;p&gt;Line: $dumpline&lt;/p&gt;\n&quot;);</span>
 </span><span id="778" class="l"><a class="l" href="#778"> 778: </a>
 </span><span id="779" class="l"><a class="l" href="#779"> 779: </a>      <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/'</span>.<span class="php-keyword2">preg_quote</span>(<span class="php-var">$delimiter</span>).<span class="php-quote">'$/'</span>,<span class="php-keyword2">trim</span>(<span class="php-var">$dumpline</span>)) &amp;&amp; !<span class="php-var">$inparents</span>)
-</span><span id="780" class="l"><a class="l" href="#780"> 780: </a>      { 
+</span><span id="780" class="l"><a class="l" href="#780"> 780: </a>      {
 </span><span id="781" class="l"><a class="l" href="#781"> 781: </a>
 </span><span id="782" class="l"><a class="l" href="#782"> 782: </a><span class="php-comment">// Cut off delimiter of the end of the query</span>
 </span><span id="783" class="l"><a class="l" href="#783"> 783: </a>
@@ -998,7 +998,7 @@
 </span><span id="805" class="l"><a class="l" href="#805"> 805: </a><span class="php-comment">// Get the current file position</span>
 </span><span id="806" class="l"><a class="l" href="#806"> 806: </a>
 </span><span id="807" class="l"><a class="l" href="#807"> 807: </a>  <span class="php-keyword1">if</span> (!<span class="php-var">$error</span>)
-</span><span id="808" class="l"><a class="l" href="#808"> 808: </a>  { <span class="php-keyword1">if</span> (!<span class="php-var">$gzipmode</span>) 
+</span><span id="808" class="l"><a class="l" href="#808"> 808: </a>  { <span class="php-keyword1">if</span> (!<span class="php-var">$gzipmode</span>)
 </span><span id="809" class="l"><a class="l" href="#809"> 809: </a>      <span class="php-var">$foffset</span> = <span class="php-keyword2">ftell</span>(<span class="php-var">$file</span>);
 </span><span id="810" class="l"><a class="l" href="#810"> 810: </a>    <span class="php-keyword1">else</span>
 </span><span id="811" class="l"><a class="l" href="#811"> 811: </a>      <span class="php-var">$foffset</span> = <span class="php-keyword2">gztell</span>(<span class="php-var">$file</span>);
@@ -1015,12 +1015,12 @@
 </span><span id="822" class="l"><a class="l" href="#822"> 822: </a><span class="php-comment">// echo (&quot;&lt;p class=\&quot;centr\&quot;&gt;&lt;b&gt;Statistics&lt;/b&gt;&lt;/p&gt;\n&quot;);</span>
 </span><span id="823" class="l"><a class="l" href="#823"> 823: </a>
 </span><span id="824" class="l"><a class="l" href="#824"> 824: </a>  <span class="php-keyword1">if</span> (!<span class="php-var">$error</span>)
-</span><span id="825" class="l"><a class="l" href="#825"> 825: </a>  { 
+</span><span id="825" class="l"><a class="l" href="#825"> 825: </a>  {
 </span><span id="826" class="l"><a class="l" href="#826"> 826: </a>    <span class="php-var">$lines_this</span>   = <span class="php-var">$linenumber</span>-<span class="php-var">$_REQUEST</span>[<span class="php-quote">&quot;start&quot;</span>];
 </span><span id="827" class="l"><a class="l" href="#827"> 827: </a>    <span class="php-var">$lines_done</span>   = <span class="php-var">$linenumber</span>-<span class="php-num">1</span>;
 </span><span id="828" class="l"><a class="l" href="#828"> 828: </a>    <span class="php-var">$lines_togo</span>   = <span class="php-quote">' ? '</span>;
 </span><span id="829" class="l"><a class="l" href="#829"> 829: </a>    <span class="php-var">$lines_tota</span>   = <span class="php-quote">' ? '</span>;
-</span><span id="830" class="l"><a class="l" href="#830"> 830: </a>    
+</span><span id="830" class="l"><a class="l" href="#830"> 830: </a>
 </span><span id="831" class="l"><a class="l" href="#831"> 831: </a>    <span class="php-var">$queries_this</span> = <span class="php-var">$queries</span>;
 </span><span id="832" class="l"><a class="l" href="#832"> 832: </a>    <span class="php-var">$queries_done</span> = <span class="php-var">$totalqueries</span>;
 </span><span id="833" class="l"><a class="l" href="#833"> 833: </a>    <span class="php-var">$queries_togo</span> = <span class="php-quote">' ? '</span>;
@@ -1032,7 +1032,7 @@
 </span><span id="839" class="l"><a class="l" href="#839"> 839: </a>    <span class="php-var">$kbytes_done</span>  = <span class="php-keyword2">round</span>(<span class="php-var">$bytes_done</span>/<span class="php-num">1024</span>,<span class="php-num">2</span>);
 </span><span id="840" class="l"><a class="l" href="#840"> 840: </a>    <span class="php-var">$mbytes_this</span>  = <span class="php-keyword2">round</span>(<span class="php-var">$kbytes_this</span>/<span class="php-num">1024</span>,<span class="php-num">2</span>);
 </span><span id="841" class="l"><a class="l" href="#841"> 841: </a>    <span class="php-var">$mbytes_done</span>  = <span class="php-keyword2">round</span>(<span class="php-var">$kbytes_done</span>/<span class="php-num">1024</span>,<span class="php-num">2</span>);
-</span><span id="842" class="l"><a class="l" href="#842"> 842: </a>   
+</span><span id="842" class="l"><a class="l" href="#842"> 842: </a>
 </span><span id="843" class="l"><a class="l" href="#843"> 843: </a>    <span class="php-keyword1">if</span> (!<span class="php-var">$gzipmode</span>)
 </span><span id="844" class="l"><a class="l" href="#844"> 844: </a>    {
 </span><span id="845" class="l"><a class="l" href="#845"> 845: </a>      <span class="php-var">$bytes_togo</span>  = <span class="php-var">$filesize</span>-<span class="php-var">$foffset</span>;
@@ -1041,20 +1041,20 @@
 </span><span id="848" class="l"><a class="l" href="#848"> 848: </a>      <span class="php-var">$kbytes_tota</span> = <span class="php-keyword2">round</span>(<span class="php-var">$bytes_tota</span>/<span class="php-num">1024</span>,<span class="php-num">2</span>);
 </span><span id="849" class="l"><a class="l" href="#849"> 849: </a>      <span class="php-var">$mbytes_togo</span> = <span class="php-keyword2">round</span>(<span class="php-var">$kbytes_togo</span>/<span class="php-num">1024</span>,<span class="php-num">2</span>);
 </span><span id="850" class="l"><a class="l" href="#850"> 850: </a>      <span class="php-var">$mbytes_tota</span> = <span class="php-keyword2">round</span>(<span class="php-var">$kbytes_tota</span>/<span class="php-num">1024</span>,<span class="php-num">2</span>);
-</span><span id="851" class="l"><a class="l" href="#851"> 851: </a>      
+</span><span id="851" class="l"><a class="l" href="#851"> 851: </a>
 </span><span id="852" class="l"><a class="l" href="#852"> 852: </a>      <span class="php-var">$pct_this</span>   = <span class="php-keyword2">ceil</span>(<span class="php-var">$bytes_this</span>/<span class="php-var">$filesize</span>*<span class="php-num">100</span>);
 </span><span id="853" class="l"><a class="l" href="#853"> 853: </a>      <span class="php-var">$pct_done</span>   = <span class="php-keyword2">ceil</span>(<span class="php-var">$foffset</span>/<span class="php-var">$filesize</span>*<span class="php-num">100</span>);
 </span><span id="854" class="l"><a class="l" href="#854"> 854: </a>      <span class="php-var">$pct_togo</span>   = <span class="php-num">100</span> - <span class="php-var">$pct_done</span>;
 </span><span id="855" class="l"><a class="l" href="#855"> 855: </a>      <span class="php-var">$pct_tota</span>   = <span class="php-num">100</span>;
 </span><span id="856" class="l"><a class="l" href="#856"> 856: </a>
-</span><span id="857" class="l"><a class="l" href="#857"> 857: </a>      <span class="php-keyword1">if</span> (<span class="php-var">$bytes_togo</span>==<span class="php-num">0</span>) 
-</span><span id="858" class="l"><a class="l" href="#858"> 858: </a>      { <span class="php-var">$lines_togo</span>   = <span class="php-quote">'0'</span>; 
-</span><span id="859" class="l"><a class="l" href="#859"> 859: </a>        <span class="php-var">$lines_tota</span>   = <span class="php-var">$linenumber</span>-<span class="php-num">1</span>; 
-</span><span id="860" class="l"><a class="l" href="#860"> 860: </a>        <span class="php-var">$queries_togo</span> = <span class="php-quote">'0'</span>; 
-</span><span id="861" class="l"><a class="l" href="#861"> 861: </a>        <span class="php-var">$queries_tota</span> = <span class="php-var">$totalqueries</span>; 
+</span><span id="857" class="l"><a class="l" href="#857"> 857: </a>      <span class="php-keyword1">if</span> (<span class="php-var">$bytes_togo</span>==<span class="php-num">0</span>)
+</span><span id="858" class="l"><a class="l" href="#858"> 858: </a>      { <span class="php-var">$lines_togo</span>   = <span class="php-quote">'0'</span>;
+</span><span id="859" class="l"><a class="l" href="#859"> 859: </a>        <span class="php-var">$lines_tota</span>   = <span class="php-var">$linenumber</span>-<span class="php-num">1</span>;
+</span><span id="860" class="l"><a class="l" href="#860"> 860: </a>        <span class="php-var">$queries_togo</span> = <span class="php-quote">'0'</span>;
+</span><span id="861" class="l"><a class="l" href="#861"> 861: </a>        <span class="php-var">$queries_tota</span> = <span class="php-var">$totalqueries</span>;
 </span><span id="862" class="l"><a class="l" href="#862"> 862: </a>      }
 </span><span id="863" class="l"><a class="l" href="#863"> 863: </a>
-</span><span id="864" class="l"><a class="l" href="#864"> 864: </a>      <span class="php-var">$pct_bar</span>    = <span class="php-quote">&quot;&lt;div style=\&quot;height:15px;width:</span><span class="php-var">$pct_done</span><span class="php-quote">%;background-color:#000080;margin:0px;\&quot;&gt;&lt;/div&gt;&quot;</span>;
+</span><span id="864" class="l"><a class="l" href="#864"> 864: </a>      <span class="php-var">$pct_bar</span>    = <span class="php-quote">&quot;&lt;div style=\&quot;height:15px;width:</span><span class="php-var">$pct_done</span><span class="php-quote">%;background-color:#000080;margin:0;\&quot;&gt;&lt;/div&gt;&quot;</span>;
 </span><span id="865" class="l"><a class="l" href="#865"> 865: </a>    }
 </span><span id="866" class="l"><a class="l" href="#866"> 866: </a>    <span class="php-keyword1">else</span>
 </span><span id="867" class="l"><a class="l" href="#867"> 867: </a>    {
@@ -1064,14 +1064,14 @@
 </span><span id="871" class="l"><a class="l" href="#871"> 871: </a>      <span class="php-var">$kbytes_tota</span> = <span class="php-quote">' ? '</span>;
 </span><span id="872" class="l"><a class="l" href="#872"> 872: </a>      <span class="php-var">$mbytes_togo</span> = <span class="php-quote">' ? '</span>;
 </span><span id="873" class="l"><a class="l" href="#873"> 873: </a>      <span class="php-var">$mbytes_tota</span> = <span class="php-quote">' ? '</span>;
-</span><span id="874" class="l"><a class="l" href="#874"> 874: </a>      
+</span><span id="874" class="l"><a class="l" href="#874"> 874: </a>
 </span><span id="875" class="l"><a class="l" href="#875"> 875: </a>      <span class="php-var">$pct_this</span>    = <span class="php-quote">' ? '</span>;
 </span><span id="876" class="l"><a class="l" href="#876"> 876: </a>      <span class="php-var">$pct_done</span>    = <span class="php-quote">' ? '</span>;
 </span><span id="877" class="l"><a class="l" href="#877"> 877: </a>      <span class="php-var">$pct_togo</span>    = <span class="php-quote">' ? '</span>;
 </span><span id="878" class="l"><a class="l" href="#878"> 878: </a>      <span class="php-var">$pct_tota</span>    = <span class="php-num">100</span>;
 </span><span id="879" class="l"><a class="l" href="#879"> 879: </a>      <span class="php-var">$pct_bar</span>     = <span class="php-keyword2">str_replace</span>(<span class="php-quote">' '</span>,<span class="php-quote">'&amp;nbsp;'</span>,<span class="php-quote">'&lt;tt&gt;[         Not available for gzipped files          ]&lt;/tt&gt;'</span>);
 </span><span id="880" class="l"><a class="l" href="#880"> 880: </a>    }
-</span><span id="881" class="l"><a class="l" href="#881"> 881: </a>    
+</span><span id="881" class="l"><a class="l" href="#881"> 881: </a>
 </span><span id="882" class="l"><a class="l" href="#882"> 882: </a>    <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;
 </span></span><span id="883" class="l"><a class="l" href="#883"> 883: </a><span class="php-quote">    &lt;center&gt;
 </span></span><span id="884" class="l"><a class="l" href="#884"> 884: </a><span class="php-quote">    &lt;table width=\&quot;520\&quot; border=\&quot;0\&quot; cellpadding=\&quot;3\&quot; cellspacing=\&quot;1\&quot;&gt;
@@ -1095,7 +1095,7 @@
 </span><span id="902" class="l"><a class="l" href="#902"> 902: </a>    <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;br&gt; &quot;</span> . _(<span class="php-quote">&quot;First the file need some discspace and second when you run 'install_db.php' all new data will be deleted.&quot;</span>) . <span class="php-quote">&quot;\n&quot;</span>);
 </span><span id="903" class="l"><a class="l" href="#903"> 903: </a><span class="xlang">?&gt;</span>
 </span><span id="904" class="l"><a class="l" href="#904"> 904: </a>
-</span><span id="905" class="l"><a class="l" href="#905"> 905: </a><span class="xlang">&lt;?php</span>      
+</span><span id="905" class="l"><a class="l" href="#905"> 905: </a><span class="xlang">&lt;?php</span>
 </span><span id="906" class="l"><a class="l" href="#906"> 906: </a>
 </span><span id="907" class="l"><a class="l" href="#907"> 907: </a>      <span class="php-var">$error</span>=<span class="php-keyword1">true</span>; <span class="php-comment">// This is a semi-error telling the script is finished</span>
 </span><span id="908" class="l"><a class="l" href="#908"> 908: </a>    }
@@ -1103,17 +1103,17 @@
 </span><span id="910" class="l"><a class="l" href="#910"> 910: </a>    { <span class="php-keyword1">if</span> (<span class="php-var">$delaypersession</span>!=<span class="php-num">0</span>) {
 </span><span id="911" class="l"><a class="l" href="#911"> 911: </a>    <span class="php-keyword2">printf</span> (<span class="php-quote">&quot;&lt;p class='centr'&gt;&quot;</span> . _(<span class="php-quote">&quot;Now I'm &lt;b&gt;waiting %d milliseconds&lt;/b&gt; before starting next session...&quot;</span>) . <span class="php-quote">&quot;&lt;/p&gt;\n&quot;</span>, <span class="php-var">$delaypersession</span>);
 </span><span id="912" class="l"><a class="l" href="#912"> 912: </a>    }
-</span><span id="913" class="l"><a class="l" href="#913"> 913: </a>      <span class="php-keyword1">if</span> (!<span class="php-var">$ajax</span>) 
+</span><span id="913" class="l"><a class="l" href="#913"> 913: </a>      <span class="php-keyword1">if</span> (!<span class="php-var">$ajax</span>)
 </span><span id="914" class="l"><a class="l" href="#914"> 914: </a>        <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;script language=\&quot;JavaScript\&quot; type=\&quot;text/javascript\&quot;&gt;window.setTimeout('location.href=\&quot;&quot;</span>.<span class="php-var">$_SERVER</span>[<span class="php-quote">&quot;PHP_SELF&quot;</span>].<span class="php-quote">&quot;?start=</span><span class="php-var">$linenumber</span><span class="php-quote">&amp;fn=&quot;</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$curfilename</span>).<span class="php-quote">&quot;&amp;foffset=</span><span class="php-var">$foffset</span><span class="php-quote">&amp;totalqueries=</span><span class="php-var">$totalqueries</span><span class="php-quote">&amp;delimiter=&quot;</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$delimiter</span>).<span class="php-quote">&quot;\&quot;;',500+</span><span class="php-var">$delaypersession</span><span class="php-quote">);&lt;/script&gt;\n&quot;</span>);
 </span><span id="915" class="l"><a class="l" href="#915"> 915: </a>
 </span><span id="916" class="l"><a class="l" href="#916"> 916: </a>      <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;noscript&gt;\n&quot;</span>);
 </span><span id="917" class="l"><a class="l" href="#917"> 917: </a>      <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;p class=\&quot;centr\&quot;&gt;&lt;a href=\&quot;&quot;</span>.<span class="php-var">$_SERVER</span>[<span class="php-quote">&quot;PHP_SELF&quot;</span>].<span class="php-quote">&quot;?start=</span><span class="php-var">$linenumber</span><span class="php-quote">&amp;amp;fn=&quot;</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$curfilename</span>).<span class="php-quote">&quot;&amp;amp;foffset=</span><span class="php-var">$foffset</span><span class="php-quote">&amp;amp;totalqueries=</span><span class="php-var">$totalqueries</span><span class="php-quote">&amp;amp;delimiter=&quot;</span>.<span class="php-keyword2">urlencode</span>(<span class="php-var">$delimiter</span>).<span class="php-quote">&quot;\&quot;&gt;Continue from the line </span><span class="php-var">$linenumber</span><span class="php-quote">&lt;/a&gt; (Enable JavaScript to do it automatically)&lt;/p&gt;\n&quot;</span>);
 </span><span id="918" class="l"><a class="l" href="#918"> 918: </a>      <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;/noscript&gt;\n&quot;</span>);
-</span><span id="919" class="l"><a class="l" href="#919"> 919: </a>   
+</span><span id="919" class="l"><a class="l" href="#919"> 919: </a>
 </span><span id="920" class="l"><a class="l" href="#920"> 920: </a>    <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;p class='centr'&gt;&quot;</span> . _(<span class="php-quote">&quot;Press&quot;</span>) . <span class="php-quote">&quot; &lt;b&gt;&lt;a href='&quot;</span>.<span class="php-var">$_SERVER</span>[<span class="php-quote">&quot;PHP_SELF&quot;</span>].<span class="php-quote">&quot;'&gt;&quot;</span> . _(<span class="php-quote">&quot;STOP&lt;/a&gt;&lt;/b&gt; to stop the import or be &lt;b&gt;passioned!&lt;/b&gt;&lt;&quot;</span>) . <span class="php-quote">&quot;/p&gt;\n&quot;</span>);
 </span><span id="921" class="l"><a class="l" href="#921"> 921: </a>    }
 </span><span id="922" class="l"><a class="l" href="#922"> 922: </a>  }
-</span><span id="923" class="l"><a class="l" href="#923"> 923: </a>  <span class="php-keyword1">else</span> 
+</span><span id="923" class="l"><a class="l" href="#923"> 923: </a>  <span class="php-keyword1">else</span>
 </span><span id="924" class="l"><a class="l" href="#924"> 924: </a>    <span class="php-keyword1">echo</span> (<span class="php-quote">&quot;&lt;p class='error'&gt;&quot;</span> . _(<span class="php-quote">&quot;Stopped because of an error&quot;</span>) . <span class="php-quote">&quot;&lt;/p&gt;\n&quot;</span>);
 </span><span id="925" class="l"><a class="l" href="#925"> 925: </a>
 </span><span id="926" class="l"><a class="l" href="#926"> 926: </a>skin_close();
@@ -1143,7 +1143,7 @@
 </span><span id="950" class="l"><a class="l" href="#950"> 950: </a>
 </span><span id="951" class="l"><a class="l" href="#951"> 951: </a><span class="php-comment">// If error or finished put out the whole output from above and stop</span>
 </span><span id="952" class="l"><a class="l" href="#952"> 952: </a>
-</span><span id="953" class="l"><a class="l" href="#953"> 953: </a><span class="php-keyword1">if</span> (<span class="php-var">$error</span>) 
+</span><span id="953" class="l"><a class="l" href="#953"> 953: </a><span class="php-keyword1">if</span> (<span class="php-var">$error</span>)
 </span><span id="954" class="l"><a class="l" href="#954"> 954: </a>{
 </span><span id="955" class="l"><a class="l" href="#955"> 955: </a>  <span class="php-var">$out1</span> = <span class="php-keyword2">ob_get_contents</span>();
 </span><span id="956" class="l"><a class="l" href="#956"> 956: </a>  <span class="php-keyword2">ob_end_clean</span>();
@@ -1155,13 +1155,13 @@
 </span><span id="962" class="l"><a class="l" href="#962"> 962: </a>
 </span><span id="963" class="l"><a class="l" href="#963"> 963: </a><span class="php-keyword1">if</span> (<span class="php-var">$ajax</span> &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'start'</span>]))
 </span><span id="964" class="l"><a class="l" href="#964"> 964: </a>{
-</span><span id="965" class="l"><a class="l" href="#965"> 965: </a>  <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'ajaxrequest'</span>])) 
+</span><span id="965" class="l"><a class="l" href="#965"> 965: </a>  <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$_REQUEST</span>[<span class="php-quote">'ajaxrequest'</span>]))
 </span><span id="966" class="l"><a class="l" href="#966"> 966: </a>  { <span class="php-keyword2">ob_end_clean</span>();
 </span><span id="967" class="l"><a class="l" href="#967"> 967: </a>    create_xml_response();
 </span><span id="968" class="l"><a class="l" href="#968"> 968: </a>    <span class="php-keyword1">die</span>;
-</span><span id="969" class="l"><a class="l" href="#969"> 969: </a>  } 
-</span><span id="970" class="l"><a class="l" href="#970"> 970: </a>  <span class="php-keyword1">else</span> 
-</span><span id="971" class="l"><a class="l" href="#971"> 971: </a>    create_ajax_script();     
+</span><span id="969" class="l"><a class="l" href="#969"> 969: </a>  }
+</span><span id="970" class="l"><a class="l" href="#970"> 970: </a>  <span class="php-keyword1">else</span>
+</span><span id="971" class="l"><a class="l" href="#971"> 971: </a>    create_ajax_script();
 </span><span id="972" class="l"><a class="l" href="#972"> 972: </a>}
 </span><span id="973" class="l"><a class="l" href="#973"> 973: </a>
 </span><span id="974" class="l"><a class="l" href="#974"> 974: </a><span class="php-comment">// Anyway put out the output from above</span>
@@ -1175,7 +1175,7 @@
 </span><span id="982" class="l"><a class="l" href="#982"> 982: </a><span class="php-comment">//              AJAX utilities</span>
 </span><span id="983" class="l"><a class="l" href="#983"> 983: </a><span class="php-comment">// *******************************************************************************************</span>
 </span><span id="984" class="l"><a class="l" href="#984"> 984: </a>
-</span><span id="985" class="l"><a class="l" href="#985"> 985: </a><span class="php-keyword1">function</span> <a id="_create_xml_response" href="#_create_xml_response">create_xml_response</a>() 
+</span><span id="985" class="l"><a class="l" href="#985"> 985: </a><span class="php-keyword1">function</span> <a id="_create_xml_response" href="#_create_xml_response">create_xml_response</a>()
 </span><span id="986" class="l"><a class="l" href="#986"> 986: </a>{
 </span><span id="987" class="l"><a class="l" href="#987"> 987: </a>  <span class="php-keyword1">global</span> <span class="php-var">$linenumber</span>, <span class="php-var">$foffset</span>, <span class="php-var">$totalqueries</span>, <span class="php-var">$curfilename</span>, <span class="php-var">$delimiter</span>,
 </span><span id="988" class="l"><a class="l" href="#988"> 988: </a>                 <span class="php-var">$lines_this</span>, <span class="php-var">$lines_done</span>, <span class="php-var">$lines_togo</span>, <span class="php-var">$lines_tota</span>,
@@ -1187,7 +1187,7 @@
 </span><span id="994" class="l"><a class="l" href="#994"> 994: </a>
 </span><span id="995" class="l"><a class="l" href="#995"> 995: </a>    <span class="php-keyword2">header</span>(<span class="php-quote">'Content-Type: application/xml'</span>);
 </span><span id="996" class="l"><a class="l" href="#996"> 996: </a>    <span class="php-keyword2">header</span>(<span class="php-quote">'Cache-Control: no-cache'</span>);
-</span><span id="997" class="l"><a class="l" href="#997"> 997: </a>    
+</span><span id="997" class="l"><a class="l" href="#997"> 997: </a>
 </span><span id="998" class="l"><a class="l" href="#998"> 998: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">'&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;'</span>;
 </span><span id="999" class="l"><a class="l" href="#999"> 999: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;root&gt;&quot;</span>;
 </span><span id="1000" class="l"><a class="l" href="#1000">1000: </a>
@@ -1205,63 +1205,63 @@
 </span><span id="1012" class="l"><a class="l" href="#1012">1012: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem2&gt;</span><span class="php-var">$lines_done</span><span class="php-quote">&lt;/elem2&gt;&quot;</span>;
 </span><span id="1013" class="l"><a class="l" href="#1013">1013: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem3&gt;</span><span class="php-var">$lines_togo</span><span class="php-quote">&lt;/elem3&gt;&quot;</span>;
 </span><span id="1014" class="l"><a class="l" href="#1014">1014: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem4&gt;</span><span class="php-var">$lines_tota</span><span class="php-quote">&lt;/elem4&gt;&quot;</span>;
-</span><span id="1015" class="l"><a class="l" href="#1015">1015: </a>    
+</span><span id="1015" class="l"><a class="l" href="#1015">1015: </a>
 </span><span id="1016" class="l"><a class="l" href="#1016">1016: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem5&gt;</span><span class="php-var">$queries_this</span><span class="php-quote">&lt;/elem5&gt;&quot;</span>;
 </span><span id="1017" class="l"><a class="l" href="#1017">1017: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem6&gt;</span><span class="php-var">$queries_done</span><span class="php-quote">&lt;/elem6&gt;&quot;</span>;
 </span><span id="1018" class="l"><a class="l" href="#1018">1018: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem7&gt;</span><span class="php-var">$queries_togo</span><span class="php-quote">&lt;/elem7&gt;&quot;</span>;
 </span><span id="1019" class="l"><a class="l" href="#1019">1019: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem8&gt;</span><span class="php-var">$queries_tota</span><span class="php-quote">&lt;/elem8&gt;&quot;</span>;
-</span><span id="1020" class="l"><a class="l" href="#1020">1020: </a>    
+</span><span id="1020" class="l"><a class="l" href="#1020">1020: </a>
 </span><span id="1021" class="l"><a class="l" href="#1021">1021: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem9&gt;</span><span class="php-var">$bytes_this</span><span class="php-quote">&lt;/elem9&gt;&quot;</span>;
 </span><span id="1022" class="l"><a class="l" href="#1022">1022: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem10&gt;</span><span class="php-var">$bytes_done</span><span class="php-quote">&lt;/elem10&gt;&quot;</span>;
 </span><span id="1023" class="l"><a class="l" href="#1023">1023: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem11&gt;</span><span class="php-var">$bytes_togo</span><span class="php-quote">&lt;/elem11&gt;&quot;</span>;
 </span><span id="1024" class="l"><a class="l" href="#1024">1024: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem12&gt;</span><span class="php-var">$bytes_tota</span><span class="php-quote">&lt;/elem12&gt;&quot;</span>;
-</span><span id="1025" class="l"><a class="l" href="#1025">1025: </a>            
+</span><span id="1025" class="l"><a class="l" href="#1025">1025: </a>
 </span><span id="1026" class="l"><a class="l" href="#1026">1026: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem13&gt;</span><span class="php-var">$kbytes_this</span><span class="php-quote">&lt;/elem13&gt;&quot;</span>;
 </span><span id="1027" class="l"><a class="l" href="#1027">1027: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem14&gt;</span><span class="php-var">$kbytes_done</span><span class="php-quote">&lt;/elem14&gt;&quot;</span>;
 </span><span id="1028" class="l"><a class="l" href="#1028">1028: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem15&gt;</span><span class="php-var">$kbytes_togo</span><span class="php-quote">&lt;/elem15&gt;&quot;</span>;
 </span><span id="1029" class="l"><a class="l" href="#1029">1029: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem16&gt;</span><span class="php-var">$kbytes_tota</span><span class="php-quote">&lt;/elem16&gt;&quot;</span>;
-</span><span id="1030" class="l"><a class="l" href="#1030">1030: </a>    
+</span><span id="1030" class="l"><a class="l" href="#1030">1030: </a>
 </span><span id="1031" class="l"><a class="l" href="#1031">1031: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem17&gt;</span><span class="php-var">$mbytes_this</span><span class="php-quote">&lt;/elem17&gt;&quot;</span>;
 </span><span id="1032" class="l"><a class="l" href="#1032">1032: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem18&gt;</span><span class="php-var">$mbytes_done</span><span class="php-quote">&lt;/elem18&gt;&quot;</span>;
 </span><span id="1033" class="l"><a class="l" href="#1033">1033: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem19&gt;</span><span class="php-var">$mbytes_togo</span><span class="php-quote">&lt;/elem19&gt;&quot;</span>;
 </span><span id="1034" class="l"><a class="l" href="#1034">1034: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem20&gt;</span><span class="php-var">$mbytes_tota</span><span class="php-quote">&lt;/elem20&gt;&quot;</span>;
-</span><span id="1035" class="l"><a class="l" href="#1035">1035: </a>    
+</span><span id="1035" class="l"><a class="l" href="#1035">1035: </a>
 </span><span id="1036" class="l"><a class="l" href="#1036">1036: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem21&gt;</span><span class="php-var">$pct_this</span><span class="php-quote">&lt;/elem21&gt;&quot;</span>;
 </span><span id="1037" class="l"><a class="l" href="#1037">1037: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem22&gt;</span><span class="php-var">$pct_done</span><span class="php-quote">&lt;/elem22&gt;&quot;</span>;
 </span><span id="1038" class="l"><a class="l" href="#1038">1038: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem23&gt;</span><span class="php-var">$pct_togo</span><span class="php-quote">&lt;/elem23&gt;&quot;</span>;
 </span><span id="1039" class="l"><a class="l" href="#1039">1039: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem24&gt;</span><span class="php-var">$pct_tota</span><span class="php-quote">&lt;/elem24&gt;&quot;</span>;
 </span><span id="1040" class="l"><a class="l" href="#1040">1040: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;elem_bar&gt;&quot;</span>.<span class="php-keyword2">htmlentities</span>(<span class="php-var">$pct_bar</span>).<span class="php-quote">&quot;&lt;/elem_bar&gt;&quot;</span>;
-</span><span id="1041" class="l"><a class="l" href="#1041">1041: </a>                
-</span><span id="1042" class="l"><a class="l" href="#1042">1042: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;/root&gt;&quot;</span>;     
+</span><span id="1041" class="l"><a class="l" href="#1041">1041: </a>
+</span><span id="1042" class="l"><a class="l" href="#1042">1042: </a>    <span class="php-keyword1">echo</span> <span class="php-quote">&quot;&lt;/root&gt;&quot;</span>;
 </span><span id="1043" class="l"><a class="l" href="#1043">1043: </a>}
 </span><span id="1044" class="l"><a class="l" href="#1044">1044: </a>
 </span><span id="1045" class="l"><a class="l" href="#1045">1045: </a>
-</span><span id="1046" class="l"><a class="l" href="#1046">1046: </a><span class="php-keyword1">function</span> <a id="_create_ajax_script" href="#_create_ajax_script">create_ajax_script</a>() 
+</span><span id="1046" class="l"><a class="l" href="#1046">1046: </a><span class="php-keyword1">function</span> <a id="_create_ajax_script" href="#_create_ajax_script">create_ajax_script</a>()
 </span><span id="1047" class="l"><a class="l" href="#1047">1047: </a>{
 </span><span id="1048" class="l"><a class="l" href="#1048">1048: </a>  <span class="php-keyword1">global</span> <span class="php-var">$linenumber</span>, <span class="php-var">$foffset</span>, <span class="php-var">$totalqueries</span>, <span class="php-var">$delaypersession</span>, <span class="php-var">$curfilename</span>, <span class="php-var">$delimiter</span>;
 </span><span id="1049" class="l"><a class="l" href="#1049">1049: </a><span class="xlang">?&gt;</span>
 </span><span id="1050" class="l"><a class="l" href="#1050">1050: </a>
-</span><span id="1051" class="l"><a class="l" href="#1051">1051: </a>    &lt;script type=<span class="php-quote">&quot;text/javascript&quot;</span> language=<span class="php-quote">&quot;javascript&quot;</span>&gt;           
+</span><span id="1051" class="l"><a class="l" href="#1051">1051: </a>    &lt;script type=<span class="php-quote">&quot;text/javascript&quot;</span> language=<span class="php-quote">&quot;javascript&quot;</span>&gt;
 </span><span id="1052" class="l"><a class="l" href="#1052">1052: </a>
 </span><span id="1053" class="l"><a class="l" href="#1053">1053: </a>    <span class="php-comment">// creates next action url (upload page, or XML response)</span>
 </span><span id="1054" class="l"><a class="l" href="#1054">1054: </a>    <span class="php-keyword1">function</span> <a id="_get_url" href="#_get_url">get_url</a>(linenumber,fn,foffset,totalqueries,delimiter) {
 </span><span id="1055" class="l"><a class="l" href="#1055">1055: </a>        <span class="php-keyword1">return</span> <span class="php-quote">&quot;&lt;?php echo </span><span class="php-var">$_SERVER</span><span class="php-quote">['PHP_SELF'] ?&gt;?start=&quot;</span>+linenumber+<span class="php-quote">&quot;&amp;fn=&quot;</span>+fn+<span class="php-quote">&quot;&amp;foffset=&quot;</span>+foffset+<span class="php-quote">&quot;&amp;totalqueries=&quot;</span>+totalqueries+<span class="php-quote">&quot;&amp;delimiter=&quot;</span>+delimiter+<span class="php-quote">&quot;&amp;ajaxrequest=true&quot;</span>;
 </span><span id="1056" class="l"><a class="l" href="#1056">1056: </a>    }
-</span><span id="1057" class="l"><a class="l" href="#1057">1057: </a>    
+</span><span id="1057" class="l"><a class="l" href="#1057">1057: </a>
 </span><span id="1058" class="l"><a class="l" href="#1058">1058: </a>    <span class="php-comment">// extracts text from XML element (itemname must be unique)</span>
 </span><span id="1059" class="l"><a class="l" href="#1059">1059: </a>    <span class="php-keyword1">function</span> <a id="_get_xml_data" href="#_get_xml_data">get_xml_data</a>(itemname,xmld) {
 </span><span id="1060" class="l"><a class="l" href="#1060">1060: </a>        <span class="php-keyword1">return</span> xmld.getElementsByTagName(itemname).item(<span class="php-num">0</span>).firstChild.data;
 </span><span id="1061" class="l"><a class="l" href="#1061">1061: </a>    }
-</span><span id="1062" class="l"><a class="l" href="#1062">1062: </a>    
+</span><span id="1062" class="l"><a class="l" href="#1062">1062: </a>
 </span><span id="1063" class="l"><a class="l" href="#1063">1063: </a>    <span class="php-keyword1">function</span> <a id="_makeRequest" href="#_makeRequest">makeRequest</a>(url) {
 </span><span id="1064" class="l"><a class="l" href="#1064">1064: </a>        <span class="php-keyword2">http_request</span> = <span class="php-keyword1">false</span>;
-</span><span id="1065" class="l"><a class="l" href="#1065">1065: </a>        <span class="php-keyword1">if</span> (window.XMLHttpRequest) { 
+</span><span id="1065" class="l"><a class="l" href="#1065">1065: </a>        <span class="php-keyword1">if</span> (window.XMLHttpRequest) {
 </span><span id="1066" class="l"><a class="l" href="#1066">1066: </a>        <span class="php-comment">// Mozilla etc.</span>
 </span><span id="1067" class="l"><a class="l" href="#1067">1067: </a>            <span class="php-keyword2">http_request</span> = <span class="php-keyword1">new</span> XMLHttpRequest();
 </span><span id="1068" class="l"><a class="l" href="#1068">1068: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">http_request</span>.overrideMimeType) {
 </span><span id="1069" class="l"><a class="l" href="#1069">1069: </a>                <span class="php-keyword2">http_request</span>.overrideMimeType(<span class="php-quote">&quot;text/xml&quot;</span>);
 </span><span id="1070" class="l"><a class="l" href="#1070">1070: </a>            }
-</span><span id="1071" class="l"><a class="l" href="#1071">1071: </a>        } <span class="php-keyword1">elseif</span> (window.ActiveXObject) { 
+</span><span id="1071" class="l"><a class="l" href="#1071">1071: </a>        } <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> (window.ActiveXObject) {
 </span><span id="1072" class="l"><a class="l" href="#1072">1072: </a>        <span class="php-comment">// IE</span>
 </span><span id="1073" class="l"><a class="l" href="#1073">1073: </a>            <span class="php-keyword1">try</span> {
 </span><span id="1074" class="l"><a class="l" href="#1074">1074: </a>                <span class="php-keyword2">http_request</span> = <span class="php-keyword1">new</span> ActiveXObject(<span class="php-quote">&quot;Msxml2.XMLHTTP&quot;</span>);
@@ -1279,54 +1279,54 @@
 </span><span id="1086" class="l"><a class="l" href="#1086">1086: </a>        <span class="php-keyword2">http_request</span>.open(<span class="php-quote">&quot;GET&quot;</span>, url, <span class="php-keyword1">true</span>);
 </span><span id="1087" class="l"><a class="l" href="#1087">1087: </a>        <span class="php-keyword2">http_request</span>.send(<span class="php-keyword1">null</span>);
 </span><span id="1088" class="l"><a class="l" href="#1088">1088: </a>    }
-</span><span id="1089" class="l"><a class="l" href="#1089">1089: </a>    
-</span><span id="1090" class="l"><a class="l" href="#1090">1090: </a>    <span class="php-keyword1">function</span> <a id="_server_response" href="#_server_response">server_response</a>() 
+</span><span id="1089" class="l"><a class="l" href="#1089">1089: </a>
+</span><span id="1090" class="l"><a class="l" href="#1090">1090: </a>    <span class="php-keyword1">function</span> <a id="_server_response" href="#_server_response">server_response</a>()
 </span><span id="1091" class="l"><a class="l" href="#1091">1091: </a>    {
 </span><span id="1092" class="l"><a class="l" href="#1092">1092: </a>
 </span><span id="1093" class="l"><a class="l" href="#1093">1093: </a>      <span class="php-comment">// waiting for correct response</span>
 </span><span id="1094" class="l"><a class="l" href="#1094">1094: </a>      <span class="php-keyword1">if</span> (<span class="php-keyword2">http_request</span>.readyState != <span class="php-num">4</span>)
 </span><span id="1095" class="l"><a class="l" href="#1095">1095: </a>        <span class="php-keyword1">return</span>;
 </span><span id="1096" class="l"><a class="l" href="#1096">1096: </a>
-</span><span id="1097" class="l"><a class="l" href="#1097">1097: </a>      <span class="php-keyword1">if</span> (<span class="php-keyword2">http_request</span>.status != <span class="php-num">200</span>) 
+</span><span id="1097" class="l"><a class="l" href="#1097">1097: </a>      <span class="php-keyword1">if</span> (<span class="php-keyword2">http_request</span>.status != <span class="php-num">200</span>)
 </span><span id="1098" class="l"><a class="l" href="#1098">1098: </a>      {
-</span><span id="1099" class="l"><a class="l" href="#1099">1099: </a>        alert(<span class="php-quote">&quot;Page unavailable, or wrong url!&quot;</span>)
+</span><span id="1099" class="l"><a class="l" href="#1099">1099: </a>        alert(<span class="php-quote">&quot;Page unavailable, or wrong url!&quot;</span>);
 </span><span id="1100" class="l"><a class="l" href="#1100">1100: </a>        <span class="php-keyword1">return</span>;
 </span><span id="1101" class="l"><a class="l" href="#1101">1101: </a>      }
-</span><span id="1102" class="l"><a class="l" href="#1102">1102: </a>        
+</span><span id="1102" class="l"><a class="l" href="#1102">1102: </a>
 </span><span id="1103" class="l"><a class="l" href="#1103">1103: </a>        <span class="php-comment">// r = xml response</span>
 </span><span id="1104" class="l"><a class="l" href="#1104">1104: </a>        <span class="php-keyword1">var</span> r = <span class="php-keyword2">http_request</span>.responseXML;
-</span><span id="1105" class="l"><a class="l" href="#1105">1105: </a>        
+</span><span id="1105" class="l"><a class="l" href="#1105">1105: </a>
 </span><span id="1106" class="l"><a class="l" href="#1106">1106: </a>        <span class="php-comment">//if received not XML but HTML with new page to show</span>
-</span><span id="1107" class="l"><a class="l" href="#1107">1107: </a>        <span class="php-keyword1">if</span> (!r || r.getElementsByTagName(<span class="php-quote">'root'</span>).length == <span class="php-num">0</span>) 
+</span><span id="1107" class="l"><a class="l" href="#1107">1107: </a>        <span class="php-keyword1">if</span> (!r || r.getElementsByTagName(<span class="php-quote">'root'</span>).length == <span class="php-num">0</span>)
 </span><span id="1108" class="l"><a class="l" href="#1108">1108: </a>        {   <span class="php-keyword1">var</span> text = <span class="php-keyword2">http_request</span>.responseText;
 </span><span id="1109" class="l"><a class="l" href="#1109">1109: </a>            document.open();
-</span><span id="1110" class="l"><a class="l" href="#1110">1110: </a>            document.write(text);       
-</span><span id="1111" class="l"><a class="l" href="#1111">1111: </a>            document.close();   
-</span><span id="1112" class="l"><a class="l" href="#1112">1112: </a>            <span class="php-keyword1">return</span>;     
+</span><span id="1110" class="l"><a class="l" href="#1110">1110: </a>            document.write(text);
+</span><span id="1111" class="l"><a class="l" href="#1111">1111: </a>            document.close();
+</span><span id="1112" class="l"><a class="l" href="#1112">1112: </a>            <span class="php-keyword1">return</span>;
 </span><span id="1113" class="l"><a class="l" href="#1113">1113: </a>        }
-</span><span id="1114" class="l"><a class="l" href="#1114">1114: </a>        
+</span><span id="1114" class="l"><a class="l" href="#1114">1114: </a>
 </span><span id="1115" class="l"><a class="l" href="#1115">1115: </a>        <span class="php-comment">// update &quot;Starting from line: &quot;</span>
-</span><span id="1116" class="l"><a class="l" href="#1116">1116: </a>        document.getElementsByTagName(<span class="php-quote">'p'</span>).item(<span class="php-num">1</span>).innerHTML = 
-</span><span id="1117" class="l"><a class="l" href="#1117">1117: </a>            <span class="php-quote">&quot;Starting from line: &quot;</span> + 
+</span><span id="1116" class="l"><a class="l" href="#1116">1116: </a>        document.getElementsByTagName(<span class="php-quote">'p'</span>).item(<span class="php-num">1</span>).innerHTML =
+</span><span id="1117" class="l"><a class="l" href="#1117">1117: </a>            <span class="php-quote">&quot;Starting from line: &quot;</span> +
 </span><span id="1118" class="l"><a class="l" href="#1118">1118: </a>               r.getElementsByTagName(<span class="php-quote">'linenumber'</span>).item(<span class="php-num">0</span>).firstChild.nodeValue;
-</span><span id="1119" class="l"><a class="l" href="#1119">1119: </a>        
+</span><span id="1119" class="l"><a class="l" href="#1119">1119: </a>
 </span><span id="1120" class="l"><a class="l" href="#1120">1120: </a>        <span class="php-comment">// update table with new values</span>
-</span><span id="1121" class="l"><a class="l" href="#1121">1121: </a>        <span class="php-keyword1">for</span>(i = <span class="php-num">1</span>; i &lt;= <span class="php-num">24</span>; i++)
+</span><span id="1121" class="l"><a class="l" href="#1121">1121: </a>        <span class="php-keyword1">for</span>(<span class="php-keyword1">var</span> i = <span class="php-num">1</span>; i &lt;= <span class="php-num">24</span>; i++)
 </span><span id="1122" class="l"><a class="l" href="#1122">1122: </a>            document.getElementsByTagName(<span class="php-quote">'td'</span>).item(i).firstChild.data = get_xml_data(<span class="php-quote">'elem'</span>+i,r);
-</span><span id="1123" class="l"><a class="l" href="#1123">1123: </a>        
+</span><span id="1123" class="l"><a class="l" href="#1123">1123: </a>
 </span><span id="1124" class="l"><a class="l" href="#1124">1124: </a>        <span class="php-comment">// update color bar</span>
-</span><span id="1125" class="l"><a class="l" href="#1125">1125: </a>        document.getElementsByTagName(<span class="php-quote">'td'</span>).item(<span class="php-num">25</span>).innerHTML = 
+</span><span id="1125" class="l"><a class="l" href="#1125">1125: </a>        document.getElementsByTagName(<span class="php-quote">'td'</span>).item(<span class="php-num">25</span>).innerHTML =
 </span><span id="1126" class="l"><a class="l" href="#1126">1126: </a>            r.getElementsByTagName(<span class="php-quote">'elem_bar'</span>).item(<span class="php-num">0</span>).firstChild.nodeValue;
-</span><span id="1127" class="l"><a class="l" href="#1127">1127: </a>             
-</span><span id="1128" class="l"><a class="l" href="#1128">1128: </a>        <span class="php-comment">// action url (XML response)     </span>
+</span><span id="1127" class="l"><a class="l" href="#1127">1127: </a>
+</span><span id="1128" class="l"><a class="l" href="#1128">1128: </a>        <span class="php-comment">// action url (XML response)</span>
 </span><span id="1129" class="l"><a class="l" href="#1129">1129: </a>        url_request =  get_url(
 </span><span id="1130" class="l"><a class="l" href="#1130">1130: </a>            get_xml_data(<span class="php-quote">'linenumber'</span>,r),
 </span><span id="1131" class="l"><a class="l" href="#1131">1131: </a>            get_xml_data(<span class="php-quote">'fn'</span>,r),
 </span><span id="1132" class="l"><a class="l" href="#1132">1132: </a>            get_xml_data(<span class="php-quote">'foffset'</span>,r),
 </span><span id="1133" class="l"><a class="l" href="#1133">1133: </a>            get_xml_data(<span class="php-quote">'totalqueries'</span>,r),
 </span><span id="1134" class="l"><a class="l" href="#1134">1134: </a>            get_xml_data(<span class="php-quote">'delimiter'</span>,r));
-</span><span id="1135" class="l"><a class="l" href="#1135">1135: </a>        
-</span><span id="1136" class="l"><a class="l" href="#1136">1136: </a>        <span class="php-comment">// ask for XML response </span>
+</span><span id="1135" class="l"><a class="l" href="#1135">1135: </a>
+</span><span id="1136" class="l"><a class="l" href="#1136">1136: </a>        <span class="php-comment">// ask for XML response</span>
 </span><span id="1137" class="l"><a class="l" href="#1137">1137: </a>        window.setTimeout(<span class="php-quote">&quot;makeRequest(url_request)&quot;</span>,<span class="php-num">500</span>+<span class="xlang">&lt;?php</span> <span class="php-keyword1">echo</span> <span class="php-var">$delaypersession</span>; <span class="xlang">?&gt;</span>);
 </span><span id="1138" class="l"><a class="l" href="#1138">1138: </a>    }
 </span><span id="1139" class="l"><a class="l" href="#1139">1139: </a>
