@@ -49,7 +49,7 @@ include("help/layout/$skin/header.php");
   Programmversion
 </h2>
 <p>
-  Dies ist <strong>OpenHomeopath Version 1.0</strong> veröffentlicht am 05.06.2014.<br>
+  Dies ist <strong>OpenHomeopath Version 1.0.1</strong> veröffentlicht am 07.06.2014.<br>
   Nach einer <strong>grundlegenden Überarbeitung des gesamten Codes und der Datenbankstruktur</strong> veröffentliche ich hiermit nach über 7 Jahren Arbeit die erste stabile Version von OpenHomeopath.<br>
   Wenn noch Bugs oder Programmfehler auftauchen und bei weiteren Fragen meldet euch <a title="Kontakt zum Autor" href="mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath">bei mir</a>.
 </p>
@@ -59,7 +59,7 @@ include("help/layout/$skin/header.php");
   Changelog
 </h2>
   <ul>
-    <li><strong>Version 1.0:</strong> Erstes stabiles Release nach über 7 Jahren Entwicklung und einer grundlegenden Überarbeitung des gesamten Quellcodes und der Datenbankstruktur.<br>
+    <li><strong>Version 1.0 veröffentlicht am 05.06.2014:</strong> Erstes stabiles Release nach über 7 Jahren Entwicklung und einer grundlegenden Überarbeitung des gesamten Quellcodes und der Datenbankstruktur.<br>
     <strong>Die wichtigsten aktuellen Änderungen:</strong><br>
     <ul>
       <li>Grundlegende Modernisierung des Layouts.</li>
@@ -73,8 +73,9 @@ include("help/layout/$skin/header.php");
       <li>Aktualisierung und Reorganisierung des OpenHomeopath-Handbuchs und die vollständige Übersetzung des Handbuchs ins Englische.</li>
       <li>Weitgehende Verwendung der objektorientierten Programmierung (OOP) und Reorganisation des PHP-Quellcodes in Klassen.</li>
       <li>Übersetzung aller Tabellen-, Spalten-, Klassen-, Funktions- und Variablennamen sowie aller Kommentare in englisch, so daß sich auch internationale Entwickler an dem Projekt beteiligen können.</li>
-      <li>Hinzufügen einer <a href='http://openhomeo.org/openhomeopath/doc/en/apigen' target='_blank'>ausführlichen englischen Quellcode-Dokumentation</a> nach dem PHPDoc-Schema</li>
+      <li>Hinzufügen einer <a href='http://openhomeo.org/openhomeopath/doc/en/apigen' target='_blank'>ausführlichen englischen Quellcode-Dokumentation</a> nach dem PHPDoc-Schema.</li>
     </ul></li>
+    <li><strong>Version 1.0.1 veröffentlicht am 07.06.2014:</strong> Ein Bugfix-Release, bei dem Fehler bereinigt und dieses Changelog hinzugeführt wurde.</li>
   </ul>
 <br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
 <a name="license" id="license"><br></a>
