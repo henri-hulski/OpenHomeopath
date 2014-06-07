@@ -57,7 +57,6 @@ function get_rem_groups($title) {
     global $db;
     $query ="SELECT *  FROM `rem_groups` WHERE `title` = '$title'";
     $db->send_query($query);
-    $i=0;
     $rem_group = $db->db_fetch_assoc();
     if($rem_group){
         return $rem_group;
@@ -67,11 +66,9 @@ function get_rem_groups($title) {
 }
 function get_rem_groups_by_letter($letter)
 {
-    
     global $db;
     $query ="SELECT *  FROM `rem_groups` WHERE `title` LIKE '$letter%' ORDER BY title";
     $db->send_query($query);
-    $i=0;
     while($group = $db->db_fetch_assoc()) {
         $group_arr[$group['id']] = $group;
     }
@@ -83,17 +80,31 @@ function get_rem_groups_by_letter($letter)
 }
 function get_rem_groups_by_id($id)
 {
-
     global $db;
     $query ="SELECT *  FROM `rem_groups` WHERE `id` = '$id'";
     $db->send_query($query);
-    $i=0;
     $rem_group = $db->db_fetch_assoc();
     if($rem_group){
         return $rem_group;
     }else{
         return FALSE;
     }
+}
+
+function get_groups_by_remedy($remedy_ar)
+{
+    foreach($remedy_ar as $rem_id=>$remedy){
+        $rem_groups = get_kraque_table2table("remedies", 3, "rem_groups", $rem_id);
+        if($rem_groups){
+            foreach($rem_groups as $group){
+                $remedy_ar[$rem_id]['groups'][$group['target_id']]['id'] = $group['target_id'];
+                $group_title = get_rem_groups_by_id($group['target_id']);
+                $group_title = $group_title['title'];
+                $remedy_ar[$rem_id]['groups'][$group['target_id']]['title'] = $group_title;
+            }
+        }
+    }
+    return $remedy_ar;
 }
 
 function get_kraque_table2table($src_table, $relation_type_id, $target_table, $src_id=NULL, $target_id=NULL)
@@ -124,11 +135,11 @@ function get_rem_groups_searchform($group_id = "")
 	return $form;
 }
 
-function get_group_repertory_symptoms($group,$remedy_ar, $where_query, $start, $limit)
+function get_group_repertory_symptoms($group, $remedy_ar, $where_query, $start, $limit)
 {
 	global $db;
 	global $sym_rem;
-	global $lng, $translations;
+	global $lng;
 	global $min_in;
 	$rubric_name = "rubric_".$lng;
 	if(is_array($remedy_ar)){
@@ -147,7 +158,6 @@ function get_group_repertory_symptoms($group,$remedy_ar, $where_query, $start, $
 	$query .= " group by $sym_rem.sym_id,$sym_rem.rem_id  ORDER BY main_rubrics.rubric_$lng, symptoms.symptom";
 	$query .= " LIMIT $start , $limit ";
 	$db->send_query($query);
-	$ii=1;
 	while ($rubric_info = $db->db_fetch_assoc()){
 		$symptoms_arr[$rubric_info['sym_id']]['symptom'] = $rubric_info['symptom'];
 		$symptoms_arr[$rubric_info['sym_id']]['sym_id'] = $rubric_info['sym_id'];
@@ -166,7 +176,6 @@ function get_group_repertory_symptoms($group,$remedy_ar, $where_query, $start, $
 	$html .= view_group_repertory_head($group);
 	$html .= "<div class='mm-info-box-rubric'>";
 	foreach($symptoms_arr as $sym_id=>$symptom){
-		$symptom['symptom'] = $symptom['symptom'];
 		$count_rem = count($symptom['remedy']);
 		if($count_rem >=$min_in){
 			$html .= "<a href='./symptom-details.php?sym=".$sym_id."&lang=$lng' title='Symptom Info'><b><span class='grade1' >".$symptom[$rubric_name]."&nbsp;>&nbsp;".$symptom['symptom']."</span></b></a> <span style='font-size:0.7em;'>".$count_rem."/".$symptom['count_rem']."</span> ";
@@ -183,18 +192,16 @@ function get_group_repertory_symptoms($group,$remedy_ar, $where_query, $start, $
 
 function view_group_repertory($group, $remedy_ar, $where_query, $start, $limit)
 {
-    global $grade;
-
-        $html = $html."<div class='mm-info-box'>\n";
-        $html = $html.view_group_repertory_head($group);
-        $html = $html.get_group_repertory_symptoms($remedy_ar, $where_query, $start, $limit);
-        $html = $html."</div>\n";
+        $html = $html . "<div class='mm-info-box'>\n";
+        $html = $html . view_group_repertory_head($group);
+        $html = $html . get_group_repertory_symptoms($group, $remedy_ar, $where_query, $start, $limit);
+        $html = $html . "</div>\n";
     return $html;
 }
 
 function view_group_repertory_head($group)
 {
-    global $grade, $translations;
+    global $translations;
     $html = "   <div class='mm-info-box-repertory'>\n";
     $html .= "<form name='repform' action='materia-medica.php'>";
     $html .= "      <span class='mm-info-box-source-title'>$translations[General_repertory] <span style='font-size:0.7em'><b>".$group['title']." $translations[General_group]</b></span></span>\n";
@@ -245,5 +252,3 @@ function view_group_list($group_arr)
         return FALSE;
     }
 }
-
-?>

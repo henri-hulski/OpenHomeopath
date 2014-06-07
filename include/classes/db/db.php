@@ -179,5 +179,3 @@ class DB extends DbPlugin {
 	}
 }
 // end of class DB
-
-?>

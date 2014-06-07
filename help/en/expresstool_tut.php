@@ -30,7 +30,6 @@ include("help/layout/$skin/header.php");
 ?>
 
 		<style type="text/css" media="all"><!--
-			div.image {}
 			div.story {font-family:arial,sans-serif;}
 			.synth {
 			font-family:arial,sans-serif;
@@ -54,7 +53,7 @@ include("help/layout/$skin/header.php");
 			padding: 1px 6px 1px 6px;
 			}
 			li {
-			border: 0px solid #808080;
+			border: 0 solid #808080;
 			//padding: 1px 6px 1px 6px;
 			margin: 10px;
 			}
@@ -62,7 +61,7 @@ include("help/layout/$skin/header.php");
 			font-family:arial,sans-serif;
 			background-color: #fffdee;
 			border: 10px solid #cce6d4;
-			padding: 0px;
+			padding: 0;
 			}
 			h2{text-align:left;}
 		--></style>

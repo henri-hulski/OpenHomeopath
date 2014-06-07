@@ -39,14 +39,12 @@ $where = "rem_short";
 $search = strip_tags($_GET["q"]);
 $search_reg = str_replace('.', '\\\.', $search);
 if(strlen($search) > 0) {
-	//$query = "SELECT remedies.rem_short, remedies.rem_name, remedies.rem_id FROM remedies WHERE (EXISTS (SELECT * FROM $materia_tbl WHERE $materia_tbl.rem_id = remedies.rem_id) OR EXISTS (SELECT * FROM $sym_rem_tbl WHERE $sym_rem_tbl.rem_id = remedies.rem_id)) AND (rem_short LIKE '$search%' OR rem_name REGEXP '[[:<:]]$search_reg') ORDER BY rem_short";
 	$query = "SELECT remedies.rem_short, remedies.rem_name, remedies.rem_id FROM remedies  WHERE rem_short LIKE '$search%' OR rem_name REGEXP '[[:<:]]$search_reg' ORDER BY rem_short";
 	$db->send_query($query);
 	echo "<ul>";
-	while(list($rem_short, $rem_name = $db->db_fetch_row()) {
-		echo ("      <li><a onclick=\"setRemShort('$rem_short', this);document.searchform.submit();\">$rem_short&nbsp;&nbsp;<small>$rem_name</small></a></li>\n");
+	while(list($rem_short, $rem_name) = $db->db_fetch_row()) {
+		echo ("      <li><a onclick=\"setRemShort('$rem_short');document.searchform.submit();\">$rem_short&nbsp;&nbsp;<small>$rem_name</small></a></li>\n");
 	}
 	$db->free_result();
 	echo "</ul>";
 }
-?>

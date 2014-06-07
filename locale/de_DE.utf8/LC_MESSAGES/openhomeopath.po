@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenHomeopath 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-04 02:41+0100\n"
+"POT-Creation-Date: 2014-06-06 23:22+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Henri Schumacher <henri.hulski@gazeta.pl>\n"
 "Language-Team: Henri Schumacher <henri.hulski@gazeta.pl>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ../../../\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -28,8 +28,8 @@ msgstr "Repertorisierung"
 msgid "Selected symptoms"
 msgstr "Ausgewählte Symptome"
 
-#: repertori.php:89 repertori.php:121 include/classes/rep_class.php:338
-#: include/classes/rep_class.php:373 javascript/locale.php:3
+#: repertori.php:89 repertori.php:121 include/classes/rep_class.php:346
+#: include/classes/rep_class.php:381 javascript/locale.php:3
 msgid "Rubric degree"
 msgstr "Gewichtung der Rubrik"
 
@@ -196,7 +196,8 @@ msgstr ""
 "deines Benutzernamens  <b>%s</b> konnte nicht fertiggestellt werden."
 "<br>Versuchs später nochmal."
 
-#: register.php:83
+#: register.php:83 include/classes/login/adminprocess.php:388
+#: include/classes/login/adminprocess.php:474
 msgid "Please enter a username"
 msgstr "Bitte wähle einen Benutzernamen "
 
@@ -434,7 +435,7 @@ msgstr ""
 msgid "Symptom-Editor"
 msgstr "Symptom-Editor"
 
-#: symptomeditor.php:41 symptominfo.php:72 forms/reversed_rep.php:48
+#: symptomeditor.php:41 symptominfo.php:72
 #, php-format
 msgid ""
 "You are using a personalized Repertory. You can change the preferences in <a "
@@ -531,7 +532,7 @@ msgstr "Als Synonyme verbinden"
 msgid "Link as cross reference"
 msgstr "Als Querverweise verbinden"
 
-#: symptom-details.php:233
+#: symptom-details.php:231
 msgid "More information"
 msgstr "Weitere Info"
 
@@ -868,7 +869,7 @@ msgstr ""
 "subject=OpenHomeopath'>schicke mir eine e-Mail</a>."
 
 #: rep_result.php:38 rep_result.php:50 index.php:50
-#: include/classes/rep_class.php:492 include/classes/rep_class.php:543
+#: include/classes/rep_class.php:500 include/classes/rep_class.php:551
 #: include/classes/fpdf/pdf.php:55
 msgid "Repertorization result"
 msgstr "Repertorisierungsergebnis"
@@ -877,28 +878,28 @@ msgstr "Repertorisierungsergebnis"
 msgid "Result table"
 msgstr "Ergebnistabelle"
 
-#: rep_result.php:80 include/classes/rep_class.php:630
+#: rep_result.php:80 include/classes/rep_class.php:638
 #, php-format
 msgid "%d selected symptom"
 msgid_plural "%d selected symptoms"
 msgstr[0] "%d ausgewähltes Symptom"
 msgstr[1] "%d ausgewählte Symptome"
 
-#: rep_result.php:81 include/classes/rep_class.php:631
+#: rep_result.php:81 include/classes/rep_class.php:639
 #, php-format
 msgid "%d remedy"
 msgid_plural "%d remedies"
 msgstr[0] "%d Mittel"
 msgstr[1] "%d Mittel"
 
-#: rep_result.php:82 include/classes/rep_class.php:632
+#: rep_result.php:82 include/classes/rep_class.php:640
 #, php-format
 msgid "%d symptom-remedy-relation"
 msgid_plural "%d symptom-remedy-relations"
 msgstr[0] "%d Symptom-Mittelbeziehung"
 msgstr[1] "%d Symptom-Mittelbeziehungen"
 
-#: rep_result.php:83 include/classes/rep_class.php:633
+#: rep_result.php:83 include/classes/rep_class.php:641
 #, php-format
 msgid "For %s there are %s and %s."
 msgstr "Für %s wurden %s und %s gefunden."
@@ -2122,9 +2123,9 @@ msgstr "alle"
 
 # = -wertig
 #: include/classes/revrep_class.php:246 include/classes/revrep_class.php:258
-#: include/classes/revrep_class.php:270 include/classes/rep_class.php:403
+#: include/classes/revrep_class.php:270 include/classes/rep_class.php:411
 #: include/classes/symrem_class.php:195 include/classes/symrem_class.php:199
-#: include/classes/symrem_class.php:204 mm-include/functions.php:441
+#: include/classes/symrem_class.php:204 mm-include/functions.php:438
 msgid "-gr."
 msgstr "-w."
 
@@ -2148,29 +2149,29 @@ msgstr "Gew."
 msgid "Symptoms"
 msgstr "Symptome"
 
-#: include/classes/rep_class.php:352 include/classes/rep_class.php:613
+#: include/classes/rep_class.php:360 include/classes/rep_class.php:621
 msgid "Total (Grades/Hits)"
 msgstr "Gesamt (Wertigkeiten/Treffer)"
 
 # = keine Angabe
-#: include/classes/rep_class.php:461
+#: include/classes/rep_class.php:469
 msgid "n.a."
 msgstr "k.A."
 
-#: include/classes/rep_class.php:493
+#: include/classes/rep_class.php:501
 msgid "OpenHomeopath"
 msgstr "OpenHomeopath"
 
-#: include/classes/rep_class.php:494
+#: include/classes/rep_class.php:502
 msgid "openhomeo.org"
 msgstr "openhomeo.org"
 
-#: include/classes/rep_class.php:496 include/classes/rep_class.php:502
+#: include/classes/rep_class.php:504 include/classes/rep_class.php:510
 #: forms/save_rep.php:68
 msgid "Patient:"
 msgstr "Patient:"
 
-#: include/classes/rep_class.php:496 include/classes/rep_class.php:508
+#: include/classes/rep_class.php:504 include/classes/rep_class.php:516
 #: forms/save_rep.php:82
 msgid "Rep.-Date:"
 msgstr "Rep.-Datum:"
@@ -2185,11 +2186,11 @@ msgstr "Fallaufnahme:"
 msgid "Prescription:"
 msgstr "Verordnung:"
 
-#: include/classes/rep_class.php:498 include/classes/rep_class.php:519
+#: include/classes/rep_class.php:506 include/classes/rep_class.php:527
 msgid "Rep.-No.:"
 msgstr "Rep.-Nr.:"
 
-#: include/classes/rep_class.php:635
+#: include/classes/rep_class.php:643
 #, php-format
 msgid "The %d most important remedies were printed. "
 msgstr "Es werden die wichtigsten %d Mittel ausgegeben."
@@ -2345,11 +2346,6 @@ msgstr "Auf deine Anfrage hin haben wir ein neues Passwort für dich erstellt."
 #: include/classes/login/mailer.php:109
 msgid "New Password:"
 msgstr "Neues Passwort:"
-
-#: include/classes/login/adminprocess.php:388
-#: include/classes/login/adminprocess.php:474
-msgid "Please enter your username"
-msgstr "Bitte Benutzernamen eingeben"
 
 #: include/classes/login/adminprocess.php:481
 msgid "User doesn't exist"
@@ -3423,6 +3419,13 @@ msgstr "Wähle die passenden Symptome durch anklicken aus"
 #: forms/select_symptoms.php:149
 msgid "Contains sub-rubrics, but doesn't count as a symptom"
 msgstr "Enthält Unterrubriken, zählt aber selbst nicht als Symptom"
+
+#, fuzzy
+#~ msgid "Please enter the username"
+#~ msgstr "Bitte wähle einen Benutzernamen "
+
+#~ msgid "Please enter your username"
+#~ msgstr "Bitte Benutzernamen eingeben"
 
 #~ msgid ""
 #~ "At the Moment I'm preparing the first stable release 1.0 so I need "

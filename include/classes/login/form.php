@@ -69,7 +69,7 @@ class  Form {
 	 * Get form value and error arrays, used when there
 	 * is an error with a user-submitted form.
 	 *
-	 * @return void
+	 * @return Form
 	 * @access public
 	 */
 	function __construct(){
@@ -142,4 +142,3 @@ class  Form {
 		return $this->errors;
 	}
 }
-?>

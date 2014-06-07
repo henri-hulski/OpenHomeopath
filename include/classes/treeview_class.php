@@ -80,7 +80,7 @@ class TreeView {
 	 *
 	 * @param integer $rubric_id         Main rubric id for which we're building the treeview. If we build for all main rubrics it has the value -1.
 	 * @param string  $tree_symptoms_tbl Symptoms table to build the tree from.
-	 * @return void
+	 * @return TreeView
 	 * @access public
 	 */
 	function __construct($rubric_id, $tree_symptoms_tbl = "") {
@@ -253,4 +253,3 @@ class TreeView {
 		return $str;
 	}
 }
-?>

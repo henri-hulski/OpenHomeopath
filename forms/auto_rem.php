@@ -45,4 +45,3 @@ if(strlen($search) > 0) {
 	$db->free_result();
 	echo "</ul>";
 }
-?>

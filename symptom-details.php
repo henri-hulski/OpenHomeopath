@@ -66,8 +66,6 @@ if ($session->logged_in) {  // user logged in
 
 if (isset($_REQUEST['start'])) {
 	$start = $_REQUEST['start'];
-} else {
-	$start = $start;
 }
 if (isset($_REQUEST['rubric'])) {
 	  $rubric_id = $_REQUEST['rubric'];
@@ -233,7 +231,7 @@ if (isset($check_letter) && $check_letter == TRUE) {
 		echo "<br /><strong>" . _("More information") . ":</strong> <a href='symptominfo.php?sym=$sym_id&lang=$lang' target='_blank'>OpenHomeopath</a>\n";
 		echo "<hr/></div>";
 		if (!empty($symptom_details['sources'])) {
-			foreach ($symptom_details['sources'] as $src_id=>$val) {
+			foreach ($symptom_details['sources'] as $src_id=>$src_val) {
 				echo ("<div class='mm-info-box'>");
 				echo ("<div class='mm-info-box-repertory'>");
 				echo ("    <span class=\"mm-info-box-reference-title\">".$symptom_details['sources_info'][$src_id]['src_title']."</span>");
@@ -266,7 +264,7 @@ if (isset($check_letter) && $check_letter == TRUE) {
 				if (!empty($symptom_details['sources'][$src_id]['reference'])) {
 					$ref_all= "      <div class='mm-info-box-part-title'><strong>".count($symptom_details['sources'][$src_id]['reference'])." $translations[General_references]: </strong></div>";
 					$ref_all=$ref_all."<div class='mm-info-box-reference'>";
-					foreach ($symptom_details['sources'][$src_id]['reference'] as $reference_id=>$val) {
+					foreach ($symptom_details['sources'][$src_id]['reference'] as $reference_id=>$ref_val) {
 						$ref_all=$ref_all."<strong>$reference_id</strong><span class='gray'> = ".$symptom_details['sources_info'][$reference_id]['src_title']." / ".$symptom_details['sources_info'][$reference_id]['src_author']."</span><br/>";
 					}
 					$ref_all=$ref_all."</div>";
@@ -291,7 +289,6 @@ if (isset($check_letter) && $check_letter == TRUE) {
 							$ref_details =$ref_details." ".$ref_id.", ";
 							$ref_tooltip = $ref_tooltip."<span style=\'font-size:0.8em;\'><strong>$ref_id</strong><span class=\'gray\'> = ".str_replace("'","&nbsp;",$symptom_details['sources_info'][$ref_id]['src_title'])." / ".$symptom_details['sources_info'][$ref_id]['src_author']."</span></span><br/>";
 						}
-						$ref_tooltip = $ref_tooltip;
 					}
 					$tooltip = "onmouseover=\"Tip('";
 					$rem_name = "";

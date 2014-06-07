@@ -112,7 +112,7 @@ if(isset($_SESSION['useredit'])) {
 	}
 	$db->free_result();
 	if (!empty($user_lang)) {
-		echo ("      <option selected='selected' value=''>$languages_ar[$user_lang]</option>\n");
+		echo ("      <option selected='selected' value=''>$languages_ar[{$user_lang}]</option>\n");
 	} else {
 		echo ("      <option value=''>&nbsp;</option>\n");
 	}
@@ -139,7 +139,7 @@ if(isset($_SESSION['useredit'])) {
 		}
 		$db->free_result();
 		if (!empty($user_sym_lang)) {
-			echo ("      <option selected='selected' value=''>$sym_lang_ar[$user_sym_lang]</option>\n");
+			echo ("      <option selected='selected' value=''>$sym_lang_ar[{$user_sym_lang}]</option>\n");
 			echo ("      <option value='wo'>" . _("as above") . "</option>\n");
 		} else {
 			echo ("      <option value=''>" . _("as above") . "</option>\n");

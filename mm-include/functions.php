@@ -107,7 +107,7 @@ function get_rem_by_rem_id($remedies_q_ar)
                 $remedies_ar[$remedy[2]]['rem_short'] = $remedy[0];
                 $remedies_ar[$remedy[2]]['rem_id'] = $remedy[2];
             }
-            $db->free_result();  
+            $db->free_result();
         }
     }else{
         $rem_id = $remedies_q_ar;
@@ -126,7 +126,7 @@ function get_rem_by_rem_id($remedies_q_ar)
     }
     if($remedies_ar){
         $remedies_ar = get_rem_alias($remedies_ar);
-        return $remedies_ar; 
+        return $remedies_ar;
     }else{
         return FALSE;
     }
@@ -135,11 +135,11 @@ function get_rem_by_rem_short($rem_short)
 {
     global $db;
     if ($rem_short{strlen($rem_short)-1} == ".") { // ein . am Ende wird entfernt
-        $rem_short_ohne_punkt = substr_replace($rem_short, "", -1, 1);
+        $rem_short_without_dot = substr_replace($rem_short, "", -1, 1);
     } else {
-        $rem_short_ohne_punkt = $rem_short;
+        $rem_short_without_dot = $rem_short;
     }
-    $query = "SELECT remedies.rem_name, remedies.rem_id, remedies.rem_short FROM remedies WHERE remedies.rem_short  = '$rem_short_ohne_punkt.' OR rem_short = '$rem_short' ORDER BY rem_short";
+    $query = "SELECT remedies.rem_name, remedies.rem_id, remedies.rem_short FROM remedies WHERE remedies.rem_short  = '$rem_short_without_dot.' OR rem_short = '$rem_short' ORDER BY rem_short";
     $db->send_query($query);
     while($remedy = $db->db_fetch_row()) {
 	   $remedies_ar[$remedy[1]]['rem_name'] = $remedy[0];
@@ -150,23 +150,23 @@ function get_rem_by_rem_short($rem_short)
     if (empty($rem_id)) { // die Mittelabkuerzung wurde nicht gefunden
         $query = "SELECT rem_id
                         FROM rem_alias
-                        WHERE alias_short = '$rem_short_ohne_punkt.' OR alias_short = '$rem_short'";
+                        WHERE alias_short = '$rem_short_without_dot.' OR alias_short = '$rem_short'";
         $db->send_query($query);
         $rem_id = $db->db_fetch_row();
         $db->free_result();
         $rem_id = $rem_id[0];
         if (!empty($rem_id)) { // die Aliasabkuerzung wurde gefunden
             $remedies_ar = get_rem_by_rem_id($rem_id);
-            
+
         }
         if($remedies_ar){
             $remedies_ar = get_rem_alias($remedies_ar);
-            return $remedies_ar; 
+            return $remedies_ar;
         }else{
             return FALSE;
         }
     }
-
+	return true;
 }
 
 function get_rem_alias($remedies_ar)
@@ -196,7 +196,7 @@ function get_rem_by_letter($letter)
     }
     $db->free_result();
     if($remedies_ar){
-        $remedies_ar = get_rem_alias($remedies_ar); 
+        $remedies_ar = get_rem_alias($remedies_ar);
     }
     return $remedies_ar;
 }
@@ -309,8 +309,6 @@ function get_rem_repertory_src_reference($rel_id)
 function get_rem_repertory_sources($remedies_ar)
 {
     global $db;
-    global $sym_rem;
-    global $lng;
     if(is_array($remedies_ar)){
         foreach($remedies_ar as $rem_id=>$remedy){
             if(isset($remedies_ar[$rem_id]['repertory']['sources'])){
@@ -371,17 +369,16 @@ function get_rem_searchform($rem_short)
 
 function view_rem_repertory($remedies_ar,$limit,$start)
 {
-    global $grade, $lng;
     $html = "";
-    foreach($remedies_ar as $rem_id=>$remedy){
+    foreach($remedies_ar as $remedy){
         $html .= "<div class='mm-info-box'>\n";
         $html .= view_rem_repertory_head($remedy);
-        
+
         if(!empty($remedy['repertory']['symptoms'])){
             if($remedy['repertory']['s_count'] > $limit){
                 $html .= "<div class='mm-info-box-part-title'>".get_page_nav($remedy['rem_short'],$remedy['repertory']['s_count'],$limit,$start)."</div>\n";
             }
-            $html .= view_rem_repertory_symptoms($remedy,$limit,$start);
+            $html .= view_rem_repertory_symptoms($remedy);
             if($remedy['repertory']['s_count'] > $limit){
                 $html .= "<div class='mm-info-box-part-title'>".get_page_nav($remedy['rem_short'],$remedy['repertory']['s_count'],$limit,$start)."</div>\n";
             }
@@ -393,7 +390,7 @@ function view_rem_repertory($remedies_ar,$limit,$start)
 
 function view_rem_repertory_head($remedy)
 {
-    global $grade, $translations, $lng;
+    global $grade, $translations;
     $html = "   <div class='mm-info-box-repertory'>\n";
     $html .= "<form name='repform' action='materia-medica.php'>";
     $html .= "      <span class='mm-info-box-source-title'>$translations[General_repertory] <span style='font-size:0.7em'><b>".$remedy['rem_name']."</b> (".$remedy['rem_short'].")</span></span>\n";
@@ -403,7 +400,7 @@ function view_rem_repertory_head($remedy)
     return $html;
 }
 
-function view_rem_repertory_symptoms($remedy,$limit,$start){
+function view_rem_repertory_symptoms($remedy){
     global $lng, $translations;
     $rubric_name = "rubric_".$lng;
     $html = "<div class='mm-info-box-rubric'>";
@@ -413,12 +410,12 @@ function view_rem_repertory_symptoms($remedy,$limit,$start){
             $sources = "$translations[Repertory_sources]: ";
             $ii = 0;
             $row = "";
-            foreach($symptom['sources'] as $rel_id=>$val2){
+            foreach($symptom['sources'] as $val2){
                 $sources .= "<a href=\"javascript:popup_url('source.php?src=$val2[src_id]',540,380)\" class='source' style=\"text-decoration:underline;color:#666666\" title='$translations[source_info]'>$val2[src_id]</a> <span class='grade$val2[grade]'>$val2[grade]</span>";
                 if($val2['src_references']){
                     $references = " (Ref: ";
                     $iii = 0;
-                    foreach($val2['src_references'] as $key=>$referenz){
+                    foreach($val2['src_references'] as $referenz){
                         $references .= "<a href=\"javascript:popup_url('source.php?src=$referenz',540,380)\" class='source' style=\"text-decoration:underline;color:#666666\" title='$translations[source_info]'>$referenz</a>";
                         if(count($val2['src_references'])> ($iii+1)){
                             $references = $references.", ";
@@ -487,7 +484,6 @@ function view_rem_rel_tab($remedy)
         $description = str_replace("\r\n", "<br />", $remedy_info[4]);
         $description = str_replace("\r", "<br />", $description);
         $description = str_replace("\n", "<br />", $description);
-        $description = $remedy_info[4];
         $rel_tab .= ("<tr><td><strong>".$translations['Materia_description'].":</strong> </td><td>$anti_rem_str</td></tr>");
     }
     $rel_tab .= ("</tbody></table>");
@@ -497,12 +493,12 @@ function view_rem_rel_tab($remedy)
 function get_itis_child($tsn)
 {
      global $db;
-    $query = "SELECT itis__taxonomic_units.tsn, itis__taxonomic_units.parent_tsn, itis__taxonomic_units.rank_id, itis__taxonomic_units.name_usage, itis__taxon_unit_types.rank_name, itis__longnames.completename, itis__kingdoms.kingdom_name 
-                    FROM itis__taxonomic_units, itis__longnames, itis__kingdoms, itis__taxon_unit_types 
-                    WHERE itis__taxonomic_units.parent_tsn = $tsn 
-                    AND itis__longnames.tsn = itis__taxonomic_units.tsn 
-                    AND itis__kingdoms.kingdom_id = itis__taxonomic_units.kingdom_id 
-                    AND itis__taxon_unit_types.kingdom_id = itis__taxonomic_units.kingdom_id 
+    $query = "SELECT itis__taxonomic_units.tsn, itis__taxonomic_units.parent_tsn, itis__taxonomic_units.rank_id, itis__taxonomic_units.name_usage, itis__taxon_unit_types.rank_name, itis__longnames.completename, itis__kingdoms.kingdom_name
+                    FROM itis__taxonomic_units, itis__longnames, itis__kingdoms, itis__taxon_unit_types
+                    WHERE itis__taxonomic_units.parent_tsn = $tsn
+                    AND itis__longnames.tsn = itis__taxonomic_units.tsn
+                    AND itis__kingdoms.kingdom_id = itis__taxonomic_units.kingdom_id
+                    AND itis__taxon_unit_types.kingdom_id = itis__taxonomic_units.kingdom_id
                     AND itis__taxon_unit_types.rank_id = itis__taxonomic_units.rank_id ";
     $db->send_query($query);
     $i=0;
@@ -573,7 +569,7 @@ function get_itis_synonym($tsn)
 		$itis_synonym_tsn_arr = NULL;
 	}
 	return $itis_synonym_tsn_arr;
-	
+
 }
 function get_itis_vernaculars($tsn)
 {
@@ -619,7 +615,7 @@ function get_rem_left($remedy, $remedy_itis, $check_url=1)
             $systemsat_link = ("<a href='$url_systemsat' target='_blank'>system-sat.de</a> Die homöopathischen Fäden der Ariadne");
 	$links_arr[] = $systemsat_link;
         }
-    
+
         //proving.info
         if($lang == "de"){
             $url_provings = "http://www.provings.info/substanz/" . str_replace(".", "", strtolower($remedy['rem_short']));
@@ -643,7 +639,7 @@ function get_rem_left($remedy, $remedy_itis, $check_url=1)
                     if(url_exists($url_provings)) {
                         $provings_link = ("<a href='$url_provings' target='_blank'>provings.info</a> Systematik und Prüfungen");
                         $links_arr[] = $provings_link;
-                        
+
                     }
                     }
                 }
@@ -653,11 +649,11 @@ function get_rem_left($remedy, $remedy_itis, $check_url=1)
 	$url_homoeowiki = "http://www.homoeowiki.org/index.php/" . str_replace(" ", "_", strtoupper($remedy['rem_name']));
             $homoeowiki_link = ("<a href='$url_homoeowiki' target='_blank'>homoeowiki.org</a>");
 	$links_arr[] = $homoeowiki_link;
-	
+
     }
 
-	
-    
+
+
     //species.wikimedia.org/wiki/
     if($remedy_itis['completename']){
         $url_species_wikimedia = "http://species.wikimedia.org/wiki/" . str_replace(" ", "_", strtolower($remedy_itis['completename']));
@@ -671,7 +667,7 @@ function get_rem_left($remedy, $remedy_itis, $check_url=1)
         $dr_duke_link = ("<a href='$url_dr_duke' target='_blank'>Dr. Duke s Phytochemical and Ethnobotanical Databases</a>");
         $links_arr[] = $dr_duke_link;
     }
-    
+
     //NCBI taxonomie
     if($remedy_itis['completename']){
         $url_ncbi = "http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?name=" . str_replace(" ", "+", strtolower($remedy_itis['completename']));
@@ -692,7 +688,7 @@ function get_rem_left($remedy, $remedy_itis, $check_url=1)
     //mittel links
     if(!empty($links_arr)){
         $ii=1;
-        foreach($links_arr as $key =>$link){
+        foreach($links_arr as $link){
             $rem_left .= $link;
             if($ii < count($links_arr)){
                 $rem_left .= "<br/>";
@@ -709,11 +705,11 @@ function view_rem_info_tab($remedy,$rem_id, $remedy_itis)
     if(!empty($remedy_itis['vernaculars'])){
         $vernaculars_html .= "<span class='vernaculars'>";
         $i=1;
-        foreach($remedy_itis['vernaculars'] as $key =>$vernaculars){
+        foreach($remedy_itis['vernaculars'] as $vernaculars){
             $vernaculars_html .= $vernaculars['vernacular_name'];
             if($i < count($remedy_itis['vernaculars'])){
                 $vernaculars_html .= "<br/>";
-            } 
+            }
             $i++;
         }
         $vernaculars_html .= "</span>";
@@ -723,11 +719,11 @@ function view_rem_info_tab($remedy,$rem_id, $remedy_itis)
     if(!empty($remedy_itis['synonyms'])){
         $synonyms_html .= "<br/><span class='synonym'>";
         $i=1;
-        foreach($remedy_itis['synonyms'] as $key =>$synonyms){
+        foreach($remedy_itis['synonyms'] as $synonyms){
             $synonyms_html .= "<span class='".strtolower($synonyms['rank_name'])."' title='".$synonyms['rank_name']."'>".$synonyms['completename']."</span>";
             if($i < count($remedy_itis['synonyms'])){
                 $synonyms_html .= "<br/>";
-            } 
+            }
             $i++;
         }
         $synonyms_html .= "</span>";
@@ -742,25 +738,25 @@ function view_rem_info_tab($remedy,$rem_id, $remedy_itis)
     // family
         $itis_family = "";
         if(!empty($remedy_itis['hierarchy'])){
-            foreach($remedy_itis['hierarchy'] as $key =>$hierarchy){
+            foreach($remedy_itis['hierarchy'] as $hierarchy){
                 if($hierarchy['rank_name'] == "Family"){
                     $itis_family = $hierarchy['completename']."<br/>";
                 }
             }
         }
-        // gruppen
-        $gruppen_html = "";
-        if(!empty($remedy['gruppen'])){
-            $gruppen_html .= "<span class='group'>";
+        // groups
+        $groups_html = "";
+        if(!empty($remedy['groups'])){
+            $groups_html .= "<span class='group'>";
             $i=1;
-            foreach($remedy['gruppen'] as $key =>$gruppen){
-                $gruppen_html .= "<a href='materia-medica.php?group_id=".$gruppen['id']."&lang=$lng'>".$gruppen['title']."</a>";
-                if($i < count($remedy['gruppen'])){
-                    $gruppen_html .= "<br/>";
-                } 
+            foreach($remedy['groups'] as $groups){
+                $groups_html .= "<a href='materia-medica.php?group_id=".$groups['id']."&lang=$lng'>".$groups['title']."</a>";
+                if($i < count($remedy['groups'])){
+                    $groups_html .= "<br/>";
+                }
                 $i++;
             }
-            $gruppen_html .= "</span>";
+            $groups_html .= "</span>";
         }
 	//mittel info tab
     $remedy_info_tab = "<table width='95%'>
@@ -778,7 +774,7 @@ function view_rem_info_tab($remedy,$rem_id, $remedy_itis)
                     <td class='rem-info-tab'>".$rem_id."</td>
                     <td class='rem-info-tab'><strong>".$remedy['rem_name']."</strong>$taxon $synonyms_html</td>
                     <td class='rem-info-tab'><strong>".$remedy['rem_short']."</strong>".$remedy['rem_alias']."</td>
-                    <td class='rem-info-tab'><strong>".$itis_family.$gruppen_html."</td>
+                    <td class='rem-info-tab'><strong>".$itis_family.$groups_html."</td>
 	            <td class='rem-info-tab'>".$vernaculars_html."</td>
                     <td class='rem-info-tab'>".get_rem_left($remedy, $remedy_itis)."</td>
                 </tr>
@@ -788,7 +784,6 @@ function view_rem_info_tab($remedy,$rem_id, $remedy_itis)
 }
 function view_rem_info($remedies_ar)
 {
-    global $lng;
     $synonyms_html = "";
     $html = "";
     $hierarchy_html = "";
@@ -796,13 +791,13 @@ function view_rem_info($remedies_ar)
         $remedy_itis = get_rem_itis($rem_id);
         if(!empty($remedy_itis['synonyms'])){
             $synonyms_html .= "<span class='synonym'>";
-             foreach($remedy_itis['synonyms'] as $key =>$synonyms){
+             foreach($remedy_itis['synonyms'] as $synonyms){
                 $synonyms_html .= " = <span class='".strtolower($synonyms['rank_name'])."' title='".$synonyms['rank_name']."'>".$synonyms['completename']."</span>";
             }
             $synonyms_html .= "</span>";
         }
         if(!empty($remedy_itis['hierarchy'])){
-            foreach($remedy_itis['hierarchy'] as $key =>$hierarchy){
+            foreach($remedy_itis['hierarchy'] as $hierarchy){
                 $hierarchy_html .= "<span class='".strtolower($hierarchy['rank_name'])."' title='".$hierarchy['rank_name']."'>".$hierarchy['completename']."</span> - ";
             }
             $hierarchy_html .= "<span class='".strtolower($remedy_itis['rank_name'])."' title='".$remedy_itis['rank_name']."'><b>".$remedy_itis['completename']."</b></span>\n";
@@ -838,11 +833,11 @@ function view_rem_list($remedies_ar)
         if(!empty($remedy_itis['vernaculars'])){
             $vernaculars_html .= "<span class='vernaculars'>";
             $i=1;
-            foreach($remedy_itis['vernaculars'] as $key =>$vernaculars){
+            foreach($remedy_itis['vernaculars'] as $vernaculars){
                 $vernaculars_html .= $vernaculars['vernacular_name'];
                 if($i < count($remedy_itis['vernaculars'])){
                     $vernaculars_html .= "<br/>";
-                } 
+                }
                 $i++;
             }
             $vernaculars_html .= "</span>";
@@ -852,11 +847,11 @@ function view_rem_list($remedies_ar)
         if(!empty($remedy_itis['synonyms'])){
             $synonyms_html .= "<br/><span class='synonym'>";
             $i=1;
-            foreach($remedy_itis['synonyms'] as $key =>$synonyms){
+            foreach($remedy_itis['synonyms'] as $synonyms){
                 $synonyms_html .= "<span class='".strtolower($synonyms['rank_name'])."' title='".$synonyms['rank_name']."'>".$synonyms['completename']."</span>";
                 if($i < count($remedy_itis['synonyms'])){
                     $synonyms_html .= "<br/>";
-                } 
+                }
                 $i++;
             }
             $synonyms_html .= "</span>";
@@ -871,31 +866,31 @@ function view_rem_list($remedies_ar)
         // family
         $itis_family = "";
         if(!empty($remedy_itis['hierarchy'])){
-            foreach($remedy_itis['hierarchy'] as $key =>$hierarchy){
+            foreach($remedy_itis['hierarchy'] as $hierarchy){
                 if($hierarchy['rank_name'] == "Family"){
                     $itis_family = $hierarchy['completename']."<br/>";
                 }
             }
         }
-        // gruppen
-        $gruppen_html = "";
-        if(!empty($remedy['gruppen'])){
-            $gruppen_html .= "<span class='group'>";
+        // groups
+        $groups_html = "";
+        if(!empty($remedy['groups'])){
+            $groups_html .= "<span class='group'>";
             $i=1;
-            foreach($remedy['gruppen'] as $key =>$gruppen){
-                $gruppen_html .= "<a href='materia-medica.php?group_id=".$gruppen['id']."&lang=$lng'>".$gruppen['title']."</a>";
-                if($i < count($remedy['gruppen'])){
-                    $gruppen_html .= "<br/>";
-                } 
+            foreach($remedy['groups'] as $groups){
+                $groups_html .= "<a href='materia-medica.php?group_id=".$groups['id']."&lang=$lng'>".$groups['title']."</a>";
+                if($i < count($remedy['groups'])){
+                    $groups_html .= "<br/>";
+                }
                 $i++;
             }
-            $gruppen_html .= "</span>";
+            $groups_html .= "</span>";
         }
         $remedy_info_list .= "<tr class=\"tr_results_2\" onclick=\"if (this.className == 'tr_highlighted_onclick'){ this.className='tr_results_2';}else{ this.className='tr_highlighted_onclick';}\" onmouseout=\"if (this.className!='tr_highlighted_onclick'){this.className='tr_results_2'}\" onmouseover=\"if (this.className!='tr_highlighted_onclick'){this.className='tr_highlighted_onmouseover'}\">
                     <td class='rem-info-tab'>".$rem_id."</td>
                     <td class='rem-info-tab'><strong><a href=\"materia-medica.php?rem=".$remedy['rem_short']."&lang=$lng\" title='Mittel Details'>".$remedy['rem_name']."</a> </strong>".$remedy['repertory']['s_count']."$taxon $synonyms_html</td>
                     <td class='rem-info-tab'><strong>".$remedy['rem_short']."</strong>".$remedy['rem_alias']."</td>
-                    <td class='rem-info-tab'><strong>".$itis_family.$gruppen_html."</td>
+                    <td class='rem-info-tab'><strong>".$itis_family.$groups_html."</td>
                     <td class='rem-info-tab'>".$vernaculars_html."</td>
                     <td class='rem-info-tab'>".get_rem_left($remedy, $remedy_itis,0)."</td>
                 </tr><tr><td colspan='6' style='border-bottom:1px solid black;'></td></tr>";
@@ -904,4 +899,3 @@ function view_rem_list($remedies_ar)
     //}
     return $html;
 }
-?>

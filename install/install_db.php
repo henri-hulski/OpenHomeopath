@@ -861,7 +861,7 @@ skin_open();
         $queries_tota = $totalqueries;
       }
 
-      $pct_bar    = "<div style=\"height:15px;width:$pct_done%;background-color:#000080;margin:0px;\"></div>";
+      $pct_bar    = "<div style=\"height:15px;width:$pct_done%;background-color:#000080;margin:0;\"></div>";
     }
     else
     {
@@ -1068,7 +1068,7 @@ function create_ajax_script()
 			if (http_request.overrideMimeType) {
 				http_request.overrideMimeType("text/xml");
 			}
-		} elseif (window.ActiveXObject) {
+		} else if (window.ActiveXObject) {
 		// IE
 			try {
 				http_request = new ActiveXObject("Msxml2.XMLHTTP");
@@ -1096,7 +1096,7 @@ function create_ajax_script()
 
 	  if (http_request.status != 200)
 	  {
-	    alert("Page unavailable, or wrong url!")
+	    alert("Page unavailable, or wrong url!");
 	    return;
 	  }
 
@@ -1118,7 +1118,7 @@ function create_ajax_script()
 			   r.getElementsByTagName('linenumber').item(0).firstChild.nodeValue;
 
 		// update table with new values
-		for(i = 1; i <= 24; i++)
+		for(var i = 1; i <= 24; i++)
 			document.getElementsByTagName('td').item(i).firstChild.data = get_xml_data('elem'+i,r);
 
 		// update color bar

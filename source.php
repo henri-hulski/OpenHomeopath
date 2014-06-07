@@ -129,4 +129,3 @@ if ($src_id = $_GET['src']){
 if (empty($_GET['popup'])) {
 	include("./skins/$skin/footer.php");
 }
-?>

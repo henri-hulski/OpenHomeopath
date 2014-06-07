@@ -74,7 +74,7 @@ a:hover {
 
 textarea {
     font-size: 12px;
-    font-family: 'Lucida Console', 'Andale Mono', 'Courier New', Courier, fixed;
+    font-family: 'Lucida Console', 'Andale Mono', 'Courier New', Courier, fixed, monospace;
   }
 
 /* hier sind stylesheets auf Basis von bieszkola-za */
@@ -201,8 +201,8 @@ p.user a:hover {
 
 #container {
     position:absolute;
-    top:0px;
-    left:0px;
+    top:0;
+    left:0;
     z-index:2;
     width: 100%;
     background-color: #FFF;
@@ -589,7 +589,7 @@ a.NavLink {
     border-style: solid;
     border-color: #FDFAD8;
     border-width: 1px;
-    padding: 0px 4px 0px 4px;
+    padding: 0 4px 0 4px;
   }
 
 
@@ -677,8 +677,8 @@ a.NavLink:hover {
 
 #symptom_table {
 	position: absolute;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 /*	width: 298px;*/
 	width: 336px;
 	overflow: hidden;
@@ -748,7 +748,7 @@ a.NavLink:hover {
 }
 
 #popup-body {
-	padding-bottom: 0px;
+	padding-bottom: 0;
 	padding-left: 1em;
 	padding-right: 1em;
 	padding-top: 1em;
@@ -764,8 +764,8 @@ a.NavLink:hover {
 
 #onwork {
 	position: fixed;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	width: 100%;
 	text-align: center;
 	z-index: 100;
@@ -800,7 +800,7 @@ a.NavLink:hover {
 	overflow: auto;
 	max-height: 348px;
 	top: 30px;
-	left: 0px;
+	left: 0;
 	background: #EEE;
 	z-index: 8;
 	width:330px;
@@ -977,7 +977,7 @@ table.user_table th {
 
 
 table.user_table thead tr {
-    left: -1;
+    left: -1px;
     top: 0;
     position: absolute;
     background-color: #E6E67F;
@@ -1284,7 +1284,7 @@ table.rem_symptoms_head {
 }
 
 table.rem_symptoms_head td {
-    padding: 0px 10px;
+    padding: 0 10px;
 }
 
 
@@ -1297,7 +1297,7 @@ div#symSelect {
 	overflow: auto;
 	overflow-x: hidden;
 	height: 372px;
-	padding: 10px
+	padding: 10px;
 }
 
 div#symSelect input {
@@ -1328,7 +1328,7 @@ div#rems_list {
 	overflow: auto;
 	overflow-x: hidden;
 	height: 420px;
-	padding: 10px
+	padding: 10px;
 }
 
 div#rems_list img {

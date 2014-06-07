@@ -153,7 +153,7 @@ users and also guests.</p>
 				<b>Author:</b>
 				Henri Schumacher &lt;<a
 href="mailto:henri.hulski&#64;gazeta.pl">henri.hulski&#64;<!---->gazeta.pl</a>&gt;<br />
-		<b>Located at</b> <a href="source-class-Session.html#37-775" title="Go to source code">include/classes/login/session.php</a><br />
+		<b>Located at</b> <a href="source-class-Session.html#37-776" title="Go to source code">include/classes/login/session.php</a><br />
 	</div>
 
 
@@ -164,7 +164,7 @@ href="mailto:henri.hulski&#64;gazeta.pl">henri.hulski&#64;<!---->gazeta.pl</a>&g
 
 		<td class="attributes"><code>
 			 public 
-			
+			<code><a href="class-Session.html">Session</a></code>
 			
 			</code>
 		</td>
@@ -186,6 +186,10 @@ href="mailto:henri.hulski&#64;gazeta.pl">henri.hulski&#64;<!---->gazeta.pl</a>&g
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Session.html">Session</a></code></code><br />
+				</div>
 
 
 
@@ -351,7 +355,7 @@ records the errors and returns</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_editAccount">#</a>
-		<code><a href="source-class-Session.html#549-705" title="Go to source code">editAccount</a>( <span>string <var>$subcurpass</var></span>, <span>string <var>$subnewpass</var></span>, <span>string <var>$subnewpass2</var></span>, <span>string <var>$subemail</var></span>, <span>string <var>$real_name</var></span>, <span>string <var>$extra</var></span>, <span>integer <var>$show_active</var></span>, <span>integer <var>$hide_email</var></span>, <span>string <var>$skin</var></span>, <span>mixed <var>$lang</var></span>, <span>mixed <var>$sym_lang</var></span> )</code>
+		<code><a href="source-class-Session.html#549-705" title="Go to source code">editAccount</a>( <span>string <var>$subcurpass</var></span>, <span>string <var>$subnewpass</var></span>, <span>string <var>$subnewpass2</var></span>, <span>string <var>$subemail</var></span>, <span>string <var>$real_name</var></span>, <span>string <var>$extra</var></span>, <span>integer <var>$show_active</var></span>, <span>integer <var>$hide_email</var></span>, <span>string <var>$skin</var></span>, <span>string <var>$lang</var></span>, <span>string <var>$sym_lang</var></span> )</code>
 
 		<div class="description short">
 			
@@ -390,13 +394,11 @@ changed automatically.</p>
 					<dt><var>$hide_email</var></dt>
 					<dd><code>integer</code><br>$hide_email 0 | 1 - 1 if the user wants to hide his email from other users</dd>
 					<dt><var>$skin</var></dt>
-					<dd><code>string</code><br>$skin original | kraque - skin the user uses + @param string $lang de | en -
-users interface language + @param string $sym_lang de | en - language the user
-prefers for symptoms</dd>
+					<dd><code>string</code><br>$skin original | kraque - skin the user uses</dd>
 					<dt><var>$lang</var></dt>
-					<dd></dd>
+					<dd><code>string</code><br>$lang de | en - users interface language</dd>
 					<dt><var>$sym_lang</var></dt>
-					<dd></dd>
+					<dd><code>string</code><br>$sym_lang de | en - language the user prefers for symptoms</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -579,7 +581,7 @@ userid.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_generateRandStr">#</a>
-		<code><a href="source-class-Session.html#752-774" title="Go to source code">generateRandStr</a>( <span>mixed <var>$length</var></span> )</code>
+		<code><a href="source-class-Session.html#752-775" title="Go to source code">generateRandStr</a>( <span>integer <var>$length</var></span> )</code>
 
 		<div class="description short">
 			
@@ -595,6 +597,11 @@ upper case) and digits, the length is a specified parameter.</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$length</var></dt>
+					<dd><code>integer</code><br>$length string length</dd>
+				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">

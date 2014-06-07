@@ -229,4 +229,3 @@ class PDF_MC_Table extends FPDF {
 		return $nl;
 	}
 }
-?>

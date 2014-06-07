@@ -114,4 +114,3 @@ function get_browser_language($allowed_languages, $default_language, $lang_varia
         // return the found language
         return $current_lang;
 }
-?>

@@ -45,4 +45,3 @@ if($num_rows > 0){
 	echo (implode("<br>", $uname_ar));
 	echo "<br>\n";
 }
-?>

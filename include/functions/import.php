@@ -591,5 +591,3 @@ function get_imported_reps() {
 	$db->free_result();
 	return $imported_reps_ar;
 }
-
-?>

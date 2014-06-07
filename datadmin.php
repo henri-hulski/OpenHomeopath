@@ -213,7 +213,7 @@ switch($function){
 //			if (!isset($insert_duplication) || $insert_duplication != '1'){ // otherwise would be checked for two times
 				// check values
 				$check = 0;
-				$check = check_required_fields($fields_labels_ar, $function);
+				$check = check_required_fields($fields_labels_ar);
 				if ($check == 0){
 					txt_out($normal_messages_ar["required_fields_missed"], "error_messages_form");
 				} // end if ($check == 0)
@@ -260,7 +260,7 @@ switch($function){
 
 									txt_out ("<br>".$normal_messages_ar["similar_records"]);
 
-									$insert_duplication_form = build_insert_duplication_form($fields_labels_ar, $table_name, $table_internal_name);
+									$insert_duplication_form = build_insert_duplication_form($fields_labels_ar, $table_name);
 
 									echo $insert_duplication_form;
 									echo $results_table;
@@ -692,7 +692,7 @@ switch($function){
 	case "update":
 		if ($enable_edit == "1"){
 			$check = 0;
-			$check = check_required_fields($fields_labels_ar, $function);
+			$check = check_required_fields($fields_labels_ar);
 			if ($check == 0){
 				txt_out($normal_messages_ar["required_fields_missed"], "error_messages_form");
 			} // end if ($check == 0)

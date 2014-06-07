@@ -44,9 +44,8 @@ if(strlen($search) > 0) {
 	$db->send_query($query);
 	echo "<ul>";
 	while($rem_groups = $db->db_fetch_row()) {
-		echo ("      <li><a onclick=\"setRemShort('$rem_groups[0]', this);document.searchform.submit();\">$rem_groups[3]</a></li>\n");
+		echo ("      <li><a onclick=\"setRemShort('$rem_groups[0]');document.searchform.submit();\">$rem_groups[3]</a></li>\n");
 	}
 	$db->free_result();
 	echo "</ul>";
 }
-?>

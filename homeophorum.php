@@ -18,5 +18,3 @@ $PHORUM_CONNECTOR = new HomeophorumConnector();
 // Run Phorum and let the PhorumConnector class transfer the output
 // to our website framework.
 include "$PHORUM_DIR/mods/embed_phorum/run_phorum.php";
-
-?>

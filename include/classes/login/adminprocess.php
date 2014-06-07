@@ -206,7 +206,7 @@ class  AdminProcess {
 				}
 			}
 			if ($user_changed_database) {
-				$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser', $session->time)";
+				$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser')";
 				$db->send_query($query);
 			}
 			/*
@@ -385,7 +385,7 @@ class  AdminProcess {
 		$subuser = $_POST["deluserdata"];
 		$field = "deluserdata";  //Use field name for username
 		if(!$subuser || strlen($subuser = trim($subuser)) == 0) {
-			$form->setError($field, "* " . _("Please enter your username") . "<br>");
+			$form->setError($field, "* " . _("Please enter a username") . "<br>");
 		}
 		/*
 		 * Errors exist, have user correct them
@@ -471,7 +471,7 @@ class  AdminProcess {
 		$subuser = $_POST[$user_post];
 		$field = $username;  // Use field name for username
 		if(!$subuser || strlen($subuser = trim($subuser)) == 0) {
-			$form->setError($field, "* " . _("Please enter your username") . "<br>");
+			$form->setError($field, "* " . _("Please enter a username") . "<br>");
 		} else {
 			/*
 			 * Make sure username is in database
