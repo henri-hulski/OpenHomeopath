@@ -24,7 +24,7 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  */
 
 function parse_express_script ($sym_rem, $src_id, $lang_id, $rubric_id) {
@@ -67,11 +67,7 @@ function parse_express_script ($sym_rem, $src_id, $lang_id, $rubric_id) {
 				} else {
 					$primary_src = 0;
 				}
-				$extracted_source = extract_source($remedy, $primary_src);
-				if ($extracted_source["error"] == 0) {
-					unset($extracted_source["error"]);
-					$source_ar[] = $extracted_source;
-				}
+				extract_source($remedy, $primary_src);
 			} else {
 				$text .= $symptom . ": " . $remedy . "\n";
 				$nq++;
@@ -186,13 +182,13 @@ function extract_symptom ($symptom_string, $rubric_id, $lang_id) {
 			$custom_rubric = 1;
 		} else {
 			$h++;
-			$prev_symptom == "";
+			$prev_symptom = "";
 			return 0;
 		}
 	}
 	if ($rubric_id == -1) {
 		$nr++;
-		$prev_symptom == "";
+		$prev_symptom = "";
 		return 0;
 	}
 	$symptom_string = preg_replace("/\s*>\s*/u", " > ", $symptom_string);  // set a space before and after every '>'
@@ -643,5 +639,3 @@ function build_possible_duplication_table($result)
 	return $results_table;
 
 } // end function build_possible_duplication_table
-
-?>

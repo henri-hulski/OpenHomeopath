@@ -24,7 +24,7 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  */
 
 include_once ("include/classes/login/session.php");
@@ -129,4 +129,3 @@ if ($src_id = $_GET['src']){
 if (empty($_GET['popup'])) {
 	include("./skins/$skin/footer.php");
 }
-?>

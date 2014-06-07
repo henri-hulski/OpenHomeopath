@@ -1,9 +1,39 @@
 Programmversion
 
-    Dies ist OpenHomeopath Version 1.0 veröffentlicht am 05.06.2014.
+    Dies ist OpenHomeopath Version 1.0.1 veröffentlicht am 07.06.2014.
     Nach einer grundlegenden Überarbeitung des gesamten Codes und der Datenbankstruktur
     veröffentliche ich hiermit nach über 7 Jahren Arbeit die erste stabile Version von OpenHomeopath.
     Wenn noch Bugs oder Programmfehler auftauchen und bei weiteren Fragen meldet euch bei mir.
+
+
+Changelog
+
+    * Version 1.0 veröffentlicht am 05.06.2014: Erstes stabiles Release nach über 7 Jahren Entwicklung
+      und einer grundlegenden Überarbeitung des gesamten Quellcodes und der Datenbankstruktur.
+      Die wichtigsten aktuellen Änderungen:
+        * Grundlegende Modernisierung des Layouts.
+        * Möglichkeit, das Repertorisierungsergebnis als PDF anzuzeigen oder herunterzuladen.
+        * Die Rubriken können jetzt bei der Repertorisierung gewichtet werden.
+        * Die Symptome in der Materia Medica werden wie bei der Repertorisierung als Rubrikbaum dargestellt.
+        * In der Materia Medica können die angezeigten Rubriken nach Hauptrubrik und minimaler Wertigkeit
+          gefiltert werden.
+        * In der Symptominfo lassen sich die zugeordeneten Mittel nach minimaler Wertigkeit filtern
+          und nach Wertigkeit, Mittelname oder Kurzname sortieren.
+          Bei der Sortierung nach Kurznamen wird eine kompaktere Darstellung gewählt.
+        * Reimport der Repertorien aus OpenRep: Kent, Bönninghausen, Boger und das Repertorium Publicum.
+          Weiterhin habe ich den deutschen Kent von der Bergischen Akademie nach grundlegender Durchsicht
+          und Fehlerbereinigung reimportiert.
+        * Beim Import wurden auch Querverweise zwischen den Rubriken berücksichtigt,
+          die jetzt in der Symptominfo angezeigt werden.
+        * Aktualisierung und Reorganisierung des OpenHomeopath-Handbuchs
+          und die vollständige Übersetzung des Handbuchs ins Englische.
+        * Weitgehende Verwendung der objektorientierten Programmierung (OOP)
+          und Reorganisation des PHP-Quellcodes in Klassen.
+        * Übersetzung aller Tabellen-, Spalten-, Klassen-, Funktions- und Variablennamen sowie aller Kommentare
+          in englisch, so daß sich auch internationale Entwickler an dem Projekt beteiligen können.
+        * Hinzufügen einer ausführlichen englischen Quellcode-Dokumentation nach dem PHPDoc-Schema.
+    * Version 1.0.1 veröffentlicht am 07.06.2014: Ein Bugfix-Release, bei dem Fehler bereinigt
+      und dieses Changelog hinzugeführt wurde.
 
 
 Lizenz und Copyright

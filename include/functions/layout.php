@@ -24,7 +24,7 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  */
 
 function select_skin($class = "") {
@@ -99,16 +99,16 @@ function begin_popup($history = 0) {
 	echo ("    <div id='popup-icon' style='position: absolute; top: 0; left: 0; width: 30px; height: 25px;'><img height='25' width='30' src='./img/popup-icon.gif' border='0'></div>\n");
 	echo ("    <div id='popup-title' style='position: absolute; top: 0; left: 30px; height: 25px; background: url(./img/popup-title-bg.gif) repeat-x; text-align: center;'><img height='25' width='140' src='./img/popup-title.gif'></div>\n");
 	echo ("  </div>\n");
-	echo ("  <div id='popup-close' style='position: absolute; top: 0; width: 30px; height: 25px;'><a style='padding: 0px;'href='javascript:popupClose();'><img height='25' width='30' src='./img/popup-close.gif' border='0'></a></div>\n");
+	echo ("  <div id='popup-close' style='position: absolute; top: 0; width: 30px; height: 25px;'><a style='padding: 0;'href='javascript:popupClose();'><img height='25' width='30' src='./img/popup-close.gif' border='0'></a></div>\n");
 	echo ("  <div id='popup-lu' style='position: absolute; left: 0; width: 5px; height: 6px; background-color: transparent;'><img height='6' width='5' src='./img/popup-lu.gif' border='0'></div>\n");
 	echo ("  <div id='popup-u' class='popup-background' style='position: absolute; left: 5px; height: 6px; background-image: url(./img/popup-u.gif); background-repeat: repeat-x;'></div>\n");
 	echo ("  <div class='resize' id='popup-ru' style='position: absolute; width: 16px; height: 16px; background-color:transparent; z-index:12;'><img height='16' width='16' src='./img/popup-resize.gif' border='0'></div>\n");
-	echo ("  <div id='popup-l' style='position: absolute; top: 25px; left: 0px; width: 2px; background: url(./img/popup-l.gif) repeat-y;'></div>\n");
+	echo ("  <div id='popup-l' style='position: absolute; top: 25px; left: 0; width: 2px; background: url(./img/popup-l.gif) repeat-y;'></div>\n");
 	echo ("  <div id='popup-r' style='position: absolute; top: 25px; width: 2px; background: url(./img/popup-r.gif) repeat-y;'></div>\n");
 	echo ("  <div id='popup-m' class='popup-background' style='position: absolute; top: 25px; left: 2px; overflow:auto;'>\n");
 	if ($history != 0) {
 		echo ("      <div style='float: right; margin: 25px'>\n");
-		echo ("        <a id='history_back' style='padding: 7px;'><img id='arrow_left' height='24' width='28' src='./img/arrow_left_inactive.gif' border='0'></a><a id='history_forward' style='padding: 7px;'><img id='arrow_right' height='24' width='28' src='./img/arrow_right_inactive.gif' border='0'></a>\n");
+		echo ("        <a id='history_back' style='padding: 7px;'><img id='arrow_left' height='24' width='38' src='./img/arrow_left_inactive.gif' border='0'></a><a id='history_forward' style='padding: 7px;'><img id='arrow_right' height='24' width='38' src='./img/arrow_right_inactive.gif' border='0'></a>\n");
 		echo ("      </div>\n");
 	}
 	echo ("    <div id='popup-body'>\n");
@@ -127,5 +127,3 @@ function popup($history = 0) {
 	begin_popup($history);
 	end_popup();
 }
-
-?>

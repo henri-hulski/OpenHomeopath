@@ -24,7 +24,7 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  */
 
 include_once("include/classes/login/session.php");
@@ -35,7 +35,7 @@ if (!$session->logged_in) {
 	$host  = $_SERVER['HTTP_HOST'];
 	$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 	$extra = "login.php?url=express.php";
-	header("Content-Type: text/html;charset=utf-8"); 
+	header("Content-Type: text/html;charset=utf-8");
 	header("Location: http://$host$uri/$extra");
 	die();
 }
@@ -153,7 +153,7 @@ if (!empty($_POST['sym_rem'])) {
 			} else {
 				// check for similar symptoms in the database
 				$query = build_select_duplicated_symptoms_query($symptom, $rubric_id, $lang_id, $symptom1_similar_ar, $symptom2_similar_ar);
-				
+
 				if ($query != "" && empty($_POST['insert_duplicated'])) { // if there are some duplication
 					$k++;
 					// execute the select query
@@ -271,7 +271,7 @@ if (!empty($_POST['sym_rem'])) {
       </tr>
       <tr>
         <td align="center">
-          <select class="drop-down3" name="sources" id="sources" size="1" onchange="javascript:document.express.submit()">
+          <select class="drop-down3" name="sources" id="sources" size="1" onchange="document.express.submit()">
 <?php
 $current_src = "";
 if (isset($_POST['sources'])) {

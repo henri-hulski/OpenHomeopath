@@ -28,4 +28,3 @@ Bitte editiere die Datei gemäß der untenstehenden Anweisungen.
 // expected monthly donatation goal in €/$
 // angepeilte monatliche Spendenerwartung in Euro bzw. US-Dollar
 	define("DONATION_GOAL_MONTHLY",   200);
-?>

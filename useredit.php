@@ -27,7 +27,7 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  */
 
 include_once ("include/classes/login/session.php");
@@ -112,7 +112,7 @@ if(isset($_SESSION['useredit'])) {
 	}
 	$db->free_result();
 	if (!empty($user_lang)) {
-		echo ("      <option selected='selected' value=''>$languages_ar[$user_lang]</option>\n");
+		echo ("      <option selected='selected' value=''>$languages_ar[{$user_lang}]</option>\n");
 	} else {
 		echo ("      <option value=''>&nbsp;</option>\n");
 	}
@@ -139,7 +139,7 @@ if(isset($_SESSION['useredit'])) {
 		}
 		$db->free_result();
 		if (!empty($user_sym_lang)) {
-			echo ("      <option selected='selected' value=''>$sym_lang_ar[$user_sym_lang]</option>\n");
+			echo ("      <option selected='selected' value=''>$sym_lang_ar[{$user_sym_lang}]</option>\n");
 			echo ("      <option value='wo'>" . _("as above") . "</option>\n");
 		} else {
 			echo ("      <option value=''>" . _("as above") . "</option>\n");

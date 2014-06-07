@@ -25,7 +25,7 @@
  * @copyright 2007-2014 Henri Schumacher
  * @license   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License v3
  * @version   1.0
- * @link      http://openhomeo.org/openhomeopath/download/openhomeopath_1.0.tar.gz
+ * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  * @see       datadmin.php
  */
 
@@ -36,7 +36,7 @@ function build_change_table_form_archiv($table_infos_ar, $table_name)
 {
 	global $url;
 	$change_table_form = "    <form method='get' action='$url' name='change_table_form'>\n";
-	$change_table_form .= "      <select name='table_name' class='select_change_table' onchange=\"javascript:document.change_table_form.submit()\">\n";
+	$change_table_form .= "      <select name='table_name' class='select_change_table' onchange=\"document.change_table_form.submit()\">\n";
 
 	$count_temp = count($table_infos_ar);
 	for($i=0; $i<$count_temp; $i++){
@@ -64,7 +64,7 @@ function build_results_table_archiv($fields_labels_ar, $table_name, $result, $ac
 // output: $results_table, the HTML results table
 // global: $submit_buttons_ar, the array containing the values of the submit buttons, $edit_target_window, the target window for edit/details (self, new......), $restore_icon, $details_icon (the image files to use as icons)
 {
-	global $submit_buttons_ar, $normal_messages_ar, $edit_target_window, $restore_icon, $details_icon, $word_wrap_col, $word_wrap_fix_width, $alias_prefix, $enable_row_highlighting, $prefix_internal_table, $db, $current_user_is_editor, $current_user, $url, $lang;
+	global $submit_buttons_ar, $edit_target_window, $restore_icon, $details_icon, $word_wrap_col, $word_wrap_fix_width, $alias_prefix, $enable_row_highlighting, $prefix_internal_table, $db, $url, $lang;
 
 	$function = "search";
 
@@ -192,10 +192,10 @@ function build_results_table_archiv($fields_labels_ar, $table_name, $result, $ac
 							} // end foreach
 	
 							reset($fields_labels_linked_field_ar);	
-							$field_to_display = get_field_correct_displaying($field_values_ar[$j], $linked_field_type, $linked_field_content, $linked_field_separator, "results_table"); // get the correct display mode for the field
+							$field_to_display = get_field_correct_displaying($field_values_ar[$j], $linked_field_type, $linked_field_content, "results_table"); // get the correct display mode for the field
 						} // end if
 						else {
-							$field_to_display = get_field_correct_displaying($field_values_ar[$j], $field_type, $field_content, $field_separator, "results_table"); // get the correct display mode for the field
+							$field_to_display = get_field_correct_displaying($field_values_ar[$j], $field_type, $field_content, "results_table"); // get the correct display mode for the field
 						} // end else
 						if ($field_name_temp === "archive_type") {
 							$field_to_display = "<div class='center'><strong>" . _("Current record") . "</strong></div>";
@@ -317,10 +317,10 @@ function build_results_table_archiv($fields_labels_ar, $table_name, $result, $ac
 						} // end foreach
 
 						reset($fields_labels_linked_field_ar);	
-						$field_to_display = get_field_correct_displaying($field_values_ar[$j], $linked_field_type, $linked_field_content, $linked_field_separator, "results_table"); // get the correct display mode for the field
+						$field_to_display = get_field_correct_displaying($field_values_ar[$j], $linked_field_type, $linked_field_content, "results_table"); // get the correct display mode for the field
 					} // end if
 					else {
-						$field_to_display = get_field_correct_displaying($field_values_ar[$j], $field_type, $field_content, $field_separator, "results_table"); // get the correct display mode for the field
+						$field_to_display = get_field_correct_displaying($field_values_ar[$j], $field_type, $field_content, "results_table"); // get the correct display mode for the field
 					} // end else
 					if (empty($field_to_display)) {
 						$field_to_display = "&nbsp;";
@@ -362,5 +362,3 @@ function build_results_table_archiv($fields_labels_ar, $table_name, $result, $ac
 	return $results_table;
 
 } // end function build_results_table_archiv
-
-?>

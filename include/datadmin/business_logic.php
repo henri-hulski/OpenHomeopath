@@ -86,7 +86,7 @@ function build_fields_names_array($table_name)
 // output: $fields_names_ar
 {
 	global $db;
-	
+
 	$sql = "DESCRIBE $table_name";
 	$db->send_query($sql);
 	while ($row = $db->db_fetch_assoc()) {
@@ -106,14 +106,14 @@ function build_tables_names_array($exclude_not_allowed = 1, $exclude_not_install
 	$z = 0;
 	$tables_names_ar = array();
 
-	if ( $exclude_not_installed == 1 ) { // get the list from $table_list_name tab 
+	if ( $exclude_not_installed == 1 ) { // get the list from $table_list_name tab
 		$sql = "SELECT name_table FROM `$table_list_name`";
 		if ( $exclude_not_allowed == 1) { // excluding not allowed if necessary
 			$sql .= " WHERE allowed_table = '1'";
 		} // end if
 		$db->send_query($sql);
 		while ($row = $db->db_fetch_row()) {
-			
+
 			if ($current_user_is_editor === 1 || $row[0] !== $users_table_name || $include_users_table === 1) {
 				$tables_names_ar[$z] = $row[0];
 				$z++;
@@ -149,7 +149,7 @@ function build_fields_labels_array($table_internal_name, $order_type)
 
 	// put the labels and other information of the table's fields in an array
 	$sql = "SELECT `name_field`, `present_insert_form_field`, `present_ext_update_form_field`, `present_search_form_field`, `required_field`, `present_results_search_field`, `present_details_form_field`, `check_duplicated_insert_field`, `type_field`, `other_choices_field`, `content_field`, `label_de_field`, `label_en_field`, `select_options_field`, `separator_field`, `primary_key_field_field`, `primary_key_table_field`, `primary_key_db_field`, `linked_fields_field`, `linked_fields_order_by_field`, `linked_fields_order_type_field`, `select_type_field`, `prefix_field`, `default_value_field`, `width_field`, `height_field`, `maxlength_field`, `hint_insert_de_field`, `hint_insert_en_field`, `order_form_field` FROM `$table_internal_name`";
-	
+
 	if ($order_type == "1") {
 		$sql .= " ORDER BY `order_form_field`";
 	} // end if
@@ -170,10 +170,10 @@ function build_fields_labels_array($table_internal_name, $order_type)
 			$fields_labels_ar[$i]["present_results_search_field"] = $field_row["present_results_search_field"]; // 1 if the user want to display it in the basic results page
 			$fields_labels_ar[$i]["present_details_form_field"] = $field_row["present_details_form_field"]; // 1 if the user want to display it in the details page
 			$fields_labels_ar[$i]["check_duplicated_insert_field"] = $field_row["check_duplicated_insert_field"]; // 1 if the field needs to be checked for duplicated insert
-			
+
 			$fields_labels_ar[$i]["label_de_field"] = $field_row["label_de_field"]; // the German label of the field
 			$fields_labels_ar[$i]["label_en_field"] = $field_row["label_en_field"]; // the English label of the field
-			
+
 			$fields_labels_ar[$i]["type_field"] = $field_row["type_field"]; // the type of the field
 			$fields_labels_ar[$i]["other_choices_field"] = $field_row["other_choices_field"]; // 0/1 the possibility to add another choice with select single menu
 			$fields_labels_ar[$i]["content_field"] = $field_row["content_field"]; // the control type of the field (eg: numeric, alphabetic, alphanumeric)
@@ -241,7 +241,7 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 			$function = 'search';
 			break;
 	} // end switch
-	
+
 	$form = "";
 	$form .= "<form id='dadabik_main_form' name='contacts_form' method='post' action='$action?table_name=".urlencode($table_name)."&function=$function";
 
@@ -252,7 +252,7 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 	if ( $form_type == "search") {
 		$form .= "&execute_search=1";
 	}
-	
+
 	$form .= "' enctype='multipart/form-data'><table>";
 
 	switch($form_type) {
@@ -302,7 +302,7 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 			$form .= "<tr><td align='right' valign='top'><table><tr><td class='td_label_form'>";
 			if ($fields_labels_ar[$i]["required_field"] == "1" and $form_type != "search") {
 				$form .= "*";
-			} // end if 
+			} // end if
 			$form .= $fields_labels_ar[$i]["label_" . $lang . "_field"]." ";
 			$form .= "</td></tr></table></td>";
 			//////////////////////////////////
@@ -415,9 +415,9 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 						else {
 							$form .= $fields_labels_ar[$i]["prefix_field"].$fields_labels_ar[$i]["default_value_field"];
 						} // end else
-						
+
 					} // end if
-					
+
 					$form .= "</textarea></td>"; // add the second coloumn to the form
 					break;
 				case "insert_timestamp":
@@ -460,7 +460,7 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 							if ($form_type === 'insert' && $show_insert_form_after_error === 1 && isset($_POST[$field_name_temp]) && $select_values_ar[$j] == stripslashes($_POST[$field_name_temp])) {
 								$form .= " selected";
 							} // end if
-							
+
 							$form .= ">".$select_values_ar[$j]."</option>"; // second part of the form row
 						} // end for
 					} // end if
@@ -468,15 +468,15 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 					if ($fields_labels_ar[$i]["primary_key_field_field"] != "") {
 						if ($db->db_num_rows($res_primary_key) > 0) {
 							while ($primary_key_row = $db->db_fetch_row($res_primary_key)) {
-								
+
 								$primary_key_value = $primary_key_row[0];
 								$linked_fields_value = "";
 								for ($z=1; $z<$fields_number; $z++) {
 									$linked_fields_value .= $primary_key_row[$z];
 									$linked_fields_value .= " - ";
 								} // end for
-								$linked_fields_value = substr($linked_fields_value, 0, -3); // delete the last " - 
-								
+								$linked_fields_value = substr($linked_fields_value, 0, -3); // delete the last " -
+
 								$form .= "<option value='".htmlspecialchars($primary_key_value)."'";
 
 								if ($form_type === 'update' or $form_type === 'ext_update') {
@@ -495,12 +495,12 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 								if ($form_type === 'insert' && $show_insert_form_after_error === 1 && isset($_POST[$field_name_temp]) && $primary_key_value == stripslashes($_POST[$field_name_temp])) {
 									$form .= " selected";
 								} // end if
-								
+
 								$form .= ">$linked_fields_value</option>"; // second part of the form row
 							} // end while
 						} // end if
 					} // end if ($fields_labels_ar[$i]["primary_key_field_field"] != "")
-					
+
 					if ($fields_labels_ar[$i]["other_choices_field"] == "1" and ($form_type == "insert" or $form_type == "update")) {
 						$form .= "<option value='......'";
 						if ($form_type === 'insert' && $show_insert_form_after_error === 1 && isset($_POST[$field_name_temp]) && $_POST[$field_name_temp] === '......') {
@@ -539,11 +539,11 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 
 						$form .= ">"; // text field for other....
 					} // end if
-					
+
 					$form .= "</td>"; // last part of the second coloumn of the form
 					break;
 			} // end switch
-			/////////////////////////////////////////	
+			/////////////////////////////////////////
 			// end build the second coloumn (input field)
 
 			if ($form_type == "insert" or $form_type == "update" or $form_type == "ext_update") {
@@ -552,7 +552,7 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 			$form .= "</tr></table></td></tr>";
 		} // end if ($fields_labels_ar[$i]["$field_to_ceck"] == "1")
 	} // enf for loop for each field in the label array
-	
+
 	$form .= "<tr><td class='tr_button_form' colspan='$number_cols'><input type='submit' class='button_form' value='".$submit_buttons_ar[$form_type]."'></td></tr></table></form>";
 	return $form;
 } // end build_form function
@@ -587,9 +587,9 @@ function build_select_type_select($field_name, $select_type, $first_option_blank
 	return $select_type_select;
 } // end function build_select_type_select
 
-function check_required_fields($fields_labels_ar, $function)
+function check_required_fields($fields_labels_ar)
 // goal: check if the user has filled all the required fields
-// input: all the fields values ($_POST), $_FILES (for uploaded files) and the array containing infos about fields ($fields_labels_ar), $function
+// input: all the fields values ($_POST), $_FILES (for uploaded files) and the array containing infos about fields ($fields_labels_ar)
 // output: $check, set to 1 if the check is ok, otherwise 0
 {
 	global $null_checkbox_prefix;
@@ -599,7 +599,7 @@ function check_required_fields($fields_labels_ar, $function)
 	while ($i<$count_temp and $check == 1) {
 		if ($fields_labels_ar[$i]["required_field"] == "1" and $fields_labels_ar[$i]["present_insert_form_field"] == "1") {
 			$field_name_temp = $fields_labels_ar[$i]["name_field"];
-			
+
 			if (isset($_POST[$null_checkbox_prefix.$field_name_temp]) && $_POST[$null_checkbox_prefix.$field_name_temp] === '1') { // NULL checkbox selected
 				$check = 0;
 			} // end if
@@ -697,7 +697,7 @@ function check_fields_types($fields_labels_ar, &$content_error_type)
 				$field_name_temp = $field_name_temp."_other____";
 			} // end if
 			if (($fields_labels_ar[$i]["type_field"] == "text" || $fields_labels_ar[$i]["type_field"] == "textarea" ||  $fields_labels_ar[$i]["type_field"] == "select_single") and $fields_labels_ar[$i]["present_insert_form_field"] == "1" and $_POST[$field_name_temp] != "") {
-				
+
 				switch ($fields_labels_ar[$i]["content_field"]) {
 					case "alphabetic":
 						if (contains_numerics($_POST[$field_name_temp])) {
@@ -738,7 +738,7 @@ function build_select_duplicated_query($table_name, $fields_labels_ar, &$string1
 // global $percentage_similarity, the percentage after that two strings are considered similar, $number_duplicated_records, the maximum number of records to be displayed as duplicated
 {
 	global $percentage_similarity, $number_duplicated_records, $db, $enable_authentication, $enable_browse_authorization, $current_user, $null_checkbox_prefix;
-	
+
 	// get the unique key of the table
 	$unique_field_name = $db->get_primary_key($table_name);
 
@@ -749,7 +749,7 @@ function build_select_duplicated_query($table_name, $fields_labels_ar, &$string1
 		$sql_select_all = "SELECT `$unique_field_name`, "; // this is used to select the records to check similiarity
 		//$select = "SELECT * FROM `$table_name`";
 		$select = build_select_part($fields_labels_ar, $table_name);
-		$where_clause = "";	
+		$where_clause = "";
 
 		// build the sql_select_all clause
 		$j = 0;
@@ -767,7 +767,7 @@ function build_select_duplicated_query($table_name, $fields_labels_ar, &$string1
 		} // end for
 		$sql_select_all = substr ($sql_select_all, 0, -2); // delete the last ", "
 		$sql_select_all .= " FROM `$table_name`";
-		
+
 		if ($enable_authentication === 1 && $enable_browse_authorization === 1) { // $ID_user_field_name = '$current_user' where clause part in order to select only the records the current user owns
 			$ID_user_field_name = get_ID_user_field_name($fields_labels_ar);
 
@@ -782,7 +782,7 @@ function build_select_duplicated_query($table_name, $fields_labels_ar, &$string1
 		// at the end of the above procedure I'll have, for example, "select ID, name, email from table" if ID is the unique key, name and email are field to check
 
 		// execute the select query
-		$res_contacts = $db->send_query($sql_select_all);	
+		$res_contacts = $db->send_query($sql_select_all);
 
 		if ($db->db_num_rows($res_contacts) > 0) {
 			while ($contacts_row = $db->db_fetch_row($res_contacts)) { // *A* for each record in the table
@@ -791,7 +791,7 @@ function build_select_duplicated_query($table_name, $fields_labels_ar, &$string1
 					if (!isset($_POST[$null_checkbox_prefix.$fields_to_check_ar[$i]]) || $_POST[$null_checkbox_prefix.$fields_to_check_ar[$i]] !== '1') { // NULL checkbox  is not selected
 						$z=0;
 						$found_similarity =0; // set to 1 when a similarity is found, so that it's possible to exit the loop (if I found that a record is similar it doesn't make sense to procede with other fields of the same record)
-					
+
 						// *C* check if the field inserted are similiar to the other fields to be checked in this record (*A*)
 						$count_temp_2 = count($fields_to_check_ar);
 						while ($z<$count_temp_2 and $found_similarity == 0) {
@@ -824,12 +824,12 @@ function build_select_duplicated_query($table_name, $fields_labels_ar, &$string1
 	else { // no unique keys
 		$sql = "";
 	} // end else
-	return $sql;	
+	return $sql;
 } // end function build_select_duplicated_query
 
-function build_insert_duplication_form($fields_labels_ar, $table_name, $table_internal_name)
+function build_insert_duplication_form($fields_labels_ar, $table_name)
 // goal: build a tabled form composed by two buttons: "Insert anyway" and "Go back"
-// input: all the field values ($_POST), $fields_labels_ar, $table_name, $table_internal_name
+// input: all the field values ($_POST), $fields_labels_ar, $table_name
 // output: $form, the form
 // global $submit_buttons_ar, the array containing the caption on submit buttons
 {
@@ -871,7 +871,7 @@ file_put_contents("/tmp/variable.txt", $buffer, FILE_APPEND);
 					if ($_POST[$fields_labels_ar[$i]["name_field"]] == $fields_labels_ar[$i]["prefix_field"]) { // the field contain just the prefix
 						$_POST[$fields_labels_ar[$i]["name_field"]] = "";
 					} // end if
-					
+
 					$form .= "<input type='hidden' name='$field_name_temp' value='".htmlspecialchars(stripslashes($_POST[$fields_labels_ar[$i]["name_field"]]))."'>";
 					break;
 			} // end switch
@@ -888,7 +888,7 @@ file_put_contents("/tmp/variable.txt", $buffer, FILE_APPEND);
 
 function build_change_table_form()
 // goal: build a form to choose the table
-// input: 
+// input:
 // output: the listbox
 {
 	global $table_name, $autosumbit_change_table_control, $dadabik_main_file;
@@ -1011,10 +1011,10 @@ function insert_record($fields_labels_ar, $table_name, $table_internal_name)
 					if ($fields_labels_ar[$i]["other_choices_field"] == "1" and $_POST[$field_name_temp] == "......" and $_POST[$field_name_other_temp] != "") { // insert the "other...." choice
 						$primary_key_field_field = $fields_labels_ar[$i]["primary_key_field_field"];
 						if ($primary_key_field_field != "") {
-							
+
 							$linked_fields_ar = explode($fields_labels_ar[$i]["separator_field"], $fields_labels_ar[$i]["linked_fields_field"]);
 
-							$primary_key_field_field = insert_other_field($fields_labels_ar[$i]["primary_key_db_field"], $fields_labels_ar[$i]["primary_key_table_field"], $linked_fields_ar[0], $_POST[$field_name_other_temp]);
+							$primary_key_field_field = insert_other_field($fields_labels_ar[$i]["primary_key_table_field"], $linked_fields_ar[0], $_POST[$field_name_other_temp]);
 							$sql .= "'".$primary_key_field_field."', "; // add the last ID inserted to the sql statement
 						} // end if ($foreign_key_temp != "")
 						else { // no foreign key field
@@ -1055,9 +1055,9 @@ function insert_record($fields_labels_ar, $table_name, $table_internal_name)
 	$sql .= ")";
 	/////////////////////////////
 	// end build the insert statement
-	
+
 	display_sql($sql);
-	
+
 	// insert the record
 	$db->send_query($sql);
 } // end function insert_record
@@ -1075,11 +1075,11 @@ function update_record($fields_labels_ar, $table_name, $table_internal_name, $wh
 	// build the update statement
 	/////////////////////////////
 	$where = "$where_field = '$where_value'";
-	$archive_type = "datadmin_update";	
+	$archive_type = "datadmin_update";
 	$db->archive_table_row($table_name, $where, $archive_type);
 	$sql = "";
 	$sql .= "UPDATE `$table_name` SET ";
-	
+
 	$count_temp = count($fields_labels_ar);
 	for ($i=0; $i<$count_temp; $i++) {
 		$field_name_temp = $fields_labels_ar[$i]["name_field"];
@@ -1095,12 +1095,12 @@ function update_record($fields_labels_ar, $table_name, $table_internal_name, $wh
 					$field_name_other_temp = $field_name_temp."_other____";
 
 					if ($fields_labels_ar[$i]["other_choices_field"] == "1" and $_POST[$field_name_temp] == "......" and $_POST[$field_name_other_temp] != "") { // insert the "other...." choice
-						
+
 						$primary_key_field_field = $fields_labels_ar[$i]["primary_key_field_field"];
 						if ($primary_key_field_field != "") {
 							$linked_fields_ar = explode($fields_labels_ar[$i]["separator_field"], $fields_labels_ar[$i]["linked_fields_field"]);
 
-							$primary_key_field_field = insert_other_field($fields_labels_ar[$i]["primary_key_db_field"], $fields_labels_ar[$i]["primary_key_table_field"], $linked_fields_ar[0], $_POST[$field_name_other_temp]);
+							$primary_key_field_field = insert_other_field($fields_labels_ar[$i]["primary_key_table_field"], $linked_fields_ar[0], $_POST[$field_name_other_temp]);
 							$sql .= "`".$field_name_temp."` = "; // add the field name to the sql statement
 							$sql .= "'".$primary_key_field_field."', "; // add the field value to the sql statement
 						} // end if ($foreign_key_temp != "")
@@ -1120,7 +1120,7 @@ function update_record($fields_labels_ar, $table_name, $table_internal_name, $wh
 						$sql .= "`".$field_name_temp."` = "; // add the field name to the sql statement
 						$sql .= "'".$_POST[$field_name_temp]."', "; // add the field value to the sql statement
 					} // end else
-					
+
 					break;
 				default: // textual field
 					$sql .= "`".$field_name_temp."` = "; // add the field name to the sql statement
@@ -1133,9 +1133,9 @@ function update_record($fields_labels_ar, $table_name, $table_internal_name, $wh
 	$sql .= " WHERE `".$where_field."` = '".$where_value."'";
 	/////////////////////////////
 	// end build the update statement
-	
+
 	display_sql($sql);
-	
+
 	// update the record
 	$db->send_query($sql);
 } // end function update_record
@@ -1227,9 +1227,9 @@ function build_where_clause($fields_labels_ar, $table_name)
 	return $where_clause;
 } // end function build_where_clause
 
-function get_field_correct_displaying($field_value, $field_type, $field_content, $field_separator, $display_mode)
+function get_field_correct_displaying($field_value, $field_type, $field_content, $display_mode)
 // get the correct mode to display a field, according to its content (e.g. format data, display select multiple in different rows without separator and so on
-// input: $field_value, $field_type, $field_content, $field_separator, $display_mode (results_table|details_page|plain_text)
+// input: $field_value, $field_type, $field_content, $display_mode (results_table|details_page|plain_text)
 // output: $field_to_display, the field value ready to be displayed
 // global: $word_wrap_col, the coloumn at which a string will be wrapped in the results
 {
@@ -1294,9 +1294,9 @@ function get_field_correct_displaying($field_value, $field_type, $field_content,
 	return $field_to_display;
 } // function get_field_correct_displaying
 
-function get_field_correct_csv_displaying($field_value, $field_type, $field_content, $field_separator)
+function get_field_correct_csv_displaying($field_value)
 // get the correct mode to display a field in a csv, according to its content (e.g. format data, display select multiple in different rows without separator and so on
-// input: $field_value, $field_type, $field_content, $field_separator
+// input: $field_value, $field_type, $field_content
 // output: $field_to_display, the field value ready to be displayed
 {
 	$field_to_display = str_replace("\r", '', $field_value);
@@ -1307,7 +1307,7 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 // goal: build an HTML table for basicly displaying the results of a select query
 // input: $table_name, $res_records, the results of the query, $results_type (search, possible_duplication......), $action (e.g. index.php), $where_clause, $page (o......n), $order, $order_type
 // output: $results_table, the HTML results table
-// global: $submit_buttons_ar, the array containing the values of the submit buttons, $edit_target_window, the target window for edit/details (self, new......), $delete_icon, $edit_icon, $details_icon (the image files to use as icons), $enable_edit, $enable_delete, $enable_details (whether to enable (1) or not (0) the edit, delete and details features 
+// global: $submit_buttons_ar, the array containing the values of the submit buttons, $edit_target_window, the target window for edit/details (self, new......), $delete_icon, $edit_icon, $details_icon (the image files to use as icons), $enable_edit, $enable_delete, $enable_details (whether to enable (1) or not (0) the edit, delete and details features
 {
 	global $submit_buttons_ar, $normal_messages_ar, $edit_target_window, $delete_icon, $edit_icon, $details_icon, $enable_edit, $enable_delete, $enable_details, $db, $ask_confirmation_delete, $word_wrap_col, $word_wrap_fix_width, $alias_prefix, $dadabik_main_file, $enable_row_highlighting, $prefix_internal_table, $current_user_is_editor, $current_user, $lang;
 
@@ -1324,7 +1324,7 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 	// build the table heading
 	$results_table .= "<tr>";
 
-	
+
 	$results_table .= "<th class='results'>&nbsp;</th>"; // skip the first column for edit, delete and details
 
 	$count_temp = count($fields_labels_ar);
@@ -1334,7 +1334,7 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 			$label_to_display = $fields_labels_ar[$i]["label_" . $lang . "_field"];
 
 			if ($word_wrap_fix_width === 1) {
-			
+
 				$spaces_to_add = $word_wrap_col-strlen($label_to_display);
 
 				if ( $spaces_to_add > 0) {
@@ -1343,7 +1343,7 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 					}
 				}
 			} // end if
-			
+
 			$results_table .= "<th class='results'>";
 
 			$field_is_current_order_by = 0;
@@ -1363,7 +1363,7 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 						$new_order_type = "DESC";
 					}
 				} // end elseif ($order != $fields_labels_ar[$i]["name_field"])
-				
+
 				$results_table .= "<a class='$link_class' href='$action?table_name=". urlencode($table_name)."&function=$function&where_clause=".urlencode($where_clause)."&page=$page&order=".urlencode($fields_labels_ar[$i]["name_field"])."&order_type=$new_order_type'>";
 
 				if ($field_is_current_order_by === 1) {
@@ -1374,7 +1374,7 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 						$results_table .= '<span class="arrow">&darr;</span> ';
 					} // end if
 				} // end if
-				
+
 				$results_table .= $label_to_display."</a></th>"; // insert the linked name of the field in the <th>
 			}
 			else {
@@ -1415,7 +1415,7 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 		else {
 			$results_table .= "<tr class='".$tr_results_class."'>";
 		} // end else
-		
+
 		$results_table .= "<td class='".$td_controls_class."'>";
 
 		if (!empty($unique_field_name) and ($results_type == "search" or $results_type == "possible_duplication")) { // exists a unique number: edit, delete, details make sense
@@ -1425,7 +1425,7 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 					$show_edit_delete = "0";
 				}
 			}
-			if ($enable_edit == "1" && $show_edit_delete == "1") { // display the edit icon 
+			if ($enable_edit == "1" && $show_edit_delete == "1") { // display the edit icon
 				$results_table .= "<a class='onlyscreen' target='_".$edit_target_window."' href='".$dadabik_main_file."?table_name=".urlencode($table_name)."&function=edit&where_field=".urlencode($where_field)."&where_value=".urlencode($where_value)."'><img border='0' src='".$edit_icon."' alt='".$submit_buttons_ar["edit"]."' title='".$submit_buttons_ar["edit"]."'></a>";
 			} // end if
 
@@ -1438,7 +1438,7 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 			} // end if
 
 			if ($enable_details == "1") { // display the details icon
-				$results_table .= "<a class='onlyscreen' target='_".$edit_target_window."' href='".$dadabik_main_file."?table_name=".urlencode($table_name)."&function=details&where_field=".urlencode($where_field)."&where_value=".urlencode($where_value)."'><img border='0' src='".$details_icon."' alt='".$submit_buttons_ar["details"]."' title='".$submit_buttons_ar["details"]."'></a>"; 
+				$results_table .= "<a class='onlyscreen' target='_".$edit_target_window."' href='".$dadabik_main_file."?table_name=".urlencode($table_name)."&function=details&where_field=".urlencode($where_field)."&where_value=".urlencode($where_value)."'><img border='0' src='".$details_icon."' alt='".$submit_buttons_ar["details"]."' title='".$submit_buttons_ar["details"]."'></a>";
 			} // end if
 
 		} // end if
@@ -1446,7 +1446,7 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 		for ($i=0; $i<$count_temp; $i++) {
 			if ($fields_labels_ar[$i]["present_results_search_field"] == "1") { // the user want to display the field in the search results page
 				$results_table .= "<td>"; // start the cell
-				
+
 				$field_name_temp = $fields_labels_ar[$i]["name_field"];
 				$field_type = $fields_labels_ar[$i]["type_field"];
 				$field_content = $fields_labels_ar[$i]["content_field"];
@@ -1461,7 +1461,7 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 					$linked_fields_field = $fields_labels_ar[$i]["linked_fields_field"];
 					$alias_suffix_field = $fields_labels_ar[$i]["alias_suffix_field"];
 					$linked_fields_ar = explode($fields_labels_ar[$i]["separator_field"], $linked_fields_field);
-					
+
 					// get the list of all the installed tables
 					$tables_names_ar = build_tables_names_array(0);
 
@@ -1501,11 +1501,11 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 						} // end foreach
 
 						reset($fields_labels_linked_field_ar);
-						
-						$field_to_display = get_field_correct_displaying($field_values_ar[$j], $linked_field_type, $linked_field_content, $linked_field_separator, "results_table"); // get the correct display mode for the field
+
+						$field_to_display = get_field_correct_displaying($field_values_ar[$j], $linked_field_type, $linked_field_content, "results_table"); // get the correct display mode for the field
 					} // end if
 					else {
-						$field_to_display = get_field_correct_displaying($field_values_ar[$j], $field_type, $field_content, $field_separator, "results_table"); // get the correct display mode for the field
+						$field_to_display = get_field_correct_displaying($field_values_ar[$j], $field_type, $field_content, "results_table"); // get the correct display mode for the field
 					} // end else
 
 					if (empty($field_to_display)) {
@@ -1517,11 +1517,11 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 				$results_table .= "</td>"; // end the cell
 			} // end if
 		} // end for
-		
+
 		$results_table .= "</tr>";
 	} // end while
 	$results_table .= "</table>";
-	
+
 	return $results_table;
 
 } // end function build_results_table
@@ -1551,12 +1551,12 @@ function build_csv($res_records, $fields_labels_ar)
 				$field_name_temp = $fields_labels_ar[$i]["name_field"];
 				$field_type = $fields_labels_ar[$i]["type_field"];
 				$field_content = $fields_labels_ar[$i]["content_field"];
-				$field_separator = $fields_labels_ar[$i]["separator_field"];	
+				$field_separator = $fields_labels_ar[$i]["separator_field"];
 				$field_values_ar = array(); // reset the array containing values to display, otherwise for each loop I have the previous values
 
 				$primary_key_field_field = $fields_labels_ar[$i]["primary_key_field_field"];
 				if ($primary_key_field_field != "") {
-					
+
 					$primary_key_field_field = $fields_labels_ar[$i]["primary_key_field_field"];
 					$primary_key_table_field = $fields_labels_ar[$i]["primary_key_table_field"];
 					$primary_key_db_field = $fields_labels_ar[$i]["primary_key_db_field"];
@@ -1576,8 +1576,8 @@ function build_csv($res_records, $fields_labels_ar)
 
 				$count_temp_2 = count($field_values_ar);
 				for ($j=0; $j<$count_temp_2; $j++) {
-					
-					$field_to_display = get_field_correct_csv_displaying($field_values_ar[$j], $field_type, $field_content, $field_separator);
+
+					$field_to_display = get_field_correct_csv_displaying($field_values_ar[$j]);
 
 					$csv .= str_replace("'", "''", $field_to_display)." ";
 				}
@@ -1660,11 +1660,11 @@ function build_details_table($fields_labels_ar, $res_details)
 						} // end foreach
 
 						reset($fields_labels_linked_field_ar);
-						
-						$field_to_display = get_field_correct_displaying($field_values_ar[$j], $linked_field_type, $linked_field_content, $linked_field_separator, "details_table"); // get the correct display mode for the field
+
+						$field_to_display = get_field_correct_displaying($field_values_ar[$j], $linked_field_type, $linked_field_content, "details_table"); // get the correct display mode for the field
 					} // end if
 					else {
-						$field_to_display = get_field_correct_displaying($field_values_ar[$j], $fields_labels_ar[$i]["type_field"], $fields_labels_ar[$i]["content_field"], $fields_labels_ar[$i]["separator_field"], "details_table"); // get the correct display mode for the field
+						$field_to_display = get_field_correct_displaying($field_values_ar[$j], $fields_labels_ar[$i]["type_field"], $fields_labels_ar[$i]["content_field"], "details_table"); // get the correct display mode for the field
 					} // end else
 
 					$details_table .= $field_to_display."&nbsp;"; // at the field value to the table
@@ -1723,7 +1723,7 @@ function build_insert_update_notice_email_record_details($fields_labels_ar, $res
 				$notice_email .= $fields_labels_ar[$i]["label_" . $lang . "_field"].':'; // add the label
 
 				for ($j=0; $j<$count_temp_2; $j++) {
-					$field_to_display = get_field_correct_displaying($field_values_ar[$j], $fields_labels_ar[$i]['type_field'], $fields_labels_ar[$i]['content_field'], $fields_labels_ar[$i]['separator_field'], 'plain_text'); // get the correct display mode for the field
+					$field_to_display = get_field_correct_displaying($field_values_ar[$j], $fields_labels_ar[$i]['type_field'], $fields_labels_ar[$i]['content_field'], 'plain_text'); // get the correct display mode for the field
 
 					$notice_email .= ' '.$field_to_display; // add the field value
 				} // end for
@@ -1743,10 +1743,10 @@ function build_navigation_tool($table_name, $where_clause, $pages_number, $page,
 // output: $navigation_tool, the html navigation tool
 {
 	$function = "search";
-	
+
 	$navigation_tool = "";
 
-	$page_group = (int)($page/10); // which group? (from 0......n) e.g. page 12 is in the page_group 1 
+	$page_group = (int)($page/10); // which group? (from 0......n) e.g. page 12 is in the page_group 1
 	$total_groups = ((int)(($pages_number-1)/10))+1; // how many groups? e.g. with 32 pages 4 groups
 	$start_page = $page_group*10; // the navigation tool start with $start_page, end with $end_page
 	if ($start_page+10 > $pages_number) {
@@ -1755,9 +1755,9 @@ function build_navigation_tool($table_name, $where_clause, $pages_number, $page,
 	else {
 		$end_page = $start_page+10;
 	} // end else
-	
+
 	$variables_to_pass = 'table_name='. urlencode($table_name).'&function='.$function.'&where_clause='.urlencode($where_clause).'&order='.urlencode($order).'&order_type='.urlencode($order_type);
-	
+
 	if ($page_group > 1) {
 		$navigation_tool .= "<a class='navig' href='$action?".$variables_to_pass."&page=0' title='1'>&lt;&lt;</a> ";
 	} // end if
@@ -1788,7 +1788,7 @@ function delete_record($table_name, $where_field, $where_value)
 {
 	global $db;
 	$where = "$where_field = '$where_value'";
-	$archive_type = "datadmin_delete";	
+	$archive_type = "datadmin_delete";
 	$db->archive_table_row($table_name, $where, $archive_type);
 	$sql = "DELETE FROM `$table_name` WHERE `$where_field` = '$where_value'";
 	display_sql($sql);
@@ -1877,7 +1877,7 @@ function create_table_list_table()
 // goal: drop (if present) the old table list and create the new one.
 {
 	global $db, $table_list_name;
-	
+
 	$sql = "DROP TABLE IF EXISTS $table_list_name";
 	$db->send_query($sql);
 
@@ -1904,7 +1904,7 @@ function create_users_table()
 // goal: drop (if present) the old users table and create the new one.
 {
 	global $db, $users_table_name;
-	
+
 	$fields = "(
 		`id_user` MEDIUMINT UNSIGNED NOT NULL PRIMARY AUTOINCREMENT,
 		`user_type_user` VARCHAR(50) NOT NULL,
@@ -2058,12 +2058,12 @@ function build_int_table_field_form($field_position, $int_fields_ar, $fields_lab
 					$int_table_form .= "<option value='1'";
 					if ($fields_labels_ar[$field_position][$int_field_name_temp] == "1") {
 						$int_table_form .= " selected";
-					} // end if	
+					} // end if
 					$int_table_form .= ">Y</option>";
 					$int_table_form .= "<option value='0'";
 					if ($fields_labels_ar[$field_position][$int_field_name_temp] == "0") {
 						$int_table_form .= " selected";
-					} // end if	
+					} // end if
 					$int_table_form .= ">N</option>";
 					$int_table_form .= "</select>";
 					break;
@@ -2090,7 +2090,7 @@ function build_int_table_field_form($field_position, $int_fields_ar, $fields_lab
 	return $int_table_form;
 } // end function build_int_table_field_form($field_position, $int_fields_ar, $fields_labels_ar)
 
-function insert_other_field($primary_key_db, $primary_key_table, $field_name, $field_value_other)
+function insert_other_field($primary_key_table, $field_name, $field_value_other)
 // goal: insert in the primary key table the other.... field
 // input: $primary_key_table, $primary_key_db, $linked_fields, $field_value_other
 // outpu: the ID of the record inserted
@@ -2107,8 +2107,10 @@ function insert_other_field($primary_key_db, $primary_key_table, $field_name, $f
 		$db->send_query($sql_insert_other);
 
 		return $db->db_insert_id();
-	} // end if
-} // end function insert_other_field($foreign_key, $field_value_other)
+	} else {
+		return false;
+	}
+} // end function insert_other_field
 
 function update_options($fields_labels_ar_i, $field_name, $field_value_other)
 // goal: upate the options of a field when a user select other....
@@ -2143,7 +2145,7 @@ function build_select_part($fields_labels_ar, $table_name)
 			// if the field has linked fields, include each linked fields in the select statement and the corresponding table (wiht join) in the from part. Use alias for all in order to mantain name unicity, each field has is own alias_suffix_field so it is easy
 			if ($field['primary_key_field_field'] !== '' && $field['primary_key_field_field'] !== NULL) {
 				$linked_fields_ar = explode($field['separator_field'], $field['linked_fields_field']);
-				
+
 				foreach ($linked_fields_ar as $linked_field) {
 					$sql_fields_part .= "`".$field['primary_key_table_field'].$alias_prefix.$field['alias_suffix_field']."`".'.'."`".$linked_field."`".' AS '."`".$field['primary_key_table_field'].$alias_prefix.$linked_field.$alias_prefix.$field['alias_suffix_field']."`".', ';
 				} //end foreach
@@ -2164,7 +2166,7 @@ function build_select_part($fields_labels_ar, $table_name)
 
 	// compose the final statement
 	$sql = "SELECT $sql_fields_part FROM `$table_name`$sql_from_part" ;
-	
+
 	return $sql;
 } // end function build_select_part()
 
@@ -2182,7 +2184,7 @@ function build_records_per_page_form($action, $records_per_page, $table_name)
 	$records_per_page_form .= "<input type='hidden' name='table_name' value='$table_name'>";
 	$records_per_page_form .= "<input type='hidden' name='function' value='search'>";
 
-	$records_per_page_form .= "<select class='select_records_per_page' name='records_per_page' onchange=\"javascript:document.records_per_page_form.submit()\">";
+	$records_per_page_form .= "<select class='select_records_per_page' name='records_per_page' onchange=\"document.records_per_page_form.submit()\">";
 
 	foreach ($records_per_page_ar as $records_per_page_item) {
 		$records_per_page_form .= "<option value='$records_per_page_item'";

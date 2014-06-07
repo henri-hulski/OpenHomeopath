@@ -1,9 +1,32 @@
 Program Version
 
-    This is OpenHomeopath Version 1.0 released on 05.06.2014.
+    This is OpenHomeopath Version 1.0.1 released on 07.06.2014.
     After a fundamental revision of the entire code and database structure I'm glad
     to publish the first stable release of OpenHomeopath after more than 7 years work.
     If you still find bugs or if you've a question please contact me.
+
+
+Changelog
+
+    * Version 1.0 released on 05.06.2014: First stable release after more than 7 years work
+      and a fundamental revision of the entire code and database structure.
+      The most important recent changes:
+        * Essential modernization of the layout.
+        * Possibility to view or download the repertorization result as PDF.
+        * You can weight the rubrics during repertorization.
+        * The rubrics in the Materia Medica are now presented in treeview like in the repertorization.
+        * In the Materia Medica the rubrics can be filtered by main rubric and minimal grade.
+        * In the Symptominfo the remedies can be filtered by minimal grade and sorted by grade, name
+          or short name. When sorting by short name the remedies will be presented in a more compact form.
+        * Reimport of the repertories from OpenRep: Kent, Bönninghausen, Boger and the Repertorium Publicum.
+          I also reimport the German Kent from the Bergische Akademie after an essential revision.
+        * Cross-references were also imported and can be reviewed in the Symptominfo.
+        * Update and reorganization of the OpenHomeopath manual and full translation of the manual in English.
+        * Extensive use of object-oriented programming (OOP) and reorganization of the PHP source code in classes.
+        * Translation of all table-, class-, function- and variable-names and also all comments in English,
+          so that international developers can join the project.
+        * Added a detailed PHPDoc source code documentation.
+    * Version 1.0.1 released on 07.06.2014: Bugfix-release, added this changelog.
 
 
 License und Copyright
