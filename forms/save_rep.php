@@ -104,7 +104,7 @@ if (!$magic_hat->restricted_mode) {
 	$print_PDF .= "')";
 }
 ?>
-        <input class='input' type='text' name='date' id='date' size='11' maxlength='10' value = '<?php echo $rep->date; ?>'>&nbsp;&nbsp;&nbsp;
+        <input class='input' type='date' name='date' id='date' size='11' maxlength='10' value = '<?php echo $rep->date; ?>'>&nbsp;&nbsp;&nbsp;
       </td>
     </tr>
     <tr>

@@ -179,7 +179,7 @@ if(isset($_SESSION['useredit'])) {
       <table cellspacing="0" align="center">
        <tr>
           <td><label for="email"><?php echo _("E-mail:"); ?> </label></td>
-          <td><input type="text" name="email" id="email" size="30" maxlength="50"
+          <td><input type="email" name="email" id="email" size="30" maxlength="50"
 <?php
 	if ($form->value("email")) {
 		echo (" value='" . $form->value("email") . "'");

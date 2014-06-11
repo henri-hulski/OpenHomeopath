@@ -118,7 +118,7 @@ echo _(" and your e-mail.");
 ?>
         <tr>
           <td><label for="email"><?php echo _("E-mail:"); ?> </label></td>
-          <td><input type="text" name="email" id="email" maxlength="50" value="<? echo $form->value("email"); ?>"></td>
+          <td><input type="email" name="email" id="email" maxlength="50" value="<? echo $form->value("email"); ?>"></td>
           <td><? echo $form->error("email"); ?></td>
         </tr>
 <?php
