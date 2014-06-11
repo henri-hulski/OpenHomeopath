@@ -29,7 +29,7 @@ $url = "http://openhomeo.org";
 if (url_exists($url)) {
 ?>
 <!-- Stats -->
-    <script type="text/javascript">
+    <script>
       var _paq = _paq || [];
 <?php
 	$lang = $session->lang;
@@ -66,7 +66,7 @@ if (url_exists($url)) {
         var u="<?php echo $url; ?>/stats/";
         _paq.push(["setTrackerUrl", u+"js/"]);
         _paq.push(["setSiteId", "2"]);
-        var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+        var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0];
         g.defer=true; g.async=true; g.src=u+"js/"; s.parentNode.insertBefore(g,s);
       })();
     </script>

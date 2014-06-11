@@ -200,7 +200,7 @@ All the field contents come from POST, and I use them directly ($_POST)
 ***************************************************/
 
 $skin = $session->skin;
-include ("./skins/$skin/header_datadmin.php");
+include ("skins/$skin/header_datadmin.php");
 
 $action = $dadabik_main_file;
 
@@ -443,11 +443,9 @@ switch($function){
 				$csv = build_csv($res_records_csv, $fields_labels_ar);
 				ob_end_clean();
 				$db->free_result($res_records_csv);
-				//header('Content-Type: application/vnd.ms-excel');
 				header("Content-Type: text/x-csv");
 				header('Content-Disposition: attachment; filename="'.$table_name.'.csv"');
-				//header('Content-Type: application/octet-stream');
-					
+
 				echo $csv;
 				exit;
 			} // end if
@@ -958,5 +956,5 @@ switch($function){
 } // end swtich ($function)
 
 // include footer
-include ("./skins/$skin/footer_datadmin.php");
+include ("skins/$skin/footer_datadmin.php");
 ?>

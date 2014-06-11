@@ -31,7 +31,7 @@ include_once ("include/classes/login/session.php");
 $skin = $session->skin;
 $head_title = _("Support") . " :: OpenHomeopath";
 $meta_description = _("How can I support OpenHomeopath?");
-include("./skins/$skin/header.php");
+include("skins/$skin/header.php");
 ?>
 <h1>
   <?php echo _("How can I support OpenHomeopath?"); ?>

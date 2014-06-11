@@ -16,7 +16,7 @@ if(!$session->isAdmin()) {
 	die();
 } else {
 	$skin = $session->skin;
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 	if (!empty($_POST['update_db'])) {
 		set_time_limit(0);
 		ignore_user_abort(true);
@@ -86,6 +86,6 @@ $db->free_result();
   </form>
 
 <?php
-	include("./skins/$skin/footer.php");
+	include("skins/$skin/footer.php");
 }
 ?>

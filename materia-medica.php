@@ -28,21 +28,13 @@
  */
 
 include_once("include/classes/login/session.php");
-if ($session->lang) {
-	if ($session->lang == "en") {
-		$lng = "en";
-		$meta_content_language ="en_us";
-	} else {
-		$lng = "de";
-		$meta_content_language ="de";
-	}
-} else {
-	$lng = "de";
-	$meta_content_language ="de";
-}
-include_once("./mm-include/lang/$lng.php");
-include("./mm-include/functions.php");
-include("./mm-include/functions_groups.php");
+$skin = $session->skin;
+$lang = $session->lang;
+include("mm-include/functions.php");
+include("mm-include/functions_symptoms.php");
+include_once("mm-include/lang/$lang.php");
+include("mm-include/functions.php");
+include("mm-include/functions_groups.php");
 $letters = array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
 $materia_table = "materia";
 $sym_rem = "sym_rem";
@@ -51,7 +43,6 @@ $limit = 100;
 $start = 0;
 $min_in = 3;
 
-$skin = $session->skin;
 if ($session->logged_in) {  // user logged in
 	$username = $session->username;
 }
@@ -134,9 +125,8 @@ if (isset($remedies_ar) AND (!isset($check_letter) || $check_letter == FALSE)) {
 		$meta_description = $remedy['rem_name']." (".$remedy['rem_short'].")";
 		$meta_keywords = $remedy['rem_name'].", ".$remedy['rem_short'].", ";
 	}
-	include("./skins/$skin/header.php");
-	include './mm-include/popup.html';
-	include './mm-include/materia-medica.css';
+	include 'mm-include/popup.html';
+	include 'mm-include/materia-medica.css';
 	echo ("<div style='text-align:right;font-size:10px;'>".view_lang_menu('materia-medica')."</div>");
 	echo ("<div class='mm-letters-menu'>$translations[General_remedies]: ".get_letters_menu($letter)."</div>");
 	echo "<div class='mm-letters-menu'>".get_rem_searchform($rem_get)."</div>";
@@ -150,9 +140,9 @@ if (isset($remedies_ar) AND (!isset($check_letter) || $check_letter == FALSE)) {
 } elseif (isset($remedies_ar) AND isset($check_letter) AND $check_letter != FALSE) {
 	$head_title = $translations['list_of_remedies_in_homeopathy_letter'].": ".$letter." - OpenHomeo.org";
 	$meta_description = "$translations[list_of_remedies_in_homeopathy_letter]: ".$letter;
-	include("./skins/$skin/header.php");
-	include './mm-include/popup.html';
-	include './mm-include/materia-medica.css';
+	include("skins/$skin/header.php");
+	include 'mm-include/popup.html';
+	include 'mm-include/materia-medica.css';
 	echo ("<div style='text-align:right;font-size:10px;'>".view_lang_menu('materia-medica')."</div>");
 	echo ("<div class='mm-letters-menu'>$translations[General_remedies]: ".get_letters_menu($letter)."</div>");
 	if (!empty($rem_get)) {
@@ -165,9 +155,9 @@ if (isset($remedies_ar) AND (!isset($check_letter) || $check_letter == FALSE)) {
 } elseif (isset($_GET['taxon'])) {
 	$head_title = "Taxonomie - OpenHomeo.org";
 	$meta_description = "Taxonomie homöopatischer Heilmittel";
-	include("./skins/$skin/header.php");
-	include './mm-include/popup.html';
-	include './mm-include/materia-medica.css';
+	include("skins/$skin/header.php");
+	include 'mm-include/popup.html';
+	include 'mm-include/materia-medica.css';
 	echo ("<div style='text-align:right;font-size:10px;'>".view_lang_menu('materia-medica')."</div>");
 	echo ("<div class='mm-letters-menu'>$translations[General_remedies]: ".get_letters_menu($letter)."</div>");
 	echo "<div class='mm-letters-menu'>".get_rem_searchform($rem_get)."</div>";
@@ -192,9 +182,9 @@ if (isset($remedies_ar) AND (!isset($check_letter) || $check_letter == FALSE)) {
 	$gruppe = get_rem_groups_by_id($_GET['group_id']);
 	$head_title = "$gruppe[title] $translations[General_group] - OpenHomeo.org";
 	$meta_description = "$gruppe[title], $translations[groups_of_remedies_in_homeopathy]";
-	include("./skins/$skin/header.php");
-	include './mm-include/popup.html';
-	include './mm-include/materia-medica.css';
+	include("skins/$skin/header.php");
+	include 'mm-include/popup.html';
+	include 'mm-include/materia-medica.css';
 	echo ("<div style='text-align:right;font-size:10px;'>".view_lang_menu('materia-medica')."</div>");
 	echo ("<div class='mm-letters-menu'><b>$translations[General_groups]:</b> ".get_letters_menu($letter,"gletter")."</div>");
 	echo "<div class='mm-letters-menu'>".get_rem_groups_searchform($_REQUEST['group_id'])."</div>";
@@ -219,17 +209,17 @@ if (isset($remedies_ar) AND (!isset($check_letter) || $check_letter == FALSE)) {
 		if (isset($_GET['show']) && $_GET['show'] == 'repertory') {
 			echo get_group_repertory_symptoms($gruppe, $remedies_ar, $where_query, $start, $limit);
 		} else {
-			echo "<a href='?group_id=".$_REQUEST['group_id']."&show=repertory&lang=$lng'>$translations[General_show_repertory]</a><br/>";
+			echo "<a href='?group_id=".$_REQUEST['group_id']."&show=repertory&lang=$lang'>$translations[General_show_repertory]</a><br/>";
 		}
 	} else {
-		echo "<a href='login.php?url=materia-medica.php?group_id=".$_REQUEST['group_id']."&show=repertory&lang=$lng'>$translations[General_show_repertory]</a><br/>";
+		echo "<a href='login.php?url=materia-medica.php?group_id=".$_REQUEST['group_id']."&show=repertory&lang=$lang'>$translations[General_show_repertory]</a><br/>";
 	}
 } elseif (isset($_GET['gletter'])) {
 	$head_title = "$translations[groups_of_remedies_in_homeopathy_letter]: ".$letter." - OpenHomeo.org";
 	$meta_description = "$translations[groups_of_remedies_in_homeopathy_letter]: ".$letter;
-	include("./skins/$skin/header.php");
-	include './mm-include/popup.html';
-	include './mm-include/materia-medica.css';
+	include("skins/$skin/header.php");
+	include 'mm-include/popup.html';
+	include 'mm-include/materia-medica.css';
 	echo ("<div style='text-align:right;font-size:10px;'>".view_lang_menu('materia-medica')."</div>");
 	echo ("<div class='mm-letters-menu'><b>$translations[General_groups]:</b> ".get_letters_menu($letter, "gletter")."</div>");
 	echo "<div class='mm-letters-menu'>".get_rem_groups_searchform()."</div>";
@@ -238,15 +228,15 @@ if (isset($remedies_ar) AND (!isset($check_letter) || $check_letter == FALSE)) {
 } else {
 	$head_title = "$translations[remedies_in_homeopathy] - OpenHomeo.org";
 	$meta_description = "Liste homöopatischer Heilmittel";
-	include("./skins/$skin/header.php");
-	include './mm-include/popup.html';
-	include './mm-include/materia-medica.css';
+	include("skins/$skin/header.php");
+	include 'mm-include/popup.html';
+	include 'mm-include/materia-medica.css';
 	echo ("<div style='text-align:right;font-size:10px;'>".view_lang_menu('materia-medica')."</div>");
 	echo ("<div class='mm-letters-menu'>$translations[General_remedies]: ".get_letters_menu($letter)."</div>");
 	echo "<div class='mm-letters-menu'>".get_rem_searchform($rem_get)."</div>";
 }
 
-include("./skins/$skin/footer.php");
+include("skins/$skin/footer.php");
 
 function get_family($longname) {
 	global $db;

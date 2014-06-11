@@ -34,7 +34,7 @@ if (!isset($tabbed) || !$tabbed) {
 if (!$tabbed && !isset($_REQUEST['tab'])) {
 	$head_title = _("Repertorization") . " :: OpenHomeopath";
 	$skin = $session->skin;
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 }
 if (isset($_REQUEST['rep'])) {
 	$rep_id = $_REQUEST['rep'];
@@ -140,6 +140,6 @@ if ((isset($_REQUEST['rubrics']) && !empty($num_rows)) || !empty($_REQUEST['syms
 <?php
 if (!$tabbed && !isset($_REQUEST['tab'])) {
 	popup();
-	include("./skins/$skin/footer.php");
+	include("skins/$skin/footer.php");
 }
 ?>

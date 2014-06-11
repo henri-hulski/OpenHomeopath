@@ -44,7 +44,7 @@ if (!$tabbed && !isset($_GET['tab']) && empty($_GET['popup'])) {
 	}
 	$current_page = "symptominfo";
 	$skin = $session->skin;
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 } elseif (empty($_GET['popup'])) {
 ?>
   <div style='float: right; margin: 25px;'>

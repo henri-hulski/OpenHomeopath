@@ -103,7 +103,7 @@ $db->free_result();
         </td>
         <td>
 <?php
-echo ("          <input class='input' name='search' id='search' type='text' size='46' maxlength='600'");
+echo ("          <input class='input' type='search' name='search' id='search' placeholder='" . _("Type words or part of words to filter the symptom") . "' autofocus size='60' maxlength='600'");
 $search = "";
 if (isset($_REQUEST['search'])) {
 	$search = $_REQUEST['search'];

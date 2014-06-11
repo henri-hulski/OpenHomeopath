@@ -36,7 +36,7 @@ if (isset($_REQUEST['tab'])) {
 	include ("include/functions/layout.php");
 } else {
 	$head_title = _("Repertorization result") . " :: OpenHomeopath";
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 }
 if (isset($_REQUEST['tab'])) {
 ?>
@@ -106,5 +106,5 @@ if (!isset($_REQUEST['tab'])) {
 <?php
 if (!isset($_REQUEST['tab'])) {
 	popup(1);
-	include("./skins/$skin/footer.php");
+	include("skins/$skin/footer.php");
 }

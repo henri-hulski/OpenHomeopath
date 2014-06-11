@@ -30,7 +30,7 @@
 include_once ("include/classes/login/session.php");
 $head_title = _("Login") . " :: OpenHomeopath";
 $skin = $session->skin;
-include("./skins/$skin/header.php");
+include("skins/$skin/header.php");
 ?>
 
 <h1><?php echo _("Login"); ?></h1>
@@ -73,12 +73,12 @@ if($form->num_errors > 0){
       <table cellspacing="0" align="center">
         <tr>
           <td><label for="user"><?php echo _("Username:"); ?> </label></td>
-          <td><input type="text" name="user" id="user" size="30" maxlength="30" value="<?php echo $form->value("user"); ?>"/></td>
+          <td><input type="text" name="user" id="user" required size="30" maxlength="30" value="<?php echo $form->value("user"); ?>"/></td>
       	  <td><?php echo $form->error("user"); ?></td>
         </tr>
         <tr>
           <td><br><label for="pass"><?php echo _("Password:"); ?> </label></td>
-          <td><input type="password" name="pass" id="pass" size="30" maxlength="30" value="<?php echo $form->value("pass"); ?>" /></td>
+          <td><input type="password" name="pass" id="pass" required size="30" maxlength="30" value="<?php echo $form->value("pass"); ?>" /></td>
           <td><?php echo $form->error("pass"); ?></td>
         </tr>
         <tr>
@@ -143,7 +143,7 @@ else{
         <div class="FloatingText"><?php echo _("A new password will be generated for you and sent to the e-mail address associated with your account."); ?>
           <div class="FloatingText">
             <label for="lostpass"><?php echo _("Username:"); ?> </label>
-            <input type="text" name="lostpass" id="lostpass" size="30" maxlength="30" value="<?php echo $form->value("lostpass"); ?>"> <?php echo $form->error("lostpass"); ?>
+            <input type="text" name="lostpass" id="lostpass" required size="30" maxlength="30" value="<?php echo $form->value("lostpass"); ?>"> <?php echo $form->error("lostpass"); ?>
             <input type="hidden" name="subforgot" value="1">
           </div>
           &nbsp;&nbsp;<input type="submit" class="submit" value=" <?php echo _("Send"); ?> ">
@@ -155,5 +155,5 @@ else{
 <?php
 }
 }
-include("./skins/$skin/footer.php");
+include("skins/$skin/footer.php");
 ?>

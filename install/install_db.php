@@ -138,15 +138,15 @@ foreach ($_REQUEST as $key => $val)
 <html>
 <head>
 <title><?php echo _("OpenHomeopath - Data Maintenance Administration"); ?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" href="../skins/original/css/openhomeopath.css" type ="text/css" media="screen">
-<link rel="stylesheet" href="../css/styles_screen.css" type ="text/css" media="screen">
+<meta charset="utf-8">
+<link rel="stylesheet" href="../skins/original/css/openhomeopath.css" media="screen">
+<link rel="stylesheet" href="../css/styles_screen.css" media="screen">
 <meta http-equiv="Cache-Control" content="no-cache/"/>
 <meta http-equiv="Pragma" content="no-cache"/>
 <meta http-equiv="Expires" content="-1"/>
 <meta name="robots" content="noindex, nofollow">
 
-<style type="text/css">
+<style>
 <!--
 p,td,th
 { font-size:14px;
@@ -246,7 +246,7 @@ td.bgpctbar
 
 -->
 </style>
-<script type="text/javascript">
+<script>
 function zweifel () {
   var check = confirm ("<?php echo _("Are you sure ?"); ?>");
   return check;
@@ -911,7 +911,7 @@ skin_open();
 	printf ("<p class='centr'>" . _("Now I'm <b>waiting %d milliseconds</b> before starting next session...") . "</p>\n", $delaypersession);
     }
       if (!$ajax)
-        echo ("<script language=\"JavaScript\" type=\"text/javascript\">window.setTimeout('location.href=\"".$_SERVER["PHP_SELF"]."?start=$linenumber&fn=".urlencode($curfilename)."&foffset=$foffset&totalqueries=$totalqueries&delimiter=".urlencode($delimiter)."\";',500+$delaypersession);</script>\n");
+        echo ("<script language=\"JavaScript\">window.setTimeout('location.href=\"".$_SERVER["PHP_SELF"]."?start=$linenumber&fn=".urlencode($curfilename)."&foffset=$foffset&totalqueries=$totalqueries&delimiter=".urlencode($delimiter)."\";',500+$delaypersession);</script>\n");
 
       echo ("<noscript>\n");
       echo ("<p class=\"centr\"><a href=\"".$_SERVER["PHP_SELF"]."?start=$linenumber&amp;fn=".urlencode($curfilename)."&amp;foffset=$foffset&amp;totalqueries=$totalqueries&amp;delimiter=".urlencode($delimiter)."\">Continue from the line $linenumber</a> (Enable JavaScript to do it automatically)</p>\n");
@@ -1048,7 +1048,7 @@ function create_ajax_script()
   global $linenumber, $foffset, $totalqueries, $delaypersession, $curfilename, $delimiter;
 ?>
 
-	<script type="text/javascript" language="javascript">
+	<script language="javascript">
 
 	// creates next action url (upload page, or XML response)
 	function get_url(linenumber,fn,foffset,totalqueries,delimiter) {

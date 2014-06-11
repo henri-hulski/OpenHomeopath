@@ -12,7 +12,7 @@ if(!$session->isAdmin()) {
 } else {
 	$head_title = _("Administration of the symptom tables") . " :: OpenHomeopath";
 	$skin = $session->skin;
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 	if (empty($_POST['add_missing_parents']) && empty($_POST['restruct']) && empty($_POST['update_lang_symptom_tables'])) {
 ?>
 <h1>
@@ -91,6 +91,6 @@ if(!$session->isAdmin()) {
 ?>
 
 <?php
-	include("./skins/$skin/footer.php");
+	include("skins/$skin/footer.php");
 }
 ?>

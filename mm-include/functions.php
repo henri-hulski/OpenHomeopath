@@ -363,7 +363,7 @@ function get_radio_grade()
 }
 function get_rem_searchform($rem_short)
 {
-    $form = "<form name='searchform' action='materia-medica.php'><div style='position:relative;top:0;left:0;'><input id=\"query\" type=\"text\"  onkeyup=\"autosuggest('auto_all_remedies')\" /><input name=\"rem\" id=\"rem\" type=\"hidden\" value=\"".$rem_short."\"  ><div id=\"results\"></div><div id=\"search_icon\"><img src=\"./skins/original/img/search.png\" width=\"24\" height=\"24\"></div></div></form>";
+    $form = "<form name='searchform' action='materia-medica.php'><div style='position:relative;top:0;left:0;'><input id=\"query\" type=\"text\"  onkeyup=\"autosuggest('auto_all_remedies')\" /><input name=\"rem\" id=\"rem\" type=\"hidden\" value=\"".$rem_short."\"  ><div id=\"results\"></div><div id=\"search_icon\"><img src=\"skins/original/img/search.png\" width=\"24\" height=\"24\"></div></div></form>";
 	return $form;
 }
 

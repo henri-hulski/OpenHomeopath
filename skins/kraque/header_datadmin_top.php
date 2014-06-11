@@ -1,4 +1,8 @@
 <?php
+if (empty($lang)) {
+	$lang = $session->lang;
+}
+
 header("Expires: Mon, 1 Dec 2006 01:00:00 GMT");
 header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 header("Cache-Control: no-store, no-cache, must-revalidate");
@@ -7,30 +11,32 @@ header("Pragma: no-cache");
 header("Content-Type: text/html;charset=utf-8"); 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="<?php echo($lang); ?>">
 <head>
 <title><?php echo _("Data maintenance") . " :: OpenHomeopath"; ?></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="Content-Language" content="de,en">
+    <meta charset="utf-8">
     <meta name="author" content="Henri Schumacher">
     <meta name="robots" content="all">
     <meta name="robots" content="index,follow">
-    <link rel="stylesheet" type="text/css" media="screen" href="skins/<?php echo(SKIN_NAME);?>/css/openhomeopath.css">
-    <link rel="stylesheet" type="text/css" media="print" href="skins/<?php echo(SKIN_NAME);?>/css/print.css">
-    <link rel="stylesheet" href="css/styles_screen.css" type ="text/css" media="screen">
-    <link rel="stylesheet" href="css/styles_print.css" type ="text/css" media="print">
-    <link rel="SHORTCUT ICON" href="favicon.ico" type="image/x-icon">
-<script src="./javascript/openhomeopath.js" type="text/javascript"></script>
-<script src="../scriptaculous-js-1.8.2/lib/prototype.js" type="text/javascript"></script>
-    <script src="../scriptaculous-js-1.8.2/src/scriptaculous.js" type="text/javascript"></script>
-    <script src="../scriptaculous-js-1.8.2/menu.js" type="text/javascript"></script>
-<script language="Javascript" type="text/javascript">
+    <link rel="stylesheet" media="screen" href="skins/<?php echo(SKIN_NAME);?>/css/openhomeopath.css">
+    <link rel="stylesheet" media="print" href="skins/<?php echo(SKIN_NAME);?>/css/print.css">
+    <link rel="stylesheet" href="css/styles_screen.css" media="screen">
+    <link rel="stylesheet" href="css/styles_print.css" media="print">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<!--[if lt IE 9]>
+	  <script src="javascript/html5shiv.min.js"></script>
+	<![endif]-->
+    <script src="javascript/openhomeopath.js"></script>
+    <script src="../scriptaculous-js-1.8.2/lib/prototype.js"></script>
+    <script src="../scriptaculous-js-1.8.2/src/scriptaculous.js"></script>
+    <script src="../scriptaculous-js-1.8.2/menu.js"></script>
+<script language="Javascript">
   if(window.navigator.systemLanguage && !window.navigator.language) {
     window.onload=hoverIE;
   }
 </script>
 
-<script language="Javascript" type="text/javascript">
+<script language="Javascript">
 function enable_disable_input_box_insert_edit_form(null_checkbox_prefix, year_field_suffix, month_field_suffix, day_field_suffix)
 // goal: set the status (disabled|enabled) of each input element of the insert|edit form, depending on the status (checked|not checked) of the corresponding null value checkbox (if it exists)
 // input: null_checkbox_prefix, year_field_suffix, month_field_suffix, day_field_suffix

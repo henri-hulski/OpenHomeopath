@@ -17,10 +17,10 @@ if (!empty($db->connection)) {
       </div>
     <!-- End Wrapper -->
     <!-- Piwik -->
-    <script type="text/javascript">
+    <script>
 var pkBaseURL = (("https:" == document.location.protocol) ? "https://openhomeo.org/piwik/" : "http://openhomeo.org/piwik/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-</script><script type="text/javascript">
+document.write(decodeURI("%3Cscript src='" + pkBaseURL + "piwik.js'%3E%3C/script%3E"));
+</script><script>
 try {
 var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
 piwikTracker.trackPageView();

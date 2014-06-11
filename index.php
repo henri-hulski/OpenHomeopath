@@ -30,7 +30,7 @@
 include_once ("include/classes/login/session.php");
 $tabbed = true;
 $skin = $session->skin;
-include("./skins/$skin/header.php");
+include("skins/$skin/header.php");
 ?>
 <h1>
   OpenHomeopath
@@ -92,12 +92,12 @@ if ($session->logged_in) {
 }
 ?>
 </div>
-<script type="text/javascript">
+<script>
   var tabberArgs = {};
   tabberArgs.div = document.getElementById("tabber");
   document.getElementById("tabber").tabber = new tabberObj(tabberArgs);
 </script>
 <?php
 popup(1);
-include("./skins/$skin/footer.php");
+include("skins/$skin/footer.php");
 ?>

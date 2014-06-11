@@ -43,7 +43,7 @@ $head_title = _("Edit Account") . " :: OpenHomeopath";
 $meta_description = _("Here you can edit your account");
 $skin = $session->skin;
 $lang = $session->lang;
-include("./skins/$skin/header.php");
+include("skins/$skin/header.php");
 ?>
 
 <h1><?php echo _("User Account Edit"); ?></h1>
@@ -284,5 +284,5 @@ if(isset($_SESSION['useredit'])) {
 
 <?php
 }
-include("./skins/$skin/footer.php");
+include("skins/$skin/footer.php");
 ?>

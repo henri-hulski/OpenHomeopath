@@ -14,7 +14,7 @@ $current_page = "symptomeditor";
 if (!$tabbed && !isset($_GET['tab']) && empty($_GET['popup'])) {
 	$head_title = _("Symptom-Editor") . " :: OpenHomeopath";
 	$skin = $session->skin;
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 } elseif (empty($_GET['popup'])) {
 ?>
   <div style='float: right; margin: 25px;'>

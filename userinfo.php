@@ -44,7 +44,7 @@ $username = $session->username;
 if (!$tabbed && !isset($_REQUEST['tab'])) {
 	$head_title = _("Account") . " :: OpenHomeopath";
 	$skin = $session->skin;
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 }
 $lang = $session->lang;
 
@@ -464,6 +464,6 @@ printf("      <p class='label'>" . ngettext("%d public repertorization", "%d pub
 }
 popup();
 if (!$tabbed && !isset($_REQUEST['tab'])) {
-	include("./skins/$skin/footer.php");
+	include("skins/$skin/footer.php");
 }
 ?>

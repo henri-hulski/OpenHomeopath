@@ -41,5 +41,5 @@ if ($enable_insert == "1"){
   </tr>
 </table>
 <?php
-include("./skins/$skin/footer.php")
+include("skins/$skin/footer.php")
 ?>

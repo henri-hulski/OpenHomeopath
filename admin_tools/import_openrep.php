@@ -241,8 +241,8 @@ if (!$session->isAdmin()) {
 			list($current_src_title) = $db->db_fetch_row();
 			$db->free_result();
 			$version = $rd['version'];
-			$success_icon = "<img src='./skins/original/img/success.png' width='16' height='16'> ";
-			$no_success_icon = "<img src='./skins/original/img/delete.png' width='16' height='16'> ";
+			$success_icon = "<img src='skins/original/img/success.png' width='16' height='16'> ";
+			$no_success_icon = "<img src='skins/original/img/delete.png' width='16' height='16'> ";
 			$sym_icon = $no_success_icon;
 			$symptom_file = $rd['symptom_file'];
 			if (is_readable($uploaddir.$symptom_file)) {

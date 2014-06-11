@@ -33,7 +33,7 @@ $rep = new Rep();
 if (empty($_GET['popup'])) {
 	$head_title = _("Symptom-remedy-details") . " :: OpenHomeopath";
 	$skin = $session->skin;
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 }
 ?>
 <h1>
@@ -115,6 +115,6 @@ if (!empty($sources)) {
 echo ("  </ul>\n");
 if (empty($_GET['popup'])) {
 	popup();
-	include("./skins/$skin/footer.php");
+	include("skins/$skin/footer.php");
 }
 ?>

@@ -14,7 +14,7 @@ $current_page = "symptompflege";
 if (!$tabbed && !isset($_REQUEST['tab'])) {
 	$head_title = _("Symptom maintenance") . " :: OpenHomeopath";
 	$skin = $session->skin;
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 }
 ?>
 <h1>

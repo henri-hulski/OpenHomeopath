@@ -44,7 +44,7 @@ if (!empty($_REQUEST['rem'])) {
 if (!$tabbed && !isset($_GET['tab'])) {
 	$current_page = "materia";
 	$skin = $session->skin;
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 } else {
 ?>
   <div style='float: right; margin: 25px;'>
@@ -83,14 +83,14 @@ if ($session->logged_in) {  // user logged in
   <form action="" accept-charset="utf-8" onsubmit="return false">
     <label for="query"><span class="label"><?php echo _("Type the beginning of the word and select the remedy"); ?></span></label>
     <div style='position:relative;top:0;left:0;'>
-      <input name="query" id="query" type="text" autocomplete="off" onkeyup="autosuggest('auto_rem')" onclick='cleanRem()'
+      <input type="search" name="query" id="query" placeholder="<?php echo _("Type the first letters of the remedy"); ?>" autofocus autocomplete="off" onkeyup="autosuggest('auto_rem')" onclick='cleanRem()'
 <?php
 if (!empty($_REQUEST['rem'])) {
 	echo ("value='$rem_short&nbsp;&nbsp;$rem_name'");
 }
 ?>
       >
-      <div id="search_icon" onclick='getMateria(-1)'><img alt=""  src='./skins/original/img/search.png' width='24' height='24'></div>
+      <div id="search_icon" onclick='getMateria(-1)'><img alt=""  src='skins/original/img/search.png' width='24' height='24'></div>
 <?php
 if (isset($rem_id)) {
 	echo ("      <input id='remId' type='hidden' value='$rem_id'>");
@@ -112,6 +112,6 @@ if (isset($rem_id)) {
 <?php
 if (!$tabbed && !isset($_GET['tab'])) {
 	popup(1);
-	include("./skins/$skin/footer.php");
+	include("skins/$skin/footer.php");
 }
 ?>

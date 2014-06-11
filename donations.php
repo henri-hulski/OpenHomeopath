@@ -30,7 +30,7 @@
 include_once ("include/classes/login/session.php");
 if (empty($_GET['popup'])) {
 	$skin = $session->skin;
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 } else {
 	include_once ("include/functions/layout.php");
 	echo " <div class='donations_popup'>";
@@ -67,7 +67,7 @@ if (empty($_GET['popup'])) {
 
 <?php
 if (empty($_GET['popup'])) {
-	include("./skins/$skin/footer.php");
+	include("skins/$skin/footer.php");
 } else {
 	echo " </div>";
 }

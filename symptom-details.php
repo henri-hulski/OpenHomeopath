@@ -28,19 +28,9 @@
  */
 
 include_once("include/classes/login/session.php");
-if ($session->lang) {
-	if ($session->lang == "en") {
-		$lng = "en";
-		$meta_content_language ="en_us";
-	} else {
-		$lng = "de";
-		$meta_content_language ="de_de";
-	}
-} else {
-	$lng = "de";
-	$meta_content_language ="de_de";
-}
-include_once("mm-include/lang/$lng.php");
+$skin = $session->skin;
+$lang = $session->lang;
+include_once("mm-include/lang/$lang.php");
 include("mm-include/functions.php");
 include("mm-include/functions_symptoms.php");
 header("Expires: Mon, 1 Dec 2006 01:00:00 GMT");
@@ -49,7 +39,6 @@ header("Cache-Control: no-store, no-cache, must-revalidate");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 header("Content-Type: text/html;charset=utf-8"); 
-$skin = $session->skin;
 $letters = array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
 $materia_table = "materia";
 $sym_rem = "sym_rem";
@@ -59,7 +48,6 @@ $start = 0;
 
 $sym_rem = "sym_rem";
 $sym_id = $_REQUEST['sym'];
-$lang = $session->lang;
 if ($session->logged_in) {  // user logged in
 	$username = $session->username;
 }
@@ -215,7 +203,7 @@ if (isset($check_letter) && $check_letter == TRUE) {
 	$meta_description = "Symptom-Details: ".$symptom_details['symptoms'][$sym_id]['rubric_name']." - ".$symptom_details['symptoms'][$sym_id]['symptom_name'];
 	$meta_keywords = $symptom_details['symptoms'][$sym_id]['rubric_name'].", ".$symptom_details['symptoms'][$sym_id]['symptom_name'].", Rubrik, Symptom, ";
 	include("skins/$skin/header.php");
-	echo ("<script type=\"text/javascript\" src=\"mm-include/wz_tooltip/wz_tooltip.js\"></script>");
+	echo ("<script src=\"mm-include/wz_tooltip/wz_tooltip.js\"></script>");
 	include 'mm-include/popup.html';
 	include 'mm-include/materia-medica.css';
 	echo ("<div style='text-align:right;font-size:10px;'>".view_lang_menu('symptom-details')."</div>");

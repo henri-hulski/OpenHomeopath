@@ -29,7 +29,7 @@
 
 include_once ("include/classes/login/session.php");
 $skin = $session->skin;
-include("./skins/$skin/header.php");
+include("skins/$skin/header.php");
 ?>
 <h1>
   <?php echo _("Donation"); ?>
@@ -44,5 +44,5 @@ add_donate_button();
 ?>
 </div>
 <?php
-include("./skins/$skin/footer.php");
+include("skins/$skin/footer.php");
 ?>

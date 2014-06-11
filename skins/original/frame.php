@@ -46,7 +46,7 @@ $lang = $session->lang;
       <div id="top">
         <a name="up" id="up" title="<?php echo _("Top of the page"); ?>"></a>
         <div id="banner">
-          <img src="./skins/<?php echo(SKIN_NAME);?>/img/openhomeopath.gif" width="480" height="76" border="0" alt="OpenHomeopath">
+          <img src="skins/<?php echo(SKIN_NAME);?>/img/openhomeopath.gif" width="480" height="76" border="0" alt="OpenHomeopath">
         </div>
       </div>
       <div id="middle">

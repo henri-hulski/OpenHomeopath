@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenHomeopath 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-06 23:22+0100\n"
+"POT-Creation-Date: 2014-06-11 20:36+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Henri Schumacher <henri.hulski@gazeta.pl>\n"
 "Language-Team: Henri Schumacher <henri.hulski@gazeta.pl>\n"
@@ -78,13 +78,13 @@ msgstr "Ein Datensatz wurde erfolgreich wiederhergestellt!"
 msgid "Table:"
 msgstr "Tabelle:"
 
-#: archive.php:240 archive.php:479 skins/kraque/header_datadmin_top.php:13
+#: archive.php:240 archive.php:479 skins/kraque/header_datadmin_top.php:16
 #: skins/kraque/frame.php:79 skins/kraque/frame.php:98
 #: skins/kraque/frame.php:173 skins/kraque/frame.php:192
 #: skins/kraque/frame_index.php:51 skins/kraque/frame_index.php:70
 #: skins/kraque/frame_index.php:142 skins/kraque/frame_index.php:161
 #: skins/kraque/header_datadmin.php:10
-#: skins/original/header_datadmin_top.php:13 skins/original/frame.php:73
+#: skins/original/header_datadmin_top.php:16 skins/original/frame.php:73
 #: skins/original/header_datadmin.php:10 help/layout/kraque/frame.php:79
 #: help/layout/kraque/frame.php:98 help/layout/kraque/frame.php:173
 #: help/layout/kraque/frame.php:192 help/layout/original/frame.php:73
@@ -287,6 +287,10 @@ msgstr ""
 #: materia.php:84
 msgid "Type the beginning of the word and select the remedy"
 msgstr "Wortanfang eingeben und Mittel auswählen"
+
+#: materia.php:86
+msgid "Type the first letters of the remedy"
+msgstr "Gebe die ersten Buchstaben des Mittels ein"
 
 #: donate_cancel.php:35
 msgid "Donation"
@@ -532,7 +536,7 @@ msgstr "Als Synonyme verbinden"
 msgid "Link as cross reference"
 msgstr "Als Querverweise verbinden"
 
-#: symptom-details.php:231
+#: symptom-details.php:219
 msgid "More information"
 msgstr "Weitere Info"
 
@@ -869,7 +873,7 @@ msgstr ""
 "subject=OpenHomeopath'>schicke mir eine e-Mail</a>."
 
 #: rep_result.php:38 rep_result.php:50 index.php:50
-#: include/classes/rep_class.php:500 include/classes/rep_class.php:551
+#: include/classes/rep_class.php:507 include/classes/rep_class.php:558
 #: include/classes/fpdf/pdf.php:55
 msgid "Repertorization result"
 msgstr "Repertorisierungsergebnis"
@@ -878,28 +882,28 @@ msgstr "Repertorisierungsergebnis"
 msgid "Result table"
 msgstr "Ergebnistabelle"
 
-#: rep_result.php:80 include/classes/rep_class.php:638
+#: rep_result.php:80 include/classes/rep_class.php:641
 #, php-format
 msgid "%d selected symptom"
 msgid_plural "%d selected symptoms"
 msgstr[0] "%d ausgewähltes Symptom"
 msgstr[1] "%d ausgewählte Symptome"
 
-#: rep_result.php:81 include/classes/rep_class.php:639
+#: rep_result.php:81 include/classes/rep_class.php:642
 #, php-format
 msgid "%d remedy"
 msgid_plural "%d remedies"
 msgstr[0] "%d Mittel"
 msgstr[1] "%d Mittel"
 
-#: rep_result.php:82 include/classes/rep_class.php:640
+#: rep_result.php:82 include/classes/rep_class.php:643
 #, php-format
 msgid "%d symptom-remedy-relation"
 msgid_plural "%d symptom-remedy-relations"
 msgstr[0] "%d Symptom-Mittelbeziehung"
 msgstr[1] "%d Symptom-Mittelbeziehungen"
 
-#: rep_result.php:83 include/classes/rep_class.php:641
+#: rep_result.php:83 include/classes/rep_class.php:644
 #, php-format
 msgid "For %s there are %s and %s."
 msgstr "Für %s wurden %s und %s gefunden."
@@ -2137,11 +2141,11 @@ msgstr "Ziel"
 msgid "per month"
 msgstr "pro Monat"
 
-#: include/classes/rep_class.php:346 include/classes/rep_class.php:615
+#: include/classes/rep_class.php:346 include/classes/rep_class.php:618
 msgid "Deg."
 msgstr "Gew."
 
-#: include/classes/rep_class.php:347 include/classes/rep_class.php:616
+#: include/classes/rep_class.php:347 include/classes/rep_class.php:619
 #: skins/kraque/frame.php:85 skins/kraque/frame.php:179
 #: skins/kraque/frame_index.php:57 skins/kraque/frame_index.php:148
 #: help/layout/kraque/frame.php:85 help/layout/kraque/frame.php:179
@@ -2149,7 +2153,7 @@ msgstr "Gew."
 msgid "Symptoms"
 msgstr "Symptome"
 
-#: include/classes/rep_class.php:360 include/classes/rep_class.php:621
+#: include/classes/rep_class.php:360 include/classes/rep_class.php:624
 msgid "Total (Grades/Hits)"
 msgstr "Gesamt (Wertigkeiten/Treffer)"
 
@@ -2158,39 +2162,39 @@ msgstr "Gesamt (Wertigkeiten/Treffer)"
 msgid "n.a."
 msgstr "k.A."
 
-#: include/classes/rep_class.php:501
+#: include/classes/rep_class.php:508
 msgid "OpenHomeopath"
 msgstr "OpenHomeopath"
 
-#: include/classes/rep_class.php:502
+#: include/classes/rep_class.php:509
 msgid "openhomeo.org"
 msgstr "openhomeo.org"
 
-#: include/classes/rep_class.php:504 include/classes/rep_class.php:510
+#: include/classes/rep_class.php:511 include/classes/rep_class.php:517
 #: forms/save_rep.php:68
 msgid "Patient:"
 msgstr "Patient:"
 
-#: include/classes/rep_class.php:504 include/classes/rep_class.php:516
+#: include/classes/rep_class.php:511 include/classes/rep_class.php:523
 #: forms/save_rep.php:82
 msgid "Rep.-Date:"
 msgstr "Rep.-Datum:"
 
-#: include/classes/rep_class.php:505 include/classes/rep_class.php:534
+#: include/classes/rep_class.php:512 include/classes/rep_class.php:541
 #: forms/save_rep.php:120
 msgid "Case taking:"
 msgstr "Fallaufnahme:"
 
-#: include/classes/rep_class.php:506 include/classes/rep_class.php:520
+#: include/classes/rep_class.php:513 include/classes/rep_class.php:527
 #: forms/save_rep.php:112
 msgid "Prescription:"
 msgstr "Verordnung:"
 
-#: include/classes/rep_class.php:506 include/classes/rep_class.php:527
+#: include/classes/rep_class.php:513 include/classes/rep_class.php:534
 msgid "Rep.-No.:"
 msgstr "Rep.-Nr.:"
 
-#: include/classes/rep_class.php:643
+#: include/classes/rep_class.php:646
 #, php-format
 msgid "The %d most important remedies were printed. "
 msgstr "Es werden die wichtigsten %d Mittel ausgegeben."
@@ -2410,7 +2414,7 @@ msgstr ""
 "Datenbanktyp! Wenn dein Server es unterstützt, 'mysqli' ansonsten 'mysql'."
 
 #: include/phorum/mods/embed_phorum/homeo_connector.php:81
-#: skins/kraque/header.php:109 skins/original/header.php:105
+#: skins/kraque/header.php:110 skins/original/header.php:106
 msgid "I'm on work ...."
 msgstr "Bin bei der Arbeit ...."
 
@@ -2554,8 +2558,8 @@ msgstr ""
 msgid "Contact to the author"
 msgstr "Kontakt zum Autor"
 
-#: skins/original/header.php:66 skins/original/header.php:68
-#: help/layout/original/header.php:66 help/layout/original/header.php:68
+#: skins/original/header.php:64 skins/original/header.php:66
+#: help/layout/original/header.php:64 help/layout/original/header.php:66
 msgid ""
 "Remedy, Homeopathy, Repertory, Online Repertory, Homeopathic online library"
 msgstr ""
@@ -3135,6 +3139,10 @@ msgstr "Verfügbare Symptome"
 #: forms/symptom_select_form.php:70
 msgid "Searching for"
 msgstr "eventuell Suchbegriffe"
+
+#: forms/symptom_select_form.php:106
+msgid "Type words or part of words to filter the symptom"
+msgstr "Gebe Wörter oder Wortteile des Symptoms ein"
 
 #: forms/symptom_select_form.php:119
 msgid "Show symptoms"

@@ -46,7 +46,7 @@ $current_user = $session->username;
 $skin = $session->skin;
 $head_title = _("Express-Tool") . " :: OpenHomeopath";
 $meta_description = _("Here you can quickly insert new symptoms and symptom-remedy-relations into the database.");
-include("./skins/$skin/header.php");
+include("skins/$skin/header.php");
 ?>
 <h1>
   <?php echo _("Express-Tool"); ?>
@@ -526,5 +526,5 @@ if (!empty($text)) {
 </fieldset>
 <?php
 popup();
-include("./skins/$skin/footer.php")
+include("skins/$skin/footer.php")
 ?>

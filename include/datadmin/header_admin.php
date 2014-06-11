@@ -31,10 +31,10 @@ header("Content-Type: text/html;charset=utf-8");
 <html>
 <head>
 <title><?php echo _("Data Maintenance Administration") . " :: OpenHomeopath"; ?></title>
-<link rel="stylesheet" type="text/css" media="screen" href="skins/<?php echo(SKIN_NAME);?>/css/openhomeopath.css">
-<link rel="stylesheet" type="text/css" media="print" href="skins/<?php echo(SKIN_NAME);?>/css/print.css">
-<link rel="stylesheet" href="css/styles_screen.css" type ="text/css" media="screen">
-<link rel="stylesheet" href="css/styles_print.css" type ="text/css" media="print">
+<link rel="stylesheet" media="screen" href="skins/<?php echo(SKIN_NAME);?>/css/openhomeopath.css">
+<link rel="stylesheet" media="print" href="skins/<?php echo(SKIN_NAME);?>/css/print.css">
+<link rel="stylesheet" href="css/styles_screen.css" media="screen">
+<link rel="stylesheet" href="css/styles_print.css" media="print">
 </head>
 
 <body 

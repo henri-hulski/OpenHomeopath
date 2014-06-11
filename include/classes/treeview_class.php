@@ -246,7 +246,7 @@ class TreeView {
 				} else {
 					$str .= "  " . $symptoms_ar[$i]['name']. "\n";
 				}
-				$str .= "  <a href='javascript:symptomData(" . $symptoms_ar[$i]['id'] . ");' class='nodecls' title='" . _("Symptom-Info") . "'><img src='./skins/original/img/info.gif' width='12' height='12'></a>\n";
+				$str .= "  <a href='javascript:symptomData(" . $symptoms_ar[$i]['id'] . ");' class='nodecls' title='" . _("Symptom-Info") . "'><img src='skins/original/img/info.gif' width='12' height='12'></a>\n";
 				$str .= "</div>\n";
 			}
 		}

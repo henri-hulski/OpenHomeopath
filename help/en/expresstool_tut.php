@@ -29,7 +29,7 @@ $skin = $session->skin;
 include("help/layout/$skin/header.php");
 ?>
 
-		<style type="text/css" media="all"><!--
+		<style media="all"><!--
 			div.story {font-family:arial,sans-serif;}
 			.synth {
 			font-family:arial,sans-serif;

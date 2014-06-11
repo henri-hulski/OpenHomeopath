@@ -27,6 +27,11 @@
  * @link      http://openhomeo.org/openhomeopath/download/OpenHomeopath_1.0.tar.gz
  */
 
+if (empty($lang)) {
+	$lang = $session->lang;
+}
+$content_language = (!empty($lang) && $lang === 'en') ? 'en_us' : 'de_de';
+
 header("Expires: Mon, 1 Dec 2006 01:00:00 GMT");
 header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 header("Cache-Control: no-store, no-cache, must-revalidate");
@@ -35,7 +40,7 @@ header("Pragma: no-cache");
 header("Content-Type: text/html;charset=utf-8"); 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="<?php echo($lang); ?>">
   <head>
     <title>
 <?php
@@ -46,14 +51,9 @@ if(!empty($head_title)) {
 }
 ?>
     </title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
     <meta name="author" content="Henri Schumacher">
 <?php
-if(!empty($meta_content_language)) {
-	echo "      <meta http-equiv='Content-Language' content='$meta_content_language'>\n";
-} else {
-	echo "      <meta http-equiv='Content-Language' content='de,en'>\n";
-}
 if(!empty($meta_description)) {
 	echo "      <meta name='description' content='$meta_description, Online Repertorium, Materia medica, Bibliothek, Hom&ouml;opathische Wissenssammlung'>\n";
 } else {
@@ -67,19 +67,22 @@ if(!empty($meta_keywords)) {
 ?>
     <meta name="robots" content="all">
     <meta name="robots" content="index,follow">
-    <link rel="stylesheet" type="text/css" href="../../skins/<?php echo(SKIN_NAME);?>/css/main.css">
-    <link rel="stylesheet" type="text/css" href="../../skins/<?php echo(SKIN_NAME);?>/css/dropdownmenu.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="../../skins/<?php echo(SKIN_NAME);?>/css/openhomeopath.css">
-    <link rel="stylesheet" type="text/css" media="print" href="../../skins/<?php echo(SKIN_NAME);?>/css/print.css">
+    <link rel="stylesheet" href="../../skins/<?php echo(SKIN_NAME);?>/css/main.css">
+    <link rel="stylesheet" href="../../skins/<?php echo(SKIN_NAME);?>/css/dropdownmenu.css">
+    <link rel="stylesheet" media="screen" href="../../skins/<?php echo(SKIN_NAME);?>/css/openhomeopath.css">
+    <link rel="stylesheet" media="print" href="../../skins/<?php echo(SKIN_NAME);?>/css/print.css">
     <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+	<!--[if lt IE 9]>
+	  <script src="../../javascript/html5shiv.min.js"></script>
+	<![endif]-->
 <?php
 include("javascript/locale.php");
 ?>
-    <script src="../../javascript/openhomeopath.js" type="text/javascript"></script>
+    <script src="../../javascript/openhomeopath.js"></script>
     <!-- thb -->
-    <script src="../../../scriptaculous-js-1.8.2/lib/prototype.js" type="text/javascript"></script>
-    <script src="../../../scriptaculous-js-1.8.2/src/scriptaculous.js" type="text/javascript"></script>
-    <script src="../../../scriptaculous-js-1.8.2/menu.js" type="text/javascript"></script>
+    <script src="../../../scriptaculous-js-1.8.2/lib/prototype.js"></script>
+    <script src="../../../scriptaculous-js-1.8.2/src/scriptaculous.js"></script>
+    <script src="../../../scriptaculous-js-1.8.2/menu.js"></script>
   </head>
   <body id="default">
 <?php
