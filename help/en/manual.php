@@ -27,19 +27,21 @@ $head_title = "Manual :: Help :: OpenHomeopath";
 $meta_description = "OpenHomeopath Manual, Manual";
 include("help/layout/$skin/header.php");
 ?>
-<h1>
-  OpenHomeopath Manual
-</h1>
-<h2>
-  Manual
-</h2>
+<hgroup>
+  <h1>
+    OpenHomeopath Manual
+  </h1>
+  <h2>
+    Manual
+  </h2>
+</hgroup>
 <p>
   It is recommended to use <strong>OpenHomeopath</strong> with a <strong>screen resolution</strong> of at least <strong>1280x1024</strong>.<br>
   <strong>Javascript and Cookies (at least from the same site)</strong> have to be enabled in the browser.
   You can change the layout of OpenHomeopath by selecting a skin. At the moment we've 2 skins:  <strong><em>"original"</em></strong> from Henri Schumacher and <strong><em>"kraque"</em></strong> without sidebar from Thomas Bochmann.
   At the moment OpenHomeopath is translated in English and German.
 </p>
-<a name="overview" id="overview"><br></a>
+<a id="overview"><br></a>
 <h3>
   Overview
 </h3>
@@ -52,10 +54,10 @@ include("help/layout/$skin/header.php");
 <p>
   In the Original skin you see on the left side the <strong>navigation menue</strong>, from where you can reach each part of the program.
 </p>
-<div class="content">
-  <h2>
+<nav class="content">
+  <h1>
     Contents
-  </h2>
+  </h1>
   <ul>
     <li><a href="#repertorization">Repertorization</a></li>
     <li><a href="#rep_result">Repertorization result</a></li>
@@ -65,8 +67,8 @@ include("help/layout/$skin/header.php");
     <li><a href="#help">Help</a></li>
     <li><a href="#info">Info</a></li>
   </ul>
-</div>
-<a name="repertorization" id="repertorization"><br></a>
+</nav>
+<a id="repertorization"><br></a>
 <h3>
   Repertorization
 </h3>
@@ -80,8 +82,8 @@ include("help/layout/$skin/header.php");
 <p>
   After pressing the <strong><em>"Show symptoms"-button</em></strong> two selection forms will show up.<br>
   In the upper one you see a tree view of the symptoms you requested. If you're selecting a symptom for repertorization by clicking on it, the symptom shows up in the second window.<br>
-  To switch to the <a href="#symptominfo">Symptom-Info</a> you can click the <img src='../../skins/original/img/info.gif' width='12' height='12'> icon beside the symptom.<br>
-  By clicking on the <img src='../../skins/original/img/del.png' width='12' height='12'> icon you unselect the symptom.
+  To switch to the <a href="#symptominfo">Symptom-Info</a> you can click the <img src='../../skins/original/img/info.gif' width='12' height='12' alt='Info'> icon beside the symptom.<br>
+  By clicking on the <img src='../../skins/original/img/del.png' width='12' height='12' alt='Delete'> icon you unselect the symptom.
 </p>
 <p>
   You can weight each symptom separately by choosing between the following degrees:
@@ -99,8 +101,8 @@ include("help/layout/$skin/header.php");
   You can change the selection of symptoms in the upper window by changing the filters and search patterns and pressing again the <strong><em>"Show symptoms"-button</em></strong>. The symptom selection in the lower window will remain untouched.<br>
   If you've finished the symptom selection press the <strong><em>"Repertorize"-button</em></strong>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="rep_result" id="rep_result"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="rep_result"><br></a>
 <h3>
   Repertorization result
 </h3>
@@ -133,8 +135,8 @@ include("help/layout/$skin/header.php");
 <p>
   For continue repertorizing this case press <strong><em>"Add more symptoms"</em></strong>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="materia" id="materia"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="materia"><br></a>
 <h3>
   Materia Medica
 </h3>
@@ -165,7 +167,7 @@ for ($i = 5; $i > 0; $i--) {
 }
 ?>
   </ul>
-  By clicking on <img src='../../skins/original/img/info.gif' width='12' height='12'> beside the symptom you switch to the <a href="#symptominfo">Symptom-Info</a>.
+  By clicking on <img src='../../skins/original/img/info.gif' width='12' height='12' alt='Info'> beside the symptom you switch to the <a href="#symptominfo">Symptom-Info</a>.
 </p>
 <p>
   Move the mouse over a symptom to see <strong>the grade and the sources</strong>.<br>
@@ -175,8 +177,8 @@ for ($i = 5; $i > 0; $i--) {
   You can filter the symptom selection by <strong>main rubric and minimal grade</strong>.<br>
   After selecting main rubric and grade press <strong><em>"Send request"</em></strong>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="symptominfo" id="symptominfo"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="symptominfo"><br></a>
 <h3>
   Symptom information
 </h3>
@@ -202,7 +204,7 @@ for ($i = 5; $i > 0; $i--) {
 </p>
 <p>
   Beneath you find a <strong>treeview</strong> with the subrubrics of this rubric.
-  To switch to the <a href="#symptominfo">Symptom-Info</a> you can click the <img src='../../skins/original/img/info.gif' width='12' height='12'> icon beside the subrubric.
+  To switch to the <a href="#symptominfo">Symptom-Info</a> you can click the <img src='../../skins/original/img/info.gif' width='12' height='12' alt='Info'> icon beside the subrubric.
 </p>
 <p>
   Below you find a list of <strong>remedies related to this symptom</strong>.<br>
@@ -227,24 +229,24 @@ for ($i = 5; $i > 0; $i--) {
 <p>
   You can also filter the remedy selection by <strong>minimal grade</strong> from a drop-down list.
 </p>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="data" id="data"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="data"><br></a>
 <h3>
   Data maintenance
 </h3>
 <p>
   Here you can <strong>edit and extend the database</strong>. Details in the manual of <a href="datadmin.php"><strong>Data maintenance</strong></a>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="help" id="help"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="help"><br></a>
 <h3>
   Help
 </h3>
 <p>
   Here you find this <strong>Help</strong>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="info" id="info"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="info"><br></a>
 <h3>
   Info
 </h3>
@@ -252,7 +254,7 @@ for ($i = 5; $i > 0; $i--) {
   Here you find information about program version, license, copyright and credits.<br>
   You get also the requirements of the client and the server and introductions for installation and configuration of OpenHomeopath.
 </p>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span><br>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

@@ -61,10 +61,10 @@ if (!empty($task) && !$magic_hat->restricted_mode) {  // speichert Rep.-Ergebnis
 	}
 }
 ?>
-<form action="" name="save" accept-charset="utf-8">
-  <table width="100%" border="0" align="left" summary="layout">
+<form name="save" accept-charset="utf-8">
+  <table style="width:100%; border:0; text-align:left;">
     <tr>
-      <td width="10%">
+      <td style="width:10%;">
         <label for="patient" class="label"><?php echo _("Patient:"); ?>&nbsp; </label>
       </td>
       <td>
@@ -124,7 +124,7 @@ if (!$magic_hat->restricted_mode) {
       </td>
     </tr>
   </table>
-  <br clear="all"><br>
+  <br>
   <div class="center">
     <button class='submit' type='button' onclick="<?php echo $save_rep; ?>" value=' <?php echo _("Save result"); ?> ' title=' <?php echo _("Save result"); ?> '>
       <img src='img/save.png' width='32' height='32' alt=' <?php echo _("Save result"); ?> '>

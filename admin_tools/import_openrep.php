@@ -26,24 +26,24 @@ if (!$session->isAdmin()) {
     <?php printf(_("If %s exists, %s will not be used."), '<em>*_tree</em>', '<em>*_mainsym</em>'); ?>
   </p>
   <form enctype="multipart/form-data" method="POST" name="upload_files" action="import_openrep.php">
-    <table border="0" summary="layout">
+    <table style="border: 0;">
       <tr>
-        <td colspan='2' width="60%">
+        <td colspan='2' style="width:60%;">
         </td>
-        <td width="5%">
+        <td style="width:5%;">
         </td>
-        <td width="30%" align="center">
+        <td style="width:30%; text-align:center;">
           <label for="sources"><span class="label"><?php echo _("Select source"); ?></span></label>
         </td>
-        <td width="5%">
+        <td style="width:5%;">
         </td>
       </tr>
       <tr>
-        <td colspan='2' align="center">
+        <td colspan='2' style="text-align:center;">
           <?php echo "<a href='./datadmin.php?function=show_insert_form&amp;table_name=sources'>" . _("Add the source-entry to database</a> and select the source:"); ?><br><br>
         </td>
         <td></td>
-        <td align="center">
+        <td style="text-align:center;">
           <select class="drop-down3" name="sources" id="sources" size="1" onchange='document.upload_files.submit()'>
 <?php
 		if (!empty($_REQUEST['sources'])) {
@@ -68,13 +68,13 @@ if (!$session->isAdmin()) {
         <td></td>
       </tr>
       <tr>
-        <td colspan='2' align="center">
+        <td colspan='2' style="text-align:center;">
           <?php echo _("Choose files to import:"); ?>
         </td>
         <td colspan='3'></td>
       </tr>
       <tr>
-        <td width="20%"></td>
+        <td style="width:20%;"></td>
         <td>
           <?php echo _("Repertory description"); ?> (<em>*.rd</em>):
         </td>

@@ -30,21 +30,22 @@
 if (empty($lang)) {
 	$lang = $session->lang;
 }
-$content_language = (!empty($lang) && $lang === 'en') ? 'en_us' : 'de_de';
 
-header("Expires: Mon, 1 Dec 2006 01:00:00 GMT");
-header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
-header("Cache-Control: no-store, no-cache, must-revalidate");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
-header("Content-Type: text/html;charset=utf-8"); 
+if (!headers_sent()) {
+	header("Expires: Mon, 1 Dec 2006 01:00:00 GMT");
+	header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+	header("Cache-Control: no-store, no-cache, must-revalidate");
+	header("Cache-Control: post-check=0, pre-check=0", false);
+	header("Pragma: no-cache");
+	header("Content-Type: text/html;charset=utf-8");
+}
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo($lang); ?>">
   <head>
     <title>
 <?php
-if(!empty($head_title)) {
+if (!empty($head_title)) {
 	echo "      $head_title\n";
 } else {
 	echo "      OpenHomeo.org: OpenHomeopath\n";
@@ -84,7 +85,7 @@ include("javascript/locale.php");
     <script src="../../../scriptaculous-js-1.8.2/src/scriptaculous.js"></script>
     <script src="../../../scriptaculous-js-1.8.2/menu.js"></script>
   </head>
-  <body id="default">
+  <body>
 <?php
 include("help/layout/$skin/frame.php")
 ?>

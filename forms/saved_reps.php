@@ -77,7 +77,7 @@ function build_saved_reps_table($order_by, $order_type, $username, $user_url, &$
 			}
 		}
 			
-		$saved_reps_table .= "<a class='$link_class' href='" . $user_url . "order_by=$row&order_type=$new_order_type'";
+		$saved_reps_table .= "<a class='$link_class' href='" . $user_url . "order_by=$row&amp;order_type=$new_order_type'";
 		if ($self) {
 			$saved_reps_table .= " onclick=\"return reloadSavedRepsTable('$row', '$new_order_type')\"";
 		}
@@ -169,7 +169,11 @@ if (!empty($_REQUEST['loesch']) && !empty($_REQUEST['rep'])) {  // Repertorisier
 	} else {
 		$rep_public_new = 1;
 	}
-	$query = "UPDATE repertorizations SET rep_public = $rep_public_new WHERE rep_id = '$rep_id'";
+	$query = "SELECT rep_timestamp FROM repertorizations WHERE rep_id = $rep_id";
+	$db->send_query($query);
+	list($rep_timestamp) = $db->db_fetch_row();
+	$db->free_result();
+	$query = "UPDATE repertorizations SET rep_public = $rep_public_new, rep_timestamp = '$rep_timestamp' WHERE rep_id = $rep_id";
 	if ($db->send_query($query)) {
 		$public = 1;
 	}
@@ -191,7 +195,7 @@ if (!$tabbed && !isset($_REQUEST['tab'])) {
 	$tab = 1;
 }
 ?>
-    <form id="saved_reps_form" action="" accept-charset="utf-8">
+    <form id="saved_reps_form" accept-charset="utf-8">
       <div class = 'select'>
 <?php
 $order_by = "rep_timestamp";

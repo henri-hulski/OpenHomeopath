@@ -30,10 +30,10 @@ include("help/layout/$skin/header.php");
 <h1>
   <?php echo _("Info"); ?>
 </h1>
-<div class="content">
-  <h2>
+<nav class="content">
+  <h1>
     <?php echo _("Contents"); ?>
-  </h2>
+  </h1>
   <ul>
     <li><a href="#version">Programmversion</a></li>
     <li><a href="#changelog">Changelog</a></li>
@@ -44,8 +44,8 @@ include("help/layout/$skin/header.php");
     <li><a href="#install">Installation und Konfiguration</a></li>
     <li><a href="#download">Download</a></li>
   </ul>
-</div>
-<a name="version" id="version"><br></a>
+</nav>
+<a id="version"><br></a>
 <h2>
   Programmversion
 </h2>
@@ -54,8 +54,8 @@ include("help/layout/$skin/header.php");
   Nach einer <strong>grundlegenden Überarbeitung des gesamten Codes und der Datenbankstruktur</strong> veröffentliche ich hiermit nach über 7 Jahren Arbeit die erste stabile Version von OpenHomeopath.<br>
   Wenn noch Bugs oder Programmfehler auftauchen und bei weiteren Fragen meldet euch <a title="Kontakt zum Autor" href="mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath">bei mir</a>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="changelog" id="changelog"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="changelog"><br></a>
 <h2>
   Changelog
 </h2>
@@ -78,8 +78,8 @@ include("help/layout/$skin/header.php");
     </ul></li>
     <li><strong>Version 1.0.1 veröffentlicht am 07.06.2014:</strong> Ein Bugfix-Release, bei dem Fehler bereinigt und dieses Changelog hinzugeführt wurde.</li>
   </ul>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="license" id="license"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="license"><br></a>
 <h2>
  Lizenz und Copyright
 </h2>
@@ -98,8 +98,8 @@ include("help/layout/$skin/header.php");
 <p>
   Die Hilfe und Dokumentation von OpenHomeopath wurden unter der <a href='../en/fdl_1.3.php'>GNU Free Documentation License Version 1.3 (FDLv1.3)</a> veröffentlicht.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="credits" id="credits"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="credits"><br></a>
 <h2>
 Dank geht an
 </h2>
@@ -125,8 +125,8 @@ Dank geht an
   Veröffentlicht unter der <a href='http://www.opensource.org/licenses/mit-license.php'>MIT-Lizenz</a>, auch X11-Lizenz genannt.
   </li>
 </ul>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="client" id="client"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="client"><br></a>
 <h2>
   Client-Anforderung
 </h2>
@@ -137,8 +137,8 @@ Dank geht an
 <li><strong>Browser</strong> Chromium bzw. Chrome, Opera und Firefox</li>
 <li><strong>Betriebssystem</strong> getestet unter Linux, aber funktioniert auch auf anderen Systemen</li>
 </ul>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="server" id="server"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="server"><br></a>
 <h2>
   Server-Anforderung
 </h2>
@@ -147,8 +147,8 @@ Dank geht an
   <li><strong>PHP</strong> ab PHP 5.3</li>
   <li><strong>UTF-8</strong> Unterstützung.</li>
 </ul>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="install" id="install"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="install"><br></a>
 <h2>
   Installation und Konfiguration
 </h2>
@@ -163,8 +163,8 @@ Dank geht an
   Das kann etwas dauern, da OpenHomeopath noch weitere Tabellen generieren muss.</li>
   <li>Und schon kannst du loslegen. Ich empfehle, das admin-Passwort zu ändern.</li>
 </ol>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="download" id="download"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="download"><br></a>
 <h2>
   Download
 </h2>
@@ -183,7 +183,7 @@ Dank geht an
   </ul>
 </div>
 <p>Ihr könnt euch auch gerne die <a href='../en/apigen' target='_blank'>OpenHomeopath PHP Quellcode Dokumentation</a> anschauen.</p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span><br>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

@@ -111,7 +111,7 @@ function build_results_table_archiv($fields_labels_ar, $table_name, $result, $ac
 				}
 			} // end elseif ($order != $fields_labels_ar[$i]["name_field"])
 			
-			$results_table .= "<a class='".$link_class."' href='".$action."?table_name=". urlencode($table_name)."&function=search&where_clause=".urlencode($where_clause)."&page=$page&order=".urlencode($fields_labels_ar[$i]["name_field"])."&order_type=$new_order_type'>";
+			$results_table .= "<a class='".$link_class."' href='".$action."?table_name=". urlencode($table_name)."&function=search&where_clause=".urlencode($where_clause)."&page=$page&order=".urlencode($fields_labels_ar[$i]["name_field"])."&amp;order_type=$new_order_type'>";
 
 			if ($field_is_current_order_by === 1) {
 				if ($order_type === 'ASC') {
@@ -257,9 +257,9 @@ function build_results_table_archiv($fields_labels_ar, $table_name, $result, $ac
 				$from_function = "search";
 			}
 			$results_table .= "<a class='onlyscreen' onclick=\"if (!confirm('" . _("Restore record") . "?')){ return false;}\" href='$url?table_name=".urlencode($table_name)."&function=restore&where_field=".urlencode($where_field)."&where_value=".urlencode($where_value)."&timestamp=".urlencode($timestamp)."&from_function=$from_function";
-			$results_table .= "'><img border='0' src='$restore_icon' alt='" . _("Restore record") . "' title='" . _("Restore record") . "'></a>";
+			$results_table .= "'><img src='$restore_icon' alt='" . _("Restore record") . "' title='" . _("Restore record") . "'></a>";
 			if ($details != "1") {  // display the details icon
-				$results_table .= "<a class='onlyscreen' target='_$edit_target_window' href='$url?table_name=".urlencode($table_name)."&details=1&where_field=".urlencode($where_field)."&where_value=".urlencode($where_value)."'><img border='0' src='$details_icon' alt='".$submit_buttons_ar["details"]."' title='" . _("Details from this record") . "'></a>";
+				$results_table .= "<a class='onlyscreen' target='_$edit_target_window' href='$url?table_name=".urlencode($table_name)."&details=1&where_field=".urlencode($where_field)."&where_value=".urlencode($where_value)."'><img src='$details_icon' alt='".$submit_buttons_ar["details"]."' title='" . _("Details from this record") . "'></a>";
 			}
 		} // end if
 		$results_table .= "</td>\n";

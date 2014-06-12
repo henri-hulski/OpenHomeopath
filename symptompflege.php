@@ -35,7 +35,7 @@ if ((isset($_REQUEST['main_rubrics']) && $num_rows != 0) || !empty($_REQUEST['sy
   <legend class="legend">
     <?php echo _("Selected symptoms"); ?>
   </legend>
-  <form action="" accept-charset="utf-8">
+  <form accept-charset="utf-8">
     <div class = 'select'>
       <select class="selection" name="symsel[]" id="symSelect" size="16" onDblClick="doubleClick('symDeselect()',this)" onClick="doubleClick('symDeselect()',this)">
 <?php

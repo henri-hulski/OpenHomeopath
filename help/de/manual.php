@@ -27,18 +27,20 @@ $head_title = "Bedienung :: Hilfe :: OpenHomeopath";
 $meta_description = "Handbuch für OpenHomeopath, Bedienung";
 include("help/layout/$skin/header.php");
 ?>
-<h1>
-  Hilfe zu OpenHomeopath
-</h1>
-<h2>
-  Bedienung von OpenHomeopath
-</h2>
+<hgroup>
+  <h1>
+    Hilfe zu OpenHomeopath
+  </h1>
+  <h2>
+    Bedienung von OpenHomeopath
+  </h2>
+</hgroup>
 <p>
   Es wird empfohlen <strong>OpenHomeopath</strong> bei einer <strong>Bildschirmauflösung</strong> von mindestens <strong>1280x1024</strong> zu benutzen. <strong>Javascript</strong> und <strong>Cookies</strong> zumindest von der gleichen Site müssen im Browser aktiviert sein.
   Mit der Skin-Auswahl kannst du das Aussehen von OpenHomeopath verändern. Im Moment gibt es 2 Skins: <strong><em>"original"</em></strong> von Henri Schumacher und <strong><em>"kraque"</em></strong> von Thomas Bochmann ohne Seitenleiste, so das sie besonders für kleinere Displays geeignet ist.
   OpenHomeopath ist zur Zeit in deutsch und englisch übersetzt.
 </p>
-<a name="overview" id="overview"><br></a>
+<a id="overview"><br></a>
 <h3>
   Übersicht
 </h3>
@@ -51,10 +53,10 @@ include("help/layout/$skin/header.php");
 <p>
   Auf der linken Seite findest du in allen Programmfenstern das <strong>Navigationsmenü</strong> (in der Original-Skin). Von dort hast du Zugang zu allen wichtigen Teilen des Programms.
 </p>
-<div class="content">
-  <h2>
+<nav class="content">
+  <h1>
     Inhalt
-  </h2>
+  </h1>
   <ul>
     <li><a href="#repertorization">Repertorisierung</a></li>
     <li><a href="#rep_result">Repertorisierungsergebnis</a></li>
@@ -64,8 +66,8 @@ include("help/layout/$skin/header.php");
     <li><a href="#help">Hilfe</a></li>
     <li><a href="#info">Info</a></li>
   </ul>
-</div>
-<a name="repertorization" id="repertorization"><br></a>
+</nav>
+<a id="repertorization"><br></a>
 <h3>
   Repertorisierung
 </h3>
@@ -81,8 +83,8 @@ include("help/layout/$skin/header.php");
 <p>
   Jetzt öffnen sich unterhalb zwei Auswahlfenster. Im oberen siehst du die Symptome als Baumansicht, die deinen Kriterien entsprechen. Das untere ist erstmal leer. Dort werden die Symptome eingetragen, die du auswählst.<br>
   Ein Symptom wird durch anklicken ausgewählt. Rubriken mit Unterrubriken lassen sich ausklappen. Die ausgewählten Symptome erscheinen im unteren Auswahlfenster.<br>
-  Wenn du dir alle Mittel anzeigen lassen willst, die einem <strong>Symptom</strong> zugeordnet sind, klicke entweder im oberen oder im unteren Fenster auf <img src='../../skins/original/img/info.gif' width='12' height='12'> neben dem entsprechenden Symptom. Genaueres siehe <a href="#symptominfo">Symptom-Information</a>.<br>
-  Durch klicken auf <img src='../../skins/original/img/del.png' width='12' height='12'> im unteren Fenster wird das entsprechende <strong>Symptom</strong> abgewählt.
+  Wenn du dir alle Mittel anzeigen lassen willst, die einem <strong>Symptom</strong> zugeordnet sind, klicke entweder im oberen oder im unteren Fenster auf <img src='../../skins/original/img/info.gif' width='12' height='12' alt='Info'> neben dem entsprechenden Symptom. Genaueres siehe <a href="#symptominfo">Symptom-Information</a>.<br>
+  Durch klicken auf <img src='../../skins/original/img/del.png' width='12' height='12' alt='Delete'> im unteren Fenster wird das entsprechende <strong>Symptom</strong> abgewählt.
 </p>
 <p>
   Du kannst jedes ausgewählte Symptom individuell gewichten.
@@ -100,8 +102,8 @@ include("help/layout/$skin/header.php");
   Während der Symptomauswahl kannst du jederzeit die angezeigten Symptome ändern, indem du eine neue Hauptrubrik und/oder neue Suchbegriffe eingibst und nochmals auf <strong><em>"Symptome anzeigen"</em></strong> drückst. Die bereits ausgewählten Symptome bleiben dabei erhalten.<br>
   Wenn die Symptomauswahl abgeschlossen ist, drückst du auf <strong><em>"Repertorisieren"</em></strong>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="rep_result" id="rep_result"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="rep_result"><br></a>
 <h3>
   Repertorisierungsergebnis
 </h3>
@@ -133,8 +135,8 @@ include("help/layout/$skin/header.php");
 <p>
   Wenn du ausgehend von den ausgewählten Symptomen weiter repertorisieren willst drückst du unten auf <strong><em>"Weiter repertorisieren"</em></strong>. Es erscheint das Repertorisierungstab mit den gewählten Symptomen.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="materia" id="materia"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="materia"><br></a>
 <h3>
   Materia Medica
 </h3>
@@ -165,7 +167,7 @@ for ($i = 5; $i > 0; $i--) {
 }
 ?>
   </ul>
-  Zur <a href="#symptominfo">Symptom-Info</a> gelangst du über <img src='../../skins/original/img/info.gif' width='12' height='12'> neben dem entsprechenden Symptom.
+  Zur <a href="#symptominfo">Symptom-Info</a> gelangst du über <img src='../../skins/original/img/info.gif' width='12' height='12' alt='Info'> neben dem entsprechenden Symptom.
 </p>
 <p>
   Wenn du mit der Maus über ein Symptom fährst erscheint die <strong>Wertigkeit und Angaben zu den Quellen</strong>.<br>
@@ -175,8 +177,8 @@ for ($i = 5; $i > 0; $i--) {
   Du kannst die Symptomauswahl <strong>nach Hauptrubrik sowie nach minimaler Wertigkeit filtern</strong>.<br>
   Nachdem du die gewünschte Hauptrubrik und Wertigkeit ausgewählt hast drücke auf <strong><em>"Zusammenstellen"</em></strong>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="symptominfo" id="symptominfo"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="symptominfo"><br></a>
 <h3>
   Symptom-Information
 </h3>
@@ -203,7 +205,7 @@ for ($i = 5; $i > 0; $i--) {
 </p>
 <p>
   Darunter findest du eine <strong>Baumansicht</strong> mit den Unterrubriken dieser Rubrik.<br>
-  Wenn du auf <img src='../../skins/original/img/info.gif' width='12' height='12'> klickst kommst du in die Symptom-Info der entsprechenden Unterrubrik.
+  Wenn du auf <img src='../../skins/original/img/info.gif' width='12' height='12' alt='Info'> klickst kommst du in die Symptom-Info der entsprechenden Unterrubrik.
 </p>
 <p>
   Unten werden <strong>alle Mittel, die dem Symptom zugeordnet sind</strong> angezeigt.<br>
@@ -228,31 +230,31 @@ for ($i = 5; $i > 0; $i--) {
 <p>
   Ausserdem kannst die Mittel <strong>nach minimaler Wertigkeit filtern</strong> indem du die entsprechende Wertigkeit in der Dropdown-Liste auswählst.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="data" id="data"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="data"><br></a>
 <h3>
   Datenpflege
 </h3>
 <p>
   Hier kann die <strong>Datenbank</strong> erweitert und verändert werden. Näheres im Kapitel <a href="datadmin.php"><strong>Datenpflege</strong></a>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="help" id="help"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="help"><br></a>
 <h3>
   Hilfe
 </h3>
 <p>
   Hier kommst du zu dieser <strong>Hilfe</strong>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="info" id="info"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="info"><br></a>
 <h3>
   Info
 </h3>
 <p>
   Hier findest du Informationen über die Programmversion, Lizenz und Copyright, Dank an die, die durch Inspiration und nützliche Skripte bzw. Programmkode zum Programm beigetragen haben, Client- und Server-Anforderungen und Installation und Konfiguration für MySQL.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span><br>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

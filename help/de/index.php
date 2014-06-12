@@ -30,10 +30,10 @@ include("help/layout/$skin/header.php");
 <h1>
   Hilfe zu OpenHomeopath
 </h1>
-<div class="content">
-  <h2>
+<nav class="content">
+  <h1>
     Inhalt
-  </h2>
+  </h1>
   <ul>
     <li>
       <a href="preamble.php">Präambel</a>
@@ -78,7 +78,7 @@ include("help/layout/$skin/header.php");
       </ul>
     </li>
   </ul>
-</div>
+</nav>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

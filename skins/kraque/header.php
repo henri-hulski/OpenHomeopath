@@ -106,7 +106,7 @@ if ($tabbed || (isset($current_page) && $current_page == "rep_result")) {
     <script src="../scriptaculous-js-1.8.2/src/scriptaculous.js"></script>
     <script src="../scriptaculous-js-1.8.2/menu.js"></script>
   </head>
-  <body id="default">
+  <body>
     <div id="onwork"><span class='onwork'><?php echo _("I'm on work ...."); ?></span></div>
 <?php
 include("skins/$skin/frame.php")

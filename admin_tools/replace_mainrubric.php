@@ -40,7 +40,7 @@ if(!$session->isAdmin()) {
   Hier kannst du eine Hauptrubrik durch eine andere ersetzen. Die Änderung beinhaltet alle Tabellen, die diese Hauptrubrik referenzieren außer der Tabelle 'main_rubrics' selbst.
 </p>
   <form method="POST" action="replace_mainrubric.php" accept-charset="utf-8">
-    <table border="0" align="left" summary="layout">
+    <table style="border:0; text-align:left;">
       <tr>
         <td>
           <label for="old_rubric"> <span class="label"><?php echo _("Main rubric be replaced"); ?></span> </label>
@@ -80,7 +80,7 @@ $db->free_result();
         </td>
       </tr>
     </table>
-    <br clear='all'>
+	<div class="clear"></div>
     <input type='hidden' name='update_db' value='1'>
     <br>
   </form>

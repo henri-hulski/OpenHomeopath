@@ -79,7 +79,7 @@ include("javascript/locale.php");
 ?>
     <script src="../../javascript/openhomeopath.js"></script>
   </head>
-  <body id="default">
+  <body>
 <?php
 include("help/layout/$skin/frame.php")
 ?>

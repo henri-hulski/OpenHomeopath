@@ -147,104 +147,104 @@ foreach ($_REQUEST as $key => $val)
 <meta name="robots" content="noindex, nofollow">
 
 <style>
-<!--
-p,td,th
-{ font-size:14px;
-  line-height:18px;
-  font-family:Arial,Helvetica,sans-serif;
-  margin-top:5px;
-  margin-bottom:5px;
-  text-align:justify;
-  vertical-align:top;
-}
+	<!--
+	p,td,th
+	{ font-size:14px;
+		line-height:18px;
+		font-family:Arial,Helvetica,sans-serif;
+		margin-top:5px;
+		margin-bottom:5px;
+		text-align:justify;
+		vertical-align:top;
+	}
 
-p.centr
-{
-  text-align:center;
-}
+	p.centr
+	{
+		text-align:center;
+	}
 
-p.smlcentr
-{ font-size:10px;
-  line-height:14px;
-  text-align:center;
-}
+	p.smlcentr
+	{ font-size:10px;
+		line-height:14px;
+		text-align:center;
+	}
 
-p.error
-{ color:#FF0000;
-  font-weight:bold;
-}
+	p.error
+	{ color:#FF0000;
+		font-weight:bold;
+	}
 
-p.success
-{ color:#00DD00;
-  font-weight:bold;
-}
+	p.success
+	{ color:#00DD00;
+		font-weight:bold;
+	}
 
-p.successcentr
-{ color:#00DD00;
-  background-color:#DDDDFF;
-  font-weight:bold;
-  text-align:center;
-}
+	p.successcentr
+	{ color:#00DD00;
+		background-color:#DDDDFF;
+		font-weight:bold;
+		text-align:center;
+	}
 
-td
-{ background-color:#F8F8F8;
-  text-align:left;
-}
+	td
+	{ background-color:#F8F8F8;
+		text-align:left;
+	}
 
-td.transparent
-{ background-color:#FFFFF0;
-}
+	td.transparent
+	{ background-color:#FFFFF0;
+	}
 
-th
-{ font-weight:bold;
-  color:#FFFFFF;
-  background-color:#AAAAEE;
-  text-align:left;
-}
+	th
+	{ font-weight:bold;
+		color:#FFFFFF;
+		background-color:#AAAAEE;
+		text-align:left;
+	}
 
-td.right
-{ text-align:right;
-}
+	td.right
+	{ text-align:right;
+	}
 
-form
-{ margin-top:5px;
-  margin-bottom:5px;
-}
+	form
+	{ margin-top:5px;
+		margin-bottom:5px;
+	}
 
-div.skin1
-{
-  border-color:#3333EE;
-  border-width:5px;
-  border-style:solid;
-  background-color:#AAAAEE;
-  text-align:center;
-  vertical-align:middle;
-  padding:3px;
-  margin:1px;
-}
+	div.skin1
+	{
+		border-color:#3333EE;
+		border-width:5px;
+		border-style:solid;
+		background-color:#AAAAEE;
+		text-align:center;
+		vertical-align:middle;
+		padding:3px;
+		margin:1px;
+	}
 
-td.bg3
-{ background-color:#EEEE99;
-  text-align:left;
-  vertical-align:top;
-  width:20%;
-}
+	td.bg3
+	{ background-color:#EEEE99;
+		text-align:left;
+		vertical-align:top;
+		width:20%;
+	}
 
-th.bg4
-{ background-color:#EEAA55;
-  text-align:left;
-  vertical-align:top;
-  width:20%;
-}
+	th.bg4
+	{ background-color:#EEAA55;
+		text-align:left;
+		vertical-align:top;
+		width:20%;
+	}
 
-td.bgpctbar
-{ background-color:#EEEEAA;
-  text-align:left;
-  vertical-align:middle;
-  width:80%;
-}
+	td.bgpctbar
+	{ background-color:#EEEEAA;
+		text-align:left;
+		vertical-align:middle;
+		width:80%;
+	}
 
--->
+	-->
 </style>
 <script>
 function zweifel () {
@@ -261,11 +261,11 @@ function zweifel () {
 <div id="top">
 <a name="up" title="<?php echo _("Top of the page"); ?>"></a>
 <div id="banner">
-<img src="../skins/original/img/openhomeopath.gif" width="480" height="76" border="0" alt="OpenHomeopath">
+<img src="../skins/original/img/openhomeopath.gif" width="480" height="76" alt="OpenHomeopath">
 </div>
 </div>
       <div id="middle">
-        <table summary="layout" cellpadding="0" cellspacing="0" id="middle_tbl">
+        <table cellspacing="0" id="middle_tbl">
           <tr>
             <td id="middle_cell01">
               <ul class="Navigation">
@@ -302,8 +302,6 @@ function zweifel () {
 <br>
 <h1><?php echo _("OpenHomeopath - Install database"); ?></h1>
 <br>
-
-<center>
 
 <table width="780" cellspacing="0" cellpadding="0">
 <tr><td class="transparent">
@@ -880,7 +878,7 @@ skin_open();
     }
 
     echo ("
-    <center>
+    <div class='center'>
     <table width=\"520\" border=\"0\" cellpadding=\"3\" cellspacing=\"1\">
     <tr><th class=\"bg4\"> </th><th class=\"bg4\">Session</th><th class=\"bg4\">Done</th><th class=\"bg4\">To go</th><th class=\"bg4\">Total</th></tr>
     <tr><th class=\"bg4\">Lines</th><td class=\"bg3\">$lines_this</td><td class=\"bg3\">$lines_done</td><td class=\"bg3\">$lines_togo</td><td class=\"bg3\">$lines_tota</td></tr>
@@ -891,7 +889,7 @@ skin_open();
     <tr><th class=\"bg4\">%</th><td class=\"bg3\">$pct_this</td><td class=\"bg3\">$pct_done</td><td class=\"bg3\">$pct_togo</td><td class=\"bg3\">$pct_tota</td></tr>
     <tr><th class=\"bg4\">% bar</th><td class=\"bgpctbar\" colspan=\"4\">$pct_bar</td></tr>
     </table>
-    </center>
+    </div>
     \n");
 
 // Finish message and restart the script
@@ -938,7 +936,7 @@ elseif ($file && $gzipmode) gzclose($file);
 
 </td></tr></table>
 
-</center>
+</div>
 
         <div id="footer">
           <a href="../doc/<?php echo $lang; ?>/info.php#license">Copyright</a> &copy; 2007-2012 by Henri Schumacher <br><?php echo _("OpenHomeopath is distributed under the terms of the <a href='../doc/en/agpl3.php'>AGPL-License</a>"); ?>&nbsp;&nbsp; <br><a title="<?php echo _("Contact to the author"); ?>" href="mailto:henri.hulski@gazeta.pl?subject=Homeopath"><?php echo _("Contact to the author"); ?></a>

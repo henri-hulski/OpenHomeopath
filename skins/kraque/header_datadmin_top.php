@@ -174,11 +174,11 @@ function enable_disable_input_box_search_form(field_name, select_type_select_suf
 </script>
 </head>
 
-<body id="default" 
+<body
 <?php
 if (isset($_GET["type_mailing"])){
 	if ($_GET["type_mailing"] == "labels") {
-		echo " leftmargin=\"0\" topmargin=\"0\" marginwidth=\"0\" marginheight=\"0\" onload=\"javascript:alert('".$normal_messages_ar["print_warning"]."')\"";
+		echo " style='margin:0' onload=\"javascript:alert('".$normal_messages_ar["print_warning"]."')\"";
 	} // end if
 } // end if
 if ($function === 'insert' || $function === 'edit' || $function === 'update') {

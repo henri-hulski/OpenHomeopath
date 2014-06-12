@@ -364,7 +364,7 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 				$select_type_select = "";
 				$select_type_date_select = "";
 			} // end else
-			$form .= "<td><table border='0'><tr>";
+			$form .= "<td><table><tr>";
 			switch ($fields_labels_ar[$i]["type_field"]) {
 				case "text":
 				case "ID_user":
@@ -1364,7 +1364,7 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 					}
 				} // end elseif ($order != $fields_labels_ar[$i]["name_field"])
 
-				$results_table .= "<a class='$link_class' href='$action?table_name=". urlencode($table_name)."&function=$function&where_clause=".urlencode($where_clause)."&page=$page&order=".urlencode($fields_labels_ar[$i]["name_field"])."&order_type=$new_order_type'>";
+				$results_table .= "<a class='$link_class' href='$action?table_name=". urlencode($table_name)."&function=$function&where_clause=".urlencode($where_clause)."&page=$page&order=".urlencode($fields_labels_ar[$i]["name_field"])."&amp;order_type=$new_order_type'>";
 
 				if ($field_is_current_order_by === 1) {
 					if ($order_type === 'ASC') {
@@ -1426,7 +1426,7 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 				}
 			}
 			if ($enable_edit == "1" && $show_edit_delete == "1") { // display the edit icon
-				$results_table .= "<a class='onlyscreen' target='_".$edit_target_window."' href='".$dadabik_main_file."?table_name=".urlencode($table_name)."&function=edit&where_field=".urlencode($where_field)."&where_value=".urlencode($where_value)."'><img border='0' src='".$edit_icon."' alt='".$submit_buttons_ar["edit"]."' title='".$submit_buttons_ar["edit"]."'></a>";
+				$results_table .= "<a class='onlyscreen' target='_".$edit_target_window."' href='".$dadabik_main_file."?table_name=".urlencode($table_name)."&function=edit&where_field=".urlencode($where_field)."&where_value=".urlencode($where_value)."'><img src='".$edit_icon."' alt='".$submit_buttons_ar["edit"]."' title='".$submit_buttons_ar["edit"]."'></a>";
 			} // end if
 
 			if ($enable_delete == "1" && $show_edit_delete == "1") { // display the delete icon
@@ -1434,11 +1434,11 @@ function build_results_table($fields_labels_ar, $table_name, $res_records, $resu
 				if ( $ask_confirmation_delete == 1) {
 					$results_table .= " onclick=\"if (!confirm('".str_replace('\'', '\\\'', $normal_messages_ar['confirm_delete?'])."')) { return false;}\"";
 				}
-				$results_table .= " href='".$dadabik_main_file."?table_name=".urlencode($table_name)."&function=delete&where_field=".urlencode($where_field)."&where_value=".urlencode($where_value)."'><img border='0' src='".$delete_icon."' alt='".$submit_buttons_ar["delete"]."' title='".$submit_buttons_ar["delete"]."'>";
+				$results_table .= " href='".$dadabik_main_file."?table_name=".urlencode($table_name)."&function=delete&where_field=".urlencode($where_field)."&where_value=".urlencode($where_value)."'><img src='".$delete_icon."' alt='".$submit_buttons_ar["delete"]."' title='".$submit_buttons_ar["delete"]."'>";
 			} // end if
 
 			if ($enable_details == "1") { // display the details icon
-				$results_table .= "<a class='onlyscreen' target='_".$edit_target_window."' href='".$dadabik_main_file."?table_name=".urlencode($table_name)."&function=details&where_field=".urlencode($where_field)."&where_value=".urlencode($where_value)."'><img border='0' src='".$details_icon."' alt='".$submit_buttons_ar["details"]."' title='".$submit_buttons_ar["details"]."'></a>";
+				$results_table .= "<a class='onlyscreen' target='_".$edit_target_window."' href='".$dadabik_main_file."?table_name=".urlencode($table_name)."&function=details&where_field=".urlencode($where_field)."&where_value=".urlencode($where_value)."'><img src='".$details_icon."' alt='".$submit_buttons_ar["details"]."' title='".$submit_buttons_ar["details"]."'></a>";
 			} // end if
 
 		} // end if
@@ -1756,7 +1756,7 @@ function build_navigation_tool($table_name, $where_clause, $pages_number, $page,
 		$end_page = $start_page+10;
 	} // end else
 
-	$variables_to_pass = 'table_name='. urlencode($table_name).'&function='.$function.'&where_clause='.urlencode($where_clause).'&order='.urlencode($order).'&order_type='.urlencode($order_type);
+	$variables_to_pass = 'table_name='. urlencode($table_name).'&function='.$function.'&where_clause='.urlencode($where_clause).'&order='.urlencode($order).'&amp;order_type='.urlencode($order_type);
 
 	if ($page_group > 1) {
 		$navigation_tool .= "<a class='navig' href='$action?".$variables_to_pass."&page=0' title='1'>&lt;&lt;</a> ";
@@ -2039,7 +2039,7 @@ function build_int_table_field_form($field_position, $int_fields_ar, $fields_lab
 // output: the html form part
 {
 	$int_table_form = "";
-	$int_table_form .= "<table border='0' cellpadding='6'><tr bgcolor='#F0F0F0'><td><table>";
+	$int_table_form .= "<table cellpadding='6'><tr bgcolor='#F0F0F0'><td><table>";
 	$count_temp = count($int_fields_ar);
 	for ($i=0; $i<$count_temp; $i++) {
 		$int_table_form .= "<tr>";

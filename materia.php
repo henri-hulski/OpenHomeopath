@@ -48,7 +48,7 @@ if (!$tabbed && !isset($_GET['tab'])) {
 } else {
 ?>
   <div style='float: right; margin: 25px;'>
-      <a id='history_back_tab_2' style='padding: 7px;'><img alt=""  id='arrow_left_tab_2' height='24' width='38' src='./img/arrow_left_inactive.gif' border='0'></a><a id='history_forward_tab_2' style='padding: 7px;'><img alt=""  id='arrow_right_tab_2' height='24' width='38' src='./img/arrow_right_inactive.gif' border='0'></a>
+      <a id='history_back_tab_2' style='padding: 7px;'><img alt=""  id='arrow_left_tab_2' height='24' width='38' src='./img/arrow_left_inactive.gif'></a><a id='history_forward_tab_2' style='padding: 7px;'><img alt=""  id='arrow_right_tab_2' height='24' width='38' src='./img/arrow_right_inactive.gif'></a>
   </div>
 <?php
 }
@@ -61,7 +61,7 @@ if ($session->logged_in) {  // user logged in
 	if (!$tabbed && !isset($_REQUEST['tab'])) {
 		$url = "userinfo.php?user=" . $session->username . "#materia_custom";
 	} else {
-		$url = 'javascript:userTabOpen("materia_custom")';
+		$url = 'javascript:userTabOpen(\’materia_custom\’)';
 	}
 	if ($db->is_custom_table("materia") === false) {
 		$display_personal_materia = "none";
@@ -73,14 +73,14 @@ if ($session->logged_in) {  // user logged in
 	printf ("<p class='center' id='all_materia' style='display:%s;'><span class='alert_box'>" . _("In <a href='%s'>My account</a> you can customize the Materia Medica to your personal needs.") . "</span></p>\n", $display_all_materia, $url);
 	printf ("<p class='center' id='personalized_materia' style='display:%s;'><span class='alert_box'>" . _("You're using a personalized Materia Medica.") . " " . _("You can change the preferences in <a href='%s'>My account</a>.") . "</span></p>\n", $display_personal_materia, $url);
 } else {
-	echo ("<p class='center''><span class='alert_box'>" . _("When <a href='http://openhomeo.org/openhomeopath/login.php'>logged in</a> you can customize the Materia Medica to your personal needs.") . "</span></p>\n");
+	echo ("<p class='center'><span class='alert_box'>" . _("When <a href='http://openhomeo.org/openhomeopath/login.php'>logged in</a> you can customize the Materia Medica to your personal needs.") . "</span></p>\n");
 }
 ?>
 <fieldset>
   <legend class="legend">
     <?php echo _("Materia Medica"); ?>
   </legend>
-  <form action="" accept-charset="utf-8" onsubmit="return false">
+  <form accept-charset="utf-8" onsubmit="return false">
     <label for="query"><span class="label"><?php echo _("Type the beginning of the word and select the remedy"); ?></span></label>
     <div style='position:relative;top:0;left:0;'>
       <input type="search" name="query" id="query" placeholder="<?php echo _("Type the first letters of the remedy"); ?>" autofocus autocomplete="off" onkeyup="autosuggest('auto_rem')" onclick='cleanRem()'
