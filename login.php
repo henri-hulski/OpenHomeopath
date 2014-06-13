@@ -94,6 +94,7 @@ if(isset($_GET['url'])) {
 ?>
             <input type="submit" value=" Login ">
           </td>
+          <td></td>
         </tr>
       </table>
       <div class="FloatingText"><a href="register.php"><strong><?php echo _("Not registered? &ndash; Sign-Up!"); ?></strong></a></div>
