@@ -27,14 +27,12 @@ $head_title = "Preambel :: Help :: OpenHomeopath";
 $meta_description = "OpenHomeopath Manual, Preambel";
 include("help/layout/$skin/header.php");
 ?>
-<hgroup>
-  <h1>
-    OpenHomeopath Manual
-  </h1>
-  <h2>
-    Preambel
-  </h2>
-</hgroup>
+<h1>
+  OpenHomeopath Manual
+</h1>
+<h2>
+  Preambel
+</h2>
 <p>The most important parts of OpenHomeopath are <strong>well organized in Tabs</strong> on the homepage.</p>
 <p>The main purpose of <strong>OpenHomeopath</strong> is to find the corresponding homeopathic remedies for a selection of symptoms. This process we call <a href="manual.php#repertorization"><strong>Repertorization</strong></a>.<br>
 OpenHomeopath contains at the moment the repertories of Kent, Bogner, Boenninghausen and the Repertorium publicum of Vladimir Polony in English and the repertories of Kent and from BZ-Homöopathie in German.<br>

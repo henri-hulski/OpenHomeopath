@@ -27,14 +27,12 @@ $head_title = "Datenpflege :: Hilfe :: OpenHomeopath";
 $meta_description = "Handbuch für OpenHomeopath, Datenpflege";
 include("help/layout/$skin/header.php");
 ?>
-<hgroup>
-  <h1>
-	Hilfe zu OpenHomeopath
-  </h1>
-  <h2>
-	Datenpflege
-  </h2>
-</hgroup>
+<h1>
+  Hilfe zu OpenHomeopath
+</h1>
+<h2>
+  Datenpflege
+</h2>
 <div>
   Hier lässt sich die <strong>Datenbank erweitern</strong> bzw. <strong>verändern</strong>.<br>
   Um zur Datenpflege <strong>Zugang</strong> zu haben musst du <a href="user.php">angemeldet</a> sein.<br>
