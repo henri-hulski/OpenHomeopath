@@ -31,7 +31,7 @@
     $PHORUM['DATA']['LANG']['BuddyAdd']                  = 'Teilnehmer meiner Liste der Kumpel hinzufügen';
     $PHORUM['DATA']['LANG']['BuddyAddFail']              = 'Der Teilnehmer konnte nicht Deiner Liste der Kumpel hinzugefügt werden.';
     $PHORUM['DATA']['LANG']['BuddyAddSuccess']           = 'Der Teilnehmer wurde Deiner Liste der Kumpel hinzugefügt.';
-    $PHORUM['DATA']['LANG']['BuddyListIsEmpty']          = 'Deine Liste der Kumpel ist leer.<br />Um Teilnehmer hinzuzufügen, öffne dessen Profil und klicke auf &quot;Teilnehmer meiner Liste der Kumpel hinzufügen&quot;.';
+    $PHORUM['DATA']['LANG']['BuddyListIsEmpty']          = 'Deine Liste der Kumpel ist leer.<br>Um Teilnehmer hinzuzufügen, öffne dessen Profil und klicke auf &quot;Teilnehmer meiner Liste der Kumpel hinzufügen&quot;.';
     $PHORUM['DATA']['LANG']['CancelConfirm']             = 'Bist Du sicher, dass Du abbrechen willst?';
     $PHORUM['DATA']['LANG']['ClickHereToLogin']          = 'Klicke hier, um Dich einzuloggen';
     $PHORUM['DATA']['LANG']['ConfirmDeleteMessage']      = 'Willst Du diesen Beitrag wirklich löschen?';
@@ -55,7 +55,7 @@
     $PHORUM['DATA']['LANG']['FileSizeLimits']            = 'Bitte versuche nicht Dateien hochzuladen, die größer sind als';
     $PHORUM['DATA']['LANG']['FileTooLarge']              = 'Die Datei, die Du hochladen willst, überschreitet die erlaubte Größe. Bitte versuche nicht, Dateien hochzuladen, die größer als '.$PHORUM['max_file_size'].'&nbsp;kB sind.';
     $PHORUM['DATA']['LANG']['FileWrongType']             = 'Dateien dieses Typs sind hier nicht für den Upload freigegeben. Folgende Dateitypen kannst Du hochladen: '.str_replace(';', ', ', $PHORUM['file_types']).'.';
-    $PHORUM['DATA']['LANG']['FollowExplanation']         = 'Die folgenden Themen sind in Deinem Kontrollcenter gelistet.<br />Wenn Du die E-Mail-Benachrichtigung auswählst, wirst Du informiert, sobald es neue Beiträge zu diesen Themen gibt.';
+    $PHORUM['DATA']['LANG']['FollowExplanation']         = 'Die folgenden Themen sind in Deinem Kontrollcenter gelistet.<br>Wenn Du die E-Mail-Benachrichtigung auswählst, wirst Du informiert, sobald es neue Beiträge zu diesen Themen gibt.';
     $PHORUM['DATA']['LANG']['FollowWithEmail']           = 'Willst Du per E-Mail benachrichtigt werden, wenn zu diesem Thema ein neuer Beitrag geschrieben wird?';
     $PHORUM['DATA']['LANG']['GroupJoinFail']             = 'Du konntest nicht als Teilnehmer hinzugefügt werden.';
     $PHORUM['DATA']['LANG']['GroupJoinSuccess']          = 'Du wurdest erfolgreich Teilnehmer der Gruppe.';
@@ -89,7 +89,7 @@
     $PHORUM['DATA']['LANG']['PleaseLoginRead']           = 'Entschuldige, nur registrierte Teilnehmer düfen dieses Forum lesen.';
     $PHORUM['DATA']['LANG']['PMFolderDeleteConfirm']     = 'Bist Du sicher, dass Du den Ordner und alle enthaltenen Nachrichten löschen willst?';
     $PHORUM['DATA']['LANG']['PMFolderDeleteExplain']     = '<b>Warnung:</b> Wenn Du einen Ordner löschst, werden auch alle enthaltenen Nachrichten gelöscht! Wenn diese einmal gelöscht sind, können sie nicht wieder hergestellt werden. Wenn Du die Nachrichten behalten willst, verschiebe diese bitte vorher in einen anderen Ordner.';
-    $PHORUM['DATA']['LANG']['PMFromMailboxFull']         = 'Du kannst keine Kopie dieser Nachricht speichern.<br />Dein Postfach ist voll.';
+    $PHORUM['DATA']['LANG']['PMFromMailboxFull']         = 'Du kannst keine Kopie dieser Nachricht speichern.<br>Dein Postfach ist voll.';
     $PHORUM['DATA']['LANG']['PMNoRecipients']            = 'Du hast keine Empfänger für Deine Nachricht ausgewählt';
     $PHORUM['DATA']['LANG']['PMNotSent']                 = 'Deine private Nachricht wurde nicht verschickt. Es gab einen Fehler.';
     $PHORUM['DATA']['LANG']['PMSent']                    = 'Deine private Nachricht wurde erfolgreich verschickt';

@@ -295,9 +295,9 @@
               include($upgradefile);
               $err=phorum_db_run_queries($upgrade_queries);
               if($err){
-                  $msg.= "an error occured: $err ... try to continue.<br />\n";
+                  $msg.= "an error occured: $err ... try to continue.<br>\n";
               } else {
-                  $msg.= "done.<br />\n";
+                  $msg.= "done.<br>\n";
               }
               $GLOBALS["PHORUM"]["internal_version"]=$pure_version;
               phorum_db_update_settings(array("internal_version"=>$pure_version));

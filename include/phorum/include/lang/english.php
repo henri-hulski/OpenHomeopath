@@ -177,7 +177,7 @@
         "Filter"                =>      "Filter",
         "FirstPage"             =>      "First",
         "Folders"               =>      "Folder List",
-        "FollowExplanation"     =>      "Followed threads are listed in your Control Center.<br />You can select to receive an email when the thread is updated.",
+        "FollowExplanation"     =>      "Followed threads are listed in your Control Center.<br>You can select to receive an email when the thread is updated.",
         "FollowThread"          =>      "Follow This Thread",
         "FollowWithEmail"       =>      "Email me when this thread is updated",
         "Forum"                 =>      "Forum",
@@ -305,7 +305,7 @@
         "NoRead"                =>      "Sorry, you do not have permission to read this forum.",
         "NotRegistered"         =>      "Not Registered?  Click here to register now.",
         "NoResults"             =>      "No results were found.",
-        "NoResultsHelp"         =>      "Your search did not match any messages.<br /><br />Suggestions:<ul><li>Make sure all words are spelled correctly.</li><li>Try different keywords.</li><li>Try more general keywords.</li><li>Try fewer keywords.</li></ul>",
+        "NoResultsHelp"         =>      "Your search did not match any messages.<br><br>Suggestions:<ul><li>Make sure all words are spelled correctly.</li><li>Try different keywords.</li><li>Try more general keywords.</li><li>Try fewer keywords.</li></ul>",
         "NoUnapprovedMessages"  =>      "There are currently no unapproved mesages",
         "NoUnapprovedUsers"     =>      "There are currently no unapproved users",
 

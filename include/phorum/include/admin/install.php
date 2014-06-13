@@ -27,13 +27,13 @@
 
     if(!file_exists("include/admin/PhorumInputForm.php")) {
 
-        echo "include/admin/PhorumInputForm.php doesn't exist but its required for the Phorum-Admin.<br />Please check that this file <strong>with this name</strong> exists.<br />E.g. some ftp-clients change the names to be all lower-case.";
+        echo "include/admin/PhorumInputForm.php doesn't exist but its required for the Phorum-Admin.<br>Please check that this file <strong>with this name</strong> exists.<br>E.g. some ftp-clients change the names to be all lower-case.";
 
         return;
     }
 
     if(!file_exists("include/admin/PhorumAdminMenu.php")) {
-        echo "<br /><br />./include/admin/PhorumAdminMenu.php doesn't exist but its required for the Phorum-Admin.<br />Please check that this file <strong>with this name</strong> exists.<br />E.g. some ftp-clients change the names to be all lower-case.";
+        echo "<br><br>./include/admin/PhorumAdminMenu.php doesn't exist but its required for the Phorum-Admin.<br>Please check that this file <strong>with this name</strong> exists.<br>E.g. some ftp-clients change the names to be all lower-case.";
 
         return;
     }
@@ -58,13 +58,13 @@
 
                 if(!empty($_POST["admin_user"]) && !empty($_POST["admin_pass"]) && !empty($_POST["admin_pass2"]) && !empty($_POST["admin_email"])){
                     if($_POST["admin_pass"]!=$_POST["admin_pass2"]){
-                        echo "The password fields do not match<br />";
+                        echo "The password fields do not match<br>";
                         $step=4;
                     } elseif(phorum_user_check_login($_POST["admin_user"], $_POST["admin_pass"])){
                         if($PHORUM["user"]["admin"]){
-                            echo "Admin user already exists and has permissions<br />";
+                            echo "Admin user already exists and has permissions<br>";
                         } else {
-                            echo "That user already exists but does not have admin permissions<br />";
+                            echo "That user already exists but does not have admin permissions<br>";
                             $step=4;
                         }
                     } else {
@@ -74,7 +74,7 @@
 
                         if(!phorum_user_add($user)){
 
-                            echo "There was an error adding the user.<br />";
+                            echo "There was an error adding the user.<br>";
                             $step=4;
                         }
 
@@ -94,7 +94,7 @@
 
                     }
                 } else {
-                    echo "Please fill in all fields.<br />";
+                    echo "Please fill in all fields.<br>";
                     $step=4;
                 }
 
@@ -305,7 +305,7 @@
             $frm->hidden("step", "5");
             $frm->hidden("module", "install");
             $frm->addbreak("Creating An Administrator");
-            $frm->addmessage("Please enter the following information.  This can be your user information or you can create an administrator that is separate from yourself.<br /><br />Note: If you are using a pre-existing authentication database, please enter the username and password of the admin user that already exists.");
+            $frm->addmessage("Please enter the following information.  This can be your user information or you can create an administrator that is separate from yourself.<br><br>Note: If you are using a pre-existing authentication database, please enter the username and password of the admin user that already exists.");
             $admin_user = isset($_POST["admin_user"]) ? $_POST["admin_user"] : "";
             $admin_email = isset($_POST["admin_email"]) ? $_POST["admin_email"] : "";
             $frm->addrow("Admin User Name", $frm->text_box("admin_user", $admin_user, 30));
@@ -319,7 +319,7 @@
         case 5:
 
             phorum_db_update_settings( array("installed"=>1) );
-            echo "The setup is complete.  You can now go to <a href=\"$_SERVER[PHP_SELF]\">the admin</a> and start making Phorum all your own.<br /><br /><strong>Here are some things you will want to look at:</strong><br /><br /><a href=\"$_SERVER[PHP_SELF]?module=settings\">The General Settings page</a><br /><br /><a href=\"$_SERVER[PHP_SELF]?module=mods\">Pre-installed modules</a><br /><br /><a href=\"docs/faq.txt\">The FAQ</a><br /><br /><a href=\"docs/performance.txt\">How to get peak performance from Phorum</a><br /><br /><strong>For developers:</strong><br /><br /><a href=\"docs/creating_mods.txt\">Module Creation</a><br /><br /><a href=\"docs/permissions.txt\">How Phorum permisssions work</a><br /><br /><a href=\"docs/CODING-STANDARDS\">The Phorum Team's codings standards</a>";
+            echo "The setup is complete.  You can now go to <a href=\"$_SERVER[PHP_SELF]\">the admin</a> and start making Phorum all your own.<br><br><strong>Here are some things you will want to look at:</strong><br><br><a href=\"$_SERVER[PHP_SELF]?module=settings\">The General Settings page</a><br><br><a href=\"$_SERVER[PHP_SELF]?module=mods\">Pre-installed modules</a><br><br><a href=\"docs/faq.txt\">The FAQ</a><br><br><a href=\"docs/performance.txt\">How to get peak performance from Phorum</a><br><br><strong>For developers:</strong><br><br><a href=\"docs/creating_mods.txt\">Module Creation</a><br><br><a href=\"docs/permissions.txt\">How Phorum permisssions work</a><br><br><a href=\"docs/CODING-STANDARDS\">The Phorum Team's codings standards</a>";
 
             break;
 
@@ -336,7 +336,7 @@
                 $PHORUM["cache"] = "./cache";
                 $settings = array("cache" => $PHORUM["cache"]);
                 if (!phorum_db_update_settings($settings)) {
-                    $message .= "Database error updating settings.<br />";
+                    $message .= "Database error updating settings.<br>";
                     $err = true;
                 }
                 elseif ($fp = fopen($PHORUM["cache"] . "/phorum-install-test", "w+")) {
@@ -350,7 +350,7 @@
             error_reporting(E_WARN);
             if ($message == "") {
                 if($err){
-                    $message.="Your cache directory is not writable. Please change the permissions on '/cache' inside the Phorum directory to allow writing. In Unix, you may have to use this command: chmod 777 cache<br /><br />If you want to continue anyway and set a cache directory manually, press continue. Note that you must do this, Phorum will not work without a valid cache.";
+                    $message.="Your cache directory is not writable. Please change the permissions on '/cache' inside the Phorum directory to allow writing. In Unix, you may have to use this command: chmod 777 cache<br><br>If you want to continue anyway and set a cache directory manually, press continue. Note that you must do this, Phorum will not work without a valid cache.";
                 } else {
                     $message.="Cache directory set.  Next we will create a user with administrator privileges.  Press continue when ready.";
                 }

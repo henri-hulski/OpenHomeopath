@@ -209,14 +209,14 @@ if (isset($check_letter) && $check_letter == TRUE) {
 	echo ("<div style='text-align:right;font-size:10px;'>".view_lang_menu('symptom-details')."</div>");
 	foreach ($symptom_details['symptoms'] as $sym_id=>$val) {
 		echo ("<div class='mm-info-box-head'>\n");
-		echo (" <h2>".$symptom_details['symptoms'][$sym_id]['rubric_name']." &gt; ".$symptom_details['symptoms'][$sym_id]['symptom_name']."</h2><b>".$translations['General_original_lang'].":</b> ".$symptom_details['symptoms'][$sym_id]['lang_name']."<br />");
+		echo (" <h2>".$symptom_details['symptoms'][$sym_id]['rubric_name']." &gt; ".$symptom_details['symptoms'][$sym_id]['symptom_name']."</h2><b>".$translations['General_original_lang'].":</b> ".$symptom_details['symptoms'][$sym_id]['lang_name']."<br>");
 		if (isset($translation_arr)) {
 			echo "<b>".$translations['General_translation'].":</b>";
 			foreach ($translation_arr as $trans_val) {
-				echo "<br />".$trans_val[0]." (".$trans_val[1].")";
+				echo "<br>".$trans_val[0]." (".$trans_val[1].")";
 			}
 		}
-		echo "<br /><strong>" . _("More information") . ":</strong> <a href='symptominfo.php?sym=$sym_id&lang=$lang' target='_blank'>OpenHomeopath</a>\n";
+		echo "<br><strong>" . _("More information") . ":</strong> <a href='symptominfo.php?sym=$sym_id&lang=$lang' target='_blank'>OpenHomeopath</a>\n";
 		echo "<hr/></div>";
 		if (!empty($symptom_details['sources'])) {
 			foreach ($symptom_details['sources'] as $src_id=>$src_val) {
@@ -239,9 +239,9 @@ if (isset($check_letter) && $check_letter == TRUE) {
 					echo (", $translations[edition_release]: <span class='gray'>".$symptom_details['sources_info'][$src_id]['src_edition_version']."</span>");
 				}
 				if (!empty($source_info[6]) && $source_info[6] != "-") {
-					$source_info[6] = str_replace("\r\n", "<br />", $source_info[6]);
-					$source_info[6] = str_replace("\r", "<br />", $source_info[6]);
-					$source_info[6] = str_replace("\n", "<br />", $source_info[6]);
+					$source_info[6] = str_replace("\r\n", "<br>", $source_info[6]);
+					$source_info[6] = str_replace("\r", "<br>", $source_info[6]);
+					$source_info[6] = str_replace("\n", "<br>", $source_info[6]);
 				}
 				if (!empty($symptom_details['sources_info'][$src_id]['src_isbn']) && $symptom_details['sources_info'][$src_id]['src_isbn'] != "-") {
 					echo ("      <strong>ISBN: </strong><span class='gray'>".$symptom_details['sources_info'][$src_id]['src_isbn']."</span>");

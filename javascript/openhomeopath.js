@@ -904,7 +904,7 @@ function getMateria(remId) {
 }
 
 function getRemSymptoms(name) {
-	var remId = document.getElementById("remId").value;
+	var remId = document.getElementById("revRemId").value;
 	var rubricId = document.getElementById("rem_rubrics").options[document.getElementById("rem_rubrics").selectedIndex].value;
 	var grade = "1";
 	if (document.getElementById(name + "2").checked) {

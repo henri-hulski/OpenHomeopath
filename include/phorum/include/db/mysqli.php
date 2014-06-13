@@ -4625,7 +4625,7 @@ function phorum_db_create_tables()
     foreach($queries as $sql){
         $res = mysqli_query( $conn, $sql);
         if ($err = mysqli_error($conn)){
-            $retmsg = "$err<br />";
+            $retmsg = "$err<br>";
             phorum_db_mysqli_error("$err: $sql");
             break;
         }
@@ -4660,7 +4660,7 @@ function phorum_db_run_queries($queries){
         if ($err = mysqli_error($conn)){
             // skip duplicate column name errors
             if(!stristr($err, "duplicate column")){
-                $retmsg.= "$err<br />";
+                $retmsg.= "$err<br>";
                 phorum_db_mysqli_error("$err: $sql");
             }
         }

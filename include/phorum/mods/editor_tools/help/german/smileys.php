@@ -18,7 +18,7 @@
     die als Bilder beim Lesen einer Nachricht angezeigt werden.
     Meistens dr&uuml;cken diese Stimmungen aus.
     In der unten stehenden &Uuml;bersicht finden Sie alle verf&uuml;gbaren Smileys.
-    Die "Wo"-Spalte gibt an, wo die Smilies verwendet werden k&ouml;nnen<br />(T = Thema / Betreff, N = Nachricht / Text, NT = beides).
+    Die "Wo"-Spalte gibt an, wo die Smilies verwendet werden k&ouml;nnen<br>(T = Thema / Betreff, N = Nachricht / Text, NT = beides).
     <br/><br/>
     <table cellspacing="1" width="100%">
     <tr>

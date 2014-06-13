@@ -99,7 +99,7 @@ echo $revrep->get_grade_select();
       </tr>
     </table>
 	<div class="clear"></div>
-    <input id='remId' type='hidden' value='<?php echo $revrep->rem_id; ?>'>
+    <input id='revRemId' type='hidden' value='<?php echo $revrep->rem_id; ?>'>
     <br>
   </form>
   <div class = 'select'>

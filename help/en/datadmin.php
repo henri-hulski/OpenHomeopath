@@ -190,9 +190,9 @@ include("help/layout/$skin/header.php");
 </h3>
 <p>
   You can reach the <strong>edition form</strong> from the <img alt=""  src="../../<?php echo(EDIT_ICON);?>" width="16" height="16"><strong>-Symbol</strong> in front of each table row and the insert form from <strong><em>"Insert"</em></strong> in the <strong>menue bar</strong>.<br>
-  The difference between the two form is, that the insert form is a blank form and in the edit form you find the data of the current record with the possibility to jump with <strong><em>"<< Previous"</em></strong> to the previous and with <strong><em>"Next >>"</em></strong> to the next record.
+  The difference between the two form is, that the insert form is a blank form and in the edit form you find the data of the current record with the possibility to jump with <strong><em>"&lt;&lt; Previous"</em></strong> to the previous and with <strong><em>"Next >>"</em></strong> to the next record.
 </p>
-<p>
+<div>
   <strong>Mandatory fields</strong> are signed by an <strong>asterisk (*)</strong> before the field name.<br>
   There're 3 types of fields:
   <ul>
@@ -202,7 +202,7 @@ include("help/layout/$skin/header.php");
   </ul>
   You find <strong>hints to fill out the fields</strong> behind the fields.<br>
   <strong>Details for each table</strong> you find in the corresponding table chapter.
-</p>
+</div>
 <br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");

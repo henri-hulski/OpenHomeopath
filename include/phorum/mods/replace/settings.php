@@ -21,7 +21,7 @@
             if(!phorum_db_update_settings(array("mod_replace"=>$PHORUM["mod_replace"]))){
                 $error="Database error while updating settings.";
             } else {
-                echo "Replacement Updated<br />";
+                echo "Replacement Updated<br>";
             }
         }
     }
@@ -30,7 +30,7 @@
         if(isset($_GET["delete"])){
             unset($PHORUM["mod_replace"][$_GET["curr"]]);
             phorum_db_update_settings(array("mod_replace"=>$PHORUM["mod_replace"]));
-            echo "Replacement Deleted<br />";
+            echo "Replacement Deleted<br>";
         } else {
             $curr = $_GET["curr"];
         }

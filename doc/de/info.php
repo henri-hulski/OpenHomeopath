@@ -31,9 +31,9 @@ include("help/layout/$skin/header.php");
   <?php echo _("Info"); ?>
 </h1>
 <nav class="content">
-  <h1>
+  <h2>
     <?php echo _("Contents"); ?>
-  </h1>
+  </h2>
   <ul>
     <li><a href="#version">Programmversion</a></li>
     <li><a href="#changelog">Changelog</a></li>

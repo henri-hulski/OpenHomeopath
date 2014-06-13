@@ -30,7 +30,7 @@
               phorum_db_delete_group($deluid);
               $count++;
           }
-          echo "$count Group(s) deleted.<br />";
+          echo "$count Group(s) deleted.<br>";
 
         }
 
@@ -43,9 +43,9 @@
                     $group_id=phorum_db_add_group($_POST["group_name"]);
                 }
                 if(!$group_id){
-                    echo "Error adding group<br />";
+                    echo "Error adding group<br>";
                 } else {
-                    echo "Group added<br />";
+                    echo "Group added<br>";
                 }
                 break;
 
@@ -158,7 +158,7 @@
         $frm->addrow("Allow Membership Requests:", $frm->select_tag("open", $open_options, $group["open"], ""));
         $frm->show();
 
-        echo "<br /><hr class=\"PhorumAdminHR\" /><br />";
+        echo "<br><hr class=\"PhorumAdminHR\" /><br>";
 
 
         $frm =& new PhorumInputForm ("", "post", "Update");
@@ -178,8 +178,8 @@
         $perm_frm = $frm->checkbox("new_permissions[".PHORUM_USER_ALLOW_READ."]", 1, "Read")."&nbsp;&nbsp;".
                     $frm->checkbox("new_permissions[".PHORUM_USER_ALLOW_REPLY."]", 1, "Reply")."&nbsp;&nbsp;".
                     $frm->checkbox("new_permissions[".PHORUM_USER_ALLOW_NEW_TOPIC."]", 1, "Create&nbsp;New&nbsp;Topics")."&nbsp;&nbsp;".
-                    $frm->checkbox("new_permissions[".PHORUM_USER_ALLOW_EDIT."]", 1, "Edit&nbsp;Their&nbsp;Posts")."<br />".
-                    $frm->checkbox("new_permissions[".PHORUM_USER_ALLOW_ATTACH."]", 1, "Attach&nbsp;Files")."<br />".
+                    $frm->checkbox("new_permissions[".PHORUM_USER_ALLOW_EDIT."]", 1, "Edit&nbsp;Their&nbsp;Posts")."<br>".
+                    $frm->checkbox("new_permissions[".PHORUM_USER_ALLOW_ATTACH."]", 1, "Attach&nbsp;Files")."<br>".
                     $frm->checkbox("new_permissions[".PHORUM_USER_ALLOW_MODERATE_MESSAGES."]", 1, "Moderate Messages")."&nbsp;&nbsp;".
                     $frm->checkbox("new_permissions[".PHORUM_USER_ALLOW_MODERATE_USERS."]", 1, "Moderate Users")."&nbsp;&nbsp;";
 
@@ -200,14 +200,14 @@
                 $perm_frm = $frm->checkbox("permissions[$forum_id][".PHORUM_USER_ALLOW_READ."]", 1, "Read", $perms & PHORUM_USER_ALLOW_READ)."&nbsp;&nbsp;".
                             $frm->checkbox("permissions[$forum_id][".PHORUM_USER_ALLOW_REPLY."]", 1, "Reply", $perms & PHORUM_USER_ALLOW_REPLY)."&nbsp;&nbsp;".
                             $frm->checkbox("permissions[$forum_id][".PHORUM_USER_ALLOW_NEW_TOPIC."]", 1, "Create&nbsp;New&nbsp;Topics", $perms & PHORUM_USER_ALLOW_NEW_TOPIC)."&nbsp;&nbsp;".
-                            $frm->checkbox("permissions[$forum_id][".PHORUM_USER_ALLOW_EDIT."]", 1, "Edit&nbsp;Their&nbsp;Posts", $perms & PHORUM_USER_ALLOW_EDIT)."<br />".
-                            $frm->checkbox("permissions[$forum_id][".PHORUM_USER_ALLOW_ATTACH."]", 1, "Attach&nbsp;Files", $perms & PHORUM_USER_ALLOW_ATTACH)."<br />".
+                            $frm->checkbox("permissions[$forum_id][".PHORUM_USER_ALLOW_EDIT."]", 1, "Edit&nbsp;Their&nbsp;Posts", $perms & PHORUM_USER_ALLOW_EDIT)."<br>".
+                            $frm->checkbox("permissions[$forum_id][".PHORUM_USER_ALLOW_ATTACH."]", 1, "Attach&nbsp;Files", $perms & PHORUM_USER_ALLOW_ATTACH)."<br>".
                             $frm->checkbox("permissions[$forum_id][".PHORUM_USER_ALLOW_MODERATE_MESSAGES."]", 1, "Moderate Messages", $perms & PHORUM_USER_ALLOW_MODERATE_MESSAGES)."&nbsp;&nbsp;".
                             $frm->checkbox("permissions[$forum_id][".PHORUM_USER_ALLOW_MODERATE_USERS."]", 1, "Moderate Users", $perms & PHORUM_USER_ALLOW_MODERATE_USERS)."&nbsp;&nbsp;".
 
                 $frm->hidden("forums[$forum_id]", $forum_id);
 
-                $row=$frm->addrow($forums[$forum_id]["name"]."<br />".$frm->checkbox("delforum[$forum_id]", 1, "Delete"), $perm_frm);
+                $row=$frm->addrow($forums[$forum_id]["name"]."<br>".$frm->checkbox("delforum[$forum_id]", 1, "Delete"), $perm_frm);
 
             }
         }

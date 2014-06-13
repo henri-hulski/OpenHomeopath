@@ -153,17 +153,17 @@ But with the [code] around it, it looks like:
     </tt><br/><br/>
     These will be displayed as:<br/><br/> 
     <blockquote class="bbcode">Quote:<div>Phorum is the best!</div></blockquote>
-    <blockquote class="bbcode">Quote:<div><strong>From Hamlet, by William Shakespeare</strong><br />
+    <blockquote class="bbcode">Quote:<div><strong>From Hamlet, by William Shakespeare</strong><br>
     To be or not to be, --that is the question:--
-    <br />
+    <br>
     Whether 'tis nobler in the mind to suffer
-    <br />
+    <br>
     The slings and arrows of outrageous fortune
-    <br />
+    <br>
     Or to take arms against a sea of troubles,
-    <br />
+    <br>
     And by opposing end them?
-    <br /></div></blockquote>
+    <br></div></blockquote>
 
     <h3>Add a horizontal separator line: [hr]</h3>
     To add a separator line to your message, you can use [hr].

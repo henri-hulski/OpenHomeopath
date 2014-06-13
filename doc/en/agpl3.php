@@ -6,12 +6,12 @@ $head_title = "AGPLv3 :: OpenHomeopath";
 $meta_description = "AGPLv3 License";
 include("help/layout/$skin/header.php");
 ?>
-<h1 style="text-align: center;">GNU AFFERO GENERAL PUBLIC LICENSE</h1>
+<h2 style="text-align: center;">GNU AFFERO GENERAL PUBLIC LICENSE</h2>
 <p style="text-align: center;">Version 3, 19 November 2007</p>
 
 <p>Copyright &copy; 2007 Free Software Foundation,
 Inc. &lt;<a href="http://fsf.org/">http://fsf.org/</a>&gt;
- <br />
+ <br>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.</p>
 

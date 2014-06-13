@@ -117,12 +117,12 @@
 
 Ohne das [code] darum, w&uuml;rde es komplett zerst&ouml;rt aussehen
 <br/><br/>
- _____  _<br />
-|  __ \| |<br />
-| |__) | |__   ___  _ __ _   _ _ __ ___<br />
-|  ___/| '_ \ / _ \| '__| | | | '_ ` _ \<br />
-| |    | | | | (_) | |  | |_| | | | | | |<br />
-|_|    |_| |_|\___/|_|   \__,_|_| |_| |_|<br />
+ _____  _<br>
+|  __ \| |<br>
+| |__) | |__   ___  _ __ _   _ _ __ ___<br>
+|  ___/| '_ \ / _ \| '__| | | | '_ ` _ \<br>
+| |    | | | | (_) | |  | |_| | | | | | |<br>
+|_|    |_| |_|\___/|_|   \__,_|_| |_| |_|<br>
 <br/><br/>
 Aber mit [code] darum, sieht es wie folgt aus:
 <pre style="border: 1px solid #dde; background-color: #ffe; padding: 0px 0px 0px 10px">
@@ -151,17 +151,17 @@ Aber mit [code] darum, sieht es wie folgt aus:
     </tt><br/><br/>
     Dies wird angezeigt als:<br/><br/>
     <blockquote class="bbcode">Zitat:<div>Phorum is the best!</div></blockquote>
-    <blockquote class="bbcode">Zitat:<div><strong>From Hamlet, by William Shakespeare</strong><br />
+    <blockquote class="bbcode">Zitat:<div><strong>From Hamlet, by William Shakespeare</strong><br>
     To be or not to be, --that is the question:--
-    <br />
+    <br>
     Whether 'tis nobler in the mind to suffer
-    <br />
+    <br>
     The slings and arrows of outrageous fortune
-    <br />
+    <br>
     Or to take arms against a sea of troubles,
-    <br />
+    <br>
     And by opposing end them?
-    <br /></div></blockquote>
+    <br></div></blockquote>
 
     <h3>Eine horizontale Linie einf&uuml;gen: [hr]</h3>
     Um eine Trennungslinie einzuf&uuml;gen, k&ouml;nnen Sie die [hr]-Markierung nutzen.

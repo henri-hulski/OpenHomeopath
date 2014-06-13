@@ -123,16 +123,16 @@
 
         if($plugin["settings"]){
             if($thisval==0){
-                $settings_link="<br /><a href=\"javascript:alert('You can not edit settings for a module unless it is turned On.');\">Settings</a>";
+                $settings_link="<br><a href=\"javascript:alert('You can not edit settings for a module unless it is turned On.');\">Settings</a>";
             } else {
-                $settings_link="<br /><a href=\"{$PHORUM["admin_http_path"]}?module=modsettings&mod=$name\">Settings</a>";
+                $settings_link="<br><a href=\"{$PHORUM["admin_http_path"]}?module=modsettings&mod=$name\">Settings</a>";
             }
         } else {
             $settings_link="";
         }
 
         $frm->hidden(base64_encode("hooks_$name"), $plugin["hooks"]);
-        $frm->addrow("$plugin[title]<div class=\"small\">".wordwrap($plugin["desc"], 90, "<br />")."</div>", $frm->select_tag(base64_encode("mods_$name"), array("Off", "On"), $thisval).$settings_link);
+        $frm->addrow("$plugin[title]<div class=\"small\">".wordwrap($plugin["desc"], 90, "<br>")."</div>", $frm->select_tag(base64_encode("mods_$name"), array("Off", "On"), $thisval).$settings_link);
 
     }
 

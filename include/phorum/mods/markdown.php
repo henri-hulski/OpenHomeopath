@@ -145,7 +145,7 @@ if (strcasecmp(substr(__FILE__, -16), "classTextile.php") == 0) {
 hook:  format|phorum_Markdown
 hook:  quote|phorum_Markdown_quote
 title: Markdown
-desc:  Markdown syntax allows you to write using an easy-to-read, easy-to-write plain text format. Based on the original Perl version by John Gruber.<br />http://daringfireball.net/projects/markdown/syntax<br />http://www.michelf.com/projects/php-markdown/
+desc:  Markdown syntax allows you to write using an easy-to-read, easy-to-write plain text format. Based on the original Perl version by John Gruber.<br>http://daringfireball.net/projects/markdown/syntax<br>http://www.michelf.com/projects/php-markdown/
 */
 
 include_once "include/format_functions.php";

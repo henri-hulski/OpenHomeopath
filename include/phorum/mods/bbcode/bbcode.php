@@ -65,8 +65,8 @@ function phorum_bb_code($data)
 
     $quote_replace = array(
         "<blockquote class=\"bbcode\">".$PHORUM["DATA"]["LANG"]["Quote"] . ":<div>",
-        "<blockquote class=\"bbcode\">".$PHORUM["DATA"]["LANG"]["Quote"] . ":<div><strong>$1</strong><br />",
-        "<blockquote class=\"bbcode\">".$PHORUM["DATA"]["LANG"]["Quote"] . ":<div><strong>$1</strong><br />",
+        "<blockquote class=\"bbcode\">".$PHORUM["DATA"]["LANG"]["Quote"] . ":<div><strong>$1</strong><br>",
+        "<blockquote class=\"bbcode\">".$PHORUM["DATA"]["LANG"]["Quote"] . ":<div><strong>$1</strong><br>",
         "</div></blockquote>"
     );
 

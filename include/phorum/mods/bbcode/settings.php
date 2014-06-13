@@ -16,7 +16,7 @@
             $error="Database error while updating settings.";
         }
         else {
-            echo "Settings Updated<br />";
+            echo "Settings Updated<br>";
         }
     }
 
@@ -26,7 +26,7 @@
     $frm->hidden("mod", "bbcode"); // this is the directory name that the Settings file lives in
 
     if (!empty($error)){
-        echo "$error<br />";
+        echo "$error<br>";
     }
     $frm->addbreak("Edit settings for the BBCode module");
     $frm->addmessage("When users post links on your forum, you can choose whether they open in a new window.");

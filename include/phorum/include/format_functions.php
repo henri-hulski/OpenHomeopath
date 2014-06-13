@@ -125,7 +125,7 @@ function phorum_format_messages ($data)
             $message["body"] = preg_replace("/\s*(<\/*(xmp|blockquote|pre).*?>)\s*\Q$phorum_br\E/", "$1", $message["body"]);
 
             // Normalize the Phorum line breaks that are left.
-            $data[$key]["body"] = str_replace($phorum_br, "<br />", $message["body"]);
+            $data[$key]["body"] = str_replace($phorum_br, "<br>", $message["body"]);
         }
     }
 

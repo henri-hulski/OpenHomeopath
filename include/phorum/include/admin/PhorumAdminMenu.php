@@ -58,7 +58,7 @@
                 $title = htmlspecialchars($link["title"]);
                 $html ="<a title=\"$desc\" href=\"$href";
                 if(!empty($link["module"])) $html.="?module=$link[module]";
-                $html.="\">$title</a><br />";
+                $html.="\">$title</a><br>";
                 echo $html;
             }
 

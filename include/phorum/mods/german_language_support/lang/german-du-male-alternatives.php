@@ -17,31 +17,31 @@
         // Buddy
         $PHORUM['DATA']['LANG']['BuddyAddFail']     = 'Der Teilnehmer konnte nicht Deiner Buddy-Liste hinzugefügt werden.';
         $PHORUM['DATA']['LANG']['BuddyAddSuccess']  = 'Der Teilnehmer wurde Deiner Buddy-Liste hinzugefügt.';
-        $PHORUM['DATA']['LANG']['BuddyListIsEmpty'] = 'Deine Buddy-Liste ist leer.<br />Um Teilnehmer hinzuzufügen, öffne deren Profil und klicke auf &quot;Teilnehmer meiner Buddy-Liste hinzufügen&quot;.';
+        $PHORUM['DATA']['LANG']['BuddyListIsEmpty'] = 'Deine Buddy-Liste ist leer.<br>Um Teilnehmer hinzuzufügen, öffne deren Profil und klicke auf &quot;Teilnehmer meiner Buddy-Liste hinzufügen&quot;.';
         break;
     case 1:
         // Freund
         $PHORUM['DATA']['LANG']['BuddyAddFail']     = 'Der Teilnehmer konnte nicht Deiner Liste der Freunde hinzugefügt werden.';
         $PHORUM['DATA']['LANG']['BuddyAddSuccess']  = 'Der Teilnehmer wurde Deiner Liste der Freunde hinzugefügt.';
-        $PHORUM['DATA']['LANG']['BuddyListIsEmpty'] = 'Deine Liste der Freunde ist leer.<br />Um Teilnehmer hinzuzufügen, öffne deren Profil und klicke auf &quot;Teilnehmer meiner Liste der Freunde hinzufügen&quot;.';
+        $PHORUM['DATA']['LANG']['BuddyListIsEmpty'] = 'Deine Liste der Freunde ist leer.<br>Um Teilnehmer hinzuzufügen, öffne deren Profil und klicke auf &quot;Teilnehmer meiner Liste der Freunde hinzufügen&quot;.';
         break;
     case 2:
         // Kollege
         $PHORUM['DATA']['LANG']['BuddyAddFail']     = 'Der Teilnehmer konnte nicht Deiner Liste der Kollegen hinzugefügt werden.';
         $PHORUM['DATA']['LANG']['BuddyAddSuccess']  = 'Der Teilnehmer wurde Deiner Liste der Kollegen hinzugefügt.';
-        $PHORUM['DATA']['LANG']['BuddyListIsEmpty'] = 'Deine Liste der Kollegen ist leer.<br />Um Teilnehmer hinzuzufügen, öffne deren Profil und klicke auf &quot;Teilnehmer meiner Liste der Kollegen hinzufügen&quot;.';
+        $PHORUM['DATA']['LANG']['BuddyListIsEmpty'] = 'Deine Liste der Kollegen ist leer.<br>Um Teilnehmer hinzuzufügen, öffne deren Profil und klicke auf &quot;Teilnehmer meiner Liste der Kollegen hinzufügen&quot;.';
         break;
     case 3:
         // Kumpel
         $PHORUM['DATA']['LANG']['BuddyAddFail']     = 'Der Teilnehmer konnte nicht Deiner Liste der Kumpel hinzugefügt werden.';
         $PHORUM['DATA']['LANG']['BuddyAddSuccess']  = 'Der Teilnehmer wurde Deiner Liste der Kumpel hinzugefügt.';
-        $PHORUM['DATA']['LANG']['BuddyListIsEmpty'] = 'Deine Liste der Kumpel ist leer.<br />Um Teilnehmer hinzuzufügen, öffne deren Profil und klicke auf &quot;Teilnehmer meiner Liste der Kumpel hinzufügen&quot;.';
+        $PHORUM['DATA']['LANG']['BuddyListIsEmpty'] = 'Deine Liste der Kumpel ist leer.<br>Um Teilnehmer hinzuzufügen, öffne deren Profil und klicke auf &quot;Teilnehmer meiner Liste der Kumpel hinzufügen&quot;.';
         break;
     default:
         // Freund
         $PHORUM['DATA']['LANG']['BuddyAddFail']     = 'Der Teilnehmer konnte nicht Deiner Liste der Freunde hinzugefügt werden.';
         $PHORUM['DATA']['LANG']['BuddyAddSuccess']  = 'Der Teilnehmer wurde Deiner Liste der Freunde hinzugefügt.';
-        $PHORUM['DATA']['LANG']['BuddyListIsEmpty'] = 'Deine Liste der Freunde ist leer.<br />Um Teilnehmer hinzuzufügen, öffne deren Profil und klicke auf &quot;Teilnehmer meiner Liste der Freunde hinzufügen&quot;.';
+        $PHORUM['DATA']['LANG']['BuddyListIsEmpty'] = 'Deine Liste der Freunde ist leer.<br>Um Teilnehmer hinzuzufügen, öffne deren Profil und klicke auf &quot;Teilnehmer meiner Liste der Freunde hinzufügen&quot;.';
         break;
     }
 

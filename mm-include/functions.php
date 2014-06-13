@@ -475,15 +475,15 @@ function view_rem_rel_tab($remedy)
         $rel_tab .= ("<tr><td class='rem-info-tab'><strong>$translations[antidote]:</strong> </td><td class='rem-info-tab'>$anti_rem_str</td></tr>");
     }
     if (!empty($remedy['rem_note'])) {
-        $note = str_replace("\r\n", "<br />", $remedy['rem_note']);
-        $note = str_replace("\r", "<br />", $note);
-        $note = str_replace("\n", "<br />", $note);
+        $note = str_replace("\r\n", "<br>", $remedy['rem_note']);
+        $note = str_replace("\r", "<br>", $note);
+        $note = str_replace("\n", "<br>", $note);
         $rel_tab .= ("<tr><td class='rem-info-tab'><strong>$translations[Materia_comment]:</strong> </td><td class='rem-info-tab'>$note</td></tr>");
     }
     if (!empty($remedy_info['rem_description'])) {
-        $description = str_replace("\r\n", "<br />", $remedy_info[4]);
-        $description = str_replace("\r", "<br />", $description);
-        $description = str_replace("\n", "<br />", $description);
+        $description = str_replace("\r\n", "<br>", $remedy_info[4]);
+        $description = str_replace("\r", "<br>", $description);
+        $description = str_replace("\n", "<br>", $description);
         $rel_tab .= ("<tr><td><strong>".$translations['Materia_description'].":</strong> </td><td>$anti_rem_str</td></tr>");
     }
     $rel_tab .= ("</tbody></table>");

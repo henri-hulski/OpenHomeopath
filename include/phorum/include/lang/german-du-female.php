@@ -28,7 +28,7 @@
     $PHORUM['DATA']['LANG']['BuddyAdd']                    = 'Teilnehmerin meiner Liste der Freundinnen hinzufügen';
     $PHORUM['DATA']['LANG']['BuddyAddFail']                = 'Die Teilnehmerin konnte nicht Deiner Liste der Freundinnen hinzugefügt werden.';
     $PHORUM['DATA']['LANG']['BuddyAddSuccess']             = 'Die Teilnehmerin wurde Deiner Liste der Freundinnen hinzugefügt.';
-    $PHORUM['DATA']['LANG']['BuddyListIsEmpty']            = 'Deine Liste der Freundinnen ist leer.<br />Um Teilnehmerinnen hinzuzufügen, öffne deren Profil und klicke auf &quot;Teilnehmerin meiner Liste der Freundinnen hinzufügen&quot;.';
+    $PHORUM['DATA']['LANG']['BuddyListIsEmpty']            = 'Deine Liste der Freundinnen ist leer.<br>Um Teilnehmerinnen hinzuzufügen, öffne deren Profil und klicke auf &quot;Teilnehmerin meiner Liste der Freundinnen hinzufügen&quot;.';
     $PHORUM['DATA']['LANG']['DeleteAnnouncementForbidden'] = 'Leider dürfen nur Administratorinnen Ankündigungen löschen.';
     $PHORUM['DATA']['LANG']['EditPostForbidden']           = 'Du hast leider keine Berechtigung, diesen Beitrag zu bearbeiten. Vielleicht liegt dies aber auch daran, dass die Administratorin ein Zeitlimit für das Bearbeiten der Beiträge gesetzt hat.';
     $PHORUM['DATA']['LANG']['ErrAuthor']                   = 'Bitte Autorin angeben.';
@@ -62,7 +62,7 @@
     $PHORUM['DATA']['LANG']['PMNoRecipients']              = 'Du hast keine Empfängerinnen für Deine Nachricht ausgewählt';
     $PHORUM['DATA']['LANG']['PMNotifyMessage']             = 'Privatnachricht bei '.$PHORUM['title']."\n\nBetreff: %subject%\nAutorin: %author%\nLink zur Nachricht: %read_url%\n\n%plain_body%\n";
     $PHORUM['DATA']['LANG']['PMSelectARecipient']          = 'Empfängerin auswählen&nbsp;...';
-    $PHORUM['DATA']['LANG']['PMToMailboxFull']             = 'Die Nachricht konnte nicht verschickt werden.<br />Das Postfach der Teilnehmerin &quot;%recipient%&quot; ist voll.';
+    $PHORUM['DATA']['LANG']['PMToMailboxFull']             = 'Die Nachricht konnte nicht verschickt werden.<br>Das Postfach der Teilnehmerin &quot;%recipient%&quot; ist voll.';
     $PHORUM['DATA']['LANG']['ReceiveModerationMails']      = 'Ich möchte Benachrichtigungen für Moderatorinnen empfangen.';
     $PHORUM['DATA']['LANG']['Recipients']                  = 'Empfängerinnen';
     $PHORUM['DATA']['LANG']['RegVerifyMod']                = 'Danke für Deine Registrierung. Die Zustimmung einer Moderatorin steht noch aus. Du erhältst eine E-Mail, sobald man über Deine Zugehörigkeit entschieden hat.';
