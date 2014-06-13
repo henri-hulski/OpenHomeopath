@@ -157,7 +157,7 @@ if ($search != "") {
 } else  if (isset($_REQUEST['rubrics'])) {
 	echo ("        <span id='search_item'>- " . _("no item for searching") . " -</span></td></tr>\n");
 } else {
-	echo ("        <span id='search_item'></span></td></tr>\n");
+	echo ("        <span id='search_item'></span></td><td></td></tr>\n");
 }
 ?>
     </table>

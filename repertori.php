@@ -125,7 +125,7 @@ if ((isset($_REQUEST['rubrics']) && !empty($num_rows)) || !empty($_REQUEST['syms
               <td><?php echo _("Symptom-Info");?></td>
             </tr>
             <tr>
-              <td class='center'><img src='skins/original/img/del.png' width='12' height='12' alt='Delete' alt='Delete'></td>
+              <td class='center'><img src='skins/original/img/del.png' width='12' height='12' alt='Delete'></td>
               <td><?php echo _("Deselect symptom"); ?></td>
             </tr>
           </table>
