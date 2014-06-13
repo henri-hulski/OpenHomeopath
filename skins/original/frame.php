@@ -154,6 +154,8 @@ echo $magic_hat->print_received_donations();
           </ul>
         </nav>
 <?php
-popup();
+if (empty($current_page) || ($current_page !== 'index' && $current_page !== 'materia' && $current_page !== 'rep_result' && $current_page !== 'repertory' && $current_page !== 'symptominfo' && $current_page !== 'userinfo' && $current_page !== 'symptompflege')) {
+	popup();
+}
 ?>
         <section id="pagecontent">

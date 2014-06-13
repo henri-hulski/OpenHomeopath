@@ -33,6 +33,7 @@ if (!isset($tabbed) || !$tabbed) {
 }
 if (!$tabbed && !isset($_REQUEST['tab'])) {
 	$head_title = _("Repertorization") . " :: OpenHomeopath";
+	$current_page = 'repertory';
 	$skin = $session->skin;
 	include("skins/$skin/header.php");
 }

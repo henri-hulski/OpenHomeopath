@@ -5,9 +5,9 @@ if (!isset($tabbed) || !$tabbed) {
 if (!$session->logged_in) {
 	$host  = $_SERVER['HTTP_HOST'];
 	$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-	$zusatz = "login.php?url=symptompflege.php";
+	$extra = "login.php?url=symptompflege.php";
 	header("Content-Type: text/html;charset=utf-8"); 
-	header("Location: http://$host$uri/$zusatz");
+	header("Location: http://$host$uri/$extra");
 	die();
 }
 $current_page = "symptompflege";

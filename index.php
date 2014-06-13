@@ -30,6 +30,7 @@
 include_once ("include/classes/login/session.php");
 $tabbed = true;
 $skin = $session->skin;
+$current_page = 'index';
 include("skins/$skin/header.php");
 ?>
 <h1>

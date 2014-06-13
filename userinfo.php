@@ -43,6 +43,7 @@ if (!$session->logged_in) {
 $username = $session->username;
 if (!$tabbed && !isset($_REQUEST['tab'])) {
 	$head_title = _("Account") . " :: OpenHomeopath";
+	$current_page = 'userinfo';
 	$skin = $session->skin;
 	include("skins/$skin/header.php");
 }
