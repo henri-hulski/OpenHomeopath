@@ -92,7 +92,7 @@ echo _(" and your e-mail.");
       <table class="center nospacing">
 <?php
 	if($form->num_errors > 0) {
-		echo "<tr><td colspan='3'><font size='2' color='#ff0000'>" . $form->num_errors . " " . ngettext("error found", "errors found", $form->num_errors) . "</font></td></tr>\n";
+		echo "<tr><td colspan='3' style='font-size: 13px; color: #ff0000;'>" . $form->num_errors . " " . ngettext("error found", "errors found", $form->num_errors) . "</td></tr>\n";
 	}
 ?>
         <tr>

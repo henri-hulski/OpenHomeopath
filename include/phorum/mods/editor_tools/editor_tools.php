@@ -153,14 +153,14 @@ function phorum_mod_editor_tools_tpl_editor_before_textarea()
 
     if (!count($help)) return;
 
-    print '<noscript><br/><br/><font size="-1">';
+    print '<noscript><br/><br/><span style="font-size: smaller">';
     print $lang['help'] . "<br/><ul>";
     foreach ($help as $helpinfo) {
       print "<li><a href=\"" . htmlspecialchars($helpinfo[1]) . "\" " .
             "target=\"editor_tools_help\">" .
             htmlspecialchars($helpinfo[0]) . "</a><br/>";
     }
-    print '</ul><br/></font></noscript>';
+    print '</ul><br/></span></noscript>';
 }
 
 /**

@@ -31,7 +31,7 @@ function display_sql($sql)
 {
 	global $display_sql;
 	if ($display_sql == "1"){
-		echo "<p><font color=\"#ff0000\"><b>Your SQL query (for debugging purpose): </b></font>".$sql."</p>";
+		echo "<p><strong style='color:#ff0000;'>Your SQL query (for debugging purpose): </strong>".$sql."</p>";
 	} // end if
 } // end function display_sql
 

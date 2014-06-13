@@ -85,7 +85,7 @@ if($form->num_errors > 0){
           <td colspan="2" style="text-align: left">
             <br>
             <input type="checkbox" name="remember" <?php if($form->value("remember") != ""){ echo "checked"; } ?>> 
-            <font size="2"><?php echo _("Remember me next time"); ?> &nbsp;&nbsp;&nbsp;&nbsp;</font>
+            <span style="font-size: 13px;"><?php echo _("Remember me next time"); ?> &nbsp;&nbsp;&nbsp;&nbsp;</span>
             <input type="hidden" name="sublogin" value="1">
 <?php
 if(isset($_GET['url'])) {
