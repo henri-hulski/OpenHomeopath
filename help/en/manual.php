@@ -47,7 +47,7 @@ include("help/layout/$skin/header.php");
   The most important parts of OpenHomeopath are <strong>well organized in Tabs</strong> on the homepage.<br>
   You can work independently on each tab without changing the content of the other tabs.<br>
   If you start OpenHomeopath you see 2 tabs, <strong><em>Repertorization</em></strong> and <span class='nobr'><strong><em>Materia Medica</em></strong></span>. After logging in the tab <span class='nobr'><strong><em>My Account</em></strong></span> appear. There are 2 more tabs that show up on request, the <strong><em>Repertorization result</em></strong> and the <strong><em>Symptom-Info</em></strong>.<br>
-  In the tabs <strong><em>Repertorization result</em></strong>, <span class='nobr'><strong><em>Materia Medica</em></strong></span> and <strong><em>Symptom-Info</em></strong> can go back and forward to previous views</strong>.
+  In the tabs <strong><em>Repertorization result</em></strong>, <span class='nobr'><strong><em>Materia Medica</em></strong></span> and <strong><em>Symptom-Info</em></strong> can go back and forward to previous views.
 </p>
 <p>
   In the Original skin you see on the left side the <strong>navigation menue</strong>, from where you can reach each part of the program.
