@@ -88,7 +88,7 @@ function add_donate_button($button_nr = 1) {
 	echo ("<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_blank'>\n");
 	echo ("  <input type='hidden' name='cmd' value='_s-xclick'>\n");
 	echo ("  <input type='hidden' name='hosted_button_id' value='$value'>\n");
-	echo ("  <input type='image' onclick=\"_paq.push(['trackGoal', 6])\" src='./img/$button' name='submit' alt='" . _("Donations") . "' title='" . _("Every donation is very welcome and helps the development of OpenHomeopath.") . "'>\n");
+	echo ("  <input type='image' onclick=\"_paq.push(['trackGoal', 6])\" src='img/$button' name='submit' alt='" . _("Donations") . "' title='" . _("Every donation is very welcome and helps the development of OpenHomeopath.") . "'>\n");
 	echo ("  <img alt='' src='https://www.paypal.com/de_DE/i/scr/pixel.gif' width='1' height='1'>\n");
 	echo ("</form>\n");
 }
@@ -96,19 +96,19 @@ function add_donate_button($button_nr = 1) {
 function begin_popup($history = 0) {
 	echo ("<div id='popup' style='position: fixed; display:none; z-index:13;'>\n");
 	echo ("  <div class='dragme'>\n");
-	echo ("    <div id='popup-icon' style='position: absolute; top: 0; left: 0; width: 30px; height: 25px;'><img height='25' width='30' src='./img/popup-icon.gif'></div>\n");
-	echo ("    <div id='popup-title' style='position: absolute; top: 0; left: 30px; height: 25px; background: url(./img/popup-title-bg.gif) repeat-x; text-align: center;'><img height='25' width='140' src='./img/popup-title.gif'></div>\n");
+	echo ("    <div id='popup-icon' style='position: absolute; top: 0; left: 0; width: 30px; height: 25px;'><img height='25' width='30' src='img/popup-icon.gif' alt='Popup icon'></div>\n");
+	echo ("    <div id='popup-title' style='position: absolute; top: 0; left: 30px; height: 25px; background: url(./img/popup-title-bg.gif) repeat-x; text-align: center;'><img height='25' width='140' src='img/popup-title.gif' alt='Popup title'></div>\n");
 	echo ("  </div>\n");
-	echo ("  <div id='popup-close' style='position: absolute; top: 0; width: 30px; height: 25px;'><a style='padding: 0;'href='javascript:popupClose();'><img height='25' width='30' src='./img/popup-close.gif'></a></div>\n");
-	echo ("  <div id='popup-lu' style='position: absolute; left: 0; width: 5px; height: 6px; background-color: transparent;'><img height='6' width='5' src='./img/popup-lu.gif'></div>\n");
+	echo ("  <div id='popup-close' style='position: absolute; top: 0; width: 30px; height: 25px;'><a style='padding: 0;' href='javascript:popupClose();'><img height='25' width='30' src='img/popup-close.gif' alt='Popup close'></a></div>\n");
+	echo ("  <div id='popup-lu' style='position: absolute; left: 0; width: 5px; height: 6px; background-color: transparent;'><img height='6' width='5' src='img/popup-lu.gif' alt='Popup frame'></div>\n");
 	echo ("  <div id='popup-u' class='popup-background' style='position: absolute; left: 5px; height: 6px; background-image: url(./img/popup-u.gif); background-repeat: repeat-x;'></div>\n");
-	echo ("  <div class='resize' id='popup-ru' style='position: absolute; width: 16px; height: 16px; background-color:transparent; z-index:12;'><img height='16' width='16' src='./img/popup-resize.gif'></div>\n");
+	echo ("  <div class='resize' id='popup-ru' style='position: absolute; width: 16px; height: 16px; background-color:transparent; z-index:12;'><img height='16' width='16' src='img/popup-resize.gif' alt='Popup resize'></div>\n");
 	echo ("  <div id='popup-l' style='position: absolute; top: 25px; left: 0; width: 2px; background: url(./img/popup-l.gif) repeat-y;'></div>\n");
 	echo ("  <div id='popup-r' style='position: absolute; top: 25px; width: 2px; background: url(./img/popup-r.gif) repeat-y;'></div>\n");
 	echo ("  <div id='popup-m' class='popup-background' style='position: absolute; top: 25px; left: 2px; overflow:auto;'>\n");
 	if ($history != 0) {
 		echo ("      <div style='float: right; margin: 25px'>\n");
-		echo ("        <a id='history_back' style='padding: 7px;'><img id='arrow_left' height='24' width='38' src='./img/arrow_left_inactive.gif'></a><a id='history_forward' style='padding: 7px;'><img id='arrow_right' height='24' width='38' src='./img/arrow_right_inactive.gif'></a>\n");
+		echo ("        <a id='history_back' style='padding: 7px;'><img id='arrow_left' height='24' width='38' src='img/arrow_left_inactive.gif' alt='History back'></a><a id='history_forward' style='padding: 7px;'><img id='arrow_right' height='24' width='38' src='img/arrow_right_inactive.gif' alt='History forward'></a>\n");
 		echo ("      </div>\n");
 	}
 	echo ("    <div id='popup-body'>\n");
