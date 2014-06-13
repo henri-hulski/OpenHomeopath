@@ -70,7 +70,7 @@ if($form->num_errors > 0){
 }
 ?>
       <br>
-      <table class="center nospacing">
+      <table class="center" style="border-spacing:0; border-collapse:collapse;">
         <tr>
           <td><label for="user"><?php echo _("Username:"); ?> </label></td>
           <td><input type="text" name="user" id="user" required size="30" maxlength="30" value="<?php echo $form->value("user"); ?>"/></td>
@@ -84,8 +84,8 @@ if($form->num_errors > 0){
         <tr>
           <td colspan="2" style="text-align: left">
             <br>
-            <input type="checkbox" name="remember" <?php if($form->value("remember") != ""){ echo "checked"; } ?>> 
-            <span style="font-size: 13px;"><?php echo _("Remember me next time"); ?> &nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <input type="checkbox" id="remember_me" name="remember" <?php if($form->value("remember") != ""){ echo "checked"; } ?>>
+            <label for="remember_me"><span style="font-size: 13px;"><?php echo _("Remember me next time"); ?> &nbsp;&nbsp;&nbsp;&nbsp;</span></label>
             <input type="hidden" name="sublogin" value="1">
 <?php
 if(isset($_GET['url'])) {

@@ -119,6 +119,22 @@ textarea {
     text-align: center;
   }
 
+div.center div {
+    margin: 0 auto;
+    text-align: left;
+}
+
+div.center table
+{
+    margin: 0 auto;
+    text-align: left;
+}
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .nobr {
     white-space: nowrap;
   }
