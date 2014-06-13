@@ -53,9 +53,9 @@ include("help/layout/$skin/header.php");
 </div>
 <br>
 <nav class="content">
-  <h1>
+  <h2>
     Inhalt
-  </h1>
+  </h2>
   <ul>
     <li><a href="#account">Mein Bereich</a></li>
     <li><a href="#settings">Einstellungen</a></li>

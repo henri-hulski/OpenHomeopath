@@ -277,8 +277,7 @@ function popupHistory(url){
 
 function setPopupurl(url) {
 	// Info an Server, dass es sich um eine Popup-Anfrage handelt
-	var popupurl = url.indexOf("?") == -1 ? url + "?popup=1" : url + "&popup=1";
-	return popupurl;
+	return url.indexOf("?") == -1 ? url + "?popup=1" : url + "&popup=1";
 }
 
 function historyBackPopup() {

@@ -55,9 +55,9 @@ include("help/layout/$skin/header.php");
   In the Original skin you see on the left side the <strong>navigation menue</strong>, from where you can reach each part of the program.
 </p>
 <nav class="content">
-  <h1>
+  <h2>
     Contents
-  </h1>
+  </h2>
   <ul>
     <li><a href="#repertorization">Repertorization</a></li>
     <li><a href="#rep_result">Repertorization result</a></li>

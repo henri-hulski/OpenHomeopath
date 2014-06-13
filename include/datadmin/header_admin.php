@@ -46,8 +46,8 @@ if (isset($_GET["type_mailing"])){
 } // end if
 ?>
 >
-<table class="main_table" cellpadding="10">
+<table class="main_table spacing">
 <tr>
-<td valign="top">
+<td style="vertical-align: top">
 <a href="<?php echo $dadabik_main_file; ?>">Exit the administration area</a>
 <h1><?php echo "OpenHomeopath - " . _("Data Maintenance Administration"); ?></h1>

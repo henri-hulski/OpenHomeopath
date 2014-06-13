@@ -156,10 +156,10 @@ function displayBannedUsers() {
 		$banned_user_table = _("no banned users");
 	} else {
 		/* Display table contents */
-		$banned_user_table = "<table align='left' border='1' cellspacing='0' cellpadding='3'>\n";
-		$banned_user_table .= "<tr><td><b>" . _("Username") . "</b></td><td><b>" . _("Time Banned") . "</b></td></tr>\n";
+		$banned_user_table = "<table style='text-align: left; border-spacing: 0; border-collapse: collapse; border: solid 1px;'>\n";
+		$banned_user_table .= "<tr><td style='padding:3px'><b>" . _("Username") . "</b></td><td style='padding:3px'><b>" . _("Time Banned") . "</b></td></tr>\n";
 		while(list($username, $timestamp) = $db->db_fetch_row()) {
-			$banned_user_table .= "<tr><td>$username</td><td>$timestamp</td></tr>\n";
+			$banned_user_table .= "<tr><td style='padding:3px'>$username</td><td style='padding:3px'>$timestamp</td></tr>\n";
 		}
 		$banned_user_table .= "</table><br>\n";
 		$db->free_result();
@@ -211,9 +211,9 @@ if (!$session->isAdmin()) {
 	}
 ?>
 <nav class="content">
-  <h1>
+  <h2>
     <?php echo _("Contents"); ?>
-  </h1>
+  </h2>
   <ul>
     <li><a href="#user_table"><?php echo _("Users Table Contents"); ?></a></li>
     <li><a href="#user_level"><?php echo _("Change the userlevel"); ?></a></li>
@@ -225,7 +225,7 @@ if (!$session->isAdmin()) {
     <li><a href="#delete_records"><?php echo _("Delete records of a user"); ?></a></li>
   </ul>
 </nav>
-<table align="left" border="0" cellspacing="5" cellpadding="5">
+<table class='usertable'>
   <tr>
     <td>
 <?php

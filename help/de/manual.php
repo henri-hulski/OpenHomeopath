@@ -54,9 +54,9 @@ include("help/layout/$skin/header.php");
   Auf der linken Seite findest du in allen Programmfenstern das <strong>Navigationsmenü</strong> (in der Original-Skin). Von dort hast du Zugang zu allen wichtigen Teilen des Programms.
 </p>
 <nav class="content">
-  <h1>
+  <h2>
     Inhalt
-  </h1>
+  </h2>
   <ul>
     <li><a href="#repertorization">Repertorisierung</a></li>
     <li><a href="#rep_result">Repertorisierungsergebnis</a></li>

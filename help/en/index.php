@@ -31,9 +31,9 @@ include("help/layout/$skin/header.php");
   OpenHomeopath Manual
 </h1>
 <nav class="content">
-  <h1>
+  <h2>
     Contents
-  </h1>
+  </h2>
   <ul>
     <li>
       <a href="preamble.php">Preambel</a>

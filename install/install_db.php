@@ -248,8 +248,7 @@ foreach ($_REQUEST as $key => $val)
 </style>
 <script>
 function zweifel () {
-  var check = confirm ("<?php echo _("Are you sure ?"); ?>");
-  return check;
+  return confirm ("<?php echo _("Are you sure ?"); ?>");
 }
 </script>
 </head>

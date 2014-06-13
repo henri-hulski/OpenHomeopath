@@ -55,6 +55,20 @@ img {
     border: 0;
 }
 
+table.nospacing {
+      border-spacing: 0;
+      border-collapse: collapse;
+}
+
+table.nospacing td, table.nospacing th {
+    padding: 0;
+}
+
+table.spacing {
+      border-spacing: 10px;
+      border-collapse: separate;
+}
+
 
 
 /* hier sind stylesheets auf Basis von san-tribe */
@@ -263,9 +277,9 @@ p.user a:hover {
     margin: 0 0 0 5px;
   }
 
+
+
 /*  Begin Control of included footer  */
-
-
 
 #pagetools {
     width: 21%;
@@ -331,7 +345,7 @@ footer {
     font-weight: 500;
   }
 
-selectio
+
 .source {
     font: small-caption;
   }
@@ -416,6 +430,7 @@ selectio
     background-color:#FFE;
   }
 
+
 .submit {
     margin-left: 36px;
   }
@@ -493,9 +508,8 @@ selectio
     background-color: #DDDDCD;
   }
 
-.content h1 {
+.content h2 {
     color: #999989;
-    font-size: 19pt;
   }
 
 .content ul {
@@ -932,6 +946,19 @@ div.scrollingUserArea {
     overflow: auto;
     line-height: 1.6;
   }
+
+
+table.usertable {
+    text-align: left;
+    border-spacing: 5px;
+    border-collapse: separate;
+    border: 0;
+}
+
+
+table.usertable td, table.usertable th {
+     padding: 5px;
+}
 
 
 table.user_table {

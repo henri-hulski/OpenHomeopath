@@ -299,7 +299,7 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 			// build the first coloumn (label)
 			//////////////////////////////////
 			// I put a table inside the cell to get the same margin of the second coloumn
-			$form .= "<tr><td align='right' valign='top'><table><tr><td class='td_label_form'>";
+			$form .= "<tr><td style='text-align: right; vertical-align: top;'><table><tr><td class='td_label_form'>";
 			if ($fields_labels_ar[$i]["required_field"] == "1" and $form_type != "search") {
 				$form .= "*";
 			} // end if
@@ -312,7 +312,7 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 
 			// build an empty cell
 
-						$form .= '<td align="right" valign="top"><table><tr><td class="td_null_checkbox_form">';
+						$form .= '<td style='text-align: right; vertical-align: top;'><table><tr><td class="td_null_checkbox_form">';
 						$form .= '</td></tr></table></td>';
 
 
@@ -2039,7 +2039,7 @@ function build_int_table_field_form($field_position, $int_fields_ar, $fields_lab
 // output: the html form part
 {
 	$int_table_form = "";
-	$int_table_form .= "<table cellpadding='6'><tr bgcolor='#F0F0F0'><td><table>";
+	$int_table_form .= "<table><tr style='background-color: #F0F0F0'><td style='padding: 6px;'><table>";
 	$count_temp = count($int_fields_ar);
 	for ($i=0; $i<$count_temp; $i++) {
 		$int_table_form .= "<tr>";

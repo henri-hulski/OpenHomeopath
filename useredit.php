@@ -67,11 +67,11 @@ if(isset($_SESSION['useredit'])) {
 ?>
 
 <h2><?php echo _("User:"); ?> <?php echo $session->username; ?></h2>
-<div align="center">
+<div class="center">
   <form action="include/classes/login/process.php" method="post" accept-charset="utf-8" style="display: inline;">
     <div class="StdBlockHeader" style="text-align: left;"><?php echo _("Here you can edit your account"); ?>
     </div>
-    <div align="center" class="StdBlock">
+    <div class="center" class="StdBlock">
 <?php
 	list($user_email, $user_real_name, $user_extra, $user_signatur, $hide_email, $user_skin, $user_lang, $user_sym_lang) = $db->getUserInfo($_SESSION['username'], 'email, user_real_name, user_extra, user_signatur, hide_email, skin_name, lang_id, sym_lang_id');
 	if($form->num_errors > 0){
@@ -79,7 +79,7 @@ if(isset($_SESSION['useredit'])) {
 	}
 ?>
       <fieldset><legend><strong>&nbsp;<?php echo _("Program settings"); ?>&nbsp;</strong></legend>
-      <table cellspacing="0" align="center">
+      <table class="center nospacing">
         <tr>
           <td><label for="skin"><?php echo _("Select skin:"); ?></label></td>
           <td><select name="skin" id="skin" size="1">
@@ -112,7 +112,7 @@ if(isset($_SESSION['useredit'])) {
 	}
 	$db->free_result();
 	if (!empty($user_lang)) {
-		echo ("      <option selected='selected' value=''>{$languages_ar[$user_lang]}</option>\n");
+		echo ("      <option selected='selected' value=''>{$languages_ar[{$user_lang}]}</option>\n");
 	} else {
 		echo ("      <option value=''>&nbsp;</option>\n");
 	}
@@ -139,7 +139,7 @@ if(isset($_SESSION['useredit'])) {
 		}
 		$db->free_result();
 		if (!empty($user_sym_lang)) {
-			echo ("      <option selected='selected' value=''>{$sym_lang_ar[$user_sym_lang]}</option>\n");
+			echo ("      <option selected='selected' value=''>{$sym_lang_ar[{$user_sym_lang]}}</option>\n");
 			echo ("      <option value='wo'>" . _("as above") . "</option>\n");
 		} else {
 			echo ("      <option value=''>" . _("as above") . "</option>\n");
@@ -176,7 +176,7 @@ if(isset($_SESSION['useredit'])) {
       </table>
       </fieldset>
       <fieldset><legend><strong>&nbsp;<?php echo _("Change e-mail"); ?>&nbsp;</strong></legend>
-      <table cellspacing="0" align="center">
+      <table class="center nospacing">
        <tr>
           <td><label for="email"><?php echo _("E-mail:"); ?> </label></td>
           <td><input type="email" name="email" id="email" size="30" maxlength="50"
@@ -210,7 +210,7 @@ if(isset($_SESSION['useredit'])) {
       </table>
       </fieldset>
       <fieldset><legend><strong>&nbsp;<?php echo _("Public profile"); ?>&nbsp;</strong></legend>
-      <table cellspacing="0" align="center">
+      <table class="center nospacing">
         <tr>
           <td><label for="real_name"><?php echo _("Real name:"); ?> </label></td>
           <td><input type="text" name="real_name" id="real_name" size="30" maxlength="200"
@@ -250,7 +250,7 @@ if(isset($_SESSION['useredit'])) {
       </table>
       </fieldset>
       <fieldset><legend><strong>&nbsp;<?php echo _("Change password"); ?>&nbsp;</strong></legend>
-      <table cellspacing="0" align="center">
+      <table class="center nospacing">
         <tr>
           <td><label for="curpass"><?php echo _("current Password:"); ?> </label></td>
           <td><input type="password" name="curpass" id="curpass" size="30" maxlength="30" value="<?php echo $form->value("curpass"); ?>"/></td>
@@ -268,9 +268,9 @@ if(isset($_SESSION['useredit'])) {
         </tr>
       </table>
       </fieldset>
-      <table cellspacing="0" align="center">
+      <table class="center nospacing">
         <tr>
-          <td colspan="3" align="left">
+          <td colspan="3" style="text-align: left;">
             <input type="hidden" name="subedit" value="1">
             <input type="submit" value=" <?php echo _("Save changes"); ?> ">
           </td>

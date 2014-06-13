@@ -76,7 +76,7 @@ elseif(isset($_SESSION['regsuccess'])) {
  */
 else{
 ?>
-<div align="center">
+<div class="center">
   <form action="include/classes/login/process.php" method="post" name="registrierung" accept-charset="utf-8" style="display: inline">
     <div class="StdBlockHeader" style="text-align: left">
 <?php
@@ -87,9 +87,9 @@ if(!REGISTER_VERIFY_EMAIL){
 echo _(" and your e-mail.");
 ?>
     </div>
-    <div align="center" class="StdBlock">
+    <div class="StdBlock center">
       <br>
-      <table cellspacing="0" align="center">
+      <table class="center nospacing">
 <?php
 	if($form->num_errors > 0) {
 		echo "<tr><td colspan='3'><font size='2' color='#ff0000'>" . $form->num_errors . " " . ngettext("error found", "errors found", $form->num_errors) . "</font></td></tr>\n";
@@ -132,7 +132,7 @@ echo _(" and your e-mail.");
 	}
 ?>
         <tr>
-          <td colspan="2" align="left">
+          <td colspan="2" style="text-align: left">
             <input type="hidden" name="subjoin" value="1">
             <br>
             <input type="submit" value=" <?php echo _("Send!"); ?> ">

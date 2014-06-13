@@ -53,9 +53,9 @@ include("help/layout/$skin/header.php");
 </p>
 <br>
 <nav class="content">
-  <h1>
+  <h2>
     Inhalt
-  </h1>
+  </h2>
   <ul>
     <li><a href="#medica">Tabelle Materia Medica</a></li>
     <li><a href="#symptoms">Tabelle Symptome</a></li>

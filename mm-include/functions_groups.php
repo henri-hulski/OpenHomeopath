@@ -129,6 +129,7 @@ function get_kraque_table2table($src_table, $relation_type_id, $target_table, $s
         return FALSE;
     }
 }
+
 function get_rem_groups_searchform($group_id = "")
 {
     $form = "<form name='searchform' action='materia-medica.php'><div style='position:relative;top:0;left:0;'><input id=\"query\" type=\"text\"  onkeyup=\"autosuggest('auto_all_groups')\" /><input name=\"group_id\" id=\"rem\" type=\"hidden\" value=\"".$group_id."\"  ><div id=\"results\"></div><div id=\"search_icon\"><img src=\"skins/original/img/search.png\" width=\"24\" height=\"24\"></div></div></form>";

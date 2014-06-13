@@ -66,9 +66,9 @@ if(strcmp($username,$req_user) == 0) {
 ?>
 <h1><?php echo _("My account"); ?></h1>
 <nav class="content">
-  <h1>
+  <h2>
     <?php echo _("Contents"); ?>
-  </h1>
+  </h2>
   <ul>
     <li><a href="#common"><?php echo _("General Info"); ?></a></li>
     <li><a href="#reps"><?php echo _("Saved repertorizations"); ?></a></li>
@@ -95,7 +95,7 @@ if(strcmp($username,$req_user) == 0) {
 		printf ("<strong>" . _("Up to now you didn't support OpenHomeopath.") . "</strong><br>" . _("Until the monthly donation goal is reached, the functionality of OpenHomeopath is restricted for non-donators.") . "<br>" . _("It would be nice, if you could help us %swith a donation%s."), "<strong><a href='donations.php' onclick=\"popup_url('donations.php',960,720)\">", "</a></strong>");
 	}
 	echo "<div class='center' style='width:50%'><p>";
-	echo "<a href='donations.php' onclick=\"popup_url('donations.php',960,720)\"><img src='img/donate_$lang.png' width='110' height='33' alt='" . _("Donations") . "' title='" . _("Every donation is very welcome and helps the development of OpenHomeopath.") . "'></a>";
+	echo "<a href='donations.php' onclick=\"popup_url('donations.php',960,720); return false; \"><img src='img/donate_$lang.png' width='110' height='33' alt='" . _("Donations") . "' title='" . _("Every donation is very welcome and helps the development of OpenHomeopath.") . "'></a>";
 	echo "</p></div>";
 }
 
@@ -462,8 +462,8 @@ printf("      <p class='label'>" . ngettext("%d public repertorization", "%d pub
 <?php
 	}
 }
-popup();
 if (!$tabbed && !isset($_REQUEST['tab'])) {
+	popup();
 	include("skins/$skin/footer.php");
 }
 ?>

@@ -60,17 +60,17 @@ if($session->logged_in){
  * If errors occurred, they will be displayed.
  */
 ?>
-<div align="center">
+<div class="center">
   <form action="include/classes/login/process.php" method="post" accept-charset="utf-8" style="display: inline">
     <div class="StdBlockHeader" style="text-align: left;"><?php echo _("Please enter your username and password"); ?></div>
-    <div align="center" class="StdBlock">
+    <div class="StdBlock center">
 <?php
 if($form->num_errors > 0){
    echo "<p class='error_message'>&nbsp;&nbsp;&nbsp;*** ".$form->num_errors." " . ngettext("error found", "errors found", $form->num_errors) . " ***</p>\n";
 }
 ?>
       <br>
-      <table cellspacing="0" align="center">
+      <table class="center nospacing">
         <tr>
           <td><label for="user"><?php echo _("Username:"); ?> </label></td>
           <td><input type="text" name="user" id="user" required size="30" maxlength="30" value="<?php echo $form->value("user"); ?>"/></td>
@@ -82,7 +82,7 @@ if($form->num_errors > 0){
           <td><?php echo $form->error("pass"); ?></td>
         </tr>
         <tr>
-          <td colspan="2" align="left">
+          <td colspan="2" style="text-align: left">
             <br>
             <input type="checkbox" name="remember" <?php if($form->value("remember") != ""){ echo "checked"; } ?>> 
             <font size="2"><?php echo _("Remember me next time"); ?> &nbsp;&nbsp;&nbsp;&nbsp;</font>
@@ -135,7 +135,7 @@ else{
  */
 ?>
 
-  <div align="center" style="margin-top: 30px;">
+  <div class="center" style="margin-top: 30px;">
     <form action="include/classes/login/process.php" method="post" accept-charset="utf-8" style="display: inline">
       <div class="StdBlockHeader" style="text-align: left;"><?php echo _("Forgot Password?"); ?>
       </div>
