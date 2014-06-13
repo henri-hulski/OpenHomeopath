@@ -27,14 +27,12 @@ $head_title = "Präambel :: Hilfe :: OpenHomeopath";
 $meta_description = "Handbuch für OpenHomeopath, Präambel";
 include("help/layout/$skin/header.php");
 ?>
-<hgroup>
-  <h1>
-    Hilfe zu OpenHomeopath
-  </h1>
-  <h2>
-    Präambel
-  </h2>
-</hgroup>
+<h1>
+  Hilfe zu OpenHomeopath
+</h1>
+<h2>
+  Präambel
+</h2>
 <p>Die wichtigsten Funktionen von OpenHomeopath sind <strong>übersichtlich in Tabs</strong> organisiert.</p>
 <p><strong>OpenHomeopath</strong> dient in erster Linie dem Finden des passenden homöopathischen Mittels anhand einer Auswahl von Symptomen. Diesen Vorgang nennt man <a href="manual.php#repertorization"><strong>Repertorisierung</strong></a>.<br>
 OpenHomeopath enthält zur Zeit das Repertorium von Kent und das Akutrepertorium von BZ-Homöopathie auf deutsch sowie die Repertorien von Kent, Bogner, Boenninghausen und das Repertorium publicum von Vladimir Polony auf englisch.<br>

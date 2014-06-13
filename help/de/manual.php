@@ -27,14 +27,12 @@ $head_title = "Bedienung :: Hilfe :: OpenHomeopath";
 $meta_description = "Handbuch für OpenHomeopath, Bedienung";
 include("help/layout/$skin/header.php");
 ?>
-<hgroup>
-  <h1>
-    Hilfe zu OpenHomeopath
-  </h1>
-  <h2>
-    Bedienung von OpenHomeopath
-  </h2>
-</hgroup>
+<h1>
+  Hilfe zu OpenHomeopath
+</h1>
+<h2>
+  Bedienung von OpenHomeopath
+</h2>
 <p>
   Es wird empfohlen <strong>OpenHomeopath</strong> bei einer <strong>Bildschirmauflösung</strong> von mindestens <strong>1280x1024</strong> zu benutzen. <strong>Javascript</strong> und <strong>Cookies</strong> zumindest von der gleichen Site müssen im Browser aktiviert sein.
   Mit der Skin-Auswahl kannst du das Aussehen von OpenHomeopath verändern. Im Moment gibt es 2 Skins: <strong><em>"original"</em></strong> von Henri Schumacher und <strong><em>"kraque"</em></strong> von Thomas Bochmann ohne Seitenleiste, so das sie besonders für kleinere Displays geeignet ist.
@@ -86,7 +84,7 @@ include("help/layout/$skin/header.php");
   Wenn du dir alle Mittel anzeigen lassen willst, die einem <strong>Symptom</strong> zugeordnet sind, klicke entweder im oberen oder im unteren Fenster auf <img src='../../skins/original/img/info.gif' width='12' height='12' alt='Info'> neben dem entsprechenden Symptom. Genaueres siehe <a href="#symptominfo">Symptom-Information</a>.<br>
   Durch klicken auf <img src='../../skins/original/img/del.png' width='12' height='12' alt='Delete'> im unteren Fenster wird das entsprechende <strong>Symptom</strong> abgewählt.
 </p>
-<p>
+<div>
   Du kannst jedes ausgewählte Symptom individuell gewichten.
   Dabei kannst du den Symptomen folgende Gewichtungen zuordnen:
   <ul>
@@ -97,7 +95,7 @@ include("help/layout/$skin/header.php");
     <li><strong>4:</strong> Das Symptom ist <strong>besonders wichtig bzw. auffällig</strong>. Sollte selten benutzt werden.</li>
   </ul>
   Es ist sinnvoll den vollen Umfang an Gewichtungen bei einer Repertorisierung mit einzubeziehen.<br>
-</p>
+</div>
 <p>
   Während der Symptomauswahl kannst du jederzeit die angezeigten Symptome ändern, indem du eine neue Hauptrubrik und/oder neue Suchbegriffe eingibst und nochmals auf <strong><em>"Symptome anzeigen"</em></strong> drückst. Die bereits ausgewählten Symptome bleiben dabei erhalten.<br>
   Wenn die Symptomauswahl abgeschlossen ist, drückst du auf <strong><em>"Repertorisieren"</em></strong>.
@@ -109,7 +107,7 @@ include("help/layout/$skin/header.php");
 </h3>
 <p>
   Nach dem Repertorisieren erscheint ein neues Tab mit dem <strong>Repertorisierungsergebnis</strong>.<br>
-  Das Repertorisierungsergebnis kannst du als <strong>PDF</strong> anzeigen - <img src='../../img/pdf_print.png' width='32' height='32'>&nbsp; oder herunterladen - <img src='../../img/pdf_down.png' width='32' height='32'>&nbsp;. Die PDF-Datei enthält die 20 wichtigsten Mittel und ist zum <strong>Ausdruck</strong> im A4-Querformat vorbereitet.<br>
+  Das Repertorisierungsergebnis kannst du als <strong>PDF</strong> anzeigen - <img src='../../img/pdf_print.png' width='32' height='32' alt='PDF drucken'>&nbsp; oder herunterladen - <img src='../../img/pdf_down.png' alt='PDF herunterladen' width='32' height='32'>&nbsp;. Die PDF-Datei enthält die 20 wichtigsten Mittel und ist zum <strong>Ausdruck</strong> im A4-Querformat vorbereitet.<br>
   Wenn du dich angemeldet hast, besteht die Möglichkeit, das Repertorisierungsergebnis zu <strong>speichern</strong>.
 </p>
 <div>
@@ -120,10 +118,10 @@ include("help/layout/$skin/header.php");
     <li><strong>Verordnung</strong> - Hier kannst du das/die verordnete(n) Mittel eintragen.</li>
     <li><strong>Fallaufnahme</strong> - Hier kann die Anamnese hinterlegt werden.</li>
   </ul>
-  Nachdem du alle Angaben gemacht hast kann das Ergebnis über <img src='../../img/save.png' width='32' height='32'> gespeichert werden.
+  Nachdem du alle Angaben gemacht hast kann das Ergebnis über <img src='../../img/save.png' width='32' height='32' alt='Speichern'> gespeichert werden.
   Es erscheint eine Meldung, unter welcher <strong>Repertorisierungsnummer</strong> das Ergebnis gespeichert wurde. Gespeicherte Repertorisierungen lassen sich im <strong>Benutzerbereich</strong> wieder aufrufen.
 </div>
-<p>
+<div>
   <strong>Das Repertorisierungsergebnis wird übersichtlich in der <em>interaktiven Ergebnistabelle</em> dargestellt:</strong>
   <ul>
     <li>Rechts befinden sich die Symptomgewichtung und die <strong>Symptome nach Gewichtung sortiert</strong>. Wenn du auf ein Symptom klickst wird die entsprechende <a href="#symptominfo"><strong>Symptom-Info</strong></a> angezeigt.</li>
@@ -131,7 +129,7 @@ include("help/layout/$skin/header.php");
     <li>In der darunterliegenden Tabellenzeile werden die <strong>Gesamtwertigkeiten und Treffer</strong> für das entsprechende Mittel angezeigt.</li>
     <li>In der Tabelle findest du die <strong>Wertigkeit des Mittels für das entsprechende Symptom</strong>. Wenn du mit der Maus über die Wertigkeit fährst erscheinen <strong>Angaben zu den gefundenen Quellen</strong>. Bei Klick öffnet sich ein <strong>Popup-Fenster mit den Symptom-Mittel-Details</strong>.</li>
   </ul>
-</p>
+</div>
 <p>
   Wenn du ausgehend von den ausgewählten Symptomen weiter repertorisieren willst drückst du unten auf <strong><em>"Weiter repertorisieren"</em></strong>. Es erscheint das Repertorisierungstab mit den gewählten Symptomen.
 </p>
@@ -140,11 +138,11 @@ include("help/layout/$skin/header.php");
 <h3>
   Materia Medica
 </h3>
-<div>
+<p>
   Hier kannst du dir zu einem <strong>Mittel</strong> die ihm <strong>zugeordneten Symptome</strong> zusammenstellen lassen. Außerdem werden weitere Informationen zu dem Mittel angezeigt, sofern sie in der Datenbank hinterlegt sind.
   Um sich die <strong>Materia Medica</strong> zu einem Mittel zusammenzustellen, gebe den <strong>Wortanfang des Mittelnamens oder der Mittelabkürzung</strong> in das Suchfeld ein und <strong>wähle aus den vorgeschlagenen Mitteln das entsprechende aus</strong>.
-</div>
-<p>
+</p>
+<div>
   Im oberen Bereich der Mittelbeschreibung werden <strong>spezifische Angaben</strong> zum Mittel angezeigt. Dies sind im einzelnen:
   <ul>
     <li><strong>Mittelname</strong> - der offizielle Mittelname</li>
@@ -156,8 +154,8 @@ include("help/layout/$skin/header.php");
     <li><strong>Leitsymptome</strong> in den Unterkategorien Allgemein, Gemüt und Körper</li>
     <li><strong>Links</strong> zu verschiedenen weiterführenden Informationen zu diesem Mittel.</li>
   </ul>
-</p>
-<p>
+</div>
+<div>
   Darunter befindet sich eine <strong>Baumansicht mit allen Symptomen, die diesem Mittel zugeordnet sind</strong>.<br>
   Die <strong>Wertigkeit der Symptome bezüglich des angezeigten Mittels</strong> werden durch die Schriftart und Schriftfarbe ausgedrückt:
   <ul>
@@ -168,7 +166,7 @@ for ($i = 5; $i > 0; $i--) {
 ?>
   </ul>
   Zur <a href="#symptominfo">Symptom-Info</a> gelangst du über <img src='../../skins/original/img/info.gif' width='12' height='12' alt='Info'> neben dem entsprechenden Symptom.
-</p>
+</div>
 <p>
   Wenn du mit der Maus über ein Symptom fährst erscheint die <strong>Wertigkeit und Angaben zu den Quellen</strong>.<br>
   Wenn du darauf klickst werden dir alle <strong>Details zu dieser Rubrik</strong> angezeigt.
@@ -189,7 +187,7 @@ for ($i = 5; $i > 0; $i--) {
   In der Legende des Rahmens findest du den <strong>Pfad zu dem Symptom</strong>.<br>
   Hier kannst du zu der Symptom-Info der <strong>Elternrubriken</strong> springen.
 </p>
-<p>
+<div>
   Im oberen Bereich der Symptom-Info werden <strong>spezifische Angaben</strong> zum Symptom angezeigt. Dies sind im einzelnen:
   <ul>
     <li><strong>Symptom</strong> - Beschreibung des Symptoms.</li>
@@ -199,7 +197,7 @@ for ($i = 5; $i > 0; $i--) {
     <li><strong>Übersetzungen</strong> - gegebenenfalls werden hier Übersetzungen aufgeführt.</li>
     <li><strong>Weitere Details</strong> - Link zu mehr Details zu diesem Symptom in OpenHomeo.org.</li>
   </ul>
-</p>
+</div>
 <p>
   Als nächstens erscheint gegebenenfalls eine Liste mit Querverweisen. Bei Klick springst du zu der entsprechenden Symptom-Info.
 </p>
@@ -207,7 +205,7 @@ for ($i = 5; $i > 0; $i--) {
   Darunter findest du eine <strong>Baumansicht</strong> mit den Unterrubriken dieser Rubrik.<br>
   Wenn du auf <img src='../../skins/original/img/info.gif' width='12' height='12' alt='Info'> klickst kommst du in die Symptom-Info der entsprechenden Unterrubrik.
 </p>
-<p>
+<div>
   Unten werden <strong>alle Mittel, die dem Symptom zugeordnet sind</strong> angezeigt.<br>
   Die <strong>Wertigkeit der Mittel bezüglich des angezeigten Symptoms</strong> werden durch die Schriftart und Schriftfarbe ausgedrückt:
   <ul>
@@ -217,16 +215,16 @@ for ($i = 5; $i > 0; $i--) {
 }
 ?>
   </ul>
-  Wenn du dir zu einem Mittel die <strong>Materia Medica</strong> zusammen stellen willst klicke auf <img src='../../skins/original/img/materia.png' width='12' height='12'> vor dem jeweiligen Mittel. Näheres im Kapitel <a href="#materia">Materia Medica</a>.
-</p>
+  Wenn du dir zu einem Mittel die <strong>Materia Medica</strong> zusammen stellen willst klicke auf <img src='../../skins/original/img/materia.png' width='12' height='12' alt='Materia Medica'> vor dem jeweiligen Mittel. Näheres im Kapitel <a href="#materia">Materia Medica</a>.
+</div>
 <p>
   Wenn du mit der Maus über ein Mittel fährst erscheint die <strong>Wertigkeit und Angaben zu den Quellen</strong>.<br>
   Wenn du darauf klickst werden dir alle <strong>Details zu dieser Rubrik</strong> angezeigt.
 </p>
-</p>
+<p>
   Die Mittel lassen sich <strong>nach Wertigkeit, Mittelname oder Mittel-Abkürzung sortieren</strong>, indem du die entsprechende Sortierung in der Dropdown-Liste auswählst.<br>
   Bei der Sortierung nach Mittel-Abkürzung werden die Mittel <strong>wesentlich kompakter präsentiert</strong>, was vor allem bei großen Rubriken übersichtlicher wirkt.
-<p>
+</p>
 <p>
   Ausserdem kannst die Mittel <strong>nach minimaler Wertigkeit filtern</strong> indem du die entsprechende Wertigkeit in der Dropdown-Liste auswählst.
 </p>

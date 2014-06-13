@@ -27,14 +27,12 @@ $head_title = "Benutzerverwaltung :: Hilfe :: OpenHomeopath";
 $meta_description = "Handbuch für OpenHomeopath, Benutzerverwaltung";
 include("help/layout/$skin/header.php");
 ?>
-<hgroup>
-  <h1>
-	Hilfe zu OpenHomeopath
-  </h1>
-  <h2>
-	Benutzerverwaltung
-  </h2>
-</hgroup>
+<h1>
+  Hilfe zu OpenHomeopath
+</h1>
+<h2>
+  Benutzerverwaltung
+</h2>
 <p>
   In der Navigationsleiste von OpenHomeopath findest du unter <img src="../../<?php echo(USER_ICON);?>" width="16" height="16" alt="Benutzersymbol"> das <strong>Benutzermenü</strong>.
 </p>
@@ -77,7 +75,7 @@ include("help/layout/$skin/header.php");
     <li>über <strong><em>"Weiter repertorisieren"</em></strong> mit den ausgewählten Symptomen direkt ins Repertorisierungsfenster springen,</li>
     <li>mit <strong><em>"Repertorisierung löschen"</em></strong> die entsprechende Repertorisierung vollständig löschen,</li>
     <li>mit <strong><em>"Öffentlich-Status ändern"</em></strong> wählen, ob eine Repertorisierung veröffentlicht werden soll, so dass sie sich andere Benutzer über Benutzer-Info (URL: <strong>"openhomeopath/userinfo.php?user=</strong><em>mein_benutzername</em><strong>"</strong> - <em>mein_benutzername</em> durch deinen Benutzernamen ersetzen) anschauen können.
-</li>
+    </li>
   </ul>
 </div>
 <p>

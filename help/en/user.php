@@ -27,14 +27,12 @@ $head_title = "User account :: Help :: OpenHomeopath";
 $meta_description = "OpenHomeopath Manual, User account";
 include("help/layout/$skin/header.php");
 ?>
-<hgroup>
-  <h1>
-    OpenHomeopath Manual
-  </h1>
-  <h2>
-    User account
-  </h2>
-</hgroup>
+<h1>
+  OpenHomeopath Manual
+</h1>
+<h2>
+  User account
+</h2>
 <p>
   In the navigation bar of OpenHomeopath you find the <strong>user menue</strong> beneath <img src="../../<?php echo(USER_ICON);?>" width="16" height="16" alt="Usericon">.
 </p>
