@@ -68,7 +68,7 @@ if(!$session->isAdmin()) {
 	die();
 } else {
 	$skin = $session->skin;
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 	if (empty($_POST['get_symptoms'])) {
 ?>
 <h1>
@@ -90,6 +90,6 @@ if(!$session->isAdmin()) {
 ?>
 
 <?php
-	include("./skins/$skin/footer.php");
+	include("skins/$skin/footer.php");
 }
 ?>

@@ -46,7 +46,7 @@ $current_user = $session->username;
 $skin = $session->skin;
 $head_title = _("Express-Tool") . " :: OpenHomeopath";
 $meta_description = _("Here you can quickly insert new symptoms and symptom-remedy-relations into the database.");
-include("./skins/$skin/header.php");
+include("skins/$skin/header.php");
 ?>
 <h1>
   <?php echo _("Express-Tool"); ?>
@@ -257,20 +257,20 @@ if (!empty($_POST['sym_rem'])) {
   <legend class="legend">
     <?php echo _("Express-Tool"); ?>
   </legend>
-  <form action="./express.php" method="post" name="express" accept-charset="utf-8">
-    <table width="100%" border="0" summary="layout">
+  <form action="express.php" method="post" name="express" accept-charset="utf-8">
+    <table style="width:100%; border:0;">
       <tr>
-        <td width="30%" align="center">
+        <td style="width:30%;" class="center">
           <label for="sources"><span class="label"><?php echo _("Select source"); ?></span></label>
         </td>
-        <td width="40%">
+        <td style="width:40%;">
         </td>
-        <td width="30%" align="center">
+        <td style="width:30%;" class="center">
           <label for="rubrics"><span class="label"><?php echo _("Select main rubric"); ?></span></label>
         </td>
       </tr>
       <tr>
-        <td align="center">
+        <td class="center">
           <select class="drop-down3" name="sources" id="sources" size="1" onchange="document.express.submit()">
 <?php
 $current_src = "";
@@ -295,7 +295,7 @@ $db->free_result();
           </select>
         </td>
         <td></td>
-        <td align="center">
+        <td class="center">
 <?php
 if (!empty($lang_id)) {
 	echo ("        <select class='drop-down' name='rubrics' id='rubrics' size='1'>\n");
@@ -323,7 +323,7 @@ if (!empty($lang_id)) {
         </td>
       </tr>
     </table>
-    <br clear='all'>
+    <div class="clear"></div>
 <?php
 if (!empty($_POST['sym_rem'])) {
 	if (!empty($sym_rem_ar) && empty($_POST['rubrics']) && empty($_POST['sources'])) {
@@ -419,7 +419,7 @@ if (!empty($_POST['sym_rem'])) {
 			if ($r != 0) {
 				printf("    <span class='error_message'><strong>" . _("Error:") . " </strong>" . ngettext("With %d record, the with '>' referenced parent rubric could not be determined.", "With %d records, the with '>' referenced parent rubric could not be determined.", $r) . " </span><br> " . _("Please <strong>correct</strong> in the text box and submit form again!") . "<br>\n", $r);
 			}
-			printf("    <br clear='all'><br>" . ngettext("<strong>%d record</strong> was restored successfully:", "<strong>%d records</strong> were restored successfully:",$n),$n);
+			printf("    <div class='clear'></div><br>" . ngettext("<strong>%d record</strong> was restored successfully:", "<strong>%d records</strong> were restored successfully:",$n),$n);
 		}
 		echo "    <ul>\n";
 		if ($i > 0) {
@@ -515,7 +515,7 @@ if (!empty($text)) {
     <br>
     <div class = 'center'>
       <textarea class="input_text" name="sym_rem" id="sym_rem"  cols="100" rows="16" wrap="off"><?php echo($text) ?></textarea>
-      <br clear="all"><br>
+      <div class="clear"><br></div>
       <input class='submit' type='submit' value=' <?php echo _("Send"); ?> '>
     </div>
   </form>
@@ -526,5 +526,5 @@ if (!empty($text)) {
 </fieldset>
 <?php
 popup();
-include("./skins/$skin/footer.php")
+include("skins/$skin/footer.php")
 ?>

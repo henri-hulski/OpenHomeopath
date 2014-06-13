@@ -27,12 +27,14 @@ $head_title = "Einführung :: Hilfe :: OpenHomeopath";
 $meta_description = "Handbuch für OpenHomeopath, Einführung";
 include("help/layout/$skin/header.php");
 ?>
-<h1>
-  Hilfe zu OpenHomeopath
-</h1>
-<h2>
-  Einführung
-</h2>
+<hgroup>
+  <h1>
+    Hilfe zu OpenHomeopath
+  </h1>
+  <h2>
+    Einführung
+  </h2>
+</hgroup>
 <p>
   <strong>Homöopathie</strong> ist eine Heilmethode, die Anfang des 19. Jhd. von dem Arzt <strong>Dr. Samuel Hahnemann</strong> begründet wurde und auf dem Prinzip <strong><em>"Similia similibus curentur"</em> - Ähnliches heilt Ähnliches</strong> beruht.<br>
   Das bedeutet, das ein kranker Mensch durch das Mittel geheilt wird, welches beim gesunden Menschen <strong>ähnliche Symptome</strong> wie die seinen erzeugt.

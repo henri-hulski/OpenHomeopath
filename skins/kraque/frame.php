@@ -39,14 +39,14 @@ if (TABBED) {
 }
 $lang = $session->lang;
 ?>
-<a name="up" id="up" title="<?php echo _("Top of the page"); ?>"></a>
+<a id="up" title="<?php echo _("Top of the page"); ?>"></a>
 <?php
 if($session->logged_in){
 ?>
-<div id="menu">
+<nav id="menu">
 		<span style="float: left;">
             <a style="color: #336633; font-size: 14px;" href="../index.php">
-                <img height="17" border="0" alt="OpenHomeo.org" src="skins/<?php echo(SKIN_NAME);?>/img/punkte_d9b7ea.gif"/>
+                <img height="17" alt="OpenHomeo.org" src="skins/<?php echo(SKIN_NAME);?>/img/punkte_d9b7ea.gif">
             </a>
         </span>
 		<ul class="level1" id="root">
@@ -102,7 +102,7 @@ if($session->logged_in){
 		  <li><a href="doc/<?php echo $lang; ?>/info.php"><?php echo _("Info"); ?></a></li>
 		  <li class="sep">|</li>
 		  <?php
-	           echo ("<li><a href='$user_url'><img src='" . USER_ICON . "' width='13' height='12' border='0' alt='Benutzer'>" . _("My account") . "</a>");
+	           echo ("<li><a href='$user_url'><img src='" . USER_ICON . "' width='13' height='12' alt='Benutzer'>" . _("My account") . "</a>");
 	           echo ("<ul class='level2'>");
 	               echo ("<li><a href='$user_url#rep_custom'>" . _("Settings") . "</a></li>");
 	               echo ("<li><a href='$user_url#reps'>" . _("Repertorizations") . "</a></li>");
@@ -139,14 +139,14 @@ if($session->logged_in){
 		    </ul>
 		  </li>
 		</ul>
-		</div>
+		</nav>
 <?php
 }else{
 ?>
-<div id="menu">
+<nav id="menu">
 		<span style="float: left;">
             <a href="../index.php">
-                <img height="17" border="0" alt="OpenHomeo.org" src="skins/<?php echo(SKIN_NAME);?>/img/punkte_d9b7ea.gif"/>
+                <img height="17" alt="OpenHomeo.org" src="skins/<?php echo(SKIN_NAME);?>/img/punkte_d9b7ea.gif">
             </a>
         </span>
 		<ul class="level1" id="root">
@@ -195,7 +195,7 @@ if($session->logged_in){
 		  <li class="sep">|</li>
 		  <li><a href="doc/<?php echo $lang; ?>/info.php"><?php echo _("Info"); ?></a></li>
 		  <li class="sep">|</li>
-		  <li><a href="login.php"><img width="13" height="12" border="0" alt="Benutzer" src="<?php echo(USER_ICON);?>" border="0" /> <?php echo _("Log in"); ?></a>
+		  <li><a href="login.php"><img width="13" height="12" alt="Benutzer" src="<?php echo(USER_ICON);?>"> <?php echo _("Log in"); ?></a>
 		  </li>
 <!-- Beginn Skin-Auswahl HS -->
 		  <li class="sep">|</li>
@@ -221,7 +221,7 @@ if($session->logged_in){
 		    </ul>
 		  </li>
 		</ul>
-		</div>
+		</nav>
 <?php
 }
 popup();
@@ -231,8 +231,4 @@ popup();
     <!-- End Navigation -->
     <div id="container">
      <!-- thb -->
-      <div id="middle">
-        <table summary="layout" cellpadding="0" cellspacing="0" id="middle_tbl">
-          <tr>
-            <td id="middle_cell02">
-              <div id="pagecontent">
+      <section id="pagecontent">

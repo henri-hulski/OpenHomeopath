@@ -153,7 +153,7 @@ printf ("    <p class='label'>" . ngettext("%d symptom", "%d symptoms", $sym_cou
             <td><?php echo _("Symptom"); ?></td>
           </tr>
           <tr>
-            <td><img src='skins/original/img/info.gif' width='12' height='12'></td>
+            <td><img src='skins/original/img/info.gif' width='12' height='12' alt='Info'></td>
             <td><?php echo _("Symptom-Info");?></td>
           </tr>
         </table>

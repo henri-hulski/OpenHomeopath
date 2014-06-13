@@ -29,7 +29,7 @@
 
 include_once ("include/classes/login/session.php");
 $skin = $session->skin;
-include("./skins/$skin/header.php");
+include("skins/$skin/header.php");
 $first_name = "";
 $hallo = "";
 if (!empty($_REQUEST['first_name'])) {
@@ -45,5 +45,5 @@ if (!empty($_REQUEST['first_name'])) {
 </p>
 <p><em><strong>Henri</strong> - <?php echo _("author of OpenHomeopath"); ?></em></p>
 <?php
-include("./skins/$skin/footer.php");
+include("skins/$skin/footer.php");
 ?>

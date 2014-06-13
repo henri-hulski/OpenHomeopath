@@ -1,4 +1,8 @@
 <?php
+if (empty($lang)) {
+	$lang = $session->lang;
+}
+
 header("Expires: Mon, 1 Dec 2006 01:00:00 GMT");
 header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 header("Cache-Control: no-store, no-cache, must-revalidate");
@@ -6,9 +10,8 @@ header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 header("Content-Type: text/html;charset=utf-8"); 
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"
->
-<html>
+<!DOCTYPE html>
+<html lang="<?php echo($lang); ?>">
   <head>
     <title>
 <?php
@@ -19,14 +22,9 @@ if(!empty($head_title)) {
 }
 ?>
     </title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
     <meta name="author" content="Henri Schumacher">
 <?php
-if(!empty($meta_content_language)) {
-	echo "      <meta http-equiv='Content-Language' content='$meta_content_language'>\n";
-} else {
-	echo "      <meta http-equiv='Content-Language' content='de,en'>\n";
-}
 if(!empty($meta_description)) {
 	echo "      <meta name='description' content='$meta_description'>\n";
 } else {
@@ -43,19 +41,22 @@ if(!empty($meta_keywords)) {
     <meta name="revisit-after" content="7 days">
     
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<!--[if lt IE 9]>
+	  <script src="javascript/html5shiv.min.js"></script>
+	<![endif]-->
 <?php
-include("./javascript/locale.php");
+include("javascript/locale.php");
 ?>
-    <script src="./openhomeopath/javascript/openhomeopath.js" type="text/javascript"></script>
+    <script src="openhomeopath/javascript/openhomeopath.js"></script>
     <!-- thb -->
-    <script src="./scriptaculous-js-1.8.2/lib/prototype.js" type="text/javascript"></script>
-    <script src="./scriptaculous-js-1.8.2/src/scriptaculous.js" type="text/javascript"></script>
-    <script src="./scriptaculous-js-1.8.2/menu.js" type="text/javascript"></script>
-    <link href="menu.css" rel="stylesheet" type="text/css" />
+    <script src="scriptaculous-js-1.8.2/lib/prototype.js"></script>
+    <script src="scriptaculous-js-1.8.2/src/scriptaculous.js"></script>
+    <script src="scriptaculous-js-1.8.2/menu.js"></script>
+    <link href="menu.css" rel="stylesheet" />
   </head>
   <body>
 <div id="wrapper">
 
 <?php
-include("./skins/kraque/frame_index.php")
+include("skins/kraque/frame_index.php")
 ?>

@@ -27,12 +27,14 @@ $head_title = "Benutzerverwaltung :: Hilfe :: OpenHomeopath";
 $meta_description = "Handbuch für OpenHomeopath, Benutzerverwaltung";
 include("help/layout/$skin/header.php");
 ?>
-<h1>
-  Hilfe zu OpenHomeopath
-</h1>
-<h2>
-  Benutzerverwaltung
-</h2>
+<hgroup>
+  <h1>
+	Hilfe zu OpenHomeopath
+  </h1>
+  <h2>
+	Benutzerverwaltung
+  </h2>
+</hgroup>
 <p>
   In der Navigationsleiste von OpenHomeopath findest du unter <img src="../../<?php echo(USER_ICON);?>" width="16" height="16" alt="Benutzersymbol"> das <strong>Benutzermenü</strong>.
 </p>
@@ -50,7 +52,7 @@ include("help/layout/$skin/header.php");
   Darunter findest du, wenn diese Funktion in den Einstellungen aktiviert ist, eine List der momentan <strong>aktiven Benutzer</strong>. Wenn du einen Benutzer anklickst werden dir <strong>genauere Informationen</strong> zu diesem Benutzer angezeigt.
 </div>
 <br>
-<div class="content">
+<nav class="content">
   <h2>
     Inhalt
   </h2>
@@ -59,8 +61,8 @@ include("help/layout/$skin/header.php");
     <li><a href="#settings">Einstellungen</a></li>
     <li><a href="#logout">Abmelden</a></li>
   </ul>
-</div>
-<a name="account" id="account"><br></a>
+</nav>
+<a id="account"><br></a>
 <h3>
   Mein Bereich
 </h3>
@@ -86,8 +88,8 @@ include("help/layout/$skin/header.php");
 <p>
   Unter <strong><em>Materia Medica personalisieren</em></strong> kannst du dir eine <strong>persönliche Materia Medica</strong> zusammenstellen, wobei du auswählst, <strong>welche Quellen</strong> verwendet werden. Dieses Profil wird bei den <strong>Mittelbeschreibungen</strong> in der Materia Medica verwendet, wenn du angemeldet bist.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="settings" id="settings"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="settings"><br></a>
 <h3>
   Einstellungen
 </h3>
@@ -103,15 +105,15 @@ include("help/layout/$skin/header.php");
   <li><strong>Öffentliches Profil:</strong> Hier kannst du deinen <strong>echten Namen</strong> und <strong>weitere Angaben zu deiner Person</strong> hinterlegen. Diese können von anderen Besuchern eingesehen werden, wenn du aktiv bist.</li>
   <li><strong>Passwort ändern:</strong> Hier kannst du dein Passwort ändern.</li>
 </ul>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="logout" id="logout"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="logout"><br></a>
 <h3>
   Abmelden
 </h3>
 <p>
   Hier kannst du dich <strong>abmelden</strong>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span><br>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

@@ -38,7 +38,7 @@ if ($session->logged_in && !$magic_hat->restricted_mode) {
 	if (!$tabbed && !isset($_REQUEST['tab'])) {
 		$url = "userinfo.php?user=" . $session->username . "#rep_custom";
 	} else {
-		$url = 'javascript:userTabOpen("rep_custom")';
+		$url = "javascript:userTabOpen('rep_custom')";
 	}
 	if ($db->is_custom_table("sym_rem") === false) {
 		$display_personal_rep = "none";
@@ -47,13 +47,13 @@ if ($session->logged_in && !$magic_hat->restricted_mode) {
 	}
 	printf ("<p class='center' id='personalized_rep_1' style='display:%s;'><span class='alert_box'>" . _("You are using a personalized Repertory.") . " " . _("You can change the preferences in <a href='%s'>My account</a>.") . "</span></p>\n", $display_personal_rep, $url);
 } elseif (!$session->logged_in) {
-	echo ("<p class='center''><span class='alert_box'><strong>" . _("Important!") . "</strong> " . _("Guests are limited to the Homeopathic Repertory from Kent (kent.en). For activating more repertories an customizing OpenHomeopath you've to <a href='http://openhomeo.org/openhomeopath/register.php'>register for free</a> and <a href='http://openhomeo.org/openhomeopath/login.php'>log in</a>.") . "</span></p>\n");
+	echo ("<p class='center'><span class='alert_box'><strong>" . _("Important!") . "</strong> " . _("Guests are limited to the Homeopathic Repertory from Kent (kent.en). For activating more repertories an customizing OpenHomeopath you've to <a href='http://openhomeo.org/openhomeopath/register.php'>register for free</a> and <a href='http://openhomeo.org/openhomeopath/login.php'>log in</a>.") . "</span></p>\n");
 } elseif ($magic_hat->restricted_mode) {
-	echo ("<p class='center''><span class='alert_box'><strong>" . _("Important!") . "</strong> " . _("At the moment only the Homeopathic Repertory from Kent (kent.en) is enabled.") . "<br>" . _("As long as the donation goal for this month is not reached some functions of OpenHomeopath are only available for users who have already donated.") . "<br><a href=\"javascript:popup_url('donations.php',960,720)\"><strong>" . _("Please donate now!") . "</strong></a></span></p>\n");
+	echo ("<p class='center'><span class='alert_box'><strong>" . _("Important!") . "</strong> " . _("At the moment only the Homeopathic Repertory from Kent (kent.en) is enabled.") . "<br>" . _("As long as the donation goal for this month is not reached some functions of OpenHomeopath are only available for users who have already donated.") . "<br><a href=\"javascript:popup_url('donations.php',960,720)\"><strong>" . _("Please donate now!") . "</strong></a></span></p>\n");
 }
 ?>
-  <form action="" accept-charset="utf-8">
-    <table border="0" align="left" summary="layout" class='rem_symptoms_head'>
+  <form accept-charset="utf-8">
+    <table class='rem_symptoms_head'>
       <tr>
         <td>
           <label for="rem_rubrics"><span class="label"><?php echo _("Main rubric"); ?></span></label>
@@ -98,7 +98,7 @@ echo $revrep->get_grade_select();
         </td>
       </tr>
     </table>
-    <br clear='all'>
+	<div class="clear"></div>
     <input id='remId' type='hidden' value='<?php echo $revrep->rem_id; ?>'>
     <br>
   </form>
@@ -145,7 +145,7 @@ for ($i = 5; $i > 0; $i--) {
             <td><?php echo _("Symptom"); ?></td>
           </tr>
           <tr>
-            <td><img src='skins/original/img/info.gif' width='12' height='12'></td>
+            <td><img src='skins/original/img/info.gif' width='12' height='12' alt='Info'></td>
             <td><?php echo _("Symptom-Info");?></td>
           </tr>
         </table>

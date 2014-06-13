@@ -256,7 +256,7 @@ class RevRep extends TreeView {
 				if ($symptoms_ar[$i]['in_use'] > 0) {
 					$str .= "  <span id='symbol_" . $main_id . "" . $i . "'><a href=\"javascript:expand_static('" . $output_id . "_" . $i . "',0,1);\"><img src='skins/original/img/folder_arrow.png' width='12' height='12'> <img src='skins/original/img/folder_aeskulap.png' width='12' height='12'> </a></span>\n";
 					$str .= "  <a href=\"javascript:popup_url('details.php?sym=" . $symptoms_ar[$i]['id'] . "&rem={$this->rem_id}&sym_rem_tbl={$this->sym_rem_tbl}',540,380)\" title='" . $symptoms_ar[$i]['max_grade'] . _("-gr.") . ": $sources' class='$class'>" . $symptoms_ar[$i]['name'] . "</a>\n";
-					$str .= "  <a href='javascript:symptomData(" . $symptoms_ar[$i]['id'] . ");' title='" . _("Symptom-Info") . "'><img src='skins/original/img/info.gif' width='12' height='12'></a>\n";
+					$str .= "  <a href='javascript:symptomData(" . $symptoms_ar[$i]['id'] . ");' title='" . _("Symptom-Info") . "'><img src='skins/original/img/info.gif' width='12' height='12' alt='Info'></a>\n";
 				} else {
 					$str .= "  <span id='symbol_" . $main_id . $i . "'><a href=\"javascript:expand_static('" . $output_id . "_" . $i . "',0,0);\"><img src='skins/original/img/folder_arrow.png' width='12' height='12'> <img src='skins/original/img/folder.png' width='12' height='12'> </a></span>\n";
 					$str .= "  <span class='$class'>" . $symptoms_ar[$i]['name'] . "</span>\n";
@@ -268,7 +268,7 @@ class RevRep extends TreeView {
 			} else {
 				$str .= "  <span class='nodecls'><span style='visibility:hidden'><img src='skins/original/img/folder_arrow.png' width='12' height='12'> </span><img src='skins/original/img/aeskulap.png' width='12' height='12'> </span>\n";
 				$str .= "  <a href=\"javascript:popup_url('details.php?sym=" . $symptoms_ar[$i]['id'] . "&rem={$this->rem_id}&sym_rem_tbl={$this->sym_rem_tbl}',540,380)\" title='" . $symptoms_ar[$i]['max_grade'] . _("-gr.") . ": $sources' class='$class'>" . $symptoms_ar[$i]['name'] . "</a>\n";
-				$str .= "  <a href='javascript:symptomData(" . $symptoms_ar[$i]['id'] . ");' title='" . _("Symptom-Info") . "'><img src='skins/original/img/info.gif' width='12' height='12'></a>\n";
+				$str .= "  <a href='javascript:symptomData(" . $symptoms_ar[$i]['id'] . ");' title='" . _("Symptom-Info") . "'><img src='skins/original/img/info.gif' width='12' height='12' alt='Info'></a>\n";
 				$str .= "</div>\n";
 			}
 		}

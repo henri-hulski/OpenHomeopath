@@ -27,14 +27,14 @@ header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 header("Content-Type: text/html;charset=utf-8"); 
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <title><?php echo _("Data Maintenance Administration") . " :: OpenHomeopath"; ?></title>
-<link rel="stylesheet" type="text/css" media="screen" href="skins/<?php echo(SKIN_NAME);?>/css/openhomeopath.css">
-<link rel="stylesheet" type="text/css" media="print" href="skins/<?php echo(SKIN_NAME);?>/css/print.css">
-<link rel="stylesheet" href="css/styles_screen.css" type ="text/css" media="screen">
-<link rel="stylesheet" href="css/styles_print.css" type ="text/css" media="print">
+<link rel="stylesheet" media="screen" href="skins/<?php echo(SKIN_NAME);?>/css/openhomeopath.css">
+<link rel="stylesheet" media="print" href="skins/<?php echo(SKIN_NAME);?>/css/print.css">
+<link rel="stylesheet" href="css/styles_screen.css" media="screen">
+<link rel="stylesheet" href="css/styles_print.css" media="print">
 </head>
 
 <body 
@@ -46,8 +46,8 @@ if (isset($_GET["type_mailing"])){
 } // end if
 ?>
 >
-<table class="main_table" cellpadding="10">
+<table class="main_table spacing">
 <tr>
-<td valign="top">
+<td style="vertical-align: top">
 <a href="<?php echo $dadabik_main_file; ?>">Exit the administration area</a>
 <h1><?php echo "OpenHomeopath - " . _("Data Maintenance Administration"); ?></h1>

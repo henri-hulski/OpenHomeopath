@@ -200,7 +200,7 @@ All the field contents come from POST, and I use them directly ($_POST)
 ***************************************************/
 
 $skin = $session->skin;
-include ("./skins/$skin/header_datadmin.php");
+include ("skins/$skin/header_datadmin.php");
 
 $action = $dadabik_main_file;
 
@@ -356,7 +356,7 @@ switch($function){
 
 									$location_url=$site_url.$dadabik_main_file.'?table_name='.urlencode($table_name).'&function=search&where_clause=&page=0&just_inserted=1';
 									if ($unique_field_name != '') {
-										$location_url .= '&order='.$unique_field_name.'&order_type=desc';
+										$location_url .= '&order='.$unique_field_name.'&amp;order_type=desc';
 									} // end if
 
 									header('Location: '.$location_url);
@@ -443,11 +443,9 @@ switch($function){
 				$csv = build_csv($res_records_csv, $fields_labels_ar);
 				ob_end_clean();
 				$db->free_result($res_records_csv);
-				//header('Content-Type: application/vnd.ms-excel');
 				header("Content-Type: text/x-csv");
 				header('Content-Disposition: attachment; filename="'.$table_name.'.csv"');
-				//header('Content-Type: application/octet-stream');
-					
+
 				echo $csv;
 				exit;
 			} // end if
@@ -554,7 +552,7 @@ switch($function){
 			txt_out('&nbsp;&nbsp;('.$normal_messages_ar["total_records"].':'.$records_number.')', 'total_records');
 
 			if ($enable_delete == "1" && $enable_delete_all_feature === 1) {
-				echo " <a class='onlyscreen' onclick=\"if (!confirm('".$normal_messages_ar['confirm_delete?']."')){ return false;}elseif (!confirm('".$normal_messages_ar['really?']."')){ return false;}\" href='".$action."?table_name=". urlencode($table_name)."&function=delete_all&where_clause=".urlencode($where_clause_to_pass)."&page=".$page."&order=".urlencode($order)."&order_type=".$order_type."'>".$normal_messages_ar['delete_all']."</a>";
+				echo " <a class='onlyscreen' onclick=\"if (!confirm('".$normal_messages_ar['confirm_delete?']."')){ return false;}elseif (!confirm('".$normal_messages_ar['really?']."')){ return false;}\" href='".$action."?table_name=". urlencode($table_name)."&function=delete_all&where_clause=".urlencode($where_clause_to_pass)."&page=".$page."&order=".urlencode($order)."&amp;order_type=".$order_type."'>".$normal_messages_ar['delete_all']."</a>";
 			} // end if
 
 			if ($results_number > $records_per_page){ // display the navigation bar
@@ -587,7 +585,7 @@ switch($function){
 			echo $results_table;
 
 			if ( $export_to_csv_feature == 1) {
-				echo "<a href='".$action."?table_name=". urlencode($table_name)."&function=".$function."&where_clause=".urlencode($where_clause_to_pass)."&page=".$page."&order=".urlencode($order)."&order_type=".$order_type."&export_to_csv=1'>";
+				echo "<a href='".$action."?table_name=". urlencode($table_name)."&function=".$function."&where_clause=".urlencode($where_clause_to_pass)."&page=".$page."&order=".urlencode($order)."&amp;order_type=".$order_type."&export_to_csv=1'>";
 
 				txt_out ($normal_messages_ar["export_to_csv"], "export_to_csv");
 
@@ -958,5 +956,5 @@ switch($function){
 } // end swtich ($function)
 
 // include footer
-include ("./skins/$skin/footer_datadmin.php");
+include ("skins/$skin/footer_datadmin.php");
 ?>

@@ -10,7 +10,7 @@ if (!$session->isAdmin()) {
 	die();
 } else {
 	$skin = $session->skin;
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 ?>
 <h1>
    <?php echo _("Reimporting of not imported repertories"); ?>
@@ -62,6 +62,6 @@ if (!$session->isAdmin()) {
 		insert_remsym();
 		echo "<p>" . _("<strong>Congratulations!</strong> Reimporting of manually added rubrics in OpenHomeopath is finalized.") . "</p>\n";
 	}
-	include("./skins/$skin/footer.php");
+	include("skins/$skin/footer.php");
 }
 ?>

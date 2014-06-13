@@ -371,17 +371,17 @@ switch($function){
 
 <?php
 if ($confirmation_message != ""){
-	echo "<p><b><font color='#ff0000'>$confirmation_message</font></b>";
+	echo "<p><strong><span style='color:#f00'>$confirmation_message</span></strong>";
 } // end if
 ?>
-<table border="1">
+<table border="1">l
 <tr>
 <td>
-<p><font size="+1">Manage the list of tables of the <font color="#FF0000"><?php echo DB_NAME; ?></font> database you want to use in DaDaBIK</font></p>
+<p style="font-size: larger">Manage the list of tables of the <span style='color:#f00'><?php echo DB_NAME; ?></span> database you want to use in DaDaBIK</p>
 <table border="0" cellpadding="6" width="100%">
 <tr bgcolor="#F0F0F0">
 <td>
-<p><font color="#ff0000"><b>Here is the list of the tables installed on DaDaBIK:</b></font><br>
+<p><span style='color:#f00'><strong>Here is the list of the tables installed on DaDaBIK:</strong></span><br>
 Uncheck include to exclude a table from DaDaBIK.<br>Click Uninstall if you have dropped the table from the database.
 <form name="include_tables_form" method="post" action="admin.php">
 <input type="hidden" name="function" value="include_tables">
@@ -418,7 +418,7 @@ else {
 <table border="0" cellpadding="6" width="100%">
 <tr bgcolor="#F0F0F0">
 <td>
-<p><font color="#ff0000"><b>Here is the list of the tables present in your database:</b></font><br>Click Install to install each table and add it to the above list.<br>If you install an already present table, you'll overwrite its configuration.
+<p><span style='color:#f00'><strong>Here is the list of the tables present in your database:</strong></span><br>Click Install to install each table and add it to the above list.<br>If you install an already present table, you'll overwrite its configuration.
 <br><br>
 <?php
 for ($i=0; $i<count($complete_tables_names_ar); $i++){
@@ -440,7 +440,7 @@ $fields_labels_ar = build_fields_labels_array($table_internal_name, "1"); // bec
 <table border="1">
 <tr>
 <td>
-<p><font size="+1">Configure the DaDaBIK interface of the table <b><?php echo $table_name; ?></b></font></p>
+<p style="font-size: larger">Configure the DaDaBIK interface of the table <strong><?php echo $table_name; ?></strong></p>
 
 <?php
 if ($change_table_select != ""){
@@ -480,14 +480,14 @@ foreach ($installed_table_infos_ar as $installed_table_infos) {
 <p><form method="post" action="admin.php?table_name=<?php echo urlencode($table_name); ?>"><input type="hidden" name="function" value="save_table_alias">English table alias (this is what DaDaBIK displays in the tables listbox) <input type="text" name="alias_table" value="<?php echo $table_alias; ?>"> <input type="submit" value="Save alias"></form>
 
 <p>If you want to configure the interface of the table in detail (e.g. want to specify if a field should be included or not in the search/insert/update form, the content of the field......) you have to use the <a href="internal_table_manager.php?table_name=<?php echo urlencode($table_name); ?>">Interface configurator</a>.
-<p>Directly from this page you can, instead, update DaDaBIK when you have modified some fields of your table (i.e. when you have added one or more fields, deleted one or more fields, renamed one or more fields from <b><?php echo $table_name; ?></b>).</p>
+<p>Directly from this page you can, instead, update DaDaBIK when you have modified some fields of your table (i.e. when you have added one or more fields, deleted one or more fields, renamed one or more fields from <strong><?php echo $table_name; ?></strong>).</p>
 
 <p>Please follow these steps in the correct order:
 <p>&nbsp;
 <table border="0" cellpadding="6" width="100%">
   <tr bgcolor="#F0F0F0"> 
-    <td><b><font color="#ff0000">Step 1:</font></b><br>
-      If you have renamed some fields of <b><?php echo $table_name; ?></b> you 
+    <td><strong><span style='color:#f00'>Step 1:</span></strong><br>
+      If you have renamed some fields of <strong><?php echo $table_name; ?></strong> you
       have to specify here the new names.
 
 	   <p>Select the field name you want to change and specify the new name:<br>
@@ -510,8 +510,8 @@ for ($i=0; $i<count($fields_labels_ar); $i++){
 <table border="0" cellpadding="6" width="100%">
   <tr bgcolor="#F0F0F0"> 
     <td>
-      <p><b><font color="#ff0000">Step 2:</font></b><br>
-        If you have deleted some fields of <b><?php echo $table_name; ?></b> you 
+      <p><strong><span style='color:#f00'>Step 2:</span></strong><br>
+        If you have deleted some fields of <strong><?php echo $table_name; ?></strong> you
         have to specify here which fields you have deleted
         by selecting it/them and pressing the delete button. 
       <p>Select the field/s you want to delete:<br>
@@ -534,8 +534,8 @@ for ($i=0; $i<count($fields_labels_ar); $i++){
 <table border="0" cellpadding="6" width="100%">
   <tr bgcolor="#F0F0F0"> 
     <td>
-      <p><b><font color="#ff0000">Step 3:</font></b><br>
-        If you have added some fields to <b><?php echo $table_name; ?></b> you 
+      <p><strong><span style='color:#f00'>Step 3:</span></strong><br>
+        If you have added some fields to <strong><?php echo $table_name; ?></strong> you
         have to update DaDaBIK by pressing the refresh installation button: 
       <form name="refresh_form" method="post" action="admin.php?table_name=<?php echo $table_name; ?>">
 		<input type="hidden" name="function" value="refresh_table">
@@ -550,7 +550,7 @@ for ($i=0; $i<count($fields_labels_ar); $i++){
 <table border="0" cellpadding="6" width="100%">
   <tr bgcolor="#F0F0F0"> 
     <td>
-      <p><b><font color="#ff0000">Step 4:</font></b><br>
+      <p><strong><span style='color:#f00'>Step 4:</span></strong><br>
         If you want to change the displaying order of a field in the DaDaBIK interfaces, you can do it by selecting the field from the following menu and specifying the new position. All the other field positions will be shifted correctly.
 		<form name="change_position_form" method="post" action="admin.php?table_name=<?php echo $table_name; ?>">
 		<input type="hidden" name="function" value="change_position">

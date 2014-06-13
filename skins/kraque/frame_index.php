@@ -11,14 +11,14 @@ if (TABBED) {
 }
 $lang = $session->lang;
 ?>
-<a name="up" id="up" title="<?php echo _("Top of the page"); ?>"></a>
+<a id="up" title="<?php echo _("Top of the page"); ?>"></a>
 <?php
 if($session->logged_in){
 ?>
 <div id="menu">
 		<span style="float: left;">
             <a style="color: #336633; font-size: 14px;" href="../index.php">
-                <img height="17" border="0" alt="OpenHomeo.org" src="openhomeopath/skins/kraque/img/punkte_d9b7ea.gif"/>
+                <img height="17" alt="OpenHomeo.org" src="openhomeopath/skins/kraque/img/punkte_d9b7ea.gif">
             </a>
         </span>
 		<ul class="level1" id="root">
@@ -74,7 +74,7 @@ if($session->logged_in){
 		  <li><a href="openhomeopath/doc/<?php echo $lang; ?>/info.php"><?php echo _("Info"); ?></a></li>
 		  <li class="sep">|</li>
 		  <?php
-	           echo ("<li><a href='$user_url'><img src='openhomeopath/skins/kraque/img/user.gif' width='13' height='12' border='0' alt='Benutzer'>" . _("My account") . "</a>");
+	           echo ("<li><a href='$user_url'><img src='openhomeopath/skins/kraque/img/user.gif' width='13' height='12' alt='Benutzer'>" . _("My account") . "</a>");
 	           echo ("<ul class='level2'>");
 	               echo ("<li><a href='$user_url#rep_custom'>" . _("Settings") . "</a></li>");
 	               echo ("<li><a href='$user_url#reps'>" . _("Repertorizations") . "</a></li>");
@@ -92,8 +92,8 @@ if($session->logged_in){
 					<input type="hidden" name="cmd" value="_s-xclick">
 					<input type="hidden" name="hosted_button_id" value="5VCBZJRKXM9EC">
 					<input type="hidden" name="image_url" value="http://www.openhomeo.org/openhomeopath/img/openhomeopath.gif">
-					<input type="image" src="http://www.openhomeo.org/openhomeopath/img/spenden_<?php echo $lang; ?>.gif" border="0" name="submit" alt="Jede Spende ist uns sehr willkommen und hilft der Entwicklung von OpenHomeopath.">
-					<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+					<input type="image" src="http://www.openhomeo.org/openhomeopath/img/spenden_<?php echo $lang; ?>.gif" name="submit" alt="Jede Spende ist uns sehr willkommen und hilft der Entwicklung von OpenHomeopath.">
+					<img alt="" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
 				</form>
 			</li>
 			<li class="sep">|</li>
@@ -115,7 +115,7 @@ if($session->logged_in){
 <div id="menu">
 		<span style="float: left;">
             <a href="../index.php">
-                <img height="17" border="0" alt="OpenHomeo.org" src="openhomeopath/skins/kraque/img/punkte_d9b7ea.gif"/>
+                <img height="17" alt="OpenHomeo.org" src="openhomeopath/skins/kraque/img/punkte_d9b7ea.gif">
             </a>
         </span>
 		<ul class="level1" id="root">
@@ -164,15 +164,15 @@ if($session->logged_in){
 		  <li class="sep">|</li>
 		  <li><a href="openhomeopath/doc/<?php echo $lang; ?>/info.php"><?php echo _("Info"); ?></a></li>
 		  <li class="sep">|</li>
-		  <li><a href="openhomeopath/login.php"><img width="13" height="12" border="0" alt="Benutzer" src="openhomeopath/skins/kraque/img/user.gif" border="0" /> <?php echo _("Log in"); ?></a>
+		  <li><a href="openhomeopath/login.php"><img width="13" height="12" alt="Benutzer" src="openhomeopath/skins/kraque/img/user.gif"> <?php echo _("Log in"); ?></a>
 		  <li class="sep">|</li>
 		  <li>
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 				<input type="hidden" name="cmd" value="_s-xclick">
 				<input type="hidden" name="hosted_button_id" value="4053996">
 				<input type="hidden" name="image_url" value="http://openhomeo.org/openhomeopath/img/openhomeopath.gif">
-				<input type="image" src="http://openhomeo.org/openhomeopath/img/spenden_<?php echo $lang; ?>.gif" border="0" name="submit" alt="Jede Spende ist uns sehr willkommen und hilft der Entwicklung von OpenHomeopath.">
-				<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+				<input type="image" src="http://openhomeo.org/openhomeopath/img/spenden_<?php echo $lang; ?>.gif" name="submit" alt="Jede Spende ist uns sehr willkommen und hilft der Entwicklung von OpenHomeopath.">
+				<img alt="" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
 			</form>
 		</li>
 		<li class="sep">|</li>

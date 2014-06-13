@@ -31,7 +31,7 @@ include_once ("include/classes/login/session.php");
 if (empty($_GET['popup'])) {
 	$head_title = _("Source-Info") . " :: OpenHomeopath";
 	$skin = $session->skin;
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 }
 
 if ($src_id = $_GET['src']){

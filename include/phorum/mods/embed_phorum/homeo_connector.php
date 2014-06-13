@@ -77,7 +77,7 @@ class HomeophorumConnector extends PhorumConnectorBase {
 		print $elements["head_data"];
 ?>
   </head>
-  <body id="default" onload="<?php print $elements["body_onload"] ?>">
+  <body onload="<?php print $elements["body_onload"] ?>">
     <div id="onwork"><span class='onwork'><?php echo _("I'm on work ...."); ?></span></div>
 <?php
 		include("./skins/$skin/frame.php");

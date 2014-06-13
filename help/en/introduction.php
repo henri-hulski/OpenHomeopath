@@ -27,12 +27,14 @@ $head_title = "Introduction :: Help :: OpenHomeopath";
 $meta_description = "OpenHomeopath Manual, Introduction";
 include("help/layout/$skin/header.php");
 ?>
-<h1>
-  OpenHomeopath Manual
-</h1>
-<h2>
-  Introduction
-</h2>
+<hgroup>
+  <h1>
+    OpenHomeopath Manual
+  </h1>
+  <h2>
+    Introduction
+  </h2>
+</hgroup>
 <p>
   <strong>Homeopathy</strong> is a healing method, that was foundet at the beginning of the 19th century by the physician <strong>Dr. Samuel Hahnemann</strong> and that is based on the principle <strong><em>"Similia similibus curentur"</em> - let like be cured by like</strong>, according to which a substance that causes the symptoms of a disease in healthy people will <strong>cure similar symptoms</strong> in sick people.
 </p>

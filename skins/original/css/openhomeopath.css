@@ -50,9 +50,28 @@ ul li {
     padding: 0.4em;
   }
 
+
+img {
+    border: 0;
+}
+
+table.nospacing {
+      border-spacing: 0;
+      border-collapse: collapse;
+}
+
+table.nospacing td, table.nospacing th {
+    padding: 0;
+}
+
+table.spacing {
+      border-spacing: 10px;
+      border-collapse: separate;
+}
+
+
+
 /* hier sind stylesheets auf Basis von san-tribe */
-
-
 
 a {
     color: #990000;
@@ -91,6 +110,11 @@ textarea {
 .nobr {
     white-space: nowrap;
   }
+
+.clear {
+    clear: both;
+}
+
 
 .error_message {
     font-size: 120%;
@@ -200,22 +224,16 @@ p.user a:hover {
 
 
 #container {
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:2;
     width: 100%;
-    background-color: #FFF;
-    color: #333;
     line-height: 130%;
     border-bottom: 1px solid #000;
+    background-image: url(../img/middle_c.gif);
+	background-repeat: repeat-y;
   }
 
 
 #top {
     height:76px;
-    padding: 0;
-    margin: 0;
     text-align: left;
     background-color: #1CB1BE;
     border-bottom: 1px solid #000;
@@ -228,32 +246,21 @@ p.user a:hover {
   }
 
 
-#middle_tbl {
-    width: 100%;
-    margin: 0;
-    background-color: #F1F1F1;
-  }
-
-
 #middle_cell01 {
-    width: 150px;
-    vertical-align: top;
+    width: 153px;
     background-color: #F7F1DF;
-    background-image: url(../img/middle_c.gif);
-  }
-
-
-#middle_cell02 {
-    width: auto;
-    vertical-align: top;
-    background-color: #EEA;
+    border-right:  1px solid #000;
+    margin-right: 10px;
+    float: left;
   }
 
 
 #pagecontent {
+    margin-left: 154px;
     padding: 10px;
     font-size: 12pt;
     line-height: 1.6;
+    width: auto;
   }
 
 
@@ -261,7 +268,6 @@ p.user a:hover {
     position:absolute;
     top:8px;
     left:8px;
-    z-index:1;
   }
 
 
@@ -271,23 +277,24 @@ p.user a:hover {
     margin: 0 0 0 5px;
   }
 
+
+
 /*  Begin Control of included footer  */
 
-
-
 #pagetools {
-    padding: 10px;
-    font-size: 8pt;
+    width: 21%;
+    text-align: right;
   }
 
 
-#footer {
+footer {
     padding: 10px;
     border-top: 1px solid #000;
     background-color: #F1F1F1;
     font-size: 8pt;
     line-height: 1.6;
     text-align: center;
+    clear: both;
   }
 
 
@@ -394,7 +401,6 @@ p.user a:hover {
 .drop-down {
     background-color:#FFE;
     border:1px solid #888;
-/*    width: 144px;*/
     font-size: 12px;
   }
 
@@ -423,6 +429,7 @@ p.user a:hover {
 .button[name] {
     background-color:#FFE;
   }
+
 
 .submit {
     margin-left: 36px;
@@ -710,7 +717,7 @@ a.NavLink:hover {
 }
 
 #result_table td {
-	border: 2px solid #999999;
+	border: 2px solid #999;
 	padding: 2px;
 	white-space: normal;
 }
@@ -791,7 +798,7 @@ a.NavLink:hover {
 	color:#666;
 	background:#FFFFFE;
 	padding:5px;
-	border:solid 1px #999999;
+	border:solid 1px #999;
 	z-index: 9;
 }
 #results {
@@ -804,7 +811,7 @@ a.NavLink:hover {
 	background: #EEE;
 	z-index: 8;
 	width:330px;
-	border:solid 1px #999999;
+	border:solid 1px #999;
 	border-top:0;
 	display:none;
 }
@@ -876,10 +883,6 @@ a.NavLink:hover {
 	left:36px;
 }
 
-#tree1 img, #tree2 img, #tree3 img {
-	border: none;
-}
-
 #tree1 a, #tree2 a, #tree3 a {
 	text-decoration: none;
 }
@@ -943,6 +946,19 @@ div.scrollingUserArea {
     overflow: auto;
     line-height: 1.6;
   }
+
+
+table.usertable {
+    text-align: left;
+    border-spacing: 5px;
+    border-collapse: separate;
+    border: 0;
+}
+
+
+table.usertable td, table.usertable th {
+     padding: 5px;
+}
 
 
 table.user_table {
@@ -1281,6 +1297,7 @@ table.legend2 td {
 table.rem_symptoms_head {
     font-size:12px;
     text-align: center;
+    border:0;
 }
 
 table.rem_symptoms_head td {
@@ -1315,10 +1332,6 @@ div#symSelect select {
     color: #666;
   }
 
-div#symSelect img {
-	border: none;
-}
-
 
 /* remedies list in symptom-info */
 
@@ -1329,8 +1342,4 @@ div#rems_list {
 	overflow-x: hidden;
 	height: 420px;
 	padding: 10px;
-}
-
-div#rems_list img {
-	border: none;
 }

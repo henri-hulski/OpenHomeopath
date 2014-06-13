@@ -134,122 +134,121 @@ foreach ($_REQUEST as $key => $val)
 }
 
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <title><?php echo _("OpenHomeopath - Data Maintenance Administration"); ?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" href="../skins/original/css/openhomeopath.css" type ="text/css" media="screen">
-<link rel="stylesheet" href="../css/styles_screen.css" type ="text/css" media="screen">
+<meta charset="utf-8">
+<link rel="stylesheet" href="../skins/original/css/openhomeopath.css" media="screen">
+<link rel="stylesheet" href="../css/styles_screen.css" media="screen">
 <meta http-equiv="Cache-Control" content="no-cache/"/>
 <meta http-equiv="Pragma" content="no-cache"/>
 <meta http-equiv="Expires" content="-1"/>
 <meta name="robots" content="noindex, nofollow">
 
-<style type="text/css">
-<!--
-p,td,th
-{ font-size:14px;
-  line-height:18px;
-  font-family:Arial,Helvetica,sans-serif;
-  margin-top:5px;
-  margin-bottom:5px;
-  text-align:justify;
-  vertical-align:top;
-}
+<style>
+	<!--
+	p,td,th
+	{ font-size:14px;
+		line-height:18px;
+		font-family:Arial,Helvetica,sans-serif;
+		margin-top:5px;
+		margin-bottom:5px;
+		text-align:justify;
+		vertical-align:top;
+	}
 
-p.centr
-{
-  text-align:center;
-}
+	p.centr
+	{
+		text-align:center;
+	}
 
-p.smlcentr
-{ font-size:10px;
-  line-height:14px;
-  text-align:center;
-}
+	p.smlcentr
+	{ font-size:10px;
+		line-height:14px;
+		text-align:center;
+	}
 
-p.error
-{ color:#FF0000;
-  font-weight:bold;
-}
+	p.error
+	{ color:#FF0000;
+		font-weight:bold;
+	}
 
-p.success
-{ color:#00DD00;
-  font-weight:bold;
-}
+	p.success
+	{ color:#00DD00;
+		font-weight:bold;
+	}
 
-p.successcentr
-{ color:#00DD00;
-  background-color:#DDDDFF;
-  font-weight:bold;
-  text-align:center;
-}
+	p.successcentr
+	{ color:#00DD00;
+		background-color:#DDDDFF;
+		font-weight:bold;
+		text-align:center;
+	}
 
-td
-{ background-color:#F8F8F8;
-  text-align:left;
-}
+	td
+	{ background-color:#F8F8F8;
+		text-align:left;
+	}
 
-td.transparent
-{ background-color:#FFFFF0;
-}
+	td.transparent
+	{ background-color:#FFFFF0;
+	}
 
-th
-{ font-weight:bold;
-  color:#FFFFFF;
-  background-color:#AAAAEE;
-  text-align:left;
-}
+	th
+	{ font-weight:bold;
+		color:#FFFFFF;
+		background-color:#AAAAEE;
+		text-align:left;
+	}
 
-td.right
-{ text-align:right;
-}
+	td.right
+	{ text-align:right;
+	}
 
-form
-{ margin-top:5px;
-  margin-bottom:5px;
-}
+	form
+	{ margin-top:5px;
+		margin-bottom:5px;
+	}
 
-div.skin1
-{
-  border-color:#3333EE;
-  border-width:5px;
-  border-style:solid;
-  background-color:#AAAAEE;
-  text-align:center;
-  vertical-align:middle;
-  padding:3px;
-  margin:1px;
-}
+	div.skin1
+	{
+		border-color:#3333EE;
+		border-width:5px;
+		border-style:solid;
+		background-color:#AAAAEE;
+		text-align:center;
+		vertical-align:middle;
+		padding:3px;
+		margin:1px;
+	}
 
-td.bg3
-{ background-color:#EEEE99;
-  text-align:left;
-  vertical-align:top;
-  width:20%;
-}
+	td.bg3
+	{ background-color:#EEEE99;
+		text-align:left;
+		vertical-align:top;
+		width:20%;
+	}
 
-th.bg4
-{ background-color:#EEAA55;
-  text-align:left;
-  vertical-align:top;
-  width:20%;
-}
+	th.bg4
+	{ background-color:#EEAA55;
+		text-align:left;
+		vertical-align:top;
+		width:20%;
+	}
 
-td.bgpctbar
-{ background-color:#EEEEAA;
-  text-align:left;
-  vertical-align:middle;
-  width:80%;
-}
+	td.bgpctbar
+	{ background-color:#EEEEAA;
+		text-align:left;
+		vertical-align:middle;
+		width:80%;
+	}
 
--->
+	-->
 </style>
-<script type="text/javascript">
+<script>
 function zweifel () {
-  var check = confirm ("<?php echo _("Are you sure ?"); ?>");
-  return check;
+  return confirm ("<?php echo _("Are you sure ?"); ?>");
 }
 </script>
 </head>
@@ -261,11 +260,11 @@ function zweifel () {
 <div id="top">
 <a name="up" title="<?php echo _("Top of the page"); ?>"></a>
 <div id="banner">
-<img src="../skins/original/img/openhomeopath.gif" width="480" height="76" border="0" alt="OpenHomeopath">
+<img src="../skins/original/img/openhomeopath.gif" width="480" height="76" alt="OpenHomeopath">
 </div>
 </div>
       <div id="middle">
-        <table summary="layout" cellpadding="0" cellspacing="0" id="middle_tbl">
+        <table cellspacing="0" id="middle_tbl">
           <tr>
             <td id="middle_cell01">
               <ul class="Navigation">
@@ -302,8 +301,6 @@ function zweifel () {
 <br>
 <h1><?php echo _("OpenHomeopath - Install database"); ?></h1>
 <br>
-
-<center>
 
 <table width="780" cellspacing="0" cellpadding="0">
 <tr><td class="transparent">
@@ -880,7 +877,7 @@ skin_open();
     }
 
     echo ("
-    <center>
+    <div class='center'>
     <table width=\"520\" border=\"0\" cellpadding=\"3\" cellspacing=\"1\">
     <tr><th class=\"bg4\"> </th><th class=\"bg4\">Session</th><th class=\"bg4\">Done</th><th class=\"bg4\">To go</th><th class=\"bg4\">Total</th></tr>
     <tr><th class=\"bg4\">Lines</th><td class=\"bg3\">$lines_this</td><td class=\"bg3\">$lines_done</td><td class=\"bg3\">$lines_togo</td><td class=\"bg3\">$lines_tota</td></tr>
@@ -891,7 +888,7 @@ skin_open();
     <tr><th class=\"bg4\">%</th><td class=\"bg3\">$pct_this</td><td class=\"bg3\">$pct_done</td><td class=\"bg3\">$pct_togo</td><td class=\"bg3\">$pct_tota</td></tr>
     <tr><th class=\"bg4\">% bar</th><td class=\"bgpctbar\" colspan=\"4\">$pct_bar</td></tr>
     </table>
-    </center>
+    </div>
     \n");
 
 // Finish message and restart the script
@@ -911,7 +908,7 @@ skin_open();
 	printf ("<p class='centr'>" . _("Now I'm <b>waiting %d milliseconds</b> before starting next session...") . "</p>\n", $delaypersession);
     }
       if (!$ajax)
-        echo ("<script language=\"JavaScript\" type=\"text/javascript\">window.setTimeout('location.href=\"".$_SERVER["PHP_SELF"]."?start=$linenumber&fn=".urlencode($curfilename)."&foffset=$foffset&totalqueries=$totalqueries&delimiter=".urlencode($delimiter)."\";',500+$delaypersession);</script>\n");
+        echo ("<script language=\"JavaScript\">window.setTimeout('location.href=\"".$_SERVER["PHP_SELF"]."?start=$linenumber&fn=".urlencode($curfilename)."&foffset=$foffset&totalqueries=$totalqueries&delimiter=".urlencode($delimiter)."\";',500+$delaypersession);</script>\n");
 
       echo ("<noscript>\n");
       echo ("<p class=\"centr\"><a href=\"".$_SERVER["PHP_SELF"]."?start=$linenumber&amp;fn=".urlencode($curfilename)."&amp;foffset=$foffset&amp;totalqueries=$totalqueries&amp;delimiter=".urlencode($delimiter)."\">Continue from the line $linenumber</a> (Enable JavaScript to do it automatically)</p>\n");
@@ -938,7 +935,7 @@ elseif ($file && $gzipmode) gzclose($file);
 
 </td></tr></table>
 
-</center>
+</div>
 
         <div id="footer">
           <a href="../doc/<?php echo $lang; ?>/info.php#license">Copyright</a> &copy; 2007-2012 by Henri Schumacher <br><?php echo _("OpenHomeopath is distributed under the terms of the <a href='../doc/en/agpl3.php'>AGPL-License</a>"); ?>&nbsp;&nbsp; <br><a title="<?php echo _("Contact to the author"); ?>" href="mailto:henri.hulski@gazeta.pl?subject=Homeopath"><?php echo _("Contact to the author"); ?></a>
@@ -1048,7 +1045,7 @@ function create_ajax_script()
   global $linenumber, $foffset, $totalqueries, $delaypersession, $curfilename, $delimiter;
 ?>
 
-	<script type="text/javascript" language="javascript">
+	<script language="javascript">
 
 	// creates next action url (upload page, or XML response)
 	function get_url(linenumber,fn,foffset,totalqueries,delimiter) {

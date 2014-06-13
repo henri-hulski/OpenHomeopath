@@ -36,12 +36,12 @@ if (isset($_REQUEST['tab'])) {
 	include ("include/functions/layout.php");
 } else {
 	$head_title = _("Repertorization result") . " :: OpenHomeopath";
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 }
 if (isset($_REQUEST['tab'])) {
 ?>
   <div style='float: right; margin: 25px;'>
-      <a id='history_back_tab_1' style='padding: 7px;'><img alt=""  id='arrow_left_tab_1' height='24' width='38' src='./img/arrow_left_inactive.gif' border='0'></a><a id='history_forward_tab_1' style='padding: 7px;'><img alt=""  id='arrow_right_tab_1' height='24' width='38' src='./img/arrow_right_inactive.gif' border='0'></a>
+      <a id='history_back_tab_1' style='padding: 7px;'><img alt=""  id='arrow_left_tab_1' height='24' width='38' src='./img/arrow_left_inactive.gif'></a><a id='history_forward_tab_1' style='padding: 7px;'><img alt=""  id='arrow_right_tab_1' height='24' width='38' src='./img/arrow_right_inactive.gif'></a>
   </div>
 <?php
 }
@@ -54,7 +54,7 @@ if (isset($_REQUEST['tab'])) {
 include ("./forms/save_rep.php");
 ?>
 </div>
-<br clear="all">
+<br>
 <fieldset id='result_fieldset'>
   <legend class='legend'>
     <?php echo _("Result table"); ?>
@@ -83,9 +83,9 @@ $rel_txt = sprintf(ngettext("%d symptom-remedy-relation", "%d symptom-remedy-rel
 printf ("  <p class='center label'>" . _("For %s there are %s and %s.") . "</p>\n", $sym_txt, $rem_txt, $rel_txt);
 ?>
 </fieldset>
-<form action="" accept-charset="utf-8">
+<form accept-charset="utf-8">
   <div class="center">
-    <br clear='all'><br>
+	<div class="clear"><br></div>
 <?php
 foreach ($rep->sym_select as $sym_id => $degree) {
 	$sym_select_ar[] = "$sym_id-$degree";
@@ -106,5 +106,5 @@ if (!isset($_REQUEST['tab'])) {
 <?php
 if (!isset($_REQUEST['tab'])) {
 	popup(1);
-	include("./skins/$skin/footer.php");
+	include("skins/$skin/footer.php");
 }

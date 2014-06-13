@@ -230,7 +230,7 @@ class TreeView {
 					} else {
 						$str .= "  " . $symptoms_ar[$i]['name']. "\n";
 					}
-					$str .= "  <a href='javascript:symptomData(" . $symptoms_ar[$i]['id'] . ");' class='nodecls' title='" . _("Symptom-Info") . "'><img src='skins/original/img/info.gif' width='12' height='12'></a>\n";
+					$str .= "  <a href='javascript:symptomData(" . $symptoms_ar[$i]['id'] . ");' class='nodecls' title='" . _("Symptom-Info") . "'><img src='skins/original/img/info.gif' width='12' height='12' alt='Info'></a>\n";
 				} else {
 					$str .= "  <span id='symbol_" . $main_id . $i . "'><a href=\"javascript:expand_static('" . $output_id . "_" . $i . "',0,0);\" class='nodecls'><img src='skins/original/img/folder_arrow.png' width='12' height='12'> <img src='skins/original/img/folder.png' width='12' height='12'> </a></span>\n";
 					$str .= "  <span class='nodecls'>" . $symptoms_ar[$i]['name']. "</span>\n";
@@ -246,7 +246,7 @@ class TreeView {
 				} else {
 					$str .= "  " . $symptoms_ar[$i]['name']. "\n";
 				}
-				$str .= "  <a href='javascript:symptomData(" . $symptoms_ar[$i]['id'] . ");' class='nodecls' title='" . _("Symptom-Info") . "'><img src='./skins/original/img/info.gif' width='12' height='12'></a>\n";
+				$str .= "  <a href='javascript:symptomData(" . $symptoms_ar[$i]['id'] . ");' class='nodecls' title='" . _("Symptom-Info") . "'><img src='skins/original/img/info.gif' width='12' height='12' alt='Info'></a>\n";
 				$str .= "</div>\n";
 			}
 		}
