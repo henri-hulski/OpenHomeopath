@@ -129,23 +129,23 @@ for ($i = 5; $i > 0; $i--) {
       <div class='alert_box' style='text-align:left; width:250px;'>
         <table class='legend2'>
           <tr>
-            <td><img src='skins/original/img/main_folder.png' width='14' height='14'></td>
+            <td><img src='skins/original/img/main_folder.png' alt='Main rubric' width='14' height='14'></td>
             <td><?php echo _("Main rubric");?></td>
           </tr>
           <tr>
-            <td><img src='skins/original/img/folder_aeskulap.png' width='12' height='12'></td>
+            <td><img src='skins/original/img/folder_aeskulap.png' alt='Symptom rubric' width='12' height='12'></td>
             <td><?php echo _("Symptom which contains sub-rubrics"); ?></td>
           </tr>
           <tr>
-            <td><img src='skins/original/img/folder.png' width='12' height='12'></td>
+            <td><img src='skins/original/img/folder.png' alt='Rubric' width='12' height='12'></td>
             <td><?php echo _("Contains sub-rubrics, but doesn't count itself"); ?></td>
           </tr>
           <tr>
-            <td><img src='skins/original/img/aeskulap.png' width='12' height='12'></td>
+            <td><img src='skins/original/img/aeskulap.png' alt='Symptom' width='12' height='12'></td>
             <td><?php echo _("Symptom"); ?></td>
           </tr>
           <tr>
-            <td><img src='skins/original/img/info.gif' width='12' height='12' alt='Info'></td>
+            <td><img src='skins/original/img/info.gif' alt='Info' width='12' height='12'></td>
             <td><?php echo _("Symptom-Info");?></td>
           </tr>
         </table>

@@ -162,26 +162,26 @@ list ($num_children) = $db->db_fetch_row();
 $db->free_result();
 echo ("    <h3>" . _("Treeview") . "</h3>\n");
 echo "    <div id='tree3' class='selection'>\n";
-echo "      <div id='tree10' style='padding-left:20px;'>\n";
-echo "        <span id='symbol_tree10'><a href=\"javascript:collapse_static('tree1_0',1,0);\" class='nodecls_main'><img src='skins/original/img/main_folder_open_arrow.png' width='14' height='14'> <img src='skins/original/img/main_folder_open.png' width='14' height='14'> </a></span>\n";
+echo "      <div id='tree3-0' style='padding-left:20px;'>\n";
+echo "        <span id='symbol_tree3-0'><a href=\"javascript:collapse_static('tree3_0',1,0);\" class='nodecls_main'><img src='skins/original/img/main_folder_open_arrow.png' alt='Collapse main rubric' width='14' height='14'> <img src='skins/original/img/main_folder_open.png' alt='Main rubric' width='14' height='14'> </a></span>\n";
 echo "        <span class='nodecls_main'>$rubric_name</span>\n";
 echo "      </div>\n";
-echo "      <div id='tree1_0' style='padding-left:20px; display:block'>\n";
+echo "      <div id='tree3_0' style='padding-left:20px; display:block'>\n";
 if ($num_children > 0) {
 	include ("include/classes/treeview_class.php");
 	$tree = new TreeView($rubric_id, "symptoms");
 	$symptom_ar = $tree->get_treeview($sym_id);
-	$child = $tree->generate_child("tree1_0_0", $symptom_ar);
-	echo "        <div id='tree10' style='padding-left:20px'>\n";
-	echo "          <span id='symbol_tree100'><a href=\"javascript:collapse_static('tree1_0_0',0,1);\" class='nodecls'><img src='skins/original/img/folder_open_arrow.png' width='12' height='12'> <img src='skins/original/img/folder_open_aeskulap.png' width='12' height='12'> </a></span>\n";
+	$child = $tree->generate_child("tree3_0_0", $symptom_ar);
+	echo "        <div id='tree3-0' style='padding-left:20px'>\n";
+	echo "          <span id='symbol_tree3-0-0'><a href=\"javascript:collapse_static('tree3_0_0',0,1);\" class='nodecls'><img src='skins/original/img/folder_open_arrow.png' alt='Collapse rubric' width='12' height='12'> <img src='skins/original/img/folder_open_aeskulap.png' alt='Symptom rubric' width='12' height='12'> </a></span>\n";
 	echo "          <span class='nodecls'><strong>$symptom</strong></span>\n";
 	echo "        </div>\n";
-	echo "        <div id='tree1_0_0' style='padding-left:20px; display:block'>\n";
+	echo "        <div id='tree3_0_0' style='padding-left:20px; display:block'>\n";
 	echo $child;
 	echo "        </div>\n";
 } else {
-	echo "        <div id='tree10' style='padding-left:20px'>\n";
-	echo "          <span id='symbol_tree100' class='nodecls'><span style='visibility:hidden'><img src='skins/original/img/folder_arrow.png' width='12' height='12'> </span><img src='skins/original/img/aeskulap.png' width='12' height='12'></span>\n";
+	echo "        <div id='tree3-0' style='padding-left:20px'>\n";
+	echo "          <span id='symbol_tree3-0-0' class='nodecls'><span style='visibility:hidden'><img src='skins/original/img/folder_arrow.png' alt='Expand rubric' width='12' height='12'> </span><img src='skins/original/img/aeskulap.png' alt='Symptom' width='12' height='12'></span>\n";
 	echo "          <span class='nodecls'><strong>$symptom</strong></span>\n";
 	echo "        </div>\n";
 }

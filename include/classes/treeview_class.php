@@ -114,8 +114,8 @@ class TreeView {
 					$child = $this->generate_child("tree1_$i", $symptoms_ar, $rep_select);
 					$expand = "expand_static('tree1_$i',1,0)";
 				}
-				$symptomtree .= "      <div id='tree1$i' style='padding-left:20px;'>\n";
-				$symptomtree .= "        <span id='symbol_tree1$i'><a href=\"javascript:$expand;\" class='nodecls_main'><img src='skins/original/img/main_folder_arrow.png' width='14' height='14'> <img src='skins/original/img/main_folder.png' width='14' height='14'> </a></span>\n";
+				$symptomtree .= "      <div id='tree1-$i' style='padding-left:20px;'>\n";
+				$symptomtree .= "        <span id='symbol_tree1-$i'><a href=\"javascript:$expand;\" class='nodecls_main'><img src='skins/original/img/main_folder_arrow.png' width='14' height='14'> <img src='skins/original/img/main_folder.png' width='14' height='14'> </a></span>\n";
 				$symptomtree .= "        <span class='nodecls_main'>$rubric_name</span>\n      </div>\n";
 				$symptomtree .= "      <div id='tree1_$i' style='padding-left:20px;display:none'>\n";
 				$symptomtree .= $child;
@@ -135,8 +135,8 @@ class TreeView {
 			$db->send_query($query);
 			list ($rubric_name) = $db->db_fetch_row();
 			$db->free_result();
-			$symptomtree = "      <div id='tree10' style='padding-left:20px;'>\n";
-			$symptomtree .= "        <span id='symbol_tree10'><a href=\"javascript:;\" class='nodecls_main'><img src='skins/original/img/main_folder_open_arrow.png' width='14' height='14'> <img src='skins/original/img/main_folder_open.png' width='14' height='14'> </a></span>\n";
+			$symptomtree = "      <div id='tree1-0' style='padding-left:20px;'>\n";
+			$symptomtree .= "        <span id='symbol_tree1-0'><a href=\"javascript:;\" class='nodecls_main'><img src='skins/original/img/main_folder_open_arrow.png' alt='Collapse main rubric' width='14' height='14'> <img src='skins/original/img/main_folder_open.png' alt='Main rubric' width='14' height='14'> </a></span>\n";
 			$symptomtree .= "        <span class='nodecls_main'>$rubric_name</span>\n      </div>\n";
 			$symptomtree .= "      <div id='tree1_0' style='padding-left:20px; display:block'>\n";
 			$symptomtree .= $child;
@@ -217,14 +217,14 @@ class TreeView {
 		$str = "";
 		$i = 0;
 		$display = 1;
-		$main_id = str_replace('_', '', $output_id);
+		$main_id = str_replace('_', '-', $output_id);
 		for($i = 0; $i < count($symptoms_ar); $i++) {
-			$str .= "<div id='" . $main_id . $i . "' style='padding-left:20px;'>\n";
+			$str .= "<div id='" . $main_id . "-" . $i . "' style='padding-left:20px;'>\n";
 			if ($symptoms_ar[$i]['folder'] > 0) {
 				$child_ar = $this->get_treeview($symptoms_ar[$i]['id']);
 				$child = $this->generate_child($output_id . "_" . $i, $child_ar, $rep_select);
 				if ($symptoms_ar[$i]['in_use'] > 0) {
-					$str .= "  <span id='symbol_" . $main_id . "" . $i . "'><a href=\"javascript:expand_static('" . $output_id . "_" . $i . "',0,1);\" class='nodecls'><img src='skins/original/img/folder_arrow.png' width='12' height='12'> <img src='skins/original/img/folder_aeskulap.png' width='12' height='12'> </a></span>\n";
+					$str .= "  <span id='symbol_" . $main_id . "-" . $i . "'><a href=\"javascript:expand_static('" . $output_id . "_" . $i . "',0,1);\" class='nodecls'><img src='skins/original/img/folder_arrow.png' width='12' height='12'> <img src='skins/original/img/folder_aeskulap.png' width='12' height='12'> </a></span>\n";
 					if ($rep_select) {
 						$str .= "  <a href='javascript:selectSymptom(" . $symptoms_ar[$i]['id'] . ");' class='nodecls'>" . $symptoms_ar[$i]['name']. "</a>\n";
 					} else {
@@ -232,7 +232,7 @@ class TreeView {
 					}
 					$str .= "  <a href='javascript:symptomData(" . $symptoms_ar[$i]['id'] . ");' class='nodecls' title='" . _("Symptom-Info") . "'><img src='skins/original/img/info.gif' width='12' height='12' alt='Info'></a>\n";
 				} else {
-					$str .= "  <span id='symbol_" . $main_id . $i . "'><a href=\"javascript:expand_static('" . $output_id . "_" . $i . "',0,0);\" class='nodecls'><img src='skins/original/img/folder_arrow.png' width='12' height='12'> <img src='skins/original/img/folder.png' width='12' height='12'> </a></span>\n";
+					$str .= "  <span id='symbol_" . $main_id . "-" . $i . "'><a href=\"javascript:expand_static('" . $output_id . "_" . $i . "',0,0);\" class='nodecls'><img src='skins/original/img/folder_arrow.png' width='12' height='12'> <img src='skins/original/img/folder.png' width='12' height='12'> </a></span>\n";
 					$str .= "  <span class='nodecls'>" . $symptoms_ar[$i]['name']. "</span>\n";
 				}
 				$str .= "</div>\n";
