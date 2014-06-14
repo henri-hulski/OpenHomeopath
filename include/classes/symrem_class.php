@@ -215,7 +215,7 @@ class SymRem {
 			} else {
 				$materia_url = "materia.php?rem=$rem_id";
 			}
-			$rems_list .= "<$tag$class><a href='$materia_url' title='" . _("Materia Medica") . "'>&nbsp;<img src='skins/original/img/materia.png' alt='Materia Medica' width='12' height='12'>&nbsp;</a><a href=\"javascript:popup_url('details.php?sym={$this->sym_id}&amp;rem=$rem_id&amo;sym_rem_tbl={$this->sym_rem_tbl}',540,380)\" title='$title' class='grade_" . $rem_ar['max_grade'] . "'>$text</a></$tag>";
+			$rems_list .= "<$tag$class><a href='$materia_url' title='" . _("Materia Medica") . "'>&nbsp;<img src='skins/original/img/materia.png' alt='Materia Medica' width='12' height='12'>&nbsp;</a><a href=\"javascript:popup_url('details.php?sym={$this->sym_id}&amp;rem=$rem_id&amp;sym_rem_tbl={$this->sym_rem_tbl}',540,380)\" title='$title' class='grade_" . $rem_ar['max_grade'] . "'>$text</a></$tag>";
 		}
 		return $rems_list;
 	}
