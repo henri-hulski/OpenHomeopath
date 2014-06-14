@@ -179,7 +179,7 @@ if ($num_children > 0) {
 	echo $child;
 	echo "      </div>\n";
 } else {
-	echo "      <div id='tree3-0' style='padding-left:20px'>\n";
+	echo "      <div id='tree3-0-0' style='padding-left:20px'>\n";
 	echo "        <span id='symbol_tree3-0-0' class='nodecls'><span style='visibility:hidden'><img src='skins/original/img/folder_arrow.png' alt='Expand rubric' width='12' height='12'> </span><img src='skins/original/img/aeskulap.png' alt='Symptom' width='12' height='12'></span>\n";
 	echo "        <span class='nodecls'><strong>$symptom</strong></span>\n";
 	echo "      </div>\n";

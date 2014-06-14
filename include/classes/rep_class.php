@@ -335,7 +335,7 @@ class Rep {
 					if ($kuenzli == 1) {
 						$rowtxt .= "<strong>&nbsp;&bull;</strong>";
 					}
-					$rowtxt = "<td class='main_cols center' title='$sym_rem_src'><a href=\"javascript:popup_url('details.php?sym=$symrem_ar[2]&rem=$rem_ar[4]&sym_rem_tbl=" . $this->sym_rem_tbl . "',540,380)\">$rowtxt</a></td>";
+					$rowtxt = "<td class='main_cols center' title='$sym_rem_src'><a href=\"javascript:popup_url('details.php?sym=$symrem_ar[2]&amp;rem=$rem_ar[4]&amp;sym_rem_tbl=" . $this->sym_rem_tbl . "',540,380)\">$rowtxt</a></td>";
 					$row_ar[$symrem_ar[2]][$rem_ar[2]] = $rowtxt;
 				}
 			}
