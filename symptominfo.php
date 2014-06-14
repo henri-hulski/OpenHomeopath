@@ -76,8 +76,7 @@ if ($session->logged_in && !$magic_hat->restricted_mode) {
 	echo ("<p class='center'><span class='alert_box'><strong>" . _("Important!") . "</strong> " . _("At the moment only the Homeopathic Repertory from Kent (kent.en) is enabled.") . "<br>" . _("As long as the donation goal for this month is not reached some functions of OpenHomeopath are only available for users who have already donated.") . "<br><a href=\"javascript:popup_url('donations.php',960,720)\"><strong>" . _("Please donate now!") . "</strong></a></span></p>\n");
 }
 ?>
-<form accept-charset="utf-8">
-  <fieldset>
+<fieldset>
 <?php
 $symptom_link = $symptom;
 if (strpos($symptom, " > ") !== false) {
@@ -105,43 +104,43 @@ if (strpos($symptom, " > ") !== false) {
 	ksort($main_rubrics_link_ar, SORT_NUMERIC);
 	$symptom_link = implode(" > ", $main_rubrics_link_ar);
 }
-echo ("    <legend class='legend'>\n");
-echo ("      $rubric_name >> $symptom_link\n");
-echo ("    </legend>\n");
-echo ("    <ul class='blue'>\n");
-echo ("      <li><strong>" . _("Symptom:") . " </strong><span class='gray'>$symptom</span></li>\n");
-echo ("      <li><strong>" . _("Symptom-No.:") . " </strong><span class='gray'>$sym_id</span></li>\n");
-echo ("      <li><strong>" . _("Main rubric:") . " </strong><span class='gray'>$rubric_name</span></li>\n");
-echo ("      <li><strong>" . _("Native language:") . " </strong><span class='gray'>$lang_name");
+echo ("  <legend class='legend'>\n");
+echo ("    $rubric_name >> $symptom_link\n");
+echo ("  </legend>\n");
+echo ("  <ul class='blue'>\n");
+echo ("    <li><strong>" . _("Symptom:") . " </strong><span class='gray'>$symptom</span></li>\n");
+echo ("    <li><strong>" . _("Symptom-No.:") . " </strong><span class='gray'>$sym_id</span></li>\n");
+echo ("    <li><strong>" . _("Main rubric:") . " </strong><span class='gray'>$rubric_name</span></li>\n");
+echo ("    <li><strong>" . _("Native language:") . " </strong><span class='gray'>$lang_name");
 echo ("</span></li>\n");
 if ($db->is_translated($sym_id)) {
 	$query = "SELECT DISTINCT st.symptom, l.lang_$lang FROM sym_translations st, languages l WHERE st.sym_id = $sym_id AND l.lang_id = st.lang_id";
 	$db->send_query($query);
 	$num_rows = $db->db_num_rows();
 	if ($num_rows > 0) {
-		echo "      <li><strong>" . _("Translations:") . "</strong>\n";
-		echo "        <ul>\n";
+		echo "    <li><strong>" . _("Translations:") . "</strong>\n";
+		echo "      <ul>\n";
 		while (list($trans_symptom, $trans_lang_name) = $db->db_fetch_row()) {
-			echo "          <li><strong>" . $trans_lang_name . ": </strong><span class='gray'>$trans_symptom</span></li>\n";
+			echo "        <li><strong>" . $trans_lang_name . ": </strong><span class='gray'>$trans_symptom</span></li>\n";
 		}
-		echo "        </ul>\n";
-		echo "      </li>\n";
+		echo "      </ul>\n";
+		echo "    </li>\n";
 	}
 	$db->free_result();
 }
 if ($kuenzli == 1) {
-	echo ("      <li><strong>" . _("Künzli-dot:") . " </strong><span class='gray'>" . _("This section has been awarded a Künzli-dot. This means that it is therapeutically significant and often leads directly to the choice of remedy or such substantially narrow down.") . "</span></li>\n");
+	echo ("    <li><strong>" . _("Künzli-dot:") . " </strong><span class='gray'>" . _("This section has been awarded a Künzli-dot. This means that it is therapeutically significant and often leads directly to the choice of remedy or such substantially narrow down.") . "</span></li>\n");
 }
-echo ("      <li><strong>" . _("More details:") . " </strong><span class='gray'> <a href='symptom-details.php?sym=$sym_id&lang=$lang' target='_blank'>OpenHomeo.org</a></span></li>\n");
-echo ("    </ul>\n");
+echo ("    <li><strong>" . _("More details:") . " </strong><span class='gray'> <a href='symptom-details.php?sym=$sym_id&amp;lang=$lang' target='_blank'>OpenHomeo.org</a></span></li>\n");
+echo ("  </ul>\n");
 if (!empty($xref_id)) {
 	$query = "SELECT DISTINCT symptoms.sym_id, symptoms.symptom, main_rubrics.rubric_$lang FROM symptoms, main_rubrics WHERE symptoms.xref_id = $xref_id AND symptoms.sym_id != $sym_id AND main_rubrics.rubric_id = symptoms.rubric_id";
 	$db->send_query($query);
 	$num_rows = $db->db_num_rows();
 	if ($num_rows > 0) {
-		echo ("    <h3>" . _("Cross references") . "</h3>\n");
-		echo ("    <div id='xref' class='selection'>\n");
-		echo ("      <ul>\n");
+		echo ("  <h3>" . _("Cross references") . "</h3>\n");
+		echo ("  <div id='xref' class='selection'>\n");
+		echo ("    <ul>\n");
 		while (list($xref_sym_id, $xref_symptom_name, $xref_rubric_name) = $db->db_fetch_row()) {
 			if (!$tabbed && !isset($_GET['tab'])) {
 				$xref_symptom = "<a href='symptominfo.php?sym=$xref_sym_id'><strong>$xref_rubric_name</strong> >> $xref_symptom_name</a>";
@@ -150,8 +149,8 @@ if (!empty($xref_id)) {
 			}
 			echo ("      <li>$xref_symptom</li>\n");
 		}
-		echo ("      </ul>\n");
-		echo ("    </div>\n");
+		echo ("    </ul>\n");
+		echo ("  </div>\n");
 	}
 	$db->free_result();
 }
@@ -160,41 +159,42 @@ $query = "SELECT COUNT(*) FROM symptoms WHERE pid = $sym_id";
 $db->send_query($query);
 list ($num_children) = $db->db_fetch_row();
 $db->free_result();
-echo ("    <h3>" . _("Treeview") . "</h3>\n");
-echo "    <div id='tree3' class='selection'>\n";
-echo "      <div id='tree3-0' style='padding-left:20px;'>\n";
-echo "        <span id='symbol_tree3-0'><a href=\"javascript:collapse_static('tree3_0',1,0);\" class='nodecls_main'><img src='skins/original/img/main_folder_open_arrow.png' alt='Collapse main rubric' width='14' height='14'> <img src='skins/original/img/main_folder_open.png' alt='Main rubric' width='14' height='14'> </a></span>\n";
-echo "        <span class='nodecls_main'>$rubric_name</span>\n";
-echo "      </div>\n";
-echo "      <div id='tree3_0' style='padding-left:20px; display:block'>\n";
+echo ("  <h3>" . _("Treeview") . "</h3>\n");
+echo "  <div id='tree3' class='selection'>\n";
+echo "    <div id='tree3-0' style='padding-left:20px;'>\n";
+echo "      <span id='symbol_tree3-0'><a href=\"javascript:collapse_static('tree3_0',1,0);\" class='nodecls_main'><img src='skins/original/img/main_folder_open_arrow.png' alt='Collapse main rubric' width='14' height='14'> <img src='skins/original/img/main_folder_open.png' alt='Main rubric' width='14' height='14'> </a></span>\n";
+echo "      <span class='nodecls_main'>$rubric_name</span>\n";
+echo "    </div>\n";
+echo "    <div id='tree3_0' style='padding-left:20px; display:block'>\n";
 if ($num_children > 0) {
 	include ("include/classes/treeview_class.php");
 	$tree = new TreeView($rubric_id, "symptoms");
 	$symptom_ar = $tree->get_treeview($sym_id);
 	$child = $tree->generate_child("tree3_0_0", $symptom_ar);
-	echo "        <div id='tree3-0' style='padding-left:20px'>\n";
-	echo "          <span id='symbol_tree3-0-0'><a href=\"javascript:collapse_static('tree3_0_0',0,1);\" class='nodecls'><img src='skins/original/img/folder_open_arrow.png' alt='Collapse rubric' width='12' height='12'> <img src='skins/original/img/folder_open_aeskulap.png' alt='Symptom rubric' width='12' height='12'> </a></span>\n";
-	echo "          <span class='nodecls'><strong>$symptom</strong></span>\n";
-	echo "        </div>\n";
-	echo "        <div id='tree3_0_0' style='padding-left:20px; display:block'>\n";
+	echo "      <div id='tree3-0-0' style='padding-left:20px'>\n";
+	echo "        <span id='symbol_tree3-0-0'><a href=\"javascript:collapse_static('tree3_0_0',0,1);\" class='nodecls'><img src='skins/original/img/folder_open_arrow.png' alt='Collapse rubric' width='12' height='12'> <img src='skins/original/img/folder_open_aeskulap.png' alt='Symptom rubric' width='12' height='12'> </a></span>\n";
+	echo "        <span class='nodecls'><strong>$symptom</strong></span>\n";
+	echo "      </div>\n";
+	echo "      <div id='tree3_0_0' style='padding-left:20px; display:block'>\n";
 	echo $child;
-	echo "        </div>\n";
+	echo "      </div>\n";
 } else {
-	echo "        <div id='tree3-0' style='padding-left:20px'>\n";
-	echo "          <span id='symbol_tree3-0-0' class='nodecls'><span style='visibility:hidden'><img src='skins/original/img/folder_arrow.png' alt='Expand rubric' width='12' height='12'> </span><img src='skins/original/img/aeskulap.png' alt='Symptom' width='12' height='12'></span>\n";
-	echo "          <span class='nodecls'><strong>$symptom</strong></span>\n";
-	echo "        </div>\n";
+	echo "      <div id='tree3-0' style='padding-left:20px'>\n";
+	echo "        <span id='symbol_tree3-0-0' class='nodecls'><span style='visibility:hidden'><img src='skins/original/img/folder_arrow.png' alt='Expand rubric' width='12' height='12'> </span><img src='skins/original/img/aeskulap.png' alt='Symptom' width='12' height='12'></span>\n";
+	echo "        <span class='nodecls'><strong>$symptom</strong></span>\n";
+	echo "      </div>\n";
 }
-echo "      </div>\n";
 echo "    </div>\n";
+echo "  </div>\n";
 
-echo ("    <h3>" . _("Corresponding remedies") . "</h3>\n");
+echo ("  <h3>" . _("Corresponding remedies") . "</h3>\n");
 ?>
   <div id='sym_rems'>
 <?php
 include("forms/sym_rems.php");
 ?>
   </div>
+</fieldset>
 <?php
 if (!$tabbed && !isset($_GET['tab']) && empty($_GET['popup'])) {
 	popup(1);
