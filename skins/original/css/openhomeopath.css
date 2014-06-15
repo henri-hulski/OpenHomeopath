@@ -860,7 +860,6 @@ a.NavLink:hover {
 #results li a:hover {
 	background:#FFFFEE;
 	cursor: pointer;
-	cursor: hand;
 }
 
 #search_icon {

@@ -123,7 +123,7 @@ function build_saved_reps_table($order_by, $order_type, $username, $user_url, &$
 		}
 		$saved_reps_table .= "        <tr class='$class' id='row_$i'>\n";
 		$saved_reps_table .= "          <td class='radio'><div><input type='radio' id='radio_$i' value='$rep_id%$patient_id%$rep_prescription%$rep_note%$rep_timestamp%$rep_public' name='saved_rep' onclick=\"return colorizeRadioRow('radio','row','saved_reps_form');\" onkeyup=\"return colorizeRadioRow('radio','row','saved_reps_form');\"></div></td>\n";
-		$saved_reps_table .= "          <td class='rep_timestamp'><div><label for='radio_$i'>$date</label></td>\n";
+		$saved_reps_table .= "          <td class='rep_timestamp'><div><label for='radio_$i'>$date</label></div></td>\n";
 		$saved_reps_table .= "          <td class='rep_id'><div><label for='radio_$i'>$rep_id</label></div></td>\n";
 		$saved_reps_table .= "          <td class='patient_id'><div><label for='radio_$i'>$patient_id</label></div></td>\n";
 		$saved_reps_table .= "          <td class='rep_public'><div><label for='radio_$i'>$public</label></div></td>\n";

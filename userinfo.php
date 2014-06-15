@@ -248,7 +248,7 @@ if(strcmp($username,$req_user) == 0) {
         </tr>
         <tr>
           <td>
-            <label for='src_rep'>
+            <label for='custom_src_rep'>
 <?php
 	echo("<input type='radio' class='button' name='src' id='custom_src_rep' value='custom'");
 	if ($src_rep == 'custom') {
@@ -356,7 +356,7 @@ if(strcmp($username,$req_user) == 0) {
         </tr>
         <tr>
           <td>
-            <label for='src_materia'>
+            <label for='custom_src_materia'>
 <?php
 	echo("<input type='radio' class='button' name='src' id='custom_src_materia' value='custom'");
 	if ($src_materia == 'custom') {
