@@ -167,7 +167,7 @@ class SymRem {
 	 */
 	function get_sort_select() {
 		$sort_ar= array('grade'=>_("Grade"), 'remname'=>_("Remedy name"), 'shortname'=>_(" Abbreviation"));
-		$sort_select = "<select class='drop-down' name='sort' id='sort' size='1' onchange= \"getSymRems('remgrade')\">\n";
+		$sort_select = "<select class='drop-down' id='sort' size='1' onchange= \"getSymRems('remgrade')\">\n";
 		foreach ($sort_ar as $key => $value) {
 			$sort_select .= "  <option value='$key'";
 			

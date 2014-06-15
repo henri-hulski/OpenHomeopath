@@ -83,7 +83,7 @@ if ($session->logged_in) {  // user logged in
   <form accept-charset="utf-8" onsubmit="return false">
     <label for="query"><span class="label"><?php echo _("Type the beginning of the word and select the remedy"); ?></span></label>
     <div style='position:relative;top:0;left:0;'>
-      <input type="search" name="query" id="query" placeholder="<?php echo _("Type the first letters of the remedy"); ?>" autofocus autocomplete="off" onkeyup="autosuggest('auto_rem')" onclick='cleanRem()'
+      <input type="search" id="query" placeholder="<?php echo _("Type the first letters of the remedy"); ?>" autofocus autocomplete="off" onkeyup="autosuggest('auto_rem')" onclick='cleanRem()'
 <?php
 if (!empty($_REQUEST['rem'])) {
 	echo ("value='$rem_short&nbsp;&nbsp;$rem_name'");

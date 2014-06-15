@@ -100,13 +100,13 @@ if ((isset($_REQUEST['rubrics']) && !empty($num_rows)) || !empty($_REQUEST['syms
       </div>
 <?php
 	if (isset($_REQUEST['patient'])) {
-		echo "      <input type='hidden' name='patient' value='" . $_REQUEST['patient'] . "'>";
+		echo "      <input type='hidden' id='patient' value='" . $_REQUEST['patient'] . "'>\n";
 	}
 	if (isset($_REQUEST['prescription'])) {
-		echo "      <input type='hidden' name='prescription' value='" . $_REQUEST['prescription'] . "'>";
+		echo "      <input type='hidden' id='prescription' value='" . $_REQUEST['prescription'] . "'>\n";
 	}
 	if (isset($_REQUEST['note'])) {
-		echo "      <input type='hidden' name='note' value='" . $_REQUEST['note'] . "'>";
+		echo "      <input type='hidden' id='note' value='" . $_REQUEST['note'] . "'>\n";
 	}
 	if (!$tabbed && !isset($_REQUEST['tab'])) {
 		$tab = -1;
@@ -132,7 +132,7 @@ if ((isset($_REQUEST['rubrics']) && !empty($num_rows)) || !empty($_REQUEST['syms
           </table>
         </div>
         <br><br>
-        <input type="button" class="submit" name="submit" value=" <?php echo _("Repertorize"); ?> " onclick="rep(<?php echo($tab);?>)">
+        <input type="button" class="submit" value=" <?php echo _("Repertorize"); ?> " onclick="rep(<?php echo($tab);?>)">
       </div>
     </div>
   </form>

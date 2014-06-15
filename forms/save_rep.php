@@ -69,7 +69,7 @@ if (!empty($task) && !$magic_hat->restricted_mode) {  // speichert Rep.-Ergebnis
       </td>
       <td>
 <?php
-echo ("        <input class='input' type='text' name='patient' id='patient' size='5' maxlength='5'");
+echo ("        <input class='input' type='text' id='patient' size='5' maxlength='5'");
 echo (" value = '" . $rep->patient . "'>\n");
 if (!empty($rep->rep_id)) {
 	echo "        <span class='boldtext blue'>&nbsp;&nbsp;" . _("Repertorization No.") . " " . $rep->rep_id . "</span>\n";
@@ -104,7 +104,7 @@ if (!$magic_hat->restricted_mode) {
 	$print_PDF .= "')";
 }
 ?>
-        <input class='input' type='date' name='date' id='date' size='11' maxlength='10' value = '<?php echo $rep->date; ?>'>&nbsp;&nbsp;&nbsp;
+        <input class='input' type='date' id='date' value = '<?php echo $rep->date; ?>'>&nbsp;&nbsp;&nbsp;
       </td>
     </tr>
     <tr>
@@ -112,7 +112,7 @@ if (!$magic_hat->restricted_mode) {
         <label for="prescription" class="label"><?php echo _("Prescription:"); ?>&nbsp;</label>
       </td>
       <td colspan="2">
-        <input class="input_text" type="text" name="prescription" id="prescription" size="87" maxlength="3000" value = "<?php echo $rep->prescription; ?>">
+        <input class="input_text" type="text" id="prescription" size="87" maxlength="3000" value = "<?php echo $rep->prescription; ?>">
       </td>
     </tr>
     <tr>
@@ -120,7 +120,7 @@ if (!$magic_hat->restricted_mode) {
         <label for="note" class="label"><?php echo _("Case taking:"); ?>&nbsp;</label>
       </td>
       <td colspan="2">
-        <textarea class="input_text" name="note" id="note"  cols="100" rows="5"><?php echo $rep->note; ?></textarea>
+        <textarea class="input_text" id="note"  cols="100" rows="5"><?php echo $rep->note; ?></textarea>
       </td>
     </tr>
   </table>
@@ -140,10 +140,10 @@ if (!$magic_hat->restricted_mode) {
 foreach ($rep->sym_select as $sym_id => $degree) {
 	$symselect_ar[] = "$sym_id-$degree";
 }
-echo "  <input type='hidden' name='user' id='user' value='" . $session->username . "'>";
-echo "  <input type='hidden' name='symsel' id='symptom_select' value='" . implode("_", $symselect_ar) . "'>";
+echo "  <input type='hidden' id='user' value='" . $session->username . "'>";
+echo "  <input type='hidden' id='symptom_select' value='" . implode("_", $symselect_ar) . "'>";
 if (!empty($rep->rep_id)) {
-	echo "  <input type='hidden' name='rep' id='rep' value='{$rep->rep_id}'>";
+	echo "  <input type='hidden' id='rep' value='{$rep->rep_id}'>";
 }
 ?>
 </form>

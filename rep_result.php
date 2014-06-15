@@ -83,17 +83,14 @@ $rel_txt = sprintf(ngettext("%d symptom-remedy-relation", "%d symptom-remedy-rel
 printf ("  <p class='center label'>" . _("For %s there are %s and %s.") . "</p>\n", $sym_txt, $rem_txt, $rel_txt);
 ?>
 </fieldset>
+<br>
 <form accept-charset="utf-8">
   <div class="center">
-	<div class="clear"><br></div>
 <?php
 foreach ($rep->sym_select as $sym_id => $degree) {
 	$sym_select_ar[] = "$sym_id-$degree";
 }
-echo "      <input type='hidden' name='patient' id='patient' value='{$rep->patient}'>";
-echo "      <input type='hidden' name='prescription' id='prescription' value='{$rep->prescription}'>";
-echo "      <input type='hidden' name='note' id='note' value='{$rep->note}'>";
-echo "      <input type='hidden' name='sym_select' id='sym_select' value='" . implode("_", $sym_select_ar) . "'>";
+echo "      <input type='hidden' id='sym_select' value='" . implode("_", $sym_select_ar) . "'>";
 if (!isset($_REQUEST['tab'])) {
 	$tab = -1;
 } else {

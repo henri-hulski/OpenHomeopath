@@ -312,8 +312,8 @@ function build_form($table_name, $action, $fields_labels_ar, $form_type, $res_de
 
 			// build an empty cell
 
-						$form .= '<td style='text-align: right; vertical-align: top;'><table><tr><td class="td_null_checkbox_form">';
-						$form .= '</td></tr></table></td>';
+						$form .= "<td style='text-align: right; vertical-align: top;'><table><tr><td class='td_null_checkbox_form'>";
+						$form .= "</td></tr></table></td>";
 
 
 			// build the second coloumn (input field)
