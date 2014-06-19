@@ -70,7 +70,7 @@ $pages = round(($s_count+$limit), -2)/$limit;
             $nav = $nav."<a href=\"symptom-details.php?letter=".$letter."&start=".(($i-1)*$limit)."&rubric=".$rubric_id."&lang=".$lng."#Symptome\"> ".$i." </a>";
         }
     }
-    $nav = $nav. "</span><br/>";
+    $nav = $nav. "</span><br>";
     return $nav;
 
 }

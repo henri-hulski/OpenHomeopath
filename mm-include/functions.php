@@ -56,11 +56,11 @@ $pages = round(($s_count+$limit), -2)/$limit;
             //echo " ".$i." ";
             $nav .= " ".$i." ";
         }else{
-            //echo "<a href=\"materia-medica.php?rem=".$rem_short."&start=".(($i-1)*$limit)."#Symptome\"> ".$i." </a>";
-            $nav .= "<a href=\"materia-medica.php?rem=".$rem_short."&start=".(($i-1)*$limit)."&grade=".$grade."&rubric=".$rubric_id."&lang=".$lng."#Symptome\"> ".$i." </a>";
+            //echo "<a href='materia-medica.php?rem=".$rem_short."&start=".(($i-1)*$limit)."#Symptome'> ".$i." </a>";
+            $nav .= "<a href='materia-medica.php?rem=".$rem_short."&start=".(($i-1)*$limit)."&grade=".$grade."&rubric=".$rubric_id."&lang=".$lng."#Symptome'> ".$i." </a>";
         }
     }
-    $nav .= "</span><br/>";
+    $nav .= "</span><br>";
     return $nav;
 
 }
@@ -363,7 +363,7 @@ function get_radio_grade()
 }
 function get_rem_searchform($rem_short)
 {
-    $form = "<form name='searchform' action='materia-medica.php'><div style='position:relative;top:0;left:0;'><input id=\"query\" type=\"text\"  onkeyup=\"autosuggest('auto_all_remedies')\" /><input name=\"rem\" id=\"rem\" type=\"hidden\" value=\"".$rem_short."\"  ><div id=\"results\"></div><div id=\"search_icon\"><img src=\"skins/original/img/search.png\" width=\"24\" height=\"24\"></div></div></form>";
+    $form = "<form name='searchform' action='materia-medica.php'><div style='position:relative;top:0;left:0;'><input id='query' type='text'  onkeyup=\"autosuggest('auto_all_remedies')\"><input name='rem' id='rem' type='hidden' value='".$rem_short."'><div id='results'></div><div id='search_icon'><img src='skins/original/img/search.png' width='24' height='24'></div></div></form>";
 	return $form;
 }
 
@@ -394,7 +394,7 @@ function view_rem_repertory_head($remedy)
     $html = "   <div class='mm-info-box-repertory'>\n";
     $html .= "<form name='repform' action='materia-medica.php'>";
     $html .= "      <span class='mm-info-box-source-title'>$translations[General_repertory] <span style='font-size:0.7em'><b>".$remedy['rem_name']."</b> (".$remedy['rem_short'].")</span></span>\n";
-    $html .= "<input name=\"rem\" id=\"rem\" type=\"hidden\" value=\"".$remedy['rem_short']."\"  >".get_select_rubric($remedy).get_radio_grade()."</form>";
+    $html .= "<input name='rem' id='rem' type='hidden' value='".$remedy['rem_short']."'  >".get_select_rubric($remedy).get_radio_grade()."</form>";
     $html .= "      <b>".$remedy['repertory']['s_count']."</b> $translations[entries_with_grade] <b>&ge;".$grade."</b>\n";
     $html .= "  </div>\n";
     return $html;
@@ -411,12 +411,12 @@ function view_rem_repertory_symptoms($remedy){
             $ii = 0;
             $row = "";
             foreach($symptom['sources'] as $val2){
-                $sources .= "<a href=\"javascript:popup_url('source.php?src=$val2[src_id]',540,380)\" class='source' style=\"text-decoration:underline;color:#666666\" title='$translations[source_info]'>$val2[src_id]</a> <span class='grade$val2[grade]'>$val2[grade]</span>";
+                $sources .= "<a href=\"javascript:popup_url('source.php?src=$val2[src_id]',540,380)\" class='source' style='text-decoration:underline;color:#666666' title='$translations[source_info]'>$val2[src_id]</a> <span class='grade$val2[grade]'>$val2[grade]</span>";
                 if($val2['src_references']){
                     $references = " (Ref: ";
                     $iii = 0;
                     foreach($val2['src_references'] as $referenz){
-                        $references .= "<a href=\"javascript:popup_url('source.php?src=$referenz',540,380)\" class='source' style=\"text-decoration:underline;color:#666666\" title='$translations[source_info]'>$referenz</a>";
+                        $references .= "<a href=\"javascript:popup_url('source.php?src=$referenz',540,380)\" class='source' style='text-decoration:underline;color:#666666' title='$translations[source_info]'>$referenz</a>";
                         if(count($val2['src_references'])> ($iii+1)){
                             $references = $references.", ";
                         }
@@ -432,13 +432,13 @@ function view_rem_repertory_symptoms($remedy){
             }
         }
         if(!isset($main_rubric) || $main_rubric != $symptom[$rubric_name]){
-            $row .= "<span class='mm-info-box-main-rubric'>".$symptom[$rubric_name]."</span><br/>";
+            $row .= "<span class='mm-info-box-main-rubric'>".$symptom[$rubric_name]."</span><br>";
         }
         $main_rubric = $symptom[$rubric_name];
         $row .= "<a href='./symptom-details.php?sym=".$sym_id."&lang=$lng' title='Symptom Info'>  <span class='grade".$symptom['grade']."' >".$symptom[$rubric_name]."&nbsp;>&nbsp;".$symptom['symptom']."</span></a>  &ndash;  ".$symptom['grade']."" . _("-gr.") . " &nbsp;";
         $row .= "<span style='font-size:0.8em;'>".$sources."</span>";
         if(count($remedy['repertory']['symptoms']) > ($i+1)){
-            $row .= " <br/> ";
+            $row .= " <br> ";
         }
         $ii++;
         $html .= $row;
@@ -449,12 +449,12 @@ function view_rem_repertory_symptoms($remedy){
 function view_rem_rel_tab($remedy)
 {
     global $translations, $lng;
-    $rel_tab =("<br/><table><tbody>");
+    $rel_tab =("<br><table><tbody>");
     if (!empty($remedy['rem_related'])) {
         $rel_rem_ar = explode(";",$remedy['rem_related']);
         $rel_rem_str = "";
         foreach($rel_rem_ar as $val){
-            $rel_rem_str .= " <a href=\"materia-medica.php?rem=".trim($val)."&lang=$lng\">".trim($val)."</a>";
+            $rel_rem_str .= " <a href='materia-medica.php?rem=".trim($val)."&lang=$lng'>".trim($val)."</a>";
         }
         $rel_tab .= ("<tr><td class='rem-info-tab'><strong>$translations[related]:</strong> </td><td class='rem-info-tab'>$rel_rem_str</td></tr>");
     }
@@ -462,7 +462,7 @@ function view_rem_rel_tab($remedy)
         $incomp_rem_arr = explode(";",$remedy['rem_incomp']);
         $incomp_rem_str = "";
         foreach($incomp_rem_arr as $val){
-            $incomp_rem_str .= " <a href=\"materia-medica.php?rem=".trim($val)."&lang=$lng\">".trim($val)."</a>";
+            $incomp_rem_str .= " <a href='materia-medica.php?rem=".trim($val)."&lang=$lng'>".trim($val)."</a>";
         }
         $rel_tab .= ("<tr><td class='rem-info-tab'><strong>$translations[incompatible]:</strong> </td><td class='rem-info-tab'>$incomp_rem_str</td></tr>");
     }
@@ -470,7 +470,7 @@ function view_rem_rel_tab($remedy)
         $anti_rem_arr = explode(";",$remedy['rem_antidot']);
         $anti_rem_str = "";
         foreach($anti_rem_arr as $val){
-            $anti_rem_str .= " <a href=\"materia-medica.php?rem=".trim($val)."&lang=$lng\">".trim($val)."</a>";
+            $anti_rem_str .= " <a href='materia-medica.php?rem=".trim($val)."&lang=$lng'>".trim($val)."</a>";
         }
         $rel_tab .= ("<tr><td class='rem-info-tab'><strong>$translations[antidote]:</strong> </td><td class='rem-info-tab'>$anti_rem_str</td></tr>");
     }
@@ -691,7 +691,7 @@ function get_rem_left($remedy, $remedy_itis, $check_url=1)
         foreach($links_arr as $link){
             $rem_left .= $link;
             if($ii < count($links_arr)){
-                $rem_left .= "<br/>";
+                $rem_left .= "<br>";
             }
             $ii++;
         }
@@ -708,7 +708,7 @@ function view_rem_info_tab($remedy,$rem_id, $remedy_itis)
         foreach($remedy_itis['vernaculars'] as $vernaculars){
             $vernaculars_html .= $vernaculars['vernacular_name'];
             if($i < count($remedy_itis['vernaculars'])){
-                $vernaculars_html .= "<br/>";
+                $vernaculars_html .= "<br>";
             }
             $i++;
         }
@@ -717,12 +717,12 @@ function view_rem_info_tab($remedy,$rem_id, $remedy_itis)
     // synonyme
     $synonyms_html = "";
     if(!empty($remedy_itis['synonyms'])){
-        $synonyms_html .= "<br/><span class='synonym'>";
+        $synonyms_html .= "<br><span class='synonym'>";
         $i=1;
         foreach($remedy_itis['synonyms'] as $synonyms){
             $synonyms_html .= "<span class='".strtolower($synonyms['rank_name'])."' title='".$synonyms['rank_name']."'>".$synonyms['completename']."</span>";
             if($i < count($remedy_itis['synonyms'])){
-                $synonyms_html .= "<br/>";
+                $synonyms_html .= "<br>";
             }
             $i++;
         }
@@ -732,7 +732,7 @@ function view_rem_info_tab($remedy,$rem_id, $remedy_itis)
     $taxon = "";
     if(!empty($remedy_itis['completename'])){
         if($remedy_itis['completename'] != $remedy['rem_name']){
-            $taxon ="<br/>".$remedy_itis['completename'];
+            $taxon ="<br>".$remedy_itis['completename'];
         }
     }
     // family
@@ -740,7 +740,7 @@ function view_rem_info_tab($remedy,$rem_id, $remedy_itis)
         if(!empty($remedy_itis['hierarchy'])){
             foreach($remedy_itis['hierarchy'] as $hierarchy){
                 if($hierarchy['rank_name'] == "Family"){
-                    $itis_family = $hierarchy['completename']."<br/>";
+                    $itis_family = $hierarchy['completename']."<br>";
                 }
             }
         }
@@ -752,7 +752,7 @@ function view_rem_info_tab($remedy,$rem_id, $remedy_itis)
             foreach($remedy['groups'] as $groups){
                 $groups_html .= "<a href='materia-medica.php?group_id=".$groups['id']."&lang=$lng'>".$groups['title']."</a>";
                 if($i < count($remedy['groups'])){
-                    $groups_html .= "<br/>";
+                    $groups_html .= "<br>";
                 }
                 $i++;
             }
@@ -802,9 +802,9 @@ function view_rem_info($remedies_ar)
             }
             $hierarchy_html .= "<span class='".strtolower($remedy_itis['rank_name'])."' title='".$remedy_itis['rank_name']."'><b>".$remedy_itis['completename']."</b></span>\n";
         }
-        $html .= "<div class=\"mm-info-box-head\">";
+        $html .= "<div class='mm-info-box-head'>";
         $html .= $hierarchy_html;
-        $html .= "<h2>$remedy[rem_name] <span style='font-weight:normal;'>($remedy[rem_short])</span></h2><hr/>";
+        $html .= "<h2>$remedy[rem_name] <span style='font-weight:normal;'>($remedy[rem_short])</span></h2><hr>";
         $html .= view_rem_info_tab($remedy, $rem_id, $remedy_itis);
         $html .= view_rem_rel_tab($remedy);
         $html .= "</div>";
@@ -814,7 +814,7 @@ function view_rem_info($remedies_ar)
 function view_rem_list($remedies_ar)
 {
     global $translations, $lng;
-    $html = "<div class=\"mm-info-box-head\">";
+    $html = "<div class='mm-info-box-head'>";
     $remedy_info_list = "<table width='95%' style='background-color: #fff;'>
             <tbody>
                 <tr>
@@ -836,7 +836,7 @@ function view_rem_list($remedies_ar)
             foreach($remedy_itis['vernaculars'] as $vernaculars){
                 $vernaculars_html .= $vernaculars['vernacular_name'];
                 if($i < count($remedy_itis['vernaculars'])){
-                    $vernaculars_html .= "<br/>";
+                    $vernaculars_html .= "<br>";
                 }
                 $i++;
             }
@@ -845,12 +845,12 @@ function view_rem_list($remedies_ar)
         // synonyme
         $synonyms_html ="";
         if(!empty($remedy_itis['synonyms'])){
-            $synonyms_html .= "<br/><span class='synonym'>";
+            $synonyms_html .= "<br><span class='synonym'>";
             $i=1;
             foreach($remedy_itis['synonyms'] as $synonyms){
                 $synonyms_html .= "<span class='".strtolower($synonyms['rank_name'])."' title='".$synonyms['rank_name']."'>".$synonyms['completename']."</span>";
                 if($i < count($remedy_itis['synonyms'])){
-                    $synonyms_html .= "<br/>";
+                    $synonyms_html .= "<br>";
                 }
                 $i++;
             }
@@ -860,7 +860,7 @@ function view_rem_list($remedies_ar)
         $taxon ="";
         if(!empty($remedy_itis['completename'])){
             if($remedy_itis['completename'] != $remedy['rem_name']){
-                $taxon ="<br/>".$remedy_itis['completename'];
+                $taxon ="<br>".$remedy_itis['completename'];
             }
         }
         // family
@@ -868,7 +868,7 @@ function view_rem_list($remedies_ar)
         if(!empty($remedy_itis['hierarchy'])){
             foreach($remedy_itis['hierarchy'] as $hierarchy){
                 if($hierarchy['rank_name'] == "Family"){
-                    $itis_family = $hierarchy['completename']."<br/>";
+                    $itis_family = $hierarchy['completename']."<br>";
                 }
             }
         }
@@ -880,15 +880,15 @@ function view_rem_list($remedies_ar)
             foreach($remedy['groups'] as $groups){
                 $groups_html .= "<a href='materia-medica.php?group_id=".$groups['id']."&lang=$lng'>".$groups['title']."</a>";
                 if($i < count($remedy['groups'])){
-                    $groups_html .= "<br/>";
+                    $groups_html .= "<br>";
                 }
                 $i++;
             }
             $groups_html .= "</span>";
         }
-        $remedy_info_list .= "<tr class=\"tr_results_2\" onclick=\"if (this.className == 'tr_highlighted_onclick'){ this.className='tr_results_2';}else{ this.className='tr_highlighted_onclick';}\" onmouseout=\"if (this.className!='tr_highlighted_onclick'){this.className='tr_results_2'}\" onmouseover=\"if (this.className!='tr_highlighted_onclick'){this.className='tr_highlighted_onmouseover'}\">
+        $remedy_info_list .= "<tr class='tr_results_2' onclick=\"if (this.className == 'tr_highlighted_onclick'){ this.className='tr_results_2';}else{ this.className='tr_highlighted_onclick';}\" onmouseout=\"if (this.className!='tr_highlighted_onclick'){this.className='tr_results_2'}\" onmouseover=\"if (this.className!='tr_highlighted_onclick'){this.className='tr_highlighted_onmouseover'}\">
                     <td class='rem-info-tab'>".$rem_id."</td>
-                    <td class='rem-info-tab'><strong><a href=\"materia-medica.php?rem=".$remedy['rem_short']."&lang=$lng\" title='Mittel Details'>".$remedy['rem_name']."</a> </strong>".$remedy['repertory']['s_count']."$taxon $synonyms_html</td>
+                    <td class='rem-info-tab'><strong><a href='materia-medica.php?rem=".$remedy['rem_short']."&lang=$lng' title='Mittel Details'>".$remedy['rem_name']."</a> </strong>".$remedy['repertory']['s_count']."$taxon $synonyms_html</td>
                     <td class='rem-info-tab'><strong>".$remedy['rem_short']."</strong>".$remedy['rem_alias']."</td>
                     <td class='rem-info-tab'><strong>".$itis_family.$groups_html."</td>
                     <td class='rem-info-tab'>".$vernaculars_html."</td>

@@ -74,7 +74,7 @@ if (!empty($_GET['letter'])) {
 		$letter = check_letter($_GET['letter']);
 		$check_letter= TRUE;
 	} else {
-		$error_msg = $error_msg."Buchstabe ".$_GET['letter']." nicht gefunden.<br/>";
+		$error_msg = $error_msg."Buchstabe ".$_GET['letter']." nicht gefunden.<br>";
 		$check_letter= FALSE;
 	}
 }
@@ -203,7 +203,7 @@ if (isset($check_letter) && $check_letter == TRUE) {
 	$meta_description = "Symptom-Details: ".$symptom_details['symptoms'][$sym_id]['rubric_name']." - ".$symptom_details['symptoms'][$sym_id]['symptom_name'];
 	$meta_keywords = $symptom_details['symptoms'][$sym_id]['rubric_name'].", ".$symptom_details['symptoms'][$sym_id]['symptom_name'].", Rubrik, Symptom, ";
 	include("skins/$skin/header.php");
-	echo ("<script src=\"mm-include/wz_tooltip/wz_tooltip.js\"></script>");
+	echo ("<script src='mm-include/wz_tooltip/wz_tooltip.js'></script>");
 	include 'mm-include/popup.html';
 	include 'mm-include/materia-medica.css';
 	echo ("<div style='text-align:right;font-size:10px;'>".view_lang_menu('symptom-details')."</div>");
@@ -217,12 +217,12 @@ if (isset($check_letter) && $check_letter == TRUE) {
 			}
 		}
 		echo "<br><strong>" . _("More information") . ":</strong> <a href='symptominfo.php?sym=$sym_id&lang=$lang' target='_blank'>OpenHomeopath</a>\n";
-		echo "<hr/></div>";
+		echo "<hr></div>";
 		if (!empty($symptom_details['sources'])) {
 			foreach ($symptom_details['sources'] as $src_id=>$src_val) {
 				echo ("<div class='mm-info-box'>");
 				echo ("<div class='mm-info-box-repertory'>");
-				echo ("    <span class=\"mm-info-box-reference-title\">".$symptom_details['sources_info'][$src_id]['src_title']."</span>");
+				echo ("    <span class='mm-info-box-reference-title'>".$symptom_details['sources_info'][$src_id]['src_title']."</span>");
 				if (!empty($symptom_details['sources_info'][$src_id]['src_author']) && $symptom_details['sources_info'][$src_id]['src_author'] != "-") {
 					echo (" <strong>".$symptom_details['sources_info'][$src_id]['src_author']."</strong>");
 				}
@@ -246,14 +246,14 @@ if (isset($check_letter) && $check_letter == TRUE) {
 				if (!empty($symptom_details['sources_info'][$src_id]['src_isbn']) && $symptom_details['sources_info'][$src_id]['src_isbn'] != "-") {
 					echo ("      <strong>ISBN: </strong><span class='gray'>".$symptom_details['sources_info'][$src_id]['src_isbn']."</span>");
 				}
-				echo ("<br/>");
+				echo ("<br>");
 				// print references
 				$ref_all="";
 				if (!empty($symptom_details['sources'][$src_id]['reference'])) {
 					$ref_all= "      <div class='mm-info-box-part-title'><strong>".count($symptom_details['sources'][$src_id]['reference'])." $translations[General_references]: </strong></div>";
 					$ref_all=$ref_all."<div class='mm-info-box-reference'>";
 					foreach ($symptom_details['sources'][$src_id]['reference'] as $reference_id=>$ref_val) {
-						$ref_all=$ref_all."<strong>$reference_id</strong><span class='gray'> = ".$symptom_details['sources_info'][$reference_id]['src_title']." / ".$symptom_details['sources_info'][$reference_id]['src_author']."</span><br/>";
+						$ref_all=$ref_all."<strong>$reference_id</strong><span class='gray'> = ".$symptom_details['sources_info'][$reference_id]['src_title']." / ".$symptom_details['sources_info'][$reference_id]['src_author']."</span><br>";
 					}
 					$ref_all=$ref_all."</div>";
 				}
@@ -272,21 +272,21 @@ if (isset($check_letter) && $check_letter == TRUE) {
 					$ref_details = "";
 					if(!empty($remedy['reference'])) {
 						$ref_details = "Ref: ";
-						$ref_tooltip = "<strong>$translations[General_references]</strong><br/>";
+						$ref_tooltip = "<strong>$translations[General_references]</strong><br>";
 						foreach ($remedy['reference']  as $ref_id=>$ref_detail) {
 							$ref_details =$ref_details." ".$ref_id.", ";
-							$ref_tooltip = $ref_tooltip."<span style=\'font-size:0.8em;\'><strong>$ref_id</strong><span class=\'gray\'> = ".str_replace("'","&nbsp;",$symptom_details['sources_info'][$ref_id]['src_title'])." / ".$symptom_details['sources_info'][$ref_id]['src_author']."</span></span><br/>";
+							$ref_tooltip = $ref_tooltip."<span style='font-size:0.8em;'><strong>$ref_id</strong><span class='gray'> = ".str_replace("'","&nbsp;",$symptom_details['sources_info'][$ref_id]['src_title'])." / ".$symptom_details['sources_info'][$ref_id]['src_author']."</span></span><br>";
 						}
 					}
 					$tooltip = "onmouseover=\"Tip('";
 					$rem_name = "";
 					foreach ($remedy['remedies']  as $rem_id=>$remedy_detail) {
 						$rem_name = str_replace(" ","&nbsp;",$remedy_detail['rem_name']);
-						$rem_name = str_replace("\'","&nbsp;",$rem_name);
-						$remedy_tooltip="<strong><a href=\'materia-medica.php?rem=".$remedy_detail['rem_short']."\' title=\'materia medica\'>".$rem_name."</a>&nbsp;(".$remedy_detail['rem_short'].")</strong><br><span style=\'font-size:0.8em;\'>$translations[grade]: ".$remedy_detail['grade']."<br/></span>";
+						$rem_name = str_replace("'","&nbsp;",$rem_name);
+						$remedy_tooltip="<strong><a href='materia-medica.php?rem=".$remedy_detail['rem_short']."' title='materia medica'>".$rem_name."</a>&nbsp;(".$remedy_detail['rem_short'].")</strong><br><span style='font-size:0.8em;'>$translations[grade]: ".$remedy_detail['grade']."<br></span>";
 						$text_tooltip = $remedy_tooltip.$ref_tooltip;
 						$tooltip = $tooltip.$text_tooltip."', CLOSEBTN, true, TITLE, '".$symptom_details['symptoms'][$sym_id]['rubric_name']." &gt; ".$symptom_details['symptoms'][$sym_id]['symptom_name']."', STICKY, true, PADDING, 5, TITLEBGCOLOR, '#D9E7BA', CLOSEBTNCOLORS, ['', '#66ff66', 'white', '#D9E7BA'], BGCOLOR, 'white', FONTCOLOR, 'black', FONTSIZE, '14px', TITLEFONTCOLOR, '#043C7F',BORDERCOLOR, '#D9E7BA', BORDERWIDTH, 5, OFFSETX, 0, DELAY, 600, FADEIN, 0, TITLEFONTFACE, 'times,serif', TITLEFONTSIZE, '18px' )\"  ";
-						echo ("<a href=\"materia-medica.php?rem=".$remedy_detail['rem_short']."\" ><span class=\"grade".$remedy_detail['grade']."\" ".$tooltip." style=\"cursor:pointer;\">".$remedy_detail['rem_short']."</span></a> ");
+						echo ("<a href='materia-medica.php?rem=".$remedy_detail['rem_short']."' ><span class='grade".$remedy_detail['grade']."' ".$tooltip." style='cursor:pointer;'>".$remedy_detail['rem_short']."</span></a> ");
 					}
 				}
 				echo ("</div>");

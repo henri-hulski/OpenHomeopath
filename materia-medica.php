@@ -75,7 +75,7 @@ if (!empty($_GET['letter'])) {
 		$remedies_ar= get_rem_by_letter($letter);
 		$check_letter= TRUE;
 	} else {
-		$error_msg = $error_msg."Buchstabe ".$_GET['letter']." nicht gefunden.<br/>";
+		$error_msg = $error_msg."Buchstabe ".$_GET['letter']." nicht gefunden.<br>";
 		$check_letter= FALSE;
 	}
 } elseif (!empty($_GET['gletter'])) {
@@ -84,7 +84,7 @@ if (!empty($_GET['letter'])) {
 		$group_arr= get_rem_groups_by_letter($letter);
 		$check_letter= TRUE;
 	} else {
-		$error_msg = $error_msg."Buchstabe ".$_GET['gletter']." nicht gefunden.<br/>";
+		$error_msg = $error_msg."Buchstabe ".$_GET['gletter']." nicht gefunden.<br>";
 		$check_letter= FALSE;
 	}
 }
@@ -97,7 +97,7 @@ if (!empty($_GET['rem'])) {
 	if ($remedies_ar != FALSE) {
 		$remedies_ar = get_rem_info($remedies_ar);
 	} else {
-		$error_msg = $error_msg."Mittelabkürzung ".$rem_get." nicht gefunden.<br/>";
+		$error_msg = $error_msg."Mittelabkürzung ".$rem_get." nicht gefunden.<br>";
 		unset($remedies_ar);
 	}
 }
@@ -106,7 +106,7 @@ if (!empty($_GET['remid'])) {
 	if ($remedies_ar != FALSE) {
 		$remedies_ar = get_rem_info($remedies_ar);
 	} else {
-		$error_msg = $error_msg."Mittelabkürzung ".$rem_get." nicht gefunden.<br/>";
+		$error_msg = $error_msg."Mittelabkürzung ".$rem_get." nicht gefunden.<br>";
 		unset($remedies_ar);
 	}
 }
@@ -169,7 +169,7 @@ if (isset($remedies_ar) AND (!isset($check_letter) || $check_letter == FALSE)) {
 		}
 		$hierarchy_html .= "<span class='".strtolower($taxon['rank_name'])."' title='".$taxon['rank_name']."'><b>".$taxon['completename']."</b></span>\n";
 	}
-	echo "<br/>$hierarchy_html<br/>";
+	echo "<br>$hierarchy_html<br>";
 	$itis_children = get_itis_child($taxon['tsn']);
 	if (!empty($itis_children)) {
 		foreach ($itis_children as $child) {
@@ -201,7 +201,7 @@ if (isset($remedies_ar) AND (!isset($check_letter) || $check_letter == FALSE)) {
 	$where_query = $where_query_rubric.$where_query_grade;
 	$remedies_ar = get_rem_repertory_count($remedies_ar, $where_query);
 	echo "<div class=\"mm-info-box-head\">";
-	echo "<h2>$gruppe[title] <span style='font-weight:normal;font-size:0.7em;'>$translations[General_group]</span></h2><hr/>";
+	echo "<h2>$gruppe[title] <span style='font-weight:normal;font-size:0.7em;'>$translations[General_group]</span></h2><hr>";
 	$remedies_ar = get_groups_by_remedy($remedies_ar);
 	echo view_rem_list($remedies_ar);
 	echo "</div>";
@@ -209,10 +209,10 @@ if (isset($remedies_ar) AND (!isset($check_letter) || $check_letter == FALSE)) {
 		if (isset($_GET['show']) && $_GET['show'] == 'repertory') {
 			echo get_group_repertory_symptoms($gruppe, $remedies_ar, $where_query, $start, $limit);
 		} else {
-			echo "<a href='?group_id=".$_REQUEST['group_id']."&show=repertory&lang=$lang'>$translations[General_show_repertory]</a><br/>";
+			echo "<a href='?group_id=".$_REQUEST['group_id']."&show=repertory&lang=$lang'>$translations[General_show_repertory]</a><br>";
 		}
 	} else {
-		echo "<a href='login.php?url=materia-medica.php?group_id=".$_REQUEST['group_id']."&show=repertory&lang=$lang'>$translations[General_show_repertory]</a><br/>";
+		echo "<a href='login.php?url=materia-medica.php?group_id=".$_REQUEST['group_id']."&show=repertory&lang=$lang'>$translations[General_show_repertory]</a><br>";
 	}
 } elseif (isset($_GET['gletter'])) {
 	$head_title = "$translations[groups_of_remedies_in_homeopathy_letter]: ".$letter." - OpenHomeo.org";

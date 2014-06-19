@@ -52,7 +52,7 @@ include("javascript/locale.php");
     <script src="scriptaculous-js-1.8.2/lib/prototype.js"></script>
     <script src="scriptaculous-js-1.8.2/src/scriptaculous.js"></script>
     <script src="scriptaculous-js-1.8.2/menu.js"></script>
-    <link href="menu.css" rel="stylesheet" />
+    <link href="menu.css" rel="stylesheet">
   </head>
   <body>
 <div id="wrapper">

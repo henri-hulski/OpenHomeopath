@@ -73,12 +73,12 @@ if($form->num_errors > 0){
       <table class="center" style="border-spacing:0; border-collapse:collapse;">
         <tr>
           <td><label for="user"><?php echo _("Username:"); ?> </label></td>
-          <td><input type="text" name="user" id="user" required size="30" maxlength="30" value="<?php echo $form->value("user"); ?>"/></td>
+          <td><input type="text" name="user" id="user" required size="30" maxlength="30" value="<?php echo $form->value("user"); ?>"></td>
       	  <td><?php echo $form->error("user"); ?></td>
         </tr>
         <tr>
           <td><br><label for="pass"><?php echo _("Password:"); ?> </label></td>
-          <td><input type="password" name="pass" id="pass" required size="30" maxlength="30" value="<?php echo $form->value("pass"); ?>" /></td>
+          <td><input type="password" name="pass" id="pass" required size="30" maxlength="30" value="<?php echo $form->value("pass"); ?>"></td>
           <td><?php echo $form->error("pass"); ?></td>
         </tr>
         <tr>

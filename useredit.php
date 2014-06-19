@@ -253,12 +253,12 @@ if(isset($_SESSION['useredit'])) {
       <table class="nospacing">
         <tr>
           <td><label for="curpass"><?php echo _("current Password:"); ?> </label></td>
-          <td><input type="password" name="curpass" id="curpass" size="30" maxlength="30" value="<?php echo $form->value("curpass"); ?>"/></td>
+          <td><input type="password" name="curpass" id="curpass" size="30" maxlength="30" value="<?php echo $form->value("curpass"); ?>"></td>
       	  <td><?php echo $form->error("curpass"); ?></td>
         </tr>
         <tr>
           <td><label for="newpass"> <?php echo _("new Password:"); ?> </label></td>
-          <td><input type="password" name="newpass" id="newpass" size="30" maxlength="30" value="<?php echo $form->value("newpass"); ?>" /></td>
+          <td><input type="password" name="newpass" id="newpass" size="30" maxlength="30" value="<?php echo $form->value("newpass"); ?>"></td>
           <td><?php echo $form->error("newpass"); ?></td>
         </tr>
         <tr>

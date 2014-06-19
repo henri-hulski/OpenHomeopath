@@ -85,9 +85,9 @@ class HomeophorumConnector extends PhorumConnectorBase {
                 <h1>
                   <?php echo _("Homeophorum"); ?>
                 </h1>
-        <hr/>
+        <hr>
         <?php print $elements["body_data"] ?>
-        <hr/>
+        <hr>
 <?php
 include("./skins/$skin/footer.php");
 chdir($PHORUM_DIR);

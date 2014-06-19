@@ -10,7 +10,7 @@ if (!empty($db->connection)) {
 	$db->close_db();
 }
 ?>
-				</span><br/>
+				</span><br>
 				<?php echo "© 2009 OpenHomeo.org | <a href='index.php?page=impressum&lang=$lang'>Impressum</a>"; ?>
 			</div>
 			<!-- End Footer -->
@@ -26,7 +26,7 @@ var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
 piwikTracker.trackPageView();
 piwikTracker.enableLinkTracking();
 } catch( err ) {}
-</script><noscript><p><img src="http://openhomeo.org/piwik/piwik.php?idsite=1" style="border:0" alt=""/></p></noscript>
+</script><noscript><p><img src="http://openhomeo.org/piwik/piwik.php?idsite=1" style="border:0" alt=""></p></noscript>
 <!-- End Piwik Tag -->
   </body>
 </html>

@@ -51,7 +51,7 @@ while($symptom = $db->db_fetch_row()) {
     $symsubarr['user'] = $symptom[3];
     $symsubarr['date'] = date(" d.m.y H:i", $symptom[4]);
     $symsubarr['type'] = "main";
-    echo "<span style=\"font-size:13px;\">".$symsubarr['date']."    <a href=\"symptom-details.php?sym=".$symsubarr['id']."\" title=\"Symptom Info\"><img src=\"skins/kraque/img/info.png\" border=\"0\" height=\"14px\" alt=\"Symptom Info\" /></a>  <b>".$symsubarr['rubric']." > ".$symsubarr['name']."</b></span><br>";
+    echo "<span style=\"font-size:13px;\">".$symsubarr['date']."    <a href=\"symptom-details.php?sym=".$symsubarr['id']."\" title=\"Symptom Info\"><img src=\"skins/kraque/img/info.png\" border=\"0\" height=\"14px\" alt=\"Symptom Info\"></a>  <b>".$symsubarr['rubric']." > ".$symsubarr['name']."</b></span><br>";
 
 }
 

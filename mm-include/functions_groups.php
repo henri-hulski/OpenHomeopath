@@ -132,7 +132,7 @@ function get_kraque_table2table($src_table, $relation_type_id, $target_table, $s
 
 function get_rem_groups_searchform($group_id = "")
 {
-    $form = "<form name='searchform' action='materia-medica.php'><div style='position:relative;top:0;left:0;'><input id=\"query\" type=\"text\"  onkeyup=\"autosuggest('auto_all_groups')\" /><input name=\"group_id\" id=\"rem\" type=\"hidden\" value=\"".$group_id."\"  ><div id=\"results\"></div><div id=\"search_icon\"><img src=\"skins/original/img/search.png\" width=\"24\" height=\"24\"></div></div></form>";
+    $form = "<form name='searchform' action='materia-medica.php'><div style='position:relative;top:0;left:0;'><input id='query' type='text'  onkeyup=\"autosuggest('auto_all_groups')\"><input name='group_id' id='rem' type='hidden' value='".$group_id."'  ><div id='results'></div><div id='search_icon'><img src='skins/original/img/search.png' width='24' height='24'></div></div></form>";
 	return $form;
 }
 
@@ -181,9 +181,9 @@ function get_group_repertory_symptoms($group, $remedy_ar, $where_query, $start, 
 		if($count_rem >=$min_in){
 			$html .= "<a href='./symptom-details.php?sym=".$sym_id."&lang=$lng' title='Symptom Info'><b><span class='grade1' >".$symptom[$rubric_name]."&nbsp;>&nbsp;".$symptom['symptom']."</span></b></a> <span style='font-size:0.7em;'>".$count_rem."/".$symptom['count_rem']."</span> ";
 			foreach($symptom['remedy'] as $rem_id2=>$remedy2){
-				$html .= "<span class=\"grade".$remedy2['grade']."\" >".$remedy_ar[$rem_id2]['rem_short']."</span> ";
+				$html .= "<span class='grade".$remedy2['grade']."' >".$remedy_ar[$rem_id2]['rem_short']."</span> ";
 			}
-			$html .= "<br/>";
+			$html .= "<br>";
 		}
 	}
 	$html = $html."</div>\n";
@@ -206,7 +206,7 @@ function view_group_repertory_head($group)
     $html = "   <div class='mm-info-box-repertory'>\n";
     $html .= "<form name='repform' action='materia-medica.php'>";
     $html .= "      <span class='mm-info-box-source-title'>$translations[General_repertory] <span style='font-size:0.7em'><b>".$group['title']." $translations[General_group]</b></span></span>\n";
-    $html .= "<input name=\"show\" id=\"show\" type=\"hidden\" value=\"repertory\"  ><input name=\"group_id\" id=\"group_id\" type=\"hidden\" value=\"".$_GET['group_id']."\"  >".get_select_rubric($group).get_radio_grade().get_radio_min_in()."</form>";
+    $html .= "<input name='show' id='show' type='hidden' value='repertory'  ><input name='group_id' id='group_id' type='hidden' value='".$_GET['group_id']."'  >".get_select_rubric($group).get_radio_grade().get_radio_min_in()."</form>";
     $html .= "      $translations[show_small_rubrics_at_first]\n";
     $html .= "  </div>\n";
     return $html;
@@ -215,7 +215,7 @@ function get_radio_min_in()
 {
     global $min_in, $translations;
     $min_in_arr= array("2"=>"2", "3"=>"3", "4"=>"4" , "5"=>"5");
-    $min_in_radio = "<br/>$translations[how_many_remedies_shoud_be_min_in_rubric] ";
+    $min_in_radio = "<br>$translations[how_many_remedies_shoud_be_min_in_rubric] ";
     foreach ($min_in_arr as $key => $value) {
         $min_in_radio = $min_in_radio.'<input type="radio" class="button" name="min_in" id='.$value.'" value="'.$key.'"';
         if($min_in == $key){
@@ -230,7 +230,7 @@ function view_group_list($group_arr)
 {
     global $translations, $lng;
     if($group_arr){
-        $html = "<div class=\"mm-info-box-head\">";
+        $html = "<div class='mm-info-box-head'>";
         $group_info_list = "<table width='95%' style='background-color: #fff;'>
             <tbody>
                 <tr>
@@ -240,9 +240,9 @@ function view_group_list($group_arr)
                 </tr>
                 <tr><td colspan='3' style='border-bottom:1px solid black;'></td></tr>";
         foreach($group_arr as $group_id=>$group){
-            $group_info_list .= "<tr class=\"tr_results_2\" onclick=\"if (this.className == 'tr_highlighted_onclick'){ this.className='tr_results_2';}else{ this.className='tr_highlighted_onclick';}\" onmouseout=\"if (this.className!='tr_highlighted_onclick'){this.className='tr_results_2'}\" onmouseover=\"if (this.className!='tr_highlighted_onclick'){this.className='tr_highlighted_onmouseover'}\">
+            $group_info_list .= "<tr class='tr_results_2' onclick=\"if (this.className == 'tr_highlighted_onclick'){ this.className='tr_results_2';}else{ this.className='tr_highlighted_onclick';}\" onmouseout=\"if (this.className!='tr_highlighted_onclick'){this.className='tr_results_2'}\" onmouseover=\"if (this.className!='tr_highlighted_onclick'){this.className='tr_highlighted_onmouseover'}\">
                     <td class='rem-info-tab'>".$group_id."</td>
-                    <td class='rem-info-tab'><strong><a href=\"materia-medica.php?group_id=".$group_id."&lang=$lng\" title='$translations[Gerneral_group_details]'>".$group['title']."</a> </strong></td>
+                    <td class='rem-info-tab'><strong><a href='materia-medica.php?group_id=".$group_id."&lang=$lng' title='$translations[Gerneral_group_details]'>".$group['title']."</a> </strong></td>
                     <td class='rem-info-tab'><strong></strong></td>
                 </tr><tr><td colspan='3' style='border-bottom:1px solid black;'></td></tr>";
         }

@@ -80,9 +80,9 @@ include("help/layout/$skin/header.php");
 				</div>
 				<h3>Im Expresstool machst du folgendes:</h3>
 				<p><b>1. Quelle auswählen = Synthesis 9.1</b></p>
-				<img class="ohp" src="http://www.openhomeo.org/content/img/quelle-waehlen.gif" alt="Quelle waehlen" />
+				<img class="ohp" src="http://www.openhomeo.org/content/img/quelle-waehlen.gif" alt="Quelle waehlen">
 				<p><b>2. Hauptrubrik auswählen = Nase</b></p>
-				<img class="ohp" src="http://www.openhomeo.org/content/img/hauptrubrik-waehlen.gif" alt="Hauptubrik waehlen" />
+				<img class="ohp" src="http://www.openhomeo.org/content/img/hauptrubrik-waehlen.gif" alt="Hauptubrik waehlen">
 				<p><b>3. Die Symptom-Rubrik nach folgendem Schema eingeben</b></p>
 				<p class="ohp">s. [Seitentzahl] [Symptom Rubrik]:[Mittel-Kürzel]-[Mittel-Wertigkeit][Mittel-Status]#[Mittel-Referenz], [Mittelkürzel-2] ...</p>
 				<p>das sieht dann im Express-Tool so aus:</p>
@@ -132,7 +132,7 @@ include("help/layout/$skin/header.php");
 				da noch zwei weitere Mittel in der Rubrik sind, fügst du die jetzt noch hinzu, wobei vor jedem weiteren Mittel ein Komma als Trenner zu schreiben ist.<br>Du schreibst also noch:<span class="ohp">,sabad-1*,sang-1*</span></p>
 				<p>Jetzt drückst du den Button <span class="ohp">Abschicken</span></p>
 				<p>danach werden dir zum Vergleich Dublikationsmöglichkeiten mit vorhandenen Rubriken angezeigt, zum Beispiel so:<br>
-				<img class="ohp" src="http://www.openhomeo.org/content/img/duplizierung.gif" alt="Duplizierung" /><br><br>
+				<img class="ohp" src="http://www.openhomeo.org/content/img/duplizierung.gif" alt="Duplizierung"><br><br>
 				Wenn du sicher bist, das die neue Rubrik noch nicht vorhanden ist, und du keinen Schreibfehler gemacht hast, drücke den Button <span class="ohp" >Trotzdem einfügen</span></p>
 				<h3>Schon bist du FERTIG</h3>
 				und kannst nun die Symptom-Rubrik in der Repertorisierung mit auswerten.

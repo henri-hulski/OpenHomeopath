@@ -141,9 +141,9 @@ foreach ($_REQUEST as $key => $val)
 <meta charset="utf-8">
 <link rel="stylesheet" href="../skins/original/css/openhomeopath.css" media="screen">
 <link rel="stylesheet" href="../css/styles_screen.css" media="screen">
-<meta http-equiv="Cache-Control" content="no-cache/"/>
-<meta http-equiv="Pragma" content="no-cache"/>
-<meta http-equiv="Expires" content="-1"/>
+<meta http-equiv="Cache-Control" content="no-cache/">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
 <meta name="robots" content="noindex, nofollow">
 
 <style>
