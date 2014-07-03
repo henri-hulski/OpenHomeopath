@@ -140,9 +140,9 @@ function get_group_repertory_symptoms($group, $remedy_ar, $where_query, $start, 
 {
 	global $db;
 	global $sym_rem;
-	global $lng;
+	global $lang;
 	global $min_in;
-	$rubric_name = "rubric_".$lng;
+	$rubric_name = "rubric_".$lang;
 	if(is_array($remedy_ar)){
 		$i = 1;
 		$where_remedy = "";
@@ -156,7 +156,7 @@ function get_group_repertory_symptoms($group, $remedy_ar, $where_query, $start, 
 	}
 	$select = "SELECT $sym_rem.rel_id, main_rubrics.rubric_de, main_rubrics.rubric_en,symptoms.symptom, $sym_rem.grade, $sym_rem.rem_id, symptoms.sym_id,  main_rubrics.rubric_id, sym_count_rem.count_rem FROM $sym_rem, symptoms, main_rubrics, sym_count_rem WHERE $sym_rem.rem_id IN ($where_remedy) AND $sym_rem.sym_id = symptoms.sym_id AND symptoms.rubric_id = main_rubrics.rubric_id AND sym_count_rem.sym_id = $sym_rem.sym_id ";
 	$query = $select . $where_query;
-	$query .= " group by $sym_rem.sym_id,$sym_rem.rem_id  ORDER BY main_rubrics.rubric_$lng, symptoms.symptom";
+	$query .= " group by $sym_rem.sym_id,$sym_rem.rem_id  ORDER BY main_rubrics.rubric_$lang, symptoms.symptom";
 	$query .= " LIMIT $start , $limit ";
 	$db->send_query($query);
 	while ($rubric_info = $db->db_fetch_assoc()){
@@ -179,7 +179,7 @@ function get_group_repertory_symptoms($group, $remedy_ar, $where_query, $start, 
 	foreach($symptoms_arr as $sym_id=>$symptom){
 		$count_rem = count($symptom['remedy']);
 		if($count_rem >=$min_in){
-			$html .= "<a href='./symptom-details.php?sym=".$sym_id."&lang=$lng' title='Symptom Info'><b><span class='grade1' >".$symptom[$rubric_name]."&nbsp;>&nbsp;".$symptom['symptom']."</span></b></a> <span style='font-size:0.7em;'>".$count_rem."/".$symptom['count_rem']."</span> ";
+			$html .= "<a href='./symptom-details.php?sym=".$sym_id."&lang=$lang' title='Symptom Info'><b><span class='grade1' >".$symptom[$rubric_name]."&nbsp;>&nbsp;".$symptom['symptom']."</span></b></a> <span style='font-size:0.7em;'>".$count_rem."/".$symptom['count_rem']."</span> ";
 			foreach($symptom['remedy'] as $rem_id2=>$remedy2){
 				$html .= "<span class='grade".$remedy2['grade']."' >".$remedy_ar[$rem_id2]['rem_short']."</span> ";
 			}
@@ -228,7 +228,7 @@ function get_radio_min_in()
 
 function view_group_list($group_arr)
 {
-    global $translations, $lng;
+    global $translations, $lang;
     if($group_arr){
         $html = "<div class='mm-info-box-head'>";
         $group_info_list = "<table width='95%' style='background-color: #fff;'>
@@ -242,7 +242,7 @@ function view_group_list($group_arr)
         foreach($group_arr as $group_id=>$group){
             $group_info_list .= "<tr class='tr_results_2' onclick=\"if (this.className == 'tr_highlighted_onclick'){ this.className='tr_results_2';}else{ this.className='tr_highlighted_onclick';}\" onmouseout=\"if (this.className!='tr_highlighted_onclick'){this.className='tr_results_2'}\" onmouseover=\"if (this.className!='tr_highlighted_onclick'){this.className='tr_highlighted_onmouseover'}\">
                     <td class='rem-info-tab'>".$group_id."</td>
-                    <td class='rem-info-tab'><strong><a href='materia-medica.php?group_id=".$group_id."&lang=$lng' title='$translations[Gerneral_group_details]'>".$group['title']."</a> </strong></td>
+                    <td class='rem-info-tab'><strong><a href='materia-medica.php?group_id=".$group_id."&lang=$lang' title='$translations[Gerneral_group_details]'>".$group['title']."</a> </strong></td>
                     <td class='rem-info-tab'><strong></strong></td>
                 </tr><tr><td colspan='3' style='border-bottom:1px solid black;'></td></tr>";
         }

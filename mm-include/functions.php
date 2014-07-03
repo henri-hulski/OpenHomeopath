@@ -29,7 +29,7 @@
 
 function view_lang_menu($page)
 {
-    global $lng;
+    global $lang;
     $get_string="?";
     foreach($_GET as $key=>$val){
         if($key != "lang"){
@@ -37,7 +37,7 @@ function view_lang_menu($page)
             $get_string .="&";
         }
     }
-    if($lng == "en"){
+    if($lang == "en"){
         $lang_menu = "<a href='$page.php" . $get_string . "lang=de'>deutsch</a>";
     }else{
         $lang_menu = "<a href='$page.php" . $get_string . "lang=en'>english</a>";
@@ -47,7 +47,7 @@ function view_lang_menu($page)
 
 function get_page_nav($rem_short,$s_count,$limit,$start)
 {
-global $grade, $rubric_id, $lng;
+global $grade, $rubric_id, $lang;
 $pages = round(($s_count+$limit), -2)/$limit;
     $nav = "<span>";
     for ($i=1;$i<=$pages;$i++)
@@ -57,7 +57,7 @@ $pages = round(($s_count+$limit), -2)/$limit;
             $nav .= " ".$i." ";
         }else{
             //echo "<a href='materia-medica.php?rem=".$rem_short."&start=".(($i-1)*$limit)."#Symptome'> ".$i." </a>";
-            $nav .= "<a href='materia-medica.php?rem=".$rem_short."&start=".(($i-1)*$limit)."&grade=".$grade."&rubric=".$rubric_id."&lang=".$lng."#Symptome'> ".$i." </a>";
+            $nav .= "<a href='materia-medica.php?rem=".$rem_short."&start=".(($i-1)*$limit)."&grade=".$grade."&rubric=".$rubric_id."&lang=".$lang."#Symptome'> ".$i." </a>";
         }
     }
     $nav .= "</span><br>";
@@ -77,14 +77,14 @@ function check_letter($letter)
 
 function get_letters_menu($letter, $target="letter")
 {
-    global $letters, $lng;
+    global $letters, $lang;
     $i = 0;
     $letters_menu = "";
     foreach ($letters as $val) {
         if ($letter == $val) {
             $letters_menu .= "<span style='font-size:1.2em;'>$val</span>";
         } else {
-            $letters_menu .= "<a href='materia-medica.php?".$target."=$val&lang=$lng'>$val</a>";
+            $letters_menu .= "<a href='materia-medica.php?".$target."=$val&lang=$lang'>$val</a>";
         }
         if (count($letters) > ($i+1)) {
             $letters_menu .= " | ";
@@ -241,12 +241,12 @@ function get_rem_repertory_symptoms($remedies_ar, $where_query, $start, $limit)
 {
     global $db;
     global $sym_rem;
-    global $lng;
+    global $lang;
     if(is_array($remedies_ar)){
         foreach($remedies_ar as $rem_id=>$remedy){
             $select = "SELECT $sym_rem.rel_id, main_rubrics.rubric_de, main_rubrics.rubric_en,symptoms.symptom, $sym_rem.grade, symptoms.sym_id, symptoms.lang_id,$sym_rem.src_id, main_rubrics.rubric_id FROM $sym_rem, symptoms, main_rubrics WHERE $sym_rem.rem_id = $rem_id AND $sym_rem.sym_id = symptoms.sym_id AND symptoms.rubric_id = main_rubrics.rubric_id ";
             $query = $select.$where_query;
-            $query = $query . "ORDER BY main_rubrics.rubric_$lng, symptoms.symptom";
+            $query = $query . "ORDER BY main_rubrics.rubric_$lang, symptoms.symptom";
             $query = $query . " LIMIT $start , $limit ";
             $result = $db->send_query($query);
             while ($rubric_info = $db->db_fetch_assoc($result)){
@@ -278,12 +278,12 @@ function get_rem_repertory_rubrics($remedies_ar, $where_query)
 {
     global $db;
     global $sym_rem;
-    global $lng;
+    global $lang;
     if(is_array($remedies_ar)){
         foreach($remedies_ar as $rem_id=>$remedy){
             // find main rubrics
             $select = "SELECT $sym_rem.rel_id, main_rubrics.rubric_de, main_rubrics.rubric_en,symptoms.symptom, $sym_rem.grade, symptoms.sym_id, symptoms.lang_id,$sym_rem.src_id, main_rubrics.rubric_id FROM $sym_rem, symptoms, main_rubrics WHERE $sym_rem.rem_id = $rem_id AND $sym_rem.sym_id = symptoms.sym_id AND symptoms.rubric_id = main_rubrics.rubric_id ";
-            $query_main_rubrics = $select.$where_query . " GROUP BY main_rubrics.rubric_$lng ORDER BY main_rubrics.rubric_$lng";
+            $query_main_rubrics = $select.$where_query . " GROUP BY main_rubrics.rubric_$lang ORDER BY main_rubrics.rubric_$lang";
             $db->send_query($query_main_rubrics);
             while ($main_rubrics = $db->db_fetch_row()) {
                 $remedies_ar[$rem_id]['repertory']['rubrics'][$main_rubrics[8]]['rubric_de']=$main_rubrics[1];
@@ -329,8 +329,8 @@ function get_rem_repertory_sources($remedies_ar)
 }
 function get_select_rubric($remedy)
 {
-    global $translations, $lng;
-    $rubric_name = "rubric_".$lng;
+    global $translations, $lang;
+    $rubric_name = "rubric_".$lang;
     $rubric_select = '<select name="rubric" style="font-size:12px;font-weigt:normal;margin:2px;" onchange="javascript:document.repform.submit()" class="drop-down2"><option value="">'.$translations['Repertory_all_rubrics'].'</option>';
     if(isset($remedy['repertory']['rubrics'])){
         foreach ($remedy['repertory']['rubrics'] as $rubric_id => $rubric) {
@@ -401,8 +401,8 @@ function view_rem_repertory_head($remedy)
 }
 
 function view_rem_repertory_symptoms($remedy){
-    global $lng, $translations;
-    $rubric_name = "rubric_".$lng;
+    global $lang, $translations;
+    $rubric_name = "rubric_".$lang;
     $html = "<div class='mm-info-box-rubric'>";
     $i=0;
     foreach($remedy['repertory']['symptoms'] as $sym_id=>$symptom){
@@ -435,7 +435,7 @@ function view_rem_repertory_symptoms($remedy){
             $row .= "<span class='mm-info-box-main-rubric'>".$symptom[$rubric_name]."</span><br>";
         }
         $main_rubric = $symptom[$rubric_name];
-        $row .= "<a href='./symptom-details.php?sym=".$sym_id."&lang=$lng' title='Symptom Info'>  <span class='grade".$symptom['grade']."' >".$symptom[$rubric_name]."&nbsp;>&nbsp;".$symptom['symptom']."</span></a>  &ndash;  ".$symptom['grade']."" . _("-gr.") . " &nbsp;";
+        $row .= "<a href='./symptom-details.php?sym=".$sym_id."&lang=$lang' title='Symptom Info'>  <span class='grade".$symptom['grade']."' >".$symptom[$rubric_name]."&nbsp;>&nbsp;".$symptom['symptom']."</span></a>  &ndash;  ".$symptom['grade']."" . _("-gr.") . " &nbsp;";
         $row .= "<span style='font-size:0.8em;'>".$sources."</span>";
         if(count($remedy['repertory']['symptoms']) > ($i+1)){
             $row .= " <br> ";
@@ -448,13 +448,13 @@ function view_rem_repertory_symptoms($remedy){
 }
 function view_rem_rel_tab($remedy)
 {
-    global $translations, $lng;
+    global $translations, $lang;
     $rel_tab =("<br><table><tbody>");
     if (!empty($remedy['rem_related'])) {
         $rel_rem_ar = explode(";",$remedy['rem_related']);
         $rel_rem_str = "";
         foreach($rel_rem_ar as $val){
-            $rel_rem_str .= " <a href='materia-medica.php?rem=".trim($val)."&lang=$lng'>".trim($val)."</a>";
+            $rel_rem_str .= " <a href='materia-medica.php?rem=".trim($val)."&lang=$lang'>".trim($val)."</a>";
         }
         $rel_tab .= ("<tr><td class='rem-info-tab'><strong>$translations[related]:</strong> </td><td class='rem-info-tab'>$rel_rem_str</td></tr>");
     }
@@ -462,7 +462,7 @@ function view_rem_rel_tab($remedy)
         $incomp_rem_arr = explode(";",$remedy['rem_incomp']);
         $incomp_rem_str = "";
         foreach($incomp_rem_arr as $val){
-            $incomp_rem_str .= " <a href='materia-medica.php?rem=".trim($val)."&lang=$lng'>".trim($val)."</a>";
+            $incomp_rem_str .= " <a href='materia-medica.php?rem=".trim($val)."&lang=$lang'>".trim($val)."</a>";
         }
         $rel_tab .= ("<tr><td class='rem-info-tab'><strong>$translations[incompatible]:</strong> </td><td class='rem-info-tab'>$incomp_rem_str</td></tr>");
     }
@@ -470,7 +470,7 @@ function view_rem_rel_tab($remedy)
         $anti_rem_arr = explode(";",$remedy['rem_antidot']);
         $anti_rem_str = "";
         foreach($anti_rem_arr as $val){
-            $anti_rem_str .= " <a href='materia-medica.php?rem=".trim($val)."&lang=$lng'>".trim($val)."</a>";
+            $anti_rem_str .= " <a href='materia-medica.php?rem=".trim($val)."&lang=$lang'>".trim($val)."</a>";
         }
         $rel_tab .= ("<tr><td class='rem-info-tab'><strong>$translations[antidote]:</strong> </td><td class='rem-info-tab'>$anti_rem_str</td></tr>");
     }
@@ -700,7 +700,7 @@ function get_rem_left($remedy, $remedy_itis, $check_url=1)
 }
 function view_rem_info_tab($remedy,$rem_id, $remedy_itis)
 {
-    global $translations, $lng;
+    global $translations, $lang;
     $vernaculars_html = "";
     if(!empty($remedy_itis['vernaculars'])){
         $vernaculars_html .= "<span class='vernaculars'>";
@@ -750,7 +750,7 @@ function view_rem_info_tab($remedy,$rem_id, $remedy_itis)
             $groups_html .= "<span class='group'>";
             $i=1;
             foreach($remedy['groups'] as $groups){
-                $groups_html .= "<a href='materia-medica.php?group_id=".$groups['id']."&lang=$lng'>".$groups['title']."</a>";
+                $groups_html .= "<a href='materia-medica.php?group_id=".$groups['id']."&lang=$lang'>".$groups['title']."</a>";
                 if($i < count($remedy['groups'])){
                     $groups_html .= "<br>";
                 }
@@ -813,7 +813,7 @@ function view_rem_info($remedies_ar)
 }
 function view_rem_list($remedies_ar)
 {
-    global $translations, $lng;
+    global $translations, $lang;
     $html = "<div class='mm-info-box-head'>";
     $remedy_info_list = "<table width='95%' style='background-color: #fff;'>
             <tbody>
@@ -878,7 +878,7 @@ function view_rem_list($remedies_ar)
             $groups_html .= "<span class='group'>";
             $i=1;
             foreach($remedy['groups'] as $groups){
-                $groups_html .= "<a href='materia-medica.php?group_id=".$groups['id']."&lang=$lng'>".$groups['title']."</a>";
+                $groups_html .= "<a href='materia-medica.php?group_id=".$groups['id']."&lang=$lang'>".$groups['title']."</a>";
                 if($i < count($remedy['groups'])){
                     $groups_html .= "<br>";
                 }
@@ -888,7 +888,7 @@ function view_rem_list($remedies_ar)
         }
         $remedy_info_list .= "<tr class='tr_results_2' onclick=\"if (this.className == 'tr_highlighted_onclick'){ this.className='tr_results_2';}else{ this.className='tr_highlighted_onclick';}\" onmouseout=\"if (this.className!='tr_highlighted_onclick'){this.className='tr_results_2'}\" onmouseover=\"if (this.className!='tr_highlighted_onclick'){this.className='tr_highlighted_onmouseover'}\">
                     <td class='rem-info-tab'>".$rem_id."</td>
-                    <td class='rem-info-tab'><strong><a href='materia-medica.php?rem=".$remedy['rem_short']."&lang=$lng' title='Mittel Details'>".$remedy['rem_name']."</a> </strong>".$remedy['repertory']['s_count']."$taxon $synonyms_html</td>
+                    <td class='rem-info-tab'><strong><a href='materia-medica.php?rem=".$remedy['rem_short']."&lang=$lang' title='Mittel Details'>".$remedy['rem_name']."</a> </strong>".$remedy['repertory']['s_count']."$taxon $synonyms_html</td>
                     <td class='rem-info-tab'><strong>".$remedy['rem_short']."</strong>".$remedy['rem_alias']."</td>
                     <td class='rem-info-tab'><strong>".$itis_family.$groups_html."</td>
                     <td class='rem-info-tab'>".$vernaculars_html."</td>

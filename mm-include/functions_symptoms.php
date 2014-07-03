@@ -29,7 +29,7 @@
 
 function get_select_all_rubric()
 {
-	global $translations, $lng, $db;
+	global $translations, $lang, $db;
 	$rubric_select = '<select name="rubric" style="font-size:12px;font-weight:normal;margin:2px;" onchange="document.repform.submit()" class="drop-down2">';
 	$rubric_id = 0;
 	if (!empty($_REQUEST['rubric'])) {
@@ -37,7 +37,7 @@ function get_select_all_rubric()
 		if ($rubric_id == -1) {
 			$aktuelle_rubric = $translations['Repertory_all_rubrics'];
 		} else {
-			$query = "SELECT rubric_$lng FROM main_rubrics WHERE rubric_id = $rubric_id";
+			$query = "SELECT rubric_$lang FROM main_rubrics WHERE rubric_id = $rubric_id";
 			$db->send_query($query);
 			list ($aktuelle_rubric) = $db->db_fetch_row();
 			$db->free_result();
@@ -47,7 +47,7 @@ function get_select_all_rubric()
 		$rubric_select .= "          <option value='$rubric_id' selected='selected'>$aktuelle_rubric</option>\n";
 	}
 	$rubric_select .= "          <option value='-1' style='font-weight: bold'>$translations[Repertory_all_rubrics]</option>\n";
-	$query = "SELECT DISTINCT main_rubrics.rubric_id, main_rubrics.rubric_$lng FROM main_rubrics, symptoms WHERE main_rubrics.rubric_id = symptoms.rubric_id ORDER BY main_rubrics.rubric_$lng";
+	$query = "SELECT DISTINCT main_rubrics.rubric_id, main_rubrics.rubric_$lang FROM main_rubrics, symptoms WHERE main_rubrics.rubric_id = symptoms.rubric_id ORDER BY main_rubrics.rubric_$lang";
 	$db->send_query($query);
 	while($rubric = $db->db_fetch_row()) {
 		$rubric_select .="          <option value='$rubric[0]'>$rubric[1]</option>\n";
@@ -59,7 +59,7 @@ function get_select_all_rubric()
 
 function get_symptoms_by_letter_page_nav($letter,$s_count,$limit,$start)
 {
-global $rubric_id, $lng;
+global $rubric_id, $lang;
 $pages = round(($s_count+$limit), -2)/$limit;
     $nav = "<span>";
     for ($i=1;$i<=$pages;$i++)
@@ -67,7 +67,7 @@ $pages = round(($s_count+$limit), -2)/$limit;
         if ((($i-1)*$limit)==$start){
             $nav = $nav." ".$i." ";
         }else{
-            $nav = $nav."<a href=\"symptom-details.php?letter=".$letter."&start=".(($i-1)*$limit)."&rubric=".$rubric_id."&lang=".$lng."#Symptome\"> ".$i." </a>";
+            $nav = $nav."<a href=\"symptom-details.php?letter=".$letter."&start=".(($i-1)*$limit)."&rubric=".$rubric_id."&lang=".$lang."#Symptome\"> ".$i." </a>";
         }
     }
     $nav = $nav. "</span><br>";
@@ -78,10 +78,10 @@ $pages = round(($s_count+$limit), -2)/$limit;
 function get_symptoms($letter, $where_query, $start, $limit)
 {
     global $db;
-    global $lng;
-    $select = "SELECT main_rubrics.rubric_$lng, symptoms.symptom, symptoms.sym_id, symptoms.lang_id, main_rubrics.rubric_id FROM symptoms, main_rubrics WHERE symptoms.rubric_id = main_rubrics.rubric_id ";
+    global $lang;
+    $select = "SELECT main_rubrics.rubric_$lang, symptoms.symptom, symptoms.sym_id, symptoms.lang_id, main_rubrics.rubric_id FROM symptoms, main_rubrics WHERE symptoms.rubric_id = main_rubrics.rubric_id ";
     $query = $select.$where_query;
-    $query = $query . "ORDER BY main_rubrics.rubric_$lng, symptoms.symptom";
+    $query = $query . "ORDER BY main_rubrics.rubric_$lang, symptoms.symptom";
     $query = $query . " LIMIT $start , $limit ";
     $db->send_query($query);
     while ($rubric_info = $db->db_fetch_assoc()){
@@ -132,7 +132,7 @@ function view_repertory_head($letter, $symptom_arr)
 
 function view_repertory_symptoms_tree($symptoms_arr)
 {
-    global $lng;
+    global $lang;
     $html = "<div class='mm-info-box-rubric'>";
     $parts_count = 0;
     foreach($symptoms_arr['rubric'] as $rubric_id=>$symptoms){

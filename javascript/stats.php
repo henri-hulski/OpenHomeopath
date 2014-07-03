@@ -27,7 +27,6 @@
 
 $url = "http://openhomeo.org";
 if (url_exists($url)) {
-if (1 != 1) {
 ?>
 <!-- Stats -->
     <script>
