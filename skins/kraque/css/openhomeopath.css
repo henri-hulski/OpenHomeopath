@@ -322,12 +322,9 @@ p.user a:hover {
 
 #container {
     width: 100%;
-/*	background-color: #FFF;*/
     color: #333;
     line-height: 130%;
-    border-bottom: 1px solid #000;
 	padding: 0;
-/*	background-color: #DDDDCD; */
   }
 
 
@@ -347,8 +344,6 @@ p.user a:hover {
 
 #middle_cell01 {
     width: 153px;
-/*	background-color: #F7F1DF;
-	background-image: url(../../../skins/original/img/middle_c.gif); */
   }
 
 

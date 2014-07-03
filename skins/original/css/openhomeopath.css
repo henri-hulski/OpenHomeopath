@@ -242,7 +242,6 @@ p.user a:hover {
 #container {
     width: 100%;
     line-height: 130%;
-    border-bottom: 1px solid #000;
     background-image: url(../img/middle_c.gif);
 	background-repeat: repeat-y;
   }
