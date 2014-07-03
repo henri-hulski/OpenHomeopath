@@ -80,7 +80,7 @@ class HomeophorumConnector extends PhorumConnectorBase {
   <body onload="<?php print $elements["body_onload"] ?>">
     <div id="onwork"><span class='onwork'><?php echo _("I'm on work ...."); ?></span></div>
 <?php
-		include("./skins/$skin/frame.php");
+		include("skins/$skin/frame.php");
 ?>
                 <h1>
                   <?php echo _("Homeophorum"); ?>
@@ -89,7 +89,7 @@ class HomeophorumConnector extends PhorumConnectorBase {
         <?php print $elements["body_data"] ?>
         <hr>
 <?php
-include("./skins/$skin/footer.php");
+include("skins/$skin/footer.php");
 chdir($PHORUM_DIR);
 ?>
 <?php

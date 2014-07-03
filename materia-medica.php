@@ -33,7 +33,6 @@ $lang = $session->lang;
 include("mm-include/functions.php");
 include("mm-include/functions_symptoms.php");
 include_once("mm-include/lang/$lang.php");
-include("mm-include/functions.php");
 include("mm-include/functions_groups.php");
 $letters = array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
 $materia_table = "materia";
