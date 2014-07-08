@@ -3141,8 +3141,8 @@ msgid "Searching for"
 msgstr "eventuell Suchbegriffe"
 
 #: forms/symptom_select_form.php:106
-msgid "Type words or part of words to filter the symptom"
-msgstr "Gebe Wörter oder Wortteile des Symptoms ein"
+msgid "Type words or part of words to filter a symptom"
+msgstr "Gebe Wörter oder Wortteile eines Symptoms ein"
 
 #: forms/symptom_select_form.php:119
 msgid "Show symptoms"
