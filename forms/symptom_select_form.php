@@ -31,7 +31,7 @@ if ($session->logged_in && !$magic_hat->restricted_mode) {  // user logged in
 	if (!$tabbed && !isset($_REQUEST['tab'])) {
 		$url = "userinfo.php?user=" . $session->username . "#rep_custom";
 	} else {
-		$url = "javascript:userTabOpen('rep_custom')";
+		$url = 'javascript:userTabOpen("rep_custom")';
 	}
 	$is_custom_table = $db->is_custom_table("symptoms");
 	if ($is_custom_table === false) {

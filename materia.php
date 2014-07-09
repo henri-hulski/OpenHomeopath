@@ -61,7 +61,7 @@ if ($session->logged_in) {  // user logged in
 	if (!$tabbed && !isset($_REQUEST['tab'])) {
 		$url = "userinfo.php?user=" . $session->username . "#materia_custom";
 	} else {
-		$url = 'javascript:userTabOpen(\’materia_custom\’)';
+		$url = 'javascript:userTabOpen("materia_custom")';
 	}
 	if ($db->is_custom_table("materia") === false) {
 		$display_personal_materia = "none";
