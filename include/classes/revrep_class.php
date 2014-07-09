@@ -157,8 +157,12 @@ class RevRep extends TreeView {
 				$sub_result = $db->send_query($query);
 				$num_rows = $db->db_num_rows($sub_result);
 				if ($num_rows > 0) {
+					$symptoms_table = $this->symptoms_tbl;
+					if ($sym_lang = $db->get_lang_only_symptom_table()) {
+						$symptoms_table = "sym__" . $sym_lang['id'];
+					}
 					while (list ($missing_pid) = $db->db_fetch_row($sub_result)) {
-						$query = "SELECT {$this->symptoms_tbl}.sym_id, {$this->symptoms_tbl}.symptom, {$this->symptoms_tbl}.pid, {$this->symptoms_tbl}.rubric_id FROM {$this->symptoms_tbl} WHERE {$this->symptoms_tbl}.sym_id = $missing_pid";
+						$query = "SELECT $symptoms_table.sym_id, $symptoms_table.symptom, $symptoms_table.pid, $symptoms_table.rubric_id FROM $symptoms_table WHERE $symptoms_table.sym_id = $missing_pid";
 						$sub_result2 = $db->send_query($query);
 						$symptom = $db->db_fetch_row($sub_result2);
 						$db->free_result($sub_result2);
