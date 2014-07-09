@@ -50,7 +50,7 @@ include("help/layout/$skin/header.php");
   Es folgt eine <strong>ausführliche Beschreibung</strong> der einzelnen <strong>Tabellen</strong>:
 </p>
 <br>
-<div class="content">
+<nav class="content">
   <h2>
     Inhalt
   </h2>
@@ -63,8 +63,8 @@ include("help/layout/$skin/header.php");
     <li><a href="#overview">Aufbau de Datenpflege-Startseite</a></li>
     <li><a href="#edit">Bearbeiten und Einfügen von Sätzen</a></li>
   </ul>
-</div>
-<a name="medica" id="medica"><br></a>
+</nav>
+<a id="medica"><br></a>
 <h3>
   Tabelle Materia Medica
 </h3>
@@ -80,8 +80,8 @@ include("help/layout/$skin/header.php");
   </ul>
   Die Felder <strong>Mittel</strong> und <strong>Quelle</strong> müssen angegeben werden. Die <strong>anderen Felder</strong> werden nur dann in der <strong>Materia Medica</strong> angezeigt, wenn sie <strong>ausgefüllt</strong> werden.
 </div>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="symptoms" id="symptoms"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="symptoms"><br></a>
 <h3>
   Tabelle Symptome
 </h3>
@@ -93,8 +93,8 @@ include("help/layout/$skin/header.php");
     <li><strong><em>Sprache</em></strong> &ndash; aus einer Auswahlliste kann die Sprache ausgewählt werden.</li>
   </ul>
 </div>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="sources" id="sources"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="sources"><br></a>
 <h3>
   Tabelle Quellen
 </h3>
@@ -122,8 +122,8 @@ include("help/layout/$skin/header.php");
     <li><strong><em>Arzneimittelprüfung</em></strong> &ndash; bei Arzneimittelprüfungen hier Details angeben.</li>
   </ul>
 </div>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="remedies" id="remedies"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="remedies"><br></a>
 <h3>
   Tabelle Mittel
 </h3>
@@ -134,8 +134,8 @@ include("help/layout/$skin/header.php");
     <li><strong><em>Mittelname</em></strong> &ndash; der offizielle Mittelname.</li>
   </ul>
 </div>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="mainrubrics" id="mainrubrics"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="mainrubrics"><br></a>
 <h3>
   Tabelle Hauptrubriken
 </h3>
@@ -150,8 +150,8 @@ include("help/layout/$skin/header.php");
 <p>
   <span class="boldtext red">Achtung!</span> &nbsp; <strong>Änderungen der Hauptrubriken</strong> sollten nur mit <strong>Rücksprache</strong> im Forum bzw. mit einem Administrator ausgeführt werden, da die Hauptrubriken die <strong>Grundstruktur der Datenbank</strong> darstellen.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="overview" id="overview"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="overview"><br></a>
 <h3>
   Aufbau de Datenpflege-Startseite
 </h3>
@@ -183,16 +183,16 @@ include("help/layout/$skin/header.php");
 <p>
   Über <strong><em>"Als CSV-Datei ausgeben"</em></strong> unterhalb der Tabelle kannst du dir die jeweils <strong>angezeigte Satzauswahl</strong> als Strichpunkt-getrennte <strong>CSV-Datei</strong> ausgeben lassen.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="edit" id="edit"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="edit"><br></a>
 <h3>
   Bearbeiten und Einfügen von Sätzen
 </h3>
 <p>
     Zum <strong>Bearbeitungsformular</strong> kommt man über das <img alt=""  src="../../<?php echo(EDIT_ICON);?>" width="16" height="16"><strong>-Symbol</strong> vor jedem Tabelleneintrag und zum <strong>Einfügeformular</strong> über <strong><em>"Einfügen"</em></strong> im <strong>Menü</strong> ober- und unterhalb der Tabelle.<br>
-  Der <strong>Unterschied</strong> zwischen den beiden Formularen besteht darin, dass im <strong>Bearbeitungsformular</strong> die Daten des entsprechenden Satzes <strong>voreingetragen</strong> sind und dass man über <strong><em>"<< Vorheriger"</em></strong> bzw. <strong><em>"Nächster >>"</em></strong> zum vorhergehenden bzw. nachfolgenden Satz <strong>springen</strong> kann.
+  Der <strong>Unterschied</strong> zwischen den beiden Formularen besteht darin, dass im <strong>Bearbeitungsformular</strong> die Daten des entsprechenden Satzes <strong>voreingetragen</strong> sind und dass man über <strong><em>"&lt;&lt; Vorheriger"</em></strong> bzw. <strong><em>"Nächster >>"</em></strong> zum vorhergehenden bzw. nachfolgenden Satz <strong>springen</strong> kann.
 </p>
-<p>
+<div>
   Die <strong>Pflichtfelder</strong> sind mit einem <strong>Sternchen(*)</strong> vor dem Feldnamen <strong>gekennzeichnet</strong>.<br>
   Es gibt drei Arten von Feldern:
   <ul>
@@ -203,8 +203,8 @@ include("help/layout/$skin/header.php");
   <strong>Hinweise zum Ausfüllen</strong> der einzelnen Felder findest du hinter den Feldern.<br>
   <strong>Näheres zu den einzelnen Tabellen</strong> findest du oben in den jeweiligen Tabellen-Kapiteln.<br>
   Wenn das Formular <strong>fertig ausgefüllt</strong> ist schickst du es über <strong><em>"Speichern"</em></strong> bzw. <strong><em>"Neuen Satz einfügen"</em></strong> ab. Der Satz wird dann <strong>in die Datenbank</strong> übernommen.
-</p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span><br>
+</div>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

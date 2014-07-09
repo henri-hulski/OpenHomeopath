@@ -38,7 +38,7 @@ include("help/layout/$skin/header.php");
   Mit der Skin-Auswahl kannst du das Aussehen von OpenHomeopath verändern. Im Moment gibt es 2 Skins: <strong><em>"original"</em></strong> von Henri Schumacher und <strong><em>"kraque"</em></strong> von Thomas Bochmann ohne Seitenleiste, so das sie besonders für kleinere Displays geeignet ist.
   OpenHomeopath ist zur Zeit in deutsch und englisch übersetzt.
 </p>
-<a name="overview" id="overview"><br></a>
+<a id="overview"><br></a>
 <h3>
   Übersicht
 </h3>
@@ -51,7 +51,7 @@ include("help/layout/$skin/header.php");
 <p>
   Auf der linken Seite findest du in allen Programmfenstern das <strong>Navigationsmenü</strong> (in der Original-Skin). Von dort hast du Zugang zu allen wichtigen Teilen des Programms.
 </p>
-<div class="content">
+<nav class="content">
   <h2>
     Inhalt
   </h2>
@@ -64,8 +64,8 @@ include("help/layout/$skin/header.php");
     <li><a href="#help">Hilfe</a></li>
     <li><a href="#info">Info</a></li>
   </ul>
-</div>
-<a name="repertorization" id="repertorization"><br></a>
+</nav>
+<a id="repertorization"><br></a>
 <h3>
   Repertorisierung
 </h3>
@@ -81,10 +81,10 @@ include("help/layout/$skin/header.php");
 <p>
   Jetzt öffnen sich unterhalb zwei Auswahlfenster. Im oberen siehst du die Symptome als Baumansicht, die deinen Kriterien entsprechen. Das untere ist erstmal leer. Dort werden die Symptome eingetragen, die du auswählst.<br>
   Ein Symptom wird durch anklicken ausgewählt. Rubriken mit Unterrubriken lassen sich ausklappen. Die ausgewählten Symptome erscheinen im unteren Auswahlfenster.<br>
-  Wenn du dir alle Mittel anzeigen lassen willst, die einem <strong>Symptom</strong> zugeordnet sind, klicke entweder im oberen oder im unteren Fenster auf <img src='../../skins/original/img/info.gif' width='12' height='12'> neben dem entsprechenden Symptom. Genaueres siehe <a href="#symptominfo">Symptom-Information</a>.<br>
-  Durch klicken auf <img src='../../skins/original/img/del.png' width='12' height='12'> im unteren Fenster wird das entsprechende <strong>Symptom</strong> abgewählt.
+  Wenn du dir alle Mittel anzeigen lassen willst, die einem <strong>Symptom</strong> zugeordnet sind, klicke entweder im oberen oder im unteren Fenster auf <img src='../../skins/original/img/info.gif' width='12' height='12' alt='Info'> neben dem entsprechenden Symptom. Genaueres siehe <a href="#symptominfo">Symptom-Information</a>.<br>
+  Durch klicken auf <img src='../../skins/original/img/del.png' width='12' height='12' alt='Delete'> im unteren Fenster wird das entsprechende <strong>Symptom</strong> abgewählt.
 </p>
-<p>
+<div>
   Du kannst jedes ausgewählte Symptom individuell gewichten.
   Dabei kannst du den Symptomen folgende Gewichtungen zuordnen:
   <ul>
@@ -95,19 +95,19 @@ include("help/layout/$skin/header.php");
     <li><strong>4:</strong> Das Symptom ist <strong>besonders wichtig bzw. auffällig</strong>. Sollte selten benutzt werden.</li>
   </ul>
   Es ist sinnvoll den vollen Umfang an Gewichtungen bei einer Repertorisierung mit einzubeziehen.<br>
-</p>
+</div>
 <p>
   Während der Symptomauswahl kannst du jederzeit die angezeigten Symptome ändern, indem du eine neue Hauptrubrik und/oder neue Suchbegriffe eingibst und nochmals auf <strong><em>"Symptome anzeigen"</em></strong> drückst. Die bereits ausgewählten Symptome bleiben dabei erhalten.<br>
   Wenn die Symptomauswahl abgeschlossen ist, drückst du auf <strong><em>"Repertorisieren"</em></strong>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="rep_result" id="rep_result"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="rep_result"><br></a>
 <h3>
   Repertorisierungsergebnis
 </h3>
 <p>
   Nach dem Repertorisieren erscheint ein neues Tab mit dem <strong>Repertorisierungsergebnis</strong>.<br>
-  Das Repertorisierungsergebnis kannst du als <strong>PDF</strong> anzeigen - <img src='../../img/pdf_print.png' width='32' height='32'>&nbsp; oder herunterladen - <img src='../../img/pdf_down.png' width='32' height='32'>&nbsp;. Die PDF-Datei enthält die 20 wichtigsten Mittel und ist zum <strong>Ausdruck</strong> im A4-Querformat vorbereitet.<br>
+  Das Repertorisierungsergebnis kannst du als <strong>PDF</strong> anzeigen - <img src='../../img/pdf_print.png' width='32' height='32' alt='PDF drucken'>&nbsp; oder herunterladen - <img src='../../img/pdf_down.png' alt='PDF herunterladen' width='32' height='32'>&nbsp;. Die PDF-Datei enthält die 20 wichtigsten Mittel und ist zum <strong>Ausdruck</strong> im A4-Querformat vorbereitet.<br>
   Wenn du dich angemeldet hast, besteht die Möglichkeit, das Repertorisierungsergebnis zu <strong>speichern</strong>.
 </p>
 <div>
@@ -118,10 +118,10 @@ include("help/layout/$skin/header.php");
     <li><strong>Verordnung</strong> - Hier kannst du das/die verordnete(n) Mittel eintragen.</li>
     <li><strong>Fallaufnahme</strong> - Hier kann die Anamnese hinterlegt werden.</li>
   </ul>
-  Nachdem du alle Angaben gemacht hast kann das Ergebnis über <img src='../../img/save.png' width='32' height='32'> gespeichert werden.
+  Nachdem du alle Angaben gemacht hast kann das Ergebnis über <img src='../../img/save.png' width='32' height='32' alt='Speichern'> gespeichert werden.
   Es erscheint eine Meldung, unter welcher <strong>Repertorisierungsnummer</strong> das Ergebnis gespeichert wurde. Gespeicherte Repertorisierungen lassen sich im <strong>Benutzerbereich</strong> wieder aufrufen.
 </div>
-<p>
+<div>
   <strong>Das Repertorisierungsergebnis wird übersichtlich in der <em>interaktiven Ergebnistabelle</em> dargestellt:</strong>
   <ul>
     <li>Rechts befinden sich die Symptomgewichtung und die <strong>Symptome nach Gewichtung sortiert</strong>. Wenn du auf ein Symptom klickst wird die entsprechende <a href="#symptominfo"><strong>Symptom-Info</strong></a> angezeigt.</li>
@@ -129,20 +129,20 @@ include("help/layout/$skin/header.php");
     <li>In der darunterliegenden Tabellenzeile werden die <strong>Gesamtwertigkeiten und Treffer</strong> für das entsprechende Mittel angezeigt.</li>
     <li>In der Tabelle findest du die <strong>Wertigkeit des Mittels für das entsprechende Symptom</strong>. Wenn du mit der Maus über die Wertigkeit fährst erscheinen <strong>Angaben zu den gefundenen Quellen</strong>. Bei Klick öffnet sich ein <strong>Popup-Fenster mit den Symptom-Mittel-Details</strong>.</li>
   </ul>
-</p>
+</div>
 <p>
   Wenn du ausgehend von den ausgewählten Symptomen weiter repertorisieren willst drückst du unten auf <strong><em>"Weiter repertorisieren"</em></strong>. Es erscheint das Repertorisierungstab mit den gewählten Symptomen.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="materia" id="materia"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="materia"><br></a>
 <h3>
   Materia Medica
 </h3>
-<div>
+<p>
   Hier kannst du dir zu einem <strong>Mittel</strong> die ihm <strong>zugeordneten Symptome</strong> zusammenstellen lassen. Außerdem werden weitere Informationen zu dem Mittel angezeigt, sofern sie in der Datenbank hinterlegt sind.
   Um sich die <strong>Materia Medica</strong> zu einem Mittel zusammenzustellen, gebe den <strong>Wortanfang des Mittelnamens oder der Mittelabkürzung</strong> in das Suchfeld ein und <strong>wähle aus den vorgeschlagenen Mitteln das entsprechende aus</strong>.
-</div>
-<p>
+</p>
+<div>
   Im oberen Bereich der Mittelbeschreibung werden <strong>spezifische Angaben</strong> zum Mittel angezeigt. Dies sind im einzelnen:
   <ul>
     <li><strong>Mittelname</strong> - der offizielle Mittelname</li>
@@ -154,8 +154,8 @@ include("help/layout/$skin/header.php");
     <li><strong>Leitsymptome</strong> in den Unterkategorien Allgemein, Gemüt und Körper</li>
     <li><strong>Links</strong> zu verschiedenen weiterführenden Informationen zu diesem Mittel.</li>
   </ul>
-</p>
-<p>
+</div>
+<div>
   Darunter befindet sich eine <strong>Baumansicht mit allen Symptomen, die diesem Mittel zugeordnet sind</strong>.<br>
   Die <strong>Wertigkeit der Symptome bezüglich des angezeigten Mittels</strong> werden durch die Schriftart und Schriftfarbe ausgedrückt:
   <ul>
@@ -165,8 +165,8 @@ for ($i = 5; $i > 0; $i--) {
 }
 ?>
   </ul>
-  Zur <a href="#symptominfo">Symptom-Info</a> gelangst du über <img src='../../skins/original/img/info.gif' width='12' height='12'> neben dem entsprechenden Symptom.
-</p>
+  Zur <a href="#symptominfo">Symptom-Info</a> gelangst du über <img src='../../skins/original/img/info.gif' width='12' height='12' alt='Info'> neben dem entsprechenden Symptom.
+</div>
 <p>
   Wenn du mit der Maus über ein Symptom fährst erscheint die <strong>Wertigkeit und Angaben zu den Quellen</strong>.<br>
   Wenn du darauf klickst werden dir alle <strong>Details zu dieser Rubrik</strong> angezeigt.
@@ -175,8 +175,8 @@ for ($i = 5; $i > 0; $i--) {
   Du kannst die Symptomauswahl <strong>nach Hauptrubrik sowie nach minimaler Wertigkeit filtern</strong>.<br>
   Nachdem du die gewünschte Hauptrubrik und Wertigkeit ausgewählt hast drücke auf <strong><em>"Zusammenstellen"</em></strong>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="symptominfo" id="symptominfo"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="symptominfo"><br></a>
 <h3>
   Symptom-Information
 </h3>
@@ -187,7 +187,7 @@ for ($i = 5; $i > 0; $i--) {
   In der Legende des Rahmens findest du den <strong>Pfad zu dem Symptom</strong>.<br>
   Hier kannst du zu der Symptom-Info der <strong>Elternrubriken</strong> springen.
 </p>
-<p>
+<div>
   Im oberen Bereich der Symptom-Info werden <strong>spezifische Angaben</strong> zum Symptom angezeigt. Dies sind im einzelnen:
   <ul>
     <li><strong>Symptom</strong> - Beschreibung des Symptoms.</li>
@@ -197,15 +197,15 @@ for ($i = 5; $i > 0; $i--) {
     <li><strong>Übersetzungen</strong> - gegebenenfalls werden hier Übersetzungen aufgeführt.</li>
     <li><strong>Weitere Details</strong> - Link zu mehr Details zu diesem Symptom in OpenHomeo.org.</li>
   </ul>
-</p>
+</div>
 <p>
   Als nächstens erscheint gegebenenfalls eine Liste mit Querverweisen. Bei Klick springst du zu der entsprechenden Symptom-Info.
 </p>
 <p>
   Darunter findest du eine <strong>Baumansicht</strong> mit den Unterrubriken dieser Rubrik.<br>
-  Wenn du auf <img src='../../skins/original/img/info.gif' width='12' height='12'> klickst kommst du in die Symptom-Info der entsprechenden Unterrubrik.
+  Wenn du auf <img src='../../skins/original/img/info.gif' width='12' height='12' alt='Info'> klickst kommst du in die Symptom-Info der entsprechenden Unterrubrik.
 </p>
-<p>
+<div>
   Unten werden <strong>alle Mittel, die dem Symptom zugeordnet sind</strong> angezeigt.<br>
   Die <strong>Wertigkeit der Mittel bezüglich des angezeigten Symptoms</strong> werden durch die Schriftart und Schriftfarbe ausgedrückt:
   <ul>
@@ -215,44 +215,44 @@ for ($i = 5; $i > 0; $i--) {
 }
 ?>
   </ul>
-  Wenn du dir zu einem Mittel die <strong>Materia Medica</strong> zusammen stellen willst klicke auf <img src='../../skins/original/img/materia.png' width='12' height='12'> vor dem jeweiligen Mittel. Näheres im Kapitel <a href="#materia">Materia Medica</a>.
-</p>
+  Wenn du dir zu einem Mittel die <strong>Materia Medica</strong> zusammen stellen willst klicke auf <img src='../../skins/original/img/materia.png' width='12' height='12' alt='Materia Medica'> vor dem jeweiligen Mittel. Näheres im Kapitel <a href="#materia">Materia Medica</a>.
+</div>
 <p>
   Wenn du mit der Maus über ein Mittel fährst erscheint die <strong>Wertigkeit und Angaben zu den Quellen</strong>.<br>
   Wenn du darauf klickst werden dir alle <strong>Details zu dieser Rubrik</strong> angezeigt.
 </p>
-</p>
+<p>
   Die Mittel lassen sich <strong>nach Wertigkeit, Mittelname oder Mittel-Abkürzung sortieren</strong>, indem du die entsprechende Sortierung in der Dropdown-Liste auswählst.<br>
   Bei der Sortierung nach Mittel-Abkürzung werden die Mittel <strong>wesentlich kompakter präsentiert</strong>, was vor allem bei großen Rubriken übersichtlicher wirkt.
-<p>
+</p>
 <p>
   Ausserdem kannst die Mittel <strong>nach minimaler Wertigkeit filtern</strong> indem du die entsprechende Wertigkeit in der Dropdown-Liste auswählst.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="data" id="data"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="data"><br></a>
 <h3>
   Datenpflege
 </h3>
 <p>
   Hier kann die <strong>Datenbank</strong> erweitert und verändert werden. Näheres im Kapitel <a href="datadmin.php"><strong>Datenpflege</strong></a>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="help" id="help"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="help"><br></a>
 <h3>
   Hilfe
 </h3>
 <p>
   Hier kommst du zu dieser <strong>Hilfe</strong>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="info" id="info"><br></a>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="info"><br></a>
 <h3>
   Info
 </h3>
 <p>
   Hier findest du Informationen über die Programmversion, Lizenz und Copyright, Dank an die, die durch Inspiration und nützliche Skripte bzw. Programmkode zum Programm beigetragen haben, Client- und Server-Anforderungen und Installation und Konfiguration für MySQL.
 </p>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span><br>
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

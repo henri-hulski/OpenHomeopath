@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenHomeopath 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-06 02:06+0100\n"
+"POT-Creation-Date: 2014-06-11 20:36+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Henri Schumacher <henri.hulski@gazeta.pl>\n"
 "Language-Team: Henri Schumacher <henri.hulski@gazeta.pl>\n"
@@ -209,7 +209,7 @@ msgid_plural "errors found"
 msgstr[0] "Fehler gefunden"
 msgstr[1] "Fehler gefunden"
 
-#: register.php:99 login.php:75 login.php:145 userinfo.php:100
+#: register.php:99 login.php:75 login.php:145 userinfo.php:106
 #: useradmin.php:270 useradmin.php:311 useradmin.php:394
 #: include/classes/login/mailer.php:58 include/classes/login/mailer.php:108
 msgid "Username:"
@@ -219,11 +219,11 @@ msgstr "Benutzername:"
 msgid "Password:"
 msgstr "Passwort:"
 
-#: register.php:112 useredit.php:253
+#: register.php:112 useredit.php:265
 msgid "Re-enter Password:"
 msgstr "Passwort wiederholen:"
 
-#: register.php:120 useredit.php:181 userinfo.php:104
+#: register.php:120 useredit.php:181 userinfo.php:110
 msgid "E-mail:"
 msgstr "E-Mail:"
 
@@ -280,6 +280,10 @@ msgstr ""
 #: materia.php:84
 msgid "Type the beginning of the word and select the remedy"
 msgstr "Wortanfang eingeben und Mittel auswählen"
+
+#: materia.php:86
+msgid "Type the first letters of the remedy"
+msgstr "Gebe die ersten Buchstaben des Mittels ein"
 
 #: donations.php:40 support.php:44 userinfo.php:92
 #: include/functions/layout.php:91 skins/kraque/frame.php:125
@@ -777,7 +781,7 @@ msgstr[1] "%d Symptom-Mittelbeziehungen"
 msgid "For %s there are %s and %s."
 msgstr "Für %s wurden %s und %s gefunden."
 
-#: rep_result.php:103 userinfo.php:445 forms/saved_reps.php:217
+#: rep_result.php:103 userinfo.php:456 forms/saved_reps.php:217
 msgid "Add more symptoms"
 msgstr "Weiter repertorisieren"
 
@@ -2804,7 +2808,7 @@ msgstr "Repertorisierung Nr."
 msgid "Enter a patient code (up to 5 characters)."
 msgstr "Gib einen bis zu 5-stelligen Patientenkode ein."
 
-#: forms/save_rep.php:87
+#: forms/save_rep.php:88
 msgid "In order to save the repertorization result you need to be logged in."
 msgstr ""
 "Um das Repertorisierungsergebnis zu speichern musst du angemeldet sein."

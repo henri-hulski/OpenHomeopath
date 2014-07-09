@@ -1,7 +1,7 @@
 <?php
 
 /**
- * frame.php
+ * footer.php
  *
  * The html footer to include in help and doc files.
  *
@@ -28,29 +28,18 @@
  */
 
 ?>
-              </div>
+<?php
+if (basename($_SERVER["PHP_SELF"], ".php") !== "index" && strpos(dirname($_SERVER["PHP_SELF"]), "help/") !== false) {
+	?>
               <div id="pagetools">
-                <table summary="layout" class="boldtext" width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td width="9%">
-                    </td>
-                    <td class="center" width="24%" valign="middle">
-                      <p>
-                        <a href="javascript:history.back()" title="zur&uuml;ck"><img src="../../<?php echo(ARROW_BACK_ICON);?>" width="51" height="32" border="0" alt="zur&uuml;ck"></a>
-                      </p>
-                    </td>
-                    <td width="62%">
-                    </td>
-                    <td width="5%">
-                      <a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a>
-                    </td>
-                  </tr>
-                </table>
+			<a href="index.php" title="<?php echo _("Contents"); ?>"><img src="../../<?php echo(ARROW_UP_ICON);?>" width='26' height='42' alt="<?php echo _("Contents"); ?>"></a>
               </div>
-            </td>
-          </tr>
-        </table>
-        <div id="footer">
+<?php
+}
+?>
+          <br>
+        </section>
+        <footer>
           <span class="leftFlow">
 <?php
 echo "\n          <b>" . _("Members Total:") . "</b> ".$db->getNumMembers()."<br>\n";
@@ -64,9 +53,8 @@ if (!empty($db->connection)) {
           <br>
            <?php echo _("OpenHomeopath is distributed under the terms of the <a href='../../doc/en/agpl3.php'>AGPL-License</a>"); ?>&nbsp;&nbsp; 
           <br>
-          <a title="<?php echo _("Contact to the author"); ?>" href="mailto:pacha-mama@web.de?subject=OpenHomeopath"><?php echo _("Contact to the author"); ?></a>
-        </div>
-      </div>
+          <a title="<?php echo _("Contact to the author"); ?>" href="mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath"><?php echo _("Contact to the author"); ?></a>
+        </footer>
     </div>
 <?php
 include ("javascript/stats.php");

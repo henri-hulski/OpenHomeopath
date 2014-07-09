@@ -1,8 +1,8 @@
 <?php
 include_once("include/classes/login/session.php");
 $skin = $session->skin;
-include("./skins/$skin/header_datadmin_top.php");
-include("./skins/$skin/frame.php");
+include("skins/$skin/header_datadmin_top.php");
+include("skins/$skin/frame.php");
 ?>
               <table class="main_table" cellpadding="10">
                 <tr>

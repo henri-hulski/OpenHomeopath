@@ -46,13 +46,15 @@ class  AdminProcess {
 	/**
 	 * Class constructor
 	 *
-	 * @return AdminProcess
+	 * @return void
 	 * @access public
 	 */
 	function __construct() {
 		global $session;
 		/* Make sure administrator is accessing page */
 		if(!$session->isAdmin()) {
+			$host  = $_SERVER['HTTP_HOST'];
+			$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 			$extra = "login.php";
 			header("Content-Type: text/html;charset=utf-8");
 			header("Location: ../../../$extra");
@@ -211,6 +213,7 @@ class  AdminProcess {
 	 */
 	private function procDeleteInactive() {
 		global $session, $db;
+		$inact_time = $session->time - $_POST['inactdays']*24*60*60;
 		$query = "SELECT username FROM " . TBL_USERS . " WHERE TIMESTAMPDIFF(DAY, `timestamp`, NOW()) > " . $_POST['inactdays'] . " AND userlevel != " . ADMIN_LEVEL;
 		$db->send_query($query);
 		while($username = $db->db_fetch_row()) {
@@ -240,12 +243,14 @@ class  AdminProcess {
 				$count = $db->db_num_rows();
 				$db->free_result();
 				if ($count > 0) {
-					$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser')";
+					$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser', $session->time)";
 					$db->send_query($query);
 				}
 			}
 		}
-		header("Content-Type: text/html;charset=utf-8");
+		$query = "DELETE FROM " . TBL_USERS . " WHERE timestamp < $inact_time AND userlevel != " . ADMIN_LEVEL;
+		$db->send_query($query);
+		header("Content-Type: text/html;charset=utf-8"); 
 		header("Location: " . $session->referrer);
 		die();
 	}
@@ -295,7 +300,7 @@ class  AdminProcess {
 			$db->free_result();
 			$query = "DELETE FROM repertorizations WHERE username = '$subuser'";
 			$db->send_query($query);
-			$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser')";
+			$query = "INSERT INTO " . TBL_BANNED_USERS . " VALUES ('$subuser', $session->time)";
 			$db->send_query($query);
 			header("Content-Type: text/html;charset=utf-8"); 
 			header("Location: " . $session->referrer);
@@ -353,7 +358,7 @@ class  AdminProcess {
 		$subuser = $_POST["deluserdata"];
 		$field = "deluserdata";  //Use field name for username
 		if(!$subuser || strlen($subuser = trim($subuser)) == 0) {
-			$form->setError($field, "* " . _("Please enter your username") . "<br>");
+			$form->setError($field, "* " . _("Please enter a username") . "<br>");
 		}
 		/*
 		 * Errors exist, have user correct them
@@ -439,7 +444,7 @@ class  AdminProcess {
 		$subuser = $_POST[$user_post];
 		$field = $username;  // Use field name for username
 		if(!$subuser || strlen($subuser = trim($subuser)) == 0) {
-			$form->setError($field, "* " . _("Please enter your username") . "<br>");
+			$form->setError($field, "* " . _("Please enter a username") . "<br>");
 		} else {
 			/*
 			 * Make sure username is in database

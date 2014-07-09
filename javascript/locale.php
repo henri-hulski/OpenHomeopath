@@ -1,4 +1,4 @@
-    <script type='text/javascript'>
+    <script>
       var lang = new Array (
         "<?php echo _("Rubric degree"); ?>",
         "<?php echo _("Back"); ?>",

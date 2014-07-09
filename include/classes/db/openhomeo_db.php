@@ -447,13 +447,15 @@ class OpenHomeoDB extends DB {
 				$custom_table = $table . "__" . $custom_src;
 			}
 		} else {
-				$src_no_ar = $this->extract_src_no($custom_table);
-				$src_id_ar = $this->get_source_id($src_no_ar);
-				$source_query = implode("' || src_id = '", $src_id_ar);
-				$where = "(src_id = '" . $source_query . "')";
+			$src_no_ar = $this->extract_src_no($custom_table);
+			$src_id_ar = $this->get_source_id($src_no_ar);
+			$source_query = implode("' || src_id = '", $src_id_ar);
+			$where = "(src_id = '" . $source_query . "')";
 		}
-		$query = "CREATE OR REPLACE VIEW $custom_table AS SELECT * FROM $table WHERE $where";
-		$this->send_query($query);
+		if (!empty($where)) {
+			$query = "CREATE OR REPLACE VIEW $custom_table AS SELECT * FROM $table WHERE $where";
+			$this->send_query($query);
+		}
 	}
 
 	/**

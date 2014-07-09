@@ -57,8 +57,28 @@ ul li {
     padding: 0.4em;
   }
 
-/* hier sind stylesheets auf Basis von san-tribe */
 
+img {
+    border: 0;
+}
+
+table.nospacing {
+      border-spacing: 0;
+      border-collapse: collapse;
+}
+
+table.nospacing td, table.nospacing th {
+    padding: 0;
+}
+
+table.spacing {
+      border-spacing: 10px;
+      border-collapse: separate;
+}
+
+
+
+/* hier sind stylesheets auf Basis von san-tribe */
 
 a {
 	color : #3399CC;
@@ -99,9 +119,30 @@ textarea {
     text-align: center;
   }
 
+div.center div {
+    margin: 0 auto;
+    text-align: left;
+}
+
+div.center table
+{
+    margin: 0 auto;
+    text-align: left;
+}
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .nobr {
     white-space: nowrap;
   }
+
+.clear {
+    clear: both;
+}
+
 
 .error_message {
     font-size: 120%;
@@ -255,7 +296,7 @@ p.user {
   }
 
 
-p.user a {
+p.user a, p.user a:visited {
     text-decoration: none;
     color: #333;
   }
@@ -276,27 +317,19 @@ p.user a:hover {
   }
 
 /* Ende Navigation */
+.cleara { clear: both; background: none; }
 
 
 #container {
-    position:absolute;
-	/* top:60px; */
-    left:0;
-    z-index:2;
     width: 100%;
-/*	background-color: #FFF;*/
     color: #333;
     line-height: 130%;
-    border-bottom: 1px solid #000;
 	padding: 0;
-/*	background-color: #DDDDCD; */
   }
 
 
 #top {
     height:76px;
-    padding: 0;
-    margin: 0;
     text-align: left;
     background-color: #1CB1BE;
     border-bottom: 1px solid #000;
@@ -309,26 +342,8 @@ p.user a:hover {
   }
 
 
-#middle_tbl {
-    width: 100%;
-    margin: 0;
-/*	background-color: #DDDDCD; */
-  }
-
-
 #middle_cell01 {
-    width: 150px;
-    vertical-align: top;
-/*	background-color: #F7F1DF;
-	background-image: url(../../../skins/original/img/middle_c.gif); */
-  }
-
-
-#middle_cell02 {
-    width: auto;
-    vertical-align: top;
-/*	background-color: #E0EE8F; */
-/*	background-color: #DDDDCD;*/ /* thb */
+    width: 153px;
   }
 
 
@@ -336,6 +351,7 @@ p.user a:hover {
     padding: 10px;
     font-size: 12pt;
     line-height: 1.6;
+    width: auto;
   }
 
 
@@ -343,7 +359,6 @@ p.user a:hover {
     position:absolute;
     top:8px;
     left:8px;
-    z-index:1;
   }
 
 
@@ -358,18 +373,19 @@ p.user a:hover {
 
 
 #pagetools {
-    padding: 10px;
-    font-size: 8pt;
+    width: 21%;
+    text-align: right;
   }
 
 
-#footer {
+footer {
     padding: 10px;
     border-top: 1px solid #000;
     background-color: #F1F1F1;
     font-size: 8pt;
     line-height: 1.6;
     text-align: center;
+    clear: both;
   }
 
 
@@ -597,8 +613,7 @@ p.user a:hover {
     list-style-type: none;
   }
 
-
-.content a {
+.content a, .content a:visited {
     text-decoration: none;
     color: #555545;
     padding: 0.2em;
@@ -923,7 +938,7 @@ background:  #D9E7BA;
 #results ul, #results li {
 	padding:0;
 	margin:0;
-	border: none;
+	border:0;
 	list-style:none;
 }
 
@@ -935,7 +950,7 @@ background:  #D9E7BA;
 	display:block;
 	padding:4px;
 	text-decoration:none;
-	color:#333333;
+	color:#333;
 	font-weight:bold;
 }
 
@@ -949,7 +964,6 @@ background:  #D9E7BA;
 #results li a:hover {
 	background:#FFFFEE;
 	cursor: pointer;
-	cursor: hand;
 }
 
 #search_icon {
@@ -960,7 +974,7 @@ background:  #D9E7BA;
 }
 
 /* treeview */
-#tree1, #tree2, #tree3 {
+#tree1, #tree2, #tree3, #xref {
 	position:relative;
 	display:block;
 	overflow: auto;
@@ -983,8 +997,9 @@ background:  #D9E7BA;
 	left:36px; 
 }
 
-#tree1 img, #tree2 img, #tree3 img {
-	border: none;
+#xref {
+	max-height: 420px;
+	left:36px;
 }
 
 #tree1 a, #tree2 a, #tree3 a {
@@ -1048,6 +1063,19 @@ div.scrollingUserArea {
     overflow: auto;
     line-height: 1.6;
   }
+
+
+table.usertable {
+    text-align: left;
+    border-spacing: 5px;
+    border-collapse: separate;
+    border: 0;
+}
+
+
+table.usertable td, table.usertable th {
+     padding: 5px;
+}
 
 
 table.user_table {
@@ -1408,6 +1436,7 @@ table.legend2 td {
 table.rem_symptoms_head {
     font-size:12px;
     text-align: center;
+    border:0;
 }
 
 table.rem_symptoms_head td {
@@ -1441,10 +1470,6 @@ div#symSelect select {
     color: #666;
   }
 
-div#symSelect img {
-	border: none;
-}
-
 
 /* remedies list in symptom-info */
 
@@ -1456,12 +1481,3 @@ div#rems_list {
 	height: 420px;
 	padding: 10px;
 }
-
-div#rems_list img {
-	border: none;
-}
-
-
-/*#menu ul.level2 li.received_donations {
-	padding: 5px;
-}*/

@@ -30,7 +30,7 @@ include("help/layout/$skin/header.php");
 <h1>
   <?php echo _("Info"); ?>
 </h1>
-<div class="content">
+<nav class="content">
   <h2>
     <?php echo _("Contents"); ?>
   </h2>
@@ -42,9 +42,10 @@ include("help/layout/$skin/header.php");
     <li><a href="#client">Client requirements</a></li>
     <li><a href="#server">Server requirements</a></li>
     <li><a href="#install">Installation and configuration</a></li>
+    <li><a href="#download">Download</a></li>
   </ul>
-</div>
-<a name="version" id="version"><br></a>
+</nav>
+<a id="version"><br></a>
 <h2>
   Program Version
 </h2>
@@ -54,8 +55,8 @@ include("help/layout/$skin/header.php");
   After a <strong>fundamental revision of the entire code and database structure</strong> I'm glad to publish the first stable release of OpenHomeopath after more than 7 years work.<br>
   If you still find bugs or if you've a question please <a title="Contact to the author" href="mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath">contact me</a>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="changelog" id="changelog"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="changelog"><br></a>
 <h2>
   Changelog
 </h2>
@@ -78,8 +79,8 @@ include("help/layout/$skin/header.php");
     </ul></li>
     <li><strong>Version 1.0.1 released on 07.06.2014:</strong> Bugfix-release, added this changelog.</li>
   </ul>
-<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang" border="0"></a></span>
-<a name="license" id="license"><br></a> 
+<br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
+<a id="license"><br></a>
 <h2>
  License and Copyright
 </h2>
@@ -104,8 +105,8 @@ include("help/layout/$skin/header.php");
 <p>
   The manuals and documentation of OpenHomeopath are distributed under the <a href='../en/fdl_1.3.php'>GNU Free Documentation License Version 1.3 (FDLv1.3)</a>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="credits" id="credits"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="credits"><br></a>
 <h2>
   Credits to
 </h2>
@@ -129,8 +130,8 @@ include("help/layout/$skin/header.php");
   Distributed under the <a href='http://www.opensource.org/licenses/mit-license.php'>MIT license</a>, also called X11 license.
   </li>
 </ul>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="client" id="client"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="client"><br></a>
 <h2>
   Client requirements
 </h2>
@@ -141,8 +142,8 @@ include("help/layout/$skin/header.php");
 <li><strong>Browser:</strong> Chromium/Chrome, Opera and Firefox</li>
 <li><strong>Operating system:</strong> tested under Linux, but should work also on other systems.</li>
 </ul>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="server" id="server"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="server"><br></a>
 <h2>
   Server requirements
 </h2>
@@ -151,8 +152,8 @@ include("help/layout/$skin/header.php");
   <li><strong>PHP</strong> from PHP 5.3</li>
   <li><strong>UTF-8</strong> support.</li>
 </ul>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="install" id="install"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="install"><br></a>
 <h2>
   Installation and configuration
 </h2>
@@ -167,8 +168,8 @@ include("help/layout/$skin/header.php");
   This can take a while, because OpenHomeopath has to generate some more tables.</li>
   <li>Here we go. I recommend to change the admin password.</li>
 </ol>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="download" id="download"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="download"><br></a>
 <h2>
   Download
 </h2>

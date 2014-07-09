@@ -53,7 +53,7 @@ include("help/layout/$skin/header.php");
   When clicking on a user you get more informations about him.
 </div>
 <br>
-<div class="content">
+<nav class="content">
   <h2>
     Contents
   </h2>
@@ -62,8 +62,8 @@ include("help/layout/$skin/header.php");
     <li><a href="#settings">Settings</a></li>
     <li><a href="#logout">Log out</a></li>
   </ul>
-</div>
-<a name="account" id="account"><br></a>
+</nav>
+<a id="account"><br></a>
 <h3>
   My account
 </h3>
@@ -88,8 +88,8 @@ include("help/layout/$skin/header.php");
 <p>
   Under <strong><em>Personalize the Materia Medica</em></strong> you can compose your <strong>personal Materia Medica</strong> by selecting <strong>which sources</strong> will be included. This profile will be used by the <strong>Remedy Descriptions</strong> in the Materia Medica if you're logged in.
 </p>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="settings" id="settings"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="settings"><br></a>
 <h3>
   Settings
 </h3>
@@ -105,15 +105,15 @@ include("help/layout/$skin/header.php");
   <li><strong>Public profile:</strong> Here you can insert <strong>your real name and further personal information</strong>, that will be visible to other users.</li>
   <li><strong>Change password:</strong> Here you can change your password.</li>
 </ul>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="logout" id="logout"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="logout"><br></a>
 <h3>
   Log out
 </h3>
 <p>
   Here you can <strong>log out</strong>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span><br>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

@@ -43,8 +43,9 @@ if (!$session->logged_in) {
 $username = $session->username;
 if (!$tabbed && !isset($_REQUEST['tab'])) {
 	$head_title = _("Account") . " :: OpenHomeopath";
+	$current_page = 'userinfo';
 	$skin = $session->skin;
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 }
 $lang = $session->lang;
 
@@ -65,18 +66,18 @@ if (empty($req_user)) {
 if(strcmp($username,$req_user) == 0) {
 ?>
 <h1><?php echo _("My account"); ?></h1>
-<div class="content">
+<nav class="content">
   <h2>
     <?php echo _("Contents"); ?>
   </h2>
   <ul>
-    <li><a href="#allgemein"><?php echo _("General Info"); ?></a></li>
+    <li><a href="#common"><?php echo _("General Info"); ?></a></li>
     <li><a href="#reps"><?php echo _("Saved repertorizations"); ?></a></li>
     <li><a href="#rep_custom"><?php echo _("Personalize the Repertory"); ?></a></li>
     <li><a href="#materia_custom"><?php echo _("Personalize the Materia Medica"); ?></a></li>
   </ul>
-</div>
-<a name="allgemein" id="allgemein"><br></a>
+</nav>
+<a id="common"><br></a>
 <h2><?php echo _("General Info"); ?></h2>
 <?php
 }
@@ -89,7 +90,7 @@ else {
 /* Logged in user viewing own account */
 if(strcmp($username,$req_user) == 0) {
 	echo "<div class='center' style='width:50%'><p>";
-	echo "<a href='donations.php' onclick=\"popup_url('donations.php',960,720)\"><img src='img/donate_$lang.png' width='110' height='33' alt='" . _("Donations") . "' title='" . _("Every donation is very welcome and helps the development of OpenHomeopath.") . "'></a>";
+	echo "<a href='donations.php' onclick=\"popup_url('donations.php',960,720); return false; \"><img src='img/donate_$lang.png' width='110' height='33' alt='" . _("Donations") . "' title='" . _("Every donation is very welcome and helps the development of OpenHomeopath.") . "'></a>";
 	echo "</p></div>";
 }
 
@@ -165,8 +166,8 @@ if(strcmp($username,$req_user) == 0) {
 	$host  = $_SERVER['HTTP_HOST'];
 	$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 ?>
-<br><span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
-<a name="reps" id="reps"><br></a>
+<br><span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>"></a></span>
+<a id="reps"><br></a>
 <h2><?php echo _("Saved repertorizations"); ?></h2>
 <p><?php echo _("Here saved repertorizations can be opened,  deleted or taken as a basis for further repertorization."); ?><br>
 <?php printf(_('Repertorizations can be made public so that other users will find them in userinfo (URL: <span class="nobr">"http://%s%s/<strong>userinfo.php?user=%s</strong>"</span>).'), $host, $uri, $req_user); ?></p>
@@ -183,9 +184,9 @@ if(strcmp($username,$req_user) == 0) {
 ?>
   </div>
 </fieldset>
-<br><span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>"></a></span>
 
-<a name="rep_custom" id="rep_custom"><br></a>
+<a id="rep_custom"><br></a>
 <h2><?php echo _("Personalize the Repertory"); ?></h2>
 <p><?php echo _("Here you can compose your <strong>personal Repertory profile</strong> by selecting <strong>which sources</strong> will be included. This profile will be used by the <strong>Repertorization</strong>, if you're <strong>logged in</strong> with your username."); ?>
 <br>
@@ -196,13 +197,13 @@ if(strcmp($username,$req_user) == 0) {
 <p>
 <?php echo _("You can select your preferred symptom-language in your <a href='useredit.php'>user-account</a>."); ?>
 </p>
-<form action="" accept-charset="utf-8" name="personal_rep_form">
+<form accept-charset="utf-8" name="personal_rep_form">
   <fieldset>
     <legend class='legend'>
       <?php echo _("Compose your personal Repertory"); ?>
     </legend>
     <div class = 'select'>
-      <table width="94%" border="0" align="left" summary="layout">
+      <table style="width:94%; border:0; text-align:left;">
         <tr>
           <td class="caption" colspan="2">
             <p id='personal_rep' class='center'>
@@ -236,7 +237,7 @@ if(strcmp($username,$req_user) == 0) {
         </tr>
         <tr>
           <td>
-            <label for='src_sel'>
+            <label for='custom_src_rep'>
 <?php
 	echo("<input type='radio' class='button' name='src' id='custom_src_rep' value='custom'");
 	if ($src_rep == 'custom') {
@@ -307,20 +308,20 @@ if(strcmp($username,$req_user) == 0) {
     <br>
   </fieldset>
 </form>
-<br><span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+<br><span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>"></a></span>
 
-<a name="materia_custom" id="materia_custom"><br></a>
+<a id="materia_custom"><br></a>
 <h2><?php echo _("Personalize the Materia Medica"); ?></h2>
 <p><?php echo _("Here you can compose your <strong>personal Materia Medica</strong> by selecting <strong>which sources</strong> will be included. This profile will be used by the <strong>Remedy Descriptions</strong> in the Materia Medica if you're <strong>logged in</strong> with your username."); ?>
 </p>
 
-<form action="" accept-charset="utf-8" name="personal_materia_form">
+<form accept-charset="utf-8" name="personal_materia_form">
   <fieldset>
     <legend class='legend'>
       <?php echo _("Compose your personal Materia Medica"); ?>
     </legend>
-    <div class = 'select'>
-      <table width="94%" border="0" align="left" summary="layout">
+    <div class='select'>
+      <table style="width:94%; border:0; text-align:left">
         <tr>
           <td class="caption" colspan="2">
             <p id='personal_materia' class='center'>
@@ -344,7 +345,7 @@ if(strcmp($username,$req_user) == 0) {
         </tr>
         <tr>
           <td>
-            <label for='src_sel'>
+            <label for='custom_src_materia'>
 <?php
 	echo("<input type='radio' class='button' name='src' id='custom_src_materia' value='custom'");
 	if ($src_materia == 'custom') {
@@ -413,7 +414,7 @@ if(strcmp($username,$req_user) == 0) {
 	$db->free_result();
 	if ($count > 0) {
 ?>
-<a name="reps" id="reps"><br></a>
+<a id="reps"><br></a>
 <h2><?php echo _("Public repertorizations from"); ?> <?php echo($req_user); ?></h2>
 <p><?php printf(_("Here you can call saved repertorizations that was published by <strong><em>%s</em></strong>."), $req_user); ?></p>
 <fieldset>
@@ -424,7 +425,7 @@ if(strcmp($username,$req_user) == 0) {
   </legend>
   <br>
   <div id='saved_reps'>
-    <form id="saved_reps_form" action="" accept-charset="utf-8">
+    <form id="saved_reps_form" accept-charset="utf-8">
       <div class = 'select'>
 <?php
 $order_by = "rep_timestamp";
@@ -451,8 +452,8 @@ printf("      <p class='label'>" . ngettext("%d public repertorization", "%d pub
 <?php
 	}
 }
-popup();
 if (!$tabbed && !isset($_REQUEST['tab'])) {
-	include("./skins/$skin/footer.php");
+	popup();
+	include("skins/$skin/footer.php");
 }
 ?>
