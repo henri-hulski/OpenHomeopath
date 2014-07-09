@@ -91,7 +91,7 @@ class RevRep extends TreeView {
 			if($this->grade == $key){
 				$grade_radio .= " checked='checked'";
 			}
-			$grade_radio .= " onchange= \"getSymRems('remgrade')\"> <label for='grade$key'><span class='grade_$key'>$value</span></label>&nbsp;</span>";
+			$grade_radio .= "> <label for='grade$key'><span class='grade_$key'>$value</span></label>&nbsp;</span>";
 		}
 		return $grade_radio;
 	}
