@@ -782,7 +782,7 @@ class OpenHomeoDB extends DB {
 		$this->free_result();
 		if ($this->exist_symptom_translation() === true) {
 			foreach ($sym_lang_ar as $sym_lang) {
-				if ($create_tables) {
+				if ($create_tables || !$this->table_exists("sym__$sym_lang")) {
 					$query = "DROP TABLE IF EXISTS sym__$sym_lang";
 					$this->send_query($query);
 					$query = "CREATE TABLE IF NOT EXISTS sym__$sym_lang LIKE symptoms";
