@@ -1,0 +1,36 @@
+
+
+	/* Smartphones (portrait and landscape) ----------- */
+	@media only screen
+	and (min-device-width : 320px)
+	and (max-device-width : 480px) {
+		body {
+			padding: 0;
+			margin: 0;
+			width: 320px;
+        }
+
+        #symptom_table {
+//            display: none;
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+        }
+
+	}
+
+	/* iPads (portrait and landscape) ----------- */
+	@media only screen
+    and (min-device-width: 495px)
+    and (max-device-width: 720px) {
+		body {
+			width: 495px;
+		}
+        #symptom_table {
+        //            display: none;
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+	}
+
