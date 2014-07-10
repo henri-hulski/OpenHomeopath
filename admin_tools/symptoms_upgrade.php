@@ -62,7 +62,7 @@ function get_symptoms() {
 if(!$session->isAdmin()) {
 	$host  = $_SERVER['HTTP_HOST'];
 	$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-	$extra = "login.php?url=admin%symptoms_upgrade.php";
+	$extra = "../login.php?url=admin%symptoms_upgrade.php";
 	header("Content-Type: text/html;charset=utf-8");
 	header("Location: http://$host$uri/$extra");
 	die();

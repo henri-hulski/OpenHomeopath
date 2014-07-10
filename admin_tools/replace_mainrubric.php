@@ -10,7 +10,7 @@ include_once ("include/classes/login/session.php");
 if(!$session->isAdmin()) {
 	$host  = $_SERVER['HTTP_HOST'];
 	$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-	$extra = "login.php?url=admin%replace_mainrubric.php";
+	$extra = "../login.php?url=admin%replace_mainrubric.php";
 	header("Content-Type: text/html;charset=utf-8"); 
 	header("Location: http://$host$uri/$extra");
 	die();
