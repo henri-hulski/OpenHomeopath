@@ -70,6 +70,7 @@ if(!empty($meta_keywords)) {
     <meta name="robots" content="index,follow">
     <link rel="stylesheet" media="screen" href="skins/<?php echo(SKIN_NAME); ?>/css/openhomeopath.css">
     <link rel="stylesheet" media="print" href="skins/<?php echo(SKIN_NAME); ?>/css/print.css">
+    <link rel="stylesheet" media="screen handheld" href="css/mobile.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <?php
 if ($tabbed) {
