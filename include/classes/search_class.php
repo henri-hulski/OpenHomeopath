@@ -362,10 +362,9 @@ class Search {
 	 * @access private
 	 */
 	private function dublicate_ss($search_ar_name) {
-		$search_ar = &$this->$search_ar_name;
+		$search_ar = $this->$search_ar_name;
 		if (!empty($search_ar)) {
-			$private_search_ar = $search_ar;
-			foreach ($private_search_ar as $key => $search_string) {
+			foreach ($search_ar as $key => $search_string) {
 				if (strpos($search_string, 'ss') !== false) {
 					$duplicate = str_replace('ss', 'ß', $search_string);
 					$this->merge_dublicate_ss($search_ar_name, $duplicate, $key);
