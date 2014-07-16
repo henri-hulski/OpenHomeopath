@@ -85,8 +85,12 @@ if (!empty($_REQUEST['search'])) {
 			$sub_result = $db->send_query($query);
 			$num_rows = $db->db_num_rows($sub_result);
 			if ($num_rows > 0) {
+					$parents_symptoms_table = $symptoms_tbl;
+					if ($sym_lang = $db->get_lang_only_symptom_table()) {
+						$parents_symptoms_table = "sym__" . $sym_lang['id'];
+					}
 				while (list ($pid) = $db->db_fetch_row($sub_result)) {
-					$query = "SELECT sym_id, symptom, pid, rubric_id FROM $symptoms_tbl WHERE sym_id = $pid";
+					$query = "SELECT sym_id, symptom, pid, rubric_id FROM $parents_symptoms_table WHERE sym_id = $pid";
 					$sub_result2 = $db->send_query($query);
 					list($sym_id, $symptom, $pid, $main_rubric_id) = $db->db_fetch_row($sub_result2);
 					$db->free_result($sub_result2);
