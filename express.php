@@ -55,35 +55,36 @@ include("skins/$skin/header.php");
 <?php
 $ref_not_found_ar = array();
 $rem_error_ar = array();
-$text = "";
-$i = 0;  // Zähler für eingefügte Symptome
-$ii = 0; // Zähler für schon vorhandene Symptome
-$j = 0;  // Zähler für eingefügte Symptom-Mittel-Beziehungen
-$jj = 0; // Zähler für schon vorhandene Symptom-Mittel-Beziehungen
-$k = 0;  // Zähler für ähnliche Symptome
-$kk = 0;  // Zähler für ähnliche Symptome, die trotzdem eingefügt wurden
-$m = 0;  // Zähler für nicht vorhandene Mittel-Abkürzungen
-$mm = 0; // Zähler für Mittel-Abkürzungen, die über Alias ermittelt wurden
-$wu = 0; // Zähler für geänderte Wertigkeiten
-$su = 0; // Zähler für geänderten Status
-$ku = 0; // Zähler für geänderten Künzli-Punkte
-$n = 0;  // Zähler für abgearbeitete Datensätze
-$nn = 0;  // Zähler für Datensätze ohne Doppelpunkt
-$a = 0;  // Zähler für abgearbeitete Alias-Datensätze
-$aa = 0;  // Zähler für Alias-Datensätze ohne '='
-$b = 0;  // Zähler für eingefügte Aliase
-$bb = 0; // Zähler für schon vorhandene Aliase
-$am = 0; // Zähler für nicht vorhandene Mittel-Abkürzungen bei Aliasen
-$h = 0; // Zähler für nicht vorhandene Hauptrubriken
-$r = 0; // Zähler für nicht identifizierbare übergordnete Rubriken
-$nk = 0; // Zähler für eingefügte nicht klassische Symptome
-$q = 0;  // Zähler für eingefügte Quellen/Referenzen
-$qi = 0;  // Zähler für abgearbeitete Quellen/Referenzen-Datensätze
-$qq = 0; // Zähler für schon vorhandene Quellen/Referenzen
-$qe = 0; // Zähler für Fehler bei Quellen/Referenzen
-$qn = 0; // Zähler für nicht vorhandene Referenz-Quellen
-$nq = 0; // Zähler für nicht angegebene Quellen
-$nr = 0; // Zähler für nicht angegebene Hauptrubriken
+$count_ar = array();
+$log = "";
+$count_ar['sym']['in'] = 0;  // Counter for inserted symptoms
+$count_ar['sym']['ex'] = 0; // Counter for existing symptoms
+$count_ar['sym']['sim'] = 0;  // Counter for similar symptoms
+$count_ar['sym']['sim_in'] = 0;  // Counter for similar symptoms, which got inserted
+$count_ar['sym']['nonclassic_in'] = 0; // Counter for inserted nonclassic symptoms
+$count_ar['symrem']['in'] = 0;  // Counter for inserted symptom-remedy-relations
+$count_ar['symrem']['ex'] = 0; // Counter for existing symptom-remedy-relations
+$count_ar['rem']['noex'] = 0;  // Counter for not existing remedy abbreviations
+$count_ar['rem']['alias'] = 0; // Counter for remedy abbreviations which where found by an alias
+$count_ar['grade_ch'] = 0; // Counter for changed grade
+$count_ar['status_ch'] = 0; // Counter for changed status
+$count_ar['kuenzli_ch'] = 0; // Counter for changed Künzli-dots
+$count_ar['rec']['all'] = 0;  // Counter for processed records
+$count_ar['rec']['nocolon'] = 0;  // Counter for records without colon
+$count_ar['rec']['alias']['all'] = 0;  // Counter for processed alias records
+$count_ar['rec']['alias']['noequal'] = 0;  // Counter for alias records without '='
+$count_ar['rec']['src'] = 0;  // Counter for processed source/reference records
+$count_ar['alias']['in'] = 0;  // Counter for inserted aliases
+$count_ar['alias']['ex'] = 0; // Counter for existing aliases
+$count_ar['alias']['noex'] = 0; // Counter for not existing remedy abbreviations within aliases
+$count_ar['main_noex'] = 0; // Counter for not existing main rubrics
+$count_ar['parent_noex'] = 0; // Counter for unidentifiable parent rubrics
+$count_ar['src']['in'] = 0;  // Counter for inserted sources/references
+$count_ar['src']['ex'] = 0; // Counter for existing sources/references
+$count_ar['src']['err'] = 0; // Counter for errors within sources/references
+$count_ar['ref_noex'] = 0; // Counter for not existing reference-sources
+$count_ar['no_src'] = 0; // Counter for not specified source
+$count_ar['no_main'] = 0; // Counter for not specified main rubric
 
 
 if (!empty($_POST['sym_rem'])) {
@@ -105,7 +106,7 @@ if (!empty($_POST['sym_rem'])) {
 		$query = "SELECT sympt_id, symptom, rubric_id, page, extra, kuenzli, backup FROM express_symptoms";
 		$result_symptoms = $db->send_query($query);
 		while (list($sympt_id, $symptom, $rubric_id, $page, $extra, $sym_kuenzli, $backup) = $db->db_fetch_row($result_symptoms)) {
-			$n++;
+			$count_ar['rec']['all']++;
 			$is_duplicated_symptom = 0;
 			$query = "SELECT sym_id FROM symptoms WHERE rubric_id = '$rubric_id' AND lang_id = '$lang_id' AND symptom = '$symptom'";
 			$db->send_query($query);
@@ -149,23 +150,23 @@ if (!empty($_POST['sym_rem'])) {
 						}
 					}
 				}
-				$ii++;
+				$count_ar['sym']['ex']++;
 			} else {
 				// check for similar symptoms in the database
 				$query = build_select_duplicated_symptoms_query($symptom, $rubric_id, $lang_id, $symptom1_similar_ar, $symptom2_similar_ar);
 
 				if ($query != "" && empty($_POST['insert_duplicated'])) { // if there are some duplication
-					$k++;
+					$count_ar['sym']['sim']++;
 					// execute the select query
 					$result = $db->send_query_limit($query, $number_duplicated_records, 0);
 					$results_table_ar[] = build_possible_duplication_table($result);
 					$db->free_result($result);
 					$duplicated_symptoms_ar[] = $symptom;
 					$is_duplicated_symptom = 1;
-					$text .= "$backup: ";
+					$log .= "$backup: ";
 				} else {
 					if ($query != "" && !empty($_POST['insert_duplicated'])) {
-						$kk++;
+						$count_ar['sym']['sim_in']++;
 					}
 					$symptom = $db->escape_string($symptom);
 					$query = "INSERT INTO symptoms (symptom, rubric_id, lang_id, username) VALUES ('$symptom', '$rubric_id', '$lang_id', '$current_user')";
@@ -176,7 +177,7 @@ if (!empty($_POST['sym_rem'])) {
 						$db->send_query($query);
 					}
 					$inserted_symptoms_ar[] = $symptom;
-					$i++;
+					$count_ar['sym']['in']++;
 				}
 			}
 			insert_remedy($sympt_id, $sym_id, $src_id, $current_user, $is_duplicated_symptom);
@@ -192,8 +193,8 @@ if (!empty($_POST['sym_rem'])) {
 		$result_alias = $db->send_query($query);
 		while (list($rem_short, $aliase) = $db->db_fetch_row($result_alias)) {
 			$alias_ar = explode(", ", $aliase);
-			$n++;
-			$a++;
+			$count_ar['rec']['all']++;
+			$count_ar['rec']['alias']['all']++;
 			$query = "SELECT rem_id FROM remedies WHERE rem_short = '$rem_short.' OR rem_short = '$rem_short'";
 			$db->send_query($query);
 			list($rem_id) = $db->db_fetch_row();
@@ -213,15 +214,15 @@ if (!empty($_POST['sym_rem'])) {
 					if ($alias_count[0] == 0) {
 						$query = "INSERT INTO rem_alias (alias_short,rem_id,username) VALUES ('$alias_short', '$rem_id','$current_user')";
 						$db->send_query($query);
-						$b++;
+						$count_ar['alias']['in']++;
 					} else {
 						$alias_double_ar[] = $alias_short;
-						$bb++;
+						$count_ar['alias']['ex']++;
 					}
 				}
 			} else {
-				$text .= "alias: $rem_short = $alias\n";
-				$am++;
+				$log .= "alias: $rem_short = $alias\n";
+				$count_ar['alias']['noex']++;
 			}
 		}
 		$db->free_result($result_alias);
@@ -234,8 +235,8 @@ if (!empty($_POST['sym_rem'])) {
 		$query = "SELECT src_id, author, title, year, lang, grade_max, src_type, primary_src FROM express_source";
 		$result_source = $db->send_query($query);
 		while (list($src_id, $author, $title, $year, $lang, $grade_max, $src_type, $primary_src) = $db->db_fetch_row($result_source)) {
-			$n++;
-			$qi++;
+			$count_ar['rec']['all']++;
+			$count_ar['rec']['src']++;
 			$query = "SELECT COUNT(*) FROM sources WHERE src_id = '$src_id'";
 			$db->send_query($query);
 			$count = $db->db_fetch_row();
@@ -243,10 +244,10 @@ if (!empty($_POST['sym_rem'])) {
 			if ($count[0] == 0) {
 				$query = "INSERT INTO sources (src_id,src_title,lang_id,src_type,grade_max,src_author,src_year,primary_src,username) VALUES ('$src_id', '$title', '$lang', '$src_type', '$grade_max', '$author', '$year', '$primary_src', '$current_user')";
 				$db->send_query($query);
-				$q++;
+				$count_ar['no_main']++;
 			} else {
 				$sources_double_ar[] = $src_id;
-				$qq++;
+				$count_ar['src']['ex']++;
 			}
 		}
 		$db->free_result($result_source);
@@ -328,38 +329,38 @@ if (!empty($lang_id)) {
 if (!empty($_POST['sym_rem'])) {
 	if (!empty($sym_rem_ar) && empty($_POST['rubrics']) && empty($_POST['sources'])) {
 		echo "    <span class='error_message'><strong>!*** " . _("Error:") . "</strong> " . _("Please select rubric and source!") . "</span><br><br>\n";
-		$text = $_POST['sym_rem'];
+		$log = $_POST['sym_rem'];
 	} elseif (!empty($sym_rem_ar) && empty($_POST['rubrics'])) {
 		echo "    <span class='error_message'><strong>!*** " . _("Error:") . "</strong> " . _("Please select rubric!") . "</span><br><br>";
-		$text = $_POST['sym_rem'];
+		$log = $_POST['sym_rem'];
 	} elseif (!empty($sym_rem_ar) && empty($_POST['sources'])) {
 		echo "    <span class='error_message'><strong>!*** " . _("Error:") . "</strong> " . _("Please select source!") . "</span><br><br>";
-		$text = $_POST['sym_rem'];
+		$log = $_POST['sym_rem'];
 	} else {
-		if ($m == 0 && $nq == 0 && $nr == 0 && $k == 0 && $kk == 0 && $nn == 0  && $aa == 0 && $am == 0 && $h == 0 && $r == 0 && $qe == 0 && $qn == 0) {
-			printf("    <span class='success'><strong>" . _("Congratulations:") . " </strong>  " . ngettext("The <strong>Record</strong> has been processed correctly:", "All <strong>%d records</strong> have been processed correctly:", $n) . "</span><br>", $n);
+		if ($count_ar['rem']['noex'] == 0 && $count_ar['no_src'] == 0 && $count_ar['no_main'] == 0 && $count_ar['sym']['sim'] == 0 && $count_ar['sym']['sim_in'] == 0 && $count_ar['rec']['nocolon'] == 0  && $count_ar['rec']['alias']['noequal'] == 0 && $count_ar['alias']['noex'] == 0 && $count_ar['main_noex'] == 0 && $count_ar['parent_noex'] == 0 && $count_ar['src']['err'] == 0 && $count_ar['ref_noex'] == 0) {
+			printf("    <span class='success'><strong>" . _("Congratulations:") . " </strong>  " . ngettext("The <strong>Record</strong> has been processed correctly:", "All <strong>%d records</strong> have been processed correctly:", $count_ar['rec']['all']) . "</span><br>", $count_ar['rec']['all']);
 		} else {
-			if ($nq != 0) {
-				printf("    <span class='error_message'><strong>" . _("Error: ") . _("Please select a source!") . "</strong><br>\n" . ngettext("<strong>One symptom</strong> couldn't be parsed.", "<strong>%d symptoms</strong> couldn't be parsed.", $nq) . " </span><br>\n", $nq);
+			if ($count_ar['no_src'] != 0) {
+				printf("    <span class='error_message'><strong>" . _("Error: ") . _("Please select a source!") . "</strong><br>\n" . ngettext("<strong>One symptom</strong> couldn't be parsed.", "<strong>%d symptoms</strong> couldn't be parsed.", $count_ar['no_src']) . " </span><br>\n", $count_ar['no_src']);
 			}
-			if ($nr != 0) {
-				printf("    <span class='error_message'><strong>" . _("Error: ") . _("Please select a main rubric!") . "</strong><br>\n" . ngettext("<strong>One symptom</strong> couldn't be parsed.", "<strong>%d symptoms</strong> couldn't be parsed.", $nr) . " </span><br>\n", $nr);
+			if ($count_ar['no_main'] != 0) {
+				printf("    <span class='error_message'><strong>" . _("Error: ") . _("Please select a main rubric!") . "</strong><br>\n" . ngettext("<strong>One symptom</strong> couldn't be parsed.", "<strong>%d symptoms</strong> couldn't be parsed.", $count_ar['no_main']) . " </span><br>\n", $count_ar['no_main']);
 			}
-			if ($nn != 0) {
-				printf("    <span class='error_message'><strong>" . _("Syntax error:") . " </strong>" . ngettext("On <strong>a record</strong> the colon (':') is missing.", "On <strong>%d records</strong> colons (':') are missing.", $nn) . " </span><br> " . _("Please <strong>correct</strong> in the text box and submit form again!") . "<br>\n", $nn);
+			if ($count_ar['rec']['nocolon'] != 0) {
+				printf("    <span class='error_message'><strong>" . _("Syntax error:") . " </strong>" . ngettext("On <strong>a record</strong> the colon (':') is missing.", "On <strong>%d records</strong> colons (':') are missing.", $count_ar['rec']['nocolon']) . " </span><br> " . _("Please <strong>correct</strong> in the text box and submit form again!") . "<br>\n", $count_ar['rec']['nocolon']);
 			}
-			if ($aa != 0) {
-				printf("    <span class='error_message'><strong>" . _("Syntax error:") . " </strong>" . ngettext("In <strong>an alias allocation</strong> the equal sign ('=') is missing.", "In <strong>%d alias allocations</strong> equal signs ('=') are missing.", $aa) . " </span><br> " . _("Please <strong>correct</strong> in the text box and submit form again!") . "<br>\n", $aa);
+			if ($count_ar['rec']['alias']['noequal'] != 0) {
+				printf("    <span class='error_message'><strong>" . _("Syntax error:") . " </strong>" . ngettext("In <strong>an alias allocation</strong> the equal sign ('=') is missing.", "In <strong>%d alias allocations</strong> equal signs ('=') are missing.", $count_ar['rec']['alias']['noequal']) . " </span><br> " . _("Please <strong>correct</strong> in the text box and submit form again!") . "<br>\n", $count_ar['rec']['alias']['noequal']);
 			}
-			if ($qe != 0) {
-				printf("    <span class='error_message'><strong>" . _("Syntax error:") . " </strong>" . ngettext("In <strong>%d source-/reference-entry</strong> the syntax is incorrect.", "In <strong>%d source-/reference-entries</strong> the syntax is incorrect.", $qe) . " </span><br> " . _("Please <strong>correct</strong> in the text box and submit form again!") . "<br>\n", $qe);
+			if ($count_ar['src']['err'] != 0) {
+				printf("    <span class='error_message'><strong>" . _("Syntax error:") . " </strong>" . ngettext("In <strong>%d source-/reference-entry</strong> the syntax is incorrect.", "In <strong>%d source-/reference-entries</strong> the syntax is incorrect.", $count_ar['src']['err']) . " </span><br> " . _("Please <strong>correct</strong> in the text box and submit form again!") . "<br>\n", $count_ar['src']['err']);
 			}
-			if ($k != 0) {
+			if ($count_ar['sym']['sim'] != 0) {
 				$duplicated_symptoms = implode ('", "', $duplicated_symptoms_ar);
 ?>
     <p><span class='error_message'><strong>!*** <?php echo _("Warning:"); ?> <?php echo _("Duplication possible"); ?> ***!</strong></span><br>
     <?php echo _("You can either <strong>all </strong> similar records <strong>still insert</strong>, or <strong>correct</strong> the records in the text box and submit the form again."); ?></p>
-    <p><?php printf(ngettext("The symptom to insert", "The %d symptoms to insert", $k), $k); ?> <strong>"<?php echo $duplicated_symptoms ?>"</strong> <?php echo _("is similar to the following symptoms in the same main rubric"); ?> (<em>"<?php echo $rubric_name ?>"</em>):</p>
+    <p><?php printf(ngettext("The symptom to insert", "The %d symptoms to insert", $count_ar['sym']['sim']), $count_ar['sym']['sim']); ?> <strong>"<?php echo $duplicated_symptoms ?>"</strong> <?php echo _("is similar to the following symptoms in the same main rubric"); ?> (<em>"<?php echo $rubric_name ?>"</em>):</p>
     <table class='results'>
       <tr>
         <th class='results'><?php echo _("Symptom-No."); ?></th>
@@ -381,140 +382,140 @@ if (!empty($_POST['sym_rem'])) {
     </table>
 <?php
 			}
-			if ($m != 0) {
+			if ($count_ar['rem']['noex'] != 0) {
 				foreach ($rem_error_ar as $key => $error_ar) {
-					$text .= "$key: ";
+					$log .= "$key: ";
 					if (!empty($error_ar['classic'])) {
 						foreach ($error_ar['classic'] as $rem => $rem_backup) {
 							$rem_list[] = "<strong>" . $rem . "</strong>";
 							if (empty($error_ar['nonclassic'])) {
-								$text .= $rem_backup . ", ";
+								$log .= $rem_backup . ", ";
 							}
 						}
-						$text = substr($text, 0, -2); // delete the last ", "
+						$log = substr($log, 0, -2); // delete the last ", "
 					}
 					if (!empty($error_ar['nonclassic'])) {
-						$text .= "{";
+						$log .= "{";
 						foreach ($error_ar['nonclassic'] as $rem => $rem_backup) {
 							$rem_list[] = "<strong>" . $rem . "</strong>";
-							$text .= $rem_backup . ", ";
+							$log .= $rem_backup . ", ";
 						}
-						$text = substr($text, 0, -2); // delete the last ", "
-						$text .= "}";
+						$log = substr($log, 0, -2); // delete the last ", "
+						$log .= "}";
 					}
-					$text .= "\n";
+					$log .= "\n";
 				}
 				$rem_list = implode (", ", $rem_list);
-				printf("    <span class='error_message'><strong>!*** " . _("Error:") . "</strong> " . ngettext("%d remedy-abbreviation was not found in the database:", "%d remedy-abbreviations were not found in the database:", $m), $m);
+				printf("    <span class='error_message'><strong>!*** " . _("Error:") . "</strong> " . ngettext("%d remedy-abbreviation was not found in the database:", "%d remedy-abbreviations were not found in the database:", $count_ar['rem']['noex']), $count_ar['rem']['noex']);
 				echo "</span>&nbsp;$rem_list<br>\n";
 				echo "    " . _("Check with the help of <a href='./datadmin.php?function=show_search_form&table_name=remedies'> search </a>, whether used in the remedies-table to another abbreviation. In this case, you can <a href='./datadmin.php?function=show_insert_form&table_name=rem_alias'>add the alternative abbreviation</a> to the  alias-table. Otherwise, you have to <a href='./datadmin.php?function=show_insert_form&table_name=remedies'>add the remedy</a> to the remedies-table.") . " " . _("\tPlease <strong>correct it if necessary in the text box</strong> and <strong>submit</strong> the form again!") . "\n";
 			}
-			if ($am != 0) {
-				printf("    <span class='error_message'><strong>!*** " . _("Error:") . "</strong> " . ngettext("%d remedy-abbreviation on alias assignments was not found in the database.", "%d remedy-abbreviations on alias assignments were not found in the database.", $am) . "</span><br>\n", $am);
+			if ($count_ar['alias']['noex'] != 0) {
+				printf("    <span class='error_message'><strong>!*** " . _("Error:") . "</strong> " . ngettext("%d remedy-abbreviation on alias assignments was not found in the database.", "%d remedy-abbreviations on alias assignments were not found in the database.", $count_ar['alias']['noex']) . "</span><br>\n", $count_ar['alias']['noex']);
 				echo "    " . _("\tPlease <strong>correct it if necessary in the text box</strong> and <strong>submit</strong> the form again!") . "\n";
 			}
-			if ($h != 0) {
-				printf("    <span class='error_message'><strong>" . _("Error:") . " </strong>" . ngettext("%d <strong>main rubric</strong> was not found in the database.", "%d <strong>main rubrics</strong> were not found in the database.", $h) . " </span><br> " . _("Please <strong>correct</strong> in the text box and submit form again, or add the main rubric to the database!") . "<br>\n", $h);
+			if ($count_ar['main_noex'] != 0) {
+				printf("    <span class='error_message'><strong>" . _("Error:") . " </strong>" . ngettext("%d <strong>main rubric</strong> was not found in the database.", "%d <strong>main rubrics</strong> were not found in the database.", $count_ar['main_noex']) . " </span><br> " . _("Please <strong>correct</strong> in the text box and submit form again, or add the main rubric to the database!") . "<br>\n", $count_ar['main_noex']);
 			}
-			if ($r != 0) {
-				printf("    <span class='error_message'><strong>" . _("Error:") . " </strong>" . ngettext("With %d record, the with '>' referenced parent rubric could not be determined.", "With %d records, the with '>' referenced parent rubric could not be determined.", $r) . " </span><br> " . _("Please <strong>correct</strong> in the text box and submit form again!") . "<br>\n", $r);
+			if ($count_ar['parent_noex'] != 0) {
+				printf("    <span class='error_message'><strong>" . _("Error:") . " </strong>" . ngettext("With %d record, the with '>' referenced parent rubric could not be determined.", "With %d records, the with '>' referenced parent rubric could not be determined.", $count_ar['parent_noex']) . " </span><br> " . _("Please <strong>correct</strong> in the text box and submit form again!") . "<br>\n", $count_ar['parent_noex']);
 			}
-			printf("    <div class='clear'></div><br>" . ngettext("<strong>%d record</strong> was restored successfully:", "<strong>%d records</strong> were restored successfully:",$n),$n);
+			printf("    <div class='clear'></div><br>" . ngettext("<strong>%d record</strong> was restored successfully:", "<strong>%d records</strong> were restored successfully:",$count_ar['rec']['all']),$count_ar['rec']['all']);
 		}
 		echo "    <ul>\n";
-		if ($i > 0) {
-			printf("      <li>" . ngettext("<strong>%d new symptom</strong> has been added to the database:", "<strong>%d new symptoms</strong> have been added to the database:", $i) . "\n", $i);
+		if ($count_ar['sym']['in'] > 0) {
+			printf("      <li>" . ngettext("<strong>%d new symptom</strong> has been added to the database:", "<strong>%d new symptoms</strong> have been added to the database:", $count_ar['sym']['in']) . "\n", $count_ar['sym']['in']);
 			$inserted_symptoms_string = implode("</li>\n        <li>", $inserted_symptoms_ar);
 			echo "      <ul style='list-style-type:circle'>\n";
 			echo "        <li>$inserted_symptoms_string</li>\n";
 			echo "      </ul></li>\n";
 		}
-		if ($kk > 0) {
-			printf("      <li>" . ngettext("Thereof <strong>%d symptom</strong> for which similar symptoms were found in the database <strong>was inserted anyway</strong>.", "Thereof <strong>%d symptoms</strong> for which similar symptoms were found in the database <strong>were inserted anyway</strong>.", $kk) . "</li>\n", $kk);
+		if ($count_ar['sym']['sim_in'] > 0) {
+			printf("      <li>" . ngettext("Thereof <strong>%d symptom</strong> for which similar symptoms were found in the database <strong>was inserted anyway</strong>.", "Thereof <strong>%d symptoms</strong> for which similar symptoms were found in the database <strong>were inserted anyway</strong>.", $count_ar['sym']['sim_in']) . "</li>\n", $count_ar['sym']['sim_in']);
 		}
-		if ($ii > 0) {
-			printf("      <li>" . ngettext("<strong>%d symptom</strong> already exists under the main rubric <em>%2\$s</em> in the database.", "<strong>%d symptoms</strong> already exist under the main rubric <em>%2\$s</em> in the database.", $ii) . "</li>\n", $ii, $rubric_name);
+		if ($count_ar['sym']['ex'] > 0) {
+			printf("      <li>" . ngettext("<strong>%d symptom</strong> already exists under the main rubric <em>%2\$s</em> in the database.", "<strong>%d symptoms</strong> already exist under the main rubric <em>%2\$s</em> in the database.", $count_ar['sym']['ex']) . "</li>\n", $count_ar['sym']['ex'], $rubric_name);
 		}
-		if ($k > 0) {
-			printf("      <li>" . ngettext("For <strong>%d symptom</strong> similar symptoms in the same main rubric (<em>%2\$s</em>) have been found in the database.", "For <strong>%d symptoms</strong> similar symptoms in the same main rubric (<em>%2\$s</em>) have been found in the database.", $k) . "</li>\n", $k, $rubric_name);
+		if ($count_ar['sym']['sim'] > 0) {
+			printf("      <li>" . ngettext("For <strong>%d symptom</strong> similar symptoms in the same main rubric (<em>%2\$s</em>) have been found in the database.", "For <strong>%d symptoms</strong> similar symptoms in the same main rubric (<em>%2\$s</em>) have been found in the database.", $count_ar['sym']['sim']) . "</li>\n", $count_ar['sym']['sim'], $rubric_name);
 		}
-		if ($j > 0) {
-			printf("      <li>" . ngettext("<strong>%d symptom-remedy-relation</strong> has been inserted into the database.", "<strong>%d symptom-remedy-relations</strong> have been inserted into the database.", $j) . "</li>\n", $j);
+		if ($count_ar['symrem']['in'] > 0) {
+			printf("      <li>" . ngettext("<strong>%d symptom-remedy-relation</strong> has been inserted into the database.", "<strong>%d symptom-remedy-relations</strong> have been inserted into the database.", $count_ar['symrem']['in']) . "</li>\n", $count_ar['symrem']['in']);
 		}
-		if ($nk > 0) {
-			printf("      <li>" . ngettext("Of these, %d symptom-remedy-relation from <strong>nonclassical proving</strong> (e.g. dreamproving).", "Of these, %d symptom-remedy-relations from <strong>nonclassical provings</strong> (e.g. dreamprovings).", $nk) . "</li>\n", $nk);
+		if ($count_ar['sym']['nonclassic_in'] > 0) {
+			printf("      <li>" . ngettext("Of these, %d symptom-remedy-relation from <strong>nonclassical proving</strong> (e.g. dreamproving).", "Of these, %d symptom-remedy-relations from <strong>nonclassical provings</strong> (e.g. dreamprovings).", $count_ar['sym']['nonclassic_in']) . "</li>\n", $count_ar['sym']['nonclassic_in']);
 		}
-		if ($jj > 0) {
-			printf("      <li>" . ngettext("<strong>%d symptom-remedy-relation</strong> already exists in the database.", "<strong>%d symptom-remedy-relations</strong> already exist in the database.", $jj) . "</li>\n", $jj);
+		if ($count_ar['symrem']['ex'] > 0) {
+			printf("      <li>" . ngettext("<strong>%d symptom-remedy-relation</strong> already exists in the database.", "<strong>%d symptom-remedy-relations</strong> already exist in the database.", $count_ar['symrem']['ex']) . "</li>\n", $count_ar['symrem']['ex']);
 		}
-		if ($wu > 0) {
-			printf("      <li>" . ngettext("In %d symptom-remedy-relation the grade was updated.", "In %d symptom-remedy-relations the grade was updated.", $wu) . "</li>\n", $wu);
+		if ($count_ar['grade_ch'] > 0) {
+			printf("      <li>" . ngettext("In %d symptom-remedy-relation the grade was updated.", "In %d symptom-remedy-relations the grade was updated.", $count_ar['grade_ch']) . "</li>\n", $count_ar['grade_ch']);
 		}
-		if ($su > 0) {
-			printf("      <li>" . ngettext("In %d symptom-remedy-relation the state was updated.", "In %d symptom-remedy-relations the state was updated.", $su) . "</li>\n", $su);
+		if ($count_ar['status_ch'] > 0) {
+			printf("      <li>" . ngettext("In %d symptom-remedy-relation the state was updated.", "In %d symptom-remedy-relations the state was updated.", $count_ar['status_ch']) . "</li>\n", $count_ar['status_ch']);
 		}
-		if ($ku > 0) {
-			printf("      <li>" . ngettext("In %d symptom-remedy-relation the Künzli-dot was updated.", "In %d symptom-remedy-relations the Künzli-dots were updated.", $ku) . "</li>\n", $ku);
+		if ($count_ar['kuenzli_ch'] > 0) {
+			printf("      <li>" . ngettext("In %d symptom-remedy-relation the Künzli-dot was updated.", "In %d symptom-remedy-relations the Künzli-dots were updated.", $count_ar['kuenzli_ch']) . "</li>\n", $count_ar['kuenzli_ch']);
 		}
-		if ($m > 0) {
-			printf("      <li>" . ngettext("<strong>%d remedy-abbreviation</strong> was not found in the remedies-table.", "<strong>%d remedy-abbreviations</strong> were not found in the remedies-table.", $m) . "</li>\n", $m);
+		if ($count_ar['rem']['noex'] > 0) {
+			printf("      <li>" . ngettext("<strong>%d remedy-abbreviation</strong> was not found in the remedies-table.", "<strong>%d remedy-abbreviations</strong> were not found in the remedies-table.", $count_ar['rem']['noex']) . "</li>\n", $count_ar['rem']['noex']);
 		}
-		if ($mm > 0) {
-			printf("      <li>" . ngettext("<strong>%d remedy-abbreviation</strong> has been determined using the alias table.", "<strong>%d remedy-abbreviations</strong> have been determined using the alias table.", $mm) . "</li>\n", $mm);
+		if ($count_ar['rem']['alias'] > 0) {
+			printf("      <li>" . ngettext("<strong>%d remedy-abbreviation</strong> has been determined using the alias table.", "<strong>%d remedy-abbreviations</strong> have been determined using the alias table.", $count_ar['rem']['alias']) . "</li>\n", $count_ar['rem']['alias']);
 		}
-		if ($qn > 0) {
+		if ($count_ar['ref_noex'] > 0) {
 			$ref_not_found_string = implode(", ", $ref_not_found_ar);
-			if ($qn == 1) {
+			if ($count_ar['ref_noex'] == 1) {
 				$rel = $rel_si;
 			} else {
-				$rel = $qn . $rel_pl;
+				$rel = $count_ar['ref_noex'] . $rel_pl;
 			}
-			printf("      <li>" . ngettext("In %d symptom-remedy-relation the reference source was not found in the database:", "In %d symptom-remedy-relations the reference source was not found in the database:", $qn), $qn);
+			printf("      <li>" . ngettext("In %d symptom-remedy-relation the reference source was not found in the database:", "In %d symptom-remedy-relations the reference source was not found in the database:", $count_ar['ref_noex']), $count_ar['ref_noex']);
 			echo "<br><strong>$ref_not_found_string</strong><br>" . _("Where necessary <a href='./datadmin.php?function=show_insert_form&amp;table_name=sources'>add the source to database</a>") . "</li>\n";
 		}
-		if ($a > 0) {
-			printf("    <li>" . ngettext("<strong>%d alias assignment</strong> has been processed.", "<strong>%d alias assignments</strong> have been processed.", $a) . "</li>\n", $a);
+		if ($count_ar['rec']['alias']['all'] > 0) {
+			printf("    <li>" . ngettext("<strong>%d alias assignment</strong> has been processed.", "<strong>%d alias assignments</strong> have been processed.", $count_ar['rec']['alias']['all']) . "</li>\n", $count_ar['rec']['alias']['all']);
 		}
-		if ($b > 0) {
-			printf("      <li>" . ngettext("<strong>%d new alias</strong> has been inserted into the database.", "<strong>%d new aliases</strong> have been inserted into the database.", $b) . "</li>\n", $b);
+		if ($count_ar['alias']['in'] > 0) {
+			printf("      <li>" . ngettext("<strong>%d new alias</strong> has been inserted into the database.", "<strong>%d new aliases</strong> have been inserted into the database.", $count_ar['alias']['in']) . "</li>\n", $count_ar['alias']['in']);
 		}
-		if ($bb > 0) {
+		if ($count_ar['alias']['ex'] > 0) {
 			$alias_double = implode("</em>, <em>", $alias_double_ar);
-			printf("      <li>" . ngettext("<strong>%d alias</strong> already exists in the database", "<strong>%d aliases</strong> already exist in the database", $bb) . " (<em>$alias_double</em>).</li>\n", $bb);
+			printf("      <li>" . ngettext("<strong>%d alias</strong> already exists in the database", "<strong>%d aliases</strong> already exist in the database", $count_ar['alias']['ex']) . " (<em>$alias_double</em>).</li>\n", $count_ar['alias']['ex']);
 		}
-		if ($am > 0) {
-			printf("      <li>" . ngettext("<strong>%d remedy-abbreviation by alias assignment</strong> was not found in the remedies-table.", "<strong>%d remedy-abbreviations by alias assignment</strong> were not found in the remedies-table.", $am) . "</li>\n", $am);
+		if ($count_ar['alias']['noex'] > 0) {
+			printf("      <li>" . ngettext("<strong>%d remedy-abbreviation by alias assignment</strong> was not found in the remedies-table.", "<strong>%d remedy-abbreviations by alias assignment</strong> were not found in the remedies-table.", $count_ar['alias']['noex']) . "</li>\n", $count_ar['alias']['noex']);
 		}
-			if ($qe != 0) {
-				printf("    <span class='error_message'><strong>" . _("Syntax error:") . " </strong>" . ngettext("In <strong>%d source-/reference-entry</strong> the syntax is incorrect.", "In <strong>%d source-/reference-entries</strong> the syntax is incorrect.", $qe) . " </span><br> " . _("Please <strong>correct</strong> in the text box and submit form again!") . "<br>\n", $qe);
+			if ($count_ar['src']['err'] != 0) {
+				printf("    <span class='error_message'><strong>" . _("Syntax error:") . " </strong>" . ngettext("In <strong>%d source-/reference-entry</strong> the syntax is incorrect.", "In <strong>%d source-/reference-entries</strong> the syntax is incorrect.", $count_ar['src']['err']) . " </span><br> " . _("Please <strong>correct</strong> in the text box and submit form again!") . "<br>\n", $count_ar['src']['err']);
 			}
-		if ($qi > 0) {
-			printf("    <li>" . ngettext("<strong>%d source-/reference-record</strong> has been processed.", "<strong>%d source-/reference-records</strong> have been processed.", $qi) . "</li>\n", $qi);
+		if ($count_ar['rec']['src'] > 0) {
+			printf("    <li>" . ngettext("<strong>%d source-/reference-record</strong> has been processed.", "<strong>%d source-/reference-records</strong> have been processed.", $count_ar['rec']['src']) . "</li>\n", $count_ar['rec']['src']);
 		}
-		if ($q > 0) {
-			printf("    <li>" . ngettext("<strong>%d new source-/reference-record</strong> has been inserted into the database.", "<strong>%d new source-/reference-records</strong> have been inserted into the database.", $q) . "</li>\n", $q);
+		if ($count_ar['no_main'] > 0) {
+			printf("    <li>" . ngettext("<strong>%d new source-/reference-record</strong> has been inserted into the database.", "<strong>%d new source-/reference-records</strong> have been inserted into the database.", $count_ar['no_main']) . "</li>\n", $count_ar['no_main']);
 		}
-		if ($qq > 0) {
+		if ($count_ar['src']['ex'] > 0) {
 			$sources_double = implode("</em>, <em>", $sources_double_ar);
-			printf("    <li>" . ngettext("<strong>%d source-/reference-record</strong> already exists in the database", "<strong>%d source-/reference-records</strong> already exist in the database", $qq) . " (<em>$sources_double</em>).</li>\n", $qq);
+			printf("    <li>" . ngettext("<strong>%d source-/reference-record</strong> already exists in the database", "<strong>%d source-/reference-records</strong> already exist in the database", $count_ar['src']['ex']) . " (<em>$sources_double</em>).</li>\n", $count_ar['src']['ex']);
 		}
-		if ($qe > 0) {
-			printf("    <li>" . ngettext("Syntax errors were found in <strong>%d source-/reference-record</strong>.", "Syntax errors were found in <strong>%d source-/reference-records</strong>.", $qe) . "</li>\n", $qe);
+		if ($count_ar['src']['err'] > 0) {
+			printf("    <li>" . ngettext("Syntax errors were found in <strong>%d source-/reference-record</strong>.", "Syntax errors were found in <strong>%d source-/reference-records</strong>.", $count_ar['src']['err']) . "</li>\n", $count_ar['src']['err']);
 		}
 		echo "    </ul>\n";
 	}
 }
-if (!empty($text)) {
-	$text = preg_replace("/\n+/u", "\n", $text);
-	if ($text{strlen($text)-1} == "\n") {
-		$text = substr_replace($text, "", -1, 1);
+if (!empty($log)) {
+	$log = preg_replace("/\n+/u", "\n", $log);
+	if ($log{strlen($log)-1} == "\n") {
+		$log = substr_replace($log, "", -1, 1);
 	}    // Zeilensprung am Ende wird entfernt
 }
 ?>
     <label for='sym_rem'><span class='label3'><?php echo _("p."); ?>123 <?php echo _("Symptom"); ?> @: <?php echo _("Remedy"); ?>1-<?php echo _("Grade"); ?>[<?php echo _("Statesymbol"); ?>]@#<?php echo _("Reference"); ?>#<?php echo _("Reference"); ?>,<?php echo _("Remedy"); ?>2-<?php echo _("Grade"); ?>,sulf-2^@#k1#kk1.de,...</span></label>
     <br>
     <div class = 'center'>
-      <textarea class="input_text" name="sym_rem" id="sym_rem"  cols="100" rows="16" wrap="off"><?php echo($text) ?></textarea>
+      <textarea class="input_text" name="sym_rem" id="sym_rem"  cols="100" rows="16" wrap="off"><?php echo($log) ?></textarea>
       <div class="clear"><br></div>
       <input class='submit' type='submit' value=' <?php echo _("Send"); ?> '>
     </div>

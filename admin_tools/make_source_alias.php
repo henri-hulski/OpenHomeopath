@@ -12,7 +12,7 @@ $query_select_all = "SELECT `sym_id`, `symptom` FROM `symptoms` WHERE `rubric_id
 		$ref_all[]=$ref;
 	} // end while loop for each symptom
 	$db->free_result();
-$qn=1;
+$count_ref_not_found=1;
 foreach ($ref_all as $key => $value) {
 	if($value != "") {
 	$without_point = substr($value,0,strpos($value,".")+0);
@@ -23,7 +23,7 @@ foreach ($ref_all as $key => $value) {
 	if ($ref_count[0] == 0) {
 		$titel ="=".$value."=";
 		$src_id = $without_point;
-		echo "<br>".$qn." src_id: ".$src_id." src_title: ".$titel."<br>";
+		echo "<br>".$count_ref_not_found." src_id: ".$src_id." src_title: ".$titel."<br>";
 		$author = $value["author"];
 					
 					$year = "";
@@ -32,7 +32,7 @@ foreach ($ref_all as $key => $value) {
 					$src_type = "alias";
 					$main_source = 0;
 					$ref_not_found_ar[] = $value;
-					$qn++;
+					$count_ref_not_found++;
 		}else{
 		$ref_found_ar[] = $value;
 		echo "<br>Kein Alias noetig,  es wurde ".$value." und ".$without_point." gefunden<br>";

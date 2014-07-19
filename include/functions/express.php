@@ -29,7 +29,7 @@
 
 function parse_express_script ($sym_rem, $src_id, $lang_id, $rubric_id) {
 
-	global $text;
+	global $log;
 	$prev_symptom = "";
 	create_temporary_express_tables();
 	$sym_rem = str_replace("\r", "\n", $sym_rem);
@@ -50,14 +50,16 @@ function parse_express_script ($sym_rem, $src_id, $lang_id, $rubric_id) {
 				$sympt_id = extract_symptom($symptom, $rubric_id, $lang_id);
 				if ($sympt_id != 0) {
 					if (preg_match("/\{[\s,]*(.+)\}[\s,]*/u", $remedy, $matches)) {
-						extract_remedies($matches[1], $sympt_id, 1);
+						$nonclassic = 1;
+						extract_remedies($matches[1], $sympt_id, $nonclassic);
 					}
 					$remedy = preg_replace("/\s*\{.*\}\s*/u", "", $remedy);
 					if ($remedy != "") {
-						extract_remedies($remedy, $sympt_id, 0);
+						$nonclassic = 0;
+						extract_remedies($remedy, $sympt_id, $nonclassic);
 					}
 				} else {
-					$text .= $symptom . ": " . $remedy . "\n";
+					$log .= $symptom . ": " . $remedy . "\n";
 				}
 			} elseif ($symptom == "alias") {  // if alias record
 				extract_alias($remedy);
@@ -69,13 +71,13 @@ function parse_express_script ($sym_rem, $src_id, $lang_id, $rubric_id) {
 				}
 				extract_source($remedy, $primary_src);
 			} else {
-				$text .= $symptom . ": " . $remedy . "\n";
-				$nq++;
+				$log .= $symptom . ": " . $remedy . "\n";
+				$count_ar['no_src']++;
 			}
 		} else {
-			$text .= $value . "\n";
+			$log .= $value . "\n";
 			$prev_symptom = "";
-			$nn++;
+			$count_ar['rec']['nocolon']++;
 		}
 	}
 }  // end function parse_express_script
@@ -127,7 +129,7 @@ function create_temporary_express_tables() {
 
 function extract_symptom ($symptom_string, $rubric_id, $lang_id) {
 
-	global $db, $prev_symptom, $h, $r;
+	global $db, $prev_symptom, $count_ar['main_noex'], $count_ar['parent_noex'];
 	$page = 0;
 	$kuenzli = 0;
 	$extra = 0;
@@ -165,7 +167,7 @@ function extract_symptom ($symptom_string, $rubric_id, $lang_id) {
 		$symptom_string = $prev_symptom . " > " . $symptom_string;
 	}
 	if ($backref != 0 && $prev_symptom == "") {
-		$r++;
+		$count_ar['parent_noex']++;
 		return 0;
 	}
 	if (strpos($symptom_string, ">>")) {  // >>, but not on first position
@@ -181,13 +183,13 @@ function extract_symptom ($symptom_string, $rubric_id, $lang_id) {
 			$rubric_id = $rubric_row[0];
 			$custom_rubric = 1;
 		} else {
-			$h++;
+			$count_ar['main_noex']++;
 			$prev_symptom = "";
 			return 0;
 		}
 	}
 	if ($rubric_id == -1) {
-		$nr++;
+		$count_ar['no_main']++;
 		$prev_symptom = "";
 		return 0;
 	}
@@ -207,7 +209,7 @@ function extract_symptom ($symptom_string, $rubric_id, $lang_id) {
 
 function extract_remedies ($rem_string, $symt_id, $nonclassic) {
 
-	global $db, $ref_not_found_ar, $qn;
+	global $db, $ref_not_found_ar, $count_ar['ref_noex'];
 
 	$rem_string = preg_replace("/\s+/u", "", $rem_string);  // delete space
 	$rem_string = preg_replace("/,+/u", ",", $rem_string);  // delete double comma
@@ -246,12 +248,12 @@ function extract_remedies ($rem_string, $symt_id, $nonclassic) {
 			foreach ($ref_ar as $key2 => $ref) {
 				$query = "SELECT COUNT(*) FROM sources WHERE src_id = '$ref'";
 				$db->send_query($query);
-				$ref_count = $db->db_fetch_row();
+				list($ref_count) = $db->db_fetch_row();
 				$db->free_result();
-				if ($ref_count[0] == 0) {
+				if ($ref_count == 0) {
 					$ref_not_found_ar[] = $ref;
 					unset($ref_ar[$key2]);
-					$qn++;
+					$count_ar['ref_noex']++;
 				}
 			}
 		}
@@ -274,7 +276,7 @@ function extract_remedies ($rem_string, $symt_id, $nonclassic) {
 
 function extract_alias ($alias_string) {
 
-	global $db, $text, $aa;
+	global $db, $log, $count_ar['rec']['alias']['noequal'];
 
 	if (strpos($alias_string, "=")) {  // check '='
 		$alias_string = preg_replace("/\s+/u", "", $alias_string);  // delete space
@@ -288,14 +290,14 @@ function extract_alias ($alias_string) {
 		$query = "INSERT INTO express_alias (remedy, aliase) VALUES ('$remedy', '$aliase')";
 		$db->send_query($query);
 	} else {
-		$text .= "alias: $remedy = $aliase\n";
-		$aa++;
+		$log .= "alias: $remedy = $aliase\n";
+		$count_ar['rec']['alias']['noequal']++;
 	}
 } // end function extract_alias
 
 function extract_source ($source_string, $primary_src) {
 
-	global $db, $text, $qe;
+	global $db, $log, $count_ar['src']['err'];
 	$src_type = "Repertorium";
 	$error = 0;
 	$found_lang = 0;
@@ -348,8 +350,8 @@ function extract_source ($source_string, $primary_src) {
 		} elseif ($primary_src = 0) {
 			$keyword = "ref";
 		}
-		$text .= "$keyword: ". implode("#", $source_ar) . "\n";
-		$qe++;
+		$log .= "$keyword: ". implode("#", $source_ar) . "\n";
+		$count_ar['src']['err']++;
 	} else {
 		$author = $db->escape_string($author);
 		$title = $db->escape_string($title);
@@ -362,7 +364,7 @@ function extract_source ($source_string, $primary_src) {
 
 function insert_remedy($sympt_id, $sym_id, $src_id, $username, $is_duplicated_symptom) {
 
-	global $db, $rem_error_ar, $text, $j, $jj, $m, $mm, $nk, $wu, $su, $ku;
+	global $db, $rem_error_ar, $log, $count_ar['symrem']['in'], $count_ar['symrem']['ex'], $count_ar['rem']['noex'], $count_ar['rem']['alias'], $count_ar['sym']['nonclassic_in'], $count_ar['grade_ch'], $count_ar['status_ch'], $count_ar['kuenzli_ch'];
 	unset ($duplicated_ar);
 	$duplicated_ar = array();
 
@@ -383,7 +385,7 @@ function insert_remedy($sympt_id, $sym_id, $src_id, $username, $is_duplicated_sy
 				$db->free_result();
 				$rem_id = $rem_id[0];
 				if (!empty($rem_id)) {
-					$mm++;
+					$count_ar['rem']['alias']++;
 				}
 			}
 			if (!empty($rem_id)) {  // the remedy abbreviation was found
@@ -399,15 +401,15 @@ function insert_remedy($sympt_id, $sym_id, $src_id, $username, $is_duplicated_sy
 						$update_kuenzli = 0;
 						if ($beziehung[1] != $grade) {
 							$update_wert = 1;
-							$wu++;
+							$count_ar['grade_ch']++;
 						}
 						if ($beziehung[2] != $status_id) {
 							$update_status = 1;
-							$su++;
+							$count_ar['status_ch']++;
 						}
 						if ($beziehung[3] != $kuenzli) {
 							$update_kuenzli = 1;
-							$ku++;
+							$count_ar['kuenzli_ch']++;
 						}
 						if ($update_wert = 1 && $update_status = 1 && $update_kuenzli = 1) {
 							$archive_type = "express_update";
@@ -427,14 +429,14 @@ function insert_remedy($sympt_id, $sym_id, $src_id, $username, $is_duplicated_sy
 							$db->send_query($query);
 						}
 					}
-					$jj++;
+					$count_ar['symrem']['ex']++;
 				} else {  // create a new symptom-remedy-relation
 					$query = "INSERT INTO sym_rem (sym_id,rem_id,grade,src_id,status_id,kuenzli,username) VALUES ('$sym_id', '$rem_id', '$grade', '$src_id', '$status_id', '$kuenzli', '$username')";
 					$db->send_query($query);
 					$rel_id = $db->db_insert_id();
-					$j++;
+					$count_ar['symrem']['in']++;
 					if ($nonclassic == 1) {
-						$nk++;
+						$count_ar['sym']['nonclassic_in']++;
 					}
 				}
 				if (!empty($ref_ar) || $nonclassic == 1) {
@@ -457,9 +459,9 @@ function insert_remedy($sympt_id, $sym_id, $src_id, $username, $is_duplicated_sy
 */
 						$query = "SELECT COUNT(*) FROM sym_rem_refs WHERE rel_id = '$rel_id' AND src_id = '$ref' AND nonclassic = '$nonclassic'";
 						$db->send_query($query);
-						$ref_count = $db->db_fetch_row();
+						list($ref_count) = $db->db_fetch_row();
 						$db->free_result();
-						if ($ref_count[0] == 0) {
+						if ($ref_count == 0) {
 							$query = "INSERT INTO sym_rem_refs (rel_id,src_id,nonclassic,username) VALUES ('$rel_id', '$ref', '$nonclassic', '$username')";
 							$db->send_query($query);
 						}
@@ -476,7 +478,7 @@ function insert_remedy($sympt_id, $sym_id, $src_id, $username, $is_duplicated_sy
 				list($symptom) = $db->db_fetch_row();
 				$db->free_result();
 				$rem_error_ar[$symptom][$nonclassic][$rem_short] = $backup;
-				$m++;
+				$count_ar['rem']['noex']++;
 			}
 		} else {   // ähnliches Symptom in der Datenbank
 			if ($nonclassic == 1) {
@@ -491,21 +493,21 @@ function insert_remedy($sympt_id, $sym_id, $src_id, $username, $is_duplicated_sy
 	if (!empty($duplicated_ar)) {
 		if (!empty($duplicated_ar['classic'])) {
 			foreach ($duplicated_ar['classic'] as $rem_backup) {
-				$text .= $rem_backup . ", ";
+				$log .= $rem_backup . ", ";
 			}
 			if (empty($duplicated_ar['nonclassic'])) {
-				$text = substr($text, 0, -2);  // delete the last ", "
+				$log = substr($log, 0, -2);  // delete the last ", "
 			}
 		}
 		if (!empty($duplicated_ar['nonclassic'])) {
-			$text .= "{";
+			$log .= "{";
 			foreach ($duplicated_ar['nonclassic'] as $rem_backup) {
-				$text .= $rem_backup . ", ";
+				$log .= $rem_backup . ", ";
 			}
-			$text = substr($text, 0, -2);  // delete the last ", "
-			$text .= "}";
+			$log = substr($log, 0, -2);  // delete the last ", "
+			$log .= "}";
 		}
-		$text .= "\n";
+		$log .= "\n";
 	}
 } // end function insert_remedy
 
