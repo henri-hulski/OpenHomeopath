@@ -1,9 +1,9 @@
 <?php
 // the name of the skin and of the skin-folder under 'skins'
 define('SKIN_NAME',       'original');
-// Wenn die Skin auf Tabs verlinken soll true, sonst false
+// If the skin uses tabs true, otherwise false
 define('TABBED', true);
-// Die Breite des linken und/oder rechten Seitenframes zusammen in Pixeln. Wenn kein Seitenframe: 0
+// The width of the left and/or right sideframe in px. If you've no sideframe: 0
 define('SIDE_FRAME_WIDTH','154');
 
 define('USER_ICON',       'skins/' . SKIN_NAME . '/img/user.gif');

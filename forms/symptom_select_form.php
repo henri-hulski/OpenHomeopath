@@ -51,7 +51,7 @@ if ($session->logged_in) {  // user logged in
 	printf ("<p class='center' id='personalized_rep' style='display:%s;'><span class='alert_box'>" . _("You are using a personalized Repertory.") . " " . _("You can change the preferences in <a href='%s'>My account</a>.") . "</span></p>\n", $display_personal_rep, $url);
 	printf ("<p class='center' id='lang_rep' style='display:%s;'><span class='alert_box'>" . _("You're using at the moment all <strong>symptoms in %s</strong>.") . " " . _("You can change the preferences in <a href='%s'>My account</a>.") . "</span></p>\n", $display_lang_rep, $is_custom_table, $url);
 } else {
-	echo ("<p class='center'><span class='alert_box'><strong>" . _("Important!") . "</strong> " . _("Guests are limited to the Homeopathic Repertory from Kent (kent.en). For activating more repertories an customizing OpenHomeopath you've to <a href='http://openhomeo.org/openhomeopath/register.php'>register for free</a> and <a href='http://openhomeo.org/openhomeopath/login.php'>log in</a>.") . "</span></p>\n");
+	echo ("<p class='center'><span class='alert_box'><strong>" . _("Important!") . "</strong> " . _("Guests are limited to the Homeopathic Repertory from Kent (kent.en). For activating more repertories an customizing OpenHomeopath you've to <a href='register.php'>register for free</a> and <a href='login.php'>log in</a>.") . "</span></p>\n");
 }
 ?>
 <fieldset>

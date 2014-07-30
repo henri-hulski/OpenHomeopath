@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenHomeopath 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-11 14:46+0100\n"
+"POT-Creation-Date: 2014-07-31 01:25+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Henri Schumacher <henri.hulski@gazeta.pl>\n"
 "Language-Team: Henri Schumacher <henri.hulski@gazeta.pl>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-Basepath: ../../../\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: repertori.php:35 repertori.php:52 index.php:46 skins/kraque/frame.php:93
@@ -36,7 +36,7 @@ msgstr "Gewichtung der Rubrik"
 #: symptominfo.php:57 include/classes/revrep_class.php:263
 #: include/classes/revrep_class.php:275 include/classes/treeview_class.php:233
 #: include/classes/treeview_class.php:249 javascript/locale.php:12
-#: forms/reversed_rep.php:147 forms/select_symptoms.php:157
+#: forms/reversed_rep.php:147 forms/select_symptoms.php:161
 msgid "Symptom-Info"
 msgstr "Symptom-Info"
 
@@ -87,8 +87,8 @@ msgstr "Tabelle:"
 msgid "Data maintenance"
 msgstr "Datenpflege"
 
-#: archive.php:240 archive.php:479 express.php:47 express.php:52
-#: express.php:258 skins/kraque/footer_datadmin.php:36
+#: archive.php:240 archive.php:479 express.php:46 express.php:51
+#: express.php:214 skins/kraque/footer_datadmin.php:36
 #: skins/kraque/header_datadmin.php:46 skins/original/footer_datadmin.php:37
 #: skins/original/header_datadmin.php:46
 msgid "Express-Tool"
@@ -499,7 +499,7 @@ msgstr ""
 "Wenn du hier deinen Benutzernamen eingibst, schicken wir dir ein neues "
 "Passwort an deine registrierte e-Mail."
 
-#: login.php:150 express.php:519
+#: login.php:150 express.php:480
 msgid "Send"
 msgstr "Abschicken"
 
@@ -694,24 +694,10 @@ msgstr ""
 "zum 20. des nächsten Monats <strong>wieder für alle voll nutzbar</strong>."
 
 #: support.php:78
-msgid "Participation in the server costs"
-msgstr "Beteiligung an den Serverkosten"
-
-#: support.php:78
-msgid ""
-"If you want to contribute to the server costs, you can <a href='http://"
-"openhomeo.org/spenden.html'>transfer donations</a> to the non-profit "
-"association \"Verein zur Förderung der naturheilkundlichen Medizin e.V.\"."
-msgstr ""
-"Wenn du dich an den Serverkosten beteiligen willst, <a href='http://"
-"openhomeo.org/spenden.html'>spende per Überweisung</a> an den gemeinnützigen "
-"\"Verein zur Förderung der naturheilkundlichen Medizin e.V.\"."
-
-#: support.php:79
 msgid "Complete the database "
 msgstr "Ergänzen der Datenbank"
 
-#: support.php:79
+#: support.php:78
 msgid ""
 "You can actively add repertories with the <a href='express.php'>express-"
 "tool</a>. If someone has a English or German materia medica in digital "
@@ -726,11 +712,11 @@ msgstr ""
 "eine PDF-Datei mit Text oder eine Datenbank sein. Ich würde dann versuchen "
 "sie in das Programm zu importieren."
 
-#: support.php:80
+#: support.php:79
 msgid "Translations"
 msgstr "Übersetzungen"
 
-#: support.php:80
+#: support.php:79
 msgid ""
 "It would be nice to have OpenHomeopath translated in more languages. For the "
 "internationalization I'm using gettext. With the poeditor it's easy to make "
@@ -864,19 +850,16 @@ msgstr ""
 msgid "Important!"
 msgstr "Wichtig!"
 
-#: symptominfo.php:74 forms/symptom_select_form.php:54 forms/sym_rems.php:38
-#: forms/reversed_rep.php:50
+#: symptominfo.php:74 forms/symptom_select_form.php:54
 msgid ""
 "Guests are limited to the Homeopathic Repertory from Kent (kent.en). For "
 "activating more repertories an customizing OpenHomeopath you've to <a "
-"href='http://openhomeo.org/openhomeopath/register.php'>register for free</a> "
-"and <a href='http://openhomeo.org/openhomeopath/login.php'>log in</a>."
+"href='register.php'>register for free</a> and <a href='login.php'>log in</a>."
 msgstr ""
 "Gäste sind auf das für Anfänger recht übersichtliche Repertorium von BZ-"
 "Homöopathie (BZH) beschränkt. Um weitere Repertorien freizuschalten und "
 "OpenHomeopath deinen persönlichen Bedürfnissen anzupassen musst du dich <a "
-"href='http://openhomeo.org/openhomeopath/register.php'>kostenlos "
-"registrieren</a> und <a href='http://openhomeo.org/openhomeopath/login."
+"href='register.php'>kostenlos registrieren</a> und <a href='login."
 "php'>anmelden</a>."
 
 #: symptominfo.php:110
@@ -908,7 +891,7 @@ msgstr "Baumansicht"
 msgid "Corresponding remedies"
 msgstr "Zugeordnete Mittel"
 
-#: express.php:48
+#: express.php:47
 msgid ""
 "Here you can quickly insert new symptoms and symptom-remedy-relations into "
 "the database."
@@ -916,7 +899,7 @@ msgstr ""
 "Hier habt ihr die Möglichkeit schnell neue Symptome und Symptom-Mittel-"
 "Beziehungen in die Datenbank einzufügen."
 
-#: express.php:54
+#: express.php:53
 msgid ""
 "Here you can quickly insert <strong>new symptoms</strong> and "
 "<strong>symptom-remedy-relations</strong> into the database."
@@ -924,87 +907,87 @@ msgstr ""
 "Hier habt ihr die Möglichkeit schnell <strong>neue Symptome</strong> und "
 "<strong>Symptom-Mittel-Beziehungen</strong> in die Datenbank einzufügen."
 
-#: express.php:264
+#: express.php:220
 msgid "Select source"
 msgstr "Quelle auswählen"
 
-#: express.php:269 forms/symptom_select_form.php:65
+#: express.php:225 forms/symptom_select_form.php:65
 msgid "Select main rubric"
 msgstr "Hauptrubrik auswählen"
 
-#: express.php:330 express.php:333 express.php:336 express.php:408
-#: express.php:413 express.php:417 express.php:420
+#: express.php:289
+msgid "Please select rubric and source!"
+msgstr "Bitte Rubrik und Quelle auswählen!"
+
+#: express.php:291
+msgid "Please select rubric!"
+msgstr "Bitte Rubrik auswählen!"
+
+#: express.php:293
+msgid "Please select source!"
+msgstr "Bitte Quelle auswählen!"
+
+#: express.php:295 express.php:368 express.php:373 express.php:377
+#: express.php:380
 #, php-format
 msgid "Error:"
 msgstr "Fehler:"
 
-#: express.php:330
-msgid "Please select rubric and source!"
-msgstr "Bitte Rubrik und Quelle auswählen!"
-
-#: express.php:333
-msgid "Please select rubric!"
-msgstr "Bitte Rubrik auswählen!"
-
-#: express.php:336
-msgid "Please select source!"
-msgstr "Bitte Quelle auswählen!"
-
-#: express.php:340 install/install_db.php:897
+#: express.php:300 install/install_db.php:897
 #, php-format
 msgid "Congratulations:"
 msgstr "Glückwunsch:"
 
-#: express.php:340
+#: express.php:300
 #, php-format
 msgid "The <strong>Record</strong> has been processed correctly:"
 msgid_plural "All <strong>%d records</strong> have been processed correctly:"
 msgstr[0] "Der <strong>Datensatz</strong> wurde korrekt abgearbeitet:"
 msgstr[1] "Alle <strong>%d Datensätze</strong> wurden korrekt abgearbeitet:"
 
-#: express.php:343 express.php:346
+#: express.php:303 express.php:306
 #, php-format
 msgid "Error: "
 msgstr "Fehler: "
 
-#: express.php:343
+#: express.php:303
 #, php-format
 msgid "Please select a source!"
 msgstr "Bitte wähle eine Quelle aus!"
 
-#: express.php:343 express.php:346
+#: express.php:303 express.php:306
 #, php-format
 msgid "<strong>One symptom</strong> couldn't be parsed."
 msgid_plural "<strong>%d symptoms</strong> couldn't be parsed."
 msgstr[0] "<strong>Ein Symptom</strong> konnte nicht bearbeitet werden."
 msgstr[1] "<strong>%d Symptome</strong> konnten nicht bearbeitet werden."
 
-#: express.php:346
+#: express.php:306
 #, php-format
 msgid "Please select a main rubric!"
 msgstr "Bitte wähle eine Hauptrubrik aus!"
 
-#: express.php:349 express.php:352 express.php:355 express.php:489
+#: express.php:309 express.php:312 express.php:315 express.php:449
 #, php-format
 msgid "Syntax error:"
 msgstr "Syntaxfehler:"
 
-#: express.php:349
+#: express.php:309
 #, php-format
 msgid "On <strong>a record</strong> the colon (':') is missing."
 msgid_plural "On <strong>%d records</strong> colons (':') are missing."
 msgstr[0] "Bei <strong>einem Datensatz</strong> fehlt der Doppelpunkt (':')."
 msgstr[1] "Bei <strong>%d Datensätzen</strong> fehlen Doppelpunkte (':')."
 
-#: express.php:349 express.php:352 express.php:355 express.php:420
-#: express.php:489
+#: express.php:309 express.php:312 express.php:315 express.php:380
+#: express.php:449
 #, php-format
 msgid "Please <strong>correct</strong> in the text box and submit form again!"
 msgstr ""
 "Bitte im Textfeld <strong>korrigieren</strong> und Formular nochmal "
 "abschicken!"
 
-#: express.php:352
+#: express.php:312
 #, php-format
 msgid ""
 "In <strong>an alias allocation</strong> the equal sign ('=') is missing."
@@ -1015,7 +998,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Bei <strong>%d Aliaszuweisungen</strong> fehlen Gleichheitszeichen ('=')."
 
-#: express.php:355 express.php:489
+#: express.php:315 express.php:449
 #, php-format
 msgid "In <strong>%d source-/reference-entry</strong> the syntax is incorrect."
 msgid_plural ""
@@ -1027,15 +1010,15 @@ msgstr[1] ""
 "Bei <strong>%d Quelle-/Referenz-Eintragungen</strong> ist der Syntax nicht "
 "korrekt."
 
-#: express.php:360
+#: express.php:320
 msgid "Warning:"
 msgstr "Achtung:"
 
-#: express.php:360
+#: express.php:320
 msgid "Duplication possible"
 msgstr "Duplizierung möglich"
 
-#: express.php:361
+#: express.php:321
 msgid ""
 "You can either <strong>all </strong> similar records <strong>still insert</"
 "strong>, or <strong>correct</strong> the records in the text box and submit "
@@ -1046,43 +1029,43 @@ msgstr ""
 "<strong>korrigieren</strong> und das Formular <strong>nochmal abschicken</"
 "strong>."
 
-#: express.php:362
+#: express.php:322
 #, php-format
 msgid "The symptom to insert"
 msgid_plural "The %d symptoms to insert"
 msgstr[0] "Das einzufügende Symptom"
 msgstr[1] "Die %d einzufügenden Symptome"
 
-#: express.php:362
+#: express.php:322
 msgid "is similar to the following symptoms in the same main rubric"
 msgstr "ähnelt den folgenden Symptomen in der gleichen Hauptrubrik"
 
-#: express.php:365
+#: express.php:325
 msgid "Symptom-No."
 msgstr "Symptom-Nr."
 
-#: express.php:366 express.php:514 forms/reversed_rep.php:143
-#: forms/select_symptoms.php:153
+#: express.php:326 express.php:475 forms/reversed_rep.php:143
+#: forms/select_symptoms.php:157
 msgid "Symptom"
 msgstr "Symptom"
 
-#: express.php:367 forms/reversed_rep.php:57 forms/reversed_rep.php:131
-#: forms/select_symptoms.php:141
+#: express.php:327 forms/reversed_rep.php:57 forms/reversed_rep.php:131
+#: forms/select_symptoms.php:145
 msgid "Main rubric"
 msgstr "Hauptrubrik"
 
-#: express.php:368 useradmin.php:48 useradmin.php:160
+#: express.php:328 useradmin.php:48 useradmin.php:160
 msgid "Username"
 msgstr "Benutzername"
 
-#: express.php:408
+#: express.php:368
 #, php-format
 msgid "%d remedy-abbreviation was not found in the database:"
 msgid_plural "%d remedy-abbreviations were not found in the database:"
 msgstr[0] "Eine Mittelabkürzung wurde nicht in der Datenbank gefunden:"
 msgstr[1] "%d Mittelabkürzungen wurden nicht in der Datenbank gefunden:"
 
-#: express.php:410
+#: express.php:370
 msgid ""
 "Check with the help of <a href='./datadmin.php?"
 "function=show_search_form&table_name=remedies'> search </a>, whether used in "
@@ -1101,7 +1084,7 @@ msgstr ""
 "href='./datadmin.php?function=show_insert_form&amp;"
 "table_name=remedies'>einfügen</a>."
 
-#: express.php:410 express.php:414
+#: express.php:370 express.php:374
 msgid ""
 "\tPlease <strong>correct it if necessary in the text box</strong> and "
 "<strong>submit</strong> the form again!"
@@ -1109,7 +1092,7 @@ msgstr ""
 "Bitte gegebenenfalls im Textfeld <strong>korrigieren</strong> und Formular "
 "<strong>nochmal abschicken</strong>!"
 
-#: express.php:413
+#: express.php:373
 #, php-format
 msgid ""
 "%d remedy-abbreviation on alias assignments was not found in the database."
@@ -1122,7 +1105,7 @@ msgstr[1] ""
 "%d Mittelabkürzungen bei Aliaszuweisungen wurden <strong>nicht</strong> in "
 "der Datenbank gefunden."
 
-#: express.php:417
+#: express.php:377
 #, php-format
 msgid "%d <strong>main rubric</strong> was not found in the database."
 msgid_plural "%d <strong>main rubrics</strong> were not found in the database."
@@ -1133,7 +1116,7 @@ msgstr[1] ""
 "%d angegebene <strong>Hauptrubriken</strong> wurden nicht in der Datenbank "
 "gefunden."
 
-#: express.php:417
+#: express.php:377
 #, php-format
 msgid ""
 "Please <strong>correct</strong> in the text box and submit form again, or "
@@ -1142,7 +1125,7 @@ msgstr ""
 "Bitte im Textfeld <strong>korrigieren</strong> und Formular nochmal "
 "abschicken oder die Hauptrubrik in die Datenbank eintragen!"
 
-#: express.php:420
+#: express.php:380
 #, php-format
 msgid ""
 "With %d record, the with '>' referenced parent rubric could not be "
@@ -1157,14 +1140,14 @@ msgstr[1] ""
 "Bei %d Datensätzen konnten die mit '>' verwiesene übergeordnete Rubrik nicht "
 "ermittelt werden."
 
-#: express.php:422
+#: express.php:382
 #, php-format
 msgid "<strong>%d record</strong> was restored successfully:"
 msgid_plural "<strong>%d records</strong> were restored successfully:"
 msgstr[0] "<strong>Ein Datensatz</strong> wurde abgearbeitet:"
 msgstr[1] "<strong>%d Datensätze</strong> wurden abgearbeitet:"
 
-#: express.php:426
+#: express.php:386
 #, php-format
 msgid "<strong>%d new symptom</strong> has been added to the database:"
 msgid_plural ""
@@ -1172,7 +1155,7 @@ msgid_plural ""
 msgstr[0] "<strong>Ein Symptom</strong> wurde neu in die Datenbank eingefügt:"
 msgstr[1] "<strong>%d Symptome</strong> wurden neu in die Datenbank eingefügt:"
 
-#: express.php:433
+#: express.php:393
 #, php-format
 msgid ""
 "Thereof <strong>%d symptom</strong> for which similar symptoms were found in "
@@ -1187,7 +1170,7 @@ msgstr[1] ""
 "Davon wurden <strong>%d Symptome</strong>, zu denen ähnliche Symptome in "
 "Datenbank gefunden wurden, <strong>trotzdem eingefügt</strong>."
 
-#: express.php:436
+#: express.php:396
 #, php-format
 msgid ""
 "<strong>%d symptom</strong> already exists under the main rubric <em>%2$s</"
@@ -1202,7 +1185,7 @@ msgstr[1] ""
 "<strong>%d Symptome</strong> waren bereits unter der Hauptrubrik <em>%2$s</"
 "em> in der Datenbank vorhanden."
 
-#: express.php:439
+#: express.php:399
 #, php-format
 msgid ""
 "For <strong>%d symptom</strong> similar symptoms in the same main rubric "
@@ -1217,7 +1200,7 @@ msgstr[1] ""
 "Zu <strong>%d Symptomen</strong> wurden ähnliche Symptome in der gleichen "
 "Hauptrubrik (<em>%2$s</em>) in der Datenbank gefunden."
 
-#: express.php:442
+#: express.php:402
 #, php-format
 msgid ""
 "<strong>%d symptom-remedy-relation</strong> has been inserted into the "
@@ -1232,7 +1215,7 @@ msgstr[1] ""
 "<strong>%d Symptom-Mittel-Beziehungen</strong> wurden in die Datenbank "
 "eingefügt."
 
-#: express.php:445
+#: express.php:405
 #, php-format
 msgid ""
 "Of these, %d symptom-remedy-relation from <strong>nonclassical proving</"
@@ -1247,7 +1230,7 @@ msgstr[1] ""
 "Davon %d Symptom-Mittel-Beziehungen aus <strong>nichtklassischen Prüfungen</"
 "strong> (z.B. Traumprüfungen)."
 
-#: express.php:448
+#: express.php:408
 #, php-format
 msgid ""
 "<strong>%d symptom-remedy-relation</strong> already exists in the database."
@@ -1260,7 +1243,7 @@ msgstr[1] ""
 "<strong>%d Symptom-Mittel-Beziehungen</strong> waren bereits in der "
 "Datenbank vorhanden."
 
-#: express.php:451
+#: express.php:411
 #, php-format
 msgid "In %d symptom-remedy-relation the grade was updated."
 msgid_plural "In %d symptom-remedy-relations the grade was updated."
@@ -1269,14 +1252,14 @@ msgstr[0] ""
 msgstr[1] ""
 "Bei %d Symptom-Mittel-Beziehungen wurde die Wertigkeit aktualisiert."
 
-#: express.php:454
+#: express.php:414
 #, php-format
 msgid "In %d symptom-remedy-relation the state was updated."
 msgid_plural "In %d symptom-remedy-relations the state was updated."
 msgstr[0] "Bei einer Symptom-Mittel-Beziehung wurde der Status aktualisiert."
 msgstr[1] "Bei %d Symptom-Mittel-Beziehungen wurde der Status aktualisiert."
 
-#: express.php:457
+#: express.php:417
 #, php-format
 msgid "In %d symptom-remedy-relation the Künzli-dot was updated."
 msgid_plural "In %d symptom-remedy-relations the Künzli-dots were updated."
@@ -1285,7 +1268,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Bei %d Symptom-Mittel-Beziehungen wurde der Künzli-Punkt aktualisiert."
 
-#: express.php:460
+#: express.php:420
 #, php-format
 msgid ""
 "<strong>%d remedy-abbreviation</strong> was not found in the remedies-table."
@@ -1299,7 +1282,7 @@ msgstr[1] ""
 "<strong>%d Mittelabkürzungen</strong> wurden nicht in der Mittel-Tabelle "
 "gefunden."
 
-#: express.php:463
+#: express.php:423
 #, php-format
 msgid ""
 "<strong>%d remedy-abbreviation</strong> has been determined using the alias "
@@ -1313,7 +1296,7 @@ msgstr[1] ""
 "<strong>%d Mittelabkürzungen</strong> wurden über die Alias-Tabelle "
 "ermittelt."
 
-#: express.php:472
+#: express.php:432
 #, php-format
 msgid ""
 "In %d symptom-remedy-relation the reference source was not found in the "
@@ -1328,7 +1311,7 @@ msgstr[1] ""
 "Bei %d Symptom-Mittel-Beziehungen wurde die Referenzquelle nicht in der "
 "Datenbank gefunden:"
 
-#: express.php:473
+#: express.php:433
 msgid ""
 "Where necessary <a href='./datadmin.php?function=show_insert_form&amp;"
 "table_name=sources'>add the source to database</a>"
@@ -1336,14 +1319,14 @@ msgstr ""
 "Die Quelle gegebenenfalls in die <a href='./datadmin.php?"
 "function=show_insert_form&amp;table_name=sources'>Datenbank einfügen</a>"
 
-#: express.php:476
+#: express.php:436
 #, php-format
 msgid "<strong>%d alias assignment</strong> has been processed."
 msgid_plural "<strong>%d alias assignments</strong> have been processed."
 msgstr[0] "<strong>Eine Aliaszuweisung</strong> wurde abgearbeitet."
 msgstr[1] "<strong>%d Aliaszuweisungen</strong> wurden abgearbeitet."
 
-#: express.php:479
+#: express.php:439
 #, php-format
 msgid "<strong>%d new alias</strong> has been inserted into the database."
 msgid_plural ""
@@ -1351,14 +1334,14 @@ msgid_plural ""
 msgstr[0] "<strong>Ein Alias</strong> wurde neu in die Datenbank eingefügt."
 msgstr[1] "<strong>%d Aliase</strong> wurden neu in die Datenbank eingefügt."
 
-#: express.php:483
+#: express.php:443
 #, php-format
 msgid "<strong>%d alias</strong> already exists in the database"
 msgid_plural "<strong>%d aliases</strong> already exist in the database"
 msgstr[0] "<strong>Ein Alias</strong> war bereits in der Datenbank vorhanden"
 msgstr[1] "<strong>%d Aliase</strong> waren bereits in der Datenbank vorhanden"
 
-#: express.php:486
+#: express.php:446
 #, php-format
 msgid ""
 "<strong>%d remedy-abbreviation by alias assignment</strong> was not found in "
@@ -1373,7 +1356,7 @@ msgstr[1] ""
 "<strong>%d Mittelabkürzungen bei Aliaszuweisung</strong> wurden nicht in der "
 "Mittel-Tabelle gefunden."
 
-#: express.php:492
+#: express.php:452
 #, php-format
 msgid "<strong>%d source-/reference-record</strong> has been processed."
 msgid_plural ""
@@ -1383,7 +1366,7 @@ msgstr[0] ""
 msgstr[1] ""
 "<strong>%d Quelle-/Referenz-Eintragungen</strong> wurden abgearbeitet."
 
-#: express.php:495
+#: express.php:455
 #, php-format
 msgid ""
 "<strong>%d new source-/reference-record</strong> has been inserted into the "
@@ -1398,7 +1381,7 @@ msgstr[1] ""
 "<strong>%d Quelle-/Referenz-Eintragungen</strong> wurden neu in die "
 "Datenbank eingefügt."
 
-#: express.php:499
+#: express.php:459
 #, php-format
 msgid ""
 "<strong>%d source-/reference-record</strong> already exists in the database"
@@ -1411,7 +1394,7 @@ msgstr[1] ""
 "<strong>%d Quelle-/Referenz-Eintragungen</strong> waren bereits in der "
 "Datenbank vorhanden"
 
-#: express.php:502
+#: express.php:462
 #, php-format
 msgid ""
 "Syntax errors were found in <strong>%d source-/reference-record</strong>."
@@ -1424,40 +1407,40 @@ msgstr[1] ""
 "Bei <strong>%d Quelle-/Referenz-Datensätzen</strong> wurden Syntaxfehler "
 "gefunden."
 
-#: express.php:514
+#: express.php:475
 msgid "p."
 msgstr "s."
 
-#: express.php:514 skins/kraque/frame.php:81 skins/kraque/frame.php:158
+#: express.php:475 skins/kraque/frame.php:81 skins/kraque/frame.php:158
 #: help/layout/kraque/frame.php:81 help/layout/kraque/frame.php:158
 msgid "Remedy"
 msgstr "Mittel"
 
-#: express.php:514 include/classes/symrem_class.php:169 forms/sym_rems.php:48
+#: express.php:475 include/classes/symrem_class.php:169 forms/sym_rems.php:48
 #: forms/reversed_rep.php:60
 msgid "Grade"
 msgstr "Wertigkeit"
 
-#: express.php:514
+#: express.php:475
 msgid "Statesymbol"
 msgstr "Statussymbol"
 
-#: express.php:514
+#: express.php:475
 msgid "Reference"
 msgstr "Referenz"
 
-#: express.php:523 skins/kraque/frame.php:91 skins/kraque/frame.php:168
+#: express.php:484 skins/kraque/frame.php:91 skins/kraque/frame.php:168
 #: skins/original/frame.php:78 help/layout/kraque/frame.php:91
 #: help/layout/kraque/frame.php:168 help/layout/original/frame.php:78
 #: install/install_db.php:287 forms/symptom_select_form.php:152
 msgid "Help"
 msgstr "Hilfe"
 
-#: express.php:524
+#: express.php:485
 msgid "Tutorial"
 msgstr "Tutorium"
 
-#: express.php:524
+#: express.php:485
 msgid "Tutorial from Thomas Bochmann"
 msgstr "Tutorium von Thomas Bochmann"
 
@@ -2258,7 +2241,7 @@ msgstr ""
 "Bitte konfiguriere in der Datei 'include/classes/db/config_db.php' den "
 "Datenbanktyp! Wenn dein Server es unterstützt, 'mysqli' ansonsten 'mysql'."
 
-#: skins/kraque/header.php:110 skins/original/header.php:106
+#: skins/kraque/header.php:111 skins/original/header.php:107
 msgid "I'm on work ...."
 msgstr "Bin bei der Arbeit ...."
 
@@ -2733,6 +2716,20 @@ msgstr "Körper"
 msgid "Corresponding symptoms"
 msgstr "Zugeordnete Symptome"
 
+#: forms/sym_rems.php:38 forms/reversed_rep.php:50
+msgid ""
+"Guests are limited to the Homeopathic Repertory from Kent (kent.en). For "
+"activating more repertories an customizing OpenHomeopath you've to <a "
+"href='http://openhomeo.org/openhomeopath/register.php'>register for free</a> "
+"and <a href='http://openhomeo.org/openhomeopath/login.php'>log in</a>."
+msgstr ""
+"Gäste sind auf das für Anfänger recht übersichtliche Repertorium von BZ-"
+"Homöopathie (BZH) beschränkt. Um weitere Repertorien freizuschalten und "
+"OpenHomeopath deinen persönlichen Bedürfnissen anzupassen musst du dich <a "
+"href='http://openhomeo.org/openhomeopath/register.php'>kostenlos "
+"registrieren</a> und <a href='http://openhomeo.org/openhomeopath/login."
+"php'>anmelden</a>."
+
 #: forms/sym_rems.php:45
 msgid "Sort by"
 msgstr "Sortieren nach"
@@ -2756,14 +2753,14 @@ msgstr "Zusammenstellen"
 msgid "no corresponding symptom found"
 msgstr "kein entsprechendes Symptom gefunden"
 
-#: forms/reversed_rep.php:116 forms/select_symptoms.php:133
+#: forms/reversed_rep.php:116 forms/select_symptoms.php:137
 #, php-format
 msgid "%d symptom"
 msgid_plural "%d symptoms"
 msgstr[0] "%d Symptom"
 msgstr[1] "%d Symptome"
 
-#: forms/reversed_rep.php:135 forms/select_symptoms.php:145
+#: forms/reversed_rep.php:135 forms/select_symptoms.php:149
 msgid "Symptom which contains sub-rubrics"
 msgstr "Symptom welches Unterrubriken enthält"
 
@@ -2828,13 +2825,26 @@ msgid " You're using at the moment a <strong>personalized repertory</strong>"
 msgstr ""
 "Du verwendest im Moment ein <strong>personalisiertes Repertorium</strong>"
 
-#: forms/select_symptoms.php:136
+#: forms/select_symptoms.php:140
 msgid "Select the matching symptoms by clicking"
 msgstr "Wähle die passenden Symptome durch anklicken aus"
 
-#: forms/select_symptoms.php:149
+#: forms/select_symptoms.php:153
 msgid "Contains sub-rubrics, but doesn't count as a symptom"
 msgstr "Enthält Unterrubriken, zählt aber selbst nicht als Symptom"
+
+#~ msgid "Participation in the server costs"
+#~ msgstr "Beteiligung an den Serverkosten"
+
+#~ msgid ""
+#~ "If you want to contribute to the server costs, you can <a href='http://"
+#~ "openhomeo.org/spenden.html'>transfer donations</a> to the non-profit "
+#~ "association \"Verein zur Förderung der naturheilkundlichen Medizin e.V.\"."
+#~ msgstr ""
+#~ "Wenn du dich an den Serverkosten beteiligen willst, <a href='http://"
+#~ "openhomeo.org/spenden.html'>spende per Überweisung</a> an den "
+#~ "gemeinnützigen \"Verein zur Förderung der naturheilkundlichen Medizin e.V."
+#~ "\"."
 
 #~ msgid "Please enter your username"
 #~ msgstr "Bitte Benutzernamen eingeben"
