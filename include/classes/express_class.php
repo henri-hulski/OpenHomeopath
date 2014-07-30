@@ -28,6 +28,8 @@
 /**
  * The Express class parses the express script and extract the containing data to the database.
  *
+ * The Express tool provides a powerful scripting language for inserting rubrics from repertories for example in book form into the OpenHomeopath database.
+ *
  * @category  Homeopathy
  * @package   Express
  * @author    Henri Schumacher <henri.hulski@gazeta.pl>
@@ -36,19 +38,69 @@
  */
 class Express {
 
-	public $log = "";
+	/**
+	 * The output in the scripting textarea containing the previous sent records prepared for correction
+	 * @var string
+	 * @access public
+	 */
+	public $script = "";
+
+	/**
+	 * The ID of the source from which we're inserting the rubrics.
+	 * @var string
+	 * @access public
+	 */
 	public $src_id = "";
+
+	/**
+	 * The ID of the source language
+	 * @var string
+	 * @access public
+	 */
 	public $src_lang = "";
+
+	/**
+	 * The ID of the main rubric from which we're inserting rubrics.
+	 *
+	 * If -1 the main rubric must be defined within the script as part of the symptom (like "main rubric >> symptom").
+	 *
+	 * @var integer
+	 * @access public
+	 */
 	public $rubric_id = -1;
+
+	/**
+	 * The name of the main rubric in the language of the source.
+	 * @var string
+	 * @access public
+	 */
 	public $rubric_name = "";
+
+	/**
+	 * Array with given references which were not found in the sources table
+	 * @var array
+	 * @access public
+	 */
 	public $ref_not_found_ar = array();
+
+	/**
+	 * Array of remedy-backups from given remedy abbreviations which were not found in the remedies or alias table.
+	 * @var array
+	 * @access public
+	 */
 	public $rem_error_ar = array();
+
+	/**
+	 * Array of different counters (details see the class constructor)
+	 * @var array
+	 * @access public
+	 */
 	public $count_ar = array();
 
 	/**
 	 * Class constructor
 	 *
-	 * @param array $sym_rem
+	 * @param string $sym_rem the script submitted by the user usually through the textarea form
 	 * @return Express
 	 * @access public
 	 */
@@ -102,6 +154,18 @@ class Express {
 		$this->parse_express_script($sym_rem);
 	}
 
+	/**
+	 * create_temporary_express_tables creates the temporary tables, which hold the information from the express-script.
+	 *
+	 * 4 tables gonna be created:
+	 * expess_symptoms for the entered symptoms,
+	 * express_sym_rem for the rubrics with the symptom-remedy-relations,
+	 * express_alias for entered aliases and
+	 * express_source for provided sources or references.
+	 *
+	 * @return void
+	 * @access private
+	 */
 	private function create_temporary_express_tables() {
 		global $db;
 		$query = "DROP TEMPORARY TABLE IF EXISTS express_symptoms, express_sym_rem, express_alias, express_source";
@@ -145,8 +209,16 @@ class Express {
 			primary_src tinyint(1) NOT NULL
 			) ENGINE=MyISAM DEFAULT CHARSET=utf8";
 		$db->send_query($query);
-	}  // end function create_temporary_express_tables
+	}
 
+
+	/**
+	 * parse_express_script parses the submitted script and insert the data in the temporary tables.
+	 * 
+	 * @param string   $sym_rem  the script submitted by the user usually through the textarea form
+	 * @return void   
+	 * @access private
+	 */
 	private function parse_express_script ($sym_rem) {
 
 		$prev_symptom = "";
@@ -177,7 +249,7 @@ class Express {
 							$this->extract_remedies($remedy, $sympt_id, $nonclassic);
 						}
 					} else {
-						$this->log .= $symptom . ": " . $remedy . "\n";
+						$this->script .= $symptom . ": " . $remedy . "\n";
 					}
 				} elseif ($symptom == "alias") {  // if alias record
 					$this->extract_alias($remedy);
@@ -189,17 +261,25 @@ class Express {
 					}
 					$this->extract_source($remedy, $primary_src);
 				} else {
-					$this->log .= $symptom . ": " . $remedy . "\n";
+					$this->script .= $symptom . ": " . $remedy . "\n";
 					$this->count_ar['no_src']++;
 				}
 			} else {
-				$this->log .= $value . "\n";
+				$this->script .= $value . "\n";
 				$prev_symptom = "";
 				$this->count_ar['rec']['nocolon']++;
 			}
 		}
 	}  // end function parse_express_script
 
+
+	/**
+	 * extract_symptom extracts the symptoms from the symptom string of a parsed record and insert them in the express_symptoms table
+	 * 
+	 * @param string  $symptom_string the symptom string of a parsed record before the colon.
+	 * @return integer The ID (sympt_id) of the inserted record to the express_symptoms table.
+	 * @access private
+	 */
 	private function extract_symptom ($symptom_string) {
 
 		global $db, $prev_symptom;
@@ -281,6 +361,16 @@ class Express {
 		return $id;
 	} // end function extract_symptom
 
+
+	/**
+	 * extract_remedies extracts the remedies from the remedy string of a parsed record and insert them in the express_sym_rem table
+	 * 
+	 * @param string  $rem_string the remedy string of a parsed record after the colon
+	 * @param integer $symt_id    the symptom ID
+	 * @param integer $nonclassic 0|1 0: classic proving, 1: nonclassic proving
+	 * @return void   
+	 * @access private
+	 */
 	private function extract_remedies ($rem_string, $symt_id, $nonclassic) {
 
 		global $db;
@@ -348,6 +438,14 @@ class Express {
 		}
 	} // end function extract_remedies
 
+
+	/**
+	 * extract_alias extract the alias if the record is an alias record
+	 * 
+	 * @param string $alias_string  the string from an alias record after the colon
+	 * @return void   
+	 * @access public 
+	 */
 	function extract_alias ($alias_string) {
 
 		global $db;
@@ -364,11 +462,20 @@ class Express {
 			$query = "INSERT INTO express_alias (remedy, aliase) VALUES ('$remedy', '$aliase')";
 			$db->send_query($query);
 		} else {
-			$this->log .= "alias: $remedy = $aliase\n";
+			$this->script .= "alias: $remedy = $aliase\n";
 			$this->count_ar['rec']['alias']['noequal']++;
 		}
 	} // end function extract_alias
 
+
+	/**
+	 * extract_source extract the source or reference if the record is an source or reference record
+	 * 
+	 * @param string  $source_string  the string from a source or reference record after the colon
+	 * @param integer $primary_src   0|1 0: reference, 1: primary source
+	 * @return void   
+	 * @access private
+	 */
 	private function extract_source ($source_string, $primary_src) {
 
 		global $db;
@@ -419,7 +526,7 @@ class Express {
 			} elseif ($primary_src = 0) {
 				$keyword = "ref";
 			}
-			$this->log .= "$keyword: ". implode("#", $source_ar) . "\n";
+			$this->script .= "$keyword: ". implode("#", $source_ar) . "\n";
 			$this->count_ar['src']['err']++;
 		} else {
 			$author = $db->escape_string($author);
@@ -431,10 +538,30 @@ class Express {
 		}
 	} // end function extract_source
 
+
+	/**
+	 * insert_remedy retrieve the remedy records from the express_sym_rem table and insert in or update the sym_rem table
+	 *
+	 * After retrieving the remedy records they will be tested if there is a dublicate symptom,
+	 * if the remedy abbreviation exists in the database
+	 * and if the symptom-remedy-relation already exists in the sym_rem table.
+	 *
+	 * If there is a dublicate record the remedy will be written back tu the script for correction.
+	 * If the remedy abbreviation doesn't exists, the backup of the record goes in the rem_error_ar array.
+	 * If the symptom-remedy-relation already exists in the sym_rem table the record will be updated.
+	 * Else a new record will be created in the sym_rem table.
+	 * The sym_rem_refs table will be updated, if necessary.
+	 * 
+	 * @param integer $sympt_id              The ID of the symptom-record in the temporary express_symptoms table.
+	 * @param integer $sym_id                The symptom ID in the database symptoms table.
+	 * @param string  $current_user          Username of the currently logged in user.
+	 * @param integer $is_duplicated_symptom 0|1 0: unique symptom, 1: possible dublicated symptom
+	 * @return void   
+	 * @access public 
+	 */
 	public function insert_remedy($sympt_id, $sym_id, $current_user, $is_duplicated_symptom) {
 
 		global $db;
-		unset ($duplicated_ar);
 		$duplicated_ar = array();
 
 		$query = "SELECT remedy, wert, status, kuenzli, ref, nonclassic, backup FROM express_sym_rem WHERE sympt_id = '$sympt_id'";
@@ -463,7 +590,7 @@ class Express {
 					$beziehung = $db->db_fetch_row();
 					$db->free_result();
 					$rel_id = $beziehung[0];
-					if (!empty($rel_id)) {  // the symptom-remedy-relation already exists from this sourced
+					if (!empty($rel_id)) {  // the symptom-remedy-relation already exists from this source
 						if ($beziehung[4] == $current_user) {  // the database record origins from the current user
 							$update_wert = 0;
 							$update_status = 0;
@@ -532,14 +659,14 @@ class Express {
 					} else {
 						$nonclassic = "classic";
 					}
-					$query = "SELECT symptom FROM symptoms WHERE sym_id = '$sym_id'";  // Symptomname ermitteln
+					$query = "SELECT symptom FROM symptoms WHERE sym_id = '$sym_id'";  // find the symptom
 					$db->send_query($query);
 					list($symptom) = $db->db_fetch_row();
 					$db->free_result();
 					$this->rem_error_ar[$symptom][$nonclassic][$rem_short] = $backup;
 					$this->count_ar['rem']['noex']++;
 				}
-			} else {   // ähnliches Symptom in der Datenbank
+			} else {   // similar symptom in the database
 				if ($nonclassic == 1) {
 					$nonclassic = "nonclassic";
 				} else {
@@ -552,30 +679,38 @@ class Express {
 		if (!empty($duplicated_ar)) {
 			if (!empty($duplicated_ar['classic'])) {
 				foreach ($duplicated_ar['classic'] as $rem_backup) {
-					$this->log .= $rem_backup . ", ";
+					$this->script .= $rem_backup . ", ";
 				}
 				if (empty($duplicated_ar['nonclassic'])) {
-					$this->log = substr($this->log, 0, -2);  // delete the last ", "
+					$this->script = substr($this->script, 0, -2);  // delete the last ", "
 				}
 			}
 			if (!empty($duplicated_ar['nonclassic'])) {
-				$this->log .= "{";
+				$this->script .= "{";
 				foreach ($duplicated_ar['nonclassic'] as $rem_backup) {
-					$this->log .= $rem_backup . ", ";
+					$this->script .= $rem_backup . ", ";
 				}
-				$this->log = substr($this->log, 0, -2);  // delete the last ", "
-				$this->log .= "}";
+				$this->script = substr($this->script, 0, -2);  // delete the last ", "
+				$this->script .= "}";
 			}
-			$this->log .= "\n";
+			$this->script .= "\n";
 		}
-	} // end function insert_remedy
+	}
 
-	public function build_select_duplicated_symptoms_query($symptom, &$symptom1_similar_ar, &$symptom2_similar_ar)
-	// goal: build the select query to select the record that can be similar to the record inserted
-	// input: $symptom, &$symptom1_similar_ar, &$symptom2_similar_ar (the two array that will contain the similar string found)
-	// output: $query, the sql query
-	// global $percentage_similarity, the percentage after that two strings are considered similar, $number_duplicated_records, the maximum number of records to be displayed as duplicated
-	{
+
+	/**
+	 * build_select_duplicated_symptoms_query builds the select query to select the record that can be similar to the record inserted
+	 * 
+	 * @param  string   $symptom                    The symptom extracted from the script.
+	 * @param  array    &$symptom1_similar_ar       Array which hods the symptoms extracted from the script.
+	 * @param  array    &$symptom2_similar_ar       Array which holds the similar symptom found in the database corresponding to the above array.
+	 * @global number   $percentage_similarity      The percentage after that two strings are considered similar.
+	 * @global integer  $number_duplicated_records  The maximum number of records to be displayed as duplicated.
+	 * @return string   The SQL select query
+	 * @access public 
+	 */
+	public function build_select_duplicated_symptoms_query($symptom, &$symptom1_similar_ar, &$symptom2_similar_ar) {
+
 		global $percentage_similarity, $number_duplicated_records, $db;
 
 		$query_select_all = "SELECT `sym_id`, `symptom` FROM `symptoms` WHERE `rubric_id` = '$this->rubric_id' AND lang_id = '$this->src_lang'";
@@ -604,6 +739,15 @@ class Express {
 		return $query;
 	} // end function build_select_dublicated_symptoms_query
 
+
+	/**
+	 * similar_words compare two strings and return true if the strings are similar, otherwise false
+	 * 
+	 * @param string $string          The given string from the script.
+	 * @param string $compare_string  The string to compare from the database.
+	 * @return boolean
+	 * @access private
+	 */
 	private function similar_words ($string, $compare_string) {
 		global $percentage_similarity, $similar_words_strict;
 		$words_ar = $this->build_clean_words_array ($string);
@@ -633,6 +777,13 @@ class Express {
 		}
 	}
 
+	/**
+	 * build_clean_words_array builds a word array for comparison from a given string and filter the words with a blacklist and whitelist
+	 * 
+	 * @param string $string The given string.
+	 * @return array
+	 * @access private
+	 */
 	private function build_clean_words_array ($string) {
 
 		global $session;
@@ -655,6 +806,13 @@ class Express {
 		return $clean_words_ar;
 	}
 
+	/**
+	 * build_possible_duplication_table builds an HTML table for displaying possible dublications of symptoms
+	 *
+	 * @param resource $result Parameter description (if any) ...
+	 * @return string  The resulting HTML-table.
+	 * @access public 
+	 */
 	public function build_possible_duplication_table($result)
 	// goal: build an HTML table for basicly displaying the results of a select query
 	// input: $result, the results of the query
@@ -698,5 +856,5 @@ class Express {
 
 		return $results_table;
 
-	} // end function build_possible_duplication_table
+	}
 }

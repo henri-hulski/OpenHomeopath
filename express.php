@@ -118,7 +118,7 @@ if (!empty($_POST['sym_rem'])) {
 					$db->free_result($result);
 					$duplicated_symptoms_ar[] = $symptom;
 					$is_duplicated_symptom = 1;
-					$express->log .= "$backup: ";
+					$express->script .= "$backup: ";
 				} else {
 					if ($query != "" && !empty($_POST['insert_duplicated'])) {
 						$express->count_ar['sym']['sim_in']++;
@@ -176,7 +176,7 @@ if (!empty($_POST['sym_rem'])) {
 					}
 				}
 			} else {
-				$express->log .= "alias: $rem_short = $alias\n";
+				$express->script .= "alias: $rem_short = $alias\n";
 				$express->count_ar['alias']['noex']++;
 			}
 		}
@@ -293,7 +293,7 @@ if (isset($express)) {
 			$error_message = _("Please select source!");
 		}
 		echo "    <span class='error_message'><strong>!*** " . _("Error:") . "</strong> $error_message</span><br><br>";
-		$express->log = $_POST['sym_rem'];
+		$express->script = $_POST['sym_rem'];
 	} else {
 		echo "    <br>\n";
 		if ($express->count_ar['rem']['noex'] == 0 && $express->count_ar['no_src'] == 0 && $express->count_ar['no_main'] == 0 && $express->count_ar['sym']['sim'] == 0 && $express->count_ar['sym']['sim_in'] == 0 && $express->count_ar['rec']['nocolon'] == 0  && $express->count_ar['rec']['alias']['noequal'] == 0 && $express->count_ar['alias']['noex'] == 0 && $express->count_ar['main_noex'] == 0 && $express->count_ar['parent_noex'] == 0 && $express->count_ar['src']['err'] == 0 && $express->count_ar['ref_noex'] == 0) {
@@ -343,26 +343,26 @@ if (isset($express)) {
 			}
 			if ($express->count_ar['rem']['noex'] != 0) {
 				foreach ($express->rem_error_ar as $key => $error_ar) {
-					$express->log .= "$key: ";
+					$express->script .= "$key: ";
 					if (!empty($error_ar['classic'])) {
 						foreach ($error_ar['classic'] as $rem => $rem_backup) {
 							$rem_list[] = "<strong>" . $rem . "</strong>";
 							if (empty($error_ar['nonclassic'])) {
-								$express->log .= $rem_backup . ", ";
+								$express->script .= $rem_backup . ", ";
 							}
 						}
-						$express->log = substr($express->log, 0, -2); // delete the last ", "
+						$express->script = substr($express->script, 0, -2); // delete the last ", "
 					}
 					if (!empty($error_ar['nonclassic'])) {
-						$express->log .= "{";
+						$express->script .= "{";
 						foreach ($error_ar['nonclassic'] as $rem => $rem_backup) {
 							$rem_list[] = "<strong>" . $rem . "</strong>";
-							$express->log .= $rem_backup . ", ";
+							$express->script .= $rem_backup . ", ";
 						}
-						$express->log = substr($express->log, 0, -2); // delete the last ", "
-						$express->log .= "}";
+						$express->script = substr($express->script, 0, -2); // delete the last ", "
+						$express->script .= "}";
 					}
-					$express->log .= "\n";
+					$express->script .= "\n";
 				}
 				$rem_list = implode (", ", $rem_list);
 				printf("    <span class='error_message'><strong>!*** " . _("Error:") . "</strong> " . ngettext("%d remedy-abbreviation was not found in the database:", "%d remedy-abbreviations were not found in the database:", $express->count_ar['rem']['noex']), $express->count_ar['rem']['noex']);
@@ -464,18 +464,18 @@ if (isset($express)) {
 		echo "    </ul>\n";
 	}
 }
-$log = (empty($express->log)) ?  "" : $express->log;
-if (!empty($log)) {
-	$log = preg_replace("/\n+/u", "\n", $log);
-	if ($log{strlen($log)-1} == "\n") {
-		$log = substr_replace($log, "", -1, 1);
+$script = (empty($express->script)) ?  "" : $express->script;
+if (!empty($script)) {
+	$script = preg_replace("/\n+/u", "\n", $script);
+	if ($script{strlen($script)-1} == "\n") {
+		$script = substr_replace($script, "", -1, 1);
 	}    // Zeilensprung am Ende wird entfernt
 }
 ?>
     <label for='sym_rem'><span class='label3'><?php echo _("p."); ?>123 <?php echo _("Symptom"); ?> @: <?php echo _("Remedy"); ?>1-<?php echo _("Grade"); ?>[<?php echo _("Statesymbol"); ?>]@#<?php echo _("Reference"); ?>#<?php echo _("Reference"); ?>,<?php echo _("Remedy"); ?>2-<?php echo _("Grade"); ?>,sulf-2^@#k1#kk1.de,...</span></label>
     <br>
     <div class = 'center'>
-      <textarea class="input_text" name="sym_rem" id="sym_rem"  cols="100" rows="16" wrap="off"><?php echo($log) ?></textarea>
+      <textarea class="input_text" name="sym_rem" id="sym_rem"  cols="100" rows="16" wrap="off"><?php echo($script) ?></textarea>
       <div class="clear"><br></div>
       <input class='submit' type='submit' value=' <?php echo _("Send"); ?> '>
     </div>
