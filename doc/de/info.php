@@ -50,7 +50,7 @@ include("help/layout/$skin/header.php");
   Programmversion
 </h2>
 <p>
-  Dies ist <strong>OpenHomeopath Version 1.0.1</strong> veröffentlicht am 07.06.2014.<br>
+  Dies ist <strong>OpenHomeopath Version 1.0.2</strong> veröffentlicht am 31.07.2014.<br>
   Nach einer <strong>grundlegenden Überarbeitung des gesamten Codes und der Datenbankstruktur</strong> veröffentliche ich hiermit nach über 7 Jahren Arbeit die erste stabile Version von OpenHomeopath.<br>
   Wenn noch Bugs oder Programmfehler auftauchen und bei weiteren Fragen meldet euch <a title="Kontakt zum Autor" href="mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath">bei mir</a>.
 </p>
@@ -77,6 +77,14 @@ include("help/layout/$skin/header.php");
       <li>Hinzufügen einer <a href='http://openhomeo.org/openhomeopath/doc/en/apigen' target='_blank'>ausführlichen englischen Quellcode-Dokumentation</a> nach dem PHPDoc-Schema.</li>
     </ul></li>
     <li><strong>Version 1.0.1 veröffentlicht am 07.06.2014:</strong> Ein Bugfix-Release, bei dem Fehler bereinigt und dieses Changelog hinzugeführt wurde.</li>
+	<li><strong>Version 1.0.2 veröffentlicht am 31.07.2014:</strong>
+      <ul>
+        <li>Aktualisierung des Layouts auf HTML5 und Wechsel von Tabellen- zu CSS-Layout mit einigen Verbesserungen.</li>
+	    <li>Hinzufügen der Express-Klasse durch Umwandlung der Express-Skript Includes in eine PHP-Klasse.</li>
+	    <li>Hinzufügen von CSS-Stylesheets für mobile Geräte.</li>
+	    <li>Eine Menge Fehlerbereinigung.</li>
+	  </ul>
+	</li>
   </ul>
 <br><span class="rightFlow"><a href="#up" title="Zum Seitenanfang"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="Zum Seitenanfang"></a></span>
 <a id="license"><br></a>
