@@ -47,11 +47,11 @@ if ($session->logged_in) {
 	}
 	printf ("<p class='center' id='personalized_rep_1' style='display:%s;'><span class='alert_box'>" . _("You are using a personalized Repertory.") . " " . _("You can change the preferences in <a href='%s'>My account</a>.") . "</span></p>\n", $display_personal_rep, $url);
 } else {
-	echo ("<p class='center''><span class='alert_box'><strong>" . _("Important!") . "</strong> " . _("Guests are limited to the Homeopathic Repertory from Kent (kent.en). For activating more repertories an customizing OpenHomeopath you've to <a href='http://openhomeo.org/openhomeopath/register.php'>register for free</a> and <a href='http://openhomeo.org/openhomeopath/login.php'>log in</a>.") . "</span></p>\n");
+	echo ("<p class='center'><span class='alert_box'><strong>" . _("Important!") . "</strong> " . _("Guests are limited to the Homeopathic Repertory from Kent (kent.en). For activating more repertories an customizing OpenHomeopath you've to <a href='http://openhomeo.org/openhomeopath/register.php'>register for free</a> and <a href='http://openhomeo.org/openhomeopath/login.php'>log in</a>.") . "</span></p>\n");
 }
 ?>
-  <form action="" accept-charset="utf-8">
-    <table border="0" align="left" summary="layout" class='rem_symptoms_head'>
+  <form accept-charset="utf-8">
+    <table class='rem_symptoms_head'>
       <tr>
         <td>
           <label for="rem_rubrics"><span class="label"><?php echo _("Main rubric"); ?></span></label>
@@ -96,8 +96,8 @@ echo $revrep->get_grade_select();
         </td>
       </tr>
     </table>
-    <br clear='all'>
-    <input id='remId' type='hidden' value='<?php echo $revrep->rem_id; ?>'>
+	<div class="clear"></div>
+    <input id='revRemId' type='hidden' value='<?php echo $revrep->rem_id; ?>'>
     <br>
   </form>
   <div class = 'select'>
@@ -127,23 +127,23 @@ for ($i = 5; $i > 0; $i--) {
       <div class='alert_box' style='text-align:left; width:250px;'>
         <table class='legend2'>
           <tr>
-            <td><img src='skins/original/img/main_folder.png' width='14' height='14'></td>
+            <td><img src='skins/original/img/main_folder.png' alt='Main rubric' width='14' height='14'></td>
             <td><?php echo _("Main rubric");?></td>
           </tr>
           <tr>
-            <td><img src='skins/original/img/folder_aeskulap.png' width='12' height='12'></td>
+            <td><img src='skins/original/img/folder_aeskulap.png' alt='Symptom rubric' width='12' height='12'></td>
             <td><?php echo _("Symptom which contains sub-rubrics"); ?></td>
           </tr>
           <tr>
-            <td><img src='skins/original/img/folder.png' width='12' height='12'></td>
+            <td><img src='skins/original/img/folder.png' alt='Rubric' width='12' height='12'></td>
             <td><?php echo _("Contains sub-rubrics, but doesn't count itself"); ?></td>
           </tr>
           <tr>
-            <td><img src='skins/original/img/aeskulap.png' width='12' height='12'></td>
+            <td><img src='skins/original/img/aeskulap.png' alt='Symptom' width='12' height='12'></td>
             <td><?php echo _("Symptom"); ?></td>
           </tr>
           <tr>
-            <td><img src='skins/original/img/info.gif' width='12' height='12'></td>
+            <td><img src='skins/original/img/info.gif' alt='Info' width='12' height='12'></td>
             <td><?php echo _("Symptom-Info");?></td>
           </tr>
         </table>

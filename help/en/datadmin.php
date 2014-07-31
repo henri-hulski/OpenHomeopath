@@ -50,9 +50,9 @@ include("help/layout/$skin/header.php");
   I will give you a <strong>detailed description</strong> of <strong>each table</strong>:
 </p>
 <br>
-<div class="content">
+<nav class="content">
   <h2>
-    Inhalt
+	  Contents
   </h2>
   <ul>
     <li><a href="#medica">Table Materia Medica</a></li>
@@ -63,8 +63,8 @@ include("help/layout/$skin/header.php");
     <li><a href="#overview">Layout of Datadmin</a></li>
     <li><a href="#edit">Edit and insert of records</a></li>
   </ul>
-</div>
-<a name="medica" id="medica"><br></a>
+</nav>
+<a id="medica"><br></a>
 <h3>
   Table Materia Medica
 </h3>
@@ -80,8 +80,8 @@ include("help/layout/$skin/header.php");
   </ul>
   The fields <strong>Remedy</strong> and <strong>Source</strong> are mandatory. <strong>The other fields</strong> only show up in the <strong>Materia Medica</strong>, when they're filled in.
 </div>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="symptoms" id="symptoms"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="symptoms"><br></a>
 <h3>
   Table Symptoms
 </h3>
@@ -93,8 +93,8 @@ include("help/layout/$skin/header.php");
     <li><strong><em>Language</em></strong> &ndash; here you can choose the language from a drop-down list.</li>
   </ul>
 </div>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="sources" id="sources"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="sources"><br></a>
 <h3>
   Table Sources
 </h3>
@@ -122,8 +122,8 @@ include("help/layout/$skin/header.php");
     <li><strong><em>Remedy proving</em></strong> &ndash; if the source is a remedy proving provide details.</li>
   </ul>
 </div>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="remedies" id="remedies"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="remedies"><br></a>
 <h3>
   Table Remedies
 </h3>
@@ -134,8 +134,8 @@ include("help/layout/$skin/header.php");
     <li><strong><em>Remedy name</em></strong> &ndash; the full remedy name.</li>
   </ul>
 </div>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="mainrubrics" id="mainrubrics"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="mainrubrics"><br></a>
 <h3>
   Table Main Rubrics
 </h3>
@@ -150,8 +150,8 @@ include("help/layout/$skin/header.php");
 <p>
   <span class="boldtext red">Warning!</span> &nbsp; You should <strong>change the main rubric</strong> only after consulting the forum or an administrator, because the main rubrics are creating the basic structure of the rubrics database.
 </p>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="overview" id="overview"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="overview"><br></a>
 <h3>
   Layout of Datadmin
 </h3>
@@ -183,16 +183,16 @@ include("help/layout/$skin/header.php");
 <p>
   With <strong><em>"Export to CSV"</em></strong> you can export the current record selection to a semicolon seperated <strong>CSV-file</strong>.
 </p>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span>
-<a name="edit" id="edit"><br></a>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span>
+<a id="edit"><br></a>
 <h3>
   Edit and insert of records
 </h3>
 <p>
   You can reach the <strong>edition form</strong> from the <img alt=""  src="../../<?php echo(EDIT_ICON);?>" width="16" height="16"><strong>-Symbol</strong> in front of each table row and the insert form from <strong><em>"Insert"</em></strong> in the <strong>menue bar</strong>.<br>
-  The difference between the two form is, that the insert form is a blank form and in the edit form you find the data of the current record with the possibility to jump with <strong><em>"<< Previous"</em></strong> to the previous and with <strong><em>"Next >>"</em></strong> to the next record.
+  The difference between the two form is, that the insert form is a blank form and in the edit form you find the data of the current record with the possibility to jump with <strong><em>"&lt;&lt; Previous"</em></strong> to the previous and with <strong><em>"Next >>"</em></strong> to the next record.
 </p>
-<p>
+<div>
   <strong>Mandatory fields</strong> are signed by an <strong>asterisk (*)</strong> before the field name.<br>
   There're 3 types of fields:
   <ul>
@@ -202,8 +202,8 @@ include("help/layout/$skin/header.php");
   </ul>
   You find <strong>hints to fill out the fields</strong> behind the fields.<br>
   <strong>Details for each table</strong> you find in the corresponding table chapter.
-</p>
-<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page" border="0"></a></span><br>
+</div>
+<br><span class="rightFlow"><a href="#up" title="To the top of the page"><img src="../../<?php echo(ARROW_UP_ICON);?>" alt="To the top of the page"></a></span><br>
 <?php
 include("help/layout/$skin/footer.php");
 ?>

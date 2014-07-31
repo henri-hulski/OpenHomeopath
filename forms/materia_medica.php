@@ -82,7 +82,7 @@ $url_provings = $url_provings_main . str_replace(".", "", strtolower($rem_short)
 if(url_exists($url_provings) && !empty($url_provings_main)) {
 	echo ("    <li><strong>" . _("Systematics and provings:") . " </strong><span class='gray'><b>$rem_name</b> " . _("at") . " <a href='$url_provings' target='_blank'>provings.info</a>.</span></li>\n");
 }
-echo ("    <li><strong>" . _("More links and information:") . " </strong><span class='gray'><b>$rem_name</b> " . _("at") . " <a href='http://openhomeo.org/openhomeopath/materia-medica.php?rem=$rem_short&lang=$lang' target='_blank'>OpenHomeo.org</a>.</span></li>\n");
+echo ("    <li><strong>" . _("More links and information:") . " </strong><span class='gray'><b>$rem_name</b> " . _("at") . " <a href='http://openhomeo.org/openhomeopath/materia-medica.php?rem=$rem_short&amp;lang=$lang' target='_blank'>OpenHomeo.org</a>.</span></li>\n");
 echo ("  </ul>\n");
 
 $query = "SELECT  $materia_tbl.rem_related, $materia_tbl.rem_incomp, $materia_tbl.rem_antidot, $materia_tbl.rem_note, $materia_tbl.rem_description, $materia_tbl.src_id, sources.src_title FROM $materia_tbl, sources WHERE $materia_tbl.rem_id = $rem_id AND $materia_tbl.src_id = sources.src_id AND ($materia_tbl.rem_related != '' || $materia_tbl.rem_incomp != '' || $materia_tbl.rem_antidot != '' || $materia_tbl.rem_note != '' || $materia_tbl.rem_description != '') ORDER BY sources.src_title";
@@ -102,15 +102,15 @@ if ($num_rows > 0){
 			echo ("    <li><strong>" . _("Antidotes:") . " </strong><span class='gray'>$rem_info[2]</span></li>\n");
 		}
 		if (!empty($rem_info[3])) {
-			$rem_info[3] = str_replace("\r\n", "<br />", $rem_info[3]);
-			$rem_info[3] = str_replace("\r", "<br />", $rem_info[3]);
-			$rem_info[3] = str_replace("\n", "<br />", $rem_info[3]);
+			$rem_info[3] = str_replace("\r\n", "<br>", $rem_info[3]);
+			$rem_info[3] = str_replace("\r", "<br>", $rem_info[3]);
+			$rem_info[3] = str_replace("\n", "<br>", $rem_info[3]);
 			echo ("    <li><strong>" . _("preparation / origin / synonyms:") . " </strong><span class='gray'>$rem_info[3]</span></li>\n");
 		}
 		if (!empty($rem_info[4])) {
-			$rem_info[4] = str_replace("\r\n", "<br />", $rem_info[4]);
-			$rem_info[4] = str_replace("\r", "<br />", $rem_info[4]);
-			$rem_info[4] = str_replace("\n", "<br />", $rem_info[4]);
+			$rem_info[4] = str_replace("\r\n", "<br>", $rem_info[4]);
+			$rem_info[4] = str_replace("\r", "<br>", $rem_info[4]);
+			$rem_info[4] = str_replace("\n", "<br>", $rem_info[4]);
 			echo ("    <li><strong>" . _("general description of the remedy:") . " </strong><span class='gray'>$rem_info[4]</span></li>\n");
 		}
 		echo ("  </ul>\n");
@@ -129,9 +129,9 @@ if ($num_rows > 0){
 			echo ("  <h4>&nbsp;&nbsp;" . _("general") . "</h4>\n");
 			echo ("  <ul class='blue'>\n");
 			$leadsymptoms[0] = preg_replace('/\s*;\s*/u', ';', $leadsymptoms[0]);
-			$leadsymptoms[0] = str_replace("\r\n", "<br />", $leadsymptoms[0]);
-			$leadsymptoms[0] = str_replace("\r", "<br />", $leadsymptoms[0]);
-			$leadsymptoms[0] = str_replace("\n", "<br />", $leadsymptoms[0]);
+			$leadsymptoms[0] = str_replace("\r\n", "<br>", $leadsymptoms[0]);
+			$leadsymptoms[0] = str_replace("\r", "<br>", $leadsymptoms[0]);
+			$leadsymptoms[0] = str_replace("\n", "<br>", $leadsymptoms[0]);
 			$leadsymptoms[0] = preg_replace('/\s\s+/u', ' ', $leadsymptoms[0]); // entferne überzähligen whitespace
 			$rem_leadsym_general = explode(";", $leadsymptoms[0]);
 			foreach ($rem_leadsym_general as $value) {
@@ -143,9 +143,9 @@ if ($num_rows > 0){
 			echo ("  <h4>&nbsp;&nbsp;" . _("mind") . "</h4>\n");
 			echo ("  <ul class='blue'>\n");
 			$leadsymptoms[1] = preg_replace('/\s*;\s*/u', ';', $leadsymptoms[1]);
-			$leadsymptoms[1] = str_replace("\r\n", "<br />", $leadsymptoms[1]);
-			$leadsymptoms[1] = str_replace("\r", "<br />", $leadsymptoms[1]);
-			$leadsymptoms[1] = str_replace("\n", "<br />", $leadsymptoms[1]);
+			$leadsymptoms[1] = str_replace("\r\n", "<br>", $leadsymptoms[1]);
+			$leadsymptoms[1] = str_replace("\r", "<br>", $leadsymptoms[1]);
+			$leadsymptoms[1] = str_replace("\n", "<br>", $leadsymptoms[1]);
 			$leadsymptoms[1] = preg_replace('/\s\s+/u', ' ', $leadsymptoms[1]);
 			$rem_leadsym_mind = explode(";", $leadsymptoms[1]);
 			foreach ($rem_leadsym_mind as $value) {
@@ -157,9 +157,9 @@ if ($num_rows > 0){
 			echo ("  <h4>&nbsp;&nbsp;" . _("Body") . "</h4>\n");
 			echo ("  <ul class='blue'>\n");
 			$leadsymptoms[2] = preg_replace('/\s*;\s*/u', ';', $leadsymptoms[2]);
-			$leadsymptoms[2] = str_replace("\r\n", "<br />", $leadsymptoms[2]);
-			$leadsymptoms[2] = str_replace("\r", "<br />", $leadsymptoms[2]);
-			$leadsymptoms[2] = str_replace("\n", "<br />", $leadsymptoms[2]);
+			$leadsymptoms[2] = str_replace("\r\n", "<br>", $leadsymptoms[2]);
+			$leadsymptoms[2] = str_replace("\r", "<br>", $leadsymptoms[2]);
+			$leadsymptoms[2] = str_replace("\n", "<br>", $leadsymptoms[2]);
 			$leadsymptoms[2] = preg_replace('/\s\s+/u', ' ', $leadsymptoms[2]);
 			$rem_leadsym_body = explode(";", $leadsymptoms[2]);
 			foreach ($rem_leadsym_body as $value) {

@@ -1,6 +1,6 @@
 Program Version
 
-    This is OpenHomeopath Version 1.0.1 released on 07.06.2014.
+    This is OpenHomeopath Version 1.0.2 released on 31.07.2014.
     After a fundamental revision of the entire code and database structure I'm glad
     to publish the first stable release of OpenHomeopath after more than 7 years work.
     If you still find bugs or if you've a question please contact me.
@@ -27,6 +27,11 @@ Changelog
           so that international developers can join the project.
         * Added a detailed PHPDoc source code documentation.
     * Version 1.0.1 released on 07.06.2014: Bugfix-release, added this changelog.
+    * Version 1.0.2 released on 31.07.2014:
+        * Update the layout to HTML5 and switch from table to CSS-Layout with some enhancements.
+        * Creating the Express class from the Express scripts includes.
+        * Adding CSS-stylesheets for mobile devices with some fixes (not finished).
+        * Fixing a lot of bugs.
 
 
 License und Copyright

@@ -51,20 +51,20 @@ if ($session->logged_in) {  // user logged in
 	printf ("<p class='center' id='personalized_rep' style='display:%s;'><span class='alert_box'>" . _("You are using a personalized Repertory.") . " " . _("You can change the preferences in <a href='%s'>My account</a>.") . "</span></p>\n", $display_personal_rep, $url);
 	printf ("<p class='center' id='lang_rep' style='display:%s;'><span class='alert_box'>" . _("You're using at the moment all <strong>symptoms in %s</strong>.") . " " . _("You can change the preferences in <a href='%s'>My account</a>.") . "</span></p>\n", $display_lang_rep, $is_custom_table, $url);
 } else {
-	echo ("<p class='center''><span class='alert_box'><strong>" . _("Important!") . "</strong> " . _("Guests are limited to the Homeopathic Repertory from Kent (kent.en). For activating more repertories an customizing OpenHomeopath you've to <a href='http://openhomeo.org/openhomeopath/register.php'>register for free</a> and <a href='http://openhomeo.org/openhomeopath/login.php'>log in</a>.") . "</span></p>\n");
+	echo ("<p class='center'><span class='alert_box'><strong>" . _("Important!") . "</strong> " . _("Guests are limited to the Homeopathic Repertory from Kent (kent.en). For activating more repertories an customizing OpenHomeopath you've to <a href='register.php'>register for free</a> and <a href='login.php'>log in</a>.") . "</span></p>\n");
 }
 ?>
 <fieldset>
   <legend class="legend">
     <?php echo _("Available symptoms"); ?>
   </legend>
-  <form action="" accept-charset="utf-8" onsubmit='return searchSymptoms();'>
-    <table width="100%" border="0" align="left" summary="layout">
+  <form accept-charset="utf-8" onsubmit='return searchSymptoms();'>
+    <table style="width:100%; border:0; text-align:left;">
       <tr>
-        <td width="30%">
+        <td style="width:30%;">
           <label for="rubrics"><span class="label"><?php echo _("Select main rubric"); ?></span></label>
         </td>
-        <td width="50%">
+        <td style="width:50%;">
           <label for="search"><span class="label"><?php echo _("Searching for"); ?></span></label>
         </td>
         <td></td>
@@ -101,7 +101,7 @@ $db->free_result();
         </td>
         <td>
 <?php
-echo ("          <input class='input' name='search' id='search' type='text' size='46' maxlength='600'");
+echo ("          <input class='input' type='search' name='search' id='search' placeholder='" . _("Type words or part of words to filter a symptom") . "' autofocus autocomplete='off' size='52' maxlength='600'");
 $search = "";
 if (isset($_REQUEST['search'])) {
 	$search = $_REQUEST['search'];
@@ -142,7 +142,7 @@ $whole_word = "";
 if (isset($_REQUEST['whole_word'])) {
 	$whole_word = $_REQUEST['whole_word'];
 }
-if ($whole_word == 'true') {
+if ($whole_word === 'true') {
 	echo ("          <span class='gray'>|</span><input type='radio' class='button' name='whole_word' id='wordpart' value='false'><span title='" . _("&raquo;part of word&laquo; means, that it will find words, which include this expression.") . "'>" . _("part of word") . "</span>\n");
 	echo ("          <input type='radio' class='button' name='whole_word' id='whole_word' checked='checked' value='true'><span title='" . _("Here you can use regular expressions!") . "'>" . _("whole word") . "</span>\n");
 } else {
@@ -155,12 +155,11 @@ if ($search != "") {
 } else  if (isset($_REQUEST['rubrics'])) {
 	echo ("        <span id='search_item'>- " . _("no item for searching") . " -</span></td></tr>\n");
 } else {
-	echo ("        <span id='search_item'></span></td></tr>\n");
+	echo ("        <span id='search_item'></span></td><td></td></tr>\n");
 }
 ?>
     </table>
-    <br clear='all'>
-    <br>
+	<div class="clear"><br></div>
     <div class='select' id='select_symptoms'>
 <?php
 if (isset($_REQUEST['rubrics'])) {

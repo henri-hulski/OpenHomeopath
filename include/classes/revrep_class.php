@@ -91,7 +91,7 @@ class RevRep extends TreeView {
 			if($this->grade == $key){
 				$grade_radio .= " checked='checked'";
 			}
-			$grade_radio .= " onchange= \"getSymRems('remgrade')\"> <label for='grade$key'><span class='grade_$key'>$value</span></label>&nbsp;</span>";
+			$grade_radio .= "> <label for='grade$key'><span class='grade_$key'>$value</span></label>&nbsp;</span>";
 		}
 		return $grade_radio;
 	}
@@ -157,8 +157,12 @@ class RevRep extends TreeView {
 				$sub_result = $db->send_query($query);
 				$num_rows = $db->db_num_rows($sub_result);
 				if ($num_rows > 0) {
+					$parents_symptoms_table = $this->symptoms_tbl;
+					if ($sym_lang = $db->get_lang_only_symptom_table()) {
+						$parents_symptoms_table = "sym__" . $sym_lang['id'];
+					}
 					while (list ($missing_pid) = $db->db_fetch_row($sub_result)) {
-						$query = "SELECT {$this->symptoms_tbl}.sym_id, {$this->symptoms_tbl}.symptom, {$this->symptoms_tbl}.pid, {$this->symptoms_tbl}.rubric_id FROM {$this->symptoms_tbl} WHERE {$this->symptoms_tbl}.sym_id = $missing_pid";
+						$query = "SELECT sym_id, symptom, pid, rubric_id FROM $parents_symptoms_table WHERE sym_id = $missing_pid";
 						$sub_result2 = $db->send_query($query);
 						$symptom = $db->db_fetch_row($sub_result2);
 						$db->free_result($sub_result2);
@@ -211,8 +215,8 @@ class RevRep extends TreeView {
 		foreach ($this->rubrics_ar as $this->rubric_id => $rubric_name) {
 			$symptoms_ar = $this->get_treeview();
 			$child = $this->generate_child("tree2_$i", $symptoms_ar);
-			$symptomtree .= "      <div id='tree2$i' style='padding-left:20px;'>\n";
-			$symptomtree .= "        <span id='symbol_tree2$i'><a href=\"javascript:" . $expand . "_static('tree2_$i',1,0);\" class='nodecls_main'><img src='skins/original/img/main_folder" . $open . "_arrow.png' width='14' height='14'> <img src='skins/original/img/main_folder" . $open . ".png' width='14' height='14'> </a></span>\n";
+			$symptomtree .= "      <div id='tree2-$i' style='padding-left:20px;'>\n";
+			$symptomtree .= "        <span id='symbol_tree2-$i'><a href=\"javascript:" . $expand . "_static('tree2_$i',1,0);\" class='nodecls_main'><img src='skins/original/img/main_folder" . $open . "_arrow.png' alt='Expand main rubric' width='14' height='14'> <img src='skins/original/img/main_folder" . $open . ".png' alt='Main rubric' width='14' height='14'> </a></span>\n";
 			$symptomtree .= "        <span class='nodecls_main'>$rubric_name</span>\n      </div>\n";
 			$symptomtree .= "      <div id='tree2_$i' style='padding-left:20px; display:$display_child'>\n";
 			$symptomtree .= $child;
@@ -235,7 +239,7 @@ class RevRep extends TreeView {
 		$str = "";
 		$i = 0;
 		$display = 1;
-		$main_id = str_replace('_', '', $output_id);
+		$main_id = str_replace('_', '-', $output_id);
 		for($i = 0; $i < count($symptoms_ar); $i++) {
 			$class = "grade_" . $symptoms_ar[$i]['max_grade'];
 			if (!empty($symptoms_ar[$i]['sources'])) {
@@ -249,16 +253,16 @@ class RevRep extends TreeView {
 				}
 				$sources = implode("/", $sources_ar);
 			}
-			$str .= "<div id='" . $main_id . $i . "' style='padding-left:20px;'>\n";
+			$str .= "<div id='" . $main_id . "-" . $i . "' style='padding-left:20px;'>\n";
 			if ($symptoms_ar[$i]['folder'] > 0) {
 				$child_ar = $this->get_treeview($symptoms_ar[$i]['id']);
 				$child = $this->generate_child($output_id . "_" . $i, $child_ar);
 				if ($symptoms_ar[$i]['in_use'] > 0) {
-					$str .= "  <span id='symbol_" . $main_id . "" . $i . "'><a href=\"javascript:expand_static('" . $output_id . "_" . $i . "',0,1);\"><img src='skins/original/img/folder_arrow.png' width='12' height='12'> <img src='skins/original/img/folder_aeskulap.png' width='12' height='12'> </a></span>\n";
-					$str .= "  <a href=\"javascript:popup_url('details.php?sym=" . $symptoms_ar[$i]['id'] . "&rem={$this->rem_id}&sym_rem_tbl={$this->sym_rem_tbl}',540,380)\" title='" . $symptoms_ar[$i]['max_grade'] . _("-gr.") . ": $sources' class='$class'>" . $symptoms_ar[$i]['name'] . "</a>\n";
-					$str .= "  <a href='javascript:symptomData(" . $symptoms_ar[$i]['id'] . ");' title='" . _("Symptom-Info") . "'><img src='skins/original/img/info.gif' width='12' height='12'></a>\n";
+					$str .= "  <span id='symbol_" . $main_id . "-" . $i . "'><a href=\"javascript:expand_static('" . $output_id . "_" . $i . "',0,1);\"><img src='skins/original/img/folder_arrow.png'  alt='Expand rubric' width='12' height='12'> <img src='skins/original/img/folder_aeskulap.png' alt='Symptom rubric' width='12' height='12'> </a></span>\n";
+					$str .= "  <a href=\"javascript:popup_url('details.php?sym=" . $symptoms_ar[$i]['id'] . "&amp;rem={$this->rem_id}&amp;sym_rem_tbl={$this->sym_rem_tbl}',540,380)\" title='" . $symptoms_ar[$i]['max_grade'] . _("-gr.") . ": $sources' class='$class'>" . $symptoms_ar[$i]['name'] . "</a>\n";
+					$str .= "  <a href='javascript:symptomData(" . $symptoms_ar[$i]['id'] . ");' title='" . _("Symptom-Info") . "'><img src='skins/original/img/info.gif' width='12' height='12' alt='Info'></a>\n";
 				} else {
-					$str .= "  <span id='symbol_" . $main_id . $i . "'><a href=\"javascript:expand_static('" . $output_id . "_" . $i . "',0,0);\"><img src='skins/original/img/folder_arrow.png' width='12' height='12'> <img src='skins/original/img/folder.png' width='12' height='12'> </a></span>\n";
+					$str .= "  <span id='symbol_" . $main_id . "-" . $i . "'><a href=\"javascript:expand_static('" . $output_id . "_" . $i . "',0,0);\"><img src='skins/original/img/folder_arrow.png'  alt='Expand rubric' width='12' height='12'> <img src='skins/original/img/folder.png' alt='Rubric' width='12' height='12'> </a></span>\n";
 					$str .= "  <span class='$class'>" . $symptoms_ar[$i]['name'] . "</span>\n";
 				}
 				$str .= "</div>\n";
@@ -266,9 +270,9 @@ class RevRep extends TreeView {
 				$str .= $child;
 				$str .= "</div>\n";
 			} else {
-				$str .= "  <span class='nodecls'><span style='visibility:hidden'><img src='skins/original/img/folder_arrow.png' width='12' height='12'> </span><img src='skins/original/img/aeskulap.png' width='12' height='12'> </span>\n";
-				$str .= "  <a href=\"javascript:popup_url('details.php?sym=" . $symptoms_ar[$i]['id'] . "&rem={$this->rem_id}&sym_rem_tbl={$this->sym_rem_tbl}',540,380)\" title='" . $symptoms_ar[$i]['max_grade'] . _("-gr.") . ": $sources' class='$class'>" . $symptoms_ar[$i]['name'] . "</a>\n";
-				$str .= "  <a href='javascript:symptomData(" . $symptoms_ar[$i]['id'] . ");' title='" . _("Symptom-Info") . "'><img src='skins/original/img/info.gif' width='12' height='12'></a>\n";
+				$str .= "  <span class='nodecls'><span style='visibility:hidden'><img src='skins/original/img/folder_arrow.png'  alt='Expand rubric' width='12' height='12'> </span><img src='skins/original/img/aeskulap.png' alt='Symptom' width='12' height='12'> </span>\n";
+				$str .= "  <a href=\"javascript:popup_url('details.php?sym=" . $symptoms_ar[$i]['id'] . "&amp;rem={$this->rem_id}&amp;sym_rem_tbl={$this->sym_rem_tbl}',540,380)\" title='" . $symptoms_ar[$i]['max_grade'] . _("-gr.") . ": $sources' class='$class'>" . $symptoms_ar[$i]['name'] . "</a>\n";
+				$str .= "  <a href='javascript:symptomData(" . $symptoms_ar[$i]['id'] . ");' title='" . _("Symptom-Info") . "'><img src='skins/original/img/info.gif' width='12' height='12' alt='Info'></a>\n";
 				$str .= "</div>\n";
 			}
 		}

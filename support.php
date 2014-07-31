@@ -31,7 +31,7 @@ include_once ("include/classes/login/session.php");
 $skin = $session->skin;
 $head_title = _("Support") . " :: OpenHomeopath";
 $meta_description = _("How can I support OpenHomeopath?");
-include("./skins/$skin/header.php");
+include("skins/$skin/header.php");
 ?>
 <h1>
   <?php echo _("How can I support OpenHomeopath?"); ?>
@@ -75,7 +75,6 @@ if ($session->lang == "de") {
     </p>
    <p><?php printf("<strong>" . _("The financial concept of OpenHomeopath is based on reaching a monthly donation goal of %d €/$ by collective effort of all users.") . "</strong> " . _("Until the monthly donation goal is reached, the functionality of OpenHomeopath is restricted for non-donators.") . " " . _("When the monthly donating goal will be reached, <strong>OpenHomeopath will be fully usable for everybody</strong> until the 10th or when reaching 50%% of the donating goal until the 20th of the next month."), DONATION_GOAL_MONTHLY); ?></p>
   </li>
-  <li><strong><?php echo _("Participation in the server costs"); ?>:</strong> <?php echo _("If you want to contribute to the server costs, you can <a href='http://openhomeo.org/spenden.html'>transfer donations</a> to the non-profit association \"Verein zur Förderung der naturheilkundlichen Medizin e.V.\"."); ?></li>
    <li><strong><?php echo _("Complete the database "); ?>:</strong> <?php echo _("You can actively add repertories with the <a href='express.php'>express-tool</a>. If someone has a English or German materia medica in digital format please contact. This can be a textfile, a table, a PDF with text or a database. I will try to import it to OpenHomeopath."); ?></li>
   <li><strong><?php echo _("Translations"); ?>:</strong> <?php echo _("It would be nice to have OpenHomeopath translated in more languages. For the internationalization I'm using gettext. With the poeditor it's easy to make new translations and integrate them. In addition the help files and parts of the database, specially the main rubrics, must be translated. If you're interested please send me an <a href='mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath'>e-mail</a>."); ?></li>
 </ol>

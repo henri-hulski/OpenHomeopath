@@ -1,0 +1,12 @@
+	/* small screen  ----------- */
+	@media only screen
+	and (min-device-width : 320px)
+	and (max-device-width : 720px) {
+        #symptom_table {
+//          display: none;
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+        }
+
+	}

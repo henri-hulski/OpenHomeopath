@@ -31,7 +31,7 @@ include_once ("include/classes/login/session.php");
 if (empty($_GET['popup'])) {
 	$head_title = _("Source-Info") . " :: OpenHomeopath";
 	$skin = $session->skin;
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 }
 
 if ($src_id = $_GET['src']){
@@ -80,9 +80,9 @@ if ($src_id = $_GET['src']){
 		echo ("      <li><strong>" . _("Edition / Version:") . " </strong><span class='gray'>$src_info[5]</span></li>\n");
 	}
 	if (!empty($src_info[6]) && $src_info[6] != "-") {
-		$src_info[6] = str_replace("\r\n", "<br />", $src_info[6]);
-		$src_info[6] = str_replace("\r", "<br />", $src_info[6]);
-		$src_info[6] = str_replace("\n", "<br />", $src_info[6]);
+		$src_info[6] = str_replace("\r\n", "<br>", $src_info[6]);
+		$src_info[6] = str_replace("\r", "<br>", $src_info[6]);
+		$src_info[6] = str_replace("\n", "<br>", $src_info[6]);
 		echo ("      <li><strong>" . _("License:") . " </strong><span class='gray'>$src_info[6]</span></li>\n");
 	}
 	if (!empty($src_info[7]) && $src_info[7] != "-") {
@@ -92,15 +92,15 @@ if ($src_id = $_GET['src']){
 		echo ("      <li><strong>" . _("ISBN:") . " </strong><span class='gray'>$src_info[8]</span></li>\n");
 	}
 	if (!empty($src_info[12]) && $src_info[12] != "-") {
-		$src_info[12] = str_replace("\r\n", "<br />", $src_info[12]);
-		$src_info[12] = str_replace("\r", "<br />", $src_info[12]);
-		$src_info[12] = str_replace("\n", "<br />", $src_info[12]);
+		$src_info[12] = str_replace("\r\n", "<br>", $src_info[12]);
+		$src_info[12] = str_replace("\r", "<br>", $src_info[12]);
+		$src_info[12] = str_replace("\n", "<br>", $src_info[12]);
 		echo ("      <li><strong>" . _("Proving:") . " </strong><span class='gray'>$src_info[12]</span></li>\n");
 	}
 	if (!empty($src_info[9]) && $src_info[9] != "-") {
-		$src_info[9] = str_replace("\r\n", "<br />", $src_info[9]);
-		$src_info[9] = str_replace("\r", "<br />", $src_info[9]);
-		$src_info[9] = str_replace("\n", "<br />", $src_info[9]);
+		$src_info[9] = str_replace("\r\n", "<br>", $src_info[9]);
+		$src_info[9] = str_replace("\r", "<br>", $src_info[9]);
+		$src_info[9] = str_replace("\n", "<br>", $src_info[9]);
 		echo ("      <li><strong>" . _("Note:") . " </strong><span class='gray'>$src_info[9]</span></li>\n");
 	}
 	if (!empty($src_info[10]) && $src_info[10] != "-") {
@@ -121,7 +121,7 @@ if ($src_id = $_GET['src']){
 			$src_info[10] = str_replace(" , ", ",", $src_info[10]);
 			$src_info[10] = str_replace(" ; ", ";", $src_info[10]);
 		}
-		$src_info[10] = str_replace(" <br> ", "<br />", $src_info[10]);
+		$src_info[10] = str_replace(" <br> ", "<br>", $src_info[10]);
 		echo ("      <li><strong>" . _("Contact:") . " </strong><span class='gray'>$src_info[10]</span></li>\n");
 	}
 	echo ("    </ul>\n");

@@ -156,10 +156,10 @@ function displayBannedUsers() {
 		$banned_user_table = _("no banned users");
 	} else {
 		/* Display table contents */
-		$banned_user_table = "<table align='left' border='1' cellspacing='0' cellpadding='3'>\n";
-		$banned_user_table .= "<tr><td><b>" . _("Username") . "</b></td><td><b>" . _("Time Banned") . "</b></td></tr>\n";
+		$banned_user_table = "<table style='text-align: left; border-spacing: 0; border-collapse: collapse; border: solid 1px;'>\n";
+		$banned_user_table .= "<tr><td style='padding:3px'><b>" . _("Username") . "</b></td><td style='padding:3px'><b>" . _("Time Banned") . "</b></td></tr>\n";
 		while(list($username, $timestamp) = $db->db_fetch_row()) {
-			$banned_user_table .= "<tr><td>$username</td><td>$timestamp</td></tr>\n";
+			$banned_user_table .= "<tr><td style='padding:3px'>$username</td><td style='padding:3px'>$timestamp</td></tr>\n";
 		}
 		$banned_user_table .= "</table><br>\n";
 		$db->free_result();
@@ -210,7 +210,7 @@ if (!$session->isAdmin()) {
 		printf("<p class='error_message'>!*** " . ngettext("%d record was deleted!", "%d records were deleted!", $count) . "</p><br>\n", $count);
 	}
 ?>
-<div class="content">
+<nav class="content">
   <h2>
     <?php echo _("Contents"); ?>
   </h2>
@@ -220,12 +220,12 @@ if (!$session->isAdmin()) {
     <li><a href="#delete_user"><?php echo _("Delete User"); ?></a></li>
     <li><a href="#delete_inactive"><?php echo _("Delete Inactive Users"); ?></a></li>
     <li><a href="#ban_user"><?php echo _("Ban User"); ?></a></li>
-    <li><a href="#baned_user"><?php echo _("Banned Users Table"); ?></a></li>
+    <li><a href="#banned_user"><?php echo _("Banned Users Table"); ?></a></li>
     <li><a href="#repeal_ban"><?php echo _("Repeal the ban of a username"); ?></a></li>
     <li><a href="#delete_records"><?php echo _("Delete records of a user"); ?></a></li>
   </ul>
-</div>
-<table align="left" border="0" cellspacing="5" cellpadding="5">
+</nav>
+<table class='usertable'>
   <tr>
     <td>
 <?php
@@ -233,7 +233,7 @@ if (!$session->isAdmin()) {
  * Display Users Table
  */
 ?>
-      <a name="user_table" id="user_table"><br></a>
+      <a id="user_table"><br></a>
       <h3 style="text-align: center;"><?php echo _("Users Table Contents:"); ?></h3>
     </td>
   </tr>
@@ -246,7 +246,7 @@ if (!$session->isAdmin()) {
   </tr>
   <tr>
     <td>
-      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>"></a></span>
     </td>
   </tr>
   <tr>
@@ -260,7 +260,7 @@ if (!$session->isAdmin()) {
  * Update User Level
  */
 ?>
-      <a name="user_level" id="user_level"></a>
+      <a id="user_level"></a>
       <h3><?php echo _("Change the userlevel"); ?></h3>
       <?php echo $form->error("upduser"); ?>
       <form action="include/classes/login/adminprocess.php" method="POST">
@@ -290,7 +290,7 @@ if (!$session->isAdmin()) {
   </tr>
   <tr>
     <td>
-      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>"></a></span>
     </td>
   </tr>
   <tr>
@@ -304,7 +304,7 @@ if (!$session->isAdmin()) {
  * Delete User
  */
 ?>
-      <a name="delete_user" id="delete_user"></a>
+      <a id="delete_user"></a>
       <h3><?php echo _("Delete User"); ?></h3>
       <?php echo $form->error("deluser"); ?>
       <form action="include/classes/login/adminprocess.php" method="POST">
@@ -324,7 +324,7 @@ if (!$session->isAdmin()) {
   </tr>
   <tr>
     <td>
-      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>"></a></span>
     </td>
   </tr>
   <tr>
@@ -338,7 +338,7 @@ if (!$session->isAdmin()) {
  * Delete Inactive Users
  */
 ?>
-      <a name="delete_inactive" id="delete_inactive"></a>
+      <a id="delete_inactive"></a>
       <h3><?php echo _("Delete Inactive Users"); ?></h3>
       <p><?php echo _("This will delete all users (not administrators), who have not logged in to the site within a certain time period. You specify the days spent inactive."); ?></p>
       <form action="include/classes/login/adminprocess.php" method="POST">
@@ -373,7 +373,7 @@ if (!$session->isAdmin()) {
   </tr>
   <tr>
     <td>
-      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>"></a></span>
     </td>
   </tr>
   <tr>
@@ -387,7 +387,7 @@ if (!$session->isAdmin()) {
  * Ban User
  */
 ?>
-      <a name="ban_user" id="ban_user"></a>
+      <a id="ban_user"></a>
       <h3><?php echo _("Ban User"); ?></h3>
       <?php echo $form->error("banuser"); ?>
       <form action="include/classes/login/adminprocess.php" method="POST">
@@ -405,7 +405,7 @@ if (!$session->isAdmin()) {
   </tr>
   <tr>
     <td>
-      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>"></a></span>
     </td>
   </tr>
   <tr>
@@ -419,7 +419,7 @@ if (!$session->isAdmin()) {
  * Display Banned Users Table
  */
 ?>
-      <a name="baned_user" id="baned_user"></a>
+      <a id="banned_user"></a>
       <h3><?php echo _("Banned Users Table Contents:"); ?></h3>
     </td>
   </tr>
@@ -432,7 +432,7 @@ if (!$session->isAdmin()) {
   </tr>
   <tr>
     <td>
-      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>"></a></span>
     </td>
   </tr>
   <tr>
@@ -446,7 +446,7 @@ if (!$session->isAdmin()) {
  * Delete Banned User
  */
 ?>
-      <a name="repeal_ban" id="repeal_ban"></a>
+      <a id="repeal_ban"></a>
       <h3><?php echo _("Repeal the ban of a username"); ?></h3>
       <?php echo $form->error("delbanuser"); ?>
       <form action="include/classes/login/adminprocess.php" method="POST">
@@ -459,7 +459,7 @@ if (!$session->isAdmin()) {
   </tr>
   <tr>
     <td>
-      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>"></a></span>
     </td>
   </tr>
   <tr>
@@ -473,7 +473,7 @@ if (!$session->isAdmin()) {
  * Delete User Data
  */
 ?>
-      <a name="delete_records" id="delete_records"></a>
+      <a id="delete_records"></a>
       <h3><?php echo _("Delete records of a user"); ?></h3>
       <p><?php echo _("Here you can, for example with vandalism, delete the database entries for a user. In the tables <strong> Materia Medica </strong> and <strong> symptom-remedy-relations </strong> will delete all messages while the user in the tables <strong>symptoms</strong>, <strong>main rubrics</strong>, <strong>remedies</strong>, <strong>source</strong> and <strong>languages</strong> Only the entries to which no records of other users reference."); ?></p>
       <?php echo $form->error("deluserdata"); ?>
@@ -492,11 +492,11 @@ if (!$session->isAdmin()) {
   </tr>
   <tr>
     <td>
-      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>" border="0"></a></span>
+      <span class="rightFlow"><a href="#up" title="<?php echo _("To the top of the page"); ?>"><img src="<?php echo(ARROW_UP_ICON);?>" alt="<?php echo _("To the top of the page"); ?>"></a></span>
     </td>
   </tr>
 </table>
-<br clear="all">
+<div class="clear"></div>
 <?php
 	include("skins/$skin/footer.php");
 }

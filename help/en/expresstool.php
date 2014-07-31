@@ -95,7 +95,7 @@ $db->free_result();
     <li><strong>Author:</strong> The source author.</li>
     <li><strong>Title:</strong> The source title.</li>
     <li><strong>Year:</strong> Specify the publication year in the form '<strong>1902</strong>', '<strong>1783-1785</strong>' or '<strong>1988-</strong>'.</li>
-    <li><strong>Language:</strong> The language code from the languages table (e.g. '<strong>en</strong>' for English, '<strong>de</strong>' for German, etc.). If the language doesn't exists you first have to <a href="../../datadmin.php?function=show_insert_form&amp;table_name=languages">add it to the languages table</a></a>.</li>
+    <li><strong>Language:</strong> The language code from the languages table (e.g. '<strong>en</strong>' for English, '<strong>de</strong>' for German, etc.). If the language doesn't exists you first have to <a href="../../datadmin.php?function=show_insert_form&amp;table_name=languages">add it to the languages table</a>.</li>
     <li><strong>Maximum grade:</strong> The maximum grade of the source. A number from <strong>1-5</strong>.</li>
     <li><strong>Source type:</strong> Allowed values are (write both, German and English):
     <ul>

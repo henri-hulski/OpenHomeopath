@@ -30,7 +30,8 @@
 include_once ("include/classes/login/session.php");
 $tabbed = true;
 $skin = $session->skin;
-include("./skins/$skin/header.php");
+$current_page = 'index';
+include("skins/$skin/header.php");
 ?>
 <h1>
   OpenHomeopath
@@ -42,24 +43,24 @@ if (isset($_GET['tab']) && $_GET['tab'] == 0) {
 	$class = " tabdefault";
 }
 ?>
-  <div class="tab<?php echo($class);?>" title="<?php echo _("Repertorization"); ?>" id="tab_0">
+  <section class="tab<?php echo($class);?>" title="<?php echo _("Repertorization"); ?>" id="tab_0">
 <?php
 include("./repertori.php");
 ?>
-  </div>
-  <div class="tab tabinactive" title="<?php echo _("Repertorization result"); ?>" id="tab_1">
-  </div>
+  </section>
+  <section class="tab tabinactive" title="<?php echo _("Repertorization result"); ?>" id="tab_1">
+  </section>
 <?php
 $class = "";
 if (isset($_GET['tab']) && $_GET['tab'] == 2) {
 	$class = " tabdefault";
 }
 ?>
-  <div class="tab<?php echo($class);?>" title="<?php echo _("Materia Medica"); ?>" id="tab_2">
+  <section class="tab<?php echo($class);?>" title="<?php echo _("Materia Medica"); ?>" id="tab_2">
 <?php
 include("./materia.php");
 ?>
-  </div>
+  </section>
 <?php
 $class = "";
 if (isset($_GET['tab']) && $_GET['tab'] == 3) {
@@ -68,13 +69,13 @@ if (isset($_GET['tab']) && $_GET['tab'] == 3) {
 	$class = " tabinactive";
 }
 ?>
-  <div class="tab<?php echo($class);?>" title="<?php echo _("Symptom-Info"); ?>" id="tab_3">
+  <section class="tab<?php echo($class);?>" title="<?php echo _("Symptom-Info"); ?>" id="tab_3">
 <?php
 if (isset($_GET['tab']) && $_GET['tab'] == 3 && isset($_REQUEST['symptom'])) {
 	include("symptominfo.php");
 }
 ?>
-  </div>
+  </section>
 <?php
 if ($session->logged_in) {
 	$class = "";
@@ -82,22 +83,22 @@ if ($session->logged_in) {
 		$class = " tabdefault";
 	}
 ?>
-  <div class="tab<?php echo($class);?>" title="<?php echo _("My account"); ?>" id="tab_4">
+  <section class="tab<?php echo($class);?>" title="<?php echo _("My account"); ?>" id="tab_4">
 <?php
 	$req_user = $session->username;
 	include("userinfo.php");
 ?>
-  </div>
+  </section>
 <?php
 }
 ?>
 </div>
-<script type="text/javascript">
+<script>
   var tabberArgs = {};
   tabberArgs.div = document.getElementById("tabber");
   document.getElementById("tabber").tabber = new tabberObj(tabberArgs);
 </script>
 <?php
 popup(1);
-include("./skins/$skin/footer.php");
+include("skins/$skin/footer.php");
 ?>

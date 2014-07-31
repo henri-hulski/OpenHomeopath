@@ -277,8 +277,7 @@ function popupHistory(url){
 
 function setPopupurl(url) {
 	// Info an Server, dass es sich um eine Popup-Anfrage handelt
-	var popupurl = url.indexOf("?") == -1 ? url + "?popup=1" : url + "&popup=1";
-	return popupurl;
+	return url.indexOf("?") == -1 ? url + "?popup=1" : url + "&popup=1";
 }
 
 function historyBackPopup() {
@@ -905,7 +904,7 @@ function getMateria(remId) {
 }
 
 function getRemSymptoms(name) {
-	var remId = document.getElementById("remId").value;
+	var remId = document.getElementById("revRemId").value;
 	var rubricId = document.getElementById("rem_rubrics").options[document.getElementById("rem_rubrics").selectedIndex].value;
 	var grade = "1";
 	if (document.getElementById(name + "2").checked) {
@@ -941,19 +940,19 @@ function getSymRems(name) {
 // treeview:
 
 var UI = new Object();
-UI.expand = "<img src='skins/original/img/folder_arrow.png' width='12' height='12'> <img src='skins/original/img/folder_aeskulap.png' width='12' height='12'> ";
-UI.collapse = "<img src='skins/original/img/folder_open_arrow.png' width='12' height='12'> <img src='skins/original/img/folder_open_aeskulap.png' width='12' height='12'> ";
-UI.expand_not_used = "<img src='skins/original/img/folder_arrow.png' width='12' height='12'> <img src='skins/original/img/folder.png' width='12' height='12'> ";
-UI.collapse_not_used = "<img src='skins/original/img/folder_open_arrow.png' width='12' height='12'> <img src='skins/original/img/folder_open.png' width='12' height='12'> ";
-UI.expand_main = "<img src='skins/original/img/main_folder_arrow.png' width='14' height='14'> <img src='skins/original/img/main_folder.png' width='14' height='14'> ";
-UI.collapse_main = "<img src='skins/original/img/main_folder_open_arrow.png' width='14' height='14'> <img src='skins/original/img/main_folder_open.png' width='14' height='14'> ";
-UI.single = "<span style='visibility:hidden'><img src='skins/original/img/folder_arrow.png' width='12' height='12'> </span><img src='skins/original/img/aeskulap.png' width='12' height='12'> ";
+UI.expand = "<img src='skins/original/img/folder_arrow.png' alt='Expand rubric' width='12' height='12'> <img src='skins/original/img/folder_aeskulap.png' alt='Symptom rubric' width='12' height='12'> ";
+UI.collapse = "<img src='skins/original/img/folder_open_arrow.png' alt='Collapse rubric' width='12' height='12'> <img src='skins/original/img/folder_open_aeskulap.png' alt='Symptom rubric' width='12' height='12'> ";
+UI.expand_not_used = "<img src='skins/original/img/folder_arrow.png' alt='Expand rubric' width='12' height='12'> <img src='skins/original/img/folder.png' alt='Rubric' width='12' height='12'> ";
+UI.collapse_not_used = "<img src='skins/original/img/folder_open_arrow.png' alt='Collapse rubric' width='12' height='12'> <img src='skins/original/img/folder_open.png' alt='Rubric' width='12' height='12'> ";
+UI.expand_main = "<img src='skins/original/img/main_folder_arrow.png' alt='Expand main rubric' width='14' height='14'> <img src='skins/original/img/main_folder.png' alt='Main rubric' width='14' height='14'> ";
+UI.collapse_main = "<img src='skins/original/img/main_folder_open_arrow.png' alt='Collapse main rubric' width='14' height='14'> <img src='skins/original/img/main_folder_open.png' alt='Main rubric' width='14' height='14'> ";
+UI.single = "<span style='visibility:hidden'><img src='skins/original/img/folder_arrow.png' alt='Expand rubric' width='12' height='12'> </span><img src='skins/original/img/aeskulap.png' alt='Symptom' width='12' height='12'> ";
 
 function collapse(outputId, rubric, value, mainRubric, inUse) {
 	document.getElementById(outputId).style.display = "none";
-	var str = 'symbol_'+outputId.replace(/_/g,'');
+	var str = 'symbol_'+outputId.replace(/_/g,'-');
 	if (document.getElementById(str)) {
-		var mainId = outputId.replace(/_/g,'');
+		var mainId = outputId.replace(/_/g,'-');
 		var symbolhref = '<span id="symbol_'+mainId+'"><a href="javascript:expand(\''+outputId+'\','+rubric+','+value+','+mainRubric+','+inUse+');" ';
 		if (mainRubric == 1) {
 			symbolhref += 'class="nodecls_main">'+UI.expand_main+'</a></span>';
@@ -969,9 +968,9 @@ function collapse(outputId, rubric, value, mainRubric, inUse) {
 function expand(outputId, rubric, value, mainRubric, inUse) {
 	loadChild(outputId, rubric, value);
 	document.getElementById(outputId).style.display = "block";
-	var str = 'symbol_'+outputId.replace(/_/g,'');
+	var str = 'symbol_'+outputId.replace(/_/g,'-');
 	if (document.getElementById(str)) {
-		var mainId = outputId.replace(/_/g,'');
+		var mainId = outputId.replace(/_/g,'-');
 		var symbolhref = '<span id="symbol_'+mainId+'"><a href="javascript:collapse(\''+outputId+'\','+rubric+','+value+','+mainRubric+','+inUse+');" ';
 		if (mainRubric == 1) {
 			symbolhref += 'class="nodecls_main">'+UI.collapse_main+'</a></span>';
@@ -986,9 +985,9 @@ function expand(outputId, rubric, value, mainRubric, inUse) {
 
 function collapse_static(outputId, mainRubric, inUse) {
 	document.getElementById(outputId).style.display = "none";
-	var str = 'symbol_'+outputId.replace(/_/g,'');
+	var str = 'symbol_'+outputId.replace(/_/g,'-');
 	if (document.getElementById(str)) {
-		var mainId = outputId.replace(/_/g,'');
+		var mainId = outputId.replace(/_/g,'-');
 		var symbolhref = '<span id="symbol_'+mainId+'"><a href="javascript:expand_static(\''+outputId+'\','+mainRubric+','+inUse+');" ';
 		if (mainRubric == 1) {
 			symbolhref += 'class="nodecls_main">'+UI.expand_main+'</a></span>';
@@ -1003,9 +1002,9 @@ function collapse_static(outputId, mainRubric, inUse) {
 
 function expand_static(outputId, mainRubric, inUse) {
 	document.getElementById(outputId).style.display = "block";
-	var str = 'symbol_'+outputId.replace(/_/g,'');
+	var str = 'symbol_'+outputId.replace(/_/g,'-');
 	if (document.getElementById(str)) {
-		var mainId = outputId.replace(/_/g,'');
+		var mainId = outputId.replace(/_/g,'-');
 		var symbolhref = '<span id="symbol_'+mainId+'"><a href="javascript:collapse_static(\''+outputId+'\','+mainRubric+','+inUse+');" ';
 		if (mainRubric == 1) {
 			symbolhref += 'class="nodecls_main">'+UI.collapse_main+'</a></span>';
@@ -1029,16 +1028,16 @@ function generateChild(outputId, response) {
 	if (response.data.length == 0) {
 		document.getElementById(outputId).style.display = "none";
 	}
-	var mainId = outputId.replace(/_/g,'');
+	var mainId = outputId.replace(/_/g,'-');
 	for(i = 0;i < response.data.length;i++) {
-		str += '<div id="'+mainId+''+i+'" style="padding-left:20px;">';
+		str += '<div id="'+mainId+'-'+i+'" style="padding-left:20px;">';
 		if (response.data[i].folder > 0) {
 			if (response.data[i].in_use > 0) {
-				str += '<span id="symbol_'+mainId+''+i+'"><a href="javascript:expand(\''+outputId+'_'+i+'\','+response.rubric+','+response.data[i].id+',0'+',1'+');" class="nodecls">'+UI.expand+'</a></span>';
+				str += '<span id="symbol_'+mainId+'-'+i+'"><a href="javascript:expand(\''+outputId+'_'+i+'\','+response.rubric+','+response.data[i].id+',0'+',1'+');" class="nodecls">'+UI.expand+'</a></span>';
 				str += '<a href="javascript:selectSymptom('+response.data[i].id+');" class="nodecls">'+response.data[i].name+' </a>';
 				str += '<a href="javascript:symptomData('+response.data[i].id+');" class="nodecls" title="' + lang[9] + '"><img src="skins/original/img/info.gif" width="12" height="12"></a></div>';
 			} else {
-				str += '<span id="symbol_'+mainId+''+i+'"><a href="javascript:expand(\''+outputId+'_'+i+'\','+response.rubric+','+response.data[i].id+',0'+',0'+');" class="nodecls">'+UI.expand_not_used+'</a></span>';
+				str += '<span id="symbol_'+mainId+'-'+i+'"><a href="javascript:expand(\''+outputId+'_'+i+'\','+response.rubric+','+response.data[i].id+',0'+',0'+');" class="nodecls">'+UI.expand_not_used+'</a></span>';
 				str += '<span class="nodecls">'+response.data[i].name+'</span></div>';
 			}
 			str += '<div id="'+outputId+'_'+i+'" style="padding-left:20px;display:none"></div>';

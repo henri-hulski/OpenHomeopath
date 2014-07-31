@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenHomeopath 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-06 02:06+0100\n"
+"POT-Creation-Date: 2014-07-31 01:25+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Henri Schumacher <henri.hulski@gazeta.pl>\n"
 "Language-Team: Henri Schumacher <henri.hulski@gazeta.pl>\n"
@@ -16,35 +16,35 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: repertori.php:35 repertori.php:51 index.php:45 skins/kraque/frame.php:93
-#: skins/kraque/frame.php:170 skins/original/frame.php:67
+#: repertori.php:35 repertori.php:52 index.php:46 skins/kraque/frame.php:93
+#: skins/kraque/frame.php:170 skins/original/frame.php:66
 #: help/layout/kraque/frame.php:93 help/layout/kraque/frame.php:170
-#: help/layout/original/frame.php:67 install/install_db.php:279
+#: help/layout/original/frame.php:66 install/install_db.php:278
 msgid "Repertorization"
 msgstr "Repertorisierung"
 
-#: repertori.php:65
+#: repertori.php:66
 msgid "Selected symptoms"
 msgstr "Ausgewählte Symptome"
 
-#: repertori.php:89 repertori.php:121 include/classes/rep_class.php:338
-#: include/classes/rep_class.php:373 javascript/locale.php:3
+#: repertori.php:90 repertori.php:122 include/classes/rep_class.php:346
+#: include/classes/rep_class.php:381 javascript/locale.php:3
 msgid "Rubric degree"
 msgstr "Gewichtung der Rubrik"
 
-#: repertori.php:90 repertori.php:125 index.php:71 symptominfo.php:43
-#: symptominfo.php:57 include/classes/revrep_class.php:259
-#: include/classes/revrep_class.php:271 include/classes/treeview_class.php:233
+#: repertori.php:91 repertori.php:126 index.php:72 symptominfo.php:43
+#: symptominfo.php:57 include/classes/revrep_class.php:263
+#: include/classes/revrep_class.php:275 include/classes/treeview_class.php:233
 #: include/classes/treeview_class.php:249 javascript/locale.php:12
-#: forms/reversed_rep.php:147 forms/select_symptoms.php:157
+#: forms/reversed_rep.php:147 forms/select_symptoms.php:161
 msgid "Symptom-Info"
 msgstr "Symptom-Info"
 
-#: repertori.php:91 repertori.php:129 javascript/locale.php:14
+#: repertori.php:92 repertori.php:130 javascript/locale.php:14
 msgid "Deselect symptom"
 msgstr "Symptom abwählen"
 
-#: repertori.php:134 skins/kraque/frame.php:58 skins/kraque/frame.php:146
+#: repertori.php:135 skins/kraque/frame.php:58 skins/kraque/frame.php:146
 #: help/layout/kraque/frame.php:58 help/layout/kraque/frame.php:146
 msgid "Repertorize"
 msgstr "Repertorisieren"
@@ -75,20 +75,20 @@ msgstr "Ein Datensatz wurde erfolgreich wiederhergestellt!"
 msgid "Table:"
 msgstr "Tabelle:"
 
-#: archive.php:240 archive.php:479 skins/kraque/header_datadmin_top.php:13
+#: archive.php:240 archive.php:479 skins/kraque/header_datadmin_top.php:16
 #: skins/kraque/frame.php:78 skins/kraque/frame.php:95
 #: skins/kraque/frame.php:155 skins/kraque/frame.php:172
 #: skins/kraque/header_datadmin.php:10
-#: skins/original/header_datadmin_top.php:13 skins/original/frame.php:73
+#: skins/original/header_datadmin_top.php:16 skins/original/frame.php:72
 #: skins/original/header_datadmin.php:10 help/layout/kraque/frame.php:78
 #: help/layout/kraque/frame.php:95 help/layout/kraque/frame.php:155
-#: help/layout/kraque/frame.php:172 help/layout/original/frame.php:73
-#: install/install_db.php:285
+#: help/layout/kraque/frame.php:172 help/layout/original/frame.php:72
+#: install/install_db.php:284
 msgid "Data maintenance"
 msgstr "Datenpflege"
 
-#: archive.php:240 archive.php:479 express.php:47 express.php:52
-#: express.php:258 skins/kraque/footer_datadmin.php:36
+#: archive.php:240 archive.php:479 express.php:46 express.php:51
+#: express.php:214 skins/kraque/footer_datadmin.php:36
 #: skins/kraque/header_datadmin.php:46 skins/original/footer_datadmin.php:37
 #: skins/original/header_datadmin.php:46
 msgid "Express-Tool"
@@ -191,7 +191,8 @@ msgstr ""
 "deines Benutzernamens  <b>%s</b> konnte nicht fertiggestellt werden."
 "<br>Versuchs später nochmal."
 
-#: register.php:83
+#: register.php:83 include/classes/login/adminprocess.php:361
+#: include/classes/login/adminprocess.php:447
 msgid "Please enter a username"
 msgstr "Bitte wähle einen Benutzernamen "
 
@@ -209,7 +210,7 @@ msgid_plural "errors found"
 msgstr[0] "Fehler gefunden"
 msgstr[1] "Fehler gefunden"
 
-#: register.php:99 login.php:75 login.php:145 userinfo.php:100
+#: register.php:99 login.php:75 login.php:146 userinfo.php:101
 #: useradmin.php:270 useradmin.php:311 useradmin.php:394
 #: include/classes/login/mailer.php:58 include/classes/login/mailer.php:108
 msgid "Username:"
@@ -223,7 +224,7 @@ msgstr "Passwort:"
 msgid "Re-enter Password:"
 msgstr "Passwort wiederholen:"
 
-#: register.php:120 useredit.php:181 userinfo.php:104
+#: register.php:120 useredit.php:181 userinfo.php:105
 msgid "E-mail:"
 msgstr "E-Mail:"
 
@@ -238,11 +239,11 @@ msgstr ""
 msgid "Send!"
 msgstr "Senden!"
 
-#: materia.php:57 materia.php:81 index.php:58
+#: materia.php:57 materia.php:81 index.php:59
 #: include/classes/symrem_class.php:218 skins/kraque/frame.php:69
-#: skins/kraque/frame.php:152 skins/original/frame.php:70
+#: skins/kraque/frame.php:152 skins/original/frame.php:69
 #: help/layout/kraque/frame.php:69 help/layout/kraque/frame.php:152
-#: help/layout/original/frame.php:70 install/install_db.php:282
+#: help/layout/original/frame.php:69 install/install_db.php:281
 #: forms/sym_rems.php:84
 msgid "Materia Medica"
 msgstr "Materia Medica"
@@ -281,12 +282,16 @@ msgstr ""
 msgid "Type the beginning of the word and select the remedy"
 msgstr "Wortanfang eingeben und Mittel auswählen"
 
-#: donations.php:40 support.php:44 userinfo.php:92
+#: materia.php:86
+msgid "Type the first letters of the remedy"
+msgstr "Gebe die ersten Buchstaben des Mittels ein"
+
+#: donations.php:40 support.php:44 userinfo.php:93
 #: include/functions/layout.php:91 skins/kraque/frame.php:125
 #: skins/kraque/frame.php:191 skins/original/frame.php:90
-#: skins/original/frame.php:119 help/layout/kraque/frame.php:125
+#: skins/original/frame.php:122 help/layout/kraque/frame.php:125
 #: help/layout/kraque/frame.php:191 help/layout/original/frame.php:90
-#: help/layout/original/frame.php:114
+#: help/layout/original/frame.php:117
 msgid "Donations"
 msgstr "Spenden"
 
@@ -420,9 +425,9 @@ msgstr "Angemeldet"
 msgid "you're logged in."
 msgstr "du bist angemeldet."
 
-#: login.php:46 index.php:85 userinfo.php:67 skins/kraque/frame.php:102
-#: skins/original/frame.php:93 help/layout/kraque/frame.php:102
-#: help/layout/original/frame.php:93
+#: login.php:46 index.php:86 userinfo.php:68 skins/kraque/frame.php:102
+#: skins/original/frame.php:94 help/layout/kraque/frame.php:102
+#: help/layout/original/frame.php:94
 msgid "My account"
 msgstr "Mein Bereich"
 
@@ -436,8 +441,8 @@ msgstr "Benutzereinstellungen"
 msgid "User administration"
 msgstr "Benutzerverwaltung"
 
-#: login.php:51 skins/kraque/frame.php:112 skins/original/frame.php:99
-#: help/layout/kraque/frame.php:112 help/layout/original/frame.php:99
+#: login.php:51 skins/kraque/frame.php:112 skins/original/frame.php:100
+#: help/layout/kraque/frame.php:112 help/layout/original/frame.php:100
 msgid "Logout"
 msgstr "Abmelden"
 
@@ -449,15 +454,15 @@ msgstr "Bitte gebe für die Anmeldung deinen Benutzernamen und Passwort ein"
 msgid "Remember me next time"
 msgstr "Ich möchte angemeldet bleiben"
 
-#: login.php:99
+#: login.php:100
 msgid "Not registered? &ndash; Sign-Up!"
 msgstr "Nicht registriert? &ndash; Klicke hier, um dich zu registrieren."
 
-#: login.php:114
+#: login.php:115
 msgid "New password generated"
 msgstr "Neues Passwort erstellt"
 
-#: login.php:115
+#: login.php:116
 msgid ""
 "Your new password has been generated and sent to the e-mail associated with "
 "your account."
@@ -465,28 +470,28 @@ msgstr ""
 "Dein neues Passwort wurde erstellt und an die e-Mail geschickt, die du bei "
 "deiner Registrierung angegeben hast."
 
-#: login.php:116
+#: login.php:117
 msgid "So your old password will not work anymore."
 msgstr "Das alte Passwort ist nicht mehr gültig."
 
-#: login.php:123
+#: login.php:124
 msgid "New Password Failure"
 msgstr "Fehler beim Erstellen des neuen Passworts"
 
-#: login.php:124
+#: login.php:125
 msgid "There was an error sending you the e-mail with the new password."
 msgstr ""
 "Beim Senden des neuen Passworts an deine e-Mail ist ein Fehler aufgetreten."
 
-#: login.php:125
+#: login.php:126
 msgid "So your password has not been changed."
 msgstr "Das alte Passwort ist also weiterhin gültig."
 
-#: login.php:140
+#: login.php:141
 msgid "Forgot Password?"
 msgstr "Hast Du dein Passwort vergessen?"
 
-#: login.php:143
+#: login.php:144
 msgid ""
 "A new password will be generated for you and sent to the e-mail address "
 "associated with your account."
@@ -494,7 +499,7 @@ msgstr ""
 "Wenn du hier deinen Benutzernamen eingibst, schicken wir dir ein neues "
 "Passwort an deine registrierte e-Mail."
 
-#: login.php:149 express.php:519
+#: login.php:150 express.php:480
 msgid "Send"
 msgstr "Abschicken"
 
@@ -502,7 +507,7 @@ msgstr "Abschicken"
 msgid "Symptom-remedy-details"
 msgstr "Symptom-Mittel-Details"
 
-#: details.php:86 symptominfo.php:110
+#: details.php:86 symptominfo.php:109
 msgid "Symptom:"
 msgstr "Symptom:"
 
@@ -514,11 +519,11 @@ msgstr "Mittel:"
 msgid "Max. grade:"
 msgstr "Maximale Wertigkeit:"
 
-#: details.php:90 symptominfo.php:131
+#: details.php:90 symptominfo.php:130
 msgid "Künzli-dot:"
 msgstr "Künzli-Punkt:"
 
-#: details.php:90 symptominfo.php:131
+#: details.php:90 symptominfo.php:130
 msgid ""
 "This section has been awarded a Künzli-dot. This means that it is "
 "therapeutically significant and often leads directly to the choice of remedy "
@@ -602,11 +607,11 @@ msgstr "E-Mail vor anderen Benutzern verstecken"
 msgid "Public profile"
 msgstr "Öffentliches Profil"
 
-#: useredit.php:215 userinfo.php:109
+#: useredit.php:215 userinfo.php:110
 msgid "Real name:"
 msgstr "Richtiger Name:"
 
-#: useredit.php:227 userinfo.php:114
+#: useredit.php:227 userinfo.php:115
 msgid "More information:"
 msgstr "Weitere Angaben:"
 
@@ -627,8 +632,8 @@ msgid "Save changes"
 msgstr "Änderungen speichern"
 
 #: support.php:32 skins/kraque/frame.php:88 skins/kraque/frame.php:165
-#: skins/original/frame.php:76 help/layout/kraque/frame.php:88
-#: help/layout/kraque/frame.php:165 help/layout/original/frame.php:76
+#: skins/original/frame.php:75 help/layout/kraque/frame.php:88
+#: help/layout/kraque/frame.php:165 help/layout/original/frame.php:75
 msgid "Support"
 msgstr "Unterstützung"
 
@@ -689,24 +694,10 @@ msgstr ""
 "zum 20. des nächsten Monats <strong>wieder für alle voll nutzbar</strong>."
 
 #: support.php:78
-msgid "Participation in the server costs"
-msgstr "Beteiligung an den Serverkosten"
-
-#: support.php:78
-msgid ""
-"If you want to contribute to the server costs, you can <a href='http://"
-"openhomeo.org/spenden.html'>transfer donations</a> to the non-profit "
-"association \"Verein zur Förderung der naturheilkundlichen Medizin e.V.\"."
-msgstr ""
-"Wenn du dich an den Serverkosten beteiligen willst, <a href='http://"
-"openhomeo.org/spenden.html'>spende per Überweisung</a> an den gemeinnützigen "
-"\"Verein zur Förderung der naturheilkundlichen Medizin e.V.\"."
-
-#: support.php:79
 msgid "Complete the database "
 msgstr "Ergänzen der Datenbank"
 
-#: support.php:79
+#: support.php:78
 msgid ""
 "You can actively add repertories with the <a href='express.php'>express-"
 "tool</a>. If someone has a English or German materia medica in digital "
@@ -721,11 +712,11 @@ msgstr ""
 "eine PDF-Datei mit Text oder eine Datenbank sein. Ich würde dann versuchen "
 "sie in das Programm zu importieren."
 
-#: support.php:80
+#: support.php:79
 msgid "Translations"
 msgstr "Übersetzungen"
 
-#: support.php:80
+#: support.php:79
 msgid ""
 "It would be nice to have OpenHomeopath translated in more languages. For the "
 "internationalization I'm using gettext. With the poeditor it's easy to make "
@@ -741,8 +732,8 @@ msgstr ""
 "werden. Bei Interesse <a href='mailto:henri.hulski@gazeta.pl?"
 "subject=OpenHomeopath'>schicke mir eine e-Mail</a>."
 
-#: rep_result.php:38 rep_result.php:50 index.php:50
-#: include/classes/rep_class.php:492 include/classes/rep_class.php:543
+#: rep_result.php:38 rep_result.php:50 index.php:51
+#: include/classes/rep_class.php:507 include/classes/rep_class.php:558
 #: include/classes/fpdf/pdf.php:55
 msgid "Repertorization result"
 msgstr "Repertorisierungsergebnis"
@@ -751,33 +742,33 @@ msgstr "Repertorisierungsergebnis"
 msgid "Result table"
 msgstr "Ergebnistabelle"
 
-#: rep_result.php:80 include/classes/rep_class.php:630
+#: rep_result.php:80 include/classes/rep_class.php:641
 #, php-format
 msgid "%d selected symptom"
 msgid_plural "%d selected symptoms"
 msgstr[0] "%d ausgewähltes Symptom"
 msgstr[1] "%d ausgewählte Symptome"
 
-#: rep_result.php:81 include/classes/rep_class.php:631
+#: rep_result.php:81 include/classes/rep_class.php:642
 #, php-format
 msgid "%d remedy"
 msgid_plural "%d remedies"
 msgstr[0] "%d Mittel"
 msgstr[1] "%d Mittel"
 
-#: rep_result.php:82 include/classes/rep_class.php:632
+#: rep_result.php:82 include/classes/rep_class.php:643
 #, php-format
 msgid "%d symptom-remedy-relation"
 msgid_plural "%d symptom-remedy-relations"
 msgstr[0] "%d Symptom-Mittelbeziehung"
 msgstr[1] "%d Symptom-Mittelbeziehungen"
 
-#: rep_result.php:83 include/classes/rep_class.php:633
+#: rep_result.php:83 include/classes/rep_class.php:644
 #, php-format
 msgid "For %s there are %s and %s."
 msgstr "Für %s wurden %s und %s gefunden."
 
-#: rep_result.php:103 userinfo.php:445 forms/saved_reps.php:217
+#: rep_result.php:100 userinfo.php:446 forms/saved_reps.php:221
 msgid "Add more symptoms"
 msgstr "Weiter repertorisieren"
 
@@ -793,11 +784,11 @@ msgstr "Titel:"
 msgid "Contraction:"
 msgstr "Kürzel:"
 
-#: source.php:54 userinfo.php:130 userinfo.php:132
+#: source.php:54 userinfo.php:131 userinfo.php:133
 msgid "Language:"
 msgstr "Sprache:"
 
-#: source.php:56 symptominfo.php:120
+#: source.php:56 symptominfo.php:119
 msgid "Translations:"
 msgstr "Übersetzungen:"
 
@@ -859,43 +850,40 @@ msgstr ""
 msgid "Important!"
 msgstr "Wichtig!"
 
-#: symptominfo.php:74 forms/symptom_select_form.php:54 forms/sym_rems.php:38
-#: forms/reversed_rep.php:50
+#: symptominfo.php:74 forms/symptom_select_form.php:54
 msgid ""
 "Guests are limited to the Homeopathic Repertory from Kent (kent.en). For "
 "activating more repertories an customizing OpenHomeopath you've to <a "
-"href='http://openhomeo.org/openhomeopath/register.php'>register for free</a> "
-"and <a href='http://openhomeo.org/openhomeopath/login.php'>log in</a>."
+"href='register.php'>register for free</a> and <a href='login.php'>log in</a>."
 msgstr ""
 "Gäste sind auf das für Anfänger recht übersichtliche Repertorium von BZ-"
 "Homöopathie (BZH) beschränkt. Um weitere Repertorien freizuschalten und "
 "OpenHomeopath deinen persönlichen Bedürfnissen anzupassen musst du dich <a "
-"href='http://openhomeo.org/openhomeopath/register.php'>kostenlos "
-"registrieren</a> und <a href='http://openhomeo.org/openhomeopath/login."
+"href='register.php'>kostenlos registrieren</a> und <a href='login."
 "php'>anmelden</a>."
 
-#: symptominfo.php:111
+#: symptominfo.php:110
 msgid "Symptom-No.:"
 msgstr "Symptom-Nr.:"
 
-#: symptominfo.php:112 javascript/locale.php:7
+#: symptominfo.php:111 javascript/locale.php:7
 #: forms/symptom_select_form.php:122
 msgid "Main rubric:"
 msgstr "Hauptrubrik:"
 
-#: symptominfo.php:113
+#: symptominfo.php:112
 msgid "Native language:"
 msgstr "Originalsprache:"
 
-#: symptominfo.php:133
+#: symptominfo.php:132
 msgid "More details:"
 msgstr "Weitere Details:"
 
-#: symptominfo.php:140
+#: symptominfo.php:139
 msgid "Cross references"
 msgstr "Querverweise"
 
-#: symptominfo.php:161
+#: symptominfo.php:160
 msgid "Treeview"
 msgstr "Baumansicht"
 
@@ -903,7 +891,7 @@ msgstr "Baumansicht"
 msgid "Corresponding remedies"
 msgstr "Zugeordnete Mittel"
 
-#: express.php:48
+#: express.php:47
 msgid ""
 "Here you can quickly insert new symptoms and symptom-remedy-relations into "
 "the database."
@@ -911,7 +899,7 @@ msgstr ""
 "Hier habt ihr die Möglichkeit schnell neue Symptome und Symptom-Mittel-"
 "Beziehungen in die Datenbank einzufügen."
 
-#: express.php:54
+#: express.php:53
 msgid ""
 "Here you can quickly insert <strong>new symptoms</strong> and "
 "<strong>symptom-remedy-relations</strong> into the database."
@@ -919,87 +907,87 @@ msgstr ""
 "Hier habt ihr die Möglichkeit schnell <strong>neue Symptome</strong> und "
 "<strong>Symptom-Mittel-Beziehungen</strong> in die Datenbank einzufügen."
 
-#: express.php:264
+#: express.php:220
 msgid "Select source"
 msgstr "Quelle auswählen"
 
-#: express.php:269 forms/symptom_select_form.php:65
+#: express.php:225 forms/symptom_select_form.php:65
 msgid "Select main rubric"
 msgstr "Hauptrubrik auswählen"
 
-#: express.php:330 express.php:333 express.php:336 express.php:408
-#: express.php:413 express.php:417 express.php:420
+#: express.php:289
+msgid "Please select rubric and source!"
+msgstr "Bitte Rubrik und Quelle auswählen!"
+
+#: express.php:291
+msgid "Please select rubric!"
+msgstr "Bitte Rubrik auswählen!"
+
+#: express.php:293
+msgid "Please select source!"
+msgstr "Bitte Quelle auswählen!"
+
+#: express.php:295 express.php:368 express.php:373 express.php:377
+#: express.php:380
 #, php-format
 msgid "Error:"
 msgstr "Fehler:"
 
-#: express.php:330
-msgid "Please select rubric and source!"
-msgstr "Bitte Rubrik und Quelle auswählen!"
-
-#: express.php:333
-msgid "Please select rubric!"
-msgstr "Bitte Rubrik auswählen!"
-
-#: express.php:336
-msgid "Please select source!"
-msgstr "Bitte Quelle auswählen!"
-
-#: express.php:340 install/install_db.php:900
+#: express.php:300 install/install_db.php:897
 #, php-format
 msgid "Congratulations:"
 msgstr "Glückwunsch:"
 
-#: express.php:340
+#: express.php:300
 #, php-format
 msgid "The <strong>Record</strong> has been processed correctly:"
 msgid_plural "All <strong>%d records</strong> have been processed correctly:"
 msgstr[0] "Der <strong>Datensatz</strong> wurde korrekt abgearbeitet:"
 msgstr[1] "Alle <strong>%d Datensätze</strong> wurden korrekt abgearbeitet:"
 
-#: express.php:343 express.php:346
+#: express.php:303 express.php:306
 #, php-format
 msgid "Error: "
 msgstr "Fehler: "
 
-#: express.php:343
+#: express.php:303
 #, php-format
 msgid "Please select a source!"
 msgstr "Bitte wähle eine Quelle aus!"
 
-#: express.php:343 express.php:346
+#: express.php:303 express.php:306
 #, php-format
 msgid "<strong>One symptom</strong> couldn't be parsed."
 msgid_plural "<strong>%d symptoms</strong> couldn't be parsed."
 msgstr[0] "<strong>Ein Symptom</strong> konnte nicht bearbeitet werden."
 msgstr[1] "<strong>%d Symptome</strong> konnten nicht bearbeitet werden."
 
-#: express.php:346
+#: express.php:306
 #, php-format
 msgid "Please select a main rubric!"
 msgstr "Bitte wähle eine Hauptrubrik aus!"
 
-#: express.php:349 express.php:352 express.php:355 express.php:489
+#: express.php:309 express.php:312 express.php:315 express.php:449
 #, php-format
 msgid "Syntax error:"
 msgstr "Syntaxfehler:"
 
-#: express.php:349
+#: express.php:309
 #, php-format
 msgid "On <strong>a record</strong> the colon (':') is missing."
 msgid_plural "On <strong>%d records</strong> colons (':') are missing."
 msgstr[0] "Bei <strong>einem Datensatz</strong> fehlt der Doppelpunkt (':')."
 msgstr[1] "Bei <strong>%d Datensätzen</strong> fehlen Doppelpunkte (':')."
 
-#: express.php:349 express.php:352 express.php:355 express.php:420
-#: express.php:489
+#: express.php:309 express.php:312 express.php:315 express.php:380
+#: express.php:449
 #, php-format
 msgid "Please <strong>correct</strong> in the text box and submit form again!"
 msgstr ""
 "Bitte im Textfeld <strong>korrigieren</strong> und Formular nochmal "
 "abschicken!"
 
-#: express.php:352
+#: express.php:312
 #, php-format
 msgid ""
 "In <strong>an alias allocation</strong> the equal sign ('=') is missing."
@@ -1010,7 +998,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Bei <strong>%d Aliaszuweisungen</strong> fehlen Gleichheitszeichen ('=')."
 
-#: express.php:355 express.php:489
+#: express.php:315 express.php:449
 #, php-format
 msgid "In <strong>%d source-/reference-entry</strong> the syntax is incorrect."
 msgid_plural ""
@@ -1022,15 +1010,15 @@ msgstr[1] ""
 "Bei <strong>%d Quelle-/Referenz-Eintragungen</strong> ist der Syntax nicht "
 "korrekt."
 
-#: express.php:360
+#: express.php:320
 msgid "Warning:"
 msgstr "Achtung:"
 
-#: express.php:360
+#: express.php:320
 msgid "Duplication possible"
 msgstr "Duplizierung möglich"
 
-#: express.php:361
+#: express.php:321
 msgid ""
 "You can either <strong>all </strong> similar records <strong>still insert</"
 "strong>, or <strong>correct</strong> the records in the text box and submit "
@@ -1041,43 +1029,43 @@ msgstr ""
 "<strong>korrigieren</strong> und das Formular <strong>nochmal abschicken</"
 "strong>."
 
-#: express.php:362
+#: express.php:322
 #, php-format
 msgid "The symptom to insert"
 msgid_plural "The %d symptoms to insert"
 msgstr[0] "Das einzufügende Symptom"
 msgstr[1] "Die %d einzufügenden Symptome"
 
-#: express.php:362
+#: express.php:322
 msgid "is similar to the following symptoms in the same main rubric"
 msgstr "ähnelt den folgenden Symptomen in der gleichen Hauptrubrik"
 
-#: express.php:365
+#: express.php:325
 msgid "Symptom-No."
 msgstr "Symptom-Nr."
 
-#: express.php:366 express.php:514 forms/reversed_rep.php:143
-#: forms/select_symptoms.php:153
+#: express.php:326 express.php:475 forms/reversed_rep.php:143
+#: forms/select_symptoms.php:157
 msgid "Symptom"
 msgstr "Symptom"
 
-#: express.php:367 forms/reversed_rep.php:57 forms/reversed_rep.php:131
-#: forms/select_symptoms.php:141
+#: express.php:327 forms/reversed_rep.php:57 forms/reversed_rep.php:131
+#: forms/select_symptoms.php:145
 msgid "Main rubric"
 msgstr "Hauptrubrik"
 
-#: express.php:368 useradmin.php:48 useradmin.php:160
+#: express.php:328 useradmin.php:48 useradmin.php:160
 msgid "Username"
 msgstr "Benutzername"
 
-#: express.php:408
+#: express.php:368
 #, php-format
 msgid "%d remedy-abbreviation was not found in the database:"
 msgid_plural "%d remedy-abbreviations were not found in the database:"
 msgstr[0] "Eine Mittelabkürzung wurde nicht in der Datenbank gefunden:"
 msgstr[1] "%d Mittelabkürzungen wurden nicht in der Datenbank gefunden:"
 
-#: express.php:410
+#: express.php:370
 msgid ""
 "Check with the help of <a href='./datadmin.php?"
 "function=show_search_form&table_name=remedies'> search </a>, whether used in "
@@ -1096,7 +1084,7 @@ msgstr ""
 "href='./datadmin.php?function=show_insert_form&amp;"
 "table_name=remedies'>einfügen</a>."
 
-#: express.php:410 express.php:414
+#: express.php:370 express.php:374
 msgid ""
 "\tPlease <strong>correct it if necessary in the text box</strong> and "
 "<strong>submit</strong> the form again!"
@@ -1104,7 +1092,7 @@ msgstr ""
 "Bitte gegebenenfalls im Textfeld <strong>korrigieren</strong> und Formular "
 "<strong>nochmal abschicken</strong>!"
 
-#: express.php:413
+#: express.php:373
 #, php-format
 msgid ""
 "%d remedy-abbreviation on alias assignments was not found in the database."
@@ -1117,7 +1105,7 @@ msgstr[1] ""
 "%d Mittelabkürzungen bei Aliaszuweisungen wurden <strong>nicht</strong> in "
 "der Datenbank gefunden."
 
-#: express.php:417
+#: express.php:377
 #, php-format
 msgid "%d <strong>main rubric</strong> was not found in the database."
 msgid_plural "%d <strong>main rubrics</strong> were not found in the database."
@@ -1128,7 +1116,7 @@ msgstr[1] ""
 "%d angegebene <strong>Hauptrubriken</strong> wurden nicht in der Datenbank "
 "gefunden."
 
-#: express.php:417
+#: express.php:377
 #, php-format
 msgid ""
 "Please <strong>correct</strong> in the text box and submit form again, or "
@@ -1137,7 +1125,7 @@ msgstr ""
 "Bitte im Textfeld <strong>korrigieren</strong> und Formular nochmal "
 "abschicken oder die Hauptrubrik in die Datenbank eintragen!"
 
-#: express.php:420
+#: express.php:380
 #, php-format
 msgid ""
 "With %d record, the with '>' referenced parent rubric could not be "
@@ -1152,14 +1140,14 @@ msgstr[1] ""
 "Bei %d Datensätzen konnten die mit '>' verwiesene übergeordnete Rubrik nicht "
 "ermittelt werden."
 
-#: express.php:422
+#: express.php:382
 #, php-format
 msgid "<strong>%d record</strong> was restored successfully:"
 msgid_plural "<strong>%d records</strong> were restored successfully:"
 msgstr[0] "<strong>Ein Datensatz</strong> wurde abgearbeitet:"
 msgstr[1] "<strong>%d Datensätze</strong> wurden abgearbeitet:"
 
-#: express.php:426
+#: express.php:386
 #, php-format
 msgid "<strong>%d new symptom</strong> has been added to the database:"
 msgid_plural ""
@@ -1167,7 +1155,7 @@ msgid_plural ""
 msgstr[0] "<strong>Ein Symptom</strong> wurde neu in die Datenbank eingefügt:"
 msgstr[1] "<strong>%d Symptome</strong> wurden neu in die Datenbank eingefügt:"
 
-#: express.php:433
+#: express.php:393
 #, php-format
 msgid ""
 "Thereof <strong>%d symptom</strong> for which similar symptoms were found in "
@@ -1182,7 +1170,7 @@ msgstr[1] ""
 "Davon wurden <strong>%d Symptome</strong>, zu denen ähnliche Symptome in "
 "Datenbank gefunden wurden, <strong>trotzdem eingefügt</strong>."
 
-#: express.php:436
+#: express.php:396
 #, php-format
 msgid ""
 "<strong>%d symptom</strong> already exists under the main rubric <em>%2$s</"
@@ -1197,7 +1185,7 @@ msgstr[1] ""
 "<strong>%d Symptome</strong> waren bereits unter der Hauptrubrik <em>%2$s</"
 "em> in der Datenbank vorhanden."
 
-#: express.php:439
+#: express.php:399
 #, php-format
 msgid ""
 "For <strong>%d symptom</strong> similar symptoms in the same main rubric "
@@ -1212,7 +1200,7 @@ msgstr[1] ""
 "Zu <strong>%d Symptomen</strong> wurden ähnliche Symptome in der gleichen "
 "Hauptrubrik (<em>%2$s</em>) in der Datenbank gefunden."
 
-#: express.php:442
+#: express.php:402
 #, php-format
 msgid ""
 "<strong>%d symptom-remedy-relation</strong> has been inserted into the "
@@ -1227,7 +1215,7 @@ msgstr[1] ""
 "<strong>%d Symptom-Mittel-Beziehungen</strong> wurden in die Datenbank "
 "eingefügt."
 
-#: express.php:445
+#: express.php:405
 #, php-format
 msgid ""
 "Of these, %d symptom-remedy-relation from <strong>nonclassical proving</"
@@ -1242,7 +1230,7 @@ msgstr[1] ""
 "Davon %d Symptom-Mittel-Beziehungen aus <strong>nichtklassischen Prüfungen</"
 "strong> (z.B. Traumprüfungen)."
 
-#: express.php:448
+#: express.php:408
 #, php-format
 msgid ""
 "<strong>%d symptom-remedy-relation</strong> already exists in the database."
@@ -1255,7 +1243,7 @@ msgstr[1] ""
 "<strong>%d Symptom-Mittel-Beziehungen</strong> waren bereits in der "
 "Datenbank vorhanden."
 
-#: express.php:451
+#: express.php:411
 #, php-format
 msgid "In %d symptom-remedy-relation the grade was updated."
 msgid_plural "In %d symptom-remedy-relations the grade was updated."
@@ -1264,14 +1252,14 @@ msgstr[0] ""
 msgstr[1] ""
 "Bei %d Symptom-Mittel-Beziehungen wurde die Wertigkeit aktualisiert."
 
-#: express.php:454
+#: express.php:414
 #, php-format
 msgid "In %d symptom-remedy-relation the state was updated."
 msgid_plural "In %d symptom-remedy-relations the state was updated."
 msgstr[0] "Bei einer Symptom-Mittel-Beziehung wurde der Status aktualisiert."
 msgstr[1] "Bei %d Symptom-Mittel-Beziehungen wurde der Status aktualisiert."
 
-#: express.php:457
+#: express.php:417
 #, php-format
 msgid "In %d symptom-remedy-relation the Künzli-dot was updated."
 msgid_plural "In %d symptom-remedy-relations the Künzli-dots were updated."
@@ -1280,7 +1268,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Bei %d Symptom-Mittel-Beziehungen wurde der Künzli-Punkt aktualisiert."
 
-#: express.php:460
+#: express.php:420
 #, php-format
 msgid ""
 "<strong>%d remedy-abbreviation</strong> was not found in the remedies-table."
@@ -1294,7 +1282,7 @@ msgstr[1] ""
 "<strong>%d Mittelabkürzungen</strong> wurden nicht in der Mittel-Tabelle "
 "gefunden."
 
-#: express.php:463
+#: express.php:423
 #, php-format
 msgid ""
 "<strong>%d remedy-abbreviation</strong> has been determined using the alias "
@@ -1308,7 +1296,7 @@ msgstr[1] ""
 "<strong>%d Mittelabkürzungen</strong> wurden über die Alias-Tabelle "
 "ermittelt."
 
-#: express.php:472
+#: express.php:432
 #, php-format
 msgid ""
 "In %d symptom-remedy-relation the reference source was not found in the "
@@ -1323,7 +1311,7 @@ msgstr[1] ""
 "Bei %d Symptom-Mittel-Beziehungen wurde die Referenzquelle nicht in der "
 "Datenbank gefunden:"
 
-#: express.php:473
+#: express.php:433
 msgid ""
 "Where necessary <a href='./datadmin.php?function=show_insert_form&amp;"
 "table_name=sources'>add the source to database</a>"
@@ -1331,14 +1319,14 @@ msgstr ""
 "Die Quelle gegebenenfalls in die <a href='./datadmin.php?"
 "function=show_insert_form&amp;table_name=sources'>Datenbank einfügen</a>"
 
-#: express.php:476
+#: express.php:436
 #, php-format
 msgid "<strong>%d alias assignment</strong> has been processed."
 msgid_plural "<strong>%d alias assignments</strong> have been processed."
 msgstr[0] "<strong>Eine Aliaszuweisung</strong> wurde abgearbeitet."
 msgstr[1] "<strong>%d Aliaszuweisungen</strong> wurden abgearbeitet."
 
-#: express.php:479
+#: express.php:439
 #, php-format
 msgid "<strong>%d new alias</strong> has been inserted into the database."
 msgid_plural ""
@@ -1346,14 +1334,14 @@ msgid_plural ""
 msgstr[0] "<strong>Ein Alias</strong> wurde neu in die Datenbank eingefügt."
 msgstr[1] "<strong>%d Aliase</strong> wurden neu in die Datenbank eingefügt."
 
-#: express.php:483
+#: express.php:443
 #, php-format
 msgid "<strong>%d alias</strong> already exists in the database"
 msgid_plural "<strong>%d aliases</strong> already exist in the database"
 msgstr[0] "<strong>Ein Alias</strong> war bereits in der Datenbank vorhanden"
 msgstr[1] "<strong>%d Aliase</strong> waren bereits in der Datenbank vorhanden"
 
-#: express.php:486
+#: express.php:446
 #, php-format
 msgid ""
 "<strong>%d remedy-abbreviation by alias assignment</strong> was not found in "
@@ -1368,7 +1356,7 @@ msgstr[1] ""
 "<strong>%d Mittelabkürzungen bei Aliaszuweisung</strong> wurden nicht in der "
 "Mittel-Tabelle gefunden."
 
-#: express.php:492
+#: express.php:452
 #, php-format
 msgid "<strong>%d source-/reference-record</strong> has been processed."
 msgid_plural ""
@@ -1378,7 +1366,7 @@ msgstr[0] ""
 msgstr[1] ""
 "<strong>%d Quelle-/Referenz-Eintragungen</strong> wurden abgearbeitet."
 
-#: express.php:495
+#: express.php:455
 #, php-format
 msgid ""
 "<strong>%d new source-/reference-record</strong> has been inserted into the "
@@ -1393,7 +1381,7 @@ msgstr[1] ""
 "<strong>%d Quelle-/Referenz-Eintragungen</strong> wurden neu in die "
 "Datenbank eingefügt."
 
-#: express.php:499
+#: express.php:459
 #, php-format
 msgid ""
 "<strong>%d source-/reference-record</strong> already exists in the database"
@@ -1406,7 +1394,7 @@ msgstr[1] ""
 "<strong>%d Quelle-/Referenz-Eintragungen</strong> waren bereits in der "
 "Datenbank vorhanden"
 
-#: express.php:502
+#: express.php:462
 #, php-format
 msgid ""
 "Syntax errors were found in <strong>%d source-/reference-record</strong>."
@@ -1419,40 +1407,40 @@ msgstr[1] ""
 "Bei <strong>%d Quelle-/Referenz-Datensätzen</strong> wurden Syntaxfehler "
 "gefunden."
 
-#: express.php:514
+#: express.php:475
 msgid "p."
 msgstr "s."
 
-#: express.php:514 skins/kraque/frame.php:81 skins/kraque/frame.php:158
+#: express.php:475 skins/kraque/frame.php:81 skins/kraque/frame.php:158
 #: help/layout/kraque/frame.php:81 help/layout/kraque/frame.php:158
 msgid "Remedy"
 msgstr "Mittel"
 
-#: express.php:514 include/classes/symrem_class.php:169 forms/sym_rems.php:48
+#: express.php:475 include/classes/symrem_class.php:169 forms/sym_rems.php:48
 #: forms/reversed_rep.php:60
 msgid "Grade"
 msgstr "Wertigkeit"
 
-#: express.php:514
+#: express.php:475
 msgid "Statesymbol"
 msgstr "Statussymbol"
 
-#: express.php:514
+#: express.php:475
 msgid "Reference"
 msgstr "Referenz"
 
-#: express.php:523 skins/kraque/frame.php:91 skins/kraque/frame.php:168
-#: skins/original/frame.php:79 help/layout/kraque/frame.php:91
-#: help/layout/kraque/frame.php:168 help/layout/original/frame.php:79
-#: install/install_db.php:288 forms/symptom_select_form.php:152
+#: express.php:484 skins/kraque/frame.php:91 skins/kraque/frame.php:168
+#: skins/original/frame.php:78 help/layout/kraque/frame.php:91
+#: help/layout/kraque/frame.php:168 help/layout/original/frame.php:78
+#: install/install_db.php:287 forms/symptom_select_form.php:152
 msgid "Help"
 msgstr "Hilfe"
 
-#: express.php:524
+#: express.php:485
 msgid "Tutorial"
 msgstr "Tutorium"
 
-#: express.php:524
+#: express.php:485
 msgid "Tutorial from Thomas Bochmann"
 msgstr "Tutorium von Thomas Bochmann"
 
@@ -1460,103 +1448,101 @@ msgstr "Tutorium von Thomas Bochmann"
 msgid "Account"
 msgstr "Benutzerbereich"
 
-#: userinfo.php:59
+#: userinfo.php:60
 msgid "Username not registered"
 msgstr "Benutzername nicht registriert"
 
-#: userinfo.php:70 useradmin.php:215 help/layout/original/footer.php:42
-#: doc/de/info.php:35 doc/en/info.php:35
+#: userinfo.php:71 useradmin.php:215 help/layout/kraque/footer.php:35
+#: help/layout/original/footer.php:35 doc/de/info.php:35 doc/en/info.php:35
 msgid "Contents"
 msgstr "Inhalt"
 
-#: userinfo.php:73 userinfo.php:80
+#: userinfo.php:74 userinfo.php:81
 msgid "General Info"
 msgstr "Allgemeine Angaben"
 
-#: userinfo.php:74 userinfo.php:170
+#: userinfo.php:75 userinfo.php:171
 msgid "Saved repertorizations"
 msgstr "Gespeicherte Repertorisierungen"
 
-#: userinfo.php:75 userinfo.php:189
+#: userinfo.php:76 userinfo.php:190
 msgid "Personalize the Repertory"
 msgstr "Repertorium personalisieren"
 
-#: userinfo.php:76 userinfo.php:313
+#: userinfo.php:77 userinfo.php:314
 msgid "Personalize the Materia Medica"
 msgstr "Materia Medica personalisieren"
 
-#: userinfo.php:86
+#: userinfo.php:87
 msgid "User Info"
 msgstr "Benutzer-Info"
 
-#: userinfo.php:92 include/functions/layout.php:91 skins/kraque/frame.php:125
+#: userinfo.php:93 include/functions/layout.php:91 skins/kraque/frame.php:125
 #: skins/kraque/frame.php:191 skins/original/frame.php:90
-#: skins/original/frame.php:119 help/layout/kraque/frame.php:125
+#: skins/original/frame.php:122 help/layout/kraque/frame.php:125
 #: help/layout/kraque/frame.php:191 help/layout/original/frame.php:90
-#: help/layout/original/frame.php:114
+#: help/layout/original/frame.php:117
 msgid ""
 "Every donation is very welcome and helps the development of OpenHomeopath."
 msgstr ""
 "Jede Spende ist uns sehr willkommen und hilft der Entwicklung von "
 "OpenHomeopath."
 
-#: userinfo.php:120 userinfo.php:122 skins/kraque/frame.php:116
-#: skins/kraque/frame.php:182 skins/original/frame.php:102
-#: skins/original/frame.php:125 help/layout/kraque/frame.php:116
-#: help/layout/kraque/frame.php:182 help/layout/original/frame.php:102
-#: help/layout/original/frame.php:120
+#: userinfo.php:121 userinfo.php:123 skins/kraque/frame.php:116
+#: skins/kraque/frame.php:182 skins/original/frame.php:103
+#: skins/original/frame.php:129 help/layout/kraque/frame.php:116
+#: help/layout/kraque/frame.php:182 help/layout/original/frame.php:103
+#: help/layout/original/frame.php:124
 msgid "Skin:"
 msgstr "Skin:"
 
-#: userinfo.php:122 userinfo.php:132
+#: userinfo.php:123 userinfo.php:133
 msgid "not selected"
 msgstr "nicht ausgewählt"
 
-#: userinfo.php:140 userinfo.php:142
+#: userinfo.php:141 userinfo.php:143
 msgid "Symptom language:"
 msgstr "Symptom-Sprache:"
 
-#: userinfo.php:142
+#: userinfo.php:143
 msgid "same as system language"
 msgstr "wie System-Sprache"
 
-#: userinfo.php:148
+#: userinfo.php:149
 msgid "You are administrator."
 msgstr "Du bist Administrator."
 
-#: userinfo.php:150
+#: userinfo.php:151
 msgid "You are editor."
 msgstr "Du bist Editor."
 
-#: userinfo.php:152
+#: userinfo.php:153
 msgid "Active users are shown."
 msgstr "Aktive Benutzer werden angezeigt."
 
-#: userinfo.php:154
+#: userinfo.php:155
 msgid "Active users are not shown."
 msgstr "Aktive Benutzer werden nicht angezeigt."
 
-#: userinfo.php:158
+#: userinfo.php:159
 msgid "Your e-mail is hidden from user users."
 msgstr "Deine e-Mail ist vor anderen Benutzern versteckt."
 
-#: userinfo.php:160
+#: userinfo.php:161
 msgid "Other users can see your e-mail."
 msgstr "Andere Benutzer können deine e-Mail sehen."
 
-#: userinfo.php:164
+#: userinfo.php:165
 msgid "Here you can edit your account."
 msgstr "Hier kannst du deine Benutzereinstellungen bearbeiten."
 
-#: userinfo.php:168 userinfo.php:186 userinfo.php:310 useradmin.php:249
+#: userinfo.php:169 userinfo.php:187 userinfo.php:311 useradmin.php:249
 #: useradmin.php:293 useradmin.php:327 useradmin.php:376 useradmin.php:408
 #: useradmin.php:435 useradmin.php:462 useradmin.php:495
-#: skins/kraque/footer.php:45 skins/original/footer.php:45
-#: help/layout/kraque/footer.php:45
 msgid "To the top of the page"
 msgstr "Zum Seitenanfang"
 
-#: userinfo.php:171
+#: userinfo.php:172
 msgid ""
 "Here saved repertorizations can be opened,  deleted or taken as a basis for "
 "further repertorization."
@@ -1564,7 +1550,7 @@ msgstr ""
 "Hier kannst du gespeicherte Repertorisierungen aufrufen, löschen oder als "
 "Grundlage für weitere Repertorisierungen nehmen."
 
-#: userinfo.php:172
+#: userinfo.php:173
 #, php-format
 msgid ""
 "Repertorizations can be made public so that other users will find them in "
@@ -1576,11 +1562,11 @@ msgstr ""
 "\"nobr\">\"http://%s%s/<strong>userinfo.php?user=%s</strong>\"</span>) die "
 "Repertorisierungen anschauen können."
 
-#: userinfo.php:176 userinfo.php:422
+#: userinfo.php:177 userinfo.php:423
 msgid "Repertorizations from"
 msgstr "Repertorisierungen von"
 
-#: userinfo.php:190
+#: userinfo.php:191
 msgid ""
 "Here you can compose your <strong>personal Repertory profile</strong> by "
 "selecting <strong>which sources</strong> will be included. This profile will "
@@ -1593,7 +1579,7 @@ msgstr ""
 "verwendet, wenn du unter deinem Benutzernamen <strong>angemeldet</strong> "
 "bist."
 
-#: userinfo.php:192
+#: userinfo.php:193
 msgid ""
 "The <strong>reversed repertorization in the Materia Medica</strong> also "
 "uses the personalized repertory."
@@ -1602,7 +1588,7 @@ msgstr ""
 "einem Mittel zugeordneten Symptome ebenfalls das personalisierte Repertorium "
 "verwendet."
 
-#: userinfo.php:192
+#: userinfo.php:193
 msgid ""
 "To personalize the actual <strong>Materia Medica</strong> see <a "
 "href='#materia_custom'>below</a>."
@@ -1610,7 +1596,7 @@ msgstr ""
 "Um die eigentliche <strong>Materia Medica</strong> zu personalisieren siehe "
 "<a href='#materia_custom'>unten</a>."
 
-#: userinfo.php:194
+#: userinfo.php:195
 msgid ""
 " Accordingly, the <strong>Symptom-Info</strong> uses the personalized "
 "repertory in the remedy list."
@@ -1618,7 +1604,7 @@ msgstr ""
 "Entsprechend benutzt die <strong>Symptom-Info</strong> beim Zusammenstellen "
 "der Mittel das personalisierte Repertorium."
 
-#: userinfo.php:197
+#: userinfo.php:198
 msgid ""
 "You can select your preferred symptom-language in your <a href='useredit."
 "php'>user-account</a>."
@@ -1626,37 +1612,37 @@ msgstr ""
 "Deine bevorzugte Symptomsprache kannst du in den <a href='useredit."
 "php'>Benutzereinstellungen</a> auswählen."
 
-#: userinfo.php:202
+#: userinfo.php:203
 msgid "Compose your personal Repertory"
 msgstr "Stelle dein persönliches Repertorium zusammen"
 
-#: userinfo.php:222 userinfo.php:340
+#: userinfo.php:223 userinfo.php:341
 msgid "Use all sources"
 msgstr "Alle Quellen benutzen"
 
-#: userinfo.php:231
+#: userinfo.php:232
 #, php-format
 msgid "Symptoms in %s"
 msgstr "Symptome in %s"
 
-#: userinfo.php:245 userinfo.php:353 skins/kraque/frame.php:64
+#: userinfo.php:246 userinfo.php:354 skins/kraque/frame.php:64
 #: skins/kraque/frame.php:72 help/layout/kraque/frame.php:64
 #: help/layout/kraque/frame.php:72
 msgid "Select sources"
 msgstr "Quellen festlegen"
 
-#: userinfo.php:288
+#: userinfo.php:289
 msgid "Compose Repertory"
 msgstr "Repertorium zusammenstellen"
 
-#: userinfo.php:294 userinfo.php:391
+#: userinfo.php:295 userinfo.php:392
 #, php-format
 msgid "one source"
 msgid_plural "%d sources"
 msgstr[0] "eine Quelle"
 msgstr[1] "%d Quellen"
 
-#: userinfo.php:301 userinfo.php:398
+#: userinfo.php:302 userinfo.php:399
 msgid ""
 "For <strong>multiple choice</strong> press <strong><em>Ctrl</em></strong> "
 "and click simultaneously on the entries you want to select."
@@ -1665,7 +1651,7 @@ msgstr ""
 "strong>- bzw. <strong><em>Ctrl</em></strong>-Taste bei gleichzeitigem "
 "Anklicken der entsprechenden Einträge gedrückt."
 
-#: userinfo.php:302
+#: userinfo.php:303
 msgid ""
 "Only sources and users are shown, which are associated with records in the "
 "Repertory."
@@ -1673,7 +1659,7 @@ msgstr ""
 "Es werden nur Quellen und Benutzer angezeigt, denen Einträge im Repertorium "
 "zugeordnet sind."
 
-#: userinfo.php:314
+#: userinfo.php:315
 msgid ""
 "Here you can compose your <strong>personal Materia Medica</strong> by "
 "selecting <strong>which sources</strong> will be included. This profile will "
@@ -1686,15 +1672,15 @@ msgstr ""
 "strong> in der Materia Medica verwendet, wenn du unter deinem Benutzernamen "
 "<strong>angemeldet</strong> bist."
 
-#: userinfo.php:320
+#: userinfo.php:321
 msgid "Compose your personal Materia Medica"
 msgstr "Stelle deine persönliche Materia Medica zusammen"
 
-#: userinfo.php:385
+#: userinfo.php:386
 msgid "Compose Materia Medica"
 msgstr "Materia Medica zusammenstellen"
 
-#: userinfo.php:399
+#: userinfo.php:400
 msgid ""
 "Only sources and users are shown, which are associated with records in the "
 "Materia Medica."
@@ -1702,11 +1688,11 @@ msgstr ""
 "Es werden nur Quellen und Benutzer angezeigt, denen Einträge in der Materia "
 "Medica zugeordnet sind."
 
-#: userinfo.php:417
+#: userinfo.php:418
 msgid "Public repertorizations from"
 msgstr "Öffentliche Repertorisierungen von"
 
-#: userinfo.php:418
+#: userinfo.php:419
 #, php-format
 msgid ""
 "Here you can call saved repertorizations that was published by <strong><em>"
@@ -1715,14 +1701,14 @@ msgstr ""
 "Hier kannst du gespeicherte Repertorisierungen aufrufen, die <strong><em>%s</"
 "em></strong> veröffentlicht hat."
 
-#: userinfo.php:439
+#: userinfo.php:440
 #, php-format
 msgid "%d public repertorization"
 msgid_plural "%d public repertorizations"
 msgstr[0] "%d öffentliche Repertorisierung"
 msgstr[1] "%d öffentliche Repertorisierungen"
 
-#: userinfo.php:442 forms/saved_reps.php:209
+#: userinfo.php:443 forms/saved_reps.php:213
 msgid "Show repertorization"
 msgstr "Repertorisierung aufrufen"
 
@@ -1978,65 +1964,65 @@ msgid "all"
 msgstr "alle"
 
 # = -wertig
-#: include/classes/revrep_class.php:246 include/classes/revrep_class.php:258
-#: include/classes/revrep_class.php:270 include/classes/rep_class.php:403
+#: include/classes/revrep_class.php:250 include/classes/revrep_class.php:262
+#: include/classes/revrep_class.php:274 include/classes/rep_class.php:411
 #: include/classes/symrem_class.php:195 include/classes/symrem_class.php:199
 #: include/classes/symrem_class.php:204
 msgid "-gr."
 msgstr "-w."
 
-#: include/classes/rep_class.php:338 include/classes/rep_class.php:607
+#: include/classes/rep_class.php:346 include/classes/rep_class.php:618
 msgid "Deg."
 msgstr "Gew."
 
-#: include/classes/rep_class.php:339 include/classes/rep_class.php:608
+#: include/classes/rep_class.php:347 include/classes/rep_class.php:619
 #: skins/kraque/frame.php:84 skins/kraque/frame.php:161
 #: help/layout/kraque/frame.php:84 help/layout/kraque/frame.php:161
 msgid "Symptoms"
 msgstr "Symptome"
 
-#: include/classes/rep_class.php:352 include/classes/rep_class.php:613
+#: include/classes/rep_class.php:360 include/classes/rep_class.php:624
 msgid "Total (Grades/Hits)"
 msgstr "Gesamt (Wertigkeiten/Treffer)"
 
 # = keine Angabe
-#: include/classes/rep_class.php:461
+#: include/classes/rep_class.php:469
 msgid "n.a."
 msgstr "k.A."
 
-#: include/classes/rep_class.php:493
+#: include/classes/rep_class.php:508
 msgid "OpenHomeopath"
 msgstr "OpenHomeopath"
 
-#: include/classes/rep_class.php:494
+#: include/classes/rep_class.php:509
 msgid "openhomeo.org"
 msgstr "openhomeo.org"
 
-#: include/classes/rep_class.php:496 include/classes/rep_class.php:502
+#: include/classes/rep_class.php:511 include/classes/rep_class.php:517
 #: forms/save_rep.php:68
 msgid "Patient:"
 msgstr "Patient:"
 
-#: include/classes/rep_class.php:496 include/classes/rep_class.php:508
+#: include/classes/rep_class.php:511 include/classes/rep_class.php:523
 #: forms/save_rep.php:82
 msgid "Rep.-Date:"
 msgstr "Rep.-Datum:"
 
-#: include/classes/rep_class.php:497 include/classes/rep_class.php:526
+#: include/classes/rep_class.php:512 include/classes/rep_class.php:541
 #: forms/save_rep.php:105
 msgid "Case taking:"
 msgstr "Fallaufnahme:"
 
-#: include/classes/rep_class.php:498 include/classes/rep_class.php:512
+#: include/classes/rep_class.php:513 include/classes/rep_class.php:527
 #: forms/save_rep.php:97
 msgid "Prescription:"
 msgstr "Verordnung:"
 
-#: include/classes/rep_class.php:498 include/classes/rep_class.php:519
+#: include/classes/rep_class.php:513 include/classes/rep_class.php:534
 msgid "Rep.-No.:"
 msgstr "Rep.-Nr.:"
 
-#: include/classes/rep_class.php:635
+#: include/classes/rep_class.php:646
 #, php-format
 msgid "The %d most important remedies were printed. "
 msgstr "Es werden die wichtigsten %d Mittel ausgegeben."
@@ -2157,8 +2143,8 @@ msgstr ""
 #: include/classes/login/mailer.php:61 include/classes/login/mailer.php:86
 msgid "In section 'settings' you can change the e-mail."
 msgstr ""
-"Wenn du die e-Mail ändern willst, kannst du das unter (Benutzer-)"
-"Einstellungen, wenn du angemeldet bist."
+"Wenn du die e-Mail ändern willst, kannst du das unter "
+"(Benutzer-)Einstellungen, wenn du angemeldet bist."
 
 #: include/classes/login/mailer.php:81
 msgid "You was just registered on OpenHomeopath with username"
@@ -2193,11 +2179,6 @@ msgstr "Auf deine Anfrage hin haben wir ein neues Passwort für dich erstellt."
 msgid "New Password:"
 msgstr "Neues Passwort:"
 
-#: include/classes/login/adminprocess.php:361
-#: include/classes/login/adminprocess.php:447
-msgid "Please enter your username"
-msgstr "Bitte Benutzernamen eingeben"
-
 #: include/classes/login/adminprocess.php:454
 msgid "User doesn't exist"
 msgstr "Benutzer gibt es nicht"
@@ -2214,7 +2195,7 @@ msgstr "Keine Verbindung zur Datenbank"
 msgid "Error message:"
 msgstr "Fehlermeldung:"
 
-#: include/classes/db/openhomeo_db.php:607
+#: include/classes/db/openhomeo_db.php:609
 #, php-format
 msgid ""
 "<strong>%d parent-rubrics</strong> were added and <strong>%d symptoms</"
@@ -2225,7 +2206,7 @@ msgstr ""
 "Symptome</strong> ohne Elternrubrik umbenannt. Bearbeitungszeit: <strong>%d "
 "Sekunden</strong>."
 
-#: include/classes/db/openhomeo_db.php:698
+#: include/classes/db/openhomeo_db.php:700
 #, php-format
 msgid ""
 "<strong>%d symptom</strong> with the schema <strong>%s</strong> was parsed."
@@ -2238,7 +2219,7 @@ msgstr[1] ""
 "Es wurden <strong>%d Symptome</strong> nach dem Schema <strong>%s</strong> "
 "bearbeitet."
 
-#: include/classes/db/openhomeo_db.php:708
+#: include/classes/db/openhomeo_db.php:710
 #, php-format
 msgid ""
 "Totally <strong>%d symptoms</strong> were parsed in <strong>%d seconds</"
@@ -2247,7 +2228,7 @@ msgstr ""
 "Insgesamt wurden <strong>%d Symptome</strong> in <strong>%d Sekunden</"
 "strong> bearbeitet."
 
-#: include/classes/db/openhomeo_db.php:708
+#: include/classes/db/openhomeo_db.php:710
 #, php-format
 msgid "<strong>%d parent rubrics</strong> were updated."
 msgstr "Dabei wurden <strong>%d Elternrubriken</strong> aktualisiert."
@@ -2260,13 +2241,13 @@ msgstr ""
 "Bitte konfiguriere in der Datei 'include/classes/db/config_db.php' den "
 "Datenbanktyp! Wenn dein Server es unterstützt, 'mysqli' ansonsten 'mysql'."
 
-#: skins/kraque/header.php:109 skins/original/header.php:105
+#: skins/kraque/header.php:111 skins/original/header.php:107
 msgid "I'm on work ...."
 msgstr "Bin bei der Arbeit ...."
 
-#: skins/kraque/frame.php:42 skins/original/frame.php:47
-#: help/layout/kraque/frame.php:42 help/layout/original/frame.php:47
-#: install/install_db.php:262
+#: skins/kraque/frame.php:42 skins/original/frame.php:48
+#: help/layout/kraque/frame.php:42 help/layout/original/frame.php:48
+#: install/install_db.php:261
 msgid "Top of the page"
 msgstr "Seitenanfang"
 
@@ -2295,15 +2276,15 @@ msgid "Sources"
 msgstr "Quellen"
 
 #: skins/kraque/frame.php:99 skins/kraque/frame.php:176
-#: skins/original/frame.php:82 help/layout/kraque/frame.php:99
-#: help/layout/kraque/frame.php:176 help/layout/original/frame.php:82
+#: skins/original/frame.php:81 help/layout/kraque/frame.php:99
+#: help/layout/kraque/frame.php:176 help/layout/original/frame.php:81
 #: doc/de/info.php:26 doc/de/info.php:31 doc/en/info.php:26 doc/en/info.php:31
-#: install/install_db.php:291
+#: install/install_db.php:290
 msgid "Info"
 msgstr "Info"
 
-#: skins/kraque/frame.php:104 skins/original/frame.php:94
-#: help/layout/kraque/frame.php:104 help/layout/original/frame.php:94
+#: skins/kraque/frame.php:104 skins/original/frame.php:95
+#: help/layout/kraque/frame.php:104 help/layout/original/frame.php:95
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -2315,8 +2296,8 @@ msgstr "Repertorisierungen"
 msgid "Personal particulars"
 msgstr "Persönliche Daten"
 
-#: skins/kraque/frame.php:178 skins/original/frame.php:122
-#: help/layout/kraque/frame.php:178 help/layout/original/frame.php:117
+#: skins/kraque/frame.php:178 skins/original/frame.php:126
+#: help/layout/kraque/frame.php:178 help/layout/original/frame.php:121
 msgid "Log in"
 msgstr "Anmelden"
 
@@ -2337,28 +2318,28 @@ msgstr ""
 "<br><strong>Symptome</strong> und <strong>Symptom-Mittel-Beziehungen</"
 "strong> in die Datenbank einzufügen."
 
-#: skins/kraque/footer.php:56 skins/original/footer.php:56
-#: help/layout/kraque/footer.php:56 help/layout/original/footer.php:60
+#: skins/kraque/footer.php:35 skins/original/footer.php:35
+#: help/layout/kraque/footer.php:45 help/layout/original/footer.php:45
 msgid "Members Total:"
 msgstr "Anzahl der Mitglieder:"
 
-#: skins/kraque/footer.php:57 skins/original/footer.php:57
-#: help/layout/kraque/footer.php:57 help/layout/original/footer.php:61
+#: skins/kraque/footer.php:36 skins/original/footer.php:36
+#: help/layout/kraque/footer.php:46 help/layout/original/footer.php:46
 #, php-format
 msgid "There are %d registered member"
 msgid_plural "There are %d registered members"
 msgstr[0] "Es betrachten ein angemeldetes Mitglied"
 msgstr[1] "Es betrachten %d angemeldete Mitglieder"
 
-#: skins/kraque/footer.php:58 skins/original/footer.php:58
-#: help/layout/kraque/footer.php:58 help/layout/original/footer.php:62
+#: skins/kraque/footer.php:37 skins/original/footer.php:37
+#: help/layout/kraque/footer.php:47 help/layout/original/footer.php:47
 #, php-format
 msgid "and %d guest viewing the site."
 msgid_plural "and %d guests viewing the site."
 msgstr[0] "und ein Gast diese Seite."
 msgstr[1] "und %d Gäste diese Seite."
 
-#: skins/kraque/footer.php:65 skins/original/footer.php:65
+#: skins/kraque/footer.php:44 skins/original/footer.php:44
 msgid ""
 "OpenHomeopath is distributed under the terms of the <a href='doc/en/agpl3."
 "php'>AGPL-License</a>"
@@ -2366,30 +2347,30 @@ msgstr ""
 "OpenHomeopath wurde unter den Bedingungen der <a href='doc/en/agpl3."
 "php'>AGPL-Lizenz</a> veröffentlicht"
 
-#: skins/kraque/footer.php:67 skins/original/footer.php:67
-#: help/layout/kraque/footer.php:67 help/layout/original/footer.php:71
-#: install/install_db.php:944
+#: skins/kraque/footer.php:46 skins/original/footer.php:46
+#: help/layout/kraque/footer.php:56 help/layout/original/footer.php:56
+#: install/install_db.php:941
 msgid "Contact to the author"
 msgstr "Kontakt zum Autor"
 
-#: skins/original/header.php:66 skins/original/header.php:68
-#: help/layout/original/header.php:66 help/layout/original/header.php:68
+#: skins/original/header.php:64 skins/original/header.php:66
+#: help/layout/original/header.php:64 help/layout/original/header.php:66
 msgid ""
 "Remedy, Homeopathy, Repertory, Online Repertory, Homeopathic online library"
 msgstr ""
 "Heilmittel, Homöopathie, Repertorium, Online Repertorium, Arzneimittellehre, "
 "Homöopathische Online Bibliothek"
 
-#: skins/original/frame.php:93 skins/original/frame.php:122
-#: help/layout/original/frame.php:93 help/layout/original/frame.php:117
+#: skins/original/frame.php:94 skins/original/frame.php:126
+#: help/layout/original/frame.php:94 help/layout/original/frame.php:121
 msgid "User"
 msgstr "Benutzer"
 
-#: skins/original/frame.php:97 help/layout/original/frame.php:97
+#: skins/original/frame.php:98 help/layout/original/frame.php:98
 msgid "Administration"
 msgstr "Administration"
 
-#: skins/original/frame.php:111
+#: skins/original/frame.php:113
 msgid "active users:"
 msgstr "aktive Benutzer:"
 
@@ -2405,11 +2386,7 @@ msgstr ""
 "unkompliziert <br><strong>Symptome</strong> und <strong>Symptom-Mittel-"
 "Beziehungen</strong> in die Datenbank einzufügen."
 
-#: skins/original/footer.php:39
-msgid "back"
-msgstr "zurück"
-
-#: help/layout/kraque/footer.php:65 help/layout/original/footer.php:69
+#: help/layout/kraque/footer.php:54 help/layout/original/footer.php:54
 msgid ""
 "OpenHomeopath is distributed under the terms of the <a href='../../doc/en/"
 "agpl3.php'>AGPL-License</a>"
@@ -2417,8 +2394,8 @@ msgstr ""
 "OpenHomeopath wurde unter den Bedingungen der <a href='../../doc/en/agpl3."
 "php'>AGPL-Lizenz</a> veröffentlicht"
 
-#: help/de/manual.php:164 help/de/manual.php:214 help/en/manual.php:164
-#: help/en/manual.php:213 forms/sym_rems.php:87 forms/reversed_rep.php:122
+#: help/de/manual.php:164 help/de/manual.php:214 help/en/manual.php:163
+#: help/en/manual.php:212 forms/sym_rems.php:87 forms/reversed_rep.php:122
 msgid "-grade"
 msgstr "-wertig"
 
@@ -2430,37 +2407,37 @@ msgstr "OpenHomeopath - Datenpflege Administration"
 msgid "Are you sure ?"
 msgstr "Bist du sicher ?"
 
-#: install/install_db.php:303
+#: install/install_db.php:302
 msgid "OpenHomeopath - Install database"
 msgstr "OpenHomeopath - Datenbank installieren"
 
-#: install/install_db.php:466 install/install_db.php:496
+#: install/install_db.php:463 install/install_db.php:493
 msgid "Install database"
 msgstr "Datenbank installieren"
 
-#: install/install_db.php:498
+#: install/install_db.php:495
 msgid "Be careful! An existing OpenHomeopath-database will be overwritten!"
 msgstr ""
 "Achtung! Eine eventuell vorhandene OpenHomeopath-Datenbank wird vollständig "
 "überschrieben!"
 
-#: install/install_db.php:499
+#: install/install_db.php:496
 msgid "The installation of the database needs some time. Please be patient!"
 msgstr ""
 "Die Installation der Datenbank kann eine Weile dauern. Bitte hab Geduld!"
 
-#: install/install_db.php:900
+#: install/install_db.php:897
 msgid "the file was parsed and everything seems alright!"
 msgstr "das Ende der Datei ist erreicht, alles scheint OK!"
 
-#: install/install_db.php:901
+#: install/install_db.php:898
 msgid ""
 "You should delete now the file 'install/OpenHomeopath.sql.gz' on the server."
 msgstr ""
 "Die Datei 'install/openhomeopath.sql.gz' solltest Du jetzt auf dem Server "
 "löschen."
 
-#: install/install_db.php:902
+#: install/install_db.php:899
 msgid ""
 "First the file need some discspace and second when you run 'install_db.php' "
 "all new data will be deleted."
@@ -2468,25 +2445,25 @@ msgstr ""
 "Zum einen verbraucht sie recht viel Platz und außerdem würden bei erneuter "
 "Ausführung von 'install_db.php' alle neu hinzugekommenen Daten gelöscht."
 
-#: install/install_db.php:911
+#: install/install_db.php:908
 #, php-format
 msgid "Now I'm <b>waiting %d milliseconds</b> before starting next session..."
 msgstr ""
 "Ich <b>warte %d Millisekunden</b> bevor ich die nächste Session starte..."
 
-#: install/install_db.php:920
+#: install/install_db.php:917
 msgid "Press"
 msgstr "Drücke"
 
-#: install/install_db.php:920
+#: install/install_db.php:917
 msgid "STOP</a></b> to stop the import or be <b>passioned!</b><"
 msgstr "STOP</a></b> um den Import abzubrechen oder hab <b>GEDULD!</b><"
 
-#: install/install_db.php:924
+#: install/install_db.php:921
 msgid "Stopped because of an error"
 msgstr "Wegen Fehler angehalten"
 
-#: install/install_db.php:944
+#: install/install_db.php:941
 msgid ""
 "OpenHomeopath is distributed under the terms of the <a href='../doc/en/agpl3."
 "php'>AGPL-License</a>"
@@ -2570,6 +2547,10 @@ msgstr "Verfügbare Symptome"
 msgid "Searching for"
 msgstr "eventuell Suchbegriffe"
 
+#: forms/symptom_select_form.php:104
+msgid "Type words or part of words to filter a symptom"
+msgstr "Gebe Wörter oder Wortteile eines Symptoms ein"
+
 #: forms/symptom_select_form.php:117
 msgid "Show symptoms"
 msgstr "Symptome anzeigen"
@@ -2626,33 +2607,33 @@ msgstr "ja"
 msgid "no"
 msgstr "nein"
 
-#: forms/saved_reps.php:180
+#: forms/saved_reps.php:184
 #, php-format
 msgid "Repertorization No. %d was deleted."
 msgstr "Repertorisierung Nr. %d wurde gelöscht."
 
-#: forms/saved_reps.php:182
+#: forms/saved_reps.php:186
 #, php-format
 msgid "Repertorization No. %d couldn't be deleted totally!"
 msgstr "Repertorisierung Nr. %d konnte nicht vollständig gelöscht werden!"
 
-#: forms/saved_reps.php:184
+#: forms/saved_reps.php:188
 #, php-format
 msgid "The public status of the repertorization no. %d changed."
 msgstr "Der Öffentlich-Status der Repertorisierung Nr. %d wurde geändert."
 
-#: forms/saved_reps.php:206
+#: forms/saved_reps.php:210
 #, php-format
 msgid "%d saved repertorization"
 msgid_plural "%d saved repertorizations"
 msgstr[0] "%d gespeicherte Repertorisierung"
 msgstr[1] "%d gespeicherte Repertorisierungen"
 
-#: forms/saved_reps.php:220
+#: forms/saved_reps.php:224
 msgid "Delete repertorization"
 msgstr "Repertorisierung löschen"
 
-#: forms/saved_reps.php:223
+#: forms/saved_reps.php:227
 msgid "Change public-state"
 msgstr "Öffentlich-Status ändern"
 
@@ -2735,6 +2716,20 @@ msgstr "Körper"
 msgid "Corresponding symptoms"
 msgstr "Zugeordnete Symptome"
 
+#: forms/sym_rems.php:38 forms/reversed_rep.php:50
+msgid ""
+"Guests are limited to the Homeopathic Repertory from Kent (kent.en). For "
+"activating more repertories an customizing OpenHomeopath you've to <a "
+"href='http://openhomeo.org/openhomeopath/register.php'>register for free</a> "
+"and <a href='http://openhomeo.org/openhomeopath/login.php'>log in</a>."
+msgstr ""
+"Gäste sind auf das für Anfänger recht übersichtliche Repertorium von BZ-"
+"Homöopathie (BZH) beschränkt. Um weitere Repertorien freizuschalten und "
+"OpenHomeopath deinen persönlichen Bedürfnissen anzupassen musst du dich <a "
+"href='http://openhomeo.org/openhomeopath/register.php'>kostenlos "
+"registrieren</a> und <a href='http://openhomeo.org/openhomeopath/login."
+"php'>anmelden</a>."
+
 #: forms/sym_rems.php:45
 msgid "Sort by"
 msgstr "Sortieren nach"
@@ -2758,14 +2753,14 @@ msgstr "Zusammenstellen"
 msgid "no corresponding symptom found"
 msgstr "kein entsprechendes Symptom gefunden"
 
-#: forms/reversed_rep.php:116 forms/select_symptoms.php:133
+#: forms/reversed_rep.php:116 forms/select_symptoms.php:137
 #, php-format
 msgid "%d symptom"
 msgid_plural "%d symptoms"
 msgstr[0] "%d Symptom"
 msgstr[1] "%d Symptome"
 
-#: forms/reversed_rep.php:135 forms/select_symptoms.php:145
+#: forms/reversed_rep.php:135 forms/select_symptoms.php:149
 msgid "Symptom which contains sub-rubrics"
 msgstr "Symptom welches Unterrubriken enthält"
 
@@ -2830,10 +2825,29 @@ msgid " You're using at the moment a <strong>personalized repertory</strong>"
 msgstr ""
 "Du verwendest im Moment ein <strong>personalisiertes Repertorium</strong>"
 
-#: forms/select_symptoms.php:136
+#: forms/select_symptoms.php:140
 msgid "Select the matching symptoms by clicking"
 msgstr "Wähle die passenden Symptome durch anklicken aus"
 
-#: forms/select_symptoms.php:149
+#: forms/select_symptoms.php:153
 msgid "Contains sub-rubrics, but doesn't count as a symptom"
 msgstr "Enthält Unterrubriken, zählt aber selbst nicht als Symptom"
+
+#~ msgid "Participation in the server costs"
+#~ msgstr "Beteiligung an den Serverkosten"
+
+#~ msgid ""
+#~ "If you want to contribute to the server costs, you can <a href='http://"
+#~ "openhomeo.org/spenden.html'>transfer donations</a> to the non-profit "
+#~ "association \"Verein zur Förderung der naturheilkundlichen Medizin e.V.\"."
+#~ msgstr ""
+#~ "Wenn du dich an den Serverkosten beteiligen willst, <a href='http://"
+#~ "openhomeo.org/spenden.html'>spende per Überweisung</a> an den "
+#~ "gemeinnützigen \"Verein zur Förderung der naturheilkundlichen Medizin e.V."
+#~ "\"."
+
+#~ msgid "Please enter your username"
+#~ msgstr "Bitte Benutzernamen eingeben"
+
+#~ msgid "back"
+#~ msgstr "zurück"

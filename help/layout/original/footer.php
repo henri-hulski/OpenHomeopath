@@ -28,33 +28,18 @@
  */
 
 ?>
-              </div>
 <?php
 if (basename($_SERVER["PHP_SELF"], ".php") !== "index" && strpos(dirname($_SERVER["PHP_SELF"]), "help/") !== false) {
-?>
-              <div id="pagetools">
-                <table summary="layout" class="boldtext" width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td width="9%">
-                    </td>
-                    <td class="center" width="24%" valign="middle">
-                      <p>
-                        <a href="index.php" title="<?php echo _("Contents"); ?>"><img src='../../skins/original/img/arrow_up_big.gif' width='26' height='42' alt="<?php echo _("Contents"); ?>"></a>
-                      </p>
-                    </td>
-                    <td width="67%">
-                    </td>
-                  </tr>
-                </table>
-              </div>
+	?>
+		  <div id="pagetools">
+			<a href="index.php" title="<?php echo _("Contents"); ?>"><img src='../../skins/original/img/arrow_up_big.gif' width='26' height='42' alt="<?php echo _("Contents"); ?>"></a>
+		  </div>
 <?php
 }
 ?>
-              <br>
-            </td>
-          </tr>
-        </table>
-        <div id="footer">
+          <br>
+        </section>
+        <footer>
           <span class="leftFlow">
 <?php
 echo "\n          <b>" . _("Members Total:") . "</b> ".$db->getNumMembers()."<br>\n";
@@ -69,8 +54,7 @@ if (!empty($db->connection)) {
            <?php echo _("OpenHomeopath is distributed under the terms of the <a href='../../doc/en/agpl3.php'>AGPL-License</a>"); ?>&nbsp;&nbsp; 
           <br>
           <a title="<?php echo _("Contact to the author"); ?>" href="mailto:henri.hulski@gazeta.pl?subject=OpenHomeopath"><?php echo _("Contact to the author"); ?></a>
-        </div>
-      </div>
+        </footer>
     </div>
 <?php
 include ("javascript/stats.php");

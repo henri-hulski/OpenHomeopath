@@ -45,7 +45,7 @@ class Rep {
 	
 	
 	/**
-	 * Repertorization date
+	 * Repertorization date in RFC 3339 format (YYYY-MM-DD)
 	 * @var string
 	 * @access public
 	 */
@@ -169,7 +169,7 @@ class Rep {
 			$db->send_query($query);
 			list($timestamp, $this->patient, $this->note, $this->prescription, $sym_table) = $db->db_fetch_row();
 			$db->free_result();
-			$this->date = date("d.m.Y", $timestamp);
+			$this->date = date("Y-m-d", $timestamp);
 			$this->symptoms_tbl = $db->table_exists($sym_table) ? $sym_table : 'symptoms';
 			if ($this->symptoms_tbl === 'symptoms' || $this->symptoms_tbl === 'sym__de' || $this->symptoms_tbl === 'sym__en') {
 				$this->sym_rem_tbl = 'sym_rem';
@@ -195,8 +195,8 @@ class Rep {
 		}
 		if (!empty($_REQUEST['date'])) {
 			$this->date = urldecode($_REQUEST['date']);
-		} else {
-			$this->date = date("d.m.Y");
+		} elseif(empty($_REQUEST['rep'])) {
+			$this->date = date("Y-m-d");
 		}
 		if (!empty($_REQUEST['patient'])) {
 			$this->patient = urldecode($_REQUEST['patient']);
@@ -335,7 +335,7 @@ class Rep {
 					if ($kuenzli == 1) {
 						$rowtxt .= "<strong>&nbsp;&bull;</strong>";
 					}
-					$rowtxt = "<td class='main_cols center' title='$sym_rem_src'><a href=\"javascript:popup_url('details.php?sym=$symrem_ar[2]&rem=$rem_ar[4]&sym_rem_tbl=" . $this->sym_rem_tbl . "',540,380)\">$rowtxt</a></td>";
+					$rowtxt = "<td class='main_cols center' title='$sym_rem_src'><a href=\"javascript:popup_url('details.php?sym=$symrem_ar[2]&amp;rem=$rem_ar[4]&amp;sym_rem_tbl=" . $this->sym_rem_tbl . "',540,380)\">$rowtxt</a></td>";
 					$row_ar[$symrem_ar[2]][$rem_ar[2]] = $rowtxt;
 				}
 			}
@@ -489,11 +489,18 @@ class Rep {
 	 * @access public
 	 */
 	function print_PDF($task) {
+		global $session;
 		if ($task == 'save_PDF') {
 			$dest = 'D';
 		} else {
 			$dest = 'I';
 		}
+		if($session->lang == 'de') {
+			$date = $this->date_to_german($this->date);
+		} else {
+			$date = $this->date;
+		}
+
 		$pdf = new PDF('L');
 		$pdf->SetTopMargin(20);
 		$pdf->SetFont('Arial','',12);
@@ -505,7 +512,7 @@ class Rep {
 		$w3 = $pdf->GetStringWidth(_('Case taking:') . '  ');
 		$w4 = $pdf->GetStringWidth(_('Prescription:') . '  ' . _('Rep.-No.:') . '  ');
 		$pdf->SetFont('', 'B');
-		$w2 = $pdf->GetStringWidth(iconv('UTF-8', 'windows-1252', $this->patient) . $this->date . $this->date);
+		$w2 = $pdf->GetStringWidth(iconv('UTF-8', 'windows-1252', $this->patient) . $date . $date);
 		$pdf->SetFont('', '');
 		$pdf->write(7, _('Patient:') . '  ');
 		$pdf->SetFont('', 'B');
@@ -515,7 +522,7 @@ class Rep {
 		$pdf->Cell(295 - ($w1 + $w2));
 		$pdf->Cell(0, 7 , _('Rep.-Date:') . '  ');
 		$pdf->SetFont('', 'B');
-		$pdf->Cell(0, 7, $this->date, 0, 1, 'R');
+		$pdf->Cell(0, 7, $date, 0, 1, 'R');
 		$pdf->SetFont('', '');
 		$pdf->write(7, _('Prescription:') . '  ');
 		$pdf->SetFont('', 'B');
@@ -559,25 +566,21 @@ class Rep {
 	 * @access public
 	 */
 	function date_to_timestamp($date) {
-		list($tag, $monat, $jahr) = explode(".", $date, 3);
-		if ($tag < 10) {
-			$tag = "0" . $tag;
-			$tag = str_replace("00", "0", $tag);
-		}
-		if ($monat < 10) {
-			$monat = "0" . $monat;
-			$monat = str_replace("00", "0", $monat);
-		}
-		if ($jahr <= 66) {
-			$jahr += 2000;
-		} elseif ($jahr < 100) {
-			$jahr += 1900;
-		}
-		$date = "$jahr-$monat-$tag";
-		$timestamp = strtotime($date);
-		return $timestamp;
+		return strtotime($date);
 	}
 
+
+	/**
+	 * date_to_german returns the date in German format (DD.MM.YYYY) from a given date in RFC 3339 format (YYYY-MM-DD)
+	 *
+	 * @param string  $date date in RFC 3339 format (YYYY-MM-DD)
+	 * @return string       date in German format (DD.MM.YYYY)
+	 * @access public
+	 */
+	function date_to_german($date) {
+		list($year, $month, $day) = explode("-", $date, 3);
+		return "$day.$month.$year";
+	}
 	/**
 	 * get_table_data retrieves the data for printing the repertorization-result-table in a PDF-file.
 	 *

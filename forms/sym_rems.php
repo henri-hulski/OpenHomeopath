@@ -35,14 +35,14 @@ if (!empty($_REQUEST['getSymRems'])) {
 include_once ("include/classes/symrem_class.php");
 $symrem = new SymRem();
 if (!$session->logged_in) {
-	echo ("<p class='center''><span class='alert_box'><strong>" . _("Important!") . "</strong> " . _("Guests are limited to the Homeopathic Repertory from Kent (kent.en). For activating more repertories an customizing OpenHomeopath you've to <a href='http://openhomeo.org/openhomeopath/register.php'>register for free</a> and <a href='http://openhomeo.org/openhomeopath/login.php'>log in</a>.") . "</span></p>\n");
+	echo ("<p class='center'><span class='alert_box'><strong>" . _("Important!") . "</strong> " . _("Guests are limited to the Homeopathic Repertory from Kent (kent.en). For activating more repertories an customizing OpenHomeopath you've to <a href='http://openhomeo.org/openhomeopath/register.php'>register for free</a> and <a href='http://openhomeo.org/openhomeopath/login.php'>log in</a>.") . "</span></p>\n");
 }
 ?>
-  <form action="" accept-charset="utf-8">
-    <table border="0" align="left" summary="layout" class='rem_symptoms_head'>
+  <form accept-charset="utf-8">
+    <table class='rem_symptoms_head'>
       <tr>
         <td>
-          <label for="sort_rems"><span class="label"><?php echo _("Sort by"); ?></span></label>
+          <label for="sort"><span class="label"><?php echo _("Sort by"); ?></span></label>
         </td>
         <td>
           <span class="label"><?php echo _("Grade"); ?></span>
@@ -61,7 +61,7 @@ echo $symrem->get_grade_select();
         </td>
       </tr>
     </table>
-    <br clear='all'>
+	<div class="clear"></div>
     <input id='symId' type='hidden' value='<?php echo $symrem->sym_id; ?>'>
     <br>
   </form>
@@ -81,12 +81,12 @@ printf("    <p class='label'>" . ngettext("%d remedy-relation", "%d remedy-relat
 ?>
     <div class="button_area_4">
       <div class='alert_box' style='width:120px;'>
-        <p><img src='skins/original/img/materia.png' width='12' height='12'>&nbsp;<?php echo _("Materia Medica");?></p>
+        <p><img src='skins/original/img/materia.png' alt='Materia Medica' width='12' height='12'>&nbsp;<?php echo _("Materia Medica");?></p>
 <?php
 for ($i = 5; $i > 0; $i--) {
 	echo "        <div class='grade_$i'>$i" . _("-grade") . "</div>\n";
 }
 ?>
-      </p>
+      </div>
     </div>
   </div>

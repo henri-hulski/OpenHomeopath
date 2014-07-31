@@ -85,8 +85,12 @@ if (!empty($_REQUEST['search'])) {
 			$sub_result = $db->send_query($query);
 			$num_rows = $db->db_num_rows($sub_result);
 			if ($num_rows > 0) {
+					$parents_symptoms_table = $symptoms_tbl;
+					if ($sym_lang = $db->get_lang_only_symptom_table()) {
+						$parents_symptoms_table = "sym__" . $sym_lang['id'];
+					}
 				while (list ($pid) = $db->db_fetch_row($sub_result)) {
-					$query = "SELECT sym_id, symptom, pid, rubric_id FROM $symptoms_tbl WHERE sym_id = $pid";
+					$query = "SELECT sym_id, symptom, pid, rubric_id FROM $parents_symptoms_table WHERE sym_id = $pid";
 					$sub_result2 = $db->send_query($query);
 					list($sym_id, $symptom, $pid, $main_rubric_id) = $db->db_fetch_row($sub_result2);
 					$db->free_result($sub_result2);
@@ -137,23 +141,23 @@ printf ("    <p class='label'>" . ngettext("%d symptom", "%d symptoms", $sym_cou
       <div class='alert_box' style='text-align:left; width:250px;'>
         <table class='legend2'>
           <tr>
-            <td><img src='skins/original/img/main_folder.png' width='14' height='14'></td>
+            <td><img src='skins/original/img/main_folder.png' alt='Main rubric' width='14' height='14'></td>
             <td><?php echo _("Main rubric");?></td>
           </tr>
           <tr>
-            <td><img src='skins/original/img/folder_aeskulap.png' width='12' height='12'></td>
+            <td><img src='skins/original/img/folder_aeskulap.png' alt='Symptom rubric' width='12' height='12'></td>
             <td><?php echo _("Symptom which contains sub-rubrics"); ?></td>
           </tr>
           <tr>
-            <td><img src='skins/original/img/folder.png' width='12' height='12'></td>
+            <td><img src='skins/original/img/folder.png' alt='Rubric' width='12' height='12'></td>
             <td><?php echo _("Contains sub-rubrics, but doesn't count as a symptom"); ?></td>
           </tr>
           <tr>
-            <td><img src='skins/original/img/aeskulap.png' width='12' height='12'></td>
+            <td><img src='skins/original/img/aeskulap.png' alt='Symptom' width='12' height='12'></td>
             <td><?php echo _("Symptom"); ?></td>
           </tr>
           <tr>
-            <td><img src='skins/original/img/info.gif' width='12' height='12'></td>
+            <td><img src='skins/original/img/info.gif' alt='Info' width='12' height='12'></td>
             <td><?php echo _("Symptom-Info");?></td>
           </tr>
         </table>

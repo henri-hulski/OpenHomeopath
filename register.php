@@ -32,7 +32,7 @@
 include_once ("include/classes/login/session.php");
 $head_title = _("Registration") . " :: OpenHomeopath";
 $skin = $session->skin;
-include("./skins/$skin/header.php");
+include("skins/$skin/header.php");
 ?>
 <h1><?php echo _("Registration to OpenHomeopath"); ?></h1>
 <br>
@@ -76,7 +76,7 @@ elseif(isset($_SESSION['regsuccess'])) {
  */
 else{
 ?>
-<div align="center">
+<div class="center">
   <form action="include/classes/login/process.php" method="post" name="registrierung" accept-charset="utf-8" style="display: inline">
     <div class="StdBlockHeader" style="text-align: left">
 <?php
@@ -87,17 +87,17 @@ if(!REGISTER_VERIFY_EMAIL){
 echo _(" and your e-mail.");
 ?>
     </div>
-    <div align="center" class="StdBlock">
+    <div class="StdBlock center">
       <br>
-      <table cellspacing="0" align="center">
+      <table class="center nospacing">
 <?php
 	if($form->num_errors > 0) {
-		echo "<tr><td colspan='3'><font size='2' color='#ff0000'>" . $form->num_errors . " " . ngettext("error found", "errors found", $form->num_errors) . "</font></td></tr>\n";
+		echo "<tr><td colspan='3' style='font-size: 13px; color: #ff0000;'>" . $form->num_errors . " " . ngettext("error found", "errors found", $form->num_errors) . "</td></tr>\n";
 	}
 ?>
         <tr>
           <td><label for="user"><?php echo _("Username:"); ?> </label></td>
-          <td><input type="text" name="user" id="user" size="30" maxlength="30" value="<?php echo $form->value("user"); ?>"></td>
+          <td><input type="text" name="user" id="user" required size="30" maxlength="30" value="<?php echo $form->value("user"); ?>"></td>
           <td><?php echo $form->error("user"); ?></td>
         </tr>
 <?php
@@ -105,12 +105,12 @@ echo _(" and your e-mail.");
 ?>
         <tr>
           <td><label for="pass"><?php echo _("Password:"); ?> </label></td>
-          <td><input type="password" name="pass" id="pass" size="30" maxlength="30" value="<?php echo $form->value("pass"); ?>"></td>
+          <td><input type="password" name="pass" id="pass" required size="30" maxlength="30" value="<?php echo $form->value("pass"); ?>"></td>
           <td><?php echo $form->error("pass"); ?></td>
         </tr>
         <tr>
           <td><label for="pass2"><?php echo _("Re-enter Password:"); ?> </label></td>
-          <td><input type="password" name="pass2" id="pass2" size="30" maxlength="30" value="<?php echo $form->value("pass2"); ?>"></td>
+          <td><input type="password" name="pass2" id="pass2" required size="30" maxlength="30" value="<?php echo $form->value("pass2"); ?>"></td>
           <td><?php echo $form->error("pass2"); ?></td>
         </tr>
 <?php
@@ -118,7 +118,7 @@ echo _(" and your e-mail.");
 ?>
         <tr>
           <td><label for="email"><?php echo _("E-mail:"); ?> </label></td>
-          <td><input type="text" name="email" id="email" maxlength="50" value="<? echo $form->value("email"); ?>"></td>
+          <td><input type="email" name="email" id="email" required maxlength="50" value="<? echo $form->value("email"); ?>"></td>
           <td><? echo $form->error("email"); ?></td>
         </tr>
 <?php
@@ -132,7 +132,7 @@ echo _(" and your e-mail.");
 	}
 ?>
         <tr>
-          <td colspan="2" align="left">
+          <td colspan="2" style="text-align: left">
             <input type="hidden" name="subjoin" value="1">
             <br>
             <input type="submit" value=" <?php echo _("Send!"); ?> ">
@@ -147,5 +147,5 @@ echo _(" and your e-mail.");
 
 <?php
 }
-include("./skins/$skin/footer.php");
+include("skins/$skin/footer.php");
 ?>

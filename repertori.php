@@ -33,8 +33,9 @@ if (!isset($tabbed) || !$tabbed) {
 }
 if (!$tabbed && !isset($_REQUEST['tab'])) {
 	$head_title = _("Repertorization") . " :: OpenHomeopath";
+	$current_page = 'repertory';
 	$skin = $session->skin;
-	include("./skins/$skin/header.php");
+	include("skins/$skin/header.php");
 }
 if (isset($_REQUEST['rep'])) {
 	$rep_id = $_REQUEST['rep'];
@@ -86,9 +87,9 @@ if ((isset($_REQUEST['rubrics']) && !empty($num_rows)) || !empty($_REQUEST['syms
 			$selected_symptoms_list .= "        <div id='sympt_$i'>";
 // 			$selected_symptoms_list .= "<input id='check_$i' type='checkbox' value='$sym_id'>";
  			$selected_symptoms_list .= "<input type='hidden' value='$sym_id'>";
-			$selected_symptoms_list .= "&nbsp;<select size='1' title='" . _("Rubric degree") . "'><option value='0'$selected[0]>0</option><option value='1'$selected[1]>1</option><option value='2'$selected[2]>2</option><option value='3'$selected[3]>3</option><option value='4'$selected[4]>4</option></select>";
-			$selected_symptoms_list .= "&nbsp;<a href='javascript:symptomData($sym_id);' title='" . _("Symptom-Info") . "'><img src='skins/original/img/info.gif' width='12' height='12'></a>";
-			$selected_symptoms_list .= "&nbsp;<a href=\"javascript:symDeselect('sympt_$i');\" title='" . _("Deselect symptom") . "'><img src='skins/original/img/del.png' width='12' height='12'></a>";
+			$selected_symptoms_list .= "&nbsp;<select style='width:44px' size='1' title='" . _("Rubric degree") . "'><option value='0'$selected[0]>0</option><option value='1'$selected[1]>1</option><option value='2'$selected[2]>2</option><option value='3'$selected[3]>3</option><option value='4'$selected[4]>4</option></select>";
+			$selected_symptoms_list .= "&nbsp;<a href='javascript:symptomData($sym_id);' title='" . _("Symptom-Info") . "'><img src='skins/original/img/info.gif' width='12' height='12' alt='Info'></a>";
+			$selected_symptoms_list .= "&nbsp;<a href=\"javascript:symDeselect('sympt_$i');\" title='" . _("Deselect symptom") . "'><img src='skins/original/img/del.png' width='12' height='12' alt='Delete'></a>";
 //			$selected_symptoms_list .= "&nbsp;&nbsp;<label for='check_$i' title='$rubric_name >> $symptom'>$rubric_name >> $symptom</label>";
 			$selected_symptoms_list .= "&nbsp;&nbsp;$rubric_name >> $symptom";
 			$selected_symptoms_list .= "</div>\n";
@@ -99,13 +100,13 @@ if ((isset($_REQUEST['rubrics']) && !empty($num_rows)) || !empty($_REQUEST['syms
       </div>
 <?php
 	if (isset($_REQUEST['patient'])) {
-		echo "      <input type='hidden' name='patient' value='" . $_REQUEST['patient'] . "'>";
+		echo "      <input type='hidden' id='patient' value='" . $_REQUEST['patient'] . "'>\n";
 	}
 	if (isset($_REQUEST['prescription'])) {
-		echo "      <input type='hidden' name='prescription' value='" . $_REQUEST['prescription'] . "'>";
+		echo "      <input type='hidden' id='prescription' value='" . $_REQUEST['prescription'] . "'>\n";
 	}
 	if (isset($_REQUEST['note'])) {
-		echo "      <input type='hidden' name='note' value='" . $_REQUEST['note'] . "'>";
+		echo "      <input type='hidden' id='note' value='" . $_REQUEST['note'] . "'>\n";
 	}
 	if (!$tabbed && !isset($_REQUEST['tab'])) {
 		$tab = -1;
@@ -121,17 +122,17 @@ if ((isset($_REQUEST['rubrics']) && !empty($num_rows)) || !empty($_REQUEST['syms
               <td><?php echo _("Rubric degree");?></td>
             </tr>
             <tr>
-              <td class='center'><img src='skins/original/img/info.gif' width='12' height='12'></td>
+              <td class='center'><img src='skins/original/img/info.gif' width='12' height='12' alt='Info'></td>
               <td><?php echo _("Symptom-Info");?></td>
             </tr>
             <tr>
-              <td class='center'><img src='skins/original/img/del.png' width='12' height='12'></td>
+              <td class='center'><img src='skins/original/img/del.png' width='12' height='12' alt='Delete'></td>
               <td><?php echo _("Deselect symptom"); ?></td>
             </tr>
           </table>
         </div>
         <br><br>
-        <input type="button" class="submit" name="submit" value=" <?php echo _("Repertorize"); ?> " onclick="rep(<?php echo($tab);?>)">
+        <input type="button" class="submit" value=" <?php echo _("Repertorize"); ?> " onclick="rep(<?php echo($tab);?>)">
       </div>
     </div>
   </form>
@@ -140,6 +141,6 @@ if ((isset($_REQUEST['rubrics']) && !empty($num_rows)) || !empty($_REQUEST['syms
 <?php
 if (!$tabbed && !isset($_REQUEST['tab'])) {
 	popup();
-	include("./skins/$skin/footer.php");
+	include("skins/$skin/footer.php");
 }
 ?>
